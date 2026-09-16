@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cuestionario de diseño · Savey</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#F7F2EA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marfil:#F7F2EA; --blanco:#FFFDFC; --espresso:#332B27; --suave:#6E625B;
+  --champagne:#C7A77A; --rosa:#CDA9A5; --exito:#5B7A5B;
+  --borde:rgba(51,43,39,.12); --fino:rgba(51,43,39,.07);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --curva:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--marfil);color:var(--espresso);font-family:var(--sans);
+  font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+svg{display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:2px;border-radius:4px}
+.env{max-width:640px;margin:0 auto;padding:0 20px}
+
+/* ── Encabezado y avance ── */
+header{position:sticky;top:0;z-index:20;background:rgba(247,242,234,.94);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--borde)}
+.cab{display:flex;align-items:center;gap:12px;padding:14px 0 12px}
+.marca{font-family:var(--serif);font-size:22px;display:flex;align-items:center;gap:7px}
+.marca svg{width:11px;height:11px;fill:var(--champagne)}
+.cab .paso-n{margin-left:auto;font-size:12.5px;color:var(--suave);font-variant-numeric:tabular-nums}
+.barra{height:3px;background:var(--fino);border-radius:99px;overflow:hidden;margin-bottom:12px}
+.barra i{display:block;height:100%;width:0;background:var(--champagne);
+  transition:width .5s var(--curva);border-radius:99px}
+
+main{padding:32px 0 40px}
+h1{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.16;letter-spacing:-.015em}
+.bajada{color:var(--suave);margin-top:8px;font-size:14.5px}
+.bloque{margin-top:26px;display:grid;gap:18px}
+
+/* ── Campos ── */
+label.rot{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--suave);margin-bottom:7px;font-weight:500}
+.req{color:var(--rosa)}
+input,select,textarea{width:100%;padding:12px 13px;background:var(--blanco);
+  border:1px solid var(--borde);color:var(--espresso);font-family:var(--sans);
+  font-size:16px;border-radius:8px;-webkit-appearance:none;appearance:none}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--suave) 50%),
+  linear-gradient(135deg,var(--suave) 50%,transparent 50%);
+  background-position:calc(100% - 19px) 51%,calc(100% - 13px) 51%;
+  background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--champagne)}
+textarea{min-height:92px;resize:vertical;line-height:1.55}
+.ayuda{font-size:12.5px;color:var(--suave);margin-top:6px}
+.par{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:420px){.par{grid-template-columns:1fr}}
+
+/* ── Tarjetas de opción ── */
+.tarjetas{display:grid;gap:10px}
+.tarjeta{position:relative;background:var(--blanco);border:1px solid var(--borde);
+  border-radius:12px;padding:16px 17px;cursor:pointer;display:block;
+  transition:border-color .3s var(--curva),background .3s var(--curva)}
+.tarjeta:hover{border-color:var(--champagne)}
+.tarjeta input{position:absolute;opacity:0;pointer-events:none}
+.tarjeta .fila{display:flex;align-items:baseline;gap:10px}
+.tarjeta b{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2}
+.tarjeta .precio{margin-left:auto;font-family:var(--serif);font-size:19px;white-space:nowrap}
+.tarjeta p{font-size:13.5px;color:var(--suave);margin-top:5px;line-height:1.5}
+.tarjeta:has(input:checked){border-color:var(--champagne);
+  background:linear-gradient(180deg,rgba(199,167,122,.12),rgba(199,167,122,.03)),var(--blanco)}
+.tarjeta:has(input:checked)::after{content:"";position:absolute;top:15px;right:15px;
+  width:8px;height:8px;background:var(--champagne);transform:rotate(45deg)}
+.tarjeta.chica b{font-size:17px}
+
+/* ── Casillas múltiples ── */
+.casillas{display:grid;gap:8px}
+.casilla{display:flex;gap:11px;align-items:flex-start;background:var(--blanco);
+  border:1px solid var(--borde);border-radius:10px;padding:13px 14px;cursor:pointer;
+  transition:border-color .3s var(--curva)}
+.casilla:hover{border-color:var(--champagne)}
+.casilla input{width:17px;height:17px;flex:none;margin-top:2px;accent-color:var(--champagne);
+  -webkit-appearance:auto;appearance:auto;padding:0}
+.casilla b{font-weight:500;font-size:15px;display:block}
+.casilla span{font-size:13px;color:var(--suave);display:block;line-height:1.45}
+.casilla:has(input:checked){border-color:var(--champagne);background:rgba(199,167,122,.08)}
+
+/* ── Navegación ── */
+.pies{display:flex;gap:10px;margin-top:30px;padding-top:22px;border-top:1px solid var(--borde)}
+.bt{height:52px;padding:0 26px;border:0;border-radius:8px;font-family:var(--sans);
+  font-weight:500;font-size:15.5px;cursor:pointer;transition:background .3s var(--curva),transform .3s var(--curva)}
+.bt-ir{background:var(--espresso);color:var(--marfil);flex:1}
+.bt-ir:hover{background:#241B12;transform:translateY(-1px)}
+.bt-atras{background:transparent;border:1px solid var(--borde);color:var(--espresso)}
+.bt-atras:hover{border-color:var(--champagne)}
+.bt-enviar{background:var(--champagne);color:var(--espresso);flex:1}
+.bt-enviar:hover{background:#BB9A6C}
+.bt:disabled{opacity:.55;cursor:default;transform:none}
+
+/* ── Revisión ── */
+.resumen{background:var(--blanco);border:1px solid var(--fino);border-radius:12px;
+  padding:6px 18px;margin-top:20px}
+.resumen .r{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--fino);font-size:14px}
+.resumen .r:last-child{border-bottom:0}
+.resumen .r .k{color:var(--suave);flex:0 0 40%}
+.resumen .r .v{flex:1;font-weight:500;word-break:break-word}
+
+.alerta{background:rgba(205,169,165,.16);border:1px solid rgba(205,169,165,.5);
+  border-radius:10px;padding:13px 15px;font-size:13.5px;margin-top:16px;color:var(--espresso)}
+.guardado{font-size:12.5px;color:var(--suave);margin-top:14px;text-align:center;min-height:18px}
+
+/* ── Fin ── */
+.fin{text-align:center;padding:50px 0}
+.fin svg{width:34px;height:34px;fill:var(--champagne);margin:0 auto 18px}
+.fin h1{font-size:32px}
+.folio{display:inline-block;margin-top:18px;padding:9px 20px;background:var(--blanco);
+  border:1px solid var(--borde);border-radius:99px;font-family:var(--serif);font-size:19px;letter-spacing:.06em}
+.wa{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:24px;
+  height:54px;padding:0 26px;border-radius:8px;background:var(--champagne);color:var(--espresso);
+  text-decoration:none;font-weight:500}
+.wa svg{width:18px;height:18px;fill:currentColor;margin:0}
+
+footer{padding:26px 0 40px;text-align:center;font-size:12px;color:var(--suave)}
+.oculto{display:none!important}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ch" viewBox="0 0 24 24"><path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 2a8 8 0 11-4.1 14.9l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 0112 4zm-3.4 4c-.2 0-.5.1-.7.4-.2.3-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.6 4 3.5 2 .8 2.4.6 2.8.6.4 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.6-.3-1.4-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7 7 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></symbol>
+</svg>
+
+<header>
+  <div class="env">
+    <div class="cab">
+      <div class="marca"><svg><use href="#ch"/></svg>savey</div>
+      <div class="paso-n" id="paso-n"></div>
+    </div>
+    <div class="barra"><i id="avance"></i></div>
+  </div>
+</header>
+
+<main>
+  <div class="env">
+    <div id="lienzo"></div>
+    <div class="pies" id="pies">
+      <button class="bt bt-atras oculto" id="atras" type="button">Atrás</button>
+      <button class="bt bt-ir" id="ir" type="button">Empezar</button>
+    </div>
+    <div class="guardado" id="guardado"></div>
+  </div>
+</main>
+
+<footer>Cuestionario privado de Savey · saveystudio.com</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ══════════════════════════════════════════════════════
+   CONFIGURACIÓN — lo único que cambias tú
+   ══════════════════════════════════════════════════════ */
+var ENDPOINT = "";                 // URL /exec del Apps Script
+var WHATSAPP = "5215500000000";    // respaldo si el endpoint falla
+
+/* ══════════════════════════════════════════════════════ */
+var D = {};                        // respuestas
+var i = 0;                         // paso actual
+var $ = function(id){ return document.getElementById(id) };
+
+/* Guardado local para que nadie pierda el avance */
+function guardar(){
+  try{ localStorage.setItem('savey-brief', JSON.stringify(D));
+       $('guardado').textContent = 'Tus respuestas se guardan solas en este dispositivo.'; }catch(e){}
+}
+function recuperar(){
+  try{ var g = localStorage.getItem('savey-brief'); if(g) D = JSON.parse(g); }catch(e){}
+}
+
+var esBoda   = function(){ return D.evento === 'Boda' };
+var esXV     = function(){ return D.evento === 'XV años' };
+var esBautizo= function(){ return D.evento === 'Bautizo o primera comunión' };
+var esInfantil=function(){ return D.evento === 'Cumpleaños infantil' };
+var esTeen   = function(){ return D.evento === 'Cumpleaños de 15 en adelante' };
+var esCorp   = function(){ return D.evento === 'Evento de empresa' };
+var conPases = function(){ return D.paquete === 'Firma' || D.paquete === 'Concierge' };
+var esConcierge=function(){ return D.paquete === 'Concierge' };
+
+/* ══════════════════ Los pasos ══════════════════ */
+var PASOS = [
+{
+  t:"¿Qué paquete te interesa?",
+  b:"Si todavía no te decides, elige el que más se acerque. Lo podemos cambiar en cualquier momento.",
+  campos:[
+    {k:"paquete", tipo:"tarjetas", req:true, op:[
+      {v:"Esencial", precio:"$790", d:"Diseño completo, mapa, itinerario y confirmación de asistencia sin límite de invitados. Lista en 72 horas."},
+      {v:"Firma", precio:"$1,690", d:"Todo lo anterior más pase personalizado por familia, control de entrada con código, save the date, álbum compartido y dirección web propia. Lista en 48 horas."},
+      {v:"Concierge", precio:"$3,290", d:"Todo lo de Firma y además nosotros mandamos las invitaciones por WhatsApp a tu lista y damos seguimiento a quien no contesta."}
+    ]}
+  ]
+},
+{
+  t:"¿Qué vas a celebrar?",
+  b:"De esto depende todo lo que te preguntemos después.",
+  campos:[
+    {k:"evento", tipo:"tarjetas", req:true, op:[
+      {v:"Boda"}, {v:"XV años"}, {v:"Bautizo o primera comunión"},
+      {v:"Cumpleaños infantil"}, {v:"Cumpleaños de 15 en adelante"},
+      {v:"Evento de empresa"}, {v:"Otro"}
+    ]},
+    {k:"evento_otro", tipo:"texto", rot:"Cuéntanos cuál", si:function(){return D.evento==='Otro'}}
+  ]
+},
+{
+  t:"¿Cómo te contactamos?",
+  b:"Estos datos son para nosotros. No aparecen en la invitación.",
+  campos:[
+    {k:"contacto", tipo:"texto", rot:"Tu nombre", req:true},
+    {k:"whatsapp", tipo:"tel", rot:"WhatsApp", req:true, ayuda:"Con clave de país, por ejemplo 52 55 1234 5678"},
+    {k:"correo", tipo:"correo", rot:"Correo"},
+    {k:"relacion", tipo:"select", rot:"¿Quién eres en este evento?", op:[
+      "Soy quien celebra","Soy mamá o papá","Organizo el evento","Trabajo en la empresa","Otro"]},
+    {k:"comonos", tipo:"select", rot:"¿Cómo nos conociste?", op:[
+      "Facebook","Instagram","TikTok","Me recomendaron","Google","Otro"]}
+  ]
+},
+{
+  t:"Lo esencial del evento",
+  b:"Escríbelo tal cual quieres que aparezca, con acentos y como se deba leer.",
+  campos:[
+    {k:"nombres", tipo:"texto", req:true, rot:function(){
+      if(esBoda()) return "Nombres de la pareja";
+      if(esXV()) return "Nombre de la festejada";
+      if(esBautizo()) return "Nombre del festejado";
+      if(esInfantil()||esTeen()) return "Nombre del festejado";
+      if(esCorp()) return "Nombre del evento";
+      return "Nombre del evento o festejado";
+    }, ayuda:function(){ return esBoda() ? "Como quieres que se vean: “Valeria & Sebastián”" : "" }},
+    {k:"edad", tipo:"texto", rot:"¿Cuántos años cumple?", si:function(){return esInfantil()||esTeen()}},
+    {k:"empresa", tipo:"texto", rot:"Empresa u organización", si:esCorp},
+    {k:"fecha", tipo:"fecha", rot:"Fecha del evento", req:true},
+    {k:"hora", tipo:"hora", rot:"Hora de inicio", req:true},
+    {k:"ciudad", tipo:"texto", rot:"Ciudad y estado", req:true},
+    {k:"invitados_aprox", tipo:"num", rot:"¿Cuántos invitados esperas?", req:true},
+    {k:"frase", tipo:"larga", rot:"Frase de portada",
+      ayuda:"Una o dos líneas que abran la invitación. Si no se te ocurre, la escribimos nosotros."}
+  ]
+},
+{
+  t:"¿Dónde va a ser?",
+  b:"Pon la dirección completa. Con eso armamos el mapa.",
+  campos:[
+    {k:"sede1_tipo", tipo:"select", rot:"Primera sede", si:function(){return !esCorp()&&!esInfantil()&&!esTeen()}, op:[
+      "Misa","Ceremonia religiosa","Ceremonia civil","Ceremonia simbólica","No hay ceremonia aparte"]},
+    {k:"sede1_nombre", tipo:"texto", rot:"Nombre del lugar", si:function(){
+      return !esCorp()&&!esInfantil()&&!esTeen()&&D.sede1_tipo&&D.sede1_tipo!=="No hay ceremonia aparte"}},
+    {k:"sede1_dir", tipo:"larga", rot:"Dirección completa", si:function(){
+      return !esCorp()&&!esInfantil()&&!esTeen()&&D.sede1_tipo&&D.sede1_tipo!=="No hay ceremonia aparte"}},
+    {k:"sede1_hora", tipo:"hora", rot:"Hora", si:function(){
+      return !esCorp()&&!esInfantil()&&!esTeen()&&D.sede1_tipo&&D.sede1_tipo!=="No hay ceremonia aparte"}},
+    {k:"sede2_nombre", tipo:"texto", req:true, rot:function(){
+      return esCorp() ? "Nombre de la sede" : "Nombre del salón, jardín o casa"}},
+    {k:"sede2_dir", tipo:"larga", rot:"Dirección completa", req:true},
+    {k:"sede2_hora", tipo:"hora", rot:"Hora de la recepción", si:function(){return !esCorp()}},
+    {k:"itinerario", tipo:"larga", rot:"Itinerario",
+      ayuda:"Una línea por momento, así: 7:00 PM · Misa. Si no lo tienes cerrado, déjalo en blanco."}
+  ]
+},
+{
+  t:"¿Qué secciones quieres?",
+  b:"Marca las que te sirvan. Puedes agregar o quitar después sin costo.",
+  campos:[
+    {k:"secciones", tipo:"casillas", op:[
+      {v:"Cuenta regresiva", d:"Los días que faltan, en vivo"},
+      {v:"Padres", d:"Los nombres de los papás"},
+      {v:"Padrinos", d:"Con su rol: velación, anillos, lazo, arras…"},
+      {v:"Código de vestimenta", d:"Con nota y colores reservados"},
+      {v:"Mesa de regalos", d:"Tiendas y cuenta para lluvia de sobres"},
+      {v:"Galería de fotos", d:"Sin límite de imágenes"},
+      {v:"Hospedaje sugerido", d:"Hoteles con tarifa apartada"},
+      {v:"Transporte", d:"Horarios de camioneta o valet"},
+      {v:"Música o playlist", d:"Canción de fondo y pedir canciones"},
+      {v:"Hashtag", d:"Para que suban sus fotos"},
+      {v:"Mesa asignada", d:"Cada familia ve su número de mesa"},
+      {v:"Preguntas frecuentes", d:"Acordeón con dudas comunes"},
+      {v:"Notas para los papás", d:"Alergias, hora de salida, qué traer"},
+      {v:"Actividades del evento", d:"Talleres, catas, shows"},
+      {v:"Programa de varios días", d:"Cena previa, boda, desayuno"}
+    ]}
+  ]
+},
+{
+  t:"Los detalles finos",
+  b:"Todo esto es opcional. Llena lo que ya tengas.",
+  campos:[
+    {k:"padres", tipo:"larga", rot:"Nombres de los padres",
+      si:function(){ return (D.secciones||'').indexOf('Padres')>=0 }},
+    {k:"padrinos", tipo:"larga", rot:"Padrinos y su rol",
+      ayuda:"Una línea por padrino: Velación · Sr. y Sra. Ríos",
+      si:function(){ return (D.secciones||'').indexOf('Padrinos')>=0 }},
+    {k:"dress", tipo:"texto", rot:"Código de vestimenta",
+      si:function(){ return (D.secciones||'').indexOf('Código de vestimenta')>=0 }},
+    {k:"dress_nota", tipo:"larga", rot:"Nota de vestimenta",
+      ayuda:"Colores reservados, tipo de piso, si refresca en la noche…",
+      si:function(){ return (D.secciones||'').indexOf('Código de vestimenta')>=0 }},
+    {k:"regalos_texto", tipo:"larga", rot:"Qué decir sobre los regalos",
+      si:function(){ return (D.secciones||'').indexOf('Mesa de regalos')>=0 }},
+    {k:"regalos_tiendas", tipo:"larga", rot:"Tiendas y número de evento",
+      ayuda:"Liverpool 51234567, Amazon, Palacio…",
+      si:function(){ return (D.secciones||'').indexOf('Mesa de regalos')>=0 }},
+    {k:"regalos_cuenta", tipo:"texto", rot:"Cuenta o CLABE y titular",
+      si:function(){ return (D.secciones||'').indexOf('Mesa de regalos')>=0 }},
+    {k:"hospedaje", tipo:"larga", rot:"Hoteles sugeridos",
+      ayuda:"Uno por línea, con tarifa si la apartaste",
+      si:function(){ return (D.secciones||'').indexOf('Hospedaje')>=0 }},
+    {k:"transporte", tipo:"larga", rot:"Transporte",
+      si:function(){ return (D.secciones||'').indexOf('Transporte')>=0 }},
+    {k:"hashtag", tipo:"texto", rot:"Tu hashtag",
+      si:function(){ return (D.secciones||'').indexOf('Hashtag')>=0 }},
+    {k:"notas_papas", tipo:"larga", rot:"Notas para los papás",
+      si:function(){ return (D.secciones||'').indexOf('Notas para los papás')>=0 }},
+    {k:"actividades", tipo:"larga", rot:"Actividades",
+      si:function(){ return (D.secciones||'').indexOf('Actividades')>=0 }},
+    {k:"programa", tipo:"larga", rot:"Programa de los días",
+      si:function(){ return (D.secciones||'').indexOf('Programa de varios días')>=0 }},
+    {k:"registro", tipo:"larga", rot:"Registro, gafete y estacionamiento", si:esCorp},
+    {k:"extra", tipo:"larga", rot:"¿Algo más que debamos saber?"}
+  ]
+},
+{
+  t:"¿Cómo quieres que se vea?",
+  b:"Si ya viste un diseño en nuestro catálogo, dinos cuál y partimos de ahí.",
+  campos:[
+    {k:"plantilla", tipo:"texto", rot:"Diseño de referencia",
+      ayuda:"Aurora, Sal, Bruma, Granate, Almendro, Cantera, Petit Bow… o la liga de otro que te gustó"},
+    {k:"colores", tipo:"texto", rot:"Colores de tu evento",
+      ayuda:"Si tu salón o florista ya definieron la paleta, escríbela aquí"},
+    {k:"ambiente", tipo:"select", rot:"¿Qué ambiente buscas?", op:[
+      "Elegante y sobrio","Romántico y cálido","Minimalista","De gala, dramático",
+      "Fresco y de día","Divertido y colorido","Formal de empresa"]},
+    {k:"musica", tipo:"texto", rot:"Canción de fondo",
+      ayuda:"Artista y título. Ojo: si es comercial, la responsabilidad de derechos es tuya."},
+    {k:"fotos_cuantas", tipo:"select", rot:"¿Tienes fotos listas?", op:[
+      "Sí, ya las tengo","Todavía no, las mando después","No voy a usar fotos"]}
+  ]
+},
+{
+  t:"Tu lista de invitados",
+  b:"Con esto armamos el pase personalizado de cada familia.",
+  si:conPases,
+  campos:[
+    {k:"lista", tipo:"larga", rot:"Familias y lugares",
+      ayuda:"Una por línea, así: Familia González | 4",
+      si:conPases},
+    {k:"lista_tel", tipo:"larga", rot:"Teléfonos de cada familia",
+      ayuda:"Los necesitamos para mandar las invitaciones por ti. Una por línea: Familia González | 5512345678",
+      si:esConcierge},
+    {k:"lista_despues", tipo:"tarjetas", rot:"¿Todavía no la tienes?", op:[
+      {v:"Ya la puse arriba"},{v:"Se las mando después por WhatsApp"}]}
+  ]
+},
+{ t:"Revisa antes de enviar", b:"Si algo está mal, regresa y corrígelo.", revision:true, campos:[] }
+];
+
+function visibles(){
+  return PASOS.filter(function(p){ return !p.si || p.si() });
+}
+function evalua(v){ return typeof v === 'function' ? v() : v }
+
+/* ══════════════════ Render ══════════════════ */
+function campo(c){
+  var rot = evalua(c.rot) || '';
+  var ayuda = evalua(c.ayuda) || '';
+  var id = 'f_'+c.k;
+  var val = D[c.k] || '';
+  var h = '<div>';
+  if(c.tipo !== 'tarjetas' && c.tipo !== 'casillas')
+    h += '<label class="rot" for="'+id+'">'+rot+(c.req?' <span class="req">*</span>':'')+'</label>';
+  else if(rot)
+    h += '<label class="rot">'+rot+(c.req?' <span class="req">*</span>':'')+'</label>';
+
+  if(c.tipo==='tarjetas'){
+    h += '<div class="tarjetas">';
+    c.op.forEach(function(o,n){
+      var v = o.v||o, chica = !o.precio && !o.d ? ' chica' : '';
+      h += '<label class="tarjeta'+chica+'"><input type="radio" name="'+c.k+'" value="'+v+'"'+
+           (val===v?' checked':'')+'><div class="fila"><b>'+v+'</b>'+
+           (o.precio?'<span class="precio">'+o.precio+'</span>':'')+'</div>'+
+           (o.d?'<p>'+o.d+'</p>':'')+'</label>';
+    });
+    h += '</div>';
+  } else if(c.tipo==='casillas'){
+    var marcadas = (val||'').split(' · ');
+    h += '<div class="casillas">';
+    c.op.forEach(function(o){
+      var v=o.v||o;
+      h += '<label class="casilla"><input type="checkbox" name="'+c.k+'" value="'+v+'"'+
+           (marcadas.indexOf(v)>=0?' checked':'')+'><span><b>'+v+'</b>'+
+           (o.d?'<span>'+o.d+'</span>':'')+'</span></label>';
+    });
+    h += '</div>';
+  } else if(c.tipo==='select'){
+    h += '<select id="'+id+'" name="'+c.k+'"><option value="">Elige una opción</option>';
+    c.op.forEach(function(o){ h += '<option'+(val===o?' selected':'')+'>'+o+'</option>' });
+    h += '</select>';
+  } else if(c.tipo==='larga'){
+    h += '<textarea id="'+id+'" name="'+c.k+'">'+val+'</textarea>';
+  } else {
+    var t = {texto:'text',tel:'tel',correo:'email',fecha:'date',hora:'time',num:'number'}[c.tipo]||'text';
+    h += '<input id="'+id+'" name="'+c.k+'" type="'+t+'" value="'+String(val).replace(/"/g,'&quot;')+'">';
+  }
+  if(ayuda) h += '<div class="ayuda">'+ayuda+'</div>';
+  return h + '</div>';
+}
+
+function pinta(){
+  var lista = visibles(), p = lista[i];
+  var tot = lista.length;
+  $('paso-n').textContent = 'Paso '+(i+1)+' de '+tot;
+  $('avance').style.width = ((i)/(tot-1)*100)+'%';
+
+  var h = '<h1>'+p.t+'</h1>'+(p.b?'<p class="bajada">'+p.b+'</p>':'');
+  if(p.revision){
+    h += '<div class="resumen">';
+    lista.forEach(function(pp){
+      (pp.campos||[]).forEach(function(c){
+        if(c.si && !c.si()) return;
+        var v = D[c.k]; if(!v) return;
+        h += '<div class="r"><div class="k">'+(evalua(c.rot)||c.k)+'</div><div class="v">'+
+             String(v).replace(/</g,'&lt;').replace(/\n/g,'<br>')+'</div></div>';
+      });
+    });
+    h += '</div><div class="alerta">Al enviar, tus respuestas llegan directo a nuestro tablero. '+
+         'Después te escribimos por WhatsApp para pedirte las fotos y cerrar los últimos detalles.</div>';
+  } else {
+    h += '<div class="bloque">';
+    p.campos.forEach(function(c){ if(!c.si || c.si()) h += campo(c) });
+    h += '</div>';
+  }
+  $('lienzo').innerHTML = h;
+
+  $('atras').classList.toggle('oculto', i===0);
+  $('ir').textContent = p.revision ? 'Enviar cuestionario' : (i===0 ? 'Continuar' : 'Continuar');
+  $('ir').className = 'bt ' + (p.revision ? 'bt-enviar' : 'bt-ir');
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  // los cambios se recogen al vuelo
+  $('lienzo').addEventListener('input', recoge);
+  $('lienzo').addEventListener('change', function(e){ recoge(); if(e.target.type==='radio'||e.target.tagName==='SELECT') pinta() });
+}
+
+function recoge(){
+  var l = $('lienzo');
+  Array.prototype.forEach.call(l.querySelectorAll('input,select,textarea'), function(el){
+    if(el.type==='radio'){ if(el.checked) D[el.name]=el.value }
+    else if(el.type==='checkbox'){
+      var m = Array.prototype.filter.call(l.querySelectorAll('input[name="'+el.name+'"]:checked'),
+              function(x){return true}).map(function(x){return x.value});
+      D[el.name] = m.join(' · ');
+    }
+    else D[el.name] = el.value;
+  });
+  guardar();
+}
+
+function valida(){
+  var p = visibles()[i]; var falta = null;
+  (p.campos||[]).forEach(function(c){
+    if(falta) return;
+    if(c.si && !c.si()) return;
+    if(c.req && !D[c.k]) falta = c;
+  });
+  if(falta){
+    var el = document.getElementById('f_'+falta.k) ||
+             $('lienzo').querySelector('[name="'+falta.k+'"]');
+    if(el){ el.scrollIntoView({behavior:'smooth',block:'center'});
+            try{ el.focus() }catch(e){}
+            el.style.borderColor = '#CDA9A5'; }
+    return false;
+  }
+  return true;
+}
+
+$('ir').addEventListener('click', function(){
+  recoge();
+  var p = visibles()[i];
+  if(p.revision){ enviar(); return }
+  if(!valida()) return;
+  if(i < visibles().length-1){ i++; pinta() }
+});
+$('atras').addEventListener('click', function(){ recoge(); if(i>0){ i--; pinta() } });
+
+/* ══════════════════ Envío ══════════════════ */
+function folio(){
+  var L="ABCDEFGHJKLMNPQRSTUVWXYZ23456789", s="";
+  for(var n=0;n<5;n++) s+=L.charAt(Math.floor(Math.random()*L.length));
+  return s;
+}
+function enviar(){
+  var b = $('ir'); b.disabled = true; b.textContent = 'Enviando…';
+  D.folio = folio();
+  D.enviado = new Date().toISOString();
+  D.origen = location.href;
+
+  var listo = function(){
+    try{ localStorage.removeItem('savey-brief') }catch(e){}
+    var texto = 'Hola, ya llené el cuestionario de Savey. Mi folio es '+D.folio+
+                ' — '+(D.evento||'')+' de '+(D.nombres||'')+'.';
+    document.body.innerHTML =
+      '<div class="env fin"><svg><use href="#ch"/></svg>'+
+      '<h1>Listo, ya lo recibimos</h1>'+
+      '<p class="bajada" style="max-width:34ch;margin:10px auto 0">Guarda tu folio. Te escribimos por WhatsApp '+
+      'en las próximas horas para pedirte las fotos y confirmar los últimos detalles.</p>'+
+      '<div class="folio">'+D.folio+'</div><br>'+
+      '<a class="wa" href="https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(texto)+'">'+
+      '<svg><use href="#wa"/></svg>Mandar mis fotos por WhatsApp</a>'+
+      '<footer>Savey · saveystudio.com</footer></div>' +
+      document.querySelector('svg[width="0"]').outerHTML;
+  };
+
+  if(ENDPOINT){
+    fetch(ENDPOINT, {method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify(D)}).then(listo)['catch'](listo);
+  } else {
+    // sin endpoint configurado: el resumen se va por WhatsApp
+    var res = Object.keys(D).filter(function(k){return D[k]})
+      .map(function(k){ return k+': '+D[k] }).join('\n');
+    window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent('CUESTIONARIO SAVEY\n\n'+res),'_blank');
+    listo();
+  }
+}
+
+recuperar();
+pinta();
+})();
+</script>
+</body>
+</html>

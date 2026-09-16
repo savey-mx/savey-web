@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!-- Savey · álbum compartido · v3 · API conectada -->
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Álbum del evento · Savey</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#F7F2EA; --tarjeta:#FFFDFC; --tinta:#332B27; --suave:#6E625B;
+  --acento:#C7A77A; --borde:rgba(51,43,39,.12);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --curva:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--fondo);color:var(--tinta);font-family:var(--sans);
+  font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+svg{display:block}
+:focus-visible{outline:2px solid var(--acento);outline-offset:3px;border-radius:6px}
+.env{max-width:620px;margin:0 auto;padding:0 18px}
+
+header{padding:34px 0 24px;text-align:center}
+.marca{font-family:var(--serif);font-size:22px;display:inline-flex;align-items:center;gap:7px;
+  text-decoration:none;color:var(--tinta)}
+.marca svg{width:11px;height:11px;fill:var(--acento)}
+h1{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.14;margin-top:16px}
+.bajada{color:var(--suave);margin-top:8px;font-size:14.5px;max-width:34ch;margin-inline:auto}
+
+/* ── Zona de subida ── */
+.subir{background:var(--tarjeta);border:2px dashed var(--borde);border-radius:18px;
+  padding:30px 22px;text-align:center;margin-top:26px;transition:border-color .3s var(--curva)}
+.subir.encima{border-color:var(--acento);background:#fff}
+.subir .icono{width:42px;height:42px;stroke:var(--acento);fill:none;stroke-width:1.4;margin:0 auto 14px}
+.subir h2{font-family:var(--serif);font-weight:400;font-size:23px}
+.subir p{color:var(--suave);font-size:13.5px;margin-top:6px}
+.boton{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:18px;
+  height:54px;padding:0 30px;border:0;border-radius:27px;background:var(--acento);color:var(--tinta);
+  font-family:var(--sans);font-weight:600;font-size:16px;cursor:pointer;
+  transition:transform .3s var(--curva),background .3s var(--curva)}
+.boton:hover{transform:translateY(-1px)}
+.boton:disabled{opacity:.6;transform:none;cursor:default}
+input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.quien{margin-top:16px}
+.quien input{width:100%;max-width:280px;padding:12px 14px;border:1px solid var(--borde);
+  border-radius:10px;font-family:var(--sans);font-size:16px;background:var(--fondo);color:var(--tinta)}
+.quien label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--suave);margin-bottom:6px}
+
+/* ── Progreso ── */
+.progreso{display:none;margin-top:18px}
+.progreso.visible{display:block}
+.barra{height:4px;background:var(--borde);border-radius:99px;overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:var(--acento);
+  border-radius:99px;transition:width .3s var(--curva)}
+.progreso span{display:block;font-size:12.5px;color:var(--suave);margin-top:8px}
+
+/* ── Galería ── */
+.conteo{text-align:center;margin:34px 0 14px;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--suave)}
+.rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding-bottom:40px}
+@media (min-width:560px){.rejilla{grid-template-columns:repeat(4,1fr);gap:8px}}
+.rejilla figure{aspect-ratio:1;overflow:hidden;border-radius:6px;background:#EDE3D2;
+  margin:0;cursor:pointer;position:relative}
+.rejilla img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s var(--curva)}
+.rejilla img.lista{opacity:1}
+.vacio{text-align:center;padding:40px 0;color:var(--suave);font-size:14px}
+
+/* ── Visor ── */
+#visor{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+  padding:18px;background:rgba(30,25,22,.94);opacity:0;transition:opacity .3s var(--curva)}
+#visor.visible{display:flex}
+#visor.entra{opacity:1}
+#visor img{max-width:100%;max-height:78svh;border-radius:6px}
+#visor .barra-sup{position:absolute;top:0;left:0;right:0;display:flex;gap:10px;
+  justify-content:flex-end;padding:16px}
+#visor button, #visor a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,242,234,.35);
+  background:transparent;color:#F7F2EA;font-size:17px;line-height:1;cursor:pointer;
+  display:grid;place-items:center;text-decoration:none}
+#visor button:hover,#visor a:hover{border-color:var(--acento);color:var(--acento)}
+#visor .pie{position:absolute;bottom:20px;left:0;right:0;text-align:center;
+  font-size:12.5px;color:rgba(247,242,234,.65)}
+
+footer{padding:20px 0 40px;text-align:center;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--suave);opacity:.7}
+footer a{color:inherit;text-decoration:none}
+.aviso{background:rgba(199,167,122,.14);border:1px solid rgba(199,167,122,.4);
+  border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--suave);margin-top:20px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ch" viewBox="0 0 24 24"><path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/></symbol>
+  <symbol id="subir" viewBox="0 0 24 24">
+    <path d="M12 16V4M7 9l5-5 5 5"/><path d="M3 15v4a2 2 0 002 2h14a2 2 0 002-2v-4"/></symbol>
+</svg>
+
+<header>
+  <div class="env">
+    <a class="marca" href="https://saveystudio.com"><svg><use href="#ch"/></svg>savey</a>
+    <h1 id="titulo">Álbum del evento</h1>
+    <p class="bajada" id="bajada">Sube las fotos que tomaste y míralas junto a las de todos.</p>
+  </div>
+</header>
+
+<main class="env">
+
+  <div class="subir" id="zona">
+    <svg class="icono"><use href="#subir"/></svg>
+    <h2>Sube tus fotos</h2>
+    <p>Puedes elegir varias a la vez. Se comprimen solas para que suban rápido.</p>
+
+    <div class="quien">
+      <label for="quien">¿Quién eres? (opcional)</label>
+      <input id="quien" placeholder="Tu nombre" maxlength="60" autocomplete="name">
+    </div>
+
+    <label class="boton" for="archivos" id="etiqueta-boton">
+      <svg style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8"><use href="#subir"/></svg>
+      Elegir fotos
+    </label>
+    <input type="file" id="archivos" accept="image/*" multiple>
+
+    <div class="progreso" id="progreso">
+      <div class="barra"><i id="barra"></i></div>
+      <span id="estado"></span>
+    </div>
+  </div>
+
+  <div class="aviso" id="aviso" hidden></div>
+
+  <div class="conteo" id="conteo">Cargando el álbum…</div>
+  <div class="rejilla" id="rejilla"></div>
+  <div class="vacio" id="vacio" hidden>Todavía no hay fotos. Sé el primero.</div>
+
+</main>
+
+<div id="visor">
+  <div class="barra-sup">
+    <a id="bajar" download title="Descargar">↓</a>
+    <button id="cerrar" aria-label="Cerrar">✕</button>
+  </div>
+  <img id="visor-img" alt="">
+  <div class="pie" id="visor-pie"></div>
+</div>
+
+<footer>Álbum hecho por <a href="https://saveystudio.com">Savey</a></footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ══════════════════════════════════════════════════════════
+   CONFIGURACIÓN — cambia solo esta línea
+   ══════════════════════════════════════════════════════════ */
+var API = "https://savey-album.savey-mx.workers.dev";
+/* ══════════════════════════════════════════════════════════ */
+
+var EVENTOS = {
+  "regina-5":  { titulo:"Los 2 años de Regina",  acento:"#E4447F", fondo:"#FFF9FB", tinta:"#44373B" },
+  "tamara-xv": { titulo:"Los XV de Tamara",      acento:"#DCA9BE", fondo:"#F7F3F8", tinta:"#2A2138" }
+};
+
+API = API.replace(/\/+$/,"");   // por si se cuela una diagonal al final
+var $=function(i){return document.getElementById(i)};
+var evento=(new URLSearchParams(location.search).get('e')||'').toLowerCase();
+
+if(!/^[a-z0-9\-]{2,40}$/.test(evento)){
+  document.body.innerHTML='<div class="env" style="padding:80px 18px;text-align:center">'+
+    '<p style="font-family:Georgia,serif;font-size:2rem">✦</p>'+
+    '<p>Esta liga está incompleta.</p>'+
+    '<p style="color:#6E625B;font-size:.9rem">Pide de nuevo el enlace del álbum.</p></div>';
+  return;
+}
+
+var cfg=EVENTOS[evento]||{};
+if(cfg.titulo){
+  document.title=cfg.titulo+' · Álbum';
+  $('titulo').textContent=cfg.titulo;
+}
+if(cfg.acento){
+  var r=document.documentElement.style;
+  r.setProperty('--acento',cfg.acento);
+  if(cfg.fondo) r.setProperty('--fondo',cfg.fondo);
+  if(cfg.tinta) r.setProperty('--tinta',cfg.tinta);
+}
+
+/* ─────── Comprimir en el celular antes de subir ─────── */
+function comprimir(archivo){
+  return new Promise(function(resolve){
+    var img=new Image(), url=URL.createObjectURL(archivo);
+    img.onload=function(){
+      URL.revokeObjectURL(url);
+      var max=1600, w=img.width, h=img.height;
+      if(w>h && w>max){ h=Math.round(h*max/w); w=max }
+      else if(h>=w && h>max){ w=Math.round(w*max/h); h=max }
+      var c=document.createElement('canvas'); c.width=w; c.height=h;
+      c.getContext('2d').drawImage(img,0,0,w,h);
+      c.toBlob(function(b){ resolve(b||archivo) }, 'image/jpeg', 0.82);
+    };
+    img.onerror=function(){ URL.revokeObjectURL(url); resolve(archivo) };
+    img.src=url;
+  });
+}
+
+/* ─────── Subir ─────── */
+var subiendo=false;
+function subir(lista){
+  if(subiendo || !lista.length) return;
+  var archivos=Array.prototype.filter.call(lista,function(f){return f.type.indexOf('image/')===0});
+  if(!archivos.length){ avisar('Solo se pueden subir imágenes.'); return }
+
+  subiendo=true;
+  $('progreso').classList.add('visible');
+  $('etiqueta-boton').style.pointerEvents='none';
+  $('etiqueta-boton').style.opacity='.6';
+
+  var quien=$('quien').value.trim();
+  var hechas=0, fallos=0;
+
+  function siguiente(i){
+    if(i>=archivos.length){
+      $('barra').style.width='100%';
+      $('estado').textContent = fallos
+        ? hechas+' subidas · '+fallos+' no se pudieron'
+        : '¡Listo! '+hechas+(hechas===1?' foto subida':' fotos subidas');
+      subiendo=false;
+      $('etiqueta-boton').style.pointerEvents='';
+      $('etiqueta-boton').style.opacity='';
+      setTimeout(function(){ $('progreso').classList.remove('visible'); cargar() }, 1200);
+      return;
+    }
+    $('estado').textContent='Subiendo '+(i+1)+' de '+archivos.length+'…';
+    $('barra').style.width=Math.round(i/archivos.length*100)+'%';
+
+    comprimir(archivos[i]).then(function(blob){
+      return fetch(API+'/u/'+evento, {
+        method:'POST',
+        headers:{ 'Content-Type':'image/jpeg', 'X-Quien': encodeURIComponent(quien) },
+        body: blob
+      });
+    }).then(function(r){
+      if(r.ok) hechas++; else fallos++;
+    })['catch'](function(){ fallos++ })
+      .then(function(){ siguiente(i+1) });
+  }
+  siguiente(0);
+}
+
+function avisar(txt, fijo){
+  var a=$('aviso'); a.hidden=false; a.textContent=txt;
+  if(!fijo) setTimeout(function(){ a.hidden=true }, 5000);
+}
+
+$('archivos').addEventListener('change', function(){ subir(this.files); this.value='' });
+
+/* arrastrar y soltar, para quien entre desde la compu */
+var zona=$('zona');
+['dragenter','dragover'].forEach(function(ev){
+  zona.addEventListener(ev,function(e){ e.preventDefault(); zona.classList.add('encima') });
+});
+['dragleave','drop'].forEach(function(ev){
+  zona.addEventListener(ev,function(e){ e.preventDefault(); zona.classList.remove('encima') });
+});
+zona.addEventListener('drop', function(e){ subir(e.dataTransfer.files) });
+
+/* ─────── Galería ─────── */
+function cargar(){
+  if(!API || API.indexOf('http')!==0 || API.indexOf('TU-SUBDOMINIO')>=0){
+    $('conteo').textContent='';
+    $('vacio').hidden=true;
+    avisar('Falta conectar el álbum: en album/index.html hay que poner la dirección real del Worker en la línea que dice var API.', true);
+    return;
+  }
+  fetch(API+'/l/'+evento).then(function(r){
+    if(!r.ok) throw new Error('respuesta '+r.status);
+    return r.json();
+  }).then(function(d){
+    var fotos=d.fotos||[];
+    $('conteo').textContent = fotos.length
+      ? fotos.length+(fotos.length===1?' foto':' fotos')
+      : '';
+    $('vacio').hidden = fotos.length>0;
+    var rej=$('rejilla'); rej.innerHTML='';
+    fotos.forEach(function(f){
+      var fig=document.createElement('figure');
+      var im=document.createElement('img');
+      im.loading='lazy';
+      im.src=API+'/f/'+evento+'/'+f.archivo;
+      im.alt='';
+      im.addEventListener('load',function(){ im.classList.add('lista') });
+      fig.appendChild(im);
+      fig.addEventListener('click',function(){ abrir(im.src, f.quien) });
+      rej.appendChild(fig);
+    });
+  })['catch'](function(e){
+    $('conteo').textContent='';
+    $('vacio').hidden=true;
+    avisar('No pudimos conectar con el álbum. ' + (e && e.message ? '('+e.message+')' : '') +
+           ' Si eres de Savey, revisa la dirección del Worker y que el evento esté en la variable EVENTOS.', true);
+  });
+}
+
+/* ─────── Visor ─────── */
+var visor=$('visor');
+function abrir(src, quien){
+  $('visor-img').src=src;
+  $('bajar').href=src;
+  $('visor-pie').textContent = quien ? 'Subida por '+decodeURIComponent(quien) : '';
+  visor.classList.add('visible');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ visor.classList.add('entra') }) });
+}
+function cerrar(){
+  visor.classList.remove('entra');
+  setTimeout(function(){ visor.classList.remove('visible'); $('visor-img').src='' }, 320);
+}
+$('cerrar').addEventListener('click', cerrar);
+visor.addEventListener('click', function(e){ if(e.target===visor) cerrar() });
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') cerrar() });
+
+cargar();
+setInterval(cargar, 45000);   // se refresca solo durante la fiesta
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+  "plantilla": "encanto",
+  "colores": {
+    "fondo": "#1B241B",
+    "papel": "#F2EDE1",
+    "acento": "#D9BB80",
+    "suave": "#8C9B7E"
+  },
+  "tipo": "Mis XV años",
+  "nombre": "Valentina",
+  "fecha": "2026-11-14T19:00:00-06:00",
+  "fechaTexto": "Sábado 14 de noviembre de 2026",
+  "fechaCorta": "14 · 11 · 26",
+  "frase": "Hay días que se sueñan durante años. Este es el mío, y quiero vivirlo contigo.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "Misa de acción de gracias",
+    "lugar": "Parroquia de San Juan Bautista",
+    "direccion": "Av. Hidalgo 210, Centro, Metepec, Edo. Méx.",
+    "hora": "7:00 PM",
+    "mapa": "https://maps.google.com/?q=Av.%20Hidalgo%20210%2C%20Centro%2C%20Metepec%2C%20Edo.%20M%C3%A9x."
+  },
+  "recepcion": {
+    "titulo": "Recepción",
+    "lugar": "Jardín Los Encinos",
+    "direccion": "Carretera Toluca–Tenango km 4.5, Edo. Méx.",
+    "hora": "9:00 PM",
+    "mapa": "https://maps.google.com/?q=Carretera%20Toluca%E2%80%93Tenango%20km%204.5%2C%20Edo.%20M%C3%A9x."
+  },
+  "itinerario": [
+    {
+      "hora": "7:00 PM",
+      "evento": "Misa"
+    },
+    {
+      "hora": "9:00 PM",
+      "evento": "Recepción y cóctel"
+    },
+    {
+      "hora": "10:00 PM",
+      "evento": "Vals"
+    },
+    {
+      "hora": "10:30 PM",
+      "evento": "Cena"
+    },
+    {
+      "hora": "12:00 AM",
+      "evento": "Baile"
+    }
+  ],
+  "dressCode": "Formal",
+  "dressNota": "Te pedimos reservar el verde olivo para la festejada.",
+  "regalos": {
+    "texto": "Tu presencia es el regalo. Si deseas tener un detalle, agradecemos la lluvia de sobres.",
+    "banco": "BBVA 0123 4567 8901 2345",
+    "titular": "María Fernanda Ríos"
+  },
+  "limiteRsvp": "20 de octubre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 5,
+  "fotos": [],
+  "padrinos": [
+    {
+      "rol": "Madrina de vals",
+      "nombre": "Tía Guadalupe"
+    },
+    {
+      "rol": "Padrino de brindis",
+      "nombre": "Tío Ricardo"
+    },
+    {
+      "rol": "Madrina de ramo",
+      "nombre": "Abuela Carmen"
+    },
+    {
+      "rol": "Chambelán de honor",
+      "nombre": "Emilio Ruiz"
+    }
+  ],
+  "notas": [],
+  "galeriaTitulo": "Mi sesión de fotos"
+}

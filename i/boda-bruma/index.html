@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Renata &amp; Emilio · 21 de marzo de 2026</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F4ED">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --hueso:#F7F4ED; --arena:#DED4C4; --greige:#A89E90;
+  --carbon:#272624; --oliva:#A8AA91;
+  --serif:'Bodoni Moda',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,sans-serif;
+  --curva:cubic-bezier(.22,.61,.36,1);
+  --lado:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--hueso);color:var(--carbon);font-family:var(--sans);
+  font-weight:300;font-size:15px;line-height:1.8;overflow-x:hidden}
+img{display:block;max-width:100%}
+svg{display:block}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--carbon);outline-offset:4px}
+.env{padding-inline:var(--lado);max-width:560px;margin:0 auto}
+@media (min-width:480px){:root{--lado:28px}}
+
+.et{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--greige)}
+
+/* ─────────── Navegación ─────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:54px;display:flex;align-items:center;
+  transition:background .6s var(--curva)}
+.nav.fija{background:rgba(247,244,237,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.nav-env{display:flex;align-items:center;width:100%;max-width:560px;margin:0 auto;padding-inline:var(--lado)}
+.mono{font-family:var(--serif);font-size:17px;letter-spacing:.06em;text-decoration:none;color:var(--carbon)}
+.nav-links{display:flex;gap:18px;margin-left:auto;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.nav-links a{text-decoration:none;color:var(--greige);transition:color .5s var(--curva)}
+.nav-links a:hover{color:var(--carbon)}
+@media (max-width:430px){.nav-links a:not(.clave){display:none}.nav-links .clave{color:var(--carbon)}}
+
+/* ─────────── Portada asimétrica ─────────── */
+.portada{position:relative;height:100svh;min-height:560px;overflow:hidden;background:var(--hueso)}
+.portada img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+.portada .pie{position:absolute;left:0;bottom:0;padding:0 var(--lado) 40px;text-align:left;
+  width:100%;background:linear-gradient(to top,rgba(247,244,237,.94) 30%,rgba(247,244,237,0))}
+.fecha-num{font-family:var(--serif);font-weight:400;font-size:13px;letter-spacing:.42em}
+.novios{font-family:var(--serif);font-weight:400;font-size:clamp(46px,13vw,64px);
+  line-height:1.02;letter-spacing:-.01em;margin-top:10px}
+
+/* ─────────── Bloques respirados ─────────── */
+.aire{min-height:56svh;display:flex;align-items:center;padding:72px 0}
+.aire.derecha{justify-content:flex-end;text-align:right}
+.aire .dato{max-width:22ch}
+.aire .dato h2{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.16;margin-top:8px}
+.aire .dato .hora{font-family:var(--serif);font-size:54px;line-height:1;margin-top:14px;color:var(--carbon)}
+.aire .dato p{color:var(--greige);margin-top:12px;font-size:14.5px;line-height:1.7}
+.raya{height:1px;background:rgba(39,38,36,.14);margin:0 var(--lado)}
+
+/* ─────────── Arco ─────────── */
+.arco-seccion{padding:72px 0 88px;text-align:center}
+.arco{width:min(72vw,260px);margin:0 auto;aspect-ratio:3/4.3;
+  border:1px solid rgba(39,38,36,.2);border-radius:999px 999px 2px 2px;
+  display:grid;place-content:center;gap:14px;padding:36px 20px}
+.arco .n{font-family:var(--serif);font-size:64px;line-height:1;color:var(--carbon)}
+.arco .l{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--greige)}
+.arco-seccion p{font-family:var(--serif);font-size:26px;line-height:1.35;margin:40px auto 0;max-width:20ch}
+
+/* ─────────── Galería, una por pantalla ─────────── */
+.foto-plena{margin:0}
+.foto-plena img{width:100%;height:auto}
+.foto-desfasada{margin:14px 0 0 auto;width:76%;padding-right:var(--lado)}
+.foto-desfasada .marco{aspect-ratio:4/3;background:var(--arena);position:relative;overflow:hidden}
+.foto-desfasada .marco img,.vertical .marco img{width:100%;height:100%;object-fit:cover;display:block}
+.hueco{position:absolute;inset:0;display:grid;place-content:center;gap:8px;justify-items:center}
+.hueco::before{content:"";position:absolute;inset:12px;border:1px solid rgba(168,158,144,.5)}
+.hueco svg{width:22px;height:22px;fill:var(--greige);opacity:.65}
+.hueco span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--greige)}
+.pie-foto{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--greige);
+  margin-top:10px;padding-inline:var(--lado)}
+.vertical{width:64%;margin-top:56px;padding-left:var(--lado)}
+.vertical .marco{aspect-ratio:3/4;background:var(--arena);position:relative;overflow:hidden}
+
+/* ─────────── Texto ─────────── */
+.texto{padding:88px 0}
+.texto h2{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.16}
+.texto p{color:var(--greige);max-width:38ch;margin-top:14px}
+.clabe{margin-top:24px;padding:20px 0;border-top:1px solid rgba(39,38,36,.14);
+  border-bottom:1px solid rgba(39,38,36,.14);font-family:var(--serif);font-size:19px;letter-spacing:.05em}
+.clabe small{display:block;font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;
+  color:var(--greige);margin-top:6px;text-transform:uppercase}
+
+/* ─────────── RSVP ─────────── */
+.rsvp{padding:88px 0 96px;border-top:1px solid rgba(39,38,36,.14)}
+.pase{margin-top:26px;padding:20px 0;border-top:1px solid rgba(39,38,36,.14);
+  border-bottom:1px solid rgba(39,38,36,.14)}
+.pase .qui{font-family:var(--serif);font-size:25px;line-height:1.15;margin:6px 0 2px}
+.pase .lug{font-size:13.5px;color:var(--greige)}
+form{display:grid;gap:18px;margin-top:30px}
+label{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--greige);margin-bottom:8px}
+input,select,textarea{width:100%;padding:12px 0;background:transparent;border:0;
+  border-bottom:1px solid rgba(39,38,36,.22);color:var(--carbon);font-family:var(--sans);
+  font-size:16px;font-weight:300;border-radius:0;-webkit-appearance:none;appearance:none}
+input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:var(--carbon)}
+.cta{width:100%;height:52px;border:0;border-radius:4px;background:var(--carbon);color:var(--hueso);
+  font-family:var(--sans);font-weight:400;font-size:15px;letter-spacing:.1em;cursor:pointer;
+  margin-top:8px;transition:background .5s var(--curva)}
+.cta:hover{background:#3A3835}
+.pie-cta{font-size:12.5px;color:var(--greige);margin-top:12px;text-align:center}
+.gracias{display:none;padding:30px 0}
+.gracias h2{font-family:var(--serif);font-weight:400;font-size:28px}
+
+footer{padding:36px 0 48px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--greige)}
+footer a{text-decoration:none}
+
+
+/* Iconografía mínima: un solo trazo por sección */
+.ico{width:19px;height:19px;fill:var(--greige);margin-bottom:16px}
+.preguntas{margin-top:26px}
+.preg{border-top:1px solid rgba(39,38,36,.14)}
+.preg:last-of-type{border-bottom:1px solid rgba(39,38,36,.14)}
+.preg summary{padding:18px 30px 18px 0;cursor:pointer;list-style:none;position:relative;
+  font-family:var(--serif);font-size:19px;font-weight:400}
+.preg summary::-webkit-details-marker{display:none}
+.preg summary::after{content:"";position:absolute;right:2px;top:26px;width:12px;height:1px;background:var(--carbon)}
+.preg summary::before{content:"";position:absolute;right:7px;top:21px;width:1px;height:11px;
+  background:var(--carbon);transition:transform .5s var(--curva)}
+.preg[open] summary::before{transform:scaleY(0)}
+.preg p{padding:0 0 20px;color:var(--greige);max-width:40ch;font-size:14.5px}
+.nota-seca{margin-top:26px;padding:22px 0;border-top:1px solid rgba(39,38,36,.14);
+  border-bottom:1px solid rgba(39,38,36,.14)}
+.nota-seca b{font-family:var(--serif);font-size:21px;font-weight:400;display:block}
+.nota-seca span{color:var(--greige);font-size:14.5px}
+
+/* Motion contenido: solo fundido de 600 ms, sin zoom */
+.fade{opacity:0;transition:opacity .6s var(--curva)}
+.fade.visto{opacity:1}
+@media (prefers-reduced-motion:reduce){.fade{opacity:1;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,66a38,38,0,1,0,38,38A38,38,0,0,0,128,66Zm0,64a26,26,0,1,1,26-26A26,26,0,0,1,128,130Zm0-112a86.1,86.1,0,0,0-86,86c0,30.91,14.34,63.74,41.47,94.94a252.32,252.32,0,0,0,41.09,38,6,6,0,0,0,6.88,0,252.32,252.32,0,0,0,41.09-38c27.13-31.2,41.47-64,41.47-94.94A86.1,86.1,0,0,0,128,18Zm0,206.51C113,212.93,54,163.62,54,104a74,74,0,0,1,148,0C202,163.62,143,212.93,128,224.51Z"/></symbol>
+<symbol id="i-camera" viewBox="0 0 256 256"><path d="M208,58H179.21L165,36.67A6,6,0,0,0,160,34H96a6,6,0,0,0-5,2.67L76.78,58H48A22,22,0,0,0,26,80V192a22,22,0,0,0,22,22H208a22,22,0,0,0,22-22V80A22,22,0,0,0,208,58Zm10,134a10,10,0,0,1-10,10H48a10,10,0,0,1-10-10V80A10,10,0,0,1,48,70H80a6,6,0,0,0,5-2.67L99.21,46h57.57L171,67.33A6,6,0,0,0,176,70h32a10,10,0,0,1,10,10ZM128,90a42,42,0,1,0,42,42A42,42,0,0,0,128,90Zm0,72a30,30,0,1,1,30-30A30,30,0,0,1,128,162Z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm62-90a6,6,0,0,1-6,6H128a6,6,0,0,1-6-6V72a6,6,0,0,1,12,0v50h50A6,6,0,0,1,190,128Z"/></symbol>
+<symbol id="i-coat-hanger" viewBox="0 0 256 256"><path d="M240.37,172.8,138,96l25.59-19.2A6,6,0,0,0,166,72a38,38,0,1,0-76,0,6,6,0,0,0,12,0,26,26,0,0,1,51.82-2.88l-29.32,22-.21.16L15.63,172.8A14,14,0,0,0,24,198H232a14,14,0,0,0,8.39-25.2Zm-6.5,11.83A1.85,1.85,0,0,1,232,186H24a2,2,0,0,1-1.19-3.6L128,103.5l105.17,78.9A1.85,1.85,0,0,1,233.87,184.63Z"/></symbol>
+<symbol id="i-gift" viewBox="0 0 256 256"><path d="M216,74H174.74a46.41,46.41,0,0,0,6-4.48,27.56,27.56,0,0,0,9.22-20A30.63,30.63,0,0,0,158.5,18a27.56,27.56,0,0,0-20,9.22A57.1,57.1,0,0,0,128,45.76a57.1,57.1,0,0,0-10.48-18.53A27.56,27.56,0,0,0,97.5,18,30.63,30.63,0,0,0,66,49.51a27.56,27.56,0,0,0,9.22,20,45.74,45.74,0,0,0,6,4.48H40A14,14,0,0,0,26,88v32a14,14,0,0,0,14,14h2v66a14,14,0,0,0,14,14H200a14,14,0,0,0,14-14V134h2a14,14,0,0,0,14-14V88A14,14,0,0,0,216,74ZM135.77,63c2.25-12.12,6.29-21.75,11.69-27.85A15.68,15.68,0,0,1,158.86,30h.55A18.6,18.6,0,0,1,178,49.14a15.68,15.68,0,0,1-5.18,11.4C162.1,70,143.92,72.83,134.34,73.65,134.59,70.76,135,67.08,135.77,63ZM83.45,35.45A18.69,18.69,0,0,1,96.59,30h.55a15.68,15.68,0,0,1,11.4,5.18C118,45.9,120.83,64.08,121.65,73.66c-2.89-.25-6.57-.68-10.61-1.43C98.92,70,89.29,65.94,83.19,60.53A15.64,15.64,0,0,1,78,49.14,18.65,18.65,0,0,1,83.45,35.45ZM38,120V88a2,2,0,0,1,2-2h82v36H40A2,2,0,0,1,38,120Zm16,80V134h68v68H56A2,2,0,0,1,54,200Zm148,0a2,2,0,0,1-2,2H134V134h68Zm16-80a2,2,0,0,1-2,2H134V86h82a2,2,0,0,1,2,2Z"/></symbol>
+<symbol id="i-lectern" viewBox="0 0 256 256"><path d="M244.51,121.74l-40-80A13.92,13.92,0,0,0,192,34H64a13.92,13.92,0,0,0-12.52,7.74l-40,80A14,14,0,0,0,24,142h98v68H96a6,6,0,0,0,0,12h64a6,6,0,0,0,0-12H134V142h98a14,14,0,0,0,12.52-20.26Zm-10.82,7.31a1.93,1.93,0,0,1-1.7.95H24a2,2,0,0,1-1.79-2.89l40-80A2,2,0,0,1,64,46H192a2,2,0,0,1,1.79,1.11l40,80A2,2,0,0,1,233.69,129.05ZM190,104a6,6,0,0,1-6,6H72a6,6,0,0,1,0-12H184A6,6,0,0,1,190,104Z"/></symbol>
+</svg>
+
+<nav class="nav" id="nav">
+  <div class="nav-env">
+    <a class="mono" href="#inicio">Savey</a>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#detalles">Detalles</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a class="clave" href="#confirmar">Confirmar</a>
+    </div>
+  </div>
+</nav>
+
+<header class="portada" id="inicio">
+  <picture>
+    <source srcset="../fotos/bruma.webp" type="image/webp">
+    <img src="../fotos/bruma.jpg" alt="Renata y Emilio">
+  </picture>
+  <div class="pie">
+    <div class="fecha-num">21 · 03 · 2026</div>
+    <h1 class="novios">Renata<br>&amp; Emilio</h1>
+  </div>
+</header>
+
+<main>
+
+<section class="aire" id="detalles">
+  <div class="env"><div class="dato fade">
+    <svg class="ico"><use href="#i-clock"/></svg>
+    <div class="et">Ceremonia</div>
+    <div class="hora">13:00</div>
+    <h2>Civil, con quienes queremos</h2>
+  </div></div>
+</section>
+
+<div class="raya"></div>
+
+<section class="aire derecha">
+  <div class="env"><div class="dato fade" style="margin-left:auto">
+    <svg class="ico"><use href="#i-map-pin"/></svg>
+    <div class="et">Lugar</div>
+    <h2>Casa Vertiz</h2>
+    <p>Vertiz 108, Doctores<br>Ciudad de México</p>
+  </div></div>
+</section>
+
+<div class="raya"></div>
+
+<section class="arco-seccion">
+  <div class="env">
+    <div class="arco fade"><div class="n">21</div><div class="l">Marzo</div></div>
+    <p class="fade">Sin adornos de más. Solo la gente que queremos y un día que no vamos a olvidar.</p>
+  </div>
+</section>
+
+<figure class="foto-plena fade">
+  <picture>
+    <source srcset="../fotos/bruma-h.webp" type="image/webp">
+    <img src="../fotos/bruma.jpg" alt="Casa Vertiz">
+  </picture>
+  <figcaption class="pie-foto">Casa Vertiz · Ciudad de México</figcaption>
+</figure>
+
+<section class="aire" id="ubicacion">
+  <div class="env"><div class="dato fade">
+    <div class="et">Comida</div>
+    <div class="hora">14:30</div>
+    <h2>Salón Alto</h2>
+    <p>En la misma casa, un piso arriba.</p>
+    <a class="mini" href="https://maps.google.com/?q=Casa%20Vertiz%20108%20Doctores%20CDMX" target="_blank" rel="noopener"
+       style="display:inline-block;margin-top:18px;height:52px;line-height:50px;padding:0 26px;border:1px solid var(--carbon);border-radius:4px;text-decoration:none;font-size:13px;letter-spacing:.1em">Cómo llegar</a>
+  </div></div>
+</section>
+
+<div class="raya"></div>
+
+<div class="foto-desfasada fade">
+  <div class="marco"><img src="../fotos/g/br-h.webp" alt="" loading="lazy"></div>
+</div>
+<div class="vertical fade">
+  <div class="marco"><img src="../fotos/g/br-v.webp" alt="" loading="lazy"></div>
+</div>
+
+<section class="texto">
+  <div class="env fade">
+    <svg class="ico"><use href="#i-coat-hanger"/></svg>
+    <div class="et">Vestimenta</div>
+    <h2 style="margin-top:10px">Cóctel</h2>
+    <p>Paleta neutra si te animas: arena, hueso, gris. Nada obligatorio.</p>
+  </div>
+</section>
+
+<div class="raya"></div>
+
+<section class="texto">
+  <div class="env fade">
+    <svg class="ico"><use href="#i-gift"/></svg>
+    <div class="et">Regalos</div>
+    <h2 style="margin-top:10px">No esperamos regalo</h2>
+    <p>Si insistes, tenemos mesa en la tienda de siempre. Pregúntanos y te pasamos la liga.</p>
+  </div>
+</section>
+
+<section class="texto">
+  <div class="env fade">
+    <svg class="ico"><use href="#i-lectern"/></svg>
+    <div class="et">Buena información</div>
+    <h2 style="margin-top:10px">¿Qué conviene saber?</h2>
+    <div class="nota-seca"><b>Solo adultos</b><span>Queremos que todos puedan relajarse. Gracias por entender.</span></div>
+    <div class="nota-seca" style="border-top:0"><b>Estacionamiento</b><span>Valet en la puerta, sin costo.</span></div>
+    <div class="preguntas">
+      <details class="preg"><summary>¿Puedo llevar acompañante?</summary>
+        <p>Tu pase indica los lugares apartados. Si necesitas uno más, escríbenos y vemos.</p></details>
+      <details class="preg"><summary>¿Hay opción vegetariana?</summary>
+        <p>Sí. Avísanos al confirmar y la cocina lo prepara.</p></details>
+      <details class="preg"><summary>¿A qué hora termina?</summary>
+        <p>Alrededor de las 8 de la noche. Es una comida, no una fiesta larga.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="fade">
+      <svg class="ico"><use href="#i-clock"/></svg>
+      <div class="et">Confirmación</div>
+      <h2 style="font-family:var(--serif);font-weight:400;font-size:30px;margin-top:10px">¿Nos acompañas?</h2>
+      <p style="color:var(--greige);margin-top:12px;max-width:34ch">Te agradecemos confirmar antes del 1 de marzo.</p>
+    </div>
+    <div class="pase fade" id="pase" hidden>
+      <div class="et">Pase personalizado</div>
+      <div class="qui" id="pase-qui"></div>
+      <div class="lug" id="pase-lug"></div>
+    </div>
+    <form id="form" class="fade">
+      <div><label for="nombre">¿Cómo te llamas?</label><input id="nombre" required autocomplete="name"></div>
+      <div><label for="asiste">¿Asistirás?</label>
+        <select id="asiste"><option value="si">Sí, ahí estaré</option><option value="no">No podré asistir</option></select></div>
+      <div id="wrap"><label for="lugares">¿Cuántos asistirán?</label><select id="lugares"></select></div>
+      <div><label for="mensaje">¿Nos dejas un mensaje?</label><textarea id="mensaje" rows="3"></textarea></div>
+      <div><button class="cta" type="submit">Confirmar asistencia</button>
+        <div class="pie-cta">Te tomará menos de un minuto.</div></div>
+    </form>
+    <div class="gracias" id="gracias">
+      <h2 id="g-tit"></h2>
+      <p style="color:var(--greige);margin-top:10px" id="g-txt"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="env">Invitación hecha por <a href="https://saveystudio.com">Savey</a></div></footer>
+
+<script>
+(function(){
+"use strict";
+var $=function(i){return document.getElementById(i)};
+var PASES={"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},
+  "C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}};
+var WA="5215500000000", ENDPOINT="";
+
+var c=(new URLSearchParams(location.search).get('c')||'').toUpperCase();
+var pase=PASES[c]||null, max=pase?pase.l:6;
+if(pase){ $('pase').hidden=false; $('pase-qui').textContent=pase.n;
+  $('pase-lug').textContent=pase.l===1?'1 lugar reservado':pase.l+' lugares reservados';
+  $('nombre').value=pase.n }
+
+var sel=$('lugares');
+for(var i=1;i<=max;i++) sel.appendChild(new Option(String(i),String(i)));
+sel.value=String(max);
+$('asiste').addEventListener('change',function(e){ $('wrap').style.display=e.target.value==='si'?'':'none' });
+
+var nav=$('nav');
+var alScroll=function(){ nav.classList.toggle('fija', window.scrollY>window.innerHeight*.7) };
+alScroll(); window.addEventListener('scroll',alScroll,{passive:true});
+
+if('IntersectionObserver' in window){
+  var ob=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('visto');ob.unobserve(e.target)}})},{threshold:.1});
+  Array.prototype.forEach.call(document.querySelectorAll('.fade'),function(el){ob.observe(el)});
+}else{
+  Array.prototype.forEach.call(document.querySelectorAll('.fade'),function(el){el.classList.add('visto')});
+}
+
+$('form').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var b=ev.target.querySelector('.cta'); b.disabled=true; b.textContent='Enviando…';
+  var a=$('asiste').value;
+  var d={evento:'Renata & Emilio',slug:'boda-bruma',codigo:c,pase:pase?pase.n:'',
+    nombre:$('nombre').value,asiste:a,lugares:a==='si'?$('lugares').value:'0',
+    mensaje:$('mensaje').value,fecha:new Date().toISOString()};
+  var fin=function(){
+    $('form').style.display='none'; $('gracias').style.display='block';
+    if(a==='si'){ $('g-tit').textContent='Tu lugar está confirmado';
+      $('g-txt').textContent='Nos vemos el sábado 21 de marzo.' }
+    else { $('g-tit').textContent='Gracias por avisar'; $('g-txt').textContent='Te vamos a extrañar.' }};
+  if(ENDPOINT){ fetch(ENDPOINT,{method:'POST',mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)}).then(fin)['catch'](fin) }
+  else { window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(
+    'Confirmación Renata & Emilio: '+d.nombre+' — '+(a==='si'?d.lugares+' lugares':'no asistirá')),'_blank'); fin() }
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+{
+  "plantilla": "distincion",
+  "colores": {
+    "fondo": "#131313",
+    "papel": "#F6F4F0",
+    "acento": "#CBA85C",
+    "suave": "#8C8375"
+  },
+  "tipo": "Entrega de premios",
+  "nombre": "Premios 2026",
+  "fecha": "2026-10-21T19:30:00-05:00",
+  "fechaTexto": "Miércoles 21 de octubre de 2026",
+  "fechaCorta": "21 · 10 · 26",
+  "frase": "Una noche para reconocer el trabajo que marcó el año.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Ceremonia y cena",
+    "lugar": "Teatro Diana",
+    "direccion": "Av. 16 de Septiembre 710, Guadalajara, Jal.",
+    "hora": "7:30 PM",
+    "mapa": "https://maps.google.com/?q=Av.%2016%20de%20Septiembre%20710%2C%20Guadalajara%2C%20Jal."
+  },
+  "itinerario": [
+    {
+      "hora": "7:30 PM",
+      "evento": "Alfombra y registro"
+    },
+    {
+      "hora": "8:15 PM",
+      "evento": "Ceremonia"
+    },
+    {
+      "hora": "9:45 PM",
+      "evento": "Cena"
+    },
+    {
+      "hora": "11:00 PM",
+      "evento": "Brindis final"
+    }
+  ],
+  "dressCode": "Etiqueta rigurosa",
+  "dressNota": "Smoking y vestido largo.",
+  "regalos": {
+    "texto": "",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "10 de octubre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 0,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Estacionamiento",
+      "texto": "Cortesía en el nivel B2. Presenta tu boleto en el registro."
+    },
+    {
+      "titulo": "Gafete",
+      "texto": "Tu gafete se entrega en la mesa de registro con tu nombre confirmado."
+    },
+    {
+      "titulo": "Cupo",
+      "texto": "El registro cierra cuando se agota el aforo. Confirma cuanto antes."
+    }
+  ],
+  "rsvpTitulo": "Confirma tu asistencia"
+}

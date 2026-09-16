@@ -1,0 +1,100 @@
+{
+  "plantilla": "consejo",
+  "colores": {
+    "fondo": "#132033",
+    "papel": "#EDF1F6",
+    "acento": "#9BA9BE",
+    "suave": "#6B7D96"
+  },
+  "tipo": "Te esperamos",
+  "nombre": "Cena Anual 2026",
+  "fecha": "2026-12-04T20:00:00-06:00",
+  "fechaTexto": "Viernes 4 de diciembre de 2026",
+  "fechaCorta": "04 · 12 · 26",
+  "frase": "Cerramos el año agradeciendo a quienes lo hicieron posible.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Cena de gala",
+    "lugar": "Salón Diamante, Hotel Presidente",
+    "direccion": "Campos Elíseos 218, Polanco, Ciudad de México",
+    "hora": "8:00 PM",
+    "mapa": "https://maps.google.com/?q=Campos%20El%C3%ADseos%20218%2C%20Polanco%2C%20Ciudad%20de%20M%C3%A9xico"
+  },
+  "itinerario": [
+    {
+      "hora": "8:00 PM",
+      "evento": "Registro y cóctel"
+    },
+    {
+      "hora": "9:00 PM",
+      "evento": "Palabras de bienvenida"
+    },
+    {
+      "hora": "9:30 PM",
+      "evento": "Cena"
+    },
+    {
+      "hora": "10:30 PM",
+      "evento": "Reconocimientos"
+    },
+    {
+      "hora": "11:30 PM",
+      "evento": "Música"
+    }
+  ],
+  "dressCode": "Etiqueta",
+  "dressNota": "Traje oscuro o vestido largo.",
+  "regalos": {
+    "texto": "",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "25 de noviembre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 0,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Estacionamiento",
+      "texto": "Cortesía en el nivel B2. Presenta tu boleto en el registro."
+    },
+    {
+      "titulo": "Gafete",
+      "texto": "Tu gafete se entrega en la mesa de registro con tu nombre confirmado."
+    },
+    {
+      "titulo": "Cupo",
+      "texto": "El registro cierra cuando se agota el aforo. Confirma cuanto antes."
+    }
+  ],
+  "rsvpTitulo": "Confirma tu asistencia"
+}

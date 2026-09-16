@@ -1,0 +1,92 @@
+{
+  "plantilla": "prisma",
+  "colores": {
+    "fondo": "#101B33",
+    "papel": "#E9F4FB",
+    "acento": "#4FC8E8",
+    "suave": "#5C7BA8"
+  },
+  "tipo": "Mi cumpleaños",
+  "nombre": "Sam cumple 17",
+  "fecha": "2026-09-06T18:00:00-05:00",
+  "fechaTexto": "Domingo 6 de septiembre de 2026",
+  "fechaCorta": "06 · 09 · 26",
+  "frase": "Diecisiete. Torneo, pizza y pastel. Nada más.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Fiesta",
+    "lugar": "Arena Gamer Norte",
+    "direccion": "Av. Universidad 800, Monterrey, N.L.",
+    "hora": "6:00 PM",
+    "mapa": "https://maps.google.com/?q=Av.%20Universidad%20800%2C%20Monterrey%2C%20N.L."
+  },
+  "itinerario": [
+    {
+      "hora": "6:00 PM",
+      "evento": "Registro"
+    },
+    {
+      "hora": "6:30 PM",
+      "evento": "Torneo"
+    },
+    {
+      "hora": "8:30 PM",
+      "evento": "Pizza"
+    },
+    {
+      "hora": "9:15 PM",
+      "evento": "Pastel y premiación"
+    }
+  ],
+  "dressCode": "Cómodo",
+  "dressNota": "",
+  "regalos": {
+    "texto": "Sin regalos.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "30 de agosto",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Entrada",
+      "texto": "Solo pasan quienes están en la lista. Trae tu pase a la mano."
+    },
+    {
+      "titulo": "Sin alcohol",
+      "texto": "Evento para menores. Habrá bebidas sin alcohol toda la noche."
+    }
+  ],
+  "galeriaTitulo": "Fotos"
+}

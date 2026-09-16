@@ -1,0 +1,92 @@
+{
+  "plantilla": "oliva",
+  "colores": {
+    "fondo": "#5A6B4F",
+    "papel": "#F4F2E8",
+    "acento": "#C8CBB0",
+    "suave": "#8C9A80"
+  },
+  "tipo": "Bautizo",
+  "nombre": "Mateo",
+  "fecha": "2026-12-05T13:00:00-06:00",
+  "fechaTexto": "Sábado 5 de diciembre de 2026",
+  "fechaCorta": "05 · 12 · 26",
+  "frase": "Mis papás y mis padrinos te quieren ahí este día.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "Bautizo",
+    "lugar": "Parroquia de San Mateo",
+    "direccion": "Calle Reforma 40, Centro, León, Gto.",
+    "hora": "1:00 PM",
+    "mapa": "https://maps.google.com/?q=Calle%20Reforma%2040%2C%20Centro%2C%20Le%C3%B3n%2C%20Gto."
+  },
+  "recepcion": {
+    "titulo": "Comida",
+    "lugar": "Jardín La Huerta",
+    "direccion": "Blvd. Campestre 900, León, Gto.",
+    "hora": "2:30 PM",
+    "mapa": "https://maps.google.com/?q=Blvd.%20Campestre%20900%2C%20Le%C3%B3n%2C%20Gto."
+  },
+  "itinerario": [
+    {
+      "hora": "1:00 PM",
+      "evento": "Bautizo"
+    },
+    {
+      "hora": "2:30 PM",
+      "evento": "Comida"
+    },
+    {
+      "hora": "4:00 PM",
+      "evento": "Pastel"
+    },
+    {
+      "hora": "5:00 PM",
+      "evento": "Despedida"
+    }
+  ],
+  "dressCode": "Casual elegante",
+  "dressNota": "Verde y beige van perfecto con la decoración.",
+  "regalos": {
+    "texto": "Si quieres tener un detalle, agradecemos pañales etapa 3.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "20 de noviembre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [
+    {
+      "rol": "Padrino",
+      "nombre": "Rodrigo Salas"
+    },
+    {
+      "rol": "Madrina",
+      "nombre": "Ana Paula Salas"
+    }
+  ],
+  "notas": [],
+  "galeriaTitulo": "Mis primeras fotos"
+}

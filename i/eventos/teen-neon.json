@@ -1,0 +1,96 @@
+{
+  "plantilla": "neon",
+  "colores": {
+    "fondo": "#15171A",
+    "papel": "#EDEFF0",
+    "acento": "#B6E04A",
+    "suave": "#8A9179"
+  },
+  "tipo": "Mi cumpleaños",
+  "nombre": "Dani cumple 16",
+  "fecha": "2026-04-22T20:00:00-06:00",
+  "fechaTexto": "Miércoles 22 de abril de 2026",
+  "fechaCorta": "22 · 04 · 26",
+  "frase": "Luces bajas, música alta. Nos vemos ahí.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Fiesta",
+    "lugar": "Estudio 33",
+    "direccion": "Calle Córdoba 33, Roma Norte, Ciudad de México",
+    "hora": "8:00 PM",
+    "mapa": "https://maps.google.com/?q=Calle%20C%C3%B3rdoba%2033%2C%20Roma%20Norte%2C%20Ciudad%20de%20M%C3%A9xico"
+  },
+  "itinerario": [
+    {
+      "hora": "8:00 PM",
+      "evento": "Entrada"
+    },
+    {
+      "hora": "9:00 PM",
+      "evento": "Pizza"
+    },
+    {
+      "hora": "10:00 PM",
+      "evento": "DJ"
+    },
+    {
+      "hora": "11:30 PM",
+      "evento": "Pastel"
+    },
+    {
+      "hora": "1:00 AM",
+      "evento": "Cierre"
+    }
+  ],
+  "dressCode": "Lo que quieras, pero que brille",
+  "dressNota": "Habrá luz negra: el blanco y el neón se ven increíbles.",
+  "regalos": {
+    "texto": "Nada de regalos. Traigan energía.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "15 de abril",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Entrada",
+      "texto": "Solo pasan quienes están en la lista. Trae tu pase a la mano."
+    },
+    {
+      "titulo": "Sin alcohol",
+      "texto": "Evento para menores. Habrá bebidas sin alcohol toda la noche."
+    }
+  ],
+  "galeriaTitulo": "Fotos"
+}

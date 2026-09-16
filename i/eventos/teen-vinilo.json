@@ -1,0 +1,96 @@
+{
+  "plantilla": "vinilo",
+  "colores": {
+    "fondo": "#22201E",
+    "papel": "#F3F0EC",
+    "acento": "#E08A3C",
+    "suave": "#9A8D7E"
+  },
+  "tipo": "Mi fiesta",
+  "nombre": "Nico cumple 16",
+  "fecha": "2026-11-19T19:00:00-06:00",
+  "fechaTexto": "Jueves 19 de noviembre de 2026",
+  "fechaCorta": "19 · 11 · 26",
+  "frase": "Música en vivo, tacos y la banda completa.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Fiesta",
+    "lugar": "Foro Tinta",
+    "direccion": "Calle 5 de Mayo 18, Centro, Puebla, Pue.",
+    "hora": "7:00 PM",
+    "mapa": "https://maps.google.com/?q=Calle%205%20de%20Mayo%2018%2C%20Centro%2C%20Puebla%2C%20Pue."
+  },
+  "itinerario": [
+    {
+      "hora": "7:00 PM",
+      "evento": "Apertura"
+    },
+    {
+      "hora": "8:00 PM",
+      "evento": "Banda en vivo"
+    },
+    {
+      "hora": "9:30 PM",
+      "evento": "Tacos"
+    },
+    {
+      "hora": "10:15 PM",
+      "evento": "Pastel"
+    },
+    {
+      "hora": "12:00 AM",
+      "evento": "Cierre"
+    }
+  ],
+  "dressCode": "Casual",
+  "dressNota": "",
+  "regalos": {
+    "texto": "Si quieres regalar algo, vinilos o playeras de banda.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "10 de noviembre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Entrada",
+      "texto": "Solo pasan quienes están en la lista. Trae tu pase a la mano."
+    },
+    {
+      "titulo": "Sin alcohol",
+      "texto": "Evento para menores. Habrá bebidas sin alcohol toda la noche."
+    }
+  ],
+  "galeriaTitulo": "Fotos"
+}

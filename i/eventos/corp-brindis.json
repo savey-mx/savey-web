@@ -1,0 +1,96 @@
+{
+  "plantilla": "brindis",
+  "colores": {
+    "fondo": "#1F3330",
+    "papel": "#F1F5F2",
+    "acento": "#C8A860",
+    "suave": "#7C9A92"
+  },
+  "tipo": "Te invitamos",
+  "nombre": "Posada Savey",
+  "fecha": "2026-12-12T19:00:00-06:00",
+  "fechaTexto": "Sábado 12 de diciembre de 2026",
+  "fechaCorta": "12 · 12 · 26",
+  "frase": "Un brindis por el año que termina y por el equipo que lo sacó adelante.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Posada",
+    "lugar": "Terraza Verde",
+    "direccion": "Av. Insurgentes Sur 1200, Del Valle, Ciudad de México",
+    "hora": "7:00 PM",
+    "mapa": "https://maps.google.com/?q=Av.%20Insurgentes%20Sur%201200%2C%20Del%20Valle%2C%20Ciudad%20de%20M%C3%A9xico"
+  },
+  "itinerario": [
+    {
+      "hora": "7:00 PM",
+      "evento": "Bienvenida"
+    },
+    {
+      "hora": "8:00 PM",
+      "evento": "Cena"
+    },
+    {
+      "hora": "9:00 PM",
+      "evento": "Intercambio"
+    },
+    {
+      "hora": "10:00 PM",
+      "evento": "Música y baile"
+    }
+  ],
+  "dressCode": "Casual elegante",
+  "dressNota": "Si te animas, algo verde o dorado.",
+  "regalos": {
+    "texto": "Intercambio con tope de $500. Trae tu regalo envuelto.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "1 de diciembre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 0,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Estacionamiento",
+      "texto": "Cortesía en el nivel B2. Presenta tu boleto en el registro."
+    },
+    {
+      "titulo": "Gafete",
+      "texto": "Tu gafete se entrega en la mesa de registro con tu nombre confirmado."
+    },
+    {
+      "titulo": "Cupo",
+      "texto": "El registro cierra cuando se agota el aforo. Confirma cuanto antes."
+    }
+  ],
+  "rsvpTitulo": "Confirma tu asistencia"
+}

@@ -1,0 +1,88 @@
+{
+  "plantilla": "nube",
+  "colores": {
+    "fondo": "#E9E9EC",
+    "papel": "#33333A",
+    "acento": "#8E97A8",
+    "suave": "#6E7684"
+  },
+  "tipo": "Mi bautizo",
+  "nombre": "Julieta",
+  "fecha": "2026-10-11T11:00:00-06:00",
+  "fechaTexto": "Domingo 11 de octubre de 2026",
+  "fechaCorta": "11 · 10 · 26",
+  "frase": "Un domingo tranquilo, en familia, para empezar bien.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "Bautizo",
+    "lugar": "Templo de San José",
+    "direccion": "Calle Zaragoza 5, Centro, Toluca, Edo. Méx.",
+    "hora": "11:00 AM",
+    "mapa": "https://maps.google.com/?q=Calle%20Zaragoza%205%2C%20Centro%2C%20Toluca%2C%20Edo.%20M%C3%A9x."
+  },
+  "recepcion": {
+    "titulo": "Desayuno",
+    "lugar": "Casa de los abuelos",
+    "direccion": "Calle Nogal 22, Santa Ana, Toluca, Edo. Méx.",
+    "hora": "12:30 PM",
+    "mapa": "https://maps.google.com/?q=Calle%20Nogal%2022%2C%20Santa%20Ana%2C%20Toluca%2C%20Edo.%20M%C3%A9x."
+  },
+  "itinerario": [
+    {
+      "hora": "11:00 AM",
+      "evento": "Bautizo"
+    },
+    {
+      "hora": "12:30 PM",
+      "evento": "Desayuno"
+    },
+    {
+      "hora": "2:00 PM",
+      "evento": "Brindis"
+    }
+  ],
+  "dressCode": "Casual",
+  "dressNota": "",
+  "regalos": {
+    "texto": "Sin regalos. Con que vengan basta.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "1 de octubre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [
+    {
+      "rol": "Padrino",
+      "nombre": "Rodrigo Salas"
+    },
+    {
+      "rol": "Madrina",
+      "nombre": "Ana Paula Salas"
+    }
+  ],
+  "notas": [],
+  "galeriaTitulo": "Mis primeras fotos"
+}

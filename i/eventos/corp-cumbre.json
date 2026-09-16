@@ -1,0 +1,100 @@
+{
+  "plantilla": "cumbre",
+  "colores": {
+    "fondo": "#2B2B2E",
+    "papel": "#F4F4F5",
+    "acento": "#B9B9BC",
+    "suave": "#86868A"
+  },
+  "tipo": "Invitación",
+  "nombre": "Congreso Nacional",
+  "fecha": "2026-05-18T09:00:00-05:00",
+  "fechaTexto": "Lunes 18 de mayo de 2026",
+  "fechaCorta": "18 · 05 · 26",
+  "frase": "Dos días de conferencias, mesas de trabajo y networking.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Sede",
+    "lugar": "Centro de Convenciones Expo",
+    "direccion": "Blvd. Manuel Ávila Camacho 5, Monterrey, N.L.",
+    "hora": "9:00 AM",
+    "mapa": "https://maps.google.com/?q=Blvd.%20Manuel%20%C3%81vila%20Camacho%205%2C%20Monterrey%2C%20N.L."
+  },
+  "itinerario": [
+    {
+      "hora": "9:00 AM",
+      "evento": "Registro"
+    },
+    {
+      "hora": "10:00 AM",
+      "evento": "Conferencia magistral"
+    },
+    {
+      "hora": "12:00 PM",
+      "evento": "Mesas de trabajo"
+    },
+    {
+      "hora": "2:00 PM",
+      "evento": "Comida"
+    },
+    {
+      "hora": "4:00 PM",
+      "evento": "Panel de cierre"
+    }
+  ],
+  "dressCode": "Ejecutivo",
+  "dressNota": "",
+  "regalos": {
+    "texto": "",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "5 de mayo",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 0,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Estacionamiento",
+      "texto": "Cortesía en el nivel B2. Presenta tu boleto en el registro."
+    },
+    {
+      "titulo": "Gafete",
+      "texto": "Tu gafete se entrega en la mesa de registro con tu nombre confirmado."
+    },
+    {
+      "titulo": "Cupo",
+      "texto": "El registro cierra cuando se agota el aforo. Confirma cuanto antes."
+    }
+  ],
+  "rsvpTitulo": "Reserva tu lugar"
+}

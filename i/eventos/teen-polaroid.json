@@ -1,0 +1,96 @@
+{
+  "plantilla": "polaroid",
+  "colores": {
+    "fondo": "#F1EDE6",
+    "papel": "#1C1C1C",
+    "acento": "#7E7E7E",
+    "suave": "#5C5C5C"
+  },
+  "tipo": "Mis 18",
+  "nombre": "Ale cumple 18",
+  "fecha": "2027-02-15T19:30:00-06:00",
+  "fechaTexto": "Lunes 15 de febrero de 2027",
+  "fechaCorta": "15 · 02 · 27",
+  "frase": "Dieciocho. Quiero la foto con toda la gente que me trajo hasta aquí.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Cena y fiesta",
+    "lugar": "Casa Blanco",
+    "direccion": "Calle Amsterdam 210, Condesa, Ciudad de México",
+    "hora": "7:30 PM",
+    "mapa": "https://maps.google.com/?q=Calle%20Amsterdam%20210%2C%20Condesa%2C%20Ciudad%20de%20M%C3%A9xico"
+  },
+  "itinerario": [
+    {
+      "hora": "7:30 PM",
+      "evento": "Bienvenida"
+    },
+    {
+      "hora": "8:30 PM",
+      "evento": "Cena"
+    },
+    {
+      "hora": "10:00 PM",
+      "evento": "Brindis"
+    },
+    {
+      "hora": "10:30 PM",
+      "evento": "Baile"
+    },
+    {
+      "hora": "1:00 AM",
+      "evento": "Cierre"
+    }
+  ],
+  "dressCode": "Blanco y negro",
+  "dressNota": "Código estricto de blanco y negro. Habrá cabina de fotos.",
+  "regalos": {
+    "texto": "Estoy juntando para mi viaje de graduación.",
+    "banco": "Santander 6677 8899 0011 2233",
+    "titular": "Alejandra Mena Soto"
+  },
+  "limiteRsvp": "1 de febrero",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Entrada",
+      "texto": "Solo pasan quienes están en la lista. Trae tu pase a la mano."
+    },
+    {
+      "titulo": "Sin alcohol",
+      "texto": "Evento para menores. Habrá bebidas sin alcohol toda la noche."
+    }
+  ],
+  "galeriaTitulo": "Fotos"
+}

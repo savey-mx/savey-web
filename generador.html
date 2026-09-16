@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Generador de invitaciones — uso interno</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.6 ui-sans-serif,system-ui,sans-serif;background:#12140F;color:#E8E4D9;padding:1.5rem}
+.wrap{max-width:820px;margin:0 auto}
+h1{font-size:1.4rem;font-weight:600;margin-bottom:.3rem}
+.sub{color:#8B9080;font-size:.85rem;margin-bottom:2rem}
+fieldset{border:1px solid #2C3226;border-radius:6px;padding:1.1rem;margin-bottom:1.1rem}
+legend{padding:0 .5rem;font-size:.75rem;letter-spacing:.16em;color:#B0873F}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem}
+.fila.una{grid-template-columns:1fr}
+label{display:block;font-size:.72rem;letter-spacing:.08em;color:#8B9080;margin-bottom:.25rem}
+input,select,textarea{width:100%;padding:.6rem .7rem;background:#1A1D16;border:1px solid #2C3226;color:#E8E4D9;border-radius:4px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:0;border-color:#B0873F}
+textarea{resize:vertical;font-family:ui-monospace,monospace;font-size:.85rem}
+button{padding:.75rem 1.3rem;border:0;border-radius:4px;background:#B0873F;color:#12140F;font:inherit;font-weight:600;cursor:pointer}
+button.sec{background:#2C3226;color:#E8E4D9}
+.acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin:1.5rem 0}
+pre{background:#1A1D16;border:1px solid #2C3226;border-radius:4px;padding:1rem;overflow:auto;font-size:.78rem;max-height:340px;white-space:pre-wrap;word-break:break-all}
+table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.8rem}
+th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid #2C3226;vertical-align:top}
+th{color:#B0873F;font-size:.68rem;letter-spacing:.1em;font-weight:500}
+td.liga{font-family:ui-monospace,monospace;font-size:.7rem;color:#8B9080;word-break:break-all}
+.hint{font-size:.75rem;color:#8B9080;margin-top:.4rem}
+.oculto{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Generador de invitaciones</h1>
+<div class="sub">Llena, genera y sube. Un evento nuevo = un archivo JSON.</div>
+
+<fieldset>
+<legend>BASE</legend>
+<div class="fila">
+  <div><label>Tipo de evento</label>
+    <select id="preset">
+      <option value="xv">XV Años</option>
+      <option value="boda">Boda</option>
+      <option value="bautizo">Bautizo</option>
+      <option value="baby">Baby shower</option>
+    </select></div>
+  <div><label>Tema visual</label>
+    <select id="tema">
+      <option value="olivo">Olivo y dorado</option>
+      <option value="vino">Vino y dorado</option>
+      <option value="marino">Marino y plata</option>
+      <option value="rosa">Rosa palo</option>
+      <option value="cielo">Cielo (bautizo)</option>
+      <option value="noche">Blanco y negro</option>
+    </select></div>
+</div>
+<div class="fila">
+  <div><label>Slug (nombre del archivo, sin espacios)</label><input id="slug" placeholder="valentina-xv"></div>
+  <div><label>Encabezado</label><input id="tipo" placeholder="Mis XV Años"></div>
+</div>
+<div class="fila">
+  <div><label>Nombre(s) del festejado</label><input id="nombre" placeholder="Valentina"></div>
+  <div><label>Fecha y hora del evento</label><input id="fecha" type="datetime-local"></div>
+</div>
+<div class="fila una">
+  <div><label>Frase de portada</label><textarea id="frase" rows="2"></textarea></div>
+</div>
+<div class="fila">
+  <div><label>Archivo de foto</label><input id="foto" placeholder="fotos/valentina.jpg"></div>
+  <div><label>Archivo de música</label><input id="musica" placeholder="musica/cancion.mp3"></div>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>SEDES</legend>
+<div class="fila">
+  <div><label>Ceremonia — título</label><input id="c-titulo"></div>
+  <div><label>Hora</label><input id="c-hora" placeholder="7:00 PM"></div>
+</div>
+<div class="fila">
+  <div><label>Lugar</label><input id="c-lugar"></div>
+  <div><label>Dirección</label><input id="c-dir"></div>
+</div>
+<div class="fila">
+  <div><label>Recepción — lugar</label><input id="r-lugar"></div>
+  <div><label>Hora</label><input id="r-hora" placeholder="9:00 PM"></div>
+</div>
+<div class="fila una">
+  <div><label>Dirección de recepción</label><input id="r-dir"></div>
+</div>
+<div class="hint">Los mapas de Google se arman solos con la dirección.</div>
+</fieldset>
+
+<fieldset>
+<legend>DETALLES</legend>
+<div class="fila una">
+  <div><label>Itinerario — una línea por momento, formato <code>hora | evento</code></label>
+    <textarea id="itinerario" rows="5"></textarea></div>
+</div>
+<div class="fila">
+  <div><label>Código de vestimenta</label><input id="dress" placeholder="Formal"></div>
+  <div><label>Confirmar antes del</label><input id="limite" placeholder="20 de octubre"></div>
+</div>
+<div class="fila una">
+  <div><label>Nota de vestimenta</label><input id="dress-nota"></div>
+</div>
+<div class="fila una">
+  <div><label>Texto de regalos</label><textarea id="reg-texto" rows="2"></textarea></div>
+</div>
+<div class="fila">
+  <div><label>Cuenta bancaria (opcional)</label><input id="reg-banco" placeholder="BBVA 0123 4567 8901 2345"></div>
+  <div><label>Titular</label><input id="reg-titular"></div>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>INVITADOS</legend>
+<div class="fila una">
+  <div><label>Una familia por línea, formato <code>Nombre | lugares</code></label>
+    <textarea id="invitados" rows="7" placeholder="Familia González | 4&#10;Daniel y Andrea | 2&#10;Familia Ramírez | 5"></textarea></div>
+</div>
+<div class="fila">
+  <div><label>Tu dominio</label><input id="dominio" placeholder="https://tudominio.com"></div>
+  <div><label>Endpoint de RSVP (Apps Script)</label><input id="endpoint" placeholder="https://script.google.com/..."></div>
+</div>
+<div class="fila">
+  <div><label>WhatsApp del anfitrión (respaldo)</label><input id="wa" placeholder="5215500000000"></div>
+  <div><label>Pie de marca</label><input id="marca" placeholder="Hecho por Tu Estudio"></div>
+</div>
+</fieldset>
+
+<div class="acciones">
+  <button id="generar">Generar</button>
+  <button class="sec" id="descargar">Descargar JSON</button>
+  <button class="sec" id="copiarLigas">Copiar ligas</button>
+</div>
+
+<div id="salida" class="oculto">
+  <h2 style="font-size:1rem;margin-bottom:.5rem">Archivo del evento</h2>
+  <pre id="json"></pre>
+  <h2 style="font-size:1rem;margin:1.5rem 0 .5rem">Pases para enviar</h2>
+  <table><thead><tr><th>Familia</th><th>Lug.</th><th>Liga personal</th></tr></thead><tbody id="tabla"></tbody></table>
+  <div class="hint">Pega la columna de ligas en la hoja del cliente. Cada familia recibe la suya, nunca la general.</div>
+</div>
+</div>
+
+<script>
+(function(){
+var $ = function(id){ return document.getElementById(id); };
+
+var PRESETS = {
+  xv: { tipo:"Mis XV Años", tema:"olivo",
+    frase:"Hay días que se sueñan durante años. Este es el mío, y quiero vivirlo contigo.",
+    cTitulo:"Misa de acción de gracias",
+    itinerario:"7:00 PM | Misa\n9:00 PM | Recepción y cóctel\n10:00 PM | Vals\n10:30 PM | Cena\n12:00 AM | Baile",
+    dress:"Formal", dressNota:"Te pedimos reservar el color de la festejada.",
+    regTexto:"Tu presencia es el regalo. Si deseas tener un detalle, agradecemos la lluvia de sobres." },
+  boda: { tipo:"Nuestra Boda", tema:"vino",
+    frase:"Después de tanto camino juntos, queremos que estés el día que lo hacemos para siempre.",
+    cTitulo:"Ceremonia religiosa",
+    itinerario:"5:00 PM | Ceremonia\n7:00 PM | Cóctel de bienvenida\n8:30 PM | Cena\n10:00 PM | Primer baile\n11:00 PM | Fiesta",
+    dress:"Etiqueta rigurosa", dressNota:"Te pedimos evitar el blanco.",
+    regTexto:"Tu compañía es lo que más nos importa. Si quieres tener un detalle, agradecemos la lluvia de sobres." },
+  bautizo: { tipo:"Mi Bautizo", tema:"cielo",
+    frase:"Hoy recibo mi primer sacramento y quiero que estés conmigo.",
+    cTitulo:"Ceremonia de bautizo",
+    itinerario:"12:00 PM | Bautizo\n1:30 PM | Comida\n3:00 PM | Convivencia",
+    dress:"Casual elegante", dressNota:"Colores claros, por favor.",
+    regTexto:"Tu presencia es el mejor regalo." },
+  baby: { tipo:"Baby Shower", tema:"rosa",
+    frase:"Ya viene en camino y queremos celebrarlo contigo.",
+    cTitulo:"Recepción",
+    itinerario:"1:00 PM | Bienvenida\n2:00 PM | Juegos\n3:00 PM | Comida\n4:00 PM | Apertura de regalos",
+    dress:"Casual", dressNota:"",
+    regTexto:"Agradecemos pañales etapa 2 o 3." }
+};
+
+function aplicarPreset(){
+  var p = PRESETS[$('preset').value];
+  $('tipo').value = p.tipo; $('tema').value = p.tema; $('frase').value = p.frase;
+  $('c-titulo').value = p.cTitulo; $('itinerario').value = p.itinerario;
+  $('dress').value = p.dress; $('dress-nota').value = p.dressNota;
+  $('reg-texto').value = p.regTexto;
+  if (!$('r-lugar').value) $('r-lugar').value = "";
+}
+$('preset').addEventListener('change', aplicarPreset);
+aplicarPreset();
+
+var LETRAS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // sin I, O, 0, 1
+function codigo(){
+  var s = ""; for (var i=0;i<4;i++) s += LETRAS.charAt(Math.floor(Math.random()*LETRAS.length));
+  return s;
+}
+function mapa(dir){ return dir ? "https://maps.google.com/?q=" + encodeURIComponent(dir) : ""; }
+function fechaLarga(iso){
+  if (!iso) return "";
+  var d = new Date(iso);
+  var dias = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+  var mes = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  return dias[d.getDay()] + " " + d.getDate() + " de " + mes[d.getMonth()] + ", " + d.getFullYear();
+}
+
+var ultimo = null, ligas = [];
+
+$('generar').addEventListener('click', function(){
+  var usados = {}, pases = {};
+  ligas = [];
+  var filas = $('invitados').value.split("\n");
+  var dominio = ($('dominio').value || "https://tudominio.com").replace(/\/+$/,'');
+  var slug = ($('slug').value || 'evento').trim().toLowerCase().replace(/\s+/g,'-');
+
+  var html = "";
+  for (var i=0;i<filas.length;i++){
+    var linea = filas[i].trim(); if (!linea) continue;
+    var partes = linea.split("|");
+    var nom = partes[0].trim();
+    var lug = parseInt(partes[1], 10); if (isNaN(lug) || lug < 1) lug = 2;
+    var c; do { c = codigo(); } while (usados[c]); usados[c] = 1;
+    pases[c] = { nombre: nom, lugares: lug };
+    var url = dominio + "/?e=" + slug + "&c=" + c;
+    ligas.push(url);
+    html += "<tr><td>" + nom + "</td><td>" + lug + "</td><td class='liga'>" + url + "</td></tr>";
+  }
+  $('tabla').innerHTML = html;
+
+  var iso = $('fecha').value ? new Date($('fecha').value).toISOString() : "";
+  var datos = {
+    tema: $('tema').value,
+    tipo: $('tipo').value,
+    nombre: $('nombre').value,
+    fecha: iso,
+    fechaTexto: fechaLarga($('fecha').value),
+    frase: $('frase').value,
+    fotoPortada: $('foto').value,
+    musica: $('musica').value,
+    ceremonia: { titulo:$('c-titulo').value, lugar:$('c-lugar').value, direccion:$('c-dir').value,
+                 hora:$('c-hora').value, mapa: mapa($('c-dir').value) },
+    recepcion: { titulo:"Recepción", lugar:$('r-lugar').value, direccion:$('r-dir').value,
+                 hora:$('r-hora').value, mapa: mapa($('r-dir').value) },
+    itinerario: $('itinerario').value.split("\n").filter(function(l){return l.trim();}).map(function(l){
+      var p = l.split("|"); return { hora:(p[0]||'').trim(), evento:(p[1]||'').trim() }; }),
+    dressCode: $('dress').value,
+    dressNota: $('dress-nota').value,
+    regalos: { texto:$('reg-texto').value, banco:$('reg-banco').value, titular:$('reg-titular').value },
+    limiteRsvp: $('limite').value,
+    rsvpEndpoint: $('endpoint').value,
+    whatsappAnfitrion: $('wa').value,
+    pases: pases,
+    marca: $('marca').value || "Hecho por Tu Estudio"
+  };
+  ultimo = { slug: slug, datos: datos };
+  $('json').textContent = JSON.stringify(datos, null, 2);
+  $('salida').classList.remove('oculto');
+  $('salida').scrollIntoView({behavior:'smooth'});
+});
+
+$('descargar').addEventListener('click', function(){
+  if (!ultimo) return alert("Genera primero.");
+  var blob = new Blob([JSON.stringify(ultimo.datos, null, 2)], {type:"application/json"});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = ultimo.slug + ".json";
+  a.click();
+});
+
+$('copiarLigas').addEventListener('click', function(){
+  if (!ligas.length) return alert("Genera primero.");
+  navigator.clipboard.writeText(ligas.join("\n")).then(function(){
+    alert(ligas.length + " ligas copiadas.");
+  })['catch'](function(){ alert("Cópialas de la tabla."); });
+});
+})();
+</script>
+</body>
+</html>

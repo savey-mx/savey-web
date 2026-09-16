@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- Savey · tarjeta de mesa con QR · imprimir en media carta -->
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarjeta de mesa · Álbum</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<style>
+:root{
+  --fondo:#F7F2EA; --tinta:#332B27; --suave:#6E625B; --acento:#C7A77A;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#DED8CE;font-family:var(--sans);color:var(--tinta);padding:24px}
+
+.controles{max-width:420px;margin:0 auto 22px;background:#fff;border-radius:12px;padding:18px;
+  box-shadow:0 10px 30px -18px rgba(0,0,0,.4)}
+.controles label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--suave);margin:10px 0 6px}
+.controles input,.controles select{width:100%;padding:11px 12px;border:1px solid rgba(51,43,39,.16);
+  border-radius:8px;font-family:var(--sans);font-size:15px;color:var(--tinta)}
+.controles button{width:100%;margin-top:16px;height:48px;border:0;border-radius:8px;
+  background:var(--tinta);color:#fff;font-family:var(--sans);font-weight:600;font-size:15px;cursor:pointer}
+
+/* ── La tarjeta: media carta, 139.7 × 215.9 mm ── */
+.tarjeta{width:139.7mm;height:215.9mm;background:var(--fondo);margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:16mm 12mm;position:relative;
+  box-shadow:0 20px 50px -24px rgba(0,0,0,.5)}
+.tarjeta::before{content:"";position:absolute;inset:7mm;border:1px solid var(--acento);opacity:.5}
+.chispa{width:20px;height:20px;fill:var(--acento);margin:0 auto}
+.rotulo{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--acento);margin-top:10mm}
+.titulo{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.14;margin-top:5mm}
+.instruccion{color:var(--suave);font-size:13px;line-height:1.55;margin-top:4mm;max-width:24em}
+#qr{margin:8mm auto 0;padding:5mm;background:#fff;border:1px solid rgba(51,43,39,.12);display:inline-block}
+#qr canvas{display:block}
+.liga{font-size:11px;letter-spacing:.06em;color:var(--suave);margin-top:5mm;word-break:break-all}
+.pie{position:absolute;bottom:11mm;left:0;right:0;font-size:9px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--suave);opacity:.65}
+
+@media print{
+  body{background:#fff;padding:0}
+  .controles{display:none}
+  .tarjeta{box-shadow:none;margin:0}
+  @page{size:139.7mm 215.9mm;margin:0}
+}
+</style>
+</head>
+<body>
+
+<div class="controles">
+  <label for="ev">Evento</label>
+  <select id="ev">
+    <option value="regina-5">Regina · 2 años</option>
+    <option value="tamara-xv">Tamara · XV años</option>
+  </select>
+  <label for="tit">Título en la tarjeta</label>
+  <input id="tit" value="Los 2 años de Regina">
+  <label for="url">Liga del álbum</label>
+  <input id="url" value="https://saveystudio.com/album/?e=regina-5">
+  <button id="imprimir">Imprimir</button>
+</div>
+
+<div class="tarjeta">
+  <svg class="chispa" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/></svg>
+  <div class="rotulo">Álbum compartido</div>
+  <div class="titulo" id="t-titulo">Los 2 años de Regina</div>
+  <p class="instruccion">Apunta la cámara de tu celular al código y sube ahí las fotos que tomes.
+    Todos los invitados van a poder verlas.</p>
+  <div id="qr"></div>
+  <div class="liga" id="t-liga">saveystudio.com/album/?e=regina-5</div>
+  <div class="pie">Hecho por Savey · saveystudio.com</div>
+</div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var TITULOS={"regina-5":"Los 2 años de Regina","tamara-xv":"Los XV de Tamara"};
+var COLOR={"regina-5":"#E4447F","tamara-xv":"#DCA9BE"};
+
+function pintar(){
+  var url=$('url').value.trim();
+  $('t-titulo').textContent=$('tit').value;
+  $('t-liga').textContent=url.replace(/^https?:\/\//,'');
+  var caja=$('qr'); caja.innerHTML='';
+  if(window.QRCode){
+    QRCode.toCanvas(url, {width:230, margin:0, color:{dark:'#332B27', light:'#FFFFFF'}},
+      function(err, canvas){ if(!err) caja.appendChild(canvas) });
+  }
+}
+$('ev').addEventListener('change', function(){
+  var e=this.value;
+  $('tit').value=TITULOS[e]||'';
+  $('url').value='https://saveystudio.com/album/?e='+e;
+  if(COLOR[e]) document.documentElement.style.setProperty('--acento', COLOR[e]);
+  pintar();
+});
+$('tit').addEventListener('input', pintar);
+$('url').addEventListener('input', pintar);
+$('imprimir').addEventListener('click', function(){ window.print() });
+
+if(window.QRCode) pintar();
+else window.addEventListener('load', pintar);
+})();
+</script>
+</body>
+</html>

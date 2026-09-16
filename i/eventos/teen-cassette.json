@@ -1,0 +1,96 @@
+{
+  "plantilla": "cassette",
+  "colores": {
+    "fondo": "#241639",
+    "papel": "#F2ECFA",
+    "acento": "#E5559B",
+    "suave": "#8B6FB0"
+  },
+  "tipo": "Mi fiesta",
+  "nombre": "Iker cumple 15",
+  "fecha": "2026-07-10T19:00:00-05:00",
+  "fechaTexto": "Viernes 10 de julio de 2026",
+  "fechaCorta": "10 · 07 · 26",
+  "frase": "Una fiesta con la playlist que llevo armando todo el año.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Fiesta",
+    "lugar": "Roof Garden Vértigo",
+    "direccion": "Av. Vallarta 1200, Guadalajara, Jal.",
+    "hora": "7:00 PM",
+    "mapa": "https://maps.google.com/?q=Av.%20Vallarta%201200%2C%20Guadalajara%2C%20Jal."
+  },
+  "itinerario": [
+    {
+      "hora": "7:00 PM",
+      "evento": "Llegada"
+    },
+    {
+      "hora": "8:00 PM",
+      "evento": "Cena"
+    },
+    {
+      "hora": "9:00 PM",
+      "evento": "Karaoke"
+    },
+    {
+      "hora": "10:30 PM",
+      "evento": "Pastel"
+    },
+    {
+      "hora": "12:00 AM",
+      "evento": "Cierre"
+    }
+  ],
+  "dressCode": "Casual",
+  "dressNota": "",
+  "regalos": {
+    "texto": "Si quieres regalar algo, tarjetas de música o videojuegos.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "1 de julio",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Entrada",
+      "texto": "Solo pasan quienes están en la lista. Trae tu pase a la mano."
+    },
+    {
+      "titulo": "Sin alcohol",
+      "texto": "Evento para menores. Habrá bebidas sin alcohol toda la noche."
+    }
+  ],
+  "galeriaTitulo": "Fotos"
+}

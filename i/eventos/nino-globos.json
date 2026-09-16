@@ -1,0 +1,100 @@
+{
+  "plantilla": "globos",
+  "colores": {
+    "fondo": "#2F4A80",
+    "papel": "#F4F7FC",
+    "acento": "#EE8A7C",
+    "suave": "#6C84B5"
+  },
+  "tipo": "Mi cumpleaños",
+  "nombre": "Tadeo cumple 4",
+  "fecha": "2026-09-17T16:30:00-06:00",
+  "fechaTexto": "Jueves 17 de septiembre de 2026",
+  "fechaCorta": "17 · 09 · 26",
+  "frase": "Cuatro años, mil globos y un pastel enorme.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Fiesta",
+    "lugar": "Casa de Tadeo",
+    "direccion": "Calle Girasol 9, Lomas Verdes, Naucalpan, Edo. Méx.",
+    "hora": "4:30 PM",
+    "mapa": "https://maps.google.com/?q=Calle%20Girasol%209%2C%20Lomas%20Verdes%2C%20Naucalpan%2C%20Edo.%20M%C3%A9x."
+  },
+  "itinerario": [
+    {
+      "hora": "4:30 PM",
+      "evento": "Llegada"
+    },
+    {
+      "hora": "5:15 PM",
+      "evento": "Show de magia"
+    },
+    {
+      "hora": "6:00 PM",
+      "evento": "Merienda"
+    },
+    {
+      "hora": "6:30 PM",
+      "evento": "Pastel"
+    },
+    {
+      "hora": "7:00 PM",
+      "evento": "Piñata"
+    }
+  ],
+  "dressCode": "Cómodo",
+  "dressNota": "",
+  "regalos": {
+    "texto": "Sin regalos, de verdad. Vengan y ya.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "10 de septiembre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Papás bienvenidos",
+      "texto": "Hay café y mesa para adultos. Nadie tiene que quedarse parado."
+    },
+    {
+      "titulo": "Alergias",
+      "texto": "Avísanos al confirmar si tu peque tiene alguna alergia alimentaria."
+    },
+    {
+      "titulo": "Salida",
+      "texto": "La fiesta termina puntual. Pasa por tu peque a la hora indicada."
+    }
+  ],
+  "galeriaTitulo": "Así celebramos"
+}

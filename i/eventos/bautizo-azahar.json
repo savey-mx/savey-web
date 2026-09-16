@@ -1,0 +1,92 @@
+{
+  "plantilla": "azahar",
+  "colores": {
+    "fondo": "#FBF8F3",
+    "papel": "#3B332C",
+    "acento": "#C4A878",
+    "suave": "#8C7D69"
+  },
+  "tipo": "Mi bautizo",
+  "nombre": "Renata",
+  "fecha": "2027-01-23T12:30:00-06:00",
+  "fechaTexto": "Sábado 23 de enero de 2027",
+  "fechaCorta": "23 · 01 · 27",
+  "frase": "Un día blanco, con flores de azahar y toda la familia junta.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "Bautizo",
+    "lugar": "Catedral de Morelia",
+    "direccion": "Av. Madero Poniente s/n, Centro, Morelia, Mich.",
+    "hora": "12:30 PM",
+    "mapa": "https://maps.google.com/?q=Av.%20Madero%20Poniente%20s/n%2C%20Centro%2C%20Morelia%2C%20Mich."
+  },
+  "recepcion": {
+    "titulo": "Comida",
+    "lugar": "Hacienda San Rafael",
+    "direccion": "Carretera Morelia–Pátzcuaro km 6, Mich.",
+    "hora": "2:00 PM",
+    "mapa": "https://maps.google.com/?q=Carretera%20Morelia%E2%80%93P%C3%A1tzcuaro%20km%206%2C%20Mich."
+  },
+  "itinerario": [
+    {
+      "hora": "12:30 PM",
+      "evento": "Bautizo"
+    },
+    {
+      "hora": "2:00 PM",
+      "evento": "Comida"
+    },
+    {
+      "hora": "3:30 PM",
+      "evento": "Brindis de los padrinos"
+    },
+    {
+      "hora": "5:00 PM",
+      "evento": "Pastel"
+    }
+  ],
+  "dressCode": "Formal claro",
+  "dressNota": "Blanco y marfil reservados para la festejada.",
+  "regalos": {
+    "texto": "Tu presencia es el mejor regalo. Si quieres tener un detalle, hay lluvia de sobres.",
+    "banco": "BBVA 2233 4455 6677 8899",
+    "titular": "Paulina Cárdenas Ruiz"
+  },
+  "limiteRsvp": "8 de enero",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [
+    {
+      "rol": "Padrino",
+      "nombre": "Rodrigo Salas"
+    },
+    {
+      "rol": "Madrina",
+      "nombre": "Ana Paula Salas"
+    }
+  ],
+  "notas": [],
+  "galeriaTitulo": "Mis primeras fotos"
+}

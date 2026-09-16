@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /brief/
+Disallow: /generador.html
+Disallow: /i/
+Disallow: /album/
+
+Sitemap: https://saveystudio.com/sitemap.xml

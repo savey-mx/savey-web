@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Savey — Invitaciones digitales para bodas, XV años, bautizos y más</title>
+<meta name="description" content="Estudio mexicano de invitaciones digitales con confirmación de asistencia. 30 diseños listos para bodas, XV años, bautizos, cumpleaños y eventos de empresa. Un precio, todo incluido.">
+<meta name="theme-color" content="#F7F2EA">
+<link rel="canonical" href="https://saveystudio.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Savey — Invitaciones digitales">
+<meta property="og:description" content="31 diseños listos. Un precio, todo incluido. Sin cobros extra por color, fotos o itinerario.">
+<meta property="og:url" content="https://saveystudio.com/">
+<meta property="og:locale" content="es_MX">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Savey",
+"description":"Estudio de invitaciones digitales con confirmación de asistencia para bodas, XV años, bautizos, cumpleaños y eventos corporativos.",
+"url":"https://saveystudio.com/","areaServed":"MX","priceRange":"$790-$3290 MXN"}
+</script>
+<style>
+:root{
+  --marfil:#F7F2EA; --blanco:#FFFDFC;
+  --espresso:#332B27; --espresso-suave:#6E625B;
+  --champagne:#C7A77A; --rosa:#CDA9A5;
+  --borde:rgba(51,43,39,.10); --borde-fino:rgba(51,43,39,.06);
+  --display:'Instrument Serif',Georgia,serif;
+  --texto:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --p--1:.8125rem; --p-0:1.0625rem; --p-1:1.3125rem;
+  --p-2:1.75rem; --p-3:2.375rem; --p-4:3.25rem;
+  --aire:clamp(3.25rem,6.5vw,5rem);
+  --radio:8px; --nav:58px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--nav) + 14px)}
+body{background:var(--marfil);color:var(--espresso);font-family:var(--texto);
+  font-size:var(--p-0);line-height:1.6;letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--champagne);color:var(--espresso)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px;border-radius:2px}
+svg{display:block}
+
+.caja{max-width:42rem;margin:0 auto;padding:0 1.4rem}
+.ancha{max-width:54rem;margin:0 auto;padding:0 1.4rem}
+.amplia{max-width:72rem;margin:0 auto;padding:0 1.4rem}
+
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.015em}
+h2{font-size:var(--p-2);line-height:1.15;margin-bottom:.5rem}
+h3{font-size:var(--p-1);line-height:1.25}
+.entrada{color:var(--espresso-suave);max-width:54ch;margin-bottom:2rem}
+.apunte{font-size:var(--p--1);color:var(--espresso-suave);line-height:1.55}
+.chispa{width:20px;height:20px;fill:var(--champagne);margin:0 auto}
+
+/* ══════════ Navegación ══════════ */
+.barra{position:fixed;top:0;left:0;right:0;z-index:80;height:var(--nav);
+  display:flex;align-items:center;border-bottom:1px solid transparent;
+  transition:background .3s,border-color .3s}
+.barra.posada{background:rgba(247,242,234,.85);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);backdrop-filter:saturate(180%) blur(14px);
+  border-bottom-color:var(--borde)}
+.barra-caja{max-width:72rem;margin:0 auto;padding:0 1.4rem;width:100%;
+  display:flex;align-items:center;gap:1.2rem}
+.logo{font-family:var(--display);font-size:1.4rem;line-height:1;text-decoration:none;
+  letter-spacing:-.02em;display:flex;align-items:center;gap:.38rem;flex:none}
+.logo svg{width:10px;height:10px;fill:var(--champagne);flex:none}
+.menu{display:flex;gap:1.35rem;margin-left:auto;align-items:center}
+.menu a{font-size:var(--p--1);text-decoration:none;color:var(--espresso-suave);
+  position:relative;padding:.25rem 0;transition:color .2s;white-space:nowrap}
+.menu a:hover{color:var(--espresso)}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--champagne);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.menu a:hover::after,.menu a[aria-current="true"]::after{transform:scaleX(1)}
+.menu a[aria-current="true"]{color:var(--espresso)}
+/* botón del menú: inline-flex + nowrap para que no se corte */
+.nav-cta{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--champagne);color:var(--espresso)!important;
+  padding:0 1.05rem;height:34px;border-radius:6px;
+  font-weight:500;line-height:1;white-space:nowrap;flex:none;
+  transition:background .2s;
+}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:#BB9A6C}
+.nav-cta svg{width:14px;height:14px;fill:currentColor;flex:none}
+
+.hamburguesa{display:none;margin-left:auto;width:36px;height:36px;background:none;border:0;cursor:pointer;position:relative}
+.hamburguesa span{position:absolute;left:8px;right:8px;height:1.5px;background:var(--espresso);
+  transition:transform .3s cubic-bezier(.2,.7,.3,1),opacity .2s}
+.hamburguesa span:nth-child(1){top:13px}
+.hamburguesa span:nth-child(2){top:18px}
+.hamburguesa span:nth-child(3){top:23px}
+.hamburguesa[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.hamburguesa[aria-expanded="true"] span:nth-child(2){opacity:0}
+.hamburguesa[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+.cajon{position:fixed;top:var(--nav);left:0;right:0;z-index:79;
+  background:rgba(247,242,234,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--borde);padding:.8rem 1.4rem 1.4rem;display:none;flex-direction:column}
+.cajon.abierto{display:flex}
+.cajon a{text-decoration:none;padding:.7rem 0;border-bottom:1px solid var(--borde-fino)}
+.cajon a:last-child{border-bottom:0;margin-top:.8rem;background:var(--champagne);
+  text-align:center;border-radius:6px;padding:.8rem;font-weight:500}
+@media (max-width:60rem){.menu{display:none}.hamburguesa{display:block}}
+
+/* ══════════ Portada ══════════ */
+.portada{padding:calc(var(--nav) + 2.6rem) 0 var(--aire);position:relative;overflow:hidden}
+.portada::before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);
+  width:min(48rem,140vw);aspect-ratio:1;pointer-events:none;
+  background:radial-gradient(circle,rgba(199,167,122,.18),rgba(199,167,122,0) 62%)}
+.portada-rejilla{position:relative;display:grid;gap:2.5rem;align-items:center}
+@media (min-width:62rem){
+  .portada-rejilla{grid-template-columns:1fr .92fr;gap:3rem}
+  .portada-texto{text-align:left}
+  .portada-texto .matiz,.portada-texto .chispa{margin-left:0}
+  .portada-texto .acciones{justify-content:flex-start}
+}
+.portada-texto{text-align:center}
+.marca{font-size:clamp(3rem,11vw,4.2rem);line-height:.95;letter-spacing:-.025em;margin-top:1.1rem}
+.oficio{font-size:var(--p--1);color:var(--espresso-suave);margin-top:.45rem}
+.promesa{font-family:var(--display);font-size:var(--p-3);line-height:1.12;
+  letter-spacing:-.02em;margin:1.9rem 0 .8rem;max-width:16ch;margin-inline:auto}
+.portada-texto .matiz{color:var(--espresso-suave);max-width:42ch;margin:0 auto}
+.sellos{display:flex;gap:1.3rem;flex-wrap:wrap;justify-content:center;margin-top:1.6rem;
+  font-size:var(--p--1);color:var(--espresso-suave)}
+.sellos span{display:flex;align-items:center;gap:.4rem}
+.sellos svg{width:11px;height:11px;fill:var(--champagne);flex:none}
+@media (min-width:62rem){.promesa{margin-inline:0}.sellos{justify-content:flex-start}}
+
+.acciones{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}
+.btn{display:inline-block;padding:.8rem 1.6rem;border-radius:var(--radio);
+  font-size:var(--p--1);font-weight:500;text-decoration:none;border:1px solid transparent;
+  transition:background .2s,border-color .2s,transform .2s}
+.btn-champ{background:var(--champagne);color:var(--espresso)}
+.btn-champ:hover{background:#BB9A6C;transform:translateY(-1px)}
+.btn-linea{border-color:var(--borde);color:var(--espresso);background:var(--blanco)}
+.btn-linea:hover{border-color:var(--champagne)}
+
+.abanico{display:flex;justify-content:center;align-items:center;perspective:1200px}
+.abanico .naipe{width:clamp(7rem,25vw,10.5rem);flex:none;
+  transition:transform .5s cubic-bezier(.2,.7,.3,1);text-decoration:none}
+.abanico .naipe:nth-child(1){transform:rotate(-9deg) translateY(16px);margin-right:-1.6rem}
+.abanico .naipe:nth-child(2){transform:translateY(-12px);z-index:2}
+.abanico .naipe:nth-child(3){transform:rotate(9deg) translateY(16px);margin-left:-1.6rem}
+.abanico:hover .naipe:nth-child(1){transform:rotate(-13deg) translateY(6px)}
+.abanico:hover .naipe:nth-child(2){transform:translateY(-22px)}
+.abanico:hover .naipe:nth-child(3){transform:rotate(13deg) translateY(6px)}
+
+/* ══════════ Miniatura ══════════ */
+/* La caja manda: nada dentro puede estirarla, así el 9:15 nunca se rompe */
+.pantalla{aspect-ratio:9/15;border-radius:16px;overflow:hidden;position:relative;display:block;
+  background:var(--m-fondo,#332B27);color:var(--m-tinta,#F7F2EA);
+  container-type:inline-size;
+  box-shadow:0 1px 2px rgba(51,43,39,.06),0 12px 26px -12px rgba(51,43,39,.3)}
+/* La foto vive DENTRO del marco, no debajo de él */
+.pantalla .marco{position:absolute;inset:7px;border-radius:11px;overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--m-acento,#C7A77A) 34%,transparent)}
+.pantalla .capa{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:.4em;padding:1em .7em;text-align:center;overflow:hidden}
+.m-rotulo{font-size:clamp(.42rem,6.5cqw,.55rem);letter-spacing:.18em;
+  color:var(--m-acento,#C7A77A);text-transform:uppercase}
+.m-nombre{font-family:var(--display);font-weight:400;
+  font-size:clamp(.9rem,16cqw,1.4rem);line-height:1.05;letter-spacing:-.01em}
+.m-orn{width:clamp(8px,6.5cqw,12px);height:clamp(8px,6.5cqw,12px);fill:var(--m-acento,#C7A77A);opacity:.85}
+.m-fecha{font-size:clamp(.42rem,6cqw,.54rem);letter-spacing:.15em;opacity:.7}
+.m-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.con-foto .capa{justify-content:flex-end;gap:.26em;padding-bottom:1.1em;
+  background:linear-gradient(to top,var(--m-fondo) 5%,
+    color-mix(in srgb,var(--m-fondo) 48%,transparent) 40%,transparent 74%)}
+.pantalla.sans .m-nombre{font-family:var(--texto);font-weight:600;letter-spacing:-.02em}
+.pantalla.ancha-t .m-nombre{font-family:var(--texto);font-weight:500;letter-spacing:.09em;
+  font-size:clamp(.66rem,10cqw,.92rem);text-transform:uppercase}
+
+/* ══════════ Galería ══════════ */
+.galeria-cabeza{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.pestanas{display:flex;gap:.35rem;overflow-x:auto;padding:.2rem .1rem 1.3rem;
+  scrollbar-width:none;-ms-overflow-style:none}
+.pestanas::-webkit-scrollbar{display:none}
+.pestana{flex:none;border:1px solid var(--borde);background:var(--blanco);
+  color:var(--espresso-suave);font:500 var(--p--1)/1 var(--texto);
+  padding:.55rem 1rem;border-radius:100px;cursor:pointer;white-space:nowrap;
+  transition:background .2s,color .2s,border-color .2s}
+.pestana:hover{border-color:var(--champagne)}
+.pestana[aria-selected="true"]{background:var(--espresso);color:var(--marfil);border-color:var(--espresso)}
+.aviso{display:flex;gap:13px;align-items:flex-start;margin:0 0 1.6rem;padding:1.05rem 1.2rem;
+  background:linear-gradient(180deg,rgba(205,169,165,.14),rgba(205,169,165,.04)),var(--blanco);
+  border:1px solid rgba(205,169,165,.4);border-radius:var(--radio)}
+.aviso .rombo{width:9px;height:9px;background:var(--champagne);transform:rotate(45deg);flex:none;margin-top:.5rem}
+.aviso p{font-size:var(--p--1);line-height:1.6;color:var(--espresso-suave);margin:0}
+.aviso b{color:var(--espresso);font-weight:500}
+.vitrina{display:grid;gap:1.2rem .9rem;grid-template-columns:repeat(auto-fill,minmax(9rem,1fr))}
+.muestra{text-decoration:none;display:block}
+.muestra .pantalla{transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s}
+.muestra:hover .pantalla{transform:translateY(-6px);
+  box-shadow:0 1px 2px rgba(51,43,39,.06),0 22px 38px -16px rgba(51,43,39,.38)}
+.muestra b{display:block;font-weight:500;margin-top:.55rem;font-size:var(--p-0);line-height:1.25}
+.muestra em{font-style:normal;font-size:var(--p--1);color:var(--espresso-suave)}
+
+/* ══════════ Secciones ══════════ */
+section{padding:var(--aire) 0}
+.oscura{background:var(--espresso);color:var(--marfil)}
+.oscura .entrada,.oscura .matiz{color:rgba(247,242,234,.62)}
+
+.dos-columnas{display:grid;gap:1.6rem}
+@media (min-width:56rem){
+  .dos-columnas{grid-template-columns:19rem 1fr;gap:3rem;align-items:start}
+  .dos-columnas .entrada{margin-bottom:0}
+  .dos-columnas .col-titulo{position:sticky;top:calc(var(--nav) + 1.6rem)}
+}
+
+.panel{background:var(--blanco);border:1px solid var(--borde-fino);border-radius:var(--radio);padding:.2rem 1.4rem}
+.cotejo{width:100%;border-collapse:collapse}
+.cotejo th{font-size:var(--p--1);font-weight:500;color:var(--espresso-suave);
+  text-align:left;padding:1rem 0 .75rem;border-bottom:1px solid var(--borde)}
+.cotejo th:last-child,.cotejo td:last-child{text-align:right}
+.cotejo td{padding:.85rem 0;border-bottom:1px solid var(--borde-fino);vertical-align:baseline}
+.cotejo tr:last-child td{border-bottom:0}
+.concepto{padding-right:1rem}
+.tope{display:block;font-size:var(--p--1);color:var(--espresso-suave);margin-top:.05rem}
+.ajeno{color:var(--espresso-suave);white-space:nowrap;padding-right:1rem;font-variant-numeric:tabular-nums}
+.nuestro{font-weight:500;white-space:nowrap}
+.nuestro::before{content:"";display:inline-block;width:5px;height:5px;background:var(--champagne);
+  transform:rotate(45deg);margin-right:.45rem;vertical-align:.14em}
+.suma{border-top:1px solid var(--borde)!important;font-weight:500}
+.suma .ajeno{color:var(--espresso)}
+
+.carta{display:grid;gap:.7rem}
+@media (min-width:56rem){.carta{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+.plato{background:var(--blanco);border:1px solid var(--borde-fino);border-radius:var(--radio);
+  padding:1.6rem 1.5rem;transition:border-color .25s;display:flex;flex-direction:column}
+.plato:hover{border-color:var(--borde)}
+.plato.elegido{background:linear-gradient(180deg,rgba(205,169,165,.12),rgba(205,169,165,0) 60%),var(--blanco);
+  border-color:rgba(205,169,165,.45)}
+.plato-cabeza{display:flex;align-items:baseline;justify-content:space-between;gap:.8rem;margin-bottom:.5rem;flex-wrap:wrap}
+.precio{font-family:var(--display);font-size:var(--p-1);white-space:nowrap}
+.plato p{color:var(--espresso-suave);font-size:var(--p--1);line-height:1.55;margin-bottom:.9rem}
+.lista{list-style:none;font-size:var(--p--1);margin-top:auto}
+.lista li{position:relative;padding-left:1.05rem;padding-bottom:.3rem}
+.lista li::before{content:"";position:absolute;left:0;top:.52em;width:4px;height:4px;
+  background:var(--champagne);transform:rotate(45deg)}
+.sello{display:inline-block;font-family:var(--texto);font-size:.6875rem;font-weight:500;
+  color:var(--espresso-suave);background:rgba(205,169,165,.26);padding:.18rem .5rem;
+  border-radius:4px;margin-left:.45rem;vertical-align:.2em}
+
+.pasos{list-style:none;counter-reset:p;display:grid;gap:0}
+@media (min-width:56rem){.pasos{grid-template-columns:repeat(4,1fr);gap:1.6rem}
+  .pasos li{padding:0 0 0 0}
+  .pasos li::after{display:none}
+  .pasos li::before{position:static;display:block;margin-bottom:.4rem}}
+.pasos li{counter-increment:p;position:relative;padding:0 0 1.5rem 2.7rem}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:-.1rem;
+  font-family:var(--display);font-size:var(--p-1);color:var(--champagne)}
+.pasos li:not(:last-child)::after{content:"";position:absolute;left:.5rem;top:1.9rem;bottom:.25rem;
+  width:1px;background:rgba(199,167,122,.3)}
+.pasos b{display:block;font-weight:500}
+.pasos span{color:rgba(247,242,234,.62);font-size:var(--p--1);line-height:1.55}
+
+.preguntas{border-top:1px solid var(--borde)}
+.pregunta{border-bottom:1px solid var(--borde)}
+.pregunta summary{padding:1rem 2rem 1rem 0;cursor:pointer;list-style:none;position:relative;font-weight:500}
+.pregunta summary::-webkit-details-marker{display:none}
+.pregunta summary::after{content:"";position:absolute;right:.3rem;top:1.3rem;width:8px;height:8px;
+  border-right:1.5px solid var(--champagne);border-bottom:1.5px solid var(--champagne);
+  transform:rotate(45deg);transition:transform .25s}
+.pregunta[open] summary::after{transform:rotate(-135deg);top:1.5rem}
+.pregunta p{padding:0 0 1.2rem;color:var(--espresso-suave);max-width:58ch;font-size:var(--p--1);line-height:1.6}
+
+.cierre{text-align:center}
+.cierre h2{font-size:var(--p-3);max-width:16ch;margin:1.1rem auto .7rem;line-height:1.14}
+.oscura .btn-linea{background:transparent;border-color:rgba(247,242,234,.25);color:var(--marfil)}
+.oscura .btn-linea:hover{border-color:var(--champagne)}
+
+footer{padding:2.6rem 0 3rem;border-top:1px solid var(--borde);font-size:var(--p--1);color:var(--espresso-suave)}
+footer .chispa{width:13px;height:13px;margin:0 0 1.1rem}
+footer nav{display:flex;gap:1.3rem;flex-wrap:wrap;margin:.8rem 0}
+footer a{text-decoration:none;border-bottom:1px solid var(--borde);padding-bottom:1px}
+footer a:hover{border-color:var(--champagne)}
+.legal{margin-top:1.2rem;line-height:1.5}
+
+.js .revelar{opacity:0}
+.revelar.visto,html:not(.js) .revelar{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .js .revelar{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+  .abanico .naipe,.muestra .pantalla{transition:none}
+}
+@media (max-width:34rem){
+  .acciones .btn{width:100%}
+  .vitrina{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ch" viewBox="0 0 24 24"><path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 2a8 8 0 11-4.1 14.9l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 0112 4zm-3.4 4c-.2 0-.5.1-.7.4-.2.3-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.6 4 3.5 2 .8 2.4.6 2.8.6.4 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.6-.3-1.4-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7 7 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></symbol>
+</svg>
+
+<header class="barra" id="barra">
+  <div class="barra-caja">
+    <a class="logo" href="#inicio"><svg><use href="#ch"/></svg>savey</a>
+    <nav class="menu" id="menu">
+      <a href="#ejemplos">Ejemplos</a>
+      <a href="#incluido">¿Qué incluye?</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#proceso">¿Cómo funciona?</a>
+      <a href="#preguntas">¿Preguntas?</a>
+      <a class="nav-cta" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento"><svg><use href="#wa"/></svg>WhatsApp</a>
+    </nav>
+    <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="cajon">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="cajon" id="cajon">
+  <a href="#ejemplos">Ejemplos</a>
+  <a href="#incluido">¿Qué incluye?</a>
+  <a href="#paquetes">Paquetes</a>
+  <a href="#proceso">¿Cómo funciona?</a>
+  <a href="#preguntas">¿Preguntas?</a>
+  <a href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento">Escribir por WhatsApp</a>
+</div>
+
+<main id="inicio">
+
+<header class="portada">
+  <div class="amplia portada-rejilla">
+    <div class="portada-texto">
+      <svg class="chispa" id="chispa-portada" aria-hidden="true"><use href="#ch"/></svg>
+      <h1 class="marca" id="marca">savey</h1>
+      <p class="oficio" id="oficio">Invitaciones digitales</p>
+      <p class="promesa revelar">Un precio. Todo incluido.</p>
+      <p class="matiz revelar">Treinta y un diseños listos para bodas, XV años, bautizos, cumpleaños y eventos de empresa. Sin cobros extra por cambiar un color, sumar fotos o escribir tu itinerario completo. El precio que ves es el que pagas.</p>
+      <div class="sellos revelar">
+        <span><svg><use href="#ch"/></svg>Invitados ilimitados</span>
+        <span><svg><use href="#ch"/></svg>Entrega en 48 horas</span>
+        <span><svg><use href="#ch"/></svg>Confirmación en vivo</span>
+      </div>
+      <div class="acciones revelar">
+        <a class="btn btn-champ" href="/i/boda-aurora/?c=A7K9">Abrir una invitación</a>
+        <a class="btn btn-linea" href="#ejemplos">Ver los 31 diseños</a>
+      </div>
+    </div>
+
+    <div class="abanico" id="abanico">
+      <a class="naipe" href="/i/boda-aurora/?c=A7K9" aria-label="Ver invitación de boda Aurora">
+        <div class="pantalla con-foto" style="--m-fondo:#17251B;--m-tinta:#F4EFE5;--m-acento:#B89A63"><div class="marco"><img class="m-foto" src="/i/fotos/aurora-t.webp" alt=""></div><div class="capa"><span class="m-rotulo">Nuestra boda</span><h3 class="m-nombre">Valeria &amp; Sebastián</h3><svg class="m-orn"><use href="#ch"/></svg><span class="m-fecha">14 · 06 · 26</span></div></div>
+      </a>
+      <a class="naipe" href="/i/boda-sal/?c=A7K9" aria-label="Ver la invitación Sal">
+        <div class="pantalla con-foto" style="--m-fondo:#183040;--m-tinta:#FBF6EE;--m-acento:#D6B17C"><div class="marco"><img class="m-foto" src="/i/fotos/sal-t.webp" alt=""></div><div class="capa"><span class="m-rotulo">Nuestra boda</span><h3 class="m-nombre">Ana &amp; Marco</h3><svg class="m-orn"><use href="#ch"/></svg><span class="m-fecha">09 · 05 · 26</span></div></div>
+      </a>
+      <a class="naipe" href="/i/boda-almendro/?c=A7K9" aria-label="Ver la invitación Almendro">
+        <div class="pantalla con-foto" style="--m-fondo:#59654B;--m-tinta:#F8F3E9;--m-acento:#B39463"><div class="marco"><img class="m-foto" src="/i/fotos/almendro-t.webp" alt=""></div><div class="capa"><span class="m-rotulo">Nuestra boda</span><h3 class="m-nombre">Sofía &amp; Tomás</h3><svg class="m-orn"><use href="#ch"/></svg><span class="m-fecha">04 · 07 · 26</span></div></div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="ejemplos">
+  <div class="amplia">
+    <div class="galeria-cabeza revelar">
+      <div>
+        <h2>Nuestros diseños</h2>
+        <p class="entrada" style="margin-bottom:1.2rem">Ábrelos. Son invitaciones completas y funcionando, no imágenes: cada una con su portada, su itinerario, su confirmación y su pase por familia. Elige la que más te lata y la adaptamos a tus datos, tus colores y tus fotos.</p>
+      </div>
+    </div>
+
+    <div class="aviso revelar">
+      <span class="rombo" aria-hidden="true"></span>
+      <p><b>Ninguna plantilla es una camisa de fuerza.</b> Las secciones que ves aquí —padres y padrinos,
+      mesa de regalos, hospedaje, galería, playlist, mesa asignada— son ejemplos de lo que podemos incluir.
+      En tu invitación quitamos las que no te sirvan y agregamos las que falten, sin costo extra.
+      Usa estos diseños para tomar ideas, no para amoldarte a ellos.</p>
+    </div>
+
+    <div class="pestanas revelar" role="tablist" id="pestanas"></div>
+    <div class="vitrina" id="vitrina"></div>
+
+    <p class="apunte revelar" style="margin-top:1.6rem">Los ejemplos traen el pase de la Familia González para que veas cómo lo recibe cada invitado. ¿No ves lo que buscas? Escríbenos y lo diseñamos.</p>
+  </div>
+</section>
+
+<section id="incluido">
+  <div class="ancha dos-columnas">
+    <div class="col-titulo revelar">
+      <h2>Lo que otros cobran aparte</h2>
+      <p class="entrada">Una invitación se anuncia desde $295 y termina en más de $2,500 al ir sumando complementos. Preferimos decirte el precio completo desde el principio.</p>
+    </div>
+    <div>
+      <div class="panel revelar">
+        <table class="cotejo">
+          <thead><tr><th>Concepto</th><th>Otros</th><th>Savey</th></tr></thead>
+          <tbody>
+            <tr><td class="concepto">Cambiar colores al tema de tu evento</td><td class="ajeno">$349</td><td class="nuestro">Incluido</td></tr>
+            <tr><td class="concepto">Galería de fotos<span class="tope">Suelen topar en 10 imágenes</span></td><td class="ajeno">$224</td><td class="nuestro">Sin límite</td></tr>
+            <tr><td class="concepto">Itinerario del evento<span class="tope">Suelen topar en 6 momentos</span></td><td class="ajeno">$224</td><td class="nuestro">Sin límite</td></tr>
+            <tr><td class="concepto">Pase con nombre y lugares por familia</td><td class="ajeno">$300</td><td class="nuestro">Desde Firma</td></tr>
+            <tr><td class="concepto">Álbum compartido del evento</td><td class="ajeno">$374</td><td class="nuestro">Desde Firma</td></tr>
+            <tr><td class="concepto">Save the date</td><td class="ajeno">$250</td><td class="nuestro">Desde Firma</td></tr>
+            <tr class="suma"><td class="concepto">Suma de complementos</td><td class="ajeno">$1,721</td><td class="nuestro">$0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="apunte revelar" style="margin-top:.9rem">Precios de lista publicados por otros estudios mexicanos durante 2026, en pesos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="paquetes">
+  <div class="amplia">
+    <h2 class="revelar">Tres formas de trabajar con nosotros</h2>
+    <p class="entrada revelar">Todos incluyen diseño, animaciones, música, confirmación sin límite de invitados y los cambios que necesites mientras armamos tu invitación.</p>
+
+    <div class="carta">
+      <article class="plato revelar">
+        <div class="plato-cabeza"><h3>Esencial</h3><span class="precio">$790</span></div>
+        <p>Tu invitación completa y una hoja donde ves quién confirmó, en tiempo real.</p>
+        <ul class="lista">
+          <li>Diseño con tus colores y fotos</li>
+          <li>Mapa, cuenta regresiva e itinerario</li>
+          <li>Confirmación de asistencia</li>
+          <li>Lista en 72 horas</li>
+        </ul>
+      </article>
+
+      <article class="plato elegido revelar">
+        <div class="plato-cabeza"><h3>Firma<span class="sello">La más elegida</span></h3><span class="precio">$1,690</span></div>
+        <p>Cada familia recibe su propia liga, con su nombre y sus lugares apartados.</p>
+        <ul class="lista">
+          <li>Todo lo de Esencial</li>
+          <li>Pase personalizado por familia</li>
+          <li>Control de entrada con código</li>
+          <li>Save the date y álbum compartido</li>
+          <li>Tu propia dirección web</li>
+          <li>Lista en 48 horas</li>
+        </ul>
+      </article>
+
+      <article class="plato revelar">
+        <div class="plato-cabeza"><h3>Concierge</h3><span class="precio">$3,290</span></div>
+        <p>Nosotros repartimos y damos seguimiento. Tú no mandas un solo mensaje.</p>
+        <ul class="lista">
+          <li>Todo lo de Firma</li>
+          <li>Envío por WhatsApp a tu lista</li>
+          <li>Recordatorio a quien no contesta</li>
+          <li>Conteo final para el salón</li>
+          <li>Atención dedicada</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="apunte revelar" style="margin-top:1.2rem">Los tres incluyen los cambios que necesites mientras armamos tu invitación. No hay costos adicionales de ningún tipo.</p>
+  </div>
+</section>
+
+<section class="oscura" id="proceso">
+  <div class="amplia">
+    <h2 class="revelar">¿Cómo trabajamos?</h2>
+    <p class="entrada revelar">De la primera plática a tu invitación publicada, normalmente en menos de tres días.</p>
+    <ol class="pasos">
+      <li class="revelar"><b>Nos escribes</b><span>Nos dices qué evento es, la fecha y cuántos invitados. Te damos el precio de una vez.</span></li>
+      <li class="revelar"><b>Mandas los datos</b><span>Un formulario corto: nombres, sedes, horarios, vestimenta y tus fotos.</span></li>
+      <li class="revelar"><b>Revisas</b><span>Te mandamos la liga para que la abras y nos digas qué cambiar. Los ajustes van incluidos.</span></li>
+      <li class="revelar"><b>Reparten y confirman</b><span>Compartes tu liga y ves las confirmaciones llegar en vivo.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="preguntas">
+  <div class="ancha dos-columnas">
+    <div class="col-titulo revelar"><h2>Preguntas frecuentes</h2>
+      <p class="entrada">Si te queda una duda que no está aquí, escríbenos por WhatsApp y te contestamos en minutos.</p></div>
+    <div class="preguntas revelar">
+      <details class="pregunta"><summary>¿De verdad no hay cobros extra?</summary>
+        <p>De verdad. Fotos, itinerario, cambios de color, invitados que confirman: nada de eso tiene tope ni costo adicional. El precio que ves es el precio final.</p></details>
+      <details class="pregunta"><summary>¿Puedo usar cualquiera de los 31 diseños?</summary>
+        <p>Sí, y los adaptamos a tus colores sin costo. Si tu salón o tu florista ya definieron una paleta, trabajamos con esa. También podemos mezclar: la portada de uno con la estructura de otro.</p></details>
+      <details class="pregunta"><summary>¿Y si la plantilla trae secciones que no quiero?</summary>
+        <p>No hay problema. Las secciones se quitan y se ponen a voluntad: si quieres los nombres de tus padrinos y el diseño no los trae, los agregamos; si no quieres mesa de regalos, la quitamos. Los ejemplos existen para enseñarte lo que se puede hacer, no para que te amoldes a ellos.</p></details>
+      <details class="pregunta"><summary>¿Qué secciones puedo pedir?</summary>
+        <p>Padres y padrinos, itinerario, sedes con mapa, código de vestimenta, mesa de regalos con tiendas y cuenta, hospedaje sugerido, transporte, actividades del fin de semana, galería, playlist colaborativa, hashtag, mesa asignada, preguntas frecuentes y confirmación. Si necesitas algo que no está en la lista, dínoslo.</p></details>
+      <details class="pregunta"><summary>¿Hacen eventos que no sean fiestas?</summary>
+        <p>Sí. Trabajamos posadas de empresa, congresos, inauguraciones y entregas de premios. Cualquier evento con lista de invitados y necesidad de confirmar asistencia funciona igual.</p></details>
+      <details class="pregunta"><summary>¿Cuánto dura publicada mi invitación?</summary>
+        <p>Seis meses después de tu evento, para que tu álbum compartido siga vivo un rato. Si la quieres conservar más tiempo, la renovación anual cuesta $300.</p></details>
+      <details class="pregunta"><summary>¿Mis invitados necesitan alguna aplicación?</summary>
+        <p>No. Tu invitación es una página web: se abre con un toque desde WhatsApp, en cualquier celular, y confirman ahí mismo.</p></details>
+      <details class="pregunta"><summary>¿Qué pasa con los datos de mis invitados?</summary>
+        <p>Los usamos únicamente para tu evento, no los compartimos con nadie y los eliminamos cuando tu invitación termina su vigencia. El detalle está en nuestro aviso de privacidad.</p></details>
+      <details class="pregunta"><summary>¿Cómo se paga y me pueden facturar?</summary>
+        <p>Aceptamos transferencia, tarjeta y pago en tiendas de conveniencia. Sí facturamos: pídenos tu factura al momento de pagar.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="oscura cierre">
+  <div class="caja">
+    <svg class="chispa revelar" aria-hidden="true"><use href="#ch"/></svg>
+    <h2 class="revelar">Cuéntanos de tu evento</h2>
+    <p class="matiz revelar">Contestamos en minutos, no al día siguiente.</p>
+    <div class="acciones revelar">
+      <a class="btn btn-champ" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento">Escribir por WhatsApp</a>
+      <a class="btn btn-linea" href="#ejemplos">Ver los diseños</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="amplia">
+    <svg class="chispa" aria-hidden="true"><use href="#ch"/></svg>
+    <p>Savey. Estudio de invitaciones digitales. Estado de México, México.</p>
+    <nav>
+      <a href="mailto:hola@saveystudio.com">hola@saveystudio.com</a>
+      <a href="/aviso-de-privacidad.html">Aviso de privacidad</a>
+      <a href="/terminos.html">Términos del servicio</a>
+    </nav>
+    <p class="legal">Precios en pesos mexicanos, vigentes en 2026. Los precios de referencia de otros estudios provienen de sus listas publicadas y se citan únicamente con fines comparativos.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/motion@11.15.0/dist/motion.min.js"></script>
+<script>
+(function(){
+"use strict";
+var $=function(s){return document.querySelector(s)};
+var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+var CATALOGO=[
+ {id:"bodas",nombre:"Bodas",rotulo:"Nuestra boda",piezas:[
+  {ru:"/i/boda-aurora/",s:"boda-aurora",t:"Aurora",d:"Jardín al atardecer",n:"Valeria & Sebastián",f:"14 · 06 · 26",im:"/i/fotos/aurora-t.webp",c:["#17251B","#F4EFE5","#B89A63"]},
+  {ru:"/i/boda-sal/",s:"boda-sal",t:"Sal",d:"Playa y golden hour",n:"Ana & Marco",f:"09 · 05 · 26",im:"/i/fotos/sal-t.webp",c:["#183040","#FBF6EE","#D6B17C"]},
+  {ru:"/i/boda-bruma/",s:"boda-bruma",t:"Bruma",d:"Quiet luxury",n:"Renata & Emilio",f:"21 · 03 · 26",im:"/i/fotos/bruma-t.webp",c:["#F7F4ED","#272624","#A89E90"]},
+  {ru:"/i/boda-granate/",s:"boda-granate",t:"Granate",d:"Gala nocturna",n:"Camila & Diego",f:"28 · 11 · 26",im:"/i/fotos/granate-t.webp",c:["#300D15","#F4E9DC","#C6A46D"]},
+  {ru:"/i/boda-almendro/",s:"boda-almendro",t:"Almendro",d:"Mediterráneo de día",n:"Sofía & Tomás",f:"04 · 07 · 26",im:"/i/fotos/almendro-t.webp",c:["#59654B","#F8F3E9","#B39463"]},
+  {ru:"/i/boda-cantera/",s:"boda-cantera",t:"Cantera",d:"Hacienda mexicana",n:"Mariana & Rodrigo",f:"17 · 10 · 26",im:"/i/fotos/cantera-t.webp",c:["#754536","#F7F1E8","#B96549"]}
+ ]},
+ {id:"xv",nombre:"XV Años",rotulo:"Mis XV años",piezas:[
+  {s:"xv-encanto",t:"Encanto",d:"Olivo y dorado",n:"Valentina",f:"14 · 11 · 26",c:["#1B241B","#F2EDE1","#D9BB80"]},
+  {s:"xv-aura",t:"Aura",d:"Rosa palo",n:"Regina",f:"07 · 02 · 27",c:["#6B4A4A","#F7EDE9","#E6C3AE"]},
+  {s:"xv-medianoche",t:"Medianoche",d:"Negro y plata",n:"Ximena",f:"30 · 08 · 26",c:["#111111","#F5F5F5","#C9C9C9"]},
+  {s:"xv-jacaranda",t:"Jacaranda",d:"Morado y oro",n:"Fernanda",f:"18 · 04 · 27",c:["#2E2140","#F2EDF7","#C9A227"]},
+  {s:"xv-marfil",t:"Marfil",d:"Nuestra casa",n:"Isabella",f:"02 · 11 · 26",c:["#F7F2EA","#332B27","#C7A77A"]}
+ ]},
+ {id:"bautizos",nombre:"Bautizos",rotulo:"Mi bautizo",piezas:[
+  {s:"bautizo-cielo",t:"Cielo",d:"Azul sereno",n:"Emiliano",f:"20 · 09 · 26",c:["#2E4859","#EFF4F5","#BFD3D6"]},
+  {s:"bautizo-nube",t:"Nube",d:"Perla y blanco",n:"Julieta",f:"11 · 10 · 26",c:["#E9E9EC","#33333A","#8E97A8"]},
+  {s:"bautizo-oliva",t:"Oliva",d:"Verde suave",n:"Mateo",f:"05 · 12 · 26",c:["#5A6B4F","#F4F2E8","#C8CBB0"]},
+  {s:"bautizo-azahar",t:"Azahar",d:"Blanco y oro tenue",n:"Renata",f:"23 · 01 · 27",c:["#FBF8F3","#3B332C","#C4A878"]},
+  {s:"bautizo-trigo",t:"Trigo",d:"Beige y miel",n:"Santiago",f:"08 · 03 · 27",c:["#7A6244","#F8F2E7","#E0C79B"]}
+ ]},
+ {id:"ninos",nombre:"Cumpleaños infantil",rotulo:"Mi fiesta",piezas:[
+  {s:"nino-confeti",t:"Confeti",d:"Coral y limón",n:"Mía cumple 5",f:"12 · 05 · 26",c:["#E0684F","#FFF6EC","#FFD79A"],k:"sans"},
+  {s:"nino-safari",t:"Safari",d:"Selva y ocre",n:"Leo cumple 3",f:"26 · 06 · 26",c:["#3E5641","#F6F1E2","#D9A441"],k:"sans"},
+  {s:"nino-oceano",t:"Océano",d:"Turquesa y coral",n:"Emma cumple 6",f:"03 · 08 · 26",c:["#1F6E7A","#EFF9F8","#F0A08C"],k:"sans"},
+  {s:"nino-globos",t:"Globos",d:"Azul y rojo suave",n:"Tadeo cumple 4",f:"17 · 09 · 26",c:["#2F4A80","#F4F7FC","#EE8A7C"],k:"sans"},
+  {s:"nino-jardin",t:"Jardín",d:"Rosa y hoja",n:"Luna cumple 7",f:"29 · 10 · 26",c:["#C96C89","#FFF3F6","#A8C48C"],k:"sans"}
+ ]},
+ {id:"teens",nombre:"Cumpleaños adolescente",rotulo:"Mi cumpleaños",piezas:[
+  {s:"teen-neon",t:"Neón",d:"Carbón y lima",n:"Dani cumple 16",f:"22 · 04 · 26",c:["#15171A","#EDEFF0","#B6E04A"],k:"ancha-t"},
+  {s:"teen-cassette",t:"Cassette",d:"Morado y fucsia",n:"Iker cumple 15",f:"10 · 07 · 26",c:["#241639","#F2ECFA","#E5559B"],k:"ancha-t"},
+  {s:"teen-polaroid",t:"Polaroid",d:"Crema y tinta",n:"Ale cumple 18",f:"15 · 02 · 27",c:["#F1EDE6","#1C1C1C","#7E7E7E"],k:"ancha-t"},
+  {s:"teen-prisma",t:"Prisma",d:"Azul y cian",n:"Sam cumple 17",f:"06 · 09 · 26",c:["#101B33","#E9F4FB","#4FC8E8"],k:"ancha-t"},
+  {s:"teen-vinilo",t:"Vinilo",d:"Grafito y ámbar",n:"Nico cumple 16",f:"19 · 11 · 26",c:["#22201E","#F3F0EC","#E08A3C"],k:"ancha-t"}
+ ]},
+ {id:"empresa",nombre:"Corporativo",rotulo:"Te esperamos",piezas:[
+  {s:"corp-consejo",t:"Consejo",d:"Cena anual",n:"Cena Anual 2026",f:"04 · 12 · 26",c:["#132033","#EDF1F6","#9BA9BE"],k:"ancha-t"},
+  {s:"corp-cumbre",t:"Cumbre",d:"Congreso y foro",n:"Congreso Nacional",f:"18 · 05 · 26",c:["#2B2B2E","#F4F4F5","#B9B9BC"],k:"ancha-t"},
+  {s:"corp-brindis",t:"Brindis",d:"Posada de fin de año",n:"Posada Savey",f:"12 · 12 · 26",c:["#1F3330","#F1F5F2","#C8A860"],k:"ancha-t"},
+  {s:"corp-enlace",t:"Enlace",d:"Inauguración",n:"Nuevas Oficinas",f:"27 · 08 · 26",c:["#F5F6F8","#1C2A3A","#3D6EA8"],k:"ancha-t"},
+  {s:"corp-distincion",t:"Distinción",d:"Entrega de premios",n:"Premios 2026",f:"21 · 10 · 26",c:["#131313","#F6F4F0","#CBA85C"],k:"ancha-t"}
+ ]}
+];
+
+var pestanas=$("#pestanas"), vitrina=$("#vitrina");
+if(pestanas&&vitrina){
+  CATALOGO.forEach(function(cat,i){
+    var b=document.createElement("button");
+    b.className="pestana"; b.type="button"; b.setAttribute("role","tab");
+    b.textContent=cat.nombre; b.dataset.id=cat.id;
+    b.setAttribute("aria-selected",i===0?"true":"false");
+    b.addEventListener("click",function(){pintar(cat.id)});
+    pestanas.appendChild(b);
+  });
+
+  function tarjeta(p,rotulo){
+    var a=document.createElement("a");
+    a.className="muestra"; a.href=(p.ru?p.ru+"?c=A7K9":"/i/?e="+p.s+"&c=A7K9");
+    a.setAttribute("aria-label","Abrir el diseño "+p.t);
+    a.innerHTML='<div class="pantalla '+(p.k||"")+(p.im?' con-foto':'')+'" style="--m-fondo:'+p.c[0]+';--m-tinta:'+p.c[1]+';--m-acento:'+p.c[2]+'">'+
+      '<div class="marco">'+(p.im?'<img class="m-foto" src="'+p.im+'" alt="" loading="lazy">':'')+'</div>'+
+      '<div class="capa"><span class="m-rotulo">'+rotulo+'</span><h3 class="m-nombre">'+p.n+'</h3>'+
+      '<svg class="m-orn"><use href="#ch"/></svg><span class="m-fecha">'+p.f+'</span></div></div>'+
+      '<b>'+p.t+'</b><em>'+p.d+'</em>';
+    return a;
+  }
+
+  function pintar(id){
+    var cat=CATALOGO.filter(function(c){return c.id===id})[0];
+    if(!cat) return;
+    $$(".pestana").forEach(function(b){b.setAttribute("aria-selected",b.dataset.id===id?"true":"false")});
+    vitrina.innerHTML="";
+    var nodos=cat.piezas.map(function(p){var n=tarjeta(p,cat.rotulo);vitrina.appendChild(n);return n});
+    if(window.Motion&&window.Motion.animate){
+      window.Motion.animate(nodos,{opacity:[0,1],transform:["translateY(12px)","translateY(0px)"]},
+        {duration:.45,delay:window.Motion.stagger(.05),easing:[.2,.7,.3,1]});
+    }
+  }
+  pintar(CATALOGO[0].id);
+}
+
+var barra=$("#barra");
+var alScroll=function(){if(barra)barra.classList.toggle("posada",window.scrollY>20)};
+alScroll(); window.addEventListener("scroll",alScroll,{passive:true});
+
+var ham=$("#hamburguesa"), cajon=$("#cajon");
+if(ham&&cajon){
+  ham.addEventListener("click",function(){
+    var ab=cajon.classList.toggle("abierto");
+    ham.setAttribute("aria-expanded",ab?"true":"false");
+    ham.setAttribute("aria-label",ab?"Cerrar menú":"Abrir menú");
+  });
+  cajon.addEventListener("click",function(e){
+    if(e.target.tagName==="A"){cajon.classList.remove("abierto");ham.setAttribute("aria-expanded","false")}
+  });
+}
+
+if("IntersectionObserver" in window){
+  var mapa={};
+  $$(".menu a[href^='#']").forEach(function(a){mapa[a.getAttribute("href").slice(1)]=a});
+  var vigia=new IntersectionObserver(function(es){es.forEach(function(e){
+    var a=mapa[e.target.id]; if(a) a.setAttribute("aria-current",e.isIntersecting?"true":"false")})},
+    {rootMargin:"-45% 0px -50% 0px"});
+  Object.keys(mapa).forEach(function(id){var s=document.getElementById(id);if(s)vigia.observe(s)});
+}
+
+function revelaTodo(){$$(".revelar").forEach(function(el){el.classList.add("visto")})}
+
+if(window.Motion&&window.Motion.animate&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  var M=window.Motion, suave=[.2,.7,.3,1];
+  M.animate("#chispa-portada",{opacity:[0,1],transform:["scale(.3) rotate(-30deg)","scale(1) rotate(0deg)"]},{duration:.85,easing:suave});
+  M.animate("#marca",{opacity:[0,1],transform:["translateY(12px)","translateY(0px)"]},{duration:.75,delay:.22,easing:suave});
+  M.animate("#oficio",{opacity:[0,1],transform:["translateY(8px)","translateY(0px)"]},{duration:.75,delay:.34,easing:suave});
+  var naipes=$$("#abanico .naipe");
+  if(naipes.length) M.animate(naipes,{opacity:[0,1]},{duration:.75,delay:M.stagger(.11,{start:.5}),easing:suave});
+  $$(".revelar").forEach(function(el){
+    M.inView(el,function(){
+      el.classList.add("visto");
+      M.animate(el,{opacity:[0,1],transform:["translateY(14px)","translateY(0px)"]},{duration:.6,easing:suave});
+      return false;
+    },{margin:"0px 0px -10% 0px"});
+  });
+  setTimeout(revelaTodo,4000);
+}else{ revelaTodo() }
+})();
+</script>
+</body>
+</html>

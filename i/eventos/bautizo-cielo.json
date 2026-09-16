@@ -1,0 +1,92 @@
+{
+  "plantilla": "cielo",
+  "colores": {
+    "fondo": "#2E4859",
+    "papel": "#EFF4F5",
+    "acento": "#BFD3D6",
+    "suave": "#7E9BA6"
+  },
+  "tipo": "Mi bautizo",
+  "nombre": "Emiliano",
+  "fecha": "2026-09-20T12:00:00-05:00",
+  "fechaTexto": "Domingo 20 de septiembre de 2026",
+  "fechaCorta": "20 · 09 · 26",
+  "frase": "Hoy recibo mi primer sacramento y quiero que estés conmigo.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "Ceremonia de bautizo",
+    "lugar": "Parroquia del Espíritu Santo",
+    "direccion": "Av. Constituyentes 88, Centro, Querétaro, Qro.",
+    "hora": "12:00 PM",
+    "mapa": "https://maps.google.com/?q=Av.%20Constituyentes%2088%2C%20Centro%2C%20Quer%C3%A9taro%2C%20Qro."
+  },
+  "recepcion": {
+    "titulo": "Comida",
+    "lugar": "Salón El Roble",
+    "direccion": "Calle Pino 14, Jurica, Querétaro, Qro.",
+    "hora": "1:30 PM",
+    "mapa": "https://maps.google.com/?q=Calle%20Pino%2014%2C%20Jurica%2C%20Quer%C3%A9taro%2C%20Qro."
+  },
+  "itinerario": [
+    {
+      "hora": "12:00 PM",
+      "evento": "Bautizo"
+    },
+    {
+      "hora": "1:30 PM",
+      "evento": "Comida"
+    },
+    {
+      "hora": "3:00 PM",
+      "evento": "Pastel"
+    },
+    {
+      "hora": "4:00 PM",
+      "evento": "Convivencia"
+    }
+  ],
+  "dressCode": "Casual elegante",
+  "dressNota": "Colores claros, por favor.",
+  "regalos": {
+    "texto": "Tu presencia es el mejor regalo.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "5 de septiembre",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [
+    {
+      "rol": "Padrino",
+      "nombre": "Rodrigo Salas"
+    },
+    {
+      "rol": "Madrina",
+      "nombre": "Ana Paula Salas"
+    }
+  ],
+  "notas": [],
+  "galeriaTitulo": "Mis primeras fotos"
+}

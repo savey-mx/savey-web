@@ -1,0 +1,96 @@
+{
+  "plantilla": "enlace",
+  "colores": {
+    "fondo": "#F5F6F8",
+    "papel": "#1C2A3A",
+    "acento": "#3D6EA8",
+    "suave": "#5F7691"
+  },
+  "tipo": "Inauguración",
+  "nombre": "Nuevas Oficinas",
+  "fecha": "2026-08-27T18:00:00-05:00",
+  "fechaTexto": "Jueves 27 de agosto de 2026",
+  "fechaCorta": "27 · 08 · 26",
+  "frase": "Abrimos las puertas de nuestra nueva casa y queremos enseñártela.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Coctel de inauguración",
+    "lugar": "Torre Norte, piso 12",
+    "direccion": "Av. Ricardo Margáin 440, San Pedro Garza García, N.L.",
+    "hora": "6:00 PM",
+    "mapa": "https://maps.google.com/?q=Av.%20Ricardo%20Marg%C3%A1in%20440%2C%20San%20Pedro%20Garza%20Garc%C3%ADa%2C%20N.L."
+  },
+  "itinerario": [
+    {
+      "hora": "6:00 PM",
+      "evento": "Recepción"
+    },
+    {
+      "hora": "6:30 PM",
+      "evento": "Corte de listón"
+    },
+    {
+      "hora": "7:00 PM",
+      "evento": "Recorrido"
+    },
+    {
+      "hora": "8:00 PM",
+      "evento": "Cóctel"
+    }
+  ],
+  "dressCode": "Ejecutivo",
+  "dressNota": "",
+  "regalos": {
+    "texto": "",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "18 de agosto",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 0,
+  "fotos": [],
+  "padrinos": [],
+  "notas": [
+    {
+      "titulo": "Estacionamiento",
+      "texto": "Cortesía en el nivel B2. Presenta tu boleto en el registro."
+    },
+    {
+      "titulo": "Gafete",
+      "texto": "Tu gafete se entrega en la mesa de registro con tu nombre confirmado."
+    },
+    {
+      "titulo": "Cupo",
+      "texto": "El registro cierra cuando se agota el aforo. Confirma cuanto antes."
+    }
+  ],
+  "rsvpTitulo": "Confirma tu asistencia"
+}

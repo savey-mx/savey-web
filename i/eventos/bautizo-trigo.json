@@ -1,0 +1,92 @@
+{
+  "plantilla": "trigo",
+  "colores": {
+    "fondo": "#7A6244",
+    "papel": "#F8F2E7",
+    "acento": "#E0C79B",
+    "suave": "#A89272"
+  },
+  "tipo": "Bautizo",
+  "nombre": "Santiago",
+  "fecha": "2027-03-08T11:30:00-06:00",
+  "fechaTexto": "Lunes 8 de marzo de 2027",
+  "fechaCorta": "08 · 03 · 27",
+  "frase": "Empiezo el camino y quiero que estés en la primera foto.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "Bautizo",
+    "lugar": "Parroquia de Santiago Apóstol",
+    "direccion": "Plaza Principal s/n, Centro, San Luis Potosí, S.L.P.",
+    "hora": "11:30 AM",
+    "mapa": "https://maps.google.com/?q=Plaza%20Principal%20s/n%2C%20Centro%2C%20San%20Luis%20Potos%C3%AD%2C%20S.L.P."
+  },
+  "recepcion": {
+    "titulo": "Comida",
+    "lugar": "Quinta El Trigal",
+    "direccion": "Camino a la Presa km 3, San Luis Potosí, S.L.P.",
+    "hora": "1:00 PM",
+    "mapa": "https://maps.google.com/?q=Camino%20a%20la%20Presa%20km%203%2C%20San%20Luis%20Potos%C3%AD%2C%20S.L.P."
+  },
+  "itinerario": [
+    {
+      "hora": "11:30 AM",
+      "evento": "Bautizo"
+    },
+    {
+      "hora": "1:00 PM",
+      "evento": "Comida"
+    },
+    {
+      "hora": "2:30 PM",
+      "evento": "Pastel"
+    },
+    {
+      "hora": "4:00 PM",
+      "evento": "Convivencia"
+    }
+  ],
+  "dressCode": "Casual elegante",
+  "dressNota": "Tonos tierra y beige.",
+  "regalos": {
+    "texto": "Agradecemos pañales etapa 2 o 3.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "20 de febrero",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 3,
+  "fotos": [],
+  "padrinos": [
+    {
+      "rol": "Padrino",
+      "nombre": "Rodrigo Salas"
+    },
+    {
+      "rol": "Madrina",
+      "nombre": "Ana Paula Salas"
+    }
+  ],
+  "notas": [],
+  "galeriaTitulo": "Mis primeras fotos"
+}

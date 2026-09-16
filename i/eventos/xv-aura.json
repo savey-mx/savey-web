@@ -1,0 +1,108 @@
+{
+  "plantilla": "aura",
+  "colores": {
+    "fondo": "#6B4A4A",
+    "papel": "#F7EDE9",
+    "acento": "#E6C3AE",
+    "suave": "#B08B84"
+  },
+  "tipo": "Mis XV años",
+  "nombre": "Regina",
+  "fecha": "2027-02-07T18:00:00-06:00",
+  "fechaTexto": "Domingo 7 de febrero de 2027",
+  "fechaCorta": "07 · 02 · 27",
+  "frase": "Quince años se cumplen una sola vez. Quiero que estés ahí cuando pase.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "Misa",
+    "lugar": "Santuario de Guadalupe",
+    "direccion": "Calle Morelos 45, Centro, Querétaro, Qro.",
+    "hora": "6:00 PM",
+    "mapa": "https://maps.google.com/?q=Calle%20Morelos%2045%2C%20Centro%2C%20Quer%C3%A9taro%2C%20Qro."
+  },
+  "recepcion": {
+    "titulo": "Recepción",
+    "lugar": "Quinta Las Rosas",
+    "direccion": "Camino a Jurica km 2, Querétaro, Qro.",
+    "hora": "8:00 PM",
+    "mapa": "https://maps.google.com/?q=Camino%20a%20Jurica%20km%202%2C%20Quer%C3%A9taro%2C%20Qro."
+  },
+  "itinerario": [
+    {
+      "hora": "6:00 PM",
+      "evento": "Misa"
+    },
+    {
+      "hora": "8:00 PM",
+      "evento": "Recepción"
+    },
+    {
+      "hora": "8:45 PM",
+      "evento": "Vals"
+    },
+    {
+      "hora": "9:30 PM",
+      "evento": "Cena"
+    },
+    {
+      "hora": "11:00 PM",
+      "evento": "Baile"
+    },
+    {
+      "hora": "1:00 AM",
+      "evento": "Última canción"
+    }
+  ],
+  "dressCode": "Formal",
+  "dressNota": "Rosa palo reservado para la festejada y sus chambelanes.",
+  "regalos": {
+    "texto": "Lo que quieras regalar lo recibo con mucho cariño. También hay lluvia de sobres.",
+    "banco": "Santander 4455 6677 8899 0011",
+    "titular": "Regina Salas Mora"
+  },
+  "limiteRsvp": "15 de enero",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 5,
+  "fotos": [],
+  "padrinos": [
+    {
+      "rol": "Madrina de vals",
+      "nombre": "Tía Guadalupe"
+    },
+    {
+      "rol": "Padrino de brindis",
+      "nombre": "Tío Ricardo"
+    },
+    {
+      "rol": "Madrina de ramo",
+      "nombre": "Abuela Carmen"
+    },
+    {
+      "rol": "Chambelán de honor",
+      "nombre": "Emilio Ruiz"
+    }
+  ],
+  "notas": [],
+  "galeriaTitulo": "Mi sesión de fotos"
+}

@@ -1,0 +1,104 @@
+{
+  "plantilla": "medianoche",
+  "colores": {
+    "fondo": "#111111",
+    "papel": "#F5F5F5",
+    "acento": "#C9C9C9",
+    "suave": "#8A8A8A"
+  },
+  "tipo": "XV",
+  "nombre": "Ximena",
+  "fecha": "2026-08-30T20:00:00-05:00",
+  "fechaTexto": "Domingo 30 de agosto de 2026",
+  "fechaCorta": "30 · 08 · 26",
+  "frase": "Sin misa, sin protocolo. Música fuerte y la gente que quiero.",
+  "fotoPortada": "",
+  "musica": "",
+  "ceremonia": {
+    "titulo": "",
+    "lugar": "",
+    "direccion": "",
+    "hora": "",
+    "mapa": ""
+  },
+  "recepcion": {
+    "titulo": "Fiesta",
+    "lugar": "Terraza Noir",
+    "direccion": "Av. Chapultepec 480, Americana, Guadalajara, Jal.",
+    "hora": "8:00 PM",
+    "mapa": "https://maps.google.com/?q=Av.%20Chapultepec%20480%2C%20Americana%2C%20Guadalajara%2C%20Jal."
+  },
+  "itinerario": [
+    {
+      "hora": "8:00 PM",
+      "evento": "Bienvenida"
+    },
+    {
+      "hora": "9:00 PM",
+      "evento": "Cena ligera"
+    },
+    {
+      "hora": "10:00 PM",
+      "evento": "DJ"
+    },
+    {
+      "hora": "12:00 AM",
+      "evento": "Pastel"
+    },
+    {
+      "hora": "2:00 AM",
+      "evento": "Cierre"
+    }
+  ],
+  "dressCode": "Negro",
+  "dressNota": "Código estricto: todo negro. Es parte de la fiesta.",
+  "regalos": {
+    "texto": "Sin regalos, en serio. Solo vengan.",
+    "banco": "",
+    "titular": ""
+  },
+  "limiteRsvp": "15 de agosto",
+  "rsvpEndpoint": "",
+  "whatsappAnfitrion": "5215500000000",
+  "pases": {
+    "A7K9": {
+      "nombre": "Familia González",
+      "lugares": 4
+    },
+    "B2M5": {
+      "nombre": "Daniel y Andrea",
+      "lugares": 2
+    },
+    "C8T1": {
+      "nombre": "Familia Ramírez",
+      "lugares": 5
+    },
+    "D4X6": {
+      "nombre": "Familia Herrera",
+      "lugares": 3
+    }
+  },
+  "marca": "Hecho por Savey · savey.pro",
+  "galeria": 5,
+  "fotos": [],
+  "padrinos": [
+    {
+      "rol": "Madrina de vals",
+      "nombre": "Tía Guadalupe"
+    },
+    {
+      "rol": "Padrino de brindis",
+      "nombre": "Tío Ricardo"
+    },
+    {
+      "rol": "Madrina de ramo",
+      "nombre": "Abuela Carmen"
+    },
+    {
+      "rol": "Chambelán de honor",
+      "nombre": "Emilio Ruiz"
+    }
+  ],
+  "notas": [],
+  "galeriaTitulo": "Mi sesión de fotos"
+}
