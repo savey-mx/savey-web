@@ -22,7 +22,7 @@ var ORDEN = [
   'regalos_texto', 'regalos_tiendas', 'regalos_cuenta',
   'hospedaje', 'transporte', 'hashtag', 'notas_papas',
   'actividades', 'programa', 'registro', 'extra',
-  'plantilla', 'colores', 'ambiente', 'musica', 'fotos_cuantas',
+  'plantilla', 'plantilla_ref', 'colores', 'ambiente', 'musica', 'fotos_cuantas',
   'lista', 'lista_tel', 'lista_despues', 'origen'
 ];
 
@@ -81,6 +81,7 @@ function doPost(e) {
           '',
           'Contacto:     ' + (datos.contacto || ''),
           'WhatsApp:     ' + (datos.whatsapp || ''),
+          'Escribirle:   https://wa.me/' + String(datos.whatsapp || '').replace(/\D/g, ''),
           'Correo:       ' + (datos.correo || ''),
           '',
           'Abrir la hoja: ' + libro.getUrl()

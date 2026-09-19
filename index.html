@@ -85,6 +85,8 @@ section{padding:var(--aire) 0}
 .btn-tinta{background:var(--espresso);color:var(--marfil)}
 .btn-tinta:hover{background:#231C18}
 .iman{will-change:transform}
+.btn .flechita{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s var(--resorte)}
+.btn:hover .flechita{transform:translateX(4px)}
 
 /* ══════════ Navegación ══════════ */
 .barra{position:fixed;top:0;left:0;right:0;z-index:80;height:var(--nav);
@@ -441,7 +443,7 @@ footer a:hover{border-color:var(--champagne)}
       <a href="#paquetes">Paquetes</a>
       <a href="#proceso">¿Cómo funciona?</a>
       <a href="#preguntas">Preguntas</a>
-      <a class="btn btn-champ" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento"><svg><use href="#wa"/></svg>WhatsApp</a>
+      <a class="btn btn-champ" href="/brief/">Cotiza tu evento</a>
     </nav>
     <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="cajon">
       <span></span><span></span><span></span>
@@ -455,7 +457,7 @@ footer a:hover{border-color:var(--champagne)}
   <a href="#paquetes">Paquetes</a>
   <a href="#proceso">¿Cómo funciona?</a>
   <a href="#preguntas">Preguntas</a>
-  <a href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento">Escribir por WhatsApp</a>
+  <a href="/brief/">Cotiza tu evento</a>
 </div>
 
 <main id="inicio">
@@ -470,8 +472,8 @@ footer a:hover{border-color:var(--champagne)}
       </h1>
       <p class="matiz" id="matiz">Tus invitados la abren desde WhatsApp y confirman en un toque.</p>
       <div class="acciones" id="acciones">
-        <a class="btn btn-champ iman" href="#ejemplos">Ver los diseños</a>
-        <a class="btn btn-linea" href="/i/boda-aurora/?c=A7K9">Abrir una de ejemplo</a>
+        <a class="btn btn-champ iman" href="/brief/">Cotiza tu evento<svg class="flechita" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+        <a class="btn btn-linea" href="#ejemplos">Ver los diseños</a>
       </div>
       <ul class="sellos" id="sellos">
         <li><svg><use href="#ch"/></svg>Invitados ilimitados</li>
@@ -545,7 +547,7 @@ footer a:hover{border-color:var(--champagne)}
     <div class="pestanas revelar" role="tablist" id="pestanas" aria-label="Tipo de evento"><span class="indicador" id="indicador" aria-hidden="true"></span></div>
     <div class="riel" id="riel" role="tabpanel"></div>
 
-    <p class="galeria-pie revelar">¿No ves lo que buscas? <a href="https://wa.me/5215500000000?text=Hola%2C%20busco%20un%20dise%C3%B1o%20especial%20para%20mi%20evento">Escríbenos y lo diseñamos.</a></p>
+    <p class="galeria-pie revelar">¿No ves lo que buscas? <a href="/brief/">Cuéntanoslo en el cuestionario y lo diseñamos.</a></p>
   </div>
 </section>
 
@@ -623,7 +625,7 @@ footer a:hover{border-color:var(--champagne)}
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Confirmación de asistencia</li>
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Lista en 72 horas</li>
             </ul>
-            <a class="btn btn-linea" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20el%20paquete%20Plata">Quiero Plata</a>
+            <a class="btn btn-linea" href="/brief/?paquete=plata">Quiero Plata</a>
           </div>
         </article>
       </div>
@@ -645,7 +647,7 @@ footer a:hover{border-color:var(--champagne)}
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Tu propia dirección web</li>
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Lista en 48 horas</li>
             </ul>
-            <a class="btn btn-champ" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20el%20paquete%20Oro">Quiero Oro</a>
+            <a class="btn btn-champ" href="/brief/?paquete=oro">Quiero Oro</a>
           </div>
         </article>
       </div>
@@ -666,7 +668,7 @@ footer a:hover{border-color:var(--champagne)}
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Conteo final para el salón</li>
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Atención dedicada</li>
             </ul>
-            <a class="btn btn-tinta" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20el%20paquete%20Diamante">Quiero Diamante</a>
+            <a class="btn btn-tinta" href="/brief/?paquete=diamante">Quiero Diamante</a>
           </div>
         </article>
       </div>
@@ -683,16 +685,19 @@ footer a:hover{border-color:var(--champagne)}
   <div class="amplia">
     <div class="cabeza revelar">
       <h2>¿Cómo funciona?</h2>
-      <p class="entrada">De la primera plática a tu invitación publicada, normalmente en menos de tres días.</p>
+      <p class="entrada">Del cuestionario a tu invitación publicada, normalmente en menos de tres días.</p>
     </div>
     <div class="pasos-caja" id="pasos">
     <span class="hilo" aria-hidden="true"><i></i></span>
     <ol class="pasos">
-      <li><b>Nos escribes</b><span>Qué evento es, la fecha y cuántos invitados.</span></li>
-      <li><b>Mandas los datos</b><span>Un formulario corto con nombres, sedes, horarios y fotos.</span></li>
-      <li><b>Revisas</b><span>Abres tu liga y nos dices qué cambiar.</span></li>
+      <li><b>Llenas el cuestionario</b><span>Tu evento, la fecha, las sedes y el estilo que buscas. Toma unos 5 minutos.</span></li>
+      <li><b>Te escribimos por WhatsApp</b><span>Te damos tu cotización y afinamos los detalles contigo.</span></li>
+      <li><b>Revisas tu invitación</b><span>Abres tu liga y nos dices qué cambiar. Los ajustes van incluidos.</span></li>
       <li><b>Compartes</b><span>Mandas tu liga y ves las confirmaciones llegar.</span></li>
     </ol>
+    </div>
+    <div class="acciones revelar" style="margin-top:2.4rem">
+      <a class="btn btn-champ iman" href="/brief/">Empezar el cuestionario<svg class="flechita" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
     </div>
   </div>
 </section>
@@ -700,8 +705,10 @@ footer a:hover{border-color:var(--champagne)}
 <section id="preguntas">
   <div class="ancha dos-columnas">
     <div class="col-titulo revelar"><h2>Preguntas frecuentes</h2>
-      <p class="entrada">¿Te queda otra duda? Escríbenos por WhatsApp y te contestamos en minutos.</p></div>
+      <p class="entrada">¿Te queda otra duda? Déjala en el cuestionario y la resolvemos contigo por WhatsApp.</p></div>
     <div class="preguntas revelar">
+      <details class="pregunta"><summary>¿Qué pasa después de llenar el cuestionario?</summary>
+        <p>En breve alguien del equipo de Savey te escribe por WhatsApp al número que nos dejaste. Revisamos tu evento contigo, te damos tu cotización y, cuando estés de acuerdo, empezamos a diseñar tu invitación. Llenar el cuestionario no te compromete a nada.</p></details>
       <details class="pregunta"><summary>¿De verdad no hay cobros extra?</summary>
         <p>De verdad. Fotos, itinerario, cambios de color, invitados que confirman: nada de eso tiene tope ni costo adicional. El precio de tu paquete es el precio final.</p></details>
       <details class="pregunta"><summary>¿Cuál es la diferencia entre Plata, Oro y Diamante?</summary>
@@ -729,10 +736,10 @@ footer a:hover{border-color:var(--champagne)}
 <section class="oscura cierre">
   <div class="caja">
     <svg class="chispa revelar" aria-hidden="true"><use href="#ch"/></svg>
-    <h2 class="revelar">Cuéntanos de tu evento</h2>
-    <p class="matiz revelar">Contestamos en minutos, no al día siguiente.</p>
+    <h2 class="revelar">Cotiza tu evento</h2>
+    <p class="matiz revelar">Llena el cuestionario en unos minutos y te escribimos por WhatsApp con tu cotización.</p>
     <div class="acciones revelar">
-      <a class="btn btn-champ iman" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento"><svg><use href="#wa"/></svg>Escribir por WhatsApp</a>
+      <a class="btn btn-champ iman" href="/brief/">Empezar el cuestionario<svg class="flechita" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
       <a class="btn btn-linea" href="#ejemplos">Ver los diseños</a>
     </div>
   </div>

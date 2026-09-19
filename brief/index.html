@@ -3,140 +3,351 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cuestionario de diseño · Savey</title>
+<title>Cotiza tu evento · Savey</title>
+<meta name="description" content="Cuéntanos de tu evento y te escribimos por WhatsApp con tu cotización.">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="theme-color" content="#F7F2EA">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --marfil:#F7F2EA; --blanco:#FFFDFC; --espresso:#332B27; --suave:#6E625B;
-  --champagne:#C7A77A; --rosa:#CDA9A5; --exito:#5B7A5B;
+  --champagne:#C7A77A; --champagne-os:#BB9A6C; --rosa:#CDA9A5; --exito:#5B7A5B; --wa:#1FA855;
   --borde:rgba(51,43,39,.12); --fino:rgba(51,43,39,.07);
   --serif:'Instrument Serif',Georgia,serif;
   --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
   --curva:cubic-bezier(.22,.61,.36,1);
+  --resorte:cubic-bezier(.34,1.45,.5,1);
+  --plata:linear-gradient(125deg,#F5F6F8,#CDD1D7 30%,#F1F2F4 50%,#AFB5BD 75%,#E6E8EB);
+  --oro:linear-gradient(125deg,#F8EAC6,#D6B26C 30%,#F4DFAB 50%,#B78B42 75%,#EBD199);
+  --diamante:linear-gradient(125deg,#F4F7FB,#DCE5F1 25%,#F7EEF3 45%,#E2F2EE 65%,#D9DFF0);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{background:var(--marfil);color:var(--espresso);font-family:var(--sans);
-  font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;top:-25vmax;right:-20vmax;width:60vmax;height:60vmax;pointer-events:none;z-index:-1;
+  background:radial-gradient(circle,rgba(199,167,122,.2),transparent 62%)}
+body::after{content:"";position:fixed;bottom:-30vmax;left:-25vmax;width:60vmax;height:60vmax;pointer-events:none;z-index:-1;
+  background:radial-gradient(circle,rgba(205,169,165,.16),transparent 62%)}
 svg{display:block}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--champagne);outline-offset:2px;border-radius:4px}
-.env{max-width:640px;margin:0 auto;padding:0 20px}
-
-/* ── Encabezado y avance ── */
-header{position:sticky;top:0;z-index:20;background:rgba(247,242,234,.94);
-  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--borde)}
-.cab{display:flex;align-items:center;gap:12px;padding:14px 0 12px}
-.marca{font-family:var(--serif);font-size:22px;display:flex;align-items:center;gap:7px}
-.marca svg{width:11px;height:11px;fill:var(--champagne)}
-.cab .paso-n{margin-left:auto;font-size:12.5px;color:var(--suave);font-variant-numeric:tabular-nums}
-.barra{height:3px;background:var(--fino);border-radius:99px;overflow:hidden;margin-bottom:12px}
-.barra i{display:block;height:100%;width:0;background:var(--champagne);
-  transition:width .5s var(--curva);border-radius:99px}
-
-main{padding:32px 0 40px}
-h1{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.16;letter-spacing:-.015em}
-.bajada{color:var(--suave);margin-top:8px;font-size:14.5px}
-.bloque{margin-top:26px;display:grid;gap:18px}
-
-/* ── Campos ── */
-label.rot{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--suave);margin-bottom:7px;font-weight:500}
-.req{color:var(--rosa)}
-input,select,textarea{width:100%;padding:12px 13px;background:var(--blanco);
-  border:1px solid var(--borde);color:var(--espresso);font-family:var(--sans);
-  font-size:16px;border-radius:8px;-webkit-appearance:none;appearance:none}
-select{background-image:linear-gradient(45deg,transparent 50%,var(--suave) 50%),
-  linear-gradient(135deg,var(--suave) 50%,transparent 50%);
-  background-position:calc(100% - 19px) 51%,calc(100% - 13px) 51%;
-  background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
-input:focus,select:focus,textarea:focus{outline:0;border-color:var(--champagne)}
-textarea{min-height:92px;resize:vertical;line-height:1.55}
-.ayuda{font-size:12.5px;color:var(--suave);margin-top:6px}
-.par{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:420px){.par{grid-template-columns:1fr}}
-
-/* ── Tarjetas de opción ── */
-.tarjetas{display:grid;gap:10px}
-.tarjeta{position:relative;background:var(--blanco);border:1px solid var(--borde);
-  border-radius:12px;padding:16px 17px;cursor:pointer;display:block;
-  transition:border-color .3s var(--curva),background .3s var(--curva)}
-.tarjeta:hover{border-color:var(--champagne)}
-.tarjeta input{position:absolute;opacity:0;pointer-events:none}
-.tarjeta .fila{display:flex;align-items:baseline;gap:10px}
-.tarjeta b{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2}
-.tarjeta .precio{margin-left:auto;font-family:var(--serif);font-size:19px;white-space:nowrap}
-.tarjeta p{font-size:13.5px;color:var(--suave);margin-top:5px;line-height:1.5}
-.tarjeta:has(input:checked){border-color:var(--champagne);
-  background:linear-gradient(180deg,rgba(199,167,122,.12),rgba(199,167,122,.03)),var(--blanco)}
-.tarjeta:has(input:checked)::after{content:"";position:absolute;top:15px;right:15px;
-  width:8px;height:8px;background:var(--champagne);transform:rotate(45deg)}
-.tarjeta.chica b{font-size:17px}
-.tarjeta .fila{align-items:center}
-.metal{width:22px;height:22px;border-radius:50%;flex:none;display:inline-block;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 3px rgba(0,0,0,.12),0 0 0 1px rgba(51,43,39,.12)}
-.metal.plata{background:linear-gradient(125deg,#F5F6F8,#CDD1D7 30%,#F1F2F4 50%,#AFB5BD 75%,#E6E8EB)}
-.metal.oro{background:linear-gradient(125deg,#F8EAC6,#D6B26C 30%,#F4DFAB 50%,#B78B42 75%,#EBD199)}
-.metal.diamante{background:linear-gradient(125deg,#F4F7FB,#DCE5F1 25%,#F7EEF3 45%,#E2F2EE 65%,#D9DFF0)}
-.etiqueta{font-family:var(--sans);font-size:11px;font-weight:600;background:var(--espresso);color:var(--marfil);
-  padding:3px 8px;border-radius:99px;white-space:nowrap}
-.tarjeta.con-metal:has(input:checked)::after{display:none}
-.tarjeta.plata:has(input:checked){border-color:#AFB5BD;background:linear-gradient(180deg,rgba(175,181,189,.16),rgba(175,181,189,.03)),var(--blanco)}
-.tarjeta.diamante:has(input:checked){border-color:#B9C6DC;background:linear-gradient(120deg,rgba(220,229,241,.5),rgba(247,238,243,.5),rgba(226,242,238,.45)),var(--blanco)}
-
-/* ── Casillas múltiples ── */
-.casillas{display:grid;gap:8px}
-.casilla{display:flex;gap:11px;align-items:flex-start;background:var(--blanco);
-  border:1px solid var(--borde);border-radius:10px;padding:13px 14px;cursor:pointer;
-  transition:border-color .3s var(--curva)}
-.casilla:hover{border-color:var(--champagne)}
-.casilla input{width:17px;height:17px;flex:none;margin-top:2px;accent-color:var(--champagne);
-  -webkit-appearance:auto;appearance:auto;padding:0}
-.casilla b{font-weight:500;font-size:15px;display:block}
-.casilla span{font-size:13px;color:var(--suave);display:block;line-height:1.45}
-.casilla:has(input:checked){border-color:var(--champagne);background:rgba(199,167,122,.08)}
-
-/* ── Navegación ── */
-.pies{display:flex;gap:10px;margin-top:30px;padding-top:22px;border-top:1px solid var(--borde)}
-.bt{height:52px;padding:0 26px;border:0;border-radius:8px;font-family:var(--sans);
-  font-weight:500;font-size:15.5px;cursor:pointer;transition:background .3s var(--curva),transform .3s var(--curva)}
-.bt-ir{background:var(--espresso);color:var(--marfil);flex:1}
-.bt-ir:hover{background:#241B12;transform:translateY(-1px)}
-.bt-atras{background:transparent;border:1px solid var(--borde);color:var(--espresso)}
-.bt-atras:hover{border-color:var(--champagne)}
-.bt-enviar{background:var(--champagne);color:var(--espresso);flex:1}
-.bt-enviar:hover{background:#BB9A6C}
-.bt:disabled{opacity:.55;cursor:default;transform:none}
-
-/* ── Revisión ── */
-.resumen{background:var(--blanco);border:1px solid var(--fino);border-radius:12px;
-  padding:6px 18px;margin-top:20px}
-.resumen .r{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--fino);font-size:14px}
-.resumen .r:last-child{border-bottom:0}
-.resumen .r .k{color:var(--suave);flex:0 0 40%}
-.resumen .r .v{flex:1;font-weight:500;word-break:break-word}
-
-.alerta{background:rgba(205,169,165,.16);border:1px solid rgba(205,169,165,.5);
-  border-radius:10px;padding:13px 15px;font-size:13.5px;margin-top:16px;color:var(--espresso)}
-.guardado{font-size:12.5px;color:var(--suave);margin-top:14px;text-align:center;min-height:18px}
-
-/* ── Fin ── */
-.fin{text-align:center;padding:50px 0}
-.fin svg{width:34px;height:34px;fill:var(--champagne);margin:0 auto 18px}
-.fin h1{font-size:32px}
-.folio{display:inline-block;margin-top:18px;padding:9px 20px;background:var(--blanco);
-  border:1px solid var(--borde);border-radius:99px;font-family:var(--serif);font-size:19px;letter-spacing:.06em}
-.wa{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:24px;
-  height:54px;padding:0 26px;border-radius:8px;background:var(--champagne);color:var(--espresso);
-  text-decoration:none;font-weight:500}
-.wa svg{width:18px;height:18px;fill:currentColor;margin:0}
-
-footer{padding:26px 0 40px;text-align:center;font-size:12px;color:var(--suave)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:2px;border-radius:6px}
 .oculto{display:none!important}
+
+/* ══════════ Encabezado ══════════ */
+header{position:sticky;top:0;z-index:20;background:rgba(247,242,234,.86);
+  -webkit-backdrop-filter:saturate(170%) blur(14px);backdrop-filter:saturate(170%) blur(14px);
+  border-bottom:1px solid var(--fino)}
+.cab{max-width:1080px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:14px}
+.marca{font-family:var(--serif);font-size:23px;display:flex;align-items:center;gap:7px;text-decoration:none;line-height:1}
+.marca svg{width:11px;height:11px;fill:var(--champagne);transition:transform .6s var(--resorte)}
+.marca:hover svg{transform:rotate(90deg) scale(1.2)}
+.cab-paso{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--suave)}
+.cab-paso b{font-weight:500;color:var(--espresso)}
+.anillo{width:30px;height:30px;transform:rotate(-90deg)}
+.anillo circle{fill:none;stroke-width:3}
+.anillo .base{stroke:var(--fino)}
+.anillo .lleno{stroke:var(--champagne);stroke-linecap:round;stroke-dasharray:81.7;stroke-dashoffset:81.7;
+  transition:stroke-dashoffset .7s var(--curva)}
+.avance{height:2px;background:transparent;position:relative}
+.avance i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--champagne),#E2C79B);
+  transition:width .7s var(--curva);box-shadow:0 0 12px rgba(199,167,122,.7)}
+
+/* ══════════ Distribución ══════════ */
+.env{max-width:1080px;margin:0 auto;padding:0 20px;display:grid;gap:48px}
+@media (min-width:62rem){.env{grid-template-columns:minmax(0,600px) 1fr;gap:72px;align-items:start}}
+main{padding:40px 0 60px;min-width:0}
+.vista{position:sticky;top:100px;padding-top:48px;display:none}
+@media (min-width:62rem){.vista{display:block}}
+
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,40px);line-height:1.08;letter-spacing:-.02em}
+.bajada{color:var(--suave);margin-top:10px;font-size:15px;max-width:46ch}
+.bloque{margin-top:30px;display:grid;gap:22px}
+
+/* ══════════ Portada del cuestionario ══════════ */
+.bienvenida h1{font-size:clamp(38px,7vw,56px);line-height:1}
+.bienvenida .bajada{font-size:16.5px;margin-top:16px}
+.promesas{list-style:none;display:grid;gap:10px;margin-top:30px}
+.promesas li{display:flex;align-items:center;gap:14px;background:var(--blanco);border:1px solid var(--fino);
+  border-radius:14px;padding:14px 16px;font-size:14.5px;animation:entra .7s var(--curva) both;animation-delay:calc(var(--i) * 90ms + 150ms)}
+.promesas .ico{width:38px;height:38px;border-radius:11px;flex:none;display:grid;place-items:center;background:rgba(199,167,122,.15)}
+.promesas .ico svg{width:19px;height:19px;stroke:#9C7A4A;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.promesas .ico.wa{background:rgba(31,168,85,.12)}
+.promesas .ico.wa svg{fill:var(--wa);stroke:none}
+.promesas b{font-weight:600;display:block;color:var(--espresso)}
+.promesas b+span{color:var(--suave);font-size:13px;display:block}
+.elegido{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:6px 14px 6px 6px;border-radius:99px;
+  background:var(--blanco);border:1px solid var(--borde);font-size:13.5px}
+.elegido i{width:22px;height:22px;border-radius:50%;background:var(--metal)}
+
+/* ══════════ Campos ══════════ */
+.campo{animation:entra .6s var(--curva) both;animation-delay:calc(var(--i,0) * 55ms)}
+.sin-anim .campo,.sin-anim .promesas li{animation:none}
+@keyframes entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+label.rot,.rot{display:block;font-size:13.5px;color:var(--espresso);margin-bottom:8px;font-weight:500}
+.req{color:var(--champagne-os);margin-left:2px}
+input,select,textarea{width:100%;padding:14px 15px;background:var(--blanco);
+  border:1px solid var(--borde);color:var(--espresso);font-family:var(--sans);
+  font-size:16px;border-radius:12px;-webkit-appearance:none;appearance:none;
+  transition:border-color .25s,box-shadow .25s,background .25s}
+input::placeholder,textarea::placeholder{color:rgba(110,98,91,.55)}
+input:hover,textarea:hover{border-color:rgba(51,43,39,.22)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--champagne);box-shadow:0 0 0 4px rgba(199,167,122,.18)}
+textarea{min-height:100px;resize:vertical;line-height:1.55}
+input[type=date],input[type=time]{min-height:52px}
+.ayuda{font-size:12.5px;color:var(--suave);margin-top:7px;line-height:1.5}
+.error{font-size:12.5px;color:#A2524B;margin-top:7px;display:flex;align-items:center;gap:6px}
+.error::before{content:"";width:6px;height:6px;border-radius:50%;background:#C9776E;flex:none}
+.falta input,.falta textarea,.falta .tel-caja{border-color:#D29C95!important;box-shadow:0 0 0 4px rgba(205,169,165,.2)}
+.sacude{animation:sacude .45s var(--curva)}
+@keyframes sacude{20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
+.par{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:440px){.par{grid-template-columns:1fr}}
+
+/* WhatsApp */
+.tel-caja{display:flex;align-items:center;background:var(--blanco);border:1px solid var(--borde);border-radius:12px;
+  transition:border-color .25s,box-shadow .25s;overflow:hidden}
+.tel-caja:focus-within{border-color:var(--champagne);box-shadow:0 0 0 4px rgba(199,167,122,.18)}
+.tel-caja.valido{border-color:rgba(31,168,85,.5)}
+.lada{display:flex;align-items:center;gap:7px;padding:0 12px 0 14px;height:52px;border-right:1px solid var(--fino);
+  font-size:15px;font-weight:500;flex:none;background:rgba(31,168,85,.06)}
+.lada svg{width:18px;height:18px;fill:var(--wa)}
+.tel-caja input{border:0;box-shadow:none!important;border-radius:0;background:transparent;font-size:17px;letter-spacing:.02em}
+.tel-ok{width:24px;height:24px;border-radius:50%;background:var(--wa);margin-right:12px;flex:none;display:grid;place-items:center;
+  transform:scale(0);transition:transform .45s var(--resorte)}
+.tel-ok svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.valido .tel-ok{transform:scale(1)}
+.nota-wa{display:flex;gap:10px;align-items:flex-start;margin-top:10px;padding:11px 13px;border-radius:12px;
+  background:rgba(31,168,85,.07);border:1px solid rgba(31,168,85,.18);font-size:13px;line-height:1.5}
+.nota-wa svg{width:16px;height:16px;fill:var(--wa);flex:none;margin-top:2px}
+.enlace{background:none;border:0;cursor:pointer;font-size:12.5px;color:var(--suave);text-decoration:underline;
+  text-decoration-color:var(--champagne);text-underline-offset:3px;margin-top:8px;padding:0}
+.enlace:hover{color:var(--espresso)}
+
+/* ══════════ Tarjetas de opción ══════════ */
+.tarjetas{display:grid;gap:12px}
+.tarjetas.rejilla{grid-template-columns:1fr 1fr}
+@media (max-width:480px){.tarjeta.con-ico{padding:14px}.tarjeta.con-ico b{font-size:16.5px}.tarjeta.con-ico .sel{top:13px;right:12px}}
+@media (max-width:340px){.tarjetas.rejilla{grid-template-columns:1fr}}
+.tarjeta{position:relative;background:var(--blanco);border:1px solid var(--borde);
+  border-radius:16px;padding:18px 18px 17px;cursor:pointer;display:block;overflow:hidden;isolation:isolate;
+  transition:border-color .3s var(--curva),transform .4s var(--resorte),box-shadow .35s var(--curva)}
+.tarjeta:hover{border-color:rgba(199,167,122,.7);transform:translateY(-2px);box-shadow:0 14px 30px -20px rgba(51,43,39,.4)}
+.tarjeta:active{transform:scale(.985)}
+.tarjeta input{position:absolute;opacity:0;pointer-events:none}
+.tarjeta .fila{display:flex;align-items:center;gap:11px;padding-right:30px}
+.tarjeta b{font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.15}
+.tarjeta .precio{margin-left:auto;font-family:var(--serif);font-size:21px;white-space:nowrap}
+.tarjeta p{font-size:13.5px;color:var(--suave);margin-top:8px;line-height:1.5}
+/* palomita que aparece al elegir */
+.sel{position:absolute;top:17px;right:16px;width:24px;height:24px;border-radius:50%;
+  border:1.5px solid var(--borde);display:grid;place-items:center;transition:background .3s,border-color .3s}
+.sel svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;
+  transform:scale(0);transition:transform .45s var(--resorte)}
+.tarjeta:has(input:checked){border-color:var(--champagne);
+  background:linear-gradient(180deg,rgba(199,167,122,.13),rgba(199,167,122,.03)),var(--blanco);
+  box-shadow:0 16px 34px -22px rgba(155,120,70,.7)}
+.tarjeta:has(input:checked) .sel{background:var(--espresso);border-color:var(--espresso)}
+.tarjeta:has(input:checked) .sel svg{transform:scale(1)}
+.tarjeta:has(input:focus-visible){outline:2px solid var(--champagne);outline-offset:2px}
+/* paquetes con su metal */
+.tarjeta.con-metal .fila{padding-right:0}
+.tarjeta.con-metal .sel{display:none}
+.tarjeta.con-metal::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--metal);
+  transition:width .45s var(--curva);z-index:-1}
+.tarjeta.con-metal:has(input:checked)::before{width:100%;opacity:.28}
+.plata{--metal:var(--plata)} .oro{--metal:var(--oro)} .diamante{--metal:var(--diamante)}
+.medalla{width:30px;height:30px;border-radius:50%;flex:none;background:var(--metal);display:grid;place-items:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -2px 3px rgba(0,0,0,.12),0 0 0 1px rgba(51,43,39,.1)}
+.medalla svg{width:11px;height:11px;fill:rgba(51,43,39,.65)}
+.tarjeta:has(input:checked) .medalla{animation:gira .8s var(--resorte)}
+@keyframes gira{from{transform:rotateY(0) scale(1)}50%{transform:rotateY(180deg) scale(1.15)}to{transform:rotateY(360deg) scale(1)}}
+.etiqueta{font-family:var(--sans);font-size:11px;font-weight:600;background:var(--espresso);color:var(--marfil);
+  padding:3px 9px;border-radius:99px;white-space:nowrap}
+/* eventos con icono */
+.tarjeta.con-ico{padding:16px}
+.tarjeta.con-ico .fila{flex-direction:column;align-items:flex-start;gap:12px}
+.tarjeta.con-ico b{font-size:19px}
+.tarjeta .ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(199,167,122,.14);
+  transition:background .3s,transform .5s var(--resorte)}
+.tarjeta .ico svg{width:21px;height:21px;stroke:#9C7A4A;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s}
+.tarjeta:hover .ico{transform:rotate(-6deg) scale(1.06)}
+.tarjeta:has(input:checked) .ico{background:var(--espresso)}
+.tarjeta:has(input:checked) .ico svg{stroke:var(--champagne)}
+.tarjeta.chica{padding:14px 16px}
+.tarjeta.chica b{font-family:var(--sans);font-size:15px;font-weight:500}
+.tarjeta.chica .sel{top:13px}
+
+/* ══════════ Pastillas ══════════ */
+.pastillas{display:flex;flex-wrap:wrap;gap:8px}
+.pastilla{position:relative;cursor:pointer}
+.pastilla input{position:absolute;opacity:0;pointer-events:none}
+.pastilla span{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;
+  background:var(--blanco);border:1px solid var(--borde);font-size:14px;
+  transition:background .3s,color .3s,border-color .3s,transform .4s var(--resorte)}
+.pastilla:hover span{border-color:var(--champagne)}
+.pastilla:active span{transform:scale(.95)}
+.pastilla input:checked+span{background:var(--espresso);color:var(--marfil);border-color:var(--espresso);animation:pop .45s var(--resorte)}
+.pastilla input:focus-visible+span{outline:2px solid var(--champagne);outline-offset:2px}
+@keyframes pop{50%{transform:scale(1.07)}}
+.pastilla .gotas{display:inline-flex}
+.pastilla .gotas i{width:13px;height:13px;border-radius:50%;margin-left:-4px;box-shadow:0 0 0 1.5px var(--blanco)}
+.pastilla .gotas i:first-child{margin-left:0}
+.pastilla input:checked+span .gotas i{box-shadow:0 0 0 1.5px var(--espresso)}
+
+/* ══════════ Casillas múltiples ══════════ */
+.casillas{display:grid;gap:9px;grid-template-columns:1fr 1fr}
+@media (max-width:480px){.casillas{grid-template-columns:1fr}}
+.casilla{position:relative;display:flex;gap:12px;align-items:flex-start;background:var(--blanco);
+  border:1px solid var(--borde);border-radius:14px;padding:13px 14px;cursor:pointer;
+  transition:border-color .3s var(--curva),background .3s,transform .4s var(--resorte)}
+.casilla:hover{border-color:var(--champagne)}
+.casilla:active{transform:scale(.98)}
+.casilla input{position:absolute;opacity:0;pointer-events:none}
+.caja-check{width:20px;height:20px;border-radius:6px;border:1.5px solid rgba(51,43,39,.25);flex:none;margin-top:1px;
+  display:grid;place-items:center;transition:background .25s,border-color .25s}
+.caja-check svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .35s var(--curva) .05s}
+.casilla b{font-weight:500;font-size:14.5px;display:block;line-height:1.3}
+.casilla small{font-size:12.5px;color:var(--suave);display:block;line-height:1.4;margin-top:2px}
+.casilla:has(input:checked){border-color:var(--champagne);background:linear-gradient(180deg,rgba(199,167,122,.12),rgba(199,167,122,.03)),var(--blanco)}
+.casilla:has(input:checked) .caja-check{background:var(--espresso);border-color:var(--espresso)}
+.casilla:has(input:checked) .caja-check svg{stroke-dashoffset:0}
+.casilla:has(input:focus-visible){outline:2px solid var(--champagne);outline-offset:2px}
+.contador{font-size:12.5px;color:var(--suave);margin-top:10px}
+
+/* ══════════ Botones ══════════ */
+.pies{display:flex;gap:10px;margin-top:34px;padding-top:24px;border-top:1px solid var(--fino);align-items:center}
+.bt{position:relative;overflow:hidden;isolation:isolate;height:54px;padding:0 26px;border:0;border-radius:99px;
+  font-family:var(--sans);font-weight:500;font-size:15.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  text-decoration:none;transition:background .3s var(--curva),transform .4s var(--resorte),box-shadow .3s}
+.bt::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
+  transform:translateX(-120%);transition:transform .8s var(--curva)}
+.bt:hover::before{transform:translateX(120%)}
+.bt:active{transform:scale(.97)}
+.bt .flecha{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+  transition:transform .4s var(--resorte)}
+.bt:hover .flecha{transform:translateX(4px)}
+.bt-ir{background:var(--espresso);color:var(--marfil);flex:1;box-shadow:0 12px 26px -14px rgba(51,43,39,.8)}
+.bt-ir:hover{background:#231C18}
+.bt-atras{background:transparent;border:1px solid var(--borde);color:var(--espresso);padding:0 20px}
+.bt-atras:hover{border-color:var(--champagne)}
+.bt-atras .flecha{transform:rotate(180deg)}
+.bt-atras:hover .flecha{transform:rotate(180deg) translateX(4px)}
+.bt-enviar{background:var(--champagne);color:var(--espresso);flex:1;box-shadow:0 12px 26px -12px rgba(155,120,70,.8)}
+.bt-enviar:hover{background:var(--champagne-os)}
+.bt:disabled{opacity:.7;cursor:default;transform:none}
+.giro{width:18px;height:18px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:giro .8s linear infinite}
+@keyframes giro{to{transform:rotate(360deg)}}
+.guardado{font-size:12.5px;color:var(--suave);margin-top:14px;min-height:20px;display:flex;align-items:center;gap:7px;
+  opacity:0;transition:opacity .4s}
+.guardado.si{opacity:1}
+.guardado svg{width:13px;height:13px;stroke:var(--exito);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.tecla{font-size:12px;color:var(--suave);margin-left:auto;display:none}
+.tecla kbd{font-family:var(--sans);font-size:11px;border:1px solid var(--borde);border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:var(--blanco)}
+@media (hover:hover) and (min-width:700px){.tecla{display:block}}
+
+/* ══════════ Revisión ══════════ */
+.confirma-wa{display:flex;align-items:center;gap:14px;margin-top:24px;padding:16px 18px;border-radius:16px;
+  background:linear-gradient(135deg,rgba(31,168,85,.1),rgba(31,168,85,.03)),var(--blanco);border:1px solid rgba(31,168,85,.25)}
+.confirma-wa .wa-ico{width:42px;height:42px;border-radius:50%;background:var(--wa);display:grid;place-items:center;flex:none}
+.confirma-wa .wa-ico svg{width:22px;height:22px;fill:#fff}
+.confirma-wa small{display:block;font-size:12.5px;color:var(--suave)}
+.confirma-wa b{font-size:18px;font-weight:600;letter-spacing:.01em}
+.confirma-wa .enlace{margin:0 0 0 auto}
+.grupo{background:var(--blanco);border:1px solid var(--fino);border-radius:16px;margin-top:12px;overflow:hidden;
+  animation:entra .6s var(--curva) both;animation-delay:calc(var(--i,0) * 60ms)}
+.grupo-cab{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--fino);
+  background:rgba(247,242,234,.5)}
+.grupo-cab h2{font-family:var(--serif);font-weight:400;font-size:19px}
+.editar{background:none;border:1px solid var(--borde);border-radius:99px;padding:5px 13px;font-size:12.5px;cursor:pointer;
+  transition:border-color .2s,background .2s}
+.editar:hover{border-color:var(--champagne);background:var(--blanco)}
+.r{display:flex;gap:14px;padding:11px 18px;border-bottom:1px solid var(--fino);font-size:14px}
+.r:last-child{border-bottom:0}
+.r .k{color:var(--suave);flex:0 0 38%}
+.r .v{flex:1;font-weight:500;word-break:break-word}
+.aviso{display:flex;gap:12px;align-items:flex-start;background:rgba(199,167,122,.12);border:1px solid rgba(199,167,122,.35);
+  border-radius:14px;padding:14px 16px;font-size:13.5px;margin-top:18px}
+.aviso svg{width:16px;height:16px;fill:var(--champagne);flex:none;margin-top:2px}
+
+/* ══════════ Vista previa ══════════ */
+.vista-tit{font-size:12.5px;color:var(--suave);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.vista-tit::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 rgba(31,168,85,.5);animation:latido 2s infinite}
+@keyframes latido{70%{box-shadow:0 0 0 8px rgba(31,168,85,0)}100%{box-shadow:0 0 0 0 rgba(31,168,85,0)}}
+.telefono{width:min(100%,300px);padding:10px;border-radius:38px;background:#1d1917;
+  box-shadow:0 2px 4px rgba(51,43,39,.1),0 40px 80px -30px rgba(51,43,39,.6);
+  transform:perspective(1000px) rotateY(-8deg) rotateX(3deg);transition:transform .8s var(--curva)}
+.telefono:hover{transform:perspective(1000px) rotateY(0) rotateX(0)}
+.pantalla{aspect-ratio:9/16;border-radius:29px;overflow:hidden;position:relative;
+  background:var(--m-fondo,#332B27);color:var(--m-tinta,#F7F2EA);container-type:inline-size;
+  transition:background .8s var(--curva),color .8s var(--curva)}
+.pantalla .marco{position:absolute;inset:12px;border-radius:20px;border:1px solid color-mix(in srgb,var(--m-acento,#C7A77A) 40%,transparent);transition:border-color .8s}
+.pantalla .capa{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.5em;padding:2em 1.4em;text-align:center}
+.m-rotulo{font-size:clamp(.5rem,4.2cqw,.7rem);letter-spacing:.22em;text-transform:uppercase;color:var(--m-acento,#C7A77A);transition:color .8s}
+.m-nombre{font-family:var(--serif);font-size:clamp(1.3rem,12cqw,2.2rem);line-height:1.05;letter-spacing:-.01em;
+  max-width:100%;overflow-wrap:anywhere;transition:opacity .3s}
+.m-orn{width:14px;height:14px;fill:var(--m-acento,#C7A77A);transition:fill .8s}
+.m-fecha{font-size:clamp(.5rem,4cqw,.72rem);letter-spacing:.18em;opacity:.75}
+.m-lugar{font-size:clamp(.5rem,3.8cqw,.7rem);opacity:.6;margin-top:.4em;max-width:90%}
+.m-boton{margin-top:1.4em;font-size:clamp(.5rem,3.8cqw,.7rem);padding:.7em 1.4em;border-radius:99px;
+  border:1px solid color-mix(in srgb,var(--m-acento,#C7A77A) 60%,transparent);letter-spacing:.08em}
+.pantalla.sans .m-nombre{font-family:var(--sans);font-weight:600;letter-spacing:-.02em}
+.pantalla.ancha-t .m-nombre{font-family:var(--sans);font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(1rem,8cqw,1.5rem)}
+.brilla{animation:brilla .7s var(--curva)}
+@keyframes brilla{40%{transform:scale(1.03);filter:brightness(1.12)}}
+.vista-pie{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:13px;color:var(--suave);min-height:30px}
+.vista-pie .medalla{width:26px;height:26px}
+.vista-pie b{color:var(--espresso);font-weight:500}
+
+/* ══════════ Final ══════════ */
+.fin{text-align:center;padding:30px 0 20px;position:relative}
+.sello{position:relative;width:96px;height:96px;margin:0 auto 26px}
+.sello .circulo{position:absolute;inset:0;border-radius:50%;background:var(--oro);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -4px 8px rgba(0,0,0,.12),0 20px 40px -18px rgba(155,120,70,.9);
+  animation:aparece .9s var(--resorte) both}
+.sello svg.palomita{position:absolute;inset:0;margin:auto;width:40px;height:40px;stroke:var(--espresso);fill:none;stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:traza .6s var(--curva) .55s forwards}
+@keyframes aparece{from{transform:scale(0) rotate(-90deg)}to{transform:none}}
+@keyframes traza{to{stroke-dashoffset:0}}
+.chispa-vuela{position:absolute;left:50%;top:50%;width:14px;height:14px;fill:var(--champagne);pointer-events:none}
+.fin h1{font-size:clamp(34px,6vw,46px)}
+.fin .bajada{margin:14px auto 0;max-width:40ch;font-size:16px}
+.fin-wa{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 18px 10px 10px;border-radius:99px;
+  background:var(--blanco);border:1px solid rgba(31,168,85,.3);font-weight:600;font-size:16px}
+.fin-wa span{width:32px;height:32px;border-radius:50%;background:var(--wa);display:grid;place-items:center}
+.fin-wa svg{width:17px;height:17px;fill:#fff}
+.linea-tiempo{list-style:none;text-align:left;max-width:400px;margin:34px auto 0;position:relative}
+.linea-tiempo::before{content:"";position:absolute;left:15px;top:18px;bottom:18px;width:1.5px;background:var(--borde)}
+.linea-tiempo li{position:relative;display:flex;gap:16px;align-items:flex-start;padding:10px 0;
+  animation:entra .6s var(--curva) both;animation-delay:calc(var(--i) * 150ms + 900ms)}
+.punto{width:32px;height:32px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--blanco);
+  border:1.5px solid var(--borde);position:relative;z-index:1}
+.punto svg{width:14px;height:14px;stroke:var(--espresso);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.hecho .punto{background:var(--espresso);border-color:var(--espresso)}
+.hecho .punto svg{stroke:var(--champagne)}
+.ahora .punto{border-color:var(--wa)}
+.ahora .punto::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--wa);animation:latido 1.8s infinite}
+.linea-tiempo b{font-weight:500;display:block;line-height:1.3;margin-top:5px}
+.linea-tiempo small{font-size:13px;color:var(--suave);display:block;line-height:1.45}
+.folio{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:9px 20px;background:var(--blanco);
+  border:1px dashed var(--borde);border-radius:99px;font-size:13px;color:var(--suave)}
+.folio b{font-family:var(--serif);font-weight:400;font-size:20px;letter-spacing:.08em;color:var(--espresso)}
+.fin .acciones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.fin .acciones .bt{flex:none}
+
+footer{padding:26px 20px 40px;text-align:center;font-size:12px;color:var(--suave)}
+footer a{text-decoration:none;border-bottom:1px solid var(--borde)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
+  .sello svg.palomita{stroke-dashoffset:0}
+}
 </style>
 </head>
 <body>
@@ -144,30 +355,56 @@ footer{padding:26px 0 40px;text-align:center;font-size:12px;color:var(--suave)}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="ch" viewBox="0 0 24 24"><path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/></symbol>
   <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 2a8 8 0 11-4.1 14.9l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 0112 4zm-3.4 4c-.2 0-.5.1-.7.4-.2.3-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.6 4 3.5 2 .8 2.4.6 2.8.6.4 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.6-.3-1.4-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7 7 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></symbol>
+  <symbol id="ok" viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7"/></symbol>
+  <symbol id="fl" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></symbol>
 </svg>
 
 <header>
-  <div class="env">
-    <div class="cab">
-      <div class="marca"><svg><use href="#ch"/></svg>savey</div>
-      <div class="paso-n" id="paso-n"></div>
+  <div class="cab">
+    <a class="marca" href="/" aria-label="Volver a Savey"><svg><use href="#ch"/></svg>savey</a>
+    <div class="cab-paso" id="cab-paso">
+      <span id="paso-n"></span>
+      <svg class="anillo" viewBox="0 0 30 30" aria-hidden="true"><circle class="base" cx="15" cy="15" r="13"/><circle class="lleno" id="anillo" cx="15" cy="15" r="13"/></svg>
     </div>
-    <div class="barra"><i id="avance"></i></div>
   </div>
+  <div class="avance"><i id="avance"></i></div>
 </header>
 
-<main>
-  <div class="env">
-    <div id="lienzo"></div>
-    <div class="pies" id="pies">
-      <button class="bt bt-atras oculto" id="atras" type="button">Atrás</button>
-      <button class="bt bt-ir" id="ir" type="button">Empezar</button>
+<div class="env">
+  <main>
+    <div id="lienzo" aria-live="polite"></div>
+    <div id="controles">
+      <div class="pies" id="pies">
+        <button class="bt bt-atras oculto" id="atras" type="button"><svg class="flecha"><use href="#fl"/></svg>Atrás</button>
+        <button class="bt bt-ir" id="ir" type="button"><span id="ir-txt">Empezar</span><svg class="flecha"><use href="#fl"/></svg></button>
+      </div>
+      <div style="display:flex;align-items:center">
+        <div class="guardado" id="guardado"><svg viewBox="0 0 16 16"><use href="#ok"/></svg>Tus respuestas se guardan solas en este dispositivo</div>
+        <div class="tecla" id="tecla">o presiona <kbd>Enter</kbd></div>
+      </div>
     </div>
-    <div class="guardado" id="guardado"></div>
-  </div>
-</main>
+  </main>
 
-<footer>Cuestionario privado de Savey · saveystudio.com</footer>
+  <aside class="vista" aria-hidden="true">
+    <div class="vista-tit">Tu invitación va tomando forma</div>
+    <div class="telefono">
+      <div class="pantalla" id="pv">
+        <div class="marco"></div>
+        <div class="capa">
+          <span class="m-rotulo" id="pv-rotulo">Tu evento</span>
+          <span class="m-nombre" id="pv-nombre">Tu nombre aquí</span>
+          <svg class="m-orn"><use href="#ch"/></svg>
+          <span class="m-fecha" id="pv-fecha">DD · MM · AA</span>
+          <span class="m-lugar" id="pv-lugar"></span>
+          <span class="m-boton">Confirmar asistencia</span>
+        </div>
+      </div>
+    </div>
+    <div class="vista-pie" id="pv-pie"></div>
+  </aside>
+</div>
+
+<footer>Savey · <a href="/">saveystudio.com</a> · <a href="/aviso-de-privacidad.html">Aviso de privacidad</a></footer>
 
 <script>
 (function(){
@@ -176,48 +413,94 @@ footer{padding:26px 0 40px;text-align:center;font-size:12px;color:var(--suave)}
 /* ══════════════════════════════════════════════════════
    CONFIGURACIÓN — lo único que cambias tú
    ══════════════════════════════════════════════════════ */
-var ENDPOINT = "";                 // URL /exec del Apps Script
-var WHATSAPP = "5215500000000";    // respaldo si el endpoint falla
+var ENDPOINT = "";                 // URL /exec del Apps Script (brief/apps-script.gs)
+var WHATSAPP = "5215500000000";    // el WhatsApp de Savey
 
 /* ══════════════════════════════════════════════════════ */
-var D = {};                        // respuestas
-var i = 0;                         // paso actual
+var D = {};          // respuestas
+var i = -1;          // paso actual (-1 = bienvenida)
+var desdeRevision = false;
 var $ = function(id){ return document.getElementById(id) };
+var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)) };
+var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var esc = function(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') };
 
-/* Guardado local para que nadie pierda el avance */
+var DISENOS = {"bodas":{"r":"Nuestra boda","p":[{"t":"Aurora","c":["#17251B","#F4EFE5","#B89A63"],"k":""},{"t":"Sal","c":["#183040","#FBF6EE","#D6B17C"],"k":""},{"t":"Bruma","c":["#F7F4ED","#272624","#A89E90"],"k":""},{"t":"Granate","c":["#300D15","#F4E9DC","#C6A46D"],"k":""},{"t":"Almendro","c":["#59654B","#F8F3E9","#B39463"],"k":""},{"t":"Cantera","c":["#754536","#F7F1E8","#B96549"],"k":""}]},"xv":{"r":"Mis XV años","p":[{"t":"Encanto","c":["#1B241B","#F2EDE1","#D9BB80"],"k":""},{"t":"Aura","c":["#6B4A4A","#F7EDE9","#E6C3AE"],"k":""},{"t":"Medianoche","c":["#111111","#F5F5F5","#C9C9C9"],"k":""},{"t":"Jacaranda","c":["#2E2140","#F2EDF7","#C9A227"],"k":""},{"t":"Marfil","c":["#F7F2EA","#332B27","#C7A77A"],"k":""}]},"bautizos":{"r":"Mi bautizo","p":[{"t":"Cielo","c":["#2E4859","#EFF4F5","#BFD3D6"],"k":""},{"t":"Nube","c":["#E9E9EC","#33333A","#8E97A8"],"k":""},{"t":"Oliva","c":["#5A6B4F","#F4F2E8","#C8CBB0"],"k":""},{"t":"Azahar","c":["#FBF8F3","#3B332C","#C4A878"],"k":""},{"t":"Trigo","c":["#7A6244","#F8F2E7","#E0C79B"],"k":""}]},"ninos":{"r":"Mi fiesta","p":[{"t":"Confeti","c":["#E0684F","#FFF6EC","#FFD79A"],"k":"sans"},{"t":"Safari","c":["#3E5641","#F6F1E2","#D9A441"],"k":"sans"},{"t":"Océano","c":["#1F6E7A","#EFF9F8","#F0A08C"],"k":"sans"},{"t":"Globos","c":["#2F4A80","#F4F7FC","#EE8A7C"],"k":"sans"},{"t":"Jardín","c":["#C96C89","#FFF3F6","#A8C48C"],"k":"sans"}]},"teens":{"r":"Mi cumpleaños","p":[{"t":"Neón","c":["#15171A","#EDEFF0","#B6E04A"],"k":"ancha-t"},{"t":"Cassette","c":["#241639","#F2ECFA","#E5559B"],"k":"ancha-t"},{"t":"Polaroid","c":["#F1EDE6","#1C1C1C","#7E7E7E"],"k":"ancha-t"},{"t":"Prisma","c":["#101B33","#E9F4FB","#4FC8E8"],"k":"ancha-t"},{"t":"Vinilo","c":["#22201E","#F3F0EC","#E08A3C"],"k":"ancha-t"}]},"empresa":{"r":"Te esperamos","p":[{"t":"Consejo","c":["#132033","#EDF1F6","#9BA9BE"],"k":"ancha-t"},{"t":"Cumbre","c":["#2B2B2E","#F4F4F5","#B9B9BC"],"k":"ancha-t"},{"t":"Brindis","c":["#1F3330","#F1F5F2","#C8A860"],"k":"ancha-t"},{"t":"Enlace","c":["#F5F6F8","#1C2A3A","#3D6EA8"],"k":"ancha-t"},{"t":"Distinción","c":["#131313","#F6F4F0","#CBA85C"],"k":"ancha-t"}]}};
+var CATEGORIA = {'Boda':'bodas','XV años':'xv','Bautizo o primera comunión':'bautizos',
+  'Cumpleaños infantil':'ninos','Cumpleaños de 15 en adelante':'teens','Evento de empresa':'empresa'};
+var METAL = {Plata:'plata',Oro:'oro',Diamante:'diamante'};
+
+/* ── Guardado local ── */
+var avisoGuardado;
 function guardar(){
-  try{ localStorage.setItem('savey-brief', JSON.stringify(D));
-       $('guardado').textContent = 'Tus respuestas se guardan solas en este dispositivo.'; }catch(e){}
+  try{ localStorage.setItem('savey-brief', JSON.stringify(D)); }catch(e){ return }
+  var g=$('guardado'); g.classList.add('si');
+  clearTimeout(avisoGuardado); avisoGuardado=setTimeout(function(){g.classList.remove('si')},2600);
 }
 var NOMBRES_VIEJOS = { Esencial:'Plata', Firma:'Oro', Concierge:'Diamante' };
 function recuperar(){
-  try{ var g = localStorage.getItem('savey-brief'); if(g) D = JSON.parse(g); }catch(e){}
-  // quien empezó el cuestionario con los nombres anteriores conserva su elección
+  try{ var g = localStorage.getItem('savey-brief'); if(g) D = JSON.parse(g) || {}; }catch(e){ D = {} }
   if(NOMBRES_VIEJOS[D.paquete]) D.paquete = NOMBRES_VIEJOS[D.paquete];
   // una liga como /brief/?paquete=oro deja el paquete ya elegido
   try{
     var q = new URLSearchParams(location.search).get('paquete');
     if(q){ q = q.charAt(0).toUpperCase()+q.slice(1).toLowerCase();
-           if(['Plata','Oro','Diamante'].indexOf(q)>=0) D.paquete = q; }
+           if(METAL[q]) D.paquete = q; }
   }catch(e){}
 }
 
-var esBoda   = function(){ return D.evento === 'Boda' };
-var esXV     = function(){ return D.evento === 'XV años' };
-var esBautizo= function(){ return D.evento === 'Bautizo o primera comunión' };
-var esInfantil=function(){ return D.evento === 'Cumpleaños infantil' };
-var esTeen   = function(){ return D.evento === 'Cumpleaños de 15 en adelante' };
-var esCorp   = function(){ return D.evento === 'Evento de empresa' };
-var conPases = function(){ return D.paquete === 'Oro' || D.paquete === 'Diamante' };
-var esDiamante=function(){ return D.paquete === 'Diamante' };
+var esBoda    = function(){ return D.evento === 'Boda' };
+var esXV      = function(){ return D.evento === 'XV años' };
+var esBautizo = function(){ return D.evento === 'Bautizo o primera comunión' };
+var esInfantil= function(){ return D.evento === 'Cumpleaños infantil' };
+var esTeen    = function(){ return D.evento === 'Cumpleaños de 15 en adelante' };
+var esCorp    = function(){ return D.evento === 'Evento de empresa' };
+var conPases  = function(){ return D.paquete === 'Oro' || D.paquete === 'Diamante' };
+var esDiamante= function(){ return D.paquete === 'Diamante' };
+var tiene = function(s){ return function(){ return (D.secciones||'').indexOf(s)>=0 } };
+var conCeremonia = function(){ return !esCorp()&&!esInfantil()&&!esTeen()&&D.sede1_tipo&&D.sede1_tipo!=="No hay ceremonia aparte" };
+
+/* ── WhatsApp ── */
+function soloDigitos(s){ return String(s||'').replace(/\D/g,'') }
+function localMX(s){
+  var d = soloDigitos(s);
+  if(d.length>10 && d.indexOf('521')===0) d = d.slice(3);
+  else if(d.length>10 && d.indexOf('52')===0) d = d.slice(2);
+  return d.slice(0,10);
+}
+function formatoMX(d){
+  if(!d) return '';
+  var dos = /^(55|56|33|81)/.test(d);
+  var a = dos?2:3;
+  return [d.slice(0,a), d.slice(a,a+(dos?4:3)), d.slice(a+(dos?4:3))].filter(Boolean).join(' ');
+}
+function waValido(){
+  if(D.wa_extranjero) return soloDigitos(D.whatsapp).length>=10;
+  return localMX(D.whatsapp).length===10;
+}
+function waLegible(){
+  return D.wa_extranjero ? D.whatsapp : '+52 '+formatoMX(localMX(D.whatsapp));
+}
+
+/* ── Iconos de eventos ── */
+var ICO = {
+  'Boda':'<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 5l2-2 2 2-2 2z"/>',
+  'XV años':'<path d="M4 18h16M5 18l-1-9 4.5 4L12 6l3.5 7L20 9l-1 9"/>',
+  'Bautizo o primera comunión':'<path d="M12 3c3.5 4.2 6 7.5 6 10.5a6 6 0 01-12 0C6 10.5 8.5 7.2 12 3z"/>',
+  'Cumpleaños infantil':'<ellipse cx="12" cy="9" rx="5" ry="6"/><path d="M12 15l-1 2h2l-1-2M12 17c0 2-2 2.5-2 4.5"/>',
+  'Cumpleaños de 15 en adelante':'<path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>',
+  'Evento de empresa':'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 13h18"/>',
+  'Otro':'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/>'
+};
 
 /* ══════════════════ Los pasos ══════════════════ */
 var PASOS = [
 {
+  n:"Paquete",
   t:"¿Qué paquete te interesa?",
-  b:"Si todavía no te decides, elige el que más se acerque. Lo podemos cambiar en cualquier momento.",
+  b:"Si todavía no te decides, elige el que más se acerque. Lo podemos cambiar cuando platiquemos.",
   campos:[
-    {k:"paquete", tipo:"tarjetas", req:true, op:[
+    {k:"paquete", rv:"Paquete", tipo:"tarjetas", req:true, op:[
       {v:"Plata", metal:"plata", precio:"$790", d:"Diseño completo, mapa, itinerario y confirmación de asistencia sin límite de invitados. Lista en 72 horas."},
       {v:"Oro", metal:"oro", precio:"$1,690", etiqueta:"La más elegida", d:"Todo lo de Plata más pase personalizado por familia, control de entrada con código, save the date, álbum compartido y dirección web propia. Lista en 48 horas."},
       {v:"Diamante", metal:"diamante", precio:"$3,290", d:"Todo lo de Oro y además nosotros mandamos las invitaciones por WhatsApp a tu lista y damos seguimiento a quien no contesta."}
@@ -225,82 +508,89 @@ var PASOS = [
   ]
 },
 {
+  n:"Tu evento",
   t:"¿Qué vas a celebrar?",
-  b:"De esto depende todo lo que te preguntemos después.",
+  b:"De esto depende lo que te preguntemos después.",
   campos:[
-    {k:"evento", tipo:"tarjetas", req:true, op:[
+    {k:"evento", rv:"Evento", tipo:"tarjetas", rejilla:true, iconos:true, req:true, op:[
       {v:"Boda"}, {v:"XV años"}, {v:"Bautizo o primera comunión"},
       {v:"Cumpleaños infantil"}, {v:"Cumpleaños de 15 en adelante"},
       {v:"Evento de empresa"}, {v:"Otro"}
     ]},
-    {k:"evento_otro", tipo:"texto", rot:"Cuéntanos cuál", si:function(){return D.evento==='Otro'}}
+    {k:"evento_otro", tipo:"texto", rot:"Cuéntanos cuál", req:true, si:function(){return D.evento==='Otro'}}
   ]
 },
 {
-  t:"¿Cómo te contactamos?",
-  b:"Estos datos son para nosotros. No aparecen en la invitación.",
+  n:"Contacto",
+  t:"¿A qué WhatsApp te escribimos?",
+  b:"Con este número te contactamos para darte tu cotización y diseñar tu invitación contigo. No aparece en la invitación.",
   campos:[
-    {k:"contacto", tipo:"texto", rot:"Tu nombre", req:true},
-    {k:"whatsapp", tipo:"tel", rot:"WhatsApp", req:true, ayuda:"Con clave de país, por ejemplo 52 55 1234 5678"},
-    {k:"correo", tipo:"correo", rot:"Correo"},
-    {k:"relacion", tipo:"select", rot:"¿Quién eres en este evento?", op:[
+    {k:"contacto", tipo:"texto", rot:"Tu nombre", req:true, auto:"name", ph:"Como te gusta que te digan"},
+    {k:"whatsapp", tipo:"whatsapp", rot:"Tu WhatsApp", req:true},
+    {k:"correo", tipo:"correo", rot:"Correo (opcional)", auto:"email", ph:"tu@correo.com"},
+    {k:"relacion", tipo:"pastillas", rot:"¿Quién eres en este evento?", op:[
       "Soy quien celebra","Soy mamá o papá","Organizo el evento","Trabajo en la empresa","Otro"]},
-    {k:"comonos", tipo:"select", rot:"¿Cómo nos conociste?", op:[
-      "Facebook","Instagram","TikTok","Me recomendaron","Google","Otro"]}
+    {k:"comonos", tipo:"pastillas", rot:"¿Cómo nos conociste?", op:[
+      "Instagram","Facebook","TikTok","Me recomendaron","Google","Otro"]}
   ]
 },
 {
+  n:"Lo esencial",
   t:"Lo esencial del evento",
   b:"Escríbelo tal cual quieres que aparezca, con acentos y como se deba leer.",
   campos:[
     {k:"nombres", tipo:"texto", req:true, rot:function(){
       if(esBoda()) return "Nombres de la pareja";
       if(esXV()) return "Nombre de la festejada";
-      if(esBautizo()) return "Nombre del festejado";
-      if(esInfantil()||esTeen()) return "Nombre del festejado";
+      if(esBautizo()||esInfantil()||esTeen()) return "Nombre del festejado";
       if(esCorp()) return "Nombre del evento";
       return "Nombre del evento o festejado";
-    }, ayuda:function(){ return esBoda() ? "Como quieres que se vean: “Valeria & Sebastián”" : "" }},
-    {k:"edad", tipo:"texto", rot:"¿Cuántos años cumple?", si:function(){return esInfantil()||esTeen()}},
+    }, ph:function(){ return esBoda() ? "Valeria & Sebastián" : esCorp() ? "Cena Anual 2026" : "" }},
+    {k:"edad", tipo:"num", rot:"¿Cuántos años cumple?", si:function(){return esInfantil()||esTeen()}},
     {k:"empresa", tipo:"texto", rot:"Empresa u organización", si:esCorp},
-    {k:"fecha", tipo:"fecha", rot:"Fecha del evento", req:true},
-    {k:"hora", tipo:"hora", rot:"Hora de inicio", req:true},
-    {k:"ciudad", tipo:"texto", rot:"Ciudad y estado", req:true},
-    {k:"invitados_aprox", tipo:"num", rot:"¿Cuántos invitados esperas?", req:true},
-    {k:"frase", tipo:"larga", rot:"Frase de portada",
+    {par:[
+      {k:"fecha", tipo:"fecha", rot:"Fecha", req:true},
+      {k:"hora", tipo:"hora", rot:"Hora de inicio", req:true}
+    ]},
+    {par:[
+      {k:"ciudad", tipo:"texto", rot:"Ciudad y estado", req:true, ph:"Cuernavaca, Morelos"},
+      {k:"invitados_aprox", tipo:"num", rot:"Invitados aprox.", req:true, ph:"150"}
+    ]},
+    {k:"frase", tipo:"larga", rot:"Frase de portada (opcional)",
       ayuda:"Una o dos líneas que abran la invitación. Si no se te ocurre, la escribimos nosotros."}
   ]
 },
 {
+  n:"Lugar",
   t:"¿Dónde va a ser?",
-  b:"Pon la dirección completa. Con eso armamos el mapa.",
+  b:"Con la dirección completa armamos el mapa.",
   campos:[
-    {k:"sede1_tipo", tipo:"select", rot:"Primera sede", si:function(){return !esCorp()&&!esInfantil()&&!esTeen()}, op:[
+    {k:"sede1_tipo", tipo:"pastillas", rot:"¿Hay ceremonia antes?", si:function(){return !esCorp()&&!esInfantil()&&!esTeen()}, op:[
       "Misa","Ceremonia religiosa","Ceremonia civil","Ceremonia simbólica","No hay ceremonia aparte"]},
-    {k:"sede1_nombre", tipo:"texto", rot:"Nombre del lugar", si:function(){
-      return !esCorp()&&!esInfantil()&&!esTeen()&&D.sede1_tipo&&D.sede1_tipo!=="No hay ceremonia aparte"}},
-    {k:"sede1_dir", tipo:"larga", rot:"Dirección completa", si:function(){
-      return !esCorp()&&!esInfantil()&&!esTeen()&&D.sede1_tipo&&D.sede1_tipo!=="No hay ceremonia aparte"}},
-    {k:"sede1_hora", tipo:"hora", rot:"Hora", si:function(){
-      return !esCorp()&&!esInfantil()&&!esTeen()&&D.sede1_tipo&&D.sede1_tipo!=="No hay ceremonia aparte"}},
+    {k:"sede1_nombre", tipo:"texto", rot:"Lugar de la ceremonia", si:conCeremonia, ph:"Parroquia de San José"},
+    {par:[
+      {k:"sede1_dir", tipo:"texto", rot:"Dirección", si:conCeremonia},
+      {k:"sede1_hora", tipo:"hora", rot:"Hora", si:conCeremonia}
+    ]},
     {k:"sede2_nombre", tipo:"texto", req:true, rot:function(){
-      return esCorp() ? "Nombre de la sede" : "Nombre del salón, jardín o casa"}},
+      return esCorp() ? "Nombre de la sede" : "Salón, jardín o casa de la fiesta"}},
     {k:"sede2_dir", tipo:"larga", rot:"Dirección completa", req:true},
     {k:"sede2_hora", tipo:"hora", rot:"Hora de la recepción", si:function(){return !esCorp()}},
-    {k:"itinerario", tipo:"larga", rot:"Itinerario",
-      ayuda:"Una línea por momento, así: 7:00 PM · Misa. Si no lo tienes cerrado, déjalo en blanco."}
+    {k:"itinerario", tipo:"larga", rot:"Itinerario (opcional)",
+      ayuda:"Una línea por momento, así: 7:00 PM Misa. Si no lo tienes cerrado, déjalo en blanco."}
   ]
 },
 {
+  n:"Secciones",
   t:"¿Qué secciones quieres?",
-  b:"Marca las que te sirvan. Puedes agregar o quitar después sin costo.",
+  b:"Marca las que te sirvan. Después se pueden quitar o agregar sin costo.",
   campos:[
-    {k:"secciones", tipo:"casillas", op:[
+    {k:"secciones", rv:"Secciones", tipo:"casillas", op:[
       {v:"Cuenta regresiva", d:"Los días que faltan, en vivo"},
       {v:"Padres", d:"Los nombres de los papás"},
-      {v:"Padrinos", d:"Con su rol: velación, anillos, lazo, arras…"},
+      {v:"Padrinos", d:"Con su rol: velación, anillos, lazo…"},
       {v:"Código de vestimenta", d:"Con nota y colores reservados"},
-      {v:"Mesa de regalos", d:"Tiendas y cuenta para lluvia de sobres"},
+      {v:"Mesa de regalos", d:"Tiendas y cuenta para sobres"},
       {v:"Galería de fotos", d:"Sin límite de imágenes"},
       {v:"Hospedaje sugerido", d:"Hoteles con tarifa apartada"},
       {v:"Transporte", d:"Horarios de camioneta o valet"},
@@ -315,207 +605,415 @@ var PASOS = [
   ]
 },
 {
+  n:"Detalles",
   t:"Los detalles finos",
-  b:"Todo esto es opcional. Llena lo que ya tengas.",
+  b:"Todo es opcional. Llena lo que ya tengas y lo demás lo vemos por WhatsApp.",
   campos:[
-    {k:"padres", tipo:"larga", rot:"Nombres de los padres",
-      si:function(){ return (D.secciones||'').indexOf('Padres')>=0 }},
-    {k:"padrinos", tipo:"larga", rot:"Padrinos y su rol",
-      ayuda:"Una línea por padrino: Velación · Sr. y Sra. Ríos",
-      si:function(){ return (D.secciones||'').indexOf('Padrinos')>=0 }},
-    {k:"dress", tipo:"texto", rot:"Código de vestimenta",
-      si:function(){ return (D.secciones||'').indexOf('Código de vestimenta')>=0 }},
-    {k:"dress_nota", tipo:"larga", rot:"Nota de vestimenta",
-      ayuda:"Colores reservados, tipo de piso, si refresca en la noche…",
-      si:function(){ return (D.secciones||'').indexOf('Código de vestimenta')>=0 }},
-    {k:"regalos_texto", tipo:"larga", rot:"Qué decir sobre los regalos",
-      si:function(){ return (D.secciones||'').indexOf('Mesa de regalos')>=0 }},
-    {k:"regalos_tiendas", tipo:"larga", rot:"Tiendas y número de evento",
-      ayuda:"Liverpool 51234567, Amazon, Palacio…",
-      si:function(){ return (D.secciones||'').indexOf('Mesa de regalos')>=0 }},
-    {k:"regalos_cuenta", tipo:"texto", rot:"Cuenta o CLABE y titular",
-      si:function(){ return (D.secciones||'').indexOf('Mesa de regalos')>=0 }},
-    {k:"hospedaje", tipo:"larga", rot:"Hoteles sugeridos",
-      ayuda:"Uno por línea, con tarifa si la apartaste",
-      si:function(){ return (D.secciones||'').indexOf('Hospedaje')>=0 }},
-    {k:"transporte", tipo:"larga", rot:"Transporte",
-      si:function(){ return (D.secciones||'').indexOf('Transporte')>=0 }},
-    {k:"hashtag", tipo:"texto", rot:"Tu hashtag",
-      si:function(){ return (D.secciones||'').indexOf('Hashtag')>=0 }},
-    {k:"notas_papas", tipo:"larga", rot:"Notas para los papás",
-      si:function(){ return (D.secciones||'').indexOf('Notas para los papás')>=0 }},
-    {k:"actividades", tipo:"larga", rot:"Actividades",
-      si:function(){ return (D.secciones||'').indexOf('Actividades')>=0 }},
-    {k:"programa", tipo:"larga", rot:"Programa de los días",
-      si:function(){ return (D.secciones||'').indexOf('Programa de varios días')>=0 }},
+    {k:"padres", tipo:"larga", rot:"Nombres de los padres", si:tiene('Padres')},
+    {k:"padrinos", tipo:"larga", rot:"Padrinos y su rol", ayuda:"Una línea por padrino: Velación, Sr. y Sra. Ríos", si:tiene('Padrinos')},
+    {k:"dress", tipo:"texto", rot:"Código de vestimenta", ph:"Formal, etiqueta, cóctel…", si:tiene('Código de vestimenta')},
+    {k:"dress_nota", tipo:"larga", rot:"Nota de vestimenta", ayuda:"Colores reservados, tipo de piso, si refresca en la noche…", si:tiene('Código de vestimenta')},
+    {k:"regalos_texto", tipo:"larga", rot:"Qué decir sobre los regalos", si:tiene('Mesa de regalos')},
+    {k:"regalos_tiendas", tipo:"larga", rot:"Tiendas y número de evento", ayuda:"Liverpool 51234567, Amazon, Palacio…", si:tiene('Mesa de regalos')},
+    {k:"regalos_cuenta", tipo:"texto", rot:"Cuenta o CLABE y titular", si:tiene('Mesa de regalos')},
+    {k:"hospedaje", tipo:"larga", rot:"Hoteles sugeridos", ayuda:"Uno por línea, con tarifa si la apartaste", si:tiene('Hospedaje')},
+    {k:"transporte", tipo:"larga", rot:"Transporte", si:tiene('Transporte')},
+    {k:"hashtag", tipo:"texto", rot:"Tu hashtag", ph:"#ValeYSebas", si:tiene('Hashtag')},
+    {k:"notas_papas", tipo:"larga", rot:"Notas para los papás", si:tiene('Notas para los papás')},
+    {k:"actividades", tipo:"larga", rot:"Actividades", si:tiene('Actividades')},
+    {k:"programa", tipo:"larga", rot:"Programa de los días", si:tiene('Programa de varios días')},
     {k:"registro", tipo:"larga", rot:"Registro, gafete y estacionamiento", si:esCorp},
     {k:"extra", tipo:"larga", rot:"¿Algo más que debamos saber?"}
   ]
 },
 {
+  n:"Estilo",
   t:"¿Cómo quieres que se vea?",
-  b:"Si ya viste un diseño en nuestro catálogo, dinos cuál y partimos de ahí.",
+  b:"Si ya viste un diseño que te gustó, elígelo y partimos de ahí.",
   campos:[
-    {k:"plantilla", tipo:"texto", rot:"Diseño de referencia",
-      ayuda:"Aurora, Sal, Bruma, Granate, Almendro, Cantera, Petit Bow… o la liga de otro que te gustó"},
-    {k:"colores", tipo:"texto", rot:"Colores de tu evento",
-      ayuda:"Si tu salón o florista ya definieron la paleta, escríbela aquí"},
-    {k:"ambiente", tipo:"select", rot:"¿Qué ambiente buscas?", op:[
-      "Elegante y sobrio","Romántico y cálido","Minimalista","De gala, dramático",
-      "Fresco y de día","Divertido y colorido","Formal de empresa"]},
-    {k:"musica", tipo:"texto", rot:"Canción de fondo",
-      ayuda:"Artista y título. Ojo: si es comercial, la responsabilidad de derechos es tuya."},
-    {k:"fotos_cuantas", tipo:"select", rot:"¿Tienes fotos listas?", op:[
-      "Sí, ya las tengo","Todavía no, las mando después","No voy a usar fotos"]}
+    {k:"plantilla", tipo:"disenos", rot:"Diseño de referencia"},
+    {k:"plantilla_ref", tipo:"texto", rot:"¿Otro diseño o una liga que te gustó? (opcional)", ph:"Pega aquí la liga"},
+    {k:"colores", tipo:"texto", rot:"Colores de tu evento (opcional)", ph:"Verde olivo y dorado",
+      ayuda:"Si tu salón o florista ya definieron la paleta, escríbela aquí."},
+    {k:"ambiente", tipo:"pastillas", rot:"¿Qué ambiente buscas?", op:[
+      "Elegante y sobrio","Romántico y cálido","Minimalista","De gala","Fresco y de día","Divertido y colorido","Formal de empresa"]},
+    {k:"musica", tipo:"texto", rot:"Canción de fondo (opcional)", ph:"Artista y título",
+      ayuda:"Si es una canción comercial, la responsabilidad de los derechos es tuya."},
+    {k:"fotos_cuantas", tipo:"pastillas", rot:"¿Tienes fotos listas?", op:[
+      "Sí, ya las tengo","Las mando después","No voy a usar fotos"]}
   ]
 },
 {
+  n:"Invitados",
   t:"Tu lista de invitados",
-  b:"Con esto armamos el pase personalizado de cada familia.",
+  b:"Con esto armamos el pase personalizado de cada familia. Si todavía no la tienes, no pasa nada.",
   si:conPases,
   campos:[
-    {k:"lista", tipo:"larga", rot:"Familias y lugares",
-      ayuda:"Una por línea, así: Familia González | 4",
-      si:conPases},
+    {k:"lista_despues", tipo:"pastillas", rot:"¿Ya tienes tu lista?", op:["Sí, aquí va","Se las mando después por WhatsApp"]},
+    {k:"lista", tipo:"larga", rot:"Familias y lugares", ayuda:"Una por línea, así: Familia González | 4",
+      si:function(){ return conPases() && D.lista_despues!=='Se las mando después por WhatsApp' }},
     {k:"lista_tel", tipo:"larga", rot:"Teléfonos de cada familia",
-      ayuda:"Los necesitamos para mandar las invitaciones por ti. Una por línea: Familia González | 5512345678",
-      si:esDiamante},
-    {k:"lista_despues", tipo:"tarjetas", rot:"¿Todavía no la tienes?", op:[
-      {v:"Ya la puse arriba"},{v:"Se las mando después por WhatsApp"}]}
+      ayuda:"Para mandar las invitaciones por ti. Una por línea: Familia González | 5512345678",
+      si:function(){ return esDiamante() && D.lista_despues!=='Se las mando después por WhatsApp' }}
   ]
 },
-{ t:"Revisa antes de enviar", b:"Si algo está mal, regresa y corrígelo.", revision:true, campos:[] }
+{ n:"Revisión", t:"Revisa y envía", b:"Si algo no está bien, toca Editar en ese bloque.", revision:true, campos:[] }
 ];
 
-function visibles(){
-  return PASOS.filter(function(p){ return !p.si || p.si() });
-}
+function visibles(){ return PASOS.filter(function(p){ return !p.si || p.si() }) }
 function evalua(v){ return typeof v === 'function' ? v() : v }
+function camposPlanos(p){
+  var out=[];
+  (p.campos||[]).forEach(function(c){ if(c.par) c.par.forEach(function(x){out.push(x)}); else out.push(c) });
+  return out;
+}
+function activo(c){ return !c.si || c.si() }
 
-/* ══════════════════ Render ══════════════════ */
+/* ══════════════════ Render de campos ══════════════════ */
+var nCampo = 0;
 function campo(c){
-  var rot = evalua(c.rot) || '';
-  var ayuda = evalua(c.ayuda) || '';
-  var id = 'f_'+c.k;
-  var val = D[c.k] || '';
-  var h = '<div>';
-  if(c.tipo !== 'tarjetas' && c.tipo !== 'casillas')
-    h += '<label class="rot" for="'+id+'">'+rot+(c.req?' <span class="req">*</span>':'')+'</label>';
-  else if(rot)
-    h += '<label class="rot">'+rot+(c.req?' <span class="req">*</span>':'')+'</label>';
+  if(c.par){
+    var hijos = c.par.filter(activo);
+    if(!hijos.length) return '';
+    if(hijos.length===1) return campo(hijos[0]);
+    return '<div class="par campo" style="--i:'+(nCampo++)+'">'+hijos.map(function(h){return campoInterno(h)}).join('')+'</div>';
+  }
+  if(!activo(c)) return '';
+  return '<div class="campo" style="--i:'+(nCampo++)+'">'+campoInterno(c)+'</div>';
+}
+
+function campoInterno(c){
+  var rot = evalua(c.rot) || '', ayuda = evalua(c.ayuda) || '', ph = evalua(c.ph) || '';
+  var id = 'f_'+c.k, val = D[c.k] || '';
+  var h = '<div data-campo="'+c.k+'">';
+  var etiqueta = rot ? (rot+(c.req?'<span class="req">*</span>':'')) : '';
 
   if(c.tipo==='tarjetas'){
-    h += '<div class="tarjetas">';
-    c.op.forEach(function(o,n){
-      var v = o.v||o, chica = !o.precio && !o.d ? ' chica' : '';
-      h += '<label class="tarjeta'+chica+(o.metal?' con-metal '+o.metal:'')+'"><input type="radio" name="'+c.k+'" value="'+v+'"'+
-           (val===v?' checked':'')+'><div class="fila">'+
-           (o.metal?'<i class="metal '+o.metal+'" aria-hidden="true"></i>':'')+'<b>'+v+'</b>'+
-           (o.etiqueta?'<span class="etiqueta">'+o.etiqueta+'</span>':'')+
-           (o.precio?'<span class="precio">'+o.precio+'</span>':'')+'</div>'+
-           (o.d?'<p>'+o.d+'</p>':'')+'</label>';
+    if(etiqueta) h += '<div class="rot">'+etiqueta+'</div>';
+    h += '<div class="tarjetas'+(c.rejilla?' rejilla':'')+'" role="radiogroup">';
+    c.op.forEach(function(o){
+      var v=o.v, clase='tarjeta'+(!o.precio&&!o.d&&!c.iconos?' chica':'')+(o.metal?' con-metal '+o.metal:'')+(c.iconos?' con-ico':'');
+      h += '<label class="'+clase+'"><input type="radio" name="'+c.k+'" value="'+esc(v)+'"'+(val===v?' checked':'')+'>'+
+        '<div class="fila">'+
+          (o.metal?'<span class="medalla"><svg><use href="#ch"/></svg></span>':'')+
+          (c.iconos?'<span class="ico"><svg viewBox="0 0 24 24">'+(ICO[v]||'')+'</svg></span>':'')+
+          '<b>'+esc(v)+'</b>'+
+          (o.etiqueta?'<span class="etiqueta">'+o.etiqueta+'</span>':'')+
+          (o.precio?'<span class="precio">'+o.precio+'</span>':'')+
+        '</div>'+(o.d?'<p>'+o.d+'</p>':'')+
+        '<span class="sel"><svg viewBox="0 0 16 16"><use href="#ok"/></svg></span></label>';
     });
     h += '</div>';
-  } else if(c.tipo==='casillas'){
+  }
+  else if(c.tipo==='pastillas'){
+    if(etiqueta) h += '<div class="rot">'+etiqueta+'</div>';
+    h += '<div class="pastillas" role="radiogroup">';
+    c.op.forEach(function(v){
+      h += '<label class="pastilla"><input type="radio" name="'+c.k+'" value="'+esc(v)+'"'+(val===v?' checked':'')+'><span>'+esc(v)+'</span></label>';
+    });
+    h += '</div>';
+  }
+  else if(c.tipo==='disenos'){
+    var cat = DISENOS[CATEGORIA[D.evento]];
+    var lista = cat ? cat.p : [];
+    h += '<div class="rot">'+etiqueta+'</div><div class="pastillas" role="radiogroup">';
+    lista.forEach(function(p){
+      h += '<label class="pastilla"><input type="radio" name="'+c.k+'" value="'+esc(p.t)+'"'+(val===p.t?' checked':'')+'>'+
+        '<span><i class="gotas"><i style="background:'+p.c[0]+'"></i><i style="background:'+p.c[2]+'"></i><i style="background:'+p.c[1]+'"></i></i>'+esc(p.t)+'</span></label>';
+    });
+    ['Todavía no sé','Algo diferente'].forEach(function(v){
+      h += '<label class="pastilla"><input type="radio" name="'+c.k+'" value="'+v+'"'+(val===v?' checked':'')+'><span>'+v+'</span></label>';
+    });
+    h += '</div><div class="ayuda">¿No los has visto? <a href="/#ejemplos" target="_blank" rel="noopener">Abre los diseños en otra pestaña</a>.</div>';
+  }
+  else if(c.tipo==='casillas'){
     var marcadas = (val||'').split(' · ');
     h += '<div class="casillas">';
     c.op.forEach(function(o){
-      var v=o.v||o;
-      h += '<label class="casilla"><input type="checkbox" name="'+c.k+'" value="'+v+'"'+
-           (marcadas.indexOf(v)>=0?' checked':'')+'><span><b>'+v+'</b>'+
-           (o.d?'<span>'+o.d+'</span>':'')+'</span></label>';
+      h += '<label class="casilla"><input type="checkbox" name="'+c.k+'" value="'+esc(o.v)+'"'+(marcadas.indexOf(o.v)>=0?' checked':'')+'>'+
+        '<span class="caja-check"><svg viewBox="0 0 16 16"><use href="#ok"/></svg></span>'+
+        '<span><b>'+esc(o.v)+'</b>'+(o.d?'<small>'+o.d+'</small>':'')+'</span></label>';
     });
-    h += '</div>';
-  } else if(c.tipo==='select'){
-    h += '<select id="'+id+'" name="'+c.k+'"><option value="">Elige una opción</option>';
-    c.op.forEach(function(o){ h += '<option'+(val===o?' selected':'')+'>'+o+'</option>' });
-    h += '</select>';
-  } else if(c.tipo==='larga'){
-    h += '<textarea id="'+id+'" name="'+c.k+'">'+val+'</textarea>';
-  } else {
-    var t = {texto:'text',tel:'tel',correo:'email',fecha:'date',hora:'time',num:'number'}[c.tipo]||'text';
-    h += '<input id="'+id+'" name="'+c.k+'" type="'+t+'" value="'+String(val).replace(/"/g,'&quot;')+'">';
+    h += '</div><div class="contador" id="contador"></div>';
+  }
+  else if(c.tipo==='whatsapp'){
+    var ext = !!D.wa_extranjero;
+    h += '<label class="rot" for="'+id+'">'+etiqueta+'</label>'+
+      '<div class="tel-caja'+(waValido()?' valido':'')+'" id="tel-caja">'+
+        (ext?'':'<span class="lada"><svg><use href="#wa"/></svg>+52</span>')+
+        '<input id="'+id+'" name="whatsapp" type="tel" inputmode="tel" autocomplete="'+(ext?'tel':'tel-national')+'" '+
+        'placeholder="'+(ext?'+1 555 123 4567':'55 1234 5678')+'" value="'+esc(ext?val:formatoMX(localMX(val)))+'">'+
+        '<span class="tel-ok"><svg viewBox="0 0 16 16"><use href="#ok"/></svg></span>'+
+      '</div>'+
+      '<div class="nota-wa"><svg><use href="#wa"/></svg><span>Revisa que sea el número donde tienes WhatsApp. Por ahí te mandamos tu cotización.</span></div>'+
+      '<button class="enlace" type="button" data-accion="extranjero">'+(ext?'Mi número es de México':'Mi número no es de México')+'</button>';
+  }
+  else {
+    h += '<label class="rot" for="'+id+'">'+etiqueta+'</label>';
+    if(c.tipo==='larga'){
+      h += '<textarea id="'+id+'" name="'+c.k+'" placeholder="'+esc(ph)+'">'+esc(val)+'</textarea>';
+    } else {
+      var t = {texto:'text',correo:'email',fecha:'date',hora:'time',num:'number'}[c.tipo]||'text';
+      h += '<input id="'+id+'" name="'+c.k+'" type="'+t+'"'+(c.tipo==='num'?' inputmode="numeric" min="0"':'')+
+           (c.auto?' autocomplete="'+c.auto+'"':'')+(ph?' placeholder="'+esc(ph)+'"':'')+' value="'+esc(val)+'">';
+    }
   }
   if(ayuda) h += '<div class="ayuda">'+ayuda+'</div>';
   return h + '</div>';
 }
 
-function pinta(){
-  var lista = visibles(), p = lista[i];
-  var tot = lista.length;
-  $('paso-n').textContent = 'Paso '+(i+1)+' de '+tot;
-  $('avance').style.width = ((i)/(tot-1)*100)+'%';
+/* ══════════════════ Pantallas ══════════════════ */
+function pintaBienvenida(){
+  var metal = METAL[D.paquete];
+  return '<div class="bienvenida">'+
+    '<h1>Cuéntanos de tu evento</h1>'+
+    '<p class="bajada">Son unas cuantas preguntas. Al terminar, alguien del equipo de Savey te escribe por WhatsApp para darte tu cotización y diseñar tu invitación contigo.</p>'+
+    (metal?'<div class="elegido '+metal+'"><i></i>Elegiste el paquete <b>'+D.paquete+'</b></div>':'')+
+    '<ul class="promesas">'+
+      '<li style="--i:0"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>Unos 5 minutos</b><span>Lo que no tengas a la mano lo vemos después.</span></span></li>'+
+      '<li style="--i:1"><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg></span><span><b>Se guarda solo</b><span>Si cierras la página, retomas donde te quedaste.</span></span></li>'+
+      '<li style="--i:2"><span class="ico wa"><svg viewBox="0 0 24 24"><use href="#wa"/></svg></span><span><b>Te escribimos por WhatsApp</b><span>Para cotizar y afinar cada detalle contigo.</span></span></li>'+
+    '</ul></div>';
+}
 
-  var h = '<h1>'+p.t+'</h1>'+(p.b?'<p class="bajada">'+p.b+'</p>':'');
-  if(p.revision){
-    h += '<div class="resumen">';
-    lista.forEach(function(pp){
-      (pp.campos||[]).forEach(function(c){
-        if(c.si && !c.si()) return;
-        var v = D[c.k]; if(!v) return;
-        h += '<div class="r"><div class="k">'+(evalua(c.rot)||c.k)+'</div><div class="v">'+
-             String(v).replace(/</g,'&lt;').replace(/\n/g,'<br>')+'</div></div>';
-      });
+function pintaRevision(){
+  var lista = visibles(), h = '';
+  h += '<div class="confirma-wa campo"><span class="wa-ico"><svg><use href="#wa"/></svg></span>'+
+       '<span><small>Te escribiremos a este WhatsApp</small><b>'+esc(waLegible())+'</b></span>'+
+       '<button class="enlace" type="button" data-editar="'+indicePaso('Contacto')+'">Cambiar</button></div>';
+  var g = 0;
+  lista.forEach(function(pp,n){
+    if(pp.revision) return;
+    var filas = '';
+    camposPlanos(pp).forEach(function(c){
+      if(!activo(c)) return;
+      var v = D[c.k]; if(!v) return;
+      if(c.k==='whatsapp') v = waLegible();
+      if(c.tipo==='fecha') v = fechaLarga(v);
+      if(c.tipo==='hora') v = horaLegible(v);
+      var k = c.rv || String(evalua(c.rot)||c.k).replace(/\s*\(opcional\)/,'');
+      filas += '<div class="r"><div class="k">'+esc(k)+'</div><div class="v">'+esc(v).replace(/\n/g,'<br>')+'</div></div>';
     });
-    h += '</div><div class="alerta">Al enviar, tus respuestas llegan directo a nuestro tablero. '+
-         'Después te escribimos por WhatsApp para pedirte las fotos y cerrar los últimos detalles.</div>';
+    if(!filas) return;
+    h += '<section class="grupo" style="--i:'+(g++)+'"><div class="grupo-cab"><h2>'+pp.n+'</h2>'+
+         '<button class="editar" type="button" data-editar="'+n+'">Editar</button></div>'+filas+'</section>';
+  });
+  h += '<div class="aviso"><svg><use href="#ch"/></svg><span>Al enviar, tus respuestas llegan directo a nuestro equipo y en breve te escribimos por WhatsApp para darte tu cotización. Todavía no pagas nada.</span></div>';
+  return h;
+}
+function indicePaso(nombre){
+  var l=visibles(); for(var n=0;n<l.length;n++) if(l[n].n===nombre) return n; return 0;
+}
+
+function pinta(dir, sinAnimacion){
+  var lista = visibles(), tot = lista.length;
+  if(i >= tot) i = tot-1;
+  var lz = $('lienzo'), h;
+  nCampo = 0;
+  lz.classList.toggle('sin-anim', !!sinAnimacion);
+
+  if(i < 0){
+    h = pintaBienvenida();
+    $('paso-n').innerHTML = '<b>'+tot+' pasos</b>';
+    $('anillo').style.strokeDashoffset = 81.7;
+    $('avance').style.width = '0%';
   } else {
-    h += '<div class="bloque">';
-    p.campos.forEach(function(c){ if(!c.si || c.si()) h += campo(c) });
-    h += '</div>';
-  }
-  $('lienzo').innerHTML = h;
-
-  $('atras').classList.toggle('oculto', i===0);
-  $('ir').textContent = p.revision ? 'Enviar cuestionario' : (i===0 ? 'Continuar' : 'Continuar');
-  $('ir').className = 'bt ' + (p.revision ? 'bt-enviar' : 'bt-ir');
-  window.scrollTo({top:0,behavior:'smooth'});
-
-  // los cambios se recogen al vuelo
-  $('lienzo').addEventListener('input', recoge);
-  $('lienzo').addEventListener('change', function(e){ recoge(); if(e.target.type==='radio'||e.target.tagName==='SELECT') pinta() });
-}
-
-function recoge(){
-  var l = $('lienzo');
-  Array.prototype.forEach.call(l.querySelectorAll('input,select,textarea'), function(el){
-    if(el.type==='radio'){ if(el.checked) D[el.name]=el.value }
-    else if(el.type==='checkbox'){
-      var m = Array.prototype.filter.call(l.querySelectorAll('input[name="'+el.name+'"]:checked'),
-              function(x){return true}).map(function(x){return x.value});
-      D[el.name] = m.join(' · ');
+    var p = lista[i];
+    $('paso-n').innerHTML = '<b>'+p.n+'</b> · '+(i+1)+' de '+tot;
+    var frac = (i+1)/tot;
+    $('anillo').style.strokeDashoffset = (81.7*(1-frac)).toFixed(1);
+    $('avance').style.width = (frac*100)+'%';
+    h = '<h1>'+p.t+'</h1>'+(p.b?'<p class="bajada">'+p.b+'</p>':'');
+    if(p.revision) h += pintaRevision();
+    else {
+      h += '<div class="bloque">';
+      p.campos.forEach(function(c){ h += campo(c) });
+      h += '</div>';
     }
-    else D[el.name] = el.value;
-  });
-  guardar();
+  }
+  var scrollAntes = window.scrollY;
+  lz.innerHTML = h;
+  contar();
+
+  var p2 = i>=0 ? lista[i] : null;
+  $('atras').classList.toggle('oculto', i<0);
+  var txt = i<0 ? 'Empezar' : (p2.revision ? 'Enviar mi cuestionario' : (desdeRevision ? 'Guardar y volver a revisar' : 'Continuar'));
+  $('ir-txt').textContent = txt;
+  $('ir').className = 'bt ' + (p2 && p2.revision ? 'bt-enviar' : 'bt-ir');
+  $('tecla').style.visibility = (p2 && p2.revision) ? 'hidden' : '';
+
+  if(sinAnimacion){ window.scrollTo(0, scrollAntes); }
+  else {
+    window.scrollTo({top:0, behavior: quieto ? 'auto' : 'smooth'});
+    if(!quieto && lz.animate && dir){
+      lz.animate([{opacity:0, transform:'translateX('+(dir>0?28:-28)+'px)'},{opacity:1, transform:'none'}],
+                 {duration:480, easing:'cubic-bezier(.22,.61,.36,1)'});
+    }
+  }
+  vistaPrevia();
+  ultimaFirma = firma();
 }
 
+/* ══════════════════ Recoger respuestas ══════════════════ */
+function recoge(el){
+  if(!el || !el.name) return;
+  if(el.type==='radio'){ if(el.checked) D[el.name]=el.value }
+  else if(el.type==='checkbox'){
+    D[el.name] = $$('input[name="'+el.name+'"]:checked', $('lienzo')).map(function(x){return x.value}).join(' · ');
+  }
+  else if(el.name==='whatsapp'){
+    if(D.wa_extranjero){ D.whatsapp = el.value }
+    else {
+      var d = localMX(el.value), f = formatoMX(d);
+      if(el.value !== f) el.value = f;
+      D.whatsapp = d ? '+52 '+f : '';
+    }
+    $('tel-caja').classList.toggle('valido', waValido());
+  }
+  else D[el.name] = el.value;
+  var envoltura = el.closest('[data-campo]');
+  if(envoltura && envoltura.classList.contains('falta')){
+    envoltura.classList.remove('falta');
+    var er = envoltura.querySelector('.error'); if(er) er.remove();
+  }
+  guardar();
+  vistaPrevia();
+}
+
+function contar(){
+  var c = $('contador'); if(!c) return;
+  var n = D.secciones ? D.secciones.split(' · ').filter(Boolean).length : 0;
+  c.textContent = n ? (n===1?'1 sección elegida':n+' secciones elegidas') : 'Ninguna elegida todavía';
+}
+
+var lz = $('lienzo');
+lz.addEventListener('input', function(e){ if(e.target.type!=='radio'&&e.target.type!=='checkbox') recoge(e.target) });
+lz.addEventListener('change', function(e){
+  var t = e.target;
+  if(t.type==='radio'||t.type==='checkbox'){
+    recoge(t);
+    if(t.type==='checkbox') contar();
+    // si esta respuesta cambia qué preguntas se ven, redibujamos sin movernos
+    setTimeout(function(){ repinta(t) }, 0);
+  }
+});
+lz.addEventListener('click', function(e){
+  var b = e.target.closest('[data-accion="extranjero"]');
+  if(b){
+    D.wa_extranjero = D.wa_extranjero ? '' : '1';
+    D.whatsapp = ''; guardar(); pinta(0,true);
+    var inp = $('f_whatsapp'); if(inp) inp.focus();
+    return;
+  }
+  var ed = e.target.closest('[data-editar]');
+  if(ed){ desdeRevision = true; i = +ed.getAttribute('data-editar'); pinta(-1) }
+});
+document.addEventListener('keydown', function(e){
+  if(e.key!=='Enter' || e.isComposing || e.shiftKey) return;
+  var t = e.target, tag = t.tagName;
+  if(tag==='TEXTAREA' || tag==='BUTTON' || tag==='A' || !$('ir')) return;
+  var p = visibles()[i];
+  if(p && p.revision) return;   // enviar siempre es con clic
+  e.preventDefault(); $('ir').click();
+});
+
+/* firma de lo que se ve, para saber si hay que redibujar */
+var ultimaFirma = '';
+function firma(){
+  if(i<0) return '';
+  var p = visibles()[i]; if(!p) return '';
+  return visibles().length+'|'+camposPlanos(p).filter(activo).map(function(c){return c.k}).join(',');
+}
+function repinta(t){
+  if(firma()===ultimaFirma) return;
+  var nombre = t.name, valor = t.value;
+  pinta(0,true);
+  var nuevo = $('lienzo').querySelector('input[name="'+nombre+'"][value="'+valor.replace(/"/g,'\\"')+'"]');
+  if(nuevo) nuevo.focus({preventScroll:true});
+}
+
+/* ══════════════════ Validación ══════════════════ */
 function valida(){
-  var p = visibles()[i]; var falta = null;
-  (p.campos||[]).forEach(function(c){
-    if(falta) return;
-    if(c.si && !c.si()) return;
-    if(c.req && !D[c.k]) falta = c;
+  var p = visibles()[i]; if(!p || p.revision) return true;
+  var primero = null;
+  camposPlanos(p).forEach(function(c){
+    if(!activo(c)) return;
+    var mal = null;
+    if(c.k==='whatsapp'){
+      if(!D.whatsapp) mal = 'Necesitamos tu WhatsApp para contactarte.';
+      else if(!waValido()) mal = D.wa_extranjero ? 'Escribe el número completo con clave de país.' : 'Deben ser 10 dígitos, por ejemplo 55 1234 5678.';
+    }
+    else if(c.req && !D[c.k]) mal = 'Falta este dato.';
+    else if(c.tipo==='correo' && D[c.k] && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(D[c.k])) mal = 'Revisa tu correo, parece incompleto.';
+    var env = $('lienzo').querySelector('[data-campo="'+c.k+'"]');
+    if(!env) return;
+    var er = env.querySelector('.error'); if(er) er.remove();
+    env.classList.remove('falta');
+    if(mal){
+      env.classList.add('falta');
+      env.insertAdjacentHTML('beforeend','<div class="error">'+mal+'</div>');
+      env.classList.remove('sacude'); void env.offsetWidth; env.classList.add('sacude');
+      if(!primero) primero = env;
+    }
   });
-  if(falta){
-    var el = document.getElementById('f_'+falta.k) ||
-             $('lienzo').querySelector('[name="'+falta.k+'"]');
-    if(el){ el.scrollIntoView({behavior:'smooth',block:'center'});
-            try{ el.focus() }catch(e){}
-            el.style.borderColor = '#CDA9A5'; }
+  if(primero){
+    primero.scrollIntoView({behavior: quieto?'auto':'smooth', block:'center'});
+    var f = primero.querySelector('input:not([type=radio]):not([type=checkbox]),textarea');
+    if(f) setTimeout(function(){ try{ f.focus({preventScroll:true}) }catch(e){} }, 350);
     return false;
   }
   return true;
 }
 
+/* ══════════════════ Navegación ══════════════════ */
 $('ir').addEventListener('click', function(){
-  recoge();
-  var p = visibles()[i];
-  if(p.revision){ enviar(); return }
-  if(!valida()) return;
-  if(i < visibles().length-1){ i++; pinta() }
+  var lista = visibles(), p = lista[i];
+  if(p && p.revision){ enviar(); return }
+  if(i>=0 && !valida()) return;
+  if(desdeRevision){ desdeRevision=false; i = visibles().length-1 }
+  else if(i < lista.length-1) i++;
+  pinta(1);
 });
-$('atras').addEventListener('click', function(){ recoge(); if(i>0){ i--; pinta() } });
+$('atras').addEventListener('click', function(){
+  if(i>=0){ i--; desdeRevision=false; pinta(-1) }
+});
+
+/* ══════════════════ Vista previa ══════════════════ */
+var MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function fechaLarga(f){
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(f||''); if(!m) return f;
+  return (+m[3])+' de '+MESES[+m[2]-1]+' de '+m[1];
+}
+function horaLegible(h){
+  var m = /^(\d{2}):(\d{2})/.exec(h||''); if(!m) return h;
+  var hh = +m[1], ap = hh>=12?'PM':'AM'; hh = hh%12||12;
+  return hh+':'+m[2]+' '+ap;
+}
+function fechaCorta(f){
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(f||''); if(!m) return 'DD · MM · AA';
+  return m[3]+' · '+m[2]+' · '+m[1].slice(2);
+}
+var ultimoTema = '';
+function vistaPrevia(){
+  var pv = $('pv'); if(!pv || getComputedStyle(pv.closest('.vista')).display==='none') return;
+  var cat = DISENOS[CATEGORIA[D.evento]];
+  var diseno = null;
+  if(cat) cat.p.forEach(function(p){ if(p.t===D.plantilla) diseno = p });
+  if(!diseno && cat) diseno = cat.p[0];
+  var c = diseno ? diseno.c : ['#332B27','#F7F2EA','#C7A77A'];
+  var tema = c.join();
+  pv.style.setProperty('--m-fondo', c[0]); pv.style.setProperty('--m-tinta', c[1]); pv.style.setProperty('--m-acento', c[2]);
+  pv.className = 'pantalla '+(diseno&&diseno.k||'');
+  if(tema!==ultimoTema && ultimoTema && !quieto){ pv.classList.remove('brilla'); void pv.offsetWidth; pv.classList.add('brilla') }
+  ultimoTema = tema;
+  $('pv-rotulo').textContent = cat ? cat.r : (D.evento==='Otro' ? 'Te esperamos' : 'Tu evento');
+  $('pv-nombre').textContent = D.nombres || (esBoda() ? 'Sus nombres' : 'Tu nombre aquí');
+  $('pv-fecha').textContent = fechaCorta(D.fecha);
+  $('pv-lugar').textContent = D.sede2_nombre || D.ciudad || '';
+  var metal = METAL[D.paquete];
+  $('pv-pie').innerHTML = metal ? '<span class="medalla '+metal+'"><svg><use href="#ch"/></svg></span><span>Paquete <b>'+D.paquete+'</b></span>' : '';
+}
+window.addEventListener('resize', vistaPrevia);
 
 /* ══════════════════ Envío ══════════════════ */
 function folio(){
@@ -524,42 +1022,71 @@ function folio(){
   return s;
 }
 function enviar(){
-  var b = $('ir'); b.disabled = true; b.textContent = 'Enviando…';
+  var b = $('ir'); b.disabled = true;
+  $('ir-txt').textContent = 'Enviando';
+  b.querySelector('.flecha').outerHTML = '<span class="giro"></span>';
   D.folio = folio();
   D.enviado = new Date().toISOString();
   D.origen = location.href;
-
-  var listo = function(){
-    try{ localStorage.removeItem('savey-brief') }catch(e){}
-    var texto = 'Hola, ya llené el cuestionario de Savey. Mi folio es '+D.folio+
-                ' — '+(D.evento||'')+' de '+(D.nombres||'')+'.';
-    document.body.innerHTML =
-      '<div class="env fin"><svg><use href="#ch"/></svg>'+
-      '<h1>Listo, ya lo recibimos</h1>'+
-      '<p class="bajada" style="max-width:34ch;margin:10px auto 0">Guarda tu folio. Te escribimos por WhatsApp '+
-      'en las próximas horas para pedirte las fotos y confirmar los últimos detalles.</p>'+
-      '<div class="folio">'+D.folio+'</div><br>'+
-      '<a class="wa" href="https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(texto)+'">'+
-      '<svg><use href="#wa"/></svg>Mandar mis fotos por WhatsApp</a>'+
-      '<footer>Savey · saveystudio.com</footer></div>' +
-      document.querySelector('svg[width="0"]').outerHTML;
-  };
+  D.whatsapp = waLegible();
+  var datos = {}; Object.keys(D).forEach(function(k){ if(k!=='wa_extranjero') datos[k]=D[k] });
 
   if(ENDPOINT){
-    fetch(ENDPOINT, {method:'POST', mode:'no-cors',
-      headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body: JSON.stringify(D)}).then(listo)['catch'](listo);
+    var hecho = false, listo = function(){ if(!hecho){ hecho=true; final() } };
+    fetch(ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify(datos)}).then(listo)['catch'](listo);
+    setTimeout(listo, 8000);
   } else {
-    // sin endpoint configurado: el resumen se va por WhatsApp
-    var res = Object.keys(D).filter(function(k){return D[k]})
-      .map(function(k){ return k+': '+D[k] }).join('\n');
+    // Sin endpoint configurado, el resumen se va por WhatsApp para no perder nada
+    var res = Object.keys(datos).filter(function(k){return datos[k]}).map(function(k){ return k+': '+datos[k] }).join('\n');
     window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent('CUESTIONARIO SAVEY\n\n'+res),'_blank');
-    listo();
+    final();
+  }
+}
+
+function final(){
+  try{ localStorage.removeItem('savey-brief') }catch(e){}
+  var nombre = (D.contacto||'').trim().split(/\s+/)[0];
+  $('controles').remove();
+  $('cab-paso').innerHTML = '<b>Enviado</b>';
+  $('avance').style.width = '100%';
+  var ok = '<svg viewBox="0 0 16 16"><use href="#ok"/></svg>';
+  $('lienzo').innerHTML =
+    '<div class="fin">'+
+      '<div class="sello" id="sello"><span class="circulo"></span><svg class="palomita" viewBox="0 0 40 40"><path d="M10 21l7 7 14-16"/></svg></div>'+
+      '<h1>¡Listo'+(nombre?', '+esc(nombre):'')+'!</h1>'+
+      '<p class="bajada">Recibimos tu cuestionario. En breve alguien del equipo de Savey te escribirá por WhatsApp para darte tu cotización y empezar a diseñar tu invitación contigo.</p>'+
+      '<div class="fin-wa"><span><svg><use href="#wa"/></svg></span>'+esc(D.whatsapp)+'</div>'+
+      '<ol class="linea-tiempo">'+
+        '<li class="hecho" style="--i:0"><span class="punto">'+ok+'</span><span><b>Cuestionario recibido</b><small>Ya tenemos todos tus datos.</small></span></li>'+
+        '<li class="ahora" style="--i:1"><span class="punto"></span><span><b>Te escribimos por WhatsApp</b><small>Revisamos tu evento y te mandamos la cotización.</small></span></li>'+
+        '<li style="--i:2"><span class="punto"><svg viewBox="0 0 24 24" style="fill:var(--champagne);stroke:none"><use href="#ch"/></svg></span><span><b>Diseñamos tu invitación</b><small>Te mandamos tu liga para que la revises.</small></span></li>'+
+      '</ol>'+
+      '<div class="folio">Tu folio <b>'+esc(D.folio)+'</b></div>'+
+      '<div class="acciones"><a class="bt bt-ir" href="/">Volver a Savey</a></div>'+
+    '</div>';
+  window.scrollTo({top:0, behavior: quieto?'auto':'smooth'});
+  vistaPrevia();
+  if(!quieto) chispas();
+}
+
+function chispas(){
+  var s = $('sello'); if(!s || !s.animate) return;
+  for(var n=0;n<14;n++){
+    var el = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    el.setAttribute('class','chispa-vuela');
+    el.innerHTML = '<use href="#ch"/>';
+    s.appendChild(el);
+    var ang = (n/14)*Math.PI*2 + Math.random()*.4, dist = 70+Math.random()*60, tam = .5+Math.random()*.8;
+    el.animate([
+      {transform:'translate(-50%,-50%) scale(0) rotate(0deg)', opacity:1},
+      {transform:'translate(calc(-50% + '+(Math.cos(ang)*dist).toFixed(0)+'px), calc(-50% + '+(Math.sin(ang)*dist).toFixed(0)+'px)) scale('+tam.toFixed(2)+') rotate(180deg)', opacity:0}
+    ], {duration:1100+Math.random()*500, delay:350, easing:'cubic-bezier(.16,1,.3,1)', fill:'forwards'});
   }
 }
 
 recuperar();
-pinta();
+pinta(0);
 })();
 </script>
 </body>
