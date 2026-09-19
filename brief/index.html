@@ -76,6 +76,17 @@ textarea{min-height:92px;resize:vertical;line-height:1.55}
 .tarjeta:has(input:checked)::after{content:"";position:absolute;top:15px;right:15px;
   width:8px;height:8px;background:var(--champagne);transform:rotate(45deg)}
 .tarjeta.chica b{font-size:17px}
+.tarjeta .fila{align-items:center}
+.metal{width:22px;height:22px;border-radius:50%;flex:none;display:inline-block;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 3px rgba(0,0,0,.12),0 0 0 1px rgba(51,43,39,.12)}
+.metal.plata{background:linear-gradient(125deg,#F5F6F8,#CDD1D7 30%,#F1F2F4 50%,#AFB5BD 75%,#E6E8EB)}
+.metal.oro{background:linear-gradient(125deg,#F8EAC6,#D6B26C 30%,#F4DFAB 50%,#B78B42 75%,#EBD199)}
+.metal.diamante{background:linear-gradient(125deg,#F4F7FB,#DCE5F1 25%,#F7EEF3 45%,#E2F2EE 65%,#D9DFF0)}
+.etiqueta{font-family:var(--sans);font-size:11px;font-weight:600;background:var(--espresso);color:var(--marfil);
+  padding:3px 8px;border-radius:99px;white-space:nowrap}
+.tarjeta.con-metal:has(input:checked)::after{display:none}
+.tarjeta.plata:has(input:checked){border-color:#AFB5BD;background:linear-gradient(180deg,rgba(175,181,189,.16),rgba(175,181,189,.03)),var(--blanco)}
+.tarjeta.diamante:has(input:checked){border-color:#B9C6DC;background:linear-gradient(120deg,rgba(220,229,241,.5),rgba(247,238,243,.5),rgba(226,242,238,.45)),var(--blanco)}
 
 /* ── Casillas múltiples ── */
 .casillas{display:grid;gap:8px}
@@ -178,8 +189,17 @@ function guardar(){
   try{ localStorage.setItem('savey-brief', JSON.stringify(D));
        $('guardado').textContent = 'Tus respuestas se guardan solas en este dispositivo.'; }catch(e){}
 }
+var NOMBRES_VIEJOS = { Esencial:'Plata', Firma:'Oro', Concierge:'Diamante' };
 function recuperar(){
   try{ var g = localStorage.getItem('savey-brief'); if(g) D = JSON.parse(g); }catch(e){}
+  // quien empezó el cuestionario con los nombres anteriores conserva su elección
+  if(NOMBRES_VIEJOS[D.paquete]) D.paquete = NOMBRES_VIEJOS[D.paquete];
+  // una liga como /brief/?paquete=oro deja el paquete ya elegido
+  try{
+    var q = new URLSearchParams(location.search).get('paquete');
+    if(q){ q = q.charAt(0).toUpperCase()+q.slice(1).toLowerCase();
+           if(['Plata','Oro','Diamante'].indexOf(q)>=0) D.paquete = q; }
+  }catch(e){}
 }
 
 var esBoda   = function(){ return D.evento === 'Boda' };
@@ -188,8 +208,8 @@ var esBautizo= function(){ return D.evento === 'Bautizo o primera comunión' };
 var esInfantil=function(){ return D.evento === 'Cumpleaños infantil' };
 var esTeen   = function(){ return D.evento === 'Cumpleaños de 15 en adelante' };
 var esCorp   = function(){ return D.evento === 'Evento de empresa' };
-var conPases = function(){ return D.paquete === 'Firma' || D.paquete === 'Concierge' };
-var esConcierge=function(){ return D.paquete === 'Concierge' };
+var conPases = function(){ return D.paquete === 'Oro' || D.paquete === 'Diamante' };
+var esDiamante=function(){ return D.paquete === 'Diamante' };
 
 /* ══════════════════ Los pasos ══════════════════ */
 var PASOS = [
@@ -198,9 +218,9 @@ var PASOS = [
   b:"Si todavía no te decides, elige el que más se acerque. Lo podemos cambiar en cualquier momento.",
   campos:[
     {k:"paquete", tipo:"tarjetas", req:true, op:[
-      {v:"Esencial", precio:"$790", d:"Diseño completo, mapa, itinerario y confirmación de asistencia sin límite de invitados. Lista en 72 horas."},
-      {v:"Firma", precio:"$1,690", d:"Todo lo anterior más pase personalizado por familia, control de entrada con código, save the date, álbum compartido y dirección web propia. Lista en 48 horas."},
-      {v:"Concierge", precio:"$3,290", d:"Todo lo de Firma y además nosotros mandamos las invitaciones por WhatsApp a tu lista y damos seguimiento a quien no contesta."}
+      {v:"Plata", metal:"plata", precio:"$790", d:"Diseño completo, mapa, itinerario y confirmación de asistencia sin límite de invitados. Lista en 72 horas."},
+      {v:"Oro", metal:"oro", precio:"$1,690", etiqueta:"La más elegida", d:"Todo lo de Plata más pase personalizado por familia, control de entrada con código, save the date, álbum compartido y dirección web propia. Lista en 48 horas."},
+      {v:"Diamante", metal:"diamante", precio:"$3,290", d:"Todo lo de Oro y además nosotros mandamos las invitaciones por WhatsApp a tu lista y damos seguimiento a quien no contesta."}
     ]}
   ]
 },
@@ -359,7 +379,7 @@ var PASOS = [
       si:conPases},
     {k:"lista_tel", tipo:"larga", rot:"Teléfonos de cada familia",
       ayuda:"Los necesitamos para mandar las invitaciones por ti. Una por línea: Familia González | 5512345678",
-      si:esConcierge},
+      si:esDiamante},
     {k:"lista_despues", tipo:"tarjetas", rot:"¿Todavía no la tienes?", op:[
       {v:"Ya la puse arriba"},{v:"Se las mando después por WhatsApp"}]}
   ]
@@ -388,8 +408,10 @@ function campo(c){
     h += '<div class="tarjetas">';
     c.op.forEach(function(o,n){
       var v = o.v||o, chica = !o.precio && !o.d ? ' chica' : '';
-      h += '<label class="tarjeta'+chica+'"><input type="radio" name="'+c.k+'" value="'+v+'"'+
-           (val===v?' checked':'')+'><div class="fila"><b>'+v+'</b>'+
+      h += '<label class="tarjeta'+chica+(o.metal?' con-metal '+o.metal:'')+'"><input type="radio" name="'+c.k+'" value="'+v+'"'+
+           (val===v?' checked':'')+'><div class="fila">'+
+           (o.metal?'<i class="metal '+o.metal+'" aria-hidden="true"></i>':'')+'<b>'+v+'</b>'+
+           (o.etiqueta?'<span class="etiqueta">'+o.etiqueta+'</span>':'')+
            (o.precio?'<span class="precio">'+o.precio+'</span>':'')+'</div>'+
            (o.d?'<p>'+o.d+'</p>':'')+'</label>';
     });
