@@ -3,13 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <title>Savey — Invitaciones digitales para bodas, XV años, bautizos y más</title>
-<meta name="description" content="Estudio mexicano de invitaciones digitales con confirmación de asistencia. 31 diseños para bodas, XV años, bautizos, cumpleaños y eventos de empresa. Paquetes Plata, Oro y Diamante, todo incluido.">
+<meta name="description" content="Estudio mexicano de invitaciones digitales con confirmación de asistencia. 32 diseños para bodas, XV años, bautizos, cumpleaños y eventos de empresa. Paquetes Plata, Oro y Diamante, todo incluido.">
 <meta name="theme-color" content="#F7F2EA">
 <link rel="canonical" href="https://saveystudio.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Savey — Invitaciones digitales">
-<meta property="og:description" content="31 diseños listos. Paquetes Plata, Oro y Diamante, con todo incluido.">
+<meta property="og:description" content="32 diseños listos. Paquetes Plata, Oro y Diamante, con todo incluido.">
 <meta property="og:url" content="https://saveystudio.com/">
 <meta property="og:locale" content="es_MX">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,6 +89,8 @@ section{padding:var(--aire) 0}
 .btn-tinta{background:var(--espresso);color:var(--marfil)}
 .btn-tinta:hover{background:#231C18}
 .iman{will-change:transform}
+.btn .flechita{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s var(--resorte)}
+.btn:hover .flechita{transform:translateX(4px)}
 
 /* ══════════ Navegación ══════════ */
 .barra{position:fixed;top:0;left:0;right:0;z-index:80;height:var(--nav);
@@ -441,7 +447,7 @@ footer a:hover{border-color:var(--champagne)}
       <a href="#paquetes">Paquetes</a>
       <a href="#proceso">¿Cómo funciona?</a>
       <a href="#preguntas">Preguntas</a>
-      <a class="btn btn-champ" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento"><svg><use href="#wa"/></svg>WhatsApp</a>
+      <a class="btn btn-champ" href="/brief/">Cotiza tu evento</a>
     </nav>
     <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="cajon">
       <span></span><span></span><span></span>
@@ -455,7 +461,7 @@ footer a:hover{border-color:var(--champagne)}
   <a href="#paquetes">Paquetes</a>
   <a href="#proceso">¿Cómo funciona?</a>
   <a href="#preguntas">Preguntas</a>
-  <a href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento">Escribir por WhatsApp</a>
+  <a href="/brief/">Cotiza tu evento</a>
 </div>
 
 <main id="inicio">
@@ -470,8 +476,8 @@ footer a:hover{border-color:var(--champagne)}
       </h1>
       <p class="matiz" id="matiz">Tus invitados la abren desde WhatsApp y confirman en un toque.</p>
       <div class="acciones" id="acciones">
-        <a class="btn btn-champ iman" href="#ejemplos">Ver los diseños</a>
-        <a class="btn btn-linea" href="/i/boda-aurora/?c=A7K9">Abrir una de ejemplo</a>
+        <a class="btn btn-champ iman" href="/brief/">Cotiza tu evento<svg class="flechita" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+        <a class="btn btn-linea" href="#ejemplos">Ver los diseños</a>
       </div>
       <ul class="sellos" id="sellos">
         <li><svg><use href="#ch"/></svg>Invitados ilimitados</li>
@@ -545,7 +551,7 @@ footer a:hover{border-color:var(--champagne)}
     <div class="pestanas revelar" role="tablist" id="pestanas" aria-label="Tipo de evento"><span class="indicador" id="indicador" aria-hidden="true"></span></div>
     <div class="riel" id="riel" role="tabpanel"></div>
 
-    <p class="galeria-pie revelar">¿No ves lo que buscas? <a href="https://wa.me/5215500000000?text=Hola%2C%20busco%20un%20dise%C3%B1o%20especial%20para%20mi%20evento">Escríbenos y lo diseñamos.</a></p>
+    <p class="galeria-pie revelar">¿No ves lo que buscas? <a href="/brief/">Cuéntanoslo en el cuestionario y lo diseñamos.</a></p>
   </div>
 </section>
 
@@ -623,7 +629,7 @@ footer a:hover{border-color:var(--champagne)}
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Confirmación de asistencia</li>
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Lista en 72 horas</li>
             </ul>
-            <a class="btn btn-linea" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20el%20paquete%20Plata">Quiero Plata</a>
+            <a class="btn btn-linea" href="/brief/?paquete=plata">Quiero Plata</a>
           </div>
         </article>
       </div>
@@ -645,7 +651,7 @@ footer a:hover{border-color:var(--champagne)}
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Tu propia dirección web</li>
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Lista en 48 horas</li>
             </ul>
-            <a class="btn btn-champ" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20el%20paquete%20Oro">Quiero Oro</a>
+            <a class="btn btn-champ" href="/brief/?paquete=oro">Quiero Oro</a>
           </div>
         </article>
       </div>
@@ -666,7 +672,7 @@ footer a:hover{border-color:var(--champagne)}
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Conteo final para el salón</li>
               <li><svg viewBox="0 0 16 16"><use href="#palomita"/></svg>Atención dedicada</li>
             </ul>
-            <a class="btn btn-tinta" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20el%20paquete%20Diamante">Quiero Diamante</a>
+            <a class="btn btn-tinta" href="/brief/?paquete=diamante">Quiero Diamante</a>
           </div>
         </article>
       </div>
@@ -683,16 +689,19 @@ footer a:hover{border-color:var(--champagne)}
   <div class="amplia">
     <div class="cabeza revelar">
       <h2>¿Cómo funciona?</h2>
-      <p class="entrada">De la primera plática a tu invitación publicada, normalmente en menos de tres días.</p>
+      <p class="entrada">Del cuestionario a tu invitación publicada, normalmente en menos de tres días.</p>
     </div>
     <div class="pasos-caja" id="pasos">
     <span class="hilo" aria-hidden="true"><i></i></span>
     <ol class="pasos">
-      <li><b>Nos escribes</b><span>Qué evento es, la fecha y cuántos invitados.</span></li>
-      <li><b>Mandas los datos</b><span>Un formulario corto con nombres, sedes, horarios y fotos.</span></li>
-      <li><b>Revisas</b><span>Abres tu liga y nos dices qué cambiar.</span></li>
+      <li><b>Llenas el cuestionario</b><span>Tu evento, la fecha, las sedes y el estilo que buscas. Toma unos 5 minutos.</span></li>
+      <li><b>Te escribimos por WhatsApp</b><span>Te damos tu cotización y afinamos los detalles contigo.</span></li>
+      <li><b>Revisas tu invitación</b><span>Abres tu liga y nos dices qué cambiar. Los ajustes van incluidos.</span></li>
       <li><b>Compartes</b><span>Mandas tu liga y ves las confirmaciones llegar.</span></li>
     </ol>
+    </div>
+    <div class="acciones revelar" style="margin-top:2.4rem">
+      <a class="btn btn-champ iman" href="/brief/">Empezar el cuestionario<svg class="flechita" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
     </div>
   </div>
 </section>
@@ -700,13 +709,15 @@ footer a:hover{border-color:var(--champagne)}
 <section id="preguntas">
   <div class="ancha dos-columnas">
     <div class="col-titulo revelar"><h2>Preguntas frecuentes</h2>
-      <p class="entrada">¿Te queda otra duda? Escríbenos por WhatsApp y te contestamos en minutos.</p></div>
+      <p class="entrada">¿Te queda otra duda? Déjala en el cuestionario y la resolvemos contigo por WhatsApp.</p></div>
     <div class="preguntas revelar">
+      <details class="pregunta"><summary>¿Qué pasa después de llenar el cuestionario?</summary>
+        <p>En breve alguien del equipo de Savey te escribe por WhatsApp al número que nos dejaste. Revisamos tu evento contigo, te damos tu cotización y, cuando estés de acuerdo, empezamos a diseñar tu invitación. Llenar el cuestionario no te compromete a nada.</p></details>
       <details class="pregunta"><summary>¿De verdad no hay cobros extra?</summary>
         <p>De verdad. Fotos, itinerario, cambios de color, invitados que confirman: nada de eso tiene tope ni costo adicional. El precio de tu paquete es el precio final.</p></details>
       <details class="pregunta"><summary>¿Cuál es la diferencia entre Plata, Oro y Diamante?</summary>
         <p>Plata es tu invitación completa con confirmación de asistencia. Oro le suma un pase con nombre para cada familia, control de entrada, save the date y álbum compartido. Diamante suma que nosotros mandemos las invitaciones por WhatsApp y demos seguimiento por ti.</p></details>
-      <details class="pregunta"><summary>¿Puedo usar cualquiera de los 31 diseños?</summary>
+      <details class="pregunta"><summary>¿Puedo usar cualquiera de los 32 diseños?</summary>
         <p>Sí, y los adaptamos a tus colores sin costo. También podemos mezclar: la portada de uno con la estructura de otro.</p></details>
       <details class="pregunta"><summary>¿Y si la plantilla trae secciones que no quiero?</summary>
         <p>Las secciones se quitan y se ponen a voluntad: si quieres los nombres de tus padrinos y el diseño no los trae, los agregamos; si no quieres mesa de regalos, la quitamos. Los diseños son para tomar ideas, no para amoldarte a ellos.</p></details>
@@ -729,10 +740,10 @@ footer a:hover{border-color:var(--champagne)}
 <section class="oscura cierre">
   <div class="caja">
     <svg class="chispa revelar" aria-hidden="true"><use href="#ch"/></svg>
-    <h2 class="revelar">Cuéntanos de tu evento</h2>
-    <p class="matiz revelar">Contestamos en minutos, no al día siguiente.</p>
+    <h2 class="revelar">Cotiza tu evento</h2>
+    <p class="matiz revelar">Llena el cuestionario en unos minutos y te escribimos por WhatsApp con tu cotización.</p>
     <div class="acciones revelar">
-      <a class="btn btn-champ iman" href="https://wa.me/5215500000000?text=Hola%2C%20me%20interesa%20una%20invitaci%C3%B3n%20para%20mi%20evento"><svg><use href="#wa"/></svg>Escribir por WhatsApp</a>
+      <a class="btn btn-champ iman" href="/brief/">Empezar el cuestionario<svg class="flechita" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
       <a class="btn btn-linea" href="#ejemplos">Ver los diseños</a>
     </div>
   </div>
@@ -775,11 +786,12 @@ var CATALOGO=[
   {ru:"/i/boda-cantera/",s:"boda-cantera",t:"Cantera",d:"Hacienda mexicana",n:"Mariana & Rodrigo",f:"17 · 10 · 26",im:"/i/fotos/cantera-t.webp",c:["#754536","#F7F1E8","#B96549"]}
  ]},
  {id:"xv",nombre:"XV Años",rotulo:"Mis XV años",piezas:[
-  {s:"xv-encanto",t:"Encanto",d:"Olivo y dorado",n:"Valentina",f:"14 · 11 · 26",c:["#1B241B","#F2EDE1","#D9BB80"]},
-  {s:"xv-aura",t:"Aura",d:"Rosa palo",n:"Regina",f:"07 · 02 · 27",c:["#6B4A4A","#F7EDE9","#E6C3AE"]},
-  {s:"xv-medianoche",t:"Medianoche",d:"Negro y plata",n:"Ximena",f:"30 · 08 · 26",c:["#111111","#F5F5F5","#C9C9C9"]},
-  {s:"xv-jacaranda",t:"Jacaranda",d:"Morado y oro",n:"Fernanda",f:"18 · 04 · 27",c:["#2E2140","#F2EDF7","#C9A227"]},
-  {s:"xv-marfil",t:"Marfil",d:"Nuestra casa",n:"Isabella",f:"02 · 11 · 26",c:["#F7F2EA","#332B27","#C7A77A"]}
+  {ru:"/i/xv-nocturna/",s:"xv-nocturna",t:"Nocturna",d:"Jardín de faroles",n:"Isabella",f:"13 · 03 · 27",im:"/i/fotos/xv-nocturna-t.webp",c:["#092C31","#F5EFE5","#C8A66E"]},
+  {ru:"/i/xv-metropolitana/",s:"xv-metropolitana",t:"Metropolitana",d:"Ciudad de México",n:"Renata",f:"18 · 07 · 27",im:"/i/fotos/xv-metropolitana-t.webp",c:["#292827","#F5EEE5","#D6B99A"]},
+  {ru:"/i/xv-bugambilia/",s:"xv-bugambilia",t:"Bugambilia",d:"San Miguel al atardecer",n:"Valentina",f:"22 · 05 · 27",im:"/i/fotos/xv-bugambilia-t.webp",c:["#5B3B4A","#F7F0E7","#B9A4CB"]},
+  {ru:"/i/xv-olivo/",s:"xv-olivo",t:"Olivo",d:"Claustro de piedra",n:"Camila",f:"13 · 11 · 27",im:"/i/fotos/xv-olivo-t.webp",c:["#67705A","#F8F5EF","#D9D0C3"]},
+  {ru:"/i/xv-cristal/",s:"xv-cristal",t:"Cristal",d:"Invernadero de luz",n:"Sofía",f:"09 · 10 · 27",im:"/i/fotos/xv-cristal-t.webp",c:["#455462","#FAF9F5","#CCD7E0"]},
+  {ru:"/i/xv-imperial/",s:"xv-imperial",t:"Imperial",d:"Gran salón de gala",n:"Daniela",f:"12 · 06 · 27",im:"/i/fotos/xv-imperial-t.webp",c:["#211C18","#F4E8D5","#D3B17C"]}
  ]},
  {id:"bautizos",nombre:"Bautizos",rotulo:"Mi bautizo",piezas:[
   {s:"bautizo-cielo",t:"Cielo",d:"Azul sereno",n:"Emiliano",f:"20 · 09 · 26",c:["#2E4859","#EFF4F5","#BFD3D6"]},
