@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sofía · Mis XV años · 9 de octubre de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FAF9F5">
+<meta property="og:title" content="Sofía · Mis XV años">
+<meta property="og:description" content="Sábado 9 de octubre de 2027 · Guadalajara, Jalisco">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/xv-cristal.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" as="image" href="../fotos/xv-cristal-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../xv/savey-xv.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 05 · CRISTAL ═══════════
+   Azul plata · invernadero · flores blancas · elegancia etérea */
+:root{
+  --hielo:#CCD7E0; --hielo-cl:#EDF2F6; --perla:#E8E8E5; --plata:#AEB7C0; --blanco:#FAF9F5; --profundo:#455462; --prof-os:#37444F;
+  --tinta:#34404B; --suave:#76818B;
+  --display:'Italiana',Georgia,serif; --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.25,.65,.3,1); --rev-dur:.65s; --rev-dist:16px;
+  --lado:24px;
+}
+body{background:var(--blanco);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.75;letter-spacing:.005em}
+::selection{background:var(--hielo);color:var(--tinta)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;font-weight:400;color:var(--suave)}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(38px,10.5vw,50px);line-height:1.05}
+.centro{text-align:center}
+.plata-linea{height:1px;width:64px;margin:20px auto;background:linear-gradient(90deg,transparent,var(--plata),#fff,var(--plata),transparent)}
+
+/* fondo de luz: manchas suaves que flotan */
+.luz{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;opacity:.7}
+
+/* ── Carga: el nombre que se enfoca ── */
+#carga{background:var(--blanco);overflow:hidden;transition:opacity 1.1s var(--rev-ease),filter 1.1s var(--rev-ease),visibility 1.1s}
+body.abierto #carga{filter:blur(18px)}
+#carga .luz.a{width:320px;height:320px;background:#D6E2EC;left:-80px;top:10%;animation:flota 9s ease-in-out infinite}
+#carga .luz.b{width:280px;height:280px;background:#E9E3EF;right:-90px;bottom:12%;animation:flota 11s ease-in-out infinite reverse}
+@keyframes flota{50%{transform:translate(30px,-24px)}}
+.carga-c{text-align:center;position:relative}
+.carga-c b{display:block;font-family:var(--display);font-weight:400;font-size:64px;letter-spacing:.06em;color:var(--profundo);
+  filter:blur(calc(10px - 10px * var(--progreso)));opacity:calc(.25 + var(--progreso) * .75);transition:filter .5s,opacity .5s}
+.carga-c i{display:block;width:120px;height:1px;margin:18px auto 0;background:rgba(174,183,192,.35);position:relative;overflow:hidden}
+.carga-c i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--plata),#fff,var(--plata));transform-origin:center;transform:scaleX(var(--progreso));transition:transform .5s}
+
+/* ── Portada ── */
+.portada{position:relative;height:100svh;min-height:620px;overflow:hidden;background:var(--hielo-cl)}
+.portada .px{position:absolute;left:0;right:0;top:-6%;height:112%}
+.portada img{width:100%;height:100%;object-fit:cover;object-position:50% 34%;filter:blur(16px) saturate(.8);transform:scale(1.06);
+  transition:filter 1.8s var(--rev-ease),transform 2.4s var(--rev-ease)}
+body.abierto .portada img{filter:none;transform:none}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(250,249,245,.15) 0%,transparent 20%,transparent 52%,rgba(52,64,75,.35) 74%,rgba(40,52,62,.72) 100%)}
+.destello{position:absolute;z-index:1;width:14px;height:14px;fill:#fff;opacity:0;animation:titila var(--t,6s) ease-in-out var(--r,0s) infinite;filter:drop-shadow(0 0 6px rgba(255,255,255,.9))}
+@keyframes titila{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:.85;transform:scale(1) rotate(45deg)}}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(50px + env(safe-area-inset-bottom,0px));text-align:center;color:#fff;padding:0 var(--lado)}
+.nombre{font-family:var(--display);font-weight:400;font-size:clamp(78px,23vw,130px);line-height:1;letter-spacing:.02em;text-shadow:0 2px 26px rgba(40,52,62,.3)}
+.nombre .l{--letra-desde:translateY(.1em);filter:blur(10px)}
+.portada-txt .plata-linea{background:linear-gradient(90deg,transparent,#fff,transparent);width:90px}
+.portada-fecha{font-size:11.5px;letter-spacing:.42em;padding-left:.42em}
+:root{--h-desde:translateY(10px);--h-inicio:800ms;--h-paso:160ms;--h-dur:1.3s;--letra-paso:90ms}
+
+/* ── Vidrio ── */
+.vidrio{position:relative;background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
+  border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:0 20px 50px -30px rgba(69,84,98,.35),inset 0 1px 0 #fff}
+
+/* ── Frase ── */
+.frase{padding:100px 0 60px;text-align:center}
+.frase p{font-family:var(--serif);font-weight:300;font-size:clamp(28px,7.6vw,36px);line-height:1.3}
+.frase p em{color:var(--profundo)}
+
+/* ── Fecha ── */
+.fecha{position:relative;padding:40px 0 100px;overflow:hidden}
+.fecha .luz.a{width:300px;height:300px;background:#D3E0EA;left:-60px;top:0}
+.fecha .luz.b{width:260px;height:260px;background:#EAE4F0;right:-70px;bottom:40px}
+.fecha .vidrio{padding:40px 24px 34px;text-align:center}
+.fecha .dia{font-family:var(--display);font-size:clamp(92px,26vw,120px);line-height:1;color:var(--profundo)}
+.fecha .mes{font-family:var(--serif);font-style:italic;font-size:26px;margin-top:4px}
+[data-cuenta]{margin:30px 0 30px;gap:2px}
+.cu{min-width:64px}
+.cu-n{font-family:var(--serif);font-weight:300;font-size:40px;color:var(--tinta)}
+.cu-t{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.cu-sep{width:1px;height:30px;margin-top:8px;background:linear-gradient(transparent,var(--plata),transparent)}
+
+/* ── Botones ── */
+.bt-p{height:56px;padding:0 28px;border-radius:16px;background:var(--profundo);color:#fff;font-weight:400;font-size:14px;letter-spacing:.06em;
+  box-shadow:0 14px 30px -16px rgba(55,68,79,.8);transition:background .5s,box-shadow .5s}
+.bt-p:hover{background:var(--prof-os);box-shadow:0 18px 34px -14px rgba(55,68,79,.85)}
+.bt-s{height:52px;padding:0 22px;border-radius:16px;color:var(--profundo);font-size:13.5px;font-weight:400;
+  background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(174,183,192,.6);
+  box-shadow:inset 0 1px 0 #fff;transition:background .5s,border-color .5s}
+.bt-s:hover{background:rgba(255,255,255,.9);border-color:var(--plata)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.4}
+
+/* ── Galería: una foto a la vez ── */
+.galeria{padding:100px 0;background:linear-gradient(180deg,var(--blanco),var(--hielo-cl) 50%,var(--blanco))}
+.carrusel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px var(--lado) 10px;scrollbar-width:none;
+  scroll-padding-inline:var(--lado)}
+.carrusel::-webkit-scrollbar{display:none}
+.carrusel figure{flex:0 0 min(84%,420px);scroll-snap-align:center;margin:0}
+.carrusel .marco{aspect-ratio:4/5;border-radius:22px;overflow:hidden;box-shadow:0 26px 50px -30px rgba(69,84,98,.55)}
+.carrusel img{width:100%;height:100%;object-fit:cover}
+.carrusel figcaption{font-family:var(--serif);font-style:italic;font-size:19px;text-align:center;margin-top:16px;color:var(--suave)}
+.puntos{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.puntos button{width:7px;height:7px;border-radius:50%;border:0;background:var(--plata);opacity:.4;padding:0;transition:opacity .4s,width .4s}
+.puntos button.activo{opacity:1;width:22px;border-radius:4px;background:var(--profundo)}
+@media (min-width:900px){.carrusel{justify-content:center}.carrusel figure{flex-basis:360px}}
+
+/* ── Familia ── */
+.familia{padding:100px 0;text-align:center}
+.familia p{font-family:var(--serif);font-size:24px;line-height:1.45;margin-top:12px}
+.padrinos{margin-top:44px;display:grid;gap:18px}
+.padrinos div{font-family:var(--serif);font-size:21px}
+.padrinos span{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+
+/* ── Itinerario ── */
+.itin{padding:40px 0 100px}
+.itin ol{list-style:none;margin-top:40px;display:grid;gap:10px}
+.itin li{display:flex;align-items:center;gap:18px;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid var(--perla);transition:transform .6s var(--rev-ease),box-shadow .6s}
+.itin li:hover{transform:translateX(4px);box-shadow:0 14px 30px -24px rgba(69,84,98,.5)}
+.itin .hr{font-size:12.5px;letter-spacing:.1em;color:var(--profundo);font-weight:500;flex:0 0 76px;white-space:nowrap}
+.itin .ac{font-family:var(--serif);font-size:23px;line-height:1.2}
+
+/* ── Sedes ── */
+.sedes{position:relative;padding:100px 0;overflow:hidden;background:var(--hielo-cl)}
+.sedes .luz.a{width:340px;height:340px;background:#fff;right:-100px;top:-60px;opacity:.9}
+.sede{padding:30px 24px;margin-top:16px;text-align:center}
+.sede h3{font-family:var(--serif);font-weight:400;font-size:29px;line-height:1.15;margin:10px 0}
+.sede p{color:var(--suave);font-size:14px}
+.sede .bt-s{margin-top:20px}
+
+/* ── Vestimenta y regalos ── */
+.bloque{padding:100px 0;text-align:center}
+.bloque p{color:var(--suave);max-width:34ch;margin:14px auto 0}
+.regalos{display:grid;gap:10px;margin-top:30px;text-align:left}
+.regalo{display:flex;align-items:center;gap:14px;padding:18px 20px;text-decoration:none;border-radius:18px}
+.regalo b{font-family:var(--serif);font-weight:400;font-size:22px;display:block;line-height:1.15}
+.regalo span{font-size:12.5px;color:var(--suave)}
+.regalo .fl{margin-left:auto;color:var(--profundo);transition:transform .5s var(--rev-ease)}
+.regalo:hover .fl{transform:translateX(4px)}
+.regalo button{margin-left:auto;border:1px solid var(--plata);background:rgba(255,255,255,.7);border-radius:99px;padding:8px 14px;font-size:12px;color:var(--profundo)}
+.regalo button.copiado{background:var(--profundo);color:#fff}
+
+/* ── Confirmación ── */
+.rsvp{position:relative;padding:100px 0 110px;overflow:hidden;background:linear-gradient(180deg,var(--blanco),var(--hielo-cl))}
+.rsvp .luz.a{width:360px;height:360px;background:#D6E2EC;left:-120px;top:120px}
+.rsvp .luz.b{width:300px;height:300px;background:#EEE8F3;right:-100px;bottom:80px}
+.rsvp .vidrio{padding:34px 22px}
+[data-pase]{display:block;text-align:center;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid var(--perla)}
+.pase-et{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--display);font-size:32px;margin:8px 0 2px}
+.pase-lug{font-size:12.5px;letter-spacing:.1em;color:var(--profundo)}
+.campo-l>span{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+.linea-in{background:rgba(255,255,255,.7);border:1px solid var(--perla);border-radius:14px;padding:13px 15px;font-size:16px;transition:border-color .4s,box-shadow .4s}
+.linea-in:focus{border-color:var(--plata);box-shadow:0 0 0 4px rgba(204,215,224,.5)}
+.elige b{border:1px solid var(--perla);background:rgba(255,255,255,.7);border-radius:14px;font-size:13.5px;transition:all .45s}
+.elige input:checked+b{background:var(--profundo);border-color:var(--profundo);color:#fff}
+.elige input:focus-visible+b{outline:2px solid var(--hielo);outline-offset:2px}
+.paso-lug button{border:1px solid var(--plata);color:var(--profundo);background:#fff}
+.paso-lug button:hover{background:var(--hielo-cl)}
+.paso-lug output{font-family:var(--serif);font-size:36px}
+.paso-lug small{font-size:12.5px;color:var(--suave)}
+.rsvp-nota{font-size:12px;color:var(--suave);text-align:center}
+.rg-sello{background:linear-gradient(135deg,#fff,var(--hielo));color:var(--profundo);box-shadow:inset 0 0 0 1px var(--plata)}
+.rg-t{font-family:var(--display);font-weight:400;font-size:36px}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding:110px 0 50px}
+.cierre .nombre{color:var(--profundo);text-shadow:none;font-size:clamp(64px,18vw,100px)}
+.cierre p{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--suave)}
+.cierre .firma-savey{margin-top:80px}
+
+#flota{height:52px;padding:0 26px;border-radius:16px;background:rgba(69,84,98,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;font-size:13.5px;letter-spacing:.06em;white-space:nowrap}
+
+@media (min-width:900px){
+  .sedes .env{max-width:900px}
+  .sedes-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="brillo" viewBox="0 0 24 24"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0z"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <span class="luz a"></span><span class="luz b"></span>
+  <div class="carga-c"><b>Sofía</b><i></i></div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.14"><img src="../fotos/xv-cristal.webp" srcset="../fotos/xv-cristal-m.webp 720w, ../fotos/xv-cristal.webp 1100w" sizes="100vw" alt="Sofía con vestido azul plata dentro de un invernadero de cristal lleno de flores blancas"></div>
+  <svg class="destello" style="left:18%;top:20%;--t:6s;--r:1s" aria-hidden="true"><use href="#brillo"/></svg>
+  <svg class="destello" style="left:76%;top:30%;--t:7s;--r:3s;width:10px;height:10px" aria-hidden="true"><use href="#brillo"/></svg>
+  <svg class="destello" style="left:60%;top:12%;--t:8s;--r:5s;width:9px;height:9px" aria-hidden="true"><use href="#brillo"/></svg>
+  <div class="portada-txt">
+    <div class="et" data-h style="--h:0;color:#fff">Mis XV años</div>
+    <h1 class="nombre" data-h data-letras style="--h:1">Sofía</h1>
+    <div class="plata-linea" data-h style="--h:3"></div>
+    <div class="portada-fecha" data-h style="--h:4">09 · 10 · 2027</div>
+  </div>
+</header>
+
+<main>
+
+<section class="frase">
+  <div class="env">
+    <p data-a="enfoque">Entre luz, cristal y flores blancas, quiero celebrar <em>mis quince años</em> contigo.</p>
+  </div>
+</section>
+
+<section class="fecha">
+  <span class="luz a"></span><span class="luz b"></span>
+  <div class="env">
+    <div class="vidrio" data-a="sube">
+      <div class="et">Sábado</div>
+      <div class="dia">09</div>
+      <div class="mes">de octubre de 2027</div>
+      <div class="plata-linea"></div>
+      <div class="et">Faltan</div>
+      <div data-cuenta></div>
+      <a class="bt-s" data-calendario><svg><use href="#cal"/></svg>Agregar al calendario</a>
+    </div>
+  </div>
+</section>
+
+<section class="galeria">
+  <div class="env centro">
+    <div class="et" data-a="sube">Momentos</div>
+    <h2 data-a="sube" style="margin-top:10px">Mi jardín de cristal</h2>
+  </div>
+  <div class="carrusel" id="carrusel">
+    <figure data-ampliar><div class="marco" data-a="enfoque"><img src="../fotos/g/xv-cri-2.webp" alt="Sofía con sus amigas en el invernadero" loading="lazy"></div><figcaption>Con mis amigas</figcaption></figure>
+    <figure data-ampliar><div class="marco"><img src="../fotos/g/xv-cri-1.webp" alt="La tiara, el ramo blanco y las zapatillas" loading="lazy"></div><figcaption>Los detalles</figcaption></figure>
+    <figure data-ampliar><div class="marco"><img src="../fotos/xv-cristal-m.webp" alt="Sofía en el invernadero" loading="lazy"></div><figcaption>Mi vestido azul plata</figcaption></figure>
+  </div>
+  <div class="puntos" id="puntos"></div>
+</section>
+
+<section class="familia">
+  <div class="env">
+    <div class="et" data-a="sube">Con el cariño de mis papás</div>
+    <p data-a="sube">Fernando Aguilar Robles<br>Verónica Ledesma de Aguilar</p>
+    <div class="padrinos" data-grupo="120">
+      <div data-a="sube"><span>Padrinos de velación</span>Óscar y Beatriz Ledesma</div>
+      <div data-a="sube"><span>Madrina de anillo</span>Natalia Aguilar</div>
+      <div data-a="sube"><span>Padrinos de brindis</span>Familia Cortés</div>
+    </div>
+  </div>
+</section>
+
+<section class="itin">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">Programa</div>
+      <h2 data-a="sube" style="margin-top:10px">La celebración</h2>
+    </div>
+    <ol data-grupo="100">
+      <li data-a="sube"><span class="hr">6:00 PM</span><span class="ac">Misa</span></li>
+      <li data-a="sube"><span class="hr">8:00 PM</span><span class="ac">Recepción en el invernadero</span></li>
+      <li data-a="sube"><span class="hr">9:00 PM</span><span class="ac">Vals</span></li>
+      <li data-a="sube"><span class="hr">9:45 PM</span><span class="ac">Cena</span></li>
+      <li data-a="sube"><span class="hr">11:00 PM</span><span class="ac">Fiesta</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sedes" id="lugar">
+  <span class="luz a"></span>
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">Ubicación</div>
+      <h2 data-a="sube" style="margin-top:10px">Guadalajara</h2>
+    </div>
+    <div class="sedes-grid">
+      <div class="sede vidrio" data-a="sube">
+        <div class="et">Misa · 6:00 PM</div>
+        <h3>Templo Expiatorio</h3>
+        <p>Madero 935, Col. Americana<br>Guadalajara, Jalisco</p>
+        <a class="bt-s" href="https://maps.google.com/?q=Templo%20Expiatorio%20Guadalajara" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+      </div>
+      <div class="sede vidrio" data-a="sube" style="--d:150ms">
+        <div class="et">Recepción · 8:00 PM</div>
+        <h3>Casa Cristal · Invernadero</h3>
+        <p>Av. Chapultepec 480, Americana<br>Guadalajara, Jalisco</p>
+        <a class="bt-s" href="https://maps.google.com/?q=Av.%20Chapultepec%20480%20Guadalajara" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="env" data-a="sube">
+    <div class="et">Código de vestimenta</div>
+    <h2 style="margin-top:10px">Formal</h2>
+    <p>Tonos claros y frescos son bienvenidos. El azul plata es solo para la quinceañera.</p>
+  </div>
+</section>
+
+<section class="bloque" style="padding-top:0">
+  <div class="env">
+    <div data-a="sube">
+      <div class="et">Mesa de regalos</div>
+      <h2 style="margin-top:10px">Un detalle, si lo deseas</h2>
+    </div>
+    <div class="regalos" data-grupo="120">
+      <a class="regalo vidrio" href="#" target="_blank" rel="noopener" data-a="sube"><div><b>Liverpool</b><span>Evento 51977612</span></div><span class="fl">→</span></a>
+      <div class="regalo vidrio" data-a="sube"><div><b>Lluvia de sobres</b><span>BBVA · 0123 2001 7788 9900 11</span></div><button type="button" data-copiar="012320017788990011">Copiar</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <span class="luz a"></span><span class="luz b"></span>
+  <div class="env">
+    <div class="centro" data-a="sube" style="margin-bottom:34px">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Nos acompañas?</h2>
+    </div>
+    <div class="vidrio" data-a="sube">
+      <div data-pase></div>
+      <div data-rsvp></div>
+    </div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="plata-linea" data-a="linea" style="--linea-origen:center"></div>
+    <div class="nombre" data-a="enfoque">Sofía</div>
+    <p data-a="sube">Gracias por ser parte de mi historia</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'xv-cristal', evento:'XV de Sofía', nombre:'Sofía',
+  fechaISO:'2027-10-09T18:00:00-06:00', lugar:'Casa Cristal, Av. Chapultepec 480, Guadalajara',
+  fechaLimite:'18 de septiembre', graciasSi:'¡Gracias!', graciasSiTexto:'Te espero el sábado 9 de octubre.',
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+/* puntos del carrusel */
+(function(){
+  var c=document.getElementById('carrusel'), p=document.getElementById('puntos'); if(!c||!p) return;
+  var fs=c.querySelectorAll('figure');
+  fs.forEach(function(f,i){ var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Foto '+(i+1));
+    b.addEventListener('click',function(){ f.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}) }); p.appendChild(b) });
+  var marca=function(){ var r=c.getBoundingClientRect(), mid=r.left+r.width/2, mejor=0, dist=1e9;
+    fs.forEach(function(f,i){ var fr=f.getBoundingClientRect(), d=Math.abs(fr.left+fr.width/2-mid); if(d<dist){dist=d;mejor=i} });
+    p.querySelectorAll('button').forEach(function(b,i){ b.classList.toggle('activo',i===mejor) }) };
+  c.addEventListener('scroll',marca,{passive:true}); marca();
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../xv/savey-xv.js" defer></script>
+</body>
+</html>

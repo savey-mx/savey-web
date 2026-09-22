@@ -1,0 +1,121 @@
+/* ═══════════════════════════════════════════════════════════
+   SAVEY · Mecánica compartida de las invitaciones de XV
+   Solo comportamiento. El look de cada invitación vive en su archivo.
+   Variables que cada tema puede ajustar:
+   --rev-dur  --rev-dist  --rev-ease  --letra-paso
+   ═══════════════════════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.cargando{overflow:hidden;height:100svh}
+img{display:block;max-width:100%}
+svg{display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+[hidden]{display:none!important}
+
+/* ── Pantalla de carga ── */
+#carga{position:fixed;inset:0;z-index:100;display:grid;place-items:center;--progreso:0;
+  transition:opacity 1s var(--rev-ease,cubic-bezier(.22,.61,.36,1)),visibility 1s}
+body.abierto #carga{opacity:0;visibility:hidden;pointer-events:none}
+
+/* ── Entrada de la portada: cada tema define --h-desde ── */
+.js [data-h]{opacity:0;transform:var(--h-desde,translateY(18px));
+  transition:opacity var(--h-dur,1.2s) var(--rev-ease),transform var(--h-dur,1.2s) var(--rev-ease),
+             filter var(--h-dur,1.2s) var(--rev-ease),clip-path var(--h-dur,1.2s) var(--rev-ease);
+  transition-delay:calc(var(--h,0) * var(--h-paso,140ms) + var(--h-inicio,150ms))}
+body.abierto [data-h]{opacity:1;transform:none;filter:none}
+
+/* ── Apariciones al hacer scroll ── */
+.js [data-a]{opacity:0;
+  transition:opacity var(--rev-dur,.9s) var(--rev-ease),transform var(--rev-dur,.9s) var(--rev-ease),
+             filter var(--rev-dur,.9s) var(--rev-ease),clip-path calc(var(--rev-dur,.9s) * 1.4) var(--rev-ease);
+  transition-delay:var(--d,0ms)}
+.js [data-a="sube"]{transform:translateY(var(--rev-dist,18px))}
+.js [data-a="izq"]{transform:translateX(calc(var(--rev-dist,18px) * -1.8))}
+.js [data-a="der"]{transform:translateX(calc(var(--rev-dist,18px) * 1.8))}
+.js [data-a="enfoque"]{filter:blur(14px);transform:scale(1.035)}
+.js [data-a="acerca"]{transform:scale(.94)}
+.js [data-a="mascara"]{opacity:1;clip-path:inset(100% 0 0 0)}
+.js [data-a="telon"]{opacity:1;clip-path:inset(0 50% 0 50%)}
+.js [data-a="barre"]{opacity:1;clip-path:inset(0 100% 0 0)}
+.js [data-a="linea"]{opacity:1;transform:scaleX(0);transform-origin:var(--linea-origen,left)}
+.js [data-a="lineav"]{opacity:1;transform:scaleY(0);transform-origin:top}
+.js [data-a].visto{opacity:1;transform:none;filter:none;clip-path:inset(0 0 0 0)}
+
+/* letras una por una */
+[data-letras] .palabra{display:inline-block;white-space:nowrap}
+.js [data-letras] .l{display:inline-block;opacity:0;transform:var(--letra-desde,translateY(.45em));
+  transition:opacity .9s var(--rev-ease),transform .9s var(--rev-ease),filter .9s var(--rev-ease);
+  transition-delay:calc(var(--i) * var(--letra-paso,45ms) + var(--d,0ms))}
+.js [data-letras].visto .l,body.abierto [data-h][data-letras] .l{opacity:1;transform:none;filter:none}
+
+/* ── Cuenta regresiva ── */
+[data-cuenta]{display:flex;align-items:flex-start;justify-content:center}
+.cu{display:flex;flex-direction:column;align-items:center;min-width:3.6em}
+.cu-n{font-variant-numeric:tabular-nums;line-height:1}
+.cu-t{display:block}
+
+/* ── Confirmación: estructura ── */
+.rsvp-form{display:grid;gap:26px;text-align:left}
+.campo-l{display:grid;gap:10px}
+.campo-l>span{display:block}
+.linea-in{width:100%;font:inherit;color:inherit;background:transparent;border:0;border-radius:0;
+  -webkit-appearance:none;appearance:none;resize:vertical}
+.linea-in:focus{outline:0}
+.elige{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.elige label{position:relative;cursor:pointer}
+.elige input{position:absolute;opacity:0;pointer-events:none}
+.elige b{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:0 10px;font-weight:inherit}
+.paso-lug{display:flex;align-items:center;gap:18px}
+.paso-lug button{width:44px;height:44px;border-radius:50%;background:transparent;display:grid;place-items:center;font-size:20px;line-height:1}
+.paso-lug output{min-width:1.6em;text-align:center;font-variant-numeric:tabular-nums}
+.paso-lug output.late{animation:late .45s cubic-bezier(.34,1.5,.5,1)}
+@keyframes late{50%{transform:scale(1.3)}}
+.apagado{opacity:.35;pointer-events:none;transition:opacity .4s}
+.falta .linea-in{animation:sacude .45s}
+@keyframes sacude{25%{transform:translateX(-6px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+.rsvp-gracias{text-align:center;opacity:0;transform:translateY(12px);transition:opacity .9s,transform .9s}
+.rsvp-gracias.visto{opacity:1;transform:none}
+.rg-sello{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;position:relative}
+.rg-sello::after{content:"";position:absolute;left:24px;top:17px;width:14px;height:24px;border:solid currentColor;
+  border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+/* ── Botones: brillo que sigue al cursor ── */
+.bt-p,.bt-s{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;
+  gap:10px;text-decoration:none;border:0;-webkit-tap-highlight-color:transparent}
+.bt-p::before,.bt-s::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .4s;
+  background:radial-gradient(circle at var(--bx,50%) var(--by,50%),rgba(255,255,255,.35),transparent 60%)}
+.bt-p:hover::before,.bt-s:hover::before{opacity:1}
+.bt-p:active,.bt-s:active{transform:scale(.98)}
+.bt-lleno{width:100%}
+.bt-p svg,.bt-s svg{width:17px;height:17px;flex:none}
+
+/* ── Botón flotante ── */
+#flota{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;
+  transform:translate(-50%,140%);opacity:0;transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .5s;
+  box-shadow:0 14px 34px -12px rgba(0,0,0,.45)}
+#flota.ve{transform:translate(-50%,0);opacity:1}
+
+/* ── Visor de fotos ── */
+[data-ampliar]{cursor:zoom-in}
+.visor{position:fixed;inset:0;z-index:90;background:rgba(10,10,10,.9);display:grid;place-items:center;padding:20px;
+  opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s;cursor:zoom-out}
+.visor.ve{opacity:1;visibility:visible}
+.visor img{max-height:90svh;max-width:100%;object-fit:contain;transform:scale(.96);transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.visor.ve img{transform:none}
+.visor button{position:absolute;top:14px;right:16px;width:44px;height:44px;background:none;border:0;color:#fff;font-size:30px}
+
+/* ── Firma ── */
+.firma-savey{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;transition:opacity .3s}
+.firma-savey:hover{opacity:1}
+.firma-savey img{width:18px;height:18px;border-radius:4px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+  .js [data-a],.js [data-h],.js [data-letras] .l{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}
+}
