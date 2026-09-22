@@ -7,357 +7,253 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<title>Renata &amp; Emilio · 21 de marzo de 2026</title>
+<title>Renata &amp; Emilio · 20 de marzo de 2027</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#F7F4ED">
+<meta property="og:title" content="Renata &amp; Emilio">
+<meta property="og:description" content="Sábado 20 de marzo de 2027 · Ciudad de México">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/bruma.jpg">
+<link rel="preload" as="image" href="../fotos/bruma.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
 <style>
+/* ═══════════ BRUMA · quiet luxury ═══════════ */
 :root{
-  --hueso:#F7F4ED; --arena:#DED4C4; --greige:#A89E90;
-  --carbon:#272624; --oliva:#A8AA91;
-  --serif:'Bodoni Moda',Georgia,serif;
-  --sans:'Manrope',system-ui,-apple-system,sans-serif;
-  --curva:cubic-bezier(.22,.61,.36,1);
-  --lado:22px;
+  --hueso:#F7F4ED; --hueso2:#EFEBE2; --tinta:#272624; --gris:#A89E90; --gris2:#6E6960; --linea:rgba(39,38,36,.14);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.3,.6,.2,1); --rev-dur:.8s; --rev-dist:14px;
+  --lado:26px; --aire:clamp(90px,20vw,130px);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{background:var(--hueso);color:var(--carbon);font-family:var(--sans);
-  font-weight:300;font-size:15px;line-height:1.8;overflow-x:hidden}
-img{display:block;max-width:100%}
-svg{display:block}
-a{color:inherit}
-:focus-visible{outline:1px solid var(--carbon);outline-offset:4px}
-.env{padding-inline:var(--lado);max-width:560px;margin:0 auto}
-@media (min-width:480px){:root{--lado:28px}}
+body{background:var(--hueso);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.8;letter-spacing:-.005em}
+::selection{background:var(--tinta);color:var(--hueso)}
+.env{max-width:500px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--gris2);font-weight:400}
+h2{font-family:var(--sans);font-weight:300;font-size:clamp(28px,7vw,36px);line-height:1.15;letter-spacing:-.03em}
+.centro{text-align:center}
+section{padding:var(--aire) 0}
 
-.et{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--greige)}
+/* Carga: una línea que se cruza */
+#carga{background:var(--hueso)}
+.carga-c{text-align:center}
+.carga-c .ini{font-size:13px;letter-spacing:.6em;padding-left:.6em}
+.carga-c i{display:block;width:140px;height:1px;margin:20px auto 0;background:var(--linea);position:relative;overflow:hidden}
+.carga-c i::after{content:"";position:absolute;inset:0;background:var(--tinta);transform-origin:left;transform:scaleX(var(--progreso));transition:transform .45s var(--rev-ease)}
+#carga{transition:opacity .9s var(--rev-ease),visibility .9s}
 
-/* ─────────── Navegación ─────────── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:54px;display:flex;align-items:center;
-  transition:background .6s var(--curva)}
-.nav.fija{background:rgba(247,244,237,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.nav-env{display:flex;align-items:center;width:100%;max-width:560px;margin:0 auto;padding-inline:var(--lado)}
-.mono{font-family:var(--serif);font-size:17px;letter-spacing:.06em;text-decoration:none;color:var(--carbon)}
-.nav-links{display:flex;gap:18px;margin-left:auto;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
-.nav-links a{text-decoration:none;color:var(--greige);transition:color .5s var(--curva)}
-.nav-links a:hover{color:var(--carbon)}
-@media (max-width:430px){.nav-links a:not(.clave){display:none}.nav-links .clave{color:var(--carbon)}}
+/* Portada: tipografía primero, foto después */
+.portada{min-height:100svh;display:grid;grid-template-rows:1fr auto;padding-top:calc(58px + env(safe-area-inset-top,0px));background:var(--hueso)}
+.portada-txt{display:flex;flex-direction:column;justify-content:center;padding:0 var(--lado)}
+.fecha-linea{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.3em}
+.fecha-linea i{flex:1;height:1px;background:var(--linea)}
+.novios{font-weight:300;font-size:clamp(46px,13.5vw,74px);line-height:1;letter-spacing:-.045em;margin:26px 0 20px}
+.novios em{font-family:var(--serif);font-style:italic;font-weight:300;letter-spacing:-.01em}
+.sub{font-size:12px;letter-spacing:.24em;color:var(--gris2);text-transform:uppercase}
+.portada-foto{height:52svh;min-height:280px;overflow:hidden;margin-top:40px;position:relative}
+.portada-foto img{width:100%;height:118%;object-fit:cover;object-position:50% 40%}
+:root{--h-desde:translateY(14px);--h-inicio:400ms;--h-paso:150ms;--h-dur:1s}
 
-/* ─────────── Portada asimétrica ─────────── */
-.portada{position:relative;height:100svh;min-height:560px;overflow:hidden;background:var(--hueso)}
-.portada img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
-.portada .pie{position:absolute;left:0;bottom:0;padding:0 var(--lado) 40px;text-align:left;
-  width:100%;background:linear-gradient(to top,rgba(247,244,237,.94) 30%,rgba(247,244,237,0))}
-.fecha-num{font-family:var(--serif);font-weight:400;font-size:13px;letter-spacing:.42em}
-.novios{font-family:var(--serif);font-weight:400;font-size:clamp(46px,13vw,64px);
-  line-height:1.02;letter-spacing:-.01em;margin-top:10px}
+/* Bloques de dato */
+.dato{padding:var(--aire) 0;border-top:1px solid var(--linea)}
+.dato .k{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--gris2)}
+.dato .g{font-family:var(--serif);font-size:clamp(42px,12vw,58px);line-height:1;margin:16px 0 10px;font-weight:300}
+.dato p{color:var(--gris2);font-size:14.5px;max-width:34ch}
+.dato .bt-s{margin-top:26px}
 
-/* ─────────── Bloques respirados ─────────── */
-.aire{min-height:56svh;display:flex;align-items:center;padding:72px 0}
-.aire.derecha{justify-content:flex-end;text-align:right}
-.aire .dato{max-width:22ch}
-.aire .dato h2{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.16;margin-top:8px}
-.aire .dato .hora{font-family:var(--serif);font-size:54px;line-height:1;margin-top:14px;color:var(--carbon)}
-.aire .dato p{color:var(--greige);margin-top:12px;font-size:14.5px;line-height:1.7}
-.raya{height:1px;background:rgba(39,38,36,.14);margin:0 var(--lado)}
+[data-cuenta]{margin:28px 0 0;justify-content:flex-start;gap:0}
+.cu{align-items:flex-start;min-width:0;flex:0 0 25%}
+.cu-n{font-family:var(--serif);font-size:38px;font-weight:300}
+.cu-t{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris);margin-top:6px}
+.cu-sep{display:none}
 
-/* ─────────── Arco ─────────── */
-.arco-seccion{padding:72px 0 88px;text-align:center}
-.arco{width:min(72vw,260px);margin:0 auto;aspect-ratio:3/4.3;
-  border:1px solid rgba(39,38,36,.2);border-radius:999px 999px 2px 2px;
-  display:grid;place-content:center;gap:14px;padding:36px 20px}
-.arco .n{font-family:var(--serif);font-size:64px;line-height:1;color:var(--carbon)}
-.arco .l{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--greige)}
-.arco-seccion p{font-family:var(--serif);font-size:26px;line-height:1.35;margin:40px auto 0;max-width:20ch}
+/* Botones */
+.bt-p{height:54px;padding:0 26px;border-radius:2px;background:var(--tinta);color:var(--hueso);font-weight:400;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  transition:background .4s}
+.bt-p:hover{background:#000}
+.bt-s{height:50px;padding:0 22px;border-radius:2px;border:1px solid var(--tinta);color:var(--tinta);font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:transparent;
+  transition:background .4s,color .4s}
+.bt-s:hover{background:var(--tinta);color:var(--hueso)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.4}
 
-/* ─────────── Galería, una por pantalla ─────────── */
-.foto-plena{margin:0}
-.foto-plena img{width:100%;height:auto}
-.foto-desfasada{margin:14px 0 0 auto;width:76%;padding-right:var(--lado)}
-.foto-desfasada .marco{aspect-ratio:4/3;background:var(--arena);position:relative;overflow:hidden}
-.foto-desfasada .marco img,.vertical .marco img{width:100%;height:100%;object-fit:cover;display:block}
-.hueco{position:absolute;inset:0;display:grid;place-content:center;gap:8px;justify-items:center}
-.hueco::before{content:"";position:absolute;inset:12px;border:1px solid rgba(168,158,144,.5)}
-.hueco svg{width:22px;height:22px;fill:var(--greige);opacity:.65}
-.hueco span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--greige)}
-.pie-foto{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--greige);
-  margin-top:10px;padding-inline:var(--lado)}
-.vertical{width:64%;margin-top:56px;padding-left:var(--lado)}
-.vertical .marco{aspect-ratio:3/4;background:var(--arena);position:relative;overflow:hidden}
+/* Foto ancha */
+.ancha{height:60svh;min-height:320px;overflow:hidden;position:relative}
+.ancha img{width:100%;height:122%;object-fit:cover}
+.pie-ancha{padding:16px var(--lado) 0;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gris2)}
 
-/* ─────────── Texto ─────────── */
-.texto{padding:88px 0}
-.texto h2{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.16}
-.texto p{color:var(--greige);max-width:38ch;margin-top:14px}
-.clabe{margin-top:24px;padding:20px 0;border-top:1px solid rgba(39,38,36,.14);
-  border-bottom:1px solid rgba(39,38,36,.14);font-family:var(--serif);font-size:19px;letter-spacing:.05em}
-.clabe small{display:block;font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;
-  color:var(--greige);margin-top:6px;text-transform:uppercase}
+/* Preguntas */
+.faq{border-top:1px solid var(--linea)}
+.faq details{border-bottom:1px solid var(--linea);interpolate-size:allow-keywords}
+.faq summary{list-style:none;cursor:pointer;padding:24px 34px 24px 0;position:relative;font-size:16px;font-weight:400}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:4px;top:50%;width:12px;height:1px;background:var(--tinta);transition:transform .4s var(--rev-ease)}
+.faq summary::before{content:"";position:absolute;right:9.5px;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--tinta);transition:transform .4s var(--rev-ease),opacity .3s}
+.faq details[open] summary::before{transform:scaleY(0);opacity:0}
+.faq details::details-content{block-size:0;overflow:hidden;transition:block-size .5s var(--rev-ease),content-visibility .5s allow-discrete}
+.faq details[open]::details-content{block-size:auto}
+.faq p{padding:0 0 24px;color:var(--gris2);font-size:14.5px;max-width:50ch}
+.notas{display:grid;gap:20px;margin-top:34px}
+.nota{display:grid;grid-template-columns:110px 1fr;gap:16px;padding-top:18px;border-top:1px solid var(--linea)}
+.nota b{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris2);font-weight:400;padding-top:3px}
+.nota span{font-size:14.5px}
 
-/* ─────────── RSVP ─────────── */
-.rsvp{padding:88px 0 96px;border-top:1px solid rgba(39,38,36,.14)}
-.pase{margin-top:26px;padding:20px 0;border-top:1px solid rgba(39,38,36,.14);
-  border-bottom:1px solid rgba(39,38,36,.14)}
-.pase .qui{font-family:var(--serif);font-size:25px;line-height:1.15;margin:6px 0 2px}
-.pase .lug{font-size:13.5px;color:var(--greige)}
-form{display:grid;gap:18px;margin-top:30px}
-label{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--greige);margin-bottom:8px}
-input,select,textarea{width:100%;padding:12px 0;background:transparent;border:0;
-  border-bottom:1px solid rgba(39,38,36,.22);color:var(--carbon);font-family:var(--sans);
-  font-size:16px;font-weight:300;border-radius:0;-webkit-appearance:none;appearance:none}
-input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:var(--carbon)}
-.cta{width:100%;height:52px;border:0;border-radius:4px;background:var(--carbon);color:var(--hueso);
-  font-family:var(--sans);font-weight:400;font-size:15px;letter-spacing:.1em;cursor:pointer;
-  margin-top:8px;transition:background .5s var(--curva)}
-.cta:hover{background:#3A3835}
-.pie-cta{font-size:12.5px;color:var(--greige);margin-top:12px;text-align:center}
-.gracias{display:none;padding:30px 0}
-.gracias h2{font-family:var(--serif);font-weight:400;font-size:28px}
+/* Confirmación */
+.rsvp{background:var(--hueso2)}
+[data-pase]{display:block;margin:34px 0 0;padding:22px 0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.pase-et{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris2)}
+.pase-qui{display:block;font-family:var(--serif);font-size:30px;margin:8px 0 2px;font-weight:300}
+.pase-lug{font-size:12.5px;color:var(--gris2)}
+[data-rsvp]{margin-top:38px}
+.campo-l>span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris2)}
+.linea-in{border-bottom:1px solid var(--linea);padding:6px 0 12px;font-size:17px;transition:border-color .4s}
+.linea-in:focus{border-color:var(--tinta)}
+.elige b{border:1px solid var(--linea);border-radius:2px;font-size:13px;transition:all .4s}
+.elige input:checked+b{background:var(--tinta);color:var(--hueso);border-color:var(--tinta)}
+.elige input:focus-visible+b{outline:1px solid var(--tinta);outline-offset:3px}
+.paso-lug button{border:1px solid var(--linea);border-radius:2px}
+.paso-lug button:hover{background:var(--tinta);color:var(--hueso)}
+.paso-lug output{font-family:var(--serif);font-size:34px}
+.paso-lug small{font-size:12.5px;color:var(--gris2)}
+.rsvp-nota{font-size:12px;color:var(--gris2)}
+.rg-sello{border:1px solid var(--tinta);color:var(--tinta)}
+.rg-t{font-family:var(--serif);font-weight:300;font-size:34px}
+.rg-p{color:var(--gris2);margin-top:6px}
 
-footer{padding:36px 0 48px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--greige)}
-footer a{text-decoration:none}
+.cierre{text-align:center;padding-bottom:60px}
+.cierre .ini{font-family:var(--serif);font-size:clamp(40px,11vw,60px);font-weight:300}
+.cierre p{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gris2);margin-top:14px}
+.cierre .firma-savey{margin-top:80px}
+#flota{height:48px;padding:0 24px;border-radius:2px;background:var(--tinta);color:var(--hueso);font-size:12px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 
-
-/* Iconografía mínima: un solo trazo por sección */
-.ico{width:19px;height:19px;fill:var(--greige);margin-bottom:16px}
-.preguntas{margin-top:26px}
-.preg{border-top:1px solid rgba(39,38,36,.14)}
-.preg:last-of-type{border-bottom:1px solid rgba(39,38,36,.14)}
-.preg summary{padding:18px 30px 18px 0;cursor:pointer;list-style:none;position:relative;
-  font-family:var(--serif);font-size:19px;font-weight:400}
-.preg summary::-webkit-details-marker{display:none}
-.preg summary::after{content:"";position:absolute;right:2px;top:26px;width:12px;height:1px;background:var(--carbon)}
-.preg summary::before{content:"";position:absolute;right:7px;top:21px;width:1px;height:11px;
-  background:var(--carbon);transition:transform .5s var(--curva)}
-.preg[open] summary::before{transform:scaleY(0)}
-.preg p{padding:0 0 20px;color:var(--greige);max-width:40ch;font-size:14.5px}
-.nota-seca{margin-top:26px;padding:22px 0;border-top:1px solid rgba(39,38,36,.14);
-  border-bottom:1px solid rgba(39,38,36,.14)}
-.nota-seca b{font-family:var(--serif);font-size:21px;font-weight:400;display:block}
-.nota-seca span{color:var(--greige);font-size:14.5px}
-
-/* Motion contenido: solo fundido de 600 ms, sin zoom */
-.fade{opacity:0;transition:opacity .6s var(--curva)}
-.fade.visto{opacity:1}
-@media (prefers-reduced-motion:reduce){.fade{opacity:1;transition:none}html{scroll-behavior:auto}}
+@media (min-width:900px){
+  .portada{grid-template-columns:1fr 1fr;grid-template-rows:1fr;align-items:center;gap:60px;max-width:1200px;margin:0 auto;padding-inline:40px}
+  .portada-foto{height:78svh;margin:0}
+  .env{max-width:620px}
+}
 </style>
 </head>
-<body>
+<body class="cargando">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,66a38,38,0,1,0,38,38A38,38,0,0,0,128,66Zm0,64a26,26,0,1,1,26-26A26,26,0,0,1,128,130Zm0-112a86.1,86.1,0,0,0-86,86c0,30.91,14.34,63.74,41.47,94.94a252.32,252.32,0,0,0,41.09,38,6,6,0,0,0,6.88,0,252.32,252.32,0,0,0,41.09-38c27.13-31.2,41.47-64,41.47-94.94A86.1,86.1,0,0,0,128,18Zm0,206.51C113,212.93,54,163.62,54,104a74,74,0,0,1,148,0C202,163.62,143,212.93,128,224.51Z"/></symbol>
-<symbol id="i-camera" viewBox="0 0 256 256"><path d="M208,58H179.21L165,36.67A6,6,0,0,0,160,34H96a6,6,0,0,0-5,2.67L76.78,58H48A22,22,0,0,0,26,80V192a22,22,0,0,0,22,22H208a22,22,0,0,0,22-22V80A22,22,0,0,0,208,58Zm10,134a10,10,0,0,1-10,10H48a10,10,0,0,1-10-10V80A10,10,0,0,1,48,70H80a6,6,0,0,0,5-2.67L99.21,46h57.57L171,67.33A6,6,0,0,0,176,70h32a10,10,0,0,1,10,10ZM128,90a42,42,0,1,0,42,42A42,42,0,0,0,128,90Zm0,72a30,30,0,1,1,30-30A30,30,0,0,1,128,162Z"/></symbol>
-<symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm62-90a6,6,0,0,1-6,6H128a6,6,0,0,1-6-6V72a6,6,0,0,1,12,0v50h50A6,6,0,0,1,190,128Z"/></symbol>
-<symbol id="i-coat-hanger" viewBox="0 0 256 256"><path d="M240.37,172.8,138,96l25.59-19.2A6,6,0,0,0,166,72a38,38,0,1,0-76,0,6,6,0,0,0,12,0,26,26,0,0,1,51.82-2.88l-29.32,22-.21.16L15.63,172.8A14,14,0,0,0,24,198H232a14,14,0,0,0,8.39-25.2Zm-6.5,11.83A1.85,1.85,0,0,1,232,186H24a2,2,0,0,1-1.19-3.6L128,103.5l105.17,78.9A1.85,1.85,0,0,1,233.87,184.63Z"/></symbol>
-<symbol id="i-gift" viewBox="0 0 256 256"><path d="M216,74H174.74a46.41,46.41,0,0,0,6-4.48,27.56,27.56,0,0,0,9.22-20A30.63,30.63,0,0,0,158.5,18a27.56,27.56,0,0,0-20,9.22A57.1,57.1,0,0,0,128,45.76a57.1,57.1,0,0,0-10.48-18.53A27.56,27.56,0,0,0,97.5,18,30.63,30.63,0,0,0,66,49.51a27.56,27.56,0,0,0,9.22,20,45.74,45.74,0,0,0,6,4.48H40A14,14,0,0,0,26,88v32a14,14,0,0,0,14,14h2v66a14,14,0,0,0,14,14H200a14,14,0,0,0,14-14V134h2a14,14,0,0,0,14-14V88A14,14,0,0,0,216,74ZM135.77,63c2.25-12.12,6.29-21.75,11.69-27.85A15.68,15.68,0,0,1,158.86,30h.55A18.6,18.6,0,0,1,178,49.14a15.68,15.68,0,0,1-5.18,11.4C162.1,70,143.92,72.83,134.34,73.65,134.59,70.76,135,67.08,135.77,63ZM83.45,35.45A18.69,18.69,0,0,1,96.59,30h.55a15.68,15.68,0,0,1,11.4,5.18C118,45.9,120.83,64.08,121.65,73.66c-2.89-.25-6.57-.68-10.61-1.43C98.92,70,89.29,65.94,83.19,60.53A15.64,15.64,0,0,1,78,49.14,18.65,18.65,0,0,1,83.45,35.45ZM38,120V88a2,2,0,0,1,2-2h82v36H40A2,2,0,0,1,38,120Zm16,80V134h68v68H56A2,2,0,0,1,54,200Zm148,0a2,2,0,0,1-2,2H134V134h68Zm16-80a2,2,0,0,1-2,2H134V86h82a2,2,0,0,1,2,2Z"/></symbol>
-<symbol id="i-lectern" viewBox="0 0 256 256"><path d="M244.51,121.74l-40-80A13.92,13.92,0,0,0,192,34H64a13.92,13.92,0,0,0-12.52,7.74l-40,80A14,14,0,0,0,24,142h98v68H96a6,6,0,0,0,0,12h64a6,6,0,0,0,0-12H134V142h98a14,14,0,0,0,12.52-20.26Zm-10.82,7.31a1.93,1.93,0,0,1-1.7.95H24a2,2,0,0,1-1.79-2.89l40-80A2,2,0,0,1,64,46H192a2,2,0,0,1,1.79,1.11l40,80A2,2,0,0,1,233.69,129.05ZM190,104a6,6,0,0,1-6,6H72a6,6,0,0,1,0-12H184A6,6,0,0,1,190,104Z"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
 </svg>
 
-<nav class="nav" id="nav">
-  <div class="nav-env">
-    <a class="mono" href="#inicio">Savey</a>
-    <div class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#detalles">Detalles</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a class="clave" href="#confirmar">Confirmar</a>
-    </div>
-  </div>
-</nav>
+<div id="carga" aria-hidden="true"><div class="carga-c"><div class="ini">R &amp; E</div><i></i></div></div>
 
-<header class="portada" id="inicio">
-  <picture>
-    <source srcset="../fotos/bruma.webp" type="image/webp">
-    <img src="../fotos/bruma.jpg" alt="Renata y Emilio">
-  </picture>
-  <div class="pie">
-    <div class="fecha-num">21 · 03 · 2026</div>
-    <h1 class="novios">Renata<br>&amp; Emilio</h1>
+<header class="portada" data-portada>
+  <div class="portada-txt">
+    <div class="fecha-linea" data-h style="--h:0">20.03.2027<i></i>CDMX</div>
+    <h1 class="novios" data-h style="--h:1">Renata<br><em>&amp;</em> Emilio</h1>
+    <div class="sub" data-h style="--h:2">Civil, con quienes queremos</div>
+  </div>
+  <div class="portada-foto" data-h style="--h:3">
+    <img src="../fotos/bruma.webp" alt="Renata y Emilio" data-px="0.12">
   </div>
 </header>
 
 <main>
 
-<section class="aire" id="detalles">
-  <div class="env"><div class="dato fade">
-    <svg class="ico"><use href="#i-clock"/></svg>
-    <div class="et">Ceremonia</div>
-    <div class="hora">13:00</div>
-    <h2>Civil, con quienes queremos</h2>
-  </div></div>
-</section>
-
-<div class="raya"></div>
-
-<section class="aire derecha">
-  <div class="env"><div class="dato fade" style="margin-left:auto">
-    <svg class="ico"><use href="#i-map-pin"/></svg>
-    <div class="et">Lugar</div>
-    <h2>Casa Vertiz</h2>
-    <p>Vertiz 108, Doctores<br>Ciudad de México</p>
-  </div></div>
-</section>
-
-<div class="raya"></div>
-
-<section class="arco-seccion">
+<section class="dato" id="detalles" style="border-top:0">
   <div class="env">
-    <div class="arco fade"><div class="n">21</div><div class="l">Marzo</div></div>
-    <p class="fade">Sin adornos de más. Solo la gente que queremos y un día que no vamos a olvidar.</p>
+    <div class="k" data-a="sube">Ceremonia</div>
+    <div class="g" data-a="sube" style="--d:100ms">13:00</div>
+    <p data-a="sube" style="--d:200ms">Sábado 20 de marzo de 2027. Sin adornos de más: solo la gente que queremos y un día que no vamos a olvidar.</p>
+    <div data-cuenta data-a="sube" style="--d:300ms"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="--d:400ms"><svg><use href="#cal"/></svg>Agendar</a>
   </div>
 </section>
 
-<figure class="foto-plena fade">
-  <picture>
-    <source srcset="../fotos/bruma-h.webp" type="image/webp">
-    <img src="../fotos/bruma.jpg" alt="Casa Vertiz">
-  </picture>
-  <figcaption class="pie-foto">Casa Vertiz · Ciudad de México</figcaption>
-</figure>
+<div class="ancha"><img src="../fotos/g/br-h.webp" alt="Casa Vertiz" loading="lazy" data-px="0.16"></div>
+<p class="pie-ancha env" style="padding-left:var(--lado)">Casa Vertiz · Ciudad de México</p>
 
-<section class="aire" id="ubicacion">
-  <div class="env"><div class="dato fade">
-    <div class="et">Comida</div>
-    <div class="hora">14:30</div>
-    <h2>Salón Alto</h2>
-    <p>En la misma casa, un piso arriba.</p>
-    <a class="mini" href="https://maps.google.com/?q=Casa%20Vertiz%20108%20Doctores%20CDMX" target="_blank" rel="noopener"
-       style="display:inline-block;margin-top:18px;height:52px;line-height:50px;padding:0 26px;border:1px solid var(--carbon);border-radius:4px;text-decoration:none;font-size:13px;letter-spacing:.1em">Cómo llegar</a>
-  </div></div>
-</section>
-
-<div class="raya"></div>
-
-<div class="foto-desfasada fade">
-  <div class="marco"><img src="../fotos/g/br-h.webp" alt="" loading="lazy"></div>
-</div>
-<div class="vertical fade">
-  <div class="marco"><img src="../fotos/g/br-v.webp" alt="" loading="lazy"></div>
-</div>
-
-<section class="texto">
-  <div class="env fade">
-    <svg class="ico"><use href="#i-coat-hanger"/></svg>
-    <div class="et">Vestimenta</div>
-    <h2 style="margin-top:10px">Cóctel</h2>
-    <p>Paleta neutra si te animas: arena, hueso, gris. Nada obligatorio.</p>
+<section class="dato" id="ubicacion">
+  <div class="env">
+    <div class="k" data-a="sube">Lugar</div>
+    <div class="g" data-a="sube" style="--d:100ms">Casa Vertiz</div>
+    <p data-a="sube" style="--d:200ms">Vertiz 108, Doctores<br>Ciudad de México</p>
+    <a class="bt-s" href="https://maps.google.com/?q=Vertiz%20108%20Doctores%20CDMX" target="_blank" rel="noopener" data-a="sube" style="--d:300ms"><svg><use href="#pin"/></svg>Cómo llegar</a>
   </div>
 </section>
 
-<div class="raya"></div>
-
-<section class="texto">
-  <div class="env fade">
-    <svg class="ico"><use href="#i-gift"/></svg>
-    <div class="et">Regalos</div>
-    <h2 style="margin-top:10px">No esperamos regalo</h2>
-    <p>Si insistes, tenemos mesa en la tienda de siempre. Pregúntanos y te pasamos la liga.</p>
+<section class="dato">
+  <div class="env">
+    <div class="k" data-a="sube">Comida</div>
+    <div class="g" data-a="sube" style="--d:100ms">14:30</div>
+    <p data-a="sube" style="--d:200ms">Salón Alto. En la misma casa, un piso arriba.</p>
   </div>
 </section>
 
-<section class="texto">
-  <div class="env fade">
-    <svg class="ico"><use href="#i-lectern"/></svg>
-    <div class="et">Buena información</div>
-    <h2 style="margin-top:10px">¿Qué conviene saber?</h2>
-    <div class="nota-seca"><b>Solo adultos</b><span>Queremos que todos puedan relajarse. Gracias por entender.</span></div>
-    <div class="nota-seca" style="border-top:0"><b>Estacionamiento</b><span>Valet en la puerta, sin costo.</span></div>
-    <div class="preguntas">
-      <details class="preg"><summary>¿Puedo llevar acompañante?</summary>
-        <p>Tu pase indica los lugares apartados. Si necesitas uno más, escríbenos y vemos.</p></details>
-      <details class="preg"><summary>¿Hay opción vegetariana?</summary>
-        <p>Sí. Avísanos al confirmar y la cocina lo prepara.</p></details>
-      <details class="preg"><summary>¿A qué hora termina?</summary>
-        <p>Alrededor de las 8 de la noche. Es una comida, no una fiesta larga.</p></details>
+<section class="dato">
+  <div class="env">
+    <div class="k" data-a="sube">Vestimenta</div>
+    <div class="g" data-a="sube" style="--d:100ms">Cóctel</div>
+    <p data-a="sube" style="--d:200ms">Paleta neutra si te animas: arena, hueso, gris. Nada obligatorio.</p>
+  </div>
+</section>
+
+<section class="dato">
+  <div class="env">
+    <div class="k" data-a="sube">Regalos</div>
+    <div class="g" data-a="sube" style="--d:100ms">No esperamos regalo</div>
+    <p data-a="sube" style="--d:200ms">Si insistes, tenemos mesa en la tienda de siempre. Pregúntanos y te pasamos la liga.</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="env">
+    <div class="k et" data-a="sube">Buena información</div>
+    <h2 data-a="sube" style="margin-top:14px">¿Qué conviene saber?</h2>
+    <div class="notas" data-grupo="90">
+      <div class="nota" data-a="sube"><b>Solo adultos</b><span>Queremos que todos puedan relajarse. Gracias por entender.</span></div>
+      <div class="nota" data-a="sube"><b>Estacionamiento</b><span>Valet en la puerta, sin costo.</span></div>
+    </div>
+    <div style="margin-top:44px" data-a="sube">
+      <details><summary>¿Puedo llevar acompañante?</summary><p>Tu pase indica los lugares apartados. Si necesitas uno más, escríbenos y vemos.</p></details>
+      <details><summary>¿Hay opción vegetariana?</summary><p>Sí. Avísanos al confirmar y la cocina lo prepara.</p></details>
+      <details><summary>¿A qué hora termina?</summary><p>Alrededor de las 8 de la noche. Es una comida, no una fiesta larga.</p></details>
     </div>
   </div>
 </section>
+
+<div class="ancha"><img src="../fotos/g/br-v.webp" alt="Renata y Emilio" loading="lazy" data-px="0.14"></div>
 
 <section class="rsvp" id="confirmar">
   <div class="env">
-    <div class="fade">
-      <svg class="ico"><use href="#i-clock"/></svg>
-      <div class="et">Confirmación</div>
-      <h2 style="font-family:var(--serif);font-weight:400;font-size:30px;margin-top:10px">¿Nos acompañas?</h2>
-      <p style="color:var(--greige);margin-top:12px;max-width:34ch">Te agradecemos confirmar antes del 1 de marzo.</p>
-    </div>
-    <div class="pase fade" id="pase" hidden>
-      <div class="et">Pase personalizado</div>
-      <div class="qui" id="pase-qui"></div>
-      <div class="lug" id="pase-lug"></div>
-    </div>
-    <form id="form" class="fade">
-      <div><label for="nombre">¿Cómo te llamas?</label><input id="nombre" required autocomplete="name"></div>
-      <div><label for="asiste">¿Asistirás?</label>
-        <select id="asiste"><option value="si">Sí, ahí estaré</option><option value="no">No podré asistir</option></select></div>
-      <div id="wrap"><label for="lugares">¿Cuántos asistirán?</label><select id="lugares"></select></div>
-      <div><label for="mensaje">¿Nos dejas un mensaje?</label><textarea id="mensaje" rows="3"></textarea></div>
-      <div><button class="cta" type="submit">Confirmar asistencia</button>
-        <div class="pie-cta">Te tomará menos de un minuto.</div></div>
-    </form>
-    <div class="gracias" id="gracias">
-      <h2 id="g-tit"></h2>
-      <p style="color:var(--greige);margin-top:10px" id="g-txt"></p>
-    </div>
+    <div class="et" data-a="sube">Confirmación</div>
+    <h2 data-a="sube" style="margin-top:14px">¿Nos acompañas?</h2>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="ini" data-a="sube">R &amp; E</div>
+    <p data-a="sube" style="--d:150ms">20.03.2027</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png" alt="">Hecho por Savey</a>
   </div>
 </section>
 
 </main>
 
-<footer><div class="env">Invitación hecha por <a href="https://saveystudio.com">Savey</a></div></footer>
+<a id="flota" class="bt-p" href="#confirmar">Confirmar</a>
 
 <script>
-(function(){
-"use strict";
-var $=function(i){return document.getElementById(i)};
-var PASES={"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},
-  "C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}};
-var WA="5215500000000", ENDPOINT="";
-
-var c=(new URLSearchParams(location.search).get('c')||'').toUpperCase();
-var pase=PASES[c]||null, max=pase?pase.l:6;
-if(pase){ $('pase').hidden=false; $('pase-qui').textContent=pase.n;
-  $('pase-lug').textContent=pase.l===1?'1 lugar reservado':pase.l+' lugares reservados';
-  $('nombre').value=pase.n }
-
-var sel=$('lugares');
-for(var i=1;i<=max;i++) sel.appendChild(new Option(String(i),String(i)));
-sel.value=String(max);
-$('asiste').addEventListener('change',function(e){ $('wrap').style.display=e.target.value==='si'?'':'none' });
-
-var nav=$('nav');
-var alScroll=function(){ nav.classList.toggle('fija', window.scrollY>window.innerHeight*.7) };
-alScroll(); window.addEventListener('scroll',alScroll,{passive:true});
-
-if('IntersectionObserver' in window){
-  var ob=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('visto');ob.unobserve(e.target)}})},{threshold:.1});
-  Array.prototype.forEach.call(document.querySelectorAll('.fade'),function(el){ob.observe(el)});
-}else{
-  Array.prototype.forEach.call(document.querySelectorAll('.fade'),function(el){el.classList.add('visto')});
-}
-
-$('form').addEventListener('submit',function(ev){
-  ev.preventDefault();
-  var b=ev.target.querySelector('.cta'); b.disabled=true; b.textContent='Enviando…';
-  var a=$('asiste').value;
-  var d={evento:'Renata & Emilio',slug:'boda-bruma',codigo:c,pase:pase?pase.n:'',
-    nombre:$('nombre').value,asiste:a,lugares:a==='si'?$('lugares').value:'0',
-    mensaje:$('mensaje').value,fecha:new Date().toISOString()};
-  var fin=function(){
-    $('form').style.display='none'; $('gracias').style.display='block';
-    if(a==='si'){ $('g-tit').textContent='Tu lugar está confirmado';
-      $('g-txt').textContent='Nos vemos el sábado 21 de marzo.' }
-    else { $('g-tit').textContent='Gracias por avisar'; $('g-txt').textContent='Te vamos a extrañar.' }};
-  if(ENDPOINT){ fetch(ENDPOINT,{method:'POST',mode:'no-cors',
-    headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)}).then(fin)['catch'](fin) }
-  else { window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(
-    'Confirmación Renata & Emilio: '+d.nombre+' — '+(a==='si'?d.lugares+' lugares':'no asistirá')),'_blank'); fin() }
-});
-})();
+window.XV = {
+  slug:'boda-bruma', evento:'Renata & Emilio', nombre:'los novios',
+  fechaISO:'2027-03-20T13:00:00-06:00', lugar:'Casa Vertiz, Vertiz 108, Ciudad de México',
+  fechaLimite:'1 de marzo', graciasSi:'Confirmado', graciasSiTexto:'Nos vemos el sábado 20 de marzo.',
+  etiquetaMensaje:'¿Nos dejas un mensaje? (opcional)',
+  extras:[{k:'menu', rot:'¿Prefieres menú vegetariano?', tipo:'elige', op:['No, el normal está bien','Sí, vegetariano']}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
 </body>
 </html>
