@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Antonia cumple 4 · Petit ballet</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FAF3EF">
+<meta property="og:title" content="Antonia cumple 4">
+<meta property="og:description" content="Sábado 13 de marzo de 2027 · Una tarde de ballet">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/ci-ballet.jpg">
+<link rel="preload" as="image" href="../fotos/ci-ballet-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 04 · PETIT BALLET ═══════════ */
+:root{
+  --crema:#FAF3EF; --marfil:#FFFBF8; --rosa:#E7C9C2; --rosa-os:#B98C86; --rosa-cl:#F7E8E3;
+  --nude:#E3CDBE; --champ:#D9BE95; --salvia:#A8B29C; --cafe:#7A625C; --tinta:#4B3E3B; --suave:#8B7975;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.3,.7,.25,1); --rev-dur:1.2s; --rev-dist:22px;
+  --lado:26px;
+}
+body{background:var(--crema);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.8}
+::selection{background:var(--rosa);color:var(--tinta)}
+.env{max-width:520px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--rosa-os);font-weight:400}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(34px,9vw,44px);line-height:1.1}
+.centro{text-align:center}
+section{padding:clamp(80px,17vw,112px) 0}
+.cinta-deco{display:block;width:100%;height:40px;fill:none;stroke:var(--rosa);stroke-width:1;opacity:.6}
+
+/* Carga: una cinta que se dibuja */
+#carga{background:var(--marfil);transition:opacity 1.1s var(--rev-ease),visibility 1.1s}
+.carga-c{text-align:center}
+.carga-c svg{width:120px;height:80px;margin:0 auto;fill:none;stroke:var(--rosa-os);stroke-width:1;
+  stroke-dasharray:300;stroke-dashoffset:calc(300 - 300*var(--progreso));transition:stroke-dashoffset .5s var(--rev-ease)}
+.carga-c b{display:block;margin-top:24px;font-family:var(--serif);font-size:26px;letter-spacing:.14em;color:var(--rosa-os)}
+body.abierto .carga-c{transform:translateY(-10px);opacity:0;transition:transform 1s var(--rev-ease),opacity .85s}
+
+/* Portada con mucho aire */
+.portada{position:relative;height:100svh;min-height:620px;overflow:hidden;background:var(--rosa-cl)}
+.px{position:absolute;left:0;right:0;top:-5%;height:110%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 26%;transform:scale(1.05);transition:transform 3.2s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(250,243,239,.5) 0%,rgba(250,243,239,.1) 22%,transparent 50%,rgba(122,98,92,.3) 84%,rgba(105,83,78,.62) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(52px + env(safe-area-inset-bottom,0px));text-align:center;color:#FFFBF8;padding:0 var(--lado)}
+.nombre{font-family:var(--serif);font-weight:300;font-size:clamp(56px,16.5vw,94px);line-height:1;margin:12px 0}
+.edad{font-family:var(--serif);font-style:italic;font-size:24px}
+.portada-fecha{font-size:11px;letter-spacing:.4em;margin-top:12px;padding-left:.4em}
+:root{--h-desde:translateY(22px);--h-inicio:520ms;--h-paso:190ms;--h-dur:1.45s;--letra-paso:58ms}
+.portada .nombre .l{--letra-desde:translateY(.4em);filter:blur(6px)}
+
+/* Ondas entre secciones */
+.onda{display:block;width:100%;height:46px}
+.onda path{fill:var(--marfil)}
+
+/* Invitación */
+.invita{background:var(--marfil);text-align:center;padding-top:20px}
+.invita p{font-family:var(--serif);font-size:clamp(28px,7.4vw,36px);line-height:1.32}
+.invita em{color:var(--rosa-os)}
+
+/* Programa, como función de ballet */
+.programa{background:var(--crema)}
+.programa ol{list-style:none;margin-top:36px;counter-reset:acto}
+.programa li{counter-increment:acto;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:baseline;padding:20px 0;
+  border-bottom:1px solid rgba(139,121,117,.18)}
+.programa li:first-child{border-top:1px solid rgba(139,121,117,.18)}
+.programa li::before{content:"0" counter(acto);font-family:var(--serif);font-size:20px;color:var(--rosa-os)}
+.programa b{font-family:var(--serif);font-weight:400;font-size:24px;display:block;line-height:1.2}
+.programa span{font-size:13px;color:var(--suave)}
+
+/* Fotos superpuestas */
+.escena{position:relative;padding-bottom:0}
+.escena .grande{margin:0;width:min(80%,360px);border-radius:180px 180px 20px 20px;overflow:hidden;aspect-ratio:3/4}
+.escena .grande img{width:100%;height:100%;object-fit:cover}
+.escena .chica{margin:0;position:relative;width:min(52%,220px);margin-left:auto;margin-top:-90px;border-radius:16px;overflow:hidden;aspect-ratio:1;
+  border:8px solid var(--crema)}
+.escena .chica img{width:100%;height:100%;object-fit:cover}
+.escena figcaption{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--suave);margin-top:20px}
+.escena .txt{margin-top:34px}
+
+/* Datos */
+.datos{background:var(--marfil);text-align:center}
+.dato{padding:22px 0;border-bottom:1px solid rgba(139,121,117,.16)}
+.dato:first-of-type{border-top:1px solid rgba(139,121,117,.16);margin-top:34px}
+.dato .k{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--suave)}
+.dato b{font-family:var(--serif);font-weight:400;font-size:25px;display:block;line-height:1.2;margin-top:6px}
+.dato span{font-size:13.5px;color:var(--suave)}
+.dato .bt-s{margin-top:16px}
+[data-cuenta]{margin:36px 0 0;gap:4px}
+.cu{min-width:60px}
+.cu-n{font-family:var(--serif);font-size:38px;color:var(--rosa-os)}
+.cu-t{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.cu-sep{width:1px;height:26px;background:rgba(231,201,194,.9);margin-top:8px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 30px;border-radius:99px;background:var(--rosa-os);color:var(--marfil);font-weight:400;font-size:14px;letter-spacing:.08em;
+  box-shadow:0 16px 30px -20px rgba(185,140,134,1);transition:background .5s}
+.bt-p:hover{background:#A57A74}
+.bt-s{height:52px;padding:0 24px;border-radius:99px;border:1px solid rgba(185,140,134,.45);color:var(--cafe);font-size:13px;letter-spacing:.06em;
+  background:transparent;transition:background .5s}
+.bt-s:hover{background:rgba(231,201,194,.35)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.4}
+
+/* Confirmación */
+.rsvp{background:var(--rosa-cl)}
+.rsvp .centro p{color:var(--suave);margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:32px 0 0;padding:34px 20px 26px;background:var(--marfil);border-radius:120px 120px 20px 20px}
+.pase-et{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--serif);font-size:27px;margin:8px 0 2px}
+.pase-lug{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--rosa-os)}
+[data-rsvp]{margin-top:34px}
+.campo-l>span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+.linea-in{background:var(--marfil);border:1px solid transparent;border-radius:99px;padding:14px 20px;font-size:16px;transition:border-color .3s,box-shadow .3s}
+textarea.linea-in{border-radius:22px}
+.linea-in:focus{border-color:var(--rosa);box-shadow:0 0 0 4px rgba(231,201,194,.4)}
+.elige b{background:var(--marfil);border:1px solid transparent;border-radius:99px;font-size:13.5px;transition:all .45s}
+.elige input:checked+b{background:var(--rosa-os);color:var(--marfil)}
+.elige input:focus-visible+b{outline:2px solid var(--rosa);outline-offset:2px}
+.paso-lug button{background:var(--marfil);color:var(--rosa-os)}
+.paso-lug button:hover{background:var(--rosa-os);color:var(--marfil)}
+.paso-lug output{font-family:var(--serif);font-size:34px}
+.paso-lug small{font-size:12.5px;color:var(--suave)}
+.rsvp-nota{font-size:12px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--rosa-os);color:var(--marfil)}
+.rg-t{font-family:var(--serif);font-weight:300;font-size:34px}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:56px}
+.cierre .nombre{color:var(--rosa-os);font-size:clamp(46px,13vw,72px)}
+.cierre p{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--suave)}
+.cierre .firma-savey{margin-top:76px}
+#flota{height:50px;padding:0 26px;border-radius:99px;background:var(--rosa-os);color:var(--marfil);font-size:13.5px;white-space:nowrap}
+@media (min-width:860px){
+  .escena .env{max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .escena .grande{width:100%}
+  .escena .chica{margin:-60px 0 0 auto;width:60%}
+}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="cinta" viewBox="0 0 120 80"><path d="M6 66c18-6 26-20 20-34-4-9-14-8-16 1-3 15 14 26 34 28 24 2 44-10 50-30"/><circle cx="60" cy="61" r="3"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c"><svg viewBox="0 0 120 80"><use href="#cinta"/></svg><b>Antonia</b></div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.13"><img src="../fotos/ci-ballet.webp" srcset="../fotos/ci-ballet-m.webp 720w, ../fotos/ci-ballet.webp 1100w" sizes="100vw" alt="Antonia con su tutú frente a la decoración de ballet"></div>
+  <div class="portada-txt">
+    <div class="et" data-h style="--h:0">Petit ballet</div>
+    <h1 class="nombre" data-h data-letras style="--h:1">Antonia</h1>
+    <div class="edad" data-h style="--h:3">cumple cuatro</div>
+    <div class="portada-fecha" data-h style="--h:4">13 · MARZO · 2027</div>
+  </div>
+</header>
+
+<svg class="onda" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46V16c180 24 340-18 520-12 210 7 300 34 480 26 90-4 150-16 200-22v38z"/></svg>
+
+<main>
+
+<section class="invita">
+  <div class="env">
+    <svg class="cinta-deco" data-a="sube" viewBox="0 0 120 80" aria-hidden="true" style="height:56px;margin-bottom:20px"><use href="#cinta"/></svg>
+    <p data-a="sube">Una tarde de música, tul y pastel. <em>Antonia quiere bailar contigo.</em></p>
+  </div>
+</section>
+
+<section class="escena">
+  <div class="env">
+    <figure class="grande" data-a="mascara" data-ampliar><img src="../fotos/g/cb-1.webp" alt="El pastel de la fiesta con zapatillas de ballet" loading="lazy"></figure>
+    <div>
+      <figure class="chica" data-a="acerca" data-ampliar><img src="../fotos/g/cb-2.webp" alt="La mesa con tul rosa y flores" loading="lazy"></figure>
+      <div class="txt">
+        <div class="et" data-a="sube">La función</div>
+        <h2 data-a="sube" style="margin-top:10px">Tres actos<br>y un pastel</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="programa">
+  <div class="env">
+    <ol data-grupo="110">
+      <li data-a="sube"><div><b>Calentamiento</b><span>4:00 pm · Clase para todas, con cintas</span></div></li>
+      <li data-a="sube"><div><b>La función</b><span>5:00 pm · Cada quien baila lo suyo</span></div></li>
+      <li data-a="sube"><div><b>Pastel y flores</b><span>6:00 pm · Y foto de todo el grupo</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">Los detalles</div>
+    <h2 data-a="sube" style="margin-top:10px">¿Dónde y cuándo?</h2>
+    <div class="dato" data-a="sube"><div class="k">Fecha</div><b>Sábado 13 de marzo</b><span>De 4:00 a 7:00 de la tarde</span></div>
+    <div class="dato" data-a="sube"><div class="k">Lugar</div><b>Estudio Petit</b><span>Av. Palmas 88, Lomas, CDMX</span>
+      <a class="bt-s" href="https://maps.google.com/?q=Av.%20Palmas%2088%20Lomas%20CDMX" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a></div>
+    <div class="dato" data-a="sube"><div class="k">Qué traer</div><b>Ganas de bailar</b><span>Nosotros ponemos tutús y zapatillas</span></div>
+    <div data-cuenta data-a="sube"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="margin-top:26px"><svg><use href="#cal"/></svg>Agregar al calendario</a>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Nos acompañas?</h2>
+      <p>Apartamos un tutú de su talla.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <svg class="cinta-deco" data-a="sube" viewBox="0 0 120 80" aria-hidden="true" style="height:50px;margin-bottom:18px"><use href="#cinta"/></svg>
+    <div class="nombre" data-a="sube">Antonia</div>
+    <p data-a="sube" style="--d:150ms">Te espero en el estudio</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'cumple-ballet', evento:'Cumpleaños de Antonia', nombre:'Antonia',
+  fechaISO:'2027-03-13T16:00:00-06:00', lugar:'Estudio Petit, Av. Palmas 88, CDMX',
+  fechaLimite:'6 de marzo', graciasSi:'¡Qué emoción!', graciasSiTexto:'Nos vemos el sábado 13 de marzo a las 4:00.',
+  etiquetaMensaje:'¿Alguna alergia o algo que debamos saber? (opcional)',
+  extras:[{k:'talla', rot:'Talla de tutú', ph:'2, 4, 6…'}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>
