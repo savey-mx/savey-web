@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Alejandro cumple 50 · 28 de agosto de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#20211E">
+<meta property="og:title" content="Alejandro cumple 50">
+<meta property="og:description" content="Sábado 28 de agosto de 2027 · Cena en la terraza">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/cg-terraza.jpg">
+<link rel="preload" as="image" href="../fotos/cg-terraza-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 05 · TERRAZA ═══════════ */
+:root{
+  --verde:#20211E; --verde2:#2C2F29; --oliva:#57603F; --crema:#F3EFE4; --blanco:#FBF9F3;
+  --arena:#E3DAC6; --cobre:#B07B4C; --gris:#A9A498; --tinta:#33352E; --suave:#7C7A6E;
+  --display:'Fraunces',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.24,.68,.3,1); --rev-dur:.9s; --rev-dist:18px;
+  --lado:24px;
+}
+body{background:var(--crema);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.74}
+::selection{background:var(--oliva);color:var(--crema)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--cobre);font-weight:600}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,8vw,40px);line-height:1.1;letter-spacing:-.01em}
+.centro{text-align:center}
+section{padding:clamp(72px,15vw,96px) 0}
+.oscuro{background:var(--verde);color:var(--crema)}
+.oscuro h2{color:var(--crema)}
+.oscuro .et{color:var(--arena)}
+
+/* Carga: la mesa que se enciende */
+#carga{background:var(--verde);color:var(--crema)}
+.carga-c{text-align:center}
+.carga-c .luces{display:flex;gap:10px;justify-content:center}
+.carga-c .luces i{width:10px;height:10px;border-radius:50%;background:#3A3C34;transition:background .3s,box-shadow .3s}
+.carga-c b{display:block;margin-top:26px;font-family:var(--display);font-weight:600;font-size:56px;line-height:1;letter-spacing:-.03em}
+.carga-c span{display:block;margin-top:8px;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gris)}
+body.abierto .carga-c{transform:scale(1.08);opacity:0;transition:transform .85s var(--rev-ease),opacity .65s}
+
+/* Portada */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--verde2)}
+.px{position:absolute;left:0;right:0;top:-5%;height:110%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 36%;transform:scale(1.06);transition:transform 2.6s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(32,33,30,.42) 0%,transparent 26%,transparent 52%,rgba(32,33,30,.6) 80%,var(--verde) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(48px + env(safe-area-inset-bottom,0px));padding:0 var(--lado);color:var(--blanco)}
+.linea-oro{width:52px;height:2px;background:var(--cobre);transform-origin:left}
+.nombre{font-family:var(--display);font-weight:600;font-size:clamp(50px,14.5vw,84px);line-height:.98;letter-spacing:-.03em;margin:14px 0 8px}
+.medio-siglo{display:flex;align-items:baseline;gap:12px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:rgba(251,249,243,.8)}
+.medio-siglo b{font-family:var(--display);font-weight:600;font-size:34px;letter-spacing:-.02em;color:var(--blanco)}
+:root{--h-desde:translateY(18px);--h-inicio:460ms;--h-paso:150ms;--h-dur:1s}
+.linea-oro[data-h]{--h-desde:scaleX(0)}
+@media (min-width:900px){.portada-txt{left:6vw;max-width:660px}}
+
+/* Invitación */
+.invita{text-align:center}
+.invita p{font-family:var(--display);font-weight:500;font-size:clamp(24px,6.4vw,32px);line-height:1.38;max-width:24ch;margin:0 auto}
+.invita em{font-style:italic;color:var(--cobre)}
+
+/* Datos en bloques anchos */
+.datos{background:var(--verde)}
+.datos .bloq{padding:26px 0;border-top:1px solid rgba(169,164,152,.24)}
+.datos .bloq:last-of-type{border-bottom:1px solid rgba(169,164,152,.24)}
+.datos .k{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--arena)}
+.datos b{font-family:var(--display);font-weight:600;font-size:26px;display:block;line-height:1.2;margin:8px 0 4px;color:var(--crema)}
+.datos span{font-size:14px;color:rgba(243,239,228,.66)}
+.datos .bt-s{margin-top:18px}
+[data-cuenta]{margin:34px 0 0;gap:8px;justify-content:flex-start}
+.cu{min-width:60px;align-items:flex-start}
+.cu-n{font-family:var(--display);font-weight:600;font-size:36px;color:var(--crema)}
+.cu-t{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--arena);margin-top:6px}
+.cu-sep{width:1px;height:26px;background:rgba(169,164,152,.3);margin-top:6px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:14px;background:var(--oliva);color:var(--crema);font-weight:600;font-size:14px;letter-spacing:.05em;
+  box-shadow:0 14px 28px -18px rgba(87,96,63,1);transition:background .4s}
+.bt-p:hover{background:#454D33}
+.bt-s{height:54px;padding:0 22px;border-radius:14px;border:1px solid rgba(176,123,76,.5);color:var(--cobre);font-size:13.5px;background:transparent;
+  transition:background .4s,border-color .4s}
+.bt-s:hover{background:rgba(176,123,76,.14);border-color:var(--cobre)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.6}
+.oscuro .bt-s{color:var(--arena);border-color:rgba(227,218,198,.4)}
+.oscuro .bt-s:hover{background:rgba(227,218,198,.14)}
+
+/* Fotos anchas */
+.banda{position:relative;height:56svh;min-height:300px;overflow:hidden;margin:0}
+.banda .px{top:-8%;height:116%}
+.banda img{object-position:50% 46%}
+.banda figcaption{position:absolute;z-index:1;left:var(--lado);bottom:22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--blanco);background:rgba(32,33,30,.65);padding:7px 14px;border-radius:8px}
+
+/* Menú de la noche */
+.menu-noche ol{list-style:none;margin-top:30px}
+.menu-noche li{display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(124,122,110,.2)}
+.menu-noche li:first-child{border-top:1px solid rgba(124,122,110,.2)}
+.menu-noche .hr{font-size:12.5px;letter-spacing:.12em;color:var(--cobre);font-weight:600}
+.menu-noche .ac{font-family:var(--display);font-weight:500;font-size:21px}
+.menu-noche .ac small{display:block;font-family:var(--sans);font-size:13px;color:var(--suave);font-weight:300;margin-top:2px}
+
+/* Detalle con foto */
+.doble{display:grid;gap:26px;align-items:center}
+.foto-suave{aspect-ratio:4/3;border-radius:16px;overflow:hidden;margin:0}
+.foto-suave img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--rev-ease)}
+.foto-suave:hover img{transform:scale(1.05)}
+.doble p{color:var(--suave);margin-top:12px}
+@media (min-width:840px){.doble{grid-template-columns:1fr 1fr;gap:46px}.doble-sec .env{max-width:900px}}
+
+/* Confirmación */
+.rsvp{background:var(--verde2);color:var(--crema)}
+.rsvp h2{color:var(--crema)}
+.rsvp .et{color:var(--arena)}
+.rsvp .centro p{color:rgba(243,239,228,.66);margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:30px 0 0;padding:24px 20px;border:1px solid rgba(227,218,198,.3);border-radius:16px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(243,239,228,.6)}
+.pase-qui{display:block;font-family:var(--display);font-weight:600;font-size:24px;margin:8px 0 2px}
+.pase-lug{font-size:12.5px;letter-spacing:.14em;color:var(--arena)}
+[data-rsvp]{margin-top:32px}
+.campo-l>span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--arena)}
+.linea-in{background:var(--verde);border:1px solid rgba(169,164,152,.28);border-radius:12px;padding:14px 16px;font-size:16px;color:var(--crema);transition:border-color .3s}
+.linea-in:focus{border-color:var(--cobre)}
+.elige b{background:var(--verde);border:1px solid rgba(169,164,152,.28);border-radius:12px;font-size:13.5px;transition:all .4s}
+.elige input:checked+b{background:var(--oliva);border-color:var(--oliva);color:var(--crema)}
+.elige input:focus-visible+b{outline:2px solid var(--cobre);outline-offset:2px}
+.paso-lug button{background:var(--verde);border:1px solid rgba(169,164,152,.3);color:var(--crema)}
+.paso-lug button:hover{background:var(--oliva)}
+.paso-lug output{font-family:var(--display);font-weight:600;font-size:32px}
+.paso-lug small{font-size:12.5px;color:rgba(243,239,228,.6)}
+.rsvp .bt-p{background:var(--cobre);color:var(--verde)}
+.rsvp .bt-p:hover{background:#C48D5C}
+.rsvp-nota{font-size:12px;color:rgba(243,239,228,.6);text-align:center}
+.rg-sello{background:var(--cobre);color:var(--verde)}
+.rg-t{font-family:var(--display);font-weight:600;font-size:30px}
+.rg-p{color:rgba(243,239,228,.66);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:50px}
+.cierre .nombre{color:var(--verde);font-size:clamp(42px,12vw,64px)}
+.cierre p{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave);margin-top:10px}
+.cierre .firma-savey{margin-top:66px}
+#flota{height:52px;padding:0 24px;border-radius:14px;background:var(--oliva);color:var(--crema);font-size:13.5px;font-weight:600;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c">
+    <div class="luces" id="luces"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <b>50</b><span>Alejandro</span>
+  </div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.14"><img src="../fotos/cg-terraza.webp" srcset="../fotos/cg-terraza-m.webp 720w, ../fotos/cg-terraza.webp 1100w" sizes="100vw" alt="Alejandro celebrando con su gente en la terraza"></div>
+  <div class="portada-txt">
+    <span class="linea-oro" data-h style="--h:0"></span>
+    <h1 class="nombre" data-h style="--h:1">Alejandro</h1>
+    <div class="medio-siglo" data-h style="--h:2"><b>50</b>SÁBADO 28 DE AGOSTO · 8:00 PM</div>
+  </div>
+</header>
+
+<main>
+
+<section class="invita">
+  <div class="env">
+    <p data-a="sube">Cincuenta años se cumplen una vez. <em>Queremos pasarlos contigo</em>, con buena mesa y sin prisa.</p>
+  </div>
+</section>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">La cena</div>
+    <h2 data-a="sube" style="margin-top:10px">Dónde y cuándo</h2>
+    <div class="bloq" data-a="sube" style="margin-top:26px">
+      <div class="k">Cuándo</div>
+      <b>Sábado 28 de agosto</b>
+      <span>Recepción 8:00 pm · Cena servida 9:00 pm</span>
+    </div>
+    <div class="bloq" data-a="sube">
+      <div class="k">Dónde</div>
+      <b>Terraza Los Fresnos</b>
+      <span>Bosque de Duraznos 75, Bosques de las Lomas, CDMX. Hay valet.</span>
+      <a class="bt-s" href="https://maps.google.com/?q=Bosque%20de%20Duraznos%2075%20CDMX" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+    <div class="bloq" data-a="sube">
+      <div class="k">Vestimenta</div>
+      <b>Casual elegante</b>
+      <span>De noche refresca: trae saco o algo encima.</span>
+    </div>
+    <div data-cuenta data-a="sube"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="margin-top:26px"><svg><use href="#cal"/></svg>Agendar</a>
+  </div>
+</section>
+
+<figure class="banda" data-ampliar>
+  <div class="px" data-px="0.18"><img src="../fotos/g/terraza-1.webp" alt="La mesa larga de la terraza con velas" loading="lazy"></div>
+  <figcaption data-a="sube">La mesa larga</figcaption>
+</figure>
+
+<section class="menu-noche">
+  <div class="env">
+    <div class="et" data-a="sube">La noche</div>
+    <h2 data-a="sube" style="margin-top:10px">Cómo va</h2>
+    <ol data-grupo="90">
+      <li data-a="sube"><span class="hr">8:00</span><span class="ac">Recepción<small>Vino y botana en la terraza</small></span></li>
+      <li data-a="sube"><span class="hr">9:00</span><span class="ac">Cena<small>Tres tiempos, servida en la mesa larga</small></span></li>
+      <li data-a="sube"><span class="hr">10:30</span><span class="ac">Brindis y pastel</span></li>
+      <li data-a="sube"><span class="hr">11:00</span><span class="ac">Música<small>Hasta la una</small></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="doble-sec">
+  <div class="env">
+    <div class="doble">
+      <figure class="foto-suave" data-a="enfoque" data-ampliar><img src="../fotos/g/terraza-2.webp" alt="El pastel de la noche con los globos de 50" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">Un detalle</div>
+        <h2 data-a="sube" style="margin-top:10px">Sin regalos</h2>
+        <p data-a="sube">Lo dijo él y lo repetimos: con que vengas está más que bien. Si insistes, una botella para la cava.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Nos acompañas?</h2>
+      <p>La cena es servida, así que necesitamos el número exacto.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="nombre" data-a="sube">Alejandro</div>
+    <p data-a="sube" style="--d:120ms">28 · 08 · 2027</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+(function(){
+  var l=document.getElementById('luces'); if(!l) return;
+  var t=setInterval(function(){
+    var c=document.getElementById('carga');
+    if(!c){ clearInterval(t); return }
+    var p=parseFloat(getComputedStyle(c).getPropertyValue('--progreso'))||0;
+    for(var i=0;i<l.children.length;i++){
+      var on = p > (i+1)/l.children.length - .14;
+      l.children[i].style.background = on ? '#E8C98B' : '#3A3C34';
+      l.children[i].style.boxShadow = on ? '0 0 14px rgba(232,201,139,.7)' : 'none';
+    }
+  },120);
+})();
+window.XV = {
+  slug:'cumple-terraza', evento:'Cumpleaños de Alejandro', nombre:'Alejandro',
+  fechaISO:'2027-08-28T20:00:00-06:00', lugar:'Terraza Los Fresnos, Bosques de las Lomas, CDMX',
+  fechaLimite:'14 de agosto', graciasSi:'Lugar confirmado', graciasSiTexto:'Sábado 28 de agosto, 8:00 pm.',
+  etiquetaMensaje:'¿Le dejas un mensaje? (opcional)',
+  extras:[{k:'dieta', rot:'¿Alguna restricción de comida?', ph:'Vegetariano, sin gluten…'}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

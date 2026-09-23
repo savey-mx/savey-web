@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Fernanda cumple 24 · 10 de abril de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF4F0">
+<meta property="og:title" content="Fernanda cumple 24">
+<meta property="og:description" content="Sábado 10 de abril de 2027 · Terraza, atardecer">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/cg-rose.jpg">
+<link rel="preload" as="image" href="../fotos/cg-rose-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 01 · ROSÉ 24 ═══════════ */
+:root{
+  --marfil:#FBF4F0; --blanco:#FFFCFA; --nude:#EFDCD2; --rosa:#E3BFB2; --rosa-os:#B87F6C;
+  --terracota:#A9634F; --champ:#D9BA92; --carbon:#2E2724; --tinta:#413531; --suave:#89736B;
+  --serif:'DM Serif Display',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.24,.64,.3,1); --rev-dur:1s; --rev-dist:18px;
+  --lado:24px;
+}
+body{background:var(--marfil);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.75}
+::selection{background:var(--rosa);color:var(--carbon)}
+.env{max-width:520px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--rosa-os);font-weight:500}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,8.6vw,42px);line-height:1.1}
+.centro{text-align:center}
+section{padding:clamp(74px,16vw,100px) 0}
+
+/* Carga: destello sobre rosa */
+#carga{background:linear-gradient(160deg,var(--blanco),var(--nude))}
+.carga-c{text-align:center;position:relative}
+.carga-c .aro{width:96px;height:96px;margin:0 auto;border-radius:50%;border:1px solid rgba(184,127,108,.3);position:relative;display:grid;place-items:center}
+.carga-c .aro::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid var(--rosa-os);
+  clip-path:inset(calc(100% - var(--progreso) * 100%) 0 0 0);transition:clip-path .5s var(--rev-ease)}
+.carga-c .aro b{font-family:var(--serif);font-size:34px;color:var(--rosa-os)}
+.carga-c span{display:block;margin-top:22px;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--suave)}
+body.abierto .carga-c{transform:scale(1.1);opacity:0;transition:transform .9s var(--rev-ease),opacity .75s}
+
+/* Portada editorial */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--nude)}
+.px{position:absolute;left:0;right:0;top:-5%;height:110%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:48% 32%;transform:scale(1.06);transition:transform 2.8s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(46,39,36,.26) 0%,transparent 26%,transparent 54%,rgba(46,39,36,.48) 82%,rgba(46,39,36,.76) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(48px + env(safe-area-inset-bottom,0px));padding:0 var(--lado);color:#FFFCFA}
+.edad{font-family:var(--serif);font-size:clamp(88px,26vw,150px);line-height:.82;letter-spacing:-.04em}
+.nombre{font-family:var(--serif);font-size:clamp(36px,10vw,56px);line-height:1;margin:6px 0 12px}
+.portada-fecha{font-size:11.5px;letter-spacing:.34em}
+:root{--h-desde:translateY(22px);--h-inicio:460ms;--h-paso:170ms;--h-dur:1.2s}
+@media (min-width:900px){.portada-txt{left:6vw;max-width:640px}}
+
+/* Intro */
+.intro{text-align:center;background:var(--blanco)}
+.intro p{font-family:var(--serif);font-size:clamp(28px,7.6vw,36px);line-height:1.3}
+.intro em{font-style:italic;color:var(--rosa-os)}
+
+/* Fecha gráfica */
+.fecha{background:var(--marfil)}
+.fecha-caja{display:flex;align-items:flex-end;justify-content:center;gap:18px}
+.dia{font-family:var(--serif);font-size:clamp(104px,30vw,140px);line-height:.82;color:var(--terracota)}
+.fecha-lado{padding-bottom:14px;display:grid;gap:5px}
+.fecha-lado b{font-size:12px;letter-spacing:.3em;font-weight:600}
+.fecha-lado span{font-size:11.5px;letter-spacing:.24em;color:var(--suave)}
+[data-cuenta]{margin:34px 0 0;gap:4px}
+.cu{min-width:62px}
+.cu-n{font-family:var(--serif);font-size:38px;color:var(--carbon)}
+.cu-t{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.cu-sep{width:1px;height:26px;background:rgba(227,191,178,.9);margin-top:8px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:99px;background:var(--terracota);color:var(--blanco);font-weight:500;font-size:14px;letter-spacing:.05em;
+  box-shadow:0 16px 30px -20px rgba(169,99,79,1);transition:background .45s}
+.bt-p:hover{background:#94553F}
+.bt-s{height:52px;padding:0 22px;border-radius:99px;border:1px solid rgba(169,99,79,.4);color:var(--terracota);font-size:13.5px;background:transparent;transition:background .45s}
+.bt-s:hover{background:rgba(227,191,178,.35)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* Separador fotográfico */
+.separador{position:relative;height:60svh;min-height:320px;overflow:hidden;margin:0}
+.separador .px{top:-8%;height:116%}
+.separador img{object-position:50% 52%}
+.separador figcaption{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:24px;text-align:center;
+  font-family:var(--serif);font-style:italic;font-size:22px;color:#FFFCFA;text-shadow:0 2px 18px rgba(46,39,36,.5)}
+
+/* Plan de la noche */
+.plan{background:var(--blanco)}
+.plan ol{list-style:none;margin-top:32px}
+.plan li{display:grid;grid-template-columns:82px 1fr;gap:16px;align-items:baseline;padding:18px 0;border-top:1px solid rgba(137,115,107,.18)}
+.plan li:last-child{border-bottom:1px solid rgba(137,115,107,.18)}
+.plan .hr{font-size:12.5px;letter-spacing:.14em;color:var(--rosa-os);font-weight:600}
+.plan .ac{font-family:var(--serif);font-size:23px;line-height:1.2}
+
+/* Dónde */
+.donde{display:grid;gap:26px}
+.foto-suave{aspect-ratio:4/5;border-radius:20px;overflow:hidden;margin:0}
+.foto-suave img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--rev-ease)}
+.foto-suave:hover img{transform:scale(1.05)}
+.donde p{color:var(--suave);margin-top:10px}
+.donde .bt-s{margin-top:20px}
+@media (min-width:840px){.donde{grid-template-columns:1fr 1fr;gap:48px;align-items:center}.donde-sec .env{max-width:880px}}
+
+/* Bloques */
+.bloque{text-align:center}
+.bloque p{color:var(--suave);max-width:34ch;margin:14px auto 0}
+.tonos{display:flex;justify-content:center;gap:10px;margin-top:22px}
+.tonos i{width:34px;height:34px;border-radius:50%}
+
+/* Confirmación */
+.rsvp{background:var(--nude)}
+.rsvp .centro p{color:var(--suave);margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:30px 0 0;padding:24px 20px;background:var(--blanco);border-radius:22px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--serif);font-size:26px;margin:8px 0 2px}
+.pase-lug{font-size:12.5px;letter-spacing:.1em;color:var(--terracota)}
+[data-rsvp]{margin-top:32px}
+.campo-l>span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave);font-weight:500}
+.linea-in{background:var(--blanco);border:1px solid transparent;border-radius:16px;padding:14px 16px;font-size:16px;transition:border-color .3s,box-shadow .3s}
+.linea-in:focus{border-color:var(--rosa);box-shadow:0 0 0 4px rgba(227,191,178,.4)}
+.elige b{background:var(--blanco);border:1px solid transparent;border-radius:16px;font-size:13.5px;transition:all .4s}
+.elige input:checked+b{background:var(--terracota);color:var(--blanco)}
+.elige input:focus-visible+b{outline:2px solid var(--rosa);outline-offset:2px}
+.paso-lug button{background:var(--blanco);color:var(--terracota)}
+.paso-lug button:hover{background:var(--terracota);color:var(--blanco)}
+.paso-lug output{font-family:var(--serif);font-size:34px}
+.paso-lug small{font-size:12.5px;color:var(--suave)}
+.rsvp-nota{font-size:12.5px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--terracota);color:var(--blanco)}
+.rg-t{font-family:var(--serif);font-size:32px}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:52px}
+.cierre .edad{color:var(--terracota);font-size:clamp(70px,20vw,110px)}
+.cierre p{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--suave);margin-top:8px}
+.cierre .firma-savey{margin-top:70px}
+#flota{height:50px;padding:0 24px;border-radius:99px;background:var(--terracota);color:var(--blanco);font-size:13.5px;font-weight:500;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true"><div class="carga-c"><div class="aro"><b>24</b></div><span>Fernanda</span></div></div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.15"><img src="../fotos/cg-rose.webp" srcset="../fotos/cg-rose-m.webp 720w, ../fotos/cg-rose.webp 1100w" sizes="100vw" alt="Fernanda en la terraza al atardecer, con sus globos de 24"></div>
+  <div class="portada-txt">
+    <div class="edad" data-h style="--h:0">24</div>
+    <div class="nombre" data-h style="--h:1">Fernanda</div>
+    <div class="portada-fecha" data-h style="--h:2">SÁBADO 10 DE ABRIL · 2027</div>
+  </div>
+</header>
+
+<main>
+
+<section class="intro">
+  <div class="env">
+    <p data-a="sube">Una noche para celebrar, reír y <em>brindar juntos.</em></p>
+  </div>
+</section>
+
+<section class="fecha" id="detalles">
+  <div class="env centro">
+    <div class="fecha-caja">
+      <div class="dia" data-a="sube">10</div>
+      <div class="fecha-lado" data-a="sube" style="--d:120ms"><b>ABRIL</b><b>2027</b><span>7:00 PM</span></div>
+    </div>
+    <div data-cuenta data-a="sube" style="--d:220ms"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="--d:320ms;margin-top:26px"><svg><use href="#cal"/></svg>Guardar la fecha</a>
+  </div>
+</section>
+
+<figure class="separador" data-ampliar>
+  <div class="px" data-px="0.18"><img src="../fotos/g/rose-1.webp" alt="El pastel de 24 años con velas" loading="lazy"></div>
+  <figcaption data-a="sube">Habrá pastel, claro</figcaption>
+</figure>
+
+<section class="plan">
+  <div class="env">
+    <div class="et" data-a="sube">La noche</div>
+    <h2 data-a="sube" style="margin-top:10px">Cómo va a ser</h2>
+    <ol data-grupo="100">
+      <li data-a="sube"><span class="hr">7:00 PM</span><span class="ac">Llegada y brindis</span></li>
+      <li data-a="sube"><span class="hr">8:30 PM</span><span class="ac">Cena en la terraza</span></li>
+      <li data-a="sube"><span class="hr">10:00 PM</span><span class="ac">Pastel y foto de todos</span></li>
+      <li data-a="sube"><span class="hr">11:00 PM</span><span class="ac">Música hasta que aguantemos</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="donde-sec">
+  <div class="env">
+    <div class="donde">
+      <figure class="foto-suave" data-a="enfoque" data-ampliar><img src="../fotos/g/rose-2.webp" alt="La mesa de la terraza al atardecer" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">Dónde</div>
+        <h2 data-a="sube" style="margin-top:10px">Terraza Bruma</h2>
+        <p data-a="sube">Av. Álvaro Obregón 210, piso 8<br>Roma Norte, CDMX</p>
+        <p data-a="sube" style="margin-top:6px">Hay elevador y el acceso es por la puerta de cristal.</p>
+        <a class="bt-s" href="https://maps.google.com/?q=%C3%81lvaro%20Obreg%C3%B3n%20210%20Roma%20Norte" target="_blank" rel="noopener" data-a="sube"><svg><use href="#pin"/></svg>Cómo llegar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="env" data-a="sube">
+    <div class="et">Código de vestimenta</div>
+    <h2 style="margin-top:10px">Como te sientas guapa</h2>
+    <p>Sugerencia: tonos claros para la foto grupal. En la terraza refresca de noche.</p>
+    <div class="tonos" aria-label="Paleta sugerida"><i style="background:#EFDCD2"></i><i style="background:#E3BFB2"></i><i style="background:#D9BA92"></i><i style="background:#2E2724"></i></div>
+  </div>
+</section>
+
+<section class="bloque" style="padding-top:0">
+  <div class="env" data-a="sube">
+    <div class="et">Regalos</div>
+    <h2 style="margin-top:10px">Nada, en serio</h2>
+    <p>Si insistes, una botella de vino tinto siempre se agradece.</p>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Vienes?</h2>
+      <p>Necesito el número para la cena.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="edad" data-a="sube">24</div>
+    <p data-a="sube" style="--d:120ms">Te espero en la terraza</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'cumple-rose', evento:'Cumpleaños de Fernanda', nombre:'Fernanda',
+  fechaISO:'2027-04-10T19:00:00-06:00', lugar:'Terraza Bruma, Roma Norte, CDMX',
+  fechaLimite:'3 de abril', graciasSi:'¡Ahí nos vemos!', graciasSiTexto:'Sábado 10 de abril, 7:00 pm.',
+  etiquetaMensaje:'¿Me dejas un mensaje? (opcional)',
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>
