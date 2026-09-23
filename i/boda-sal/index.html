@@ -7,455 +7,365 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<title>Ana &amp; Marco · 9 de mayo de 2026</title>
+<title>Ana &amp; Marco · 8 de mayo de 2027</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#FBF6EE">
+<meta name="theme-color" content="#183040">
+<meta property="og:title" content="Ana &amp; Marco">
+<meta property="og:description" content="Sábado 8 de mayo de 2027 · Playa del Carmen">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/sal.jpg">
+<link rel="preload" as="image" href="../fotos/sal.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
 <style>
+/* ═══════════ SAL · playa y golden hour ═══════════ */
 :root{
-  --arena:#E7D9C5; --marfil:#FBF6EE; --azul:#183040;
-  --azulgris:#557080; --terracota:#C5795E; --champagne:#D6B17C;
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'Inter',system-ui,-apple-system,sans-serif;
-  --curva:cubic-bezier(.22,.61,.36,1);
-  --lado:22px;
+  --mar:#183040; --mar2:#204153; --mar3:#0F2231; --arena:#F3E7D6; --marfil:#FBF6EE;
+  --dorado:#D6B17C; --dorado-cl:#EBCFA3; --coral:#E1A184; --tenue:rgba(251,246,238,.66);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.2,.65,.3,1); --rev-dur:1s; --rev-dist:20px;
+  --lado:24px;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{background:var(--marfil);color:var(--azul);font-family:var(--sans);
-  font-weight:300;font-size:15px;line-height:1.75;overflow-x:hidden}
-img{display:block;max-width:100%}
-svg{display:block}
-a{color:inherit}
-:focus-visible{outline:1px solid var(--azul);outline-offset:4px}
-.env{padding-inline:var(--lado);max-width:520px;margin:0 auto}
-@media (min-width:480px){:root{--lado:28px}}
+body{background:var(--mar);color:var(--marfil);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.75}
+::selection{background:var(--dorado);color:var(--mar)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);font-weight:500}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,9.6vw,46px);line-height:1.08}
+.centro{text-align:center}
+section{padding:clamp(80px,17vw,108px) 0}
+.ola{display:block;width:60px;height:10px;margin:0 auto;stroke:var(--dorado);fill:none;stroke-width:1.2}
 
-.eyebrow{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--azulgris)}
+/* Carga: el sol que sube sobre el horizonte */
+#carga{background:linear-gradient(180deg,#0F2231 0%,#1C3A4C 55%,#2B5163 100%);overflow:hidden}
+.horizonte{position:relative;width:200px;height:160px;display:grid;place-items:center}
+.horizonte .sol{width:82px;height:82px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FBE2B4,#E0B173 60%,#C98F52);
+  transform:translateY(calc(60px - 60px * var(--progreso)));opacity:calc(.3 + var(--progreso)*.7);
+  box-shadow:0 0 50px rgba(224,177,115,.55);transition:transform .6s var(--rev-ease),opacity .6s}
+.horizonte .linea{position:absolute;left:0;right:0;bottom:36px;height:1px;background:linear-gradient(90deg,transparent,var(--dorado),transparent)}
+.carga-txt{position:absolute;bottom:14%;left:0;right:0;text-align:center}
+body.abierto .horizonte{transform:scale(1.2);opacity:0;transition:transform 1.2s var(--rev-ease),opacity .9s}
 
-/* ─────────── Navegación ─────────── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;display:flex;align-items:center;
-  transition:background .5s var(--curva),color .5s var(--curva)}
-.nav-env{display:flex;align-items:center;gap:20px;width:100%;max-width:520px;margin:0 auto;padding-inline:var(--lado)}
-.mono{font-family:var(--serif);font-style:italic;font-size:20px;text-decoration:none;color:var(--marfil);
-  flex:none;transition:color .5s var(--curva);text-shadow:0 1px 12px rgba(24,48,64,.35)}
-.nav-links{display:flex;gap:17px;margin-left:auto;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
-.nav-links a{text-decoration:none;color:var(--marfil);transition:color .5s var(--curva);
-  text-shadow:0 1px 12px rgba(24,48,64,.35)}
-.nav.fija{background:rgba(251,246,238,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.nav.fija .mono,.nav.fija .nav-links a{color:var(--azul);text-shadow:none}
-.nav-links a:hover{color:var(--terracota)}
-@media (max-width:430px){.nav-links a:not(.clave){display:none}}
+/* Portada */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--mar3)}
+.px{position:absolute;left:0;right:0;top:-6%;height:112%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.08);transition:transform 3s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(15,34,49,.45) 0%,transparent 26%,transparent 52%,rgba(15,34,49,.5) 74%,var(--mar) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(58px + env(safe-area-inset-bottom,0px));text-align:center;padding:0 var(--lado)}
+.portada-fecha{font-size:12px;letter-spacing:.42em;padding-left:.42em}
+.novios{font-family:var(--serif);font-weight:300;font-size:clamp(56px,16vw,92px);line-height:.98;margin:12px 0 10px}
+.novios em{font-size:.44em;color:var(--dorado-cl)}
+.lugar-portada{font-size:12px;letter-spacing:.24em;color:var(--tenue)}
+:root{--h-desde:translateY(22px);--h-inicio:520ms;--h-paso:180ms;--h-dur:1.4s;--letra-paso:58ms}
+.portada .novios span{display:inline-block}
+.portada .novios .l{--letra-desde:translateY(.4em) scale(1.06);filter:blur(5px)}
+.portada .novios em[data-h]{--h-desde:scale(.5)}
+.ola.traza{stroke-dasharray:120;stroke-dashoffset:120}
+body.abierto .ola.traza{stroke-dashoffset:0;transition:stroke-dashoffset 1.6s var(--rev-ease) 1.5s}
+.portada-fecha[data-h]{--h-desde:translateY(0);letter-spacing:.7em;opacity:0}
+body.abierto .portada-fecha{letter-spacing:.42em;transition:opacity 1.4s var(--rev-ease) .5s,letter-spacing 2s var(--rev-ease) .5s}
 
-/* ─────────── Portada ─────────── */
-.portada{position:relative;height:100svh;min-height:560px;overflow:hidden}
-.cielo{position:absolute;inset:-6% 0 0;width:100%;height:112%;object-fit:cover;will-change:transform}
-.portada-texto{position:absolute;inset:0;padding:0 var(--lado);text-align:center;
-  display:grid;grid-template-rows:35% auto 1fr;color:var(--marfil)}
-.portada-fecha{align-self:end;font-size:12.5px;letter-spacing:.34em;
-  text-shadow:0 2px 18px rgba(24,48,64,.45)}
-.novios{font-family:var(--serif);font-style:italic;font-weight:300;
-  font-size:clamp(60px,18vw,76px);line-height:.98;margin-top:16px;
-  text-shadow:0 3px 26px rgba(24,48,64,.4)}
-.sede-portada{font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-top:18px;
-  text-shadow:0 2px 18px rgba(24,48,64,.45)}
-.flecha{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);
-  width:20px;stroke:var(--marfil);fill:none;stroke-width:1.2;opacity:.85;
-  animation:invitar 2.4s var(--curva) infinite}
-@keyframes invitar{0%,100%{transform:translateX(-50%) translateY(0);opacity:.85}
-  50%{transform:translateX(-50%) translateY(7px);opacity:.45}}
+/* Frase */
+.frase{text-align:center}
+.frase p{font-family:var(--serif);font-size:clamp(28px,7.8vw,38px);line-height:1.3}
+.frase em{color:var(--dorado-cl)}
 
-/* ─────────── Frase ─────────── */
-.frase{padding:96px 0 84px;text-align:center;position:relative;overflow:hidden}
-.frase p{font-family:var(--serif);font-weight:300;font-size:clamp(36px,10vw,44px);line-height:1.22}
-.marea{position:absolute;left:0;right:0;width:160%;height:70px;stroke:var(--azulgris);fill:none;
-  stroke-width:1;opacity:.22}
-.marea.arriba{top:26px}
-.marea.abajo{bottom:20px}
+/* Cuenta */
+.cuenta{background:var(--mar2);text-align:center}
+[data-cuenta]{margin:30px 0 30px;gap:8px}
+.cu{min-width:60px}
+.cu-n{font-family:var(--serif);font-size:44px}
+.cu-t{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado);margin-top:8px}
+.cu-sep{width:1px;height:32px;background:rgba(214,177,124,.35);margin-top:8px}
 
-/* ─────────── Franja de mar ─────────── */
-.mar{width:100%;aspect-ratio:16/9;object-fit:cover}
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:99px;background:var(--dorado);color:var(--mar);font-weight:600;font-size:13.5px;letter-spacing:.1em;
+  box-shadow:0 14px 30px -16px rgba(214,177,124,.9);transition:background .4s}
+.bt-p:hover{background:var(--dorado-cl)}
+.bt-s{height:52px;padding:0 22px;border-radius:99px;border:1px solid rgba(214,177,124,.5);color:var(--marfil);font-size:13.5px;background:transparent;transition:background .4s,border-color .4s}
+.bt-s:hover{border-color:var(--dorado);background:rgba(214,177,124,.12)}
+.bt-s svg{stroke:var(--dorado);fill:none;stroke-width:1.5}
 
-/* ─────────── Itinerario ─────────── */
-.itin{padding:84px 0}
-.itin ol{list-style:none;margin-top:34px;border-left:1px solid rgba(85,112,128,.32);padding-left:26px}
-.itin li{position:relative;padding-bottom:34px}
-.itin li:last-child{padding-bottom:0}
-.itin li::before{content:"";position:absolute;left:-30px;top:9px;width:7px;height:7px;
-  border-radius:50%;background:var(--terracota)}
-.itin .hr{font-family:var(--serif);font-size:26px;line-height:1;color:var(--azul)}
-.itin .ac{font-size:14.5px;color:var(--azulgris);margin-top:5px;letter-spacing:.03em}
+/* Itinerario */
+.itin ol{list-style:none;margin-top:40px}
+.itin li{display:grid;grid-template-columns:78px 1fr;align-items:baseline;padding:20px 0;border-top:1px solid rgba(214,177,124,.22)}
+.itin li:last-child{border-bottom:1px solid rgba(214,177,124,.22)}
+.itin .hr{font-size:13px;letter-spacing:.1em;color:var(--dorado);font-weight:500;font-variant-numeric:tabular-nums}
+.itin .ac{font-family:var(--serif);font-size:25px;line-height:1.15}
 
-/* ─────────── Datos ─────────── */
-.datos{padding:84px 0;background:var(--arena)}
-.dato{padding:22px 0;border-bottom:1px solid rgba(24,48,64,.13)}
-.dato:last-child{border-bottom:0}
-.dato .et{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--azulgris)}
-.dato h3{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.2;margin:6px 0 3px}
-.dato .dir{font-size:14.5px;color:var(--azulgris)}
-.btn2{display:inline-block;margin-top:15px;height:44px;line-height:42px;padding:0 24px;
-  border:1px solid var(--azul);border-radius:22px;font-size:13px;letter-spacing:.08em;
-  text-decoration:none;transition:background .4s var(--curva),color .4s var(--curva)}
-.btn2:hover{background:var(--azul);color:var(--marfil)}
+/* Sedes */
+.sedes{background:var(--mar2)}
+.sede{padding:34px 0;border-bottom:1px solid rgba(214,177,124,.2)}
+.sede:last-child{border-bottom:0}
+.sede h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:12px 0 8px;line-height:1.12}
+.sede p{color:var(--tenue);font-size:14px}
+.sede .bt-s{margin-top:20px}
 
-/* ─────────── Bloques ─────────── */
-.bloque{padding:84px 0;text-align:center}
-.bloque h2{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.18;margin-top:12px}
-.bloque p{color:var(--azulgris);max-width:38ch;margin:14px auto 0}
-.clabe{margin-top:22px;padding:18px;border:1px solid rgba(24,48,64,.18);background:var(--marfil);
-  font-family:var(--serif);font-size:20px}
-.clabe small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.1em;
-  color:var(--azulgris);margin-top:6px}
+/* Hospedaje y fin de semana */
+.tarjetas{display:grid;gap:12px;margin-top:34px;text-align:left}
+.tarjeta{display:flex;gap:16px;padding:20px;border:1px solid rgba(214,177,124,.24);border-radius:20px;background:rgba(32,65,83,.45);
+  transition:border-color .4s,transform .5s var(--rev-ease)}
+.tarjeta:hover{border-color:var(--dorado);transform:translateY(-3px)}
+.tarjeta .n{font-family:var(--serif);font-size:20px;color:var(--dorado);flex:none;line-height:1.2}
+.tarjeta b{font-family:var(--serif);font-weight:400;font-size:22px;display:block;line-height:1.2}
+.tarjeta span{font-size:13px;color:var(--tenue);display:block;margin-top:4px}
+.tarjeta .tarifa{display:inline-block;margin-top:10px;font-size:12px;letter-spacing:.06em;color:var(--dorado-cl);border:1px solid rgba(214,177,124,.4);border-radius:99px;padding:5px 12px}
+.dias{display:grid;gap:0;margin-top:34px;text-align:left}
+.dia{padding:22px 0;border-top:1px solid rgba(214,177,124,.22)}
+.dia:last-child{border-bottom:1px solid rgba(214,177,124,.22)}
+.dia .k{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dorado)}
+.dia b{font-family:var(--serif);font-weight:400;font-size:24px;display:block;margin-top:8px}
+.dia span{font-size:13px;color:var(--tenue)}
 
-/* ─────────── Galería ─────────── */
-.galeria{padding:84px 0}
-.celdas{display:grid;gap:10px;grid-template-columns:1fr 1fr;margin-top:30px}
-.celda{aspect-ratio:3/4;background:var(--arena);position:relative;overflow:hidden}
-.celda:first-child{grid-column:span 2;aspect-ratio:16/10}
-.celda img{width:100%;height:100%;object-fit:cover}
-.hueco{position:absolute;inset:0;display:grid;place-content:center;gap:8px;justify-items:center}
-.hueco::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(85,112,128,.45)}
-.hueco svg{width:24px;height:24px;fill:var(--azulgris);opacity:.6}
-.hueco span{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--azulgris);opacity:.8}
-
-
-/* ─────────── Iconografía ─────────── */
-.ico{width:25px;height:25px;fill:var(--terracota);margin-bottom:12px;opacity:.85}
-.brujula{display:flex;align-items:center;gap:12px;justify-content:center;padding:4px 0;color:var(--azulgris);opacity:.45}
-.brujula i{display:block;width:48px;height:1px;background:currentColor}
-.brujula svg{width:15px;height:15px;fill:currentColor}
-.dato .et{display:flex;align-items:center;gap:8px}
-.dato .et svg{width:16px;height:16px;fill:var(--terracota);flex:none}
-
-/* Hospedaje */
-.hospedaje{padding:84px 0}
-.hotel{display:flex;gap:14px;padding:20px 0;border-bottom:1px solid rgba(24,48,64,.12)}
-.hotel:last-child{border-bottom:0}
-.hotel .num{font-family:var(--serif);font-size:30px;line-height:1;color:var(--terracota);flex:none;width:34px}
-.hotel h3{font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.2}
-.hotel .d{font-size:13.5px;color:var(--azulgris);margin-top:3px}
-.hotel .tarifa{display:inline-block;margin-top:9px;font-size:12px;letter-spacing:.1em;
-  padding:4px 11px;border:1px solid rgba(197,121,94,.45);color:var(--terracota);border-radius:999px}
-
-/* Fin de semana */
-.finde{padding:84px 0;background:var(--marfil)}
-.dia{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:18px 0;
-  border-bottom:1px solid rgba(24,48,64,.1)}
-.dia:last-child{border-bottom:0}
-.dia .cuando{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--terracota);padding-top:5px}
-.dia .que{font-family:var(--serif);font-size:21px;line-height:1.25}
-.dia .nota{font-size:13.5px;color:var(--azulgris)}
-
-/* Carrusel */
-.carrusel{display:flex;gap:12px;overflow-x:auto;margin-top:26px;padding-bottom:10px;
-  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+/* Galería en carrusel */
+.carrusel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px var(--lado) 6px;scrollbar-width:none;scroll-padding-inline:var(--lado)}
 .carrusel::-webkit-scrollbar{display:none}
-.carrusel .lamina{flex:none;width:70%;max-width:250px;aspect-ratio:3/4;background:var(--arena);
-  position:relative;scroll-snap-align:center;border-radius:2px;overflow:hidden}
-.carrusel .lamina img{width:100%;height:100%;object-fit:cover;display:block}
-.pista{display:flex;gap:6px;justify-content:center;margin-top:14px}
-.pista i{width:5px;height:5px;border-radius:50%;background:rgba(85,112,128,.35)}
+.carrusel figure{flex:0 0 min(70%,300px);scroll-snap-align:center;margin:0}
+.carrusel .marco{aspect-ratio:3/4;border-radius:18px;overflow:hidden}
+.carrusel img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--rev-ease)}
+.carrusel figure:hover img{transform:scale(1.05)}
+.pista{text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--tenue);margin-top:18px}
 
-/* ─────────── Pase y RSVP ─────────── */
-.rsvp{padding:88px 0 96px;background:var(--arena);text-align:center}
-.pase{margin:28px auto 0;max-width:340px;background:var(--marfil);padding:20px;text-align:center}
-.pase .et{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--terracota)}
-.pase .qui{font-family:var(--serif);font-size:27px;line-height:1.15;margin:8px 0 2px}
-.pase .lug{font-size:13.5px;color:var(--azulgris)}
-form{display:grid;gap:16px;margin-top:28px;text-align:left}
-label{display:block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--azulgris);margin-bottom:7px}
-input,select,textarea{width:100%;padding:13px 14px;background:var(--marfil);
-  border:1px solid rgba(24,48,64,.2);color:var(--azul);font-family:var(--sans);
-  font-size:16px;font-weight:300;border-radius:2px;-webkit-appearance:none;appearance:none}
-input:focus,select:focus,textarea:focus{outline:0;border-color:var(--azul)}
-.cta{width:100%;height:54px;border:0;border-radius:27px;background:var(--azul);color:#fff;
-  font-family:var(--sans);font-weight:500;font-size:16px;letter-spacing:.03em;cursor:pointer;
-  transition:background .4s var(--curva),transform .4s var(--curva)}
-.cta:hover{background:#1F3E52;transform:translateY(-1px)}
-.pie-cta{font-size:13px;color:var(--azulgris);margin-top:12px}
-.gracias{display:none;padding:26px 0}
-.gracias .marca{font-family:var(--serif);font-size:40px;color:var(--terracota);line-height:1}
+/* Bloques */
+.bloque{text-align:center}
+.bloque p{color:var(--tenue);max-width:34ch;margin:16px auto 0}
+.sobres{margin-top:30px;display:flex;align-items:center;gap:14px;justify-content:space-between;padding:20px;border:1px solid rgba(214,177,124,.28);border-radius:20px;text-align:left}
+.sobres b{font-family:var(--serif);font-weight:400;font-size:21px;display:block}
+.sobres span{font-size:12.5px;color:var(--tenue)}
+.sobres button{border:1px solid rgba(214,177,124,.5);background:none;border-radius:99px;padding:8px 14px;font-size:12px;color:var(--dorado);flex:none}
+.sobres button.copiado{background:var(--dorado);color:var(--mar)}
 
-footer{padding:34px 0 46px;text-align:center;font-size:11px;letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(85,112,128,.6)}
-footer a{text-decoration:none}
+/* Confirmación */
+.rsvp{background:radial-gradient(ellipse at 50% 0%,#28596E,var(--mar) 62%)}
+.rsvp .centro p{color:var(--tenue);margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:34px 0 0;padding:24px 18px;border-top:1px solid rgba(214,177,124,.3);border-bottom:1px solid rgba(214,177,124,.3)}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--tenue)}
+.pase-qui{display:block;font-family:var(--serif);font-size:29px;margin:8px 0 4px}
+.pase-lug{font-size:12.5px;letter-spacing:.14em;color:var(--dorado)}
+[data-rsvp]{margin-top:38px}
+.campo-l>span{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--dorado)}
+.linea-in{border-bottom:1px solid rgba(251,246,238,.28);padding:8px 0 12px;font-family:var(--serif);font-size:23px;transition:border-color .4s}
+.linea-in:focus{border-color:var(--dorado)}
+.elige b{border:1px solid rgba(214,177,124,.35);border-radius:99px;font-size:13px;transition:all .4s}
+.elige input:checked+b{background:rgba(214,177,124,.18);border-color:var(--dorado);color:var(--dorado-cl)}
+.elige input:focus-visible+b{outline:1px solid var(--dorado);outline-offset:3px}
+.paso-lug button{border:1px solid rgba(214,177,124,.45);color:var(--dorado)}
+.paso-lug button:hover{background:rgba(214,177,124,.15)}
+.paso-lug output{font-family:var(--serif);font-size:38px}
+.paso-lug small{font-size:12.5px;color:var(--tenue)}
+.rsvp-nota{font-size:12.5px;color:var(--tenue);text-align:center}
+.rg-sello{border:1px solid var(--dorado);color:var(--dorado)}
+.rg-t{font-family:var(--serif);font-weight:300;font-size:36px}
+.rg-p{color:var(--tenue);margin-top:8px}
 
-.sube{opacity:0;transform:translateY(16px);transition:opacity .68s var(--curva),transform .68s var(--curva)}
-.sube.visto{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  .sube{opacity:1;transform:none;transition:none}
-  .flecha{animation:none}
-  html{scroll-behavior:auto}
+.cierre{text-align:center;padding-bottom:56px}
+.cierre .novios{font-size:clamp(46px,13vw,72px)}
+.cierre p{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--tenue)}
+.cierre .firma-savey{margin-top:80px}
+#flota{height:50px;padding:0 24px;border-radius:99px;background:var(--dorado);color:var(--mar);font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+
+@media (min-width:900px){
+  .sedes .env{max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+  .sedes .env>.centro{grid-column:1/-1}
+  .sede{border-bottom:0}
+  .tarjetas{grid-template-columns:repeat(3,1fr)}
+  .carrusel{justify-content:center}
+  .carrusel figure{flex-basis:280px}
 }
 </style>
 </head>
-<body>
+<body class="cargando">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,66a38,38,0,1,0,38,38A38,38,0,0,0,128,66Zm0,64a26,26,0,1,1,26-26A26,26,0,0,1,128,130Zm0-112a86.1,86.1,0,0,0-86,86c0,30.91,14.34,63.74,41.47,94.94a252.32,252.32,0,0,0,41.09,38,6,6,0,0,0,6.88,0,252.32,252.32,0,0,0,41.09-38c27.13-31.2,41.47-64,41.47-94.94A86.1,86.1,0,0,0,128,18Zm0,206.51C113,212.93,54,163.62,54,104a74,74,0,0,1,148,0C202,163.62,143,212.93,128,224.51Z"/></symbol>
-<symbol id="i-bed" viewBox="0 0 256 256"><path d="M216,74H30V48a6,6,0,0,0-12,0V208a6,6,0,0,0,12,0V174H242v34a6,6,0,0,0,12,0V112A38,38,0,0,0,216,74ZM30,86h76v76H30Zm88,76V86h98a26,26,0,0,1,26,26v50Z"/></symbol>
-<symbol id="i-car-profile" viewBox="0 0 256 256"><path d="M240,114H210.49l-43.9-43.9a13.94,13.94,0,0,0-9.9-4.1H44.28a14,14,0,0,0-11.65,6.23L3,116.67A6,6,0,0,0,2,120v48a14,14,0,0,0,14,14H34.6a30,30,0,0,0,58.8,0h69.2a30,30,0,0,0,58.8,0H240a14,14,0,0,0,14-14V128A14,14,0,0,0,240,114ZM42.62,78.89A2,2,0,0,1,44.28,78H156.69a2,2,0,0,1,1.41.59L193.52,114H19.21ZM64,194a18,18,0,1,1,18-18A18,18,0,0,1,64,194Zm128,0a18,18,0,1,1,18-18A18,18,0,0,1,192,194Zm50-26a2,2,0,0,1-2,2H221.4a30,30,0,0,0-58.8,0H93.4a30,30,0,0,0-58.8,0H16a2,2,0,0,1-2-2V126H240a2,2,0,0,1,2,2Z"/></symbol>
-<symbol id="i-camera" viewBox="0 0 256 256"><path d="M208,58H179.21L165,36.67A6,6,0,0,0,160,34H96a6,6,0,0,0-5,2.67L76.78,58H48A22,22,0,0,0,26,80V192a22,22,0,0,0,22,22H208a22,22,0,0,0,22-22V80A22,22,0,0,0,208,58Zm10,134a10,10,0,0,1-10,10H48a10,10,0,0,1-10-10V80A10,10,0,0,1,48,70H80a6,6,0,0,0,5-2.67L99.21,46h57.57L171,67.33A6,6,0,0,0,176,70h32a10,10,0,0,1,10,10ZM128,90a42,42,0,1,0,42,42A42,42,0,0,0,128,90Zm0,72a30,30,0,1,1,30-30A30,30,0,0,1,128,162Z"/></symbol>
-<symbol id="i-gift" viewBox="0 0 256 256"><path d="M216,74H174.74a46.41,46.41,0,0,0,6-4.48,27.56,27.56,0,0,0,9.22-20A30.63,30.63,0,0,0,158.5,18a27.56,27.56,0,0,0-20,9.22A57.1,57.1,0,0,0,128,45.76a57.1,57.1,0,0,0-10.48-18.53A27.56,27.56,0,0,0,97.5,18,30.63,30.63,0,0,0,66,49.51a27.56,27.56,0,0,0,9.22,20,45.74,45.74,0,0,0,6,4.48H40A14,14,0,0,0,26,88v32a14,14,0,0,0,14,14h2v66a14,14,0,0,0,14,14H200a14,14,0,0,0,14-14V134h2a14,14,0,0,0,14-14V88A14,14,0,0,0,216,74ZM135.77,63c2.25-12.12,6.29-21.75,11.69-27.85A15.68,15.68,0,0,1,158.86,30h.55A18.6,18.6,0,0,1,178,49.14a15.68,15.68,0,0,1-5.18,11.4C162.1,70,143.92,72.83,134.34,73.65,134.59,70.76,135,67.08,135.77,63ZM83.45,35.45A18.69,18.69,0,0,1,96.59,30h.55a15.68,15.68,0,0,1,11.4,5.18C118,45.9,120.83,64.08,121.65,73.66c-2.89-.25-6.57-.68-10.61-1.43C98.92,70,89.29,65.94,83.19,60.53A15.64,15.64,0,0,1,78,49.14,18.65,18.65,0,0,1,83.45,35.45ZM38,120V88a2,2,0,0,1,2-2h82v36H40A2,2,0,0,1,38,120Zm16,80V134h68v68H56A2,2,0,0,1,54,200Zm148,0a2,2,0,0,1-2,2H134V134h68Zm16-80a2,2,0,0,1-2,2H134V86h82a2,2,0,0,1,2,2Z"/></symbol>
-<symbol id="i-coat-hanger" viewBox="0 0 256 256"><path d="M240.37,172.8,138,96l25.59-19.2A6,6,0,0,0,166,72a38,38,0,1,0-76,0,6,6,0,0,0,12,0,26,26,0,0,1,51.82-2.88l-29.32,22-.21.16L15.63,172.8A14,14,0,0,0,24,198H232a14,14,0,0,0,8.39-25.2Zm-6.5,11.83A1.85,1.85,0,0,1,232,186H24a2,2,0,0,1-1.19-3.6L128,103.5l105.17,78.9A1.85,1.85,0,0,1,233.87,184.63Z"/></symbol>
-<symbol id="i-martini" viewBox="0 0 256 256"><path d="M236.24,44.24A6,6,0,0,0,232,34H24a6,6,0,0,0-4.24,10.24L122,146.49V210H88a6,6,0,0,0,0,12h80a6,6,0,0,0,0-12H134V146.49ZM70.49,78h115L128,135.51Zm147-32-20,20h-139l-20-20Z"/></symbol>
-<symbol id="i-sparkle" viewBox="0 0 256 256"><path d="M196.89,130.94,144.4,111.6,125.06,59.11a13.92,13.92,0,0,0-26.12,0L79.6,111.6,27.11,130.94a13.92,13.92,0,0,0,0,26.12L79.6,176.4l19.34,52.49a13.92,13.92,0,0,0,26.12,0L144.4,176.4l52.49-19.34a13.92,13.92,0,0,0,0-26.12Zm-4.15,14.86-55.08,20.3a6,6,0,0,0-3.56,3.56l-20.3,55.08a1.92,1.92,0,0,1-3.6,0L89.9,169.66a6,6,0,0,0-3.56-3.56L31.26,145.8a1.92,1.92,0,0,1,0-3.6l55.08-20.3a6,6,0,0,0,3.56-3.56l20.3-55.08a1.92,1.92,0,0,1,3.6,0l20.3,55.08a6,6,0,0,0,3.56,3.56l55.08,20.3a1.92,1.92,0,0,1,0,3.6ZM146,40a6,6,0,0,1,6-6h18V16a6,6,0,0,1,12,0V34h18a6,6,0,0,1,0,12H182V64a6,6,0,0,1-12,0V46H152A6,6,0,0,1,146,40ZM246,88a6,6,0,0,1-6,6H230v10a6,6,0,0,1-12,0V94H208a6,6,0,0,1,0-12h10V72a6,6,0,0,1,12,0V82h10A6,6,0,0,1,246,88Z"/></symbol>
-<symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm62-90a6,6,0,0,1-6,6H128a6,6,0,0,1-6-6V72a6,6,0,0,1,12,0v50h50A6,6,0,0,1,190,128Z"/></symbol>
-<symbol id="i-path" viewBox="0 0 256 256"><path d="M200,170a30.05,30.05,0,0,0-29.4,24H72a34,34,0,0,1,0-68h96a38,38,0,0,0,0-76H72a6,6,0,0,0,0,12h96a26,26,0,0,1,0,52H72a46,46,0,0,0,0,92h98.6A30,30,0,1,0,200,170Zm0,48a18,18,0,1,1,18-18A18,18,0,0,1,200,218Z"/></symbol>
-<symbol id="i-champagne" viewBox="0 0 256 256"><path d="M142.26,10H97.65A6,6,0,0,0,92,14.14c-1.47,4.51-35.53,110.73-5.85,151.57,6.75,9.28,16.1,14.62,27.86,15.95V234H96a6,6,0,1,0,0,12h48a6,6,0,1,0,0-12H126V181.66c11.76-1.33,21.11-6.67,27.85-15.95,29.68-40.84-4.37-147.06-5.84-151.57A6,6,0,0,0,142.26,10ZM102.08,22h35.75c2.24,7.48,7,24.29,10.75,44H91.34C95.09,46.29,99.85,29.48,102.08,22Zm42,136.66C138.55,166.29,130.66,170,120,170s-18.6-3.71-24.14-11.34C85.46,144.42,83.21,116.55,89.25,78h61.42C156.71,116.55,154.45,144.42,144.1,158.66ZM230,52a10,10,0,1,1-10-10A10,10,0,0,1,230,52ZM206,20a10,10,0,1,1-10-10A10,10,0,0,1,206,20Zm0,80a10,10,0,1,1-10-10A10,10,0,0,1,206,100Z"/></symbol>
+  <symbol id="ola" viewBox="0 0 60 10"><path d="M0 6c5-6 10-6 15 0s10 6 15 0 10-6 15 0 10 6 15 0"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
 </svg>
 
-<nav class="nav" id="nav">
-  <div class="nav-env">
-    <a class="mono" href="#inicio">Savey</a>
-    <div class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#detalles">Detalles</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a class="clave" href="#confirmar">Confirmar</a>
-    </div>
-  </div>
-</nav>
+<div id="carga" aria-hidden="true">
+  <div class="horizonte"><div class="sol"></div><div class="linea"></div></div>
+  <div class="carga-txt et">Ana &amp; Marco</div>
+</div>
 
-<header class="portada" id="inicio">
-  <picture>
-    <source srcset="../fotos/sal.webp" type="image/webp">
-    <img class="cielo" id="cielo" src="../fotos/sal.jpg" alt="Ana y Marco en la playa al atardecer">
-  </picture>
-  <div class="portada-texto">
-    <div class="portada-fecha">09 · MAYO · 2026</div>
-    <h1 class="novios">Ana<br>&amp; Marco</h1>
-    <div class="sede-portada">Cabo San Lucas</div>
+<header class="portada" data-portada>
+  <div class="px" data-px="0.16"><img src="../fotos/sal.webp" alt="Ana y Marco frente al mar al atardecer"></div>
+  <div class="portada-txt">
+    <div class="portada-fecha" data-h style="--h:0">08 · MAYO · 2027</div>
+    <h1 class="novios">
+      <span data-h data-letras style="--h:1">Ana</span>
+      <em data-h style="--h:2">&amp;</em>
+      <span data-h data-letras style="--h:2;--d:220ms">Marco</span>
+    </h1>
+    <svg class="ola traza" data-h style="--h:4" aria-hidden="true"><use href="#ola"/></svg>
+    <div class="lugar-portada" data-h style="--h:3;margin-top:14px">PLAYA DEL CARMEN</div>
   </div>
-  <svg class="flecha" viewBox="0 0 20 26" aria-hidden="true"><path d="M10 2v21M3 16l7 7 7-7"/></svg>
 </header>
 
 <main>
 
 <section class="frase">
-  <svg class="marea arriba" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true" id="m1">
-    <path d="M0 35q50-26 100 0t100 0 100 0 100 0"/></svg>
-  <svg class="marea abajo" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true" id="m2">
-    <path d="M0 35q50-26 100 0t100 0 100 0 100 0"/></svg>
   <div class="env">
-    <p class="sube">Nos encontramos<br>donde termina la tierra<br>y empieza el mar.</p>
+    <p data-a="sube">Nos encontramos donde termina la tierra y <em>empieza el mar.</em></p>
   </div>
 </section>
 
-<picture>
-  <source srcset="../fotos/sal-h.webp" type="image/webp">
-  <img class="mar" src="../fotos/sal.jpg" alt="El mar de Cabo San Lucas">
-</picture>
-
-<div class="brujula" aria-hidden="true"><i></i><svg><use href="#i-sparkle"/></svg><i></i></div>
-<section class="itin" id="detalles">
+<section class="cuenta" id="detalles">
   <div class="env">
-    <div class="sube"><div class="eyebrow">Sábado 9 de mayo</div></div>
-    <ol>
-      <li class="sube"><div class="hr">17:00</div><div class="ac">Ceremonia frente al mar</div></li>
-      <li class="sube"><div class="hr">18:30</div><div class="ac">Cóctel en la arena</div></li>
-      <li class="sube"><div class="hr">20:00</div><div class="ac">Cena</div></li>
-      <li class="sube"><div class="hr">22:00</div><div class="ac">Baile</div></li>
-      <li class="sube"><div class="hr">01:00</div><div class="ac">Última canción</div></li>
+    <div class="et" data-a="sube">Sábado 8 de mayo de 2027</div>
+    <div data-cuenta data-a="sube" style="--d:150ms"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="--d:250ms"><svg><use href="#cal"/></svg>Guardar la fecha</a>
+  </div>
+</section>
+
+<section class="itin">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">El día</div>
+      <h2 data-a="sube" style="margin-top:12px">Sábado 8 de mayo</h2>
+    </div>
+    <ol data-grupo="110">
+      <li data-a="sube"><span class="hr">17:00</span><span class="ac">Ceremonia frente al mar</span></li>
+      <li data-a="sube"><span class="hr">18:30</span><span class="ac">Cóctel en la arena</span></li>
+      <li data-a="sube"><span class="hr">20:00</span><span class="ac">Cena</span></li>
+      <li data-a="sube"><span class="hr">22:00</span><span class="ac">Baile</span></li>
+      <li data-a="sube"><span class="hr">01:00</span><span class="ac">Última canción</span></li>
     </ol>
   </div>
 </section>
 
-<div class="brujula" aria-hidden="true"><i></i><svg><use href="#i-sparkle"/></svg><i></i></div>
-<section class="datos" id="ubicacion">
+<section class="sedes" id="ubicacion">
   <div class="env">
-    <svg class="ico sube"><use href="#i-map-pin"/></svg>
-    <div class="sube"><div class="eyebrow">¿Dónde?</div></div>
-    <div class="dato sube">
-      <div class="et"><svg><use href="#i-champagne"/></svg>Ceremonia · 17:00</div>
+    <div class="centro">
+      <div class="et" data-a="sube">¿Dónde?</div>
+      <h2 data-a="sube" style="margin-top:12px">Dos momentos, un mismo mar</h2>
+    </div>
+    <div class="sede" data-a="sube">
+      <div class="et">Ceremonia · 17:00</div>
       <h3>Playa Xcalacoco</h3>
-      <div class="dir">Carretera Cancún–Tulum km 47<br>Playa del Carmen, Quintana Roo</div>
-      <a class="btn2" href="https://maps.google.com/?q=Playa%20Xcalacoco" target="_blank" rel="noopener">Cómo llegar</a>
+      <p>Carretera Cancún–Tulum km 47<br>Playa del Carmen, Quintana Roo</p>
+      <a class="bt-s" href="https://maps.google.com/?q=Playa%20Xcalacoco" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
     </div>
-    <div class="dato sube">
-      <div class="et"><svg><use href="#i-martini"/></svg>Cena y fiesta · 20:00</div>
+    <div class="sede" data-a="sube" style="--d:140ms">
+      <div class="et">Cena y fiesta · 20:00</div>
       <h3>Terraza Manglar</h3>
-      <div class="dir">Av. Décima Norte s/n<br>Playa del Carmen, Quintana Roo</div>
-      <a class="btn2" href="https://maps.google.com/?q=Terraza%20Manglar%20Playa%20del%20Carmen" target="_blank" rel="noopener">Cómo llegar</a>
+      <p>Av. Décima Norte s/n<br>Playa del Carmen, Quintana Roo</p>
+      <a class="bt-s" href="https://maps.google.com/?q=Av.%20D%C3%A9cima%20Norte%20Playa%20del%20Carmen" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
     </div>
   </div>
 </section>
 
-<section class="hospedaje">
+<section>
   <div class="env">
-    <svg class="ico sube"><use href="#i-bed"/></svg>
-    <div class="sube"><div class="eyebrow">¿Dónde te quedas?</div>
-      <h2 style="font-family:var(--serif);font-weight:400;font-size:32px;margin-top:10px">Tres opciones cerca</h2>
-      <p style="color:var(--azulgris);margin-top:10px;max-width:36ch">Apartamos bloque de habitaciones con tarifa especial. Menciona nuestros nombres al reservar.</p></div>
-    <div class="hotel sube"><div class="num">01</div>
-      <div><h3>Hotel Casa Xcalacoco</h3><div class="d">A 5 minutos caminando de la playa</div>
-        <span class="tarifa">Tarifa boda · $2,400 la noche</span></div></div>
-    <div class="hotel sube"><div class="num">02</div>
-      <div><h3>Posada del Manglar</h3><div class="d">A 10 minutos en coche</div>
-        <span class="tarifa">Tarifa boda · $1,600 la noche</span></div></div>
-    <div class="hotel sube"><div class="num">03</div>
-      <div><h3>Rincón Quinta Avenida</h3><div class="d">En el centro de Playa del Carmen</div>
-        <span class="tarifa">Desde $1,100 la noche</span></div></div>
+    <div class="centro">
+      <div class="et" data-a="sube">¿Dónde te quedas?</div>
+      <h2 data-a="sube" style="margin-top:12px">Tres opciones cerca</h2>
+      <p style="color:var(--tenue);max-width:34ch;margin:16px auto 0" data-a="sube">Apartamos un bloque de habitaciones con tarifa especial. Menciona nuestros nombres al reservar.</p>
+    </div>
+    <div class="tarjetas" data-grupo="120">
+      <div class="tarjeta" data-a="sube"><span class="n">01</span><div><b>Hotel Casa Xcalacoco</b><span>A 5 minutos caminando de la playa</span><span class="tarifa">Tarifa boda · $2,400</span></div></div>
+      <div class="tarjeta" data-a="sube"><span class="n">02</span><div><b>Posada del Manglar</b><span>A 10 minutos en coche</span><span class="tarifa">Tarifa boda · $1,600</span></div></div>
+      <div class="tarjeta" data-a="sube"><span class="n">03</span><div><b>Rincón Quinta Avenida</b><span>En el centro de Playa del Carmen</span><span class="tarifa">Desde $1,100</span></div></div>
+    </div>
   </div>
 </section>
 
-<section class="finde">
+<section class="galeria" style="padding-bottom:0">
+  <div class="env centro">
+    <div class="et" data-a="sube">Nosotros</div>
+    <h2 data-a="sube" style="margin-top:12px">Antes de este viaje</h2>
+  </div>
+  <div class="carrusel">
+    <figure data-ampliar><div class="marco" data-a="enfoque"><img src="../fotos/g/sa-c1.webp" alt="Ana y Marco en la playa" loading="lazy"></div></figure>
+    <figure data-ampliar><div class="marco"><img src="../fotos/g/sa-c2.webp" alt="Ana y Marco de viaje" loading="lazy"></div></figure>
+    <figure data-ampliar><div class="marco"><img src="../fotos/g/sa-c3.webp" alt="La propuesta" loading="lazy"></div></figure>
+    <figure data-ampliar><div class="marco"><img src="../fotos/g/sa-c4.webp" alt="Ana y Marco al atardecer" loading="lazy"></div></figure>
+  </div>
+  <p class="pista">Desliza para ver más</p>
+</section>
+
+<section>
   <div class="env">
-    <svg class="ico sube"><use href="#i-path"/></svg>
-    <div class="sube"><div class="eyebrow">Fin de semana</div>
-      <h2 style="font-family:var(--serif);font-weight:400;font-size:32px;margin-top:10px">No solo es un día</h2></div>
-    <div class="dia sube"><div class="cuando">Viernes</div>
-      <div><div class="que">Cena de bienvenida</div><div class="nota">8:00 pm · Terraza del hotel. Informal.</div></div></div>
-    <div class="dia sube"><div class="cuando">Sábado</div>
-      <div><div class="que">La boda</div><div class="nota">5:00 pm · Playa Xcalacoco</div></div></div>
-    <div class="dia sube"><div class="cuando">Domingo</div>
-      <div><div class="que">Desayuno de despedida</div><div class="nota">11:00 am · Antes de que todos vuelen.</div></div></div>
+    <div class="centro">
+      <div class="et" data-a="sube">Fin de semana</div>
+      <h2 data-a="sube" style="margin-top:12px">No solo es un día</h2>
+    </div>
+    <div class="dias" data-grupo="110">
+      <div class="dia" data-a="sube"><div class="k">Viernes</div><b>Cena de bienvenida</b><span>8:00 pm · Terraza del hotel. Informal.</span></div>
+      <div class="dia" data-a="sube"><div class="k">Sábado</div><b>La boda</b><span>5:00 pm · Playa Xcalacoco</span></div>
+      <div class="dia" data-a="sube"><div class="k">Domingo</div><b>Desayuno de despedida</b><span>11:00 am · Antes de que todos vuelen.</span></div>
+    </div>
   </div>
 </section>
 
 <section class="bloque">
-  <div class="env sube">
-    <svg class="ico" style="margin-inline:auto"><use href="#i-coat-hanger"/></svg>
-    <div class="eyebrow">Código de vestimenta</div>
-    <h2>Formal playero</h2>
-    <p>Lino, colores claros y nada de tacón de aguja. La ceremonia es sobre la arena.</p>
+  <div class="env" data-a="sube">
+    <svg class="ola" aria-hidden="true" style="margin-bottom:20px"><use href="#ola"/></svg>
+    <div class="et">Código de vestimenta</div>
+    <h2 style="margin-top:12px">Formal playero</h2>
+    <p>Lino, colores claros y nada de tacón de aguja: la ceremonia es sobre la arena.</p>
   </div>
 </section>
 
-<section class="bloque">
-  <div class="env sube">
-    <svg class="ico" style="margin-inline:auto"><use href="#i-car-profile"/></svg>
-    <div class="eyebrow">Transporte</div>
-    <h2>Nosotros te llevamos</h2>
+<section class="bloque" style="padding-top:0">
+  <div class="env" data-a="sube">
+    <div class="et">Transporte</div>
+    <h2 style="margin-top:12px">Nosotros te llevamos</h2>
     <p>Sale una camioneta del hotel a las 4:15 pm y regresa a la 1:00 am. Avísanos al confirmar si la vas a usar.</p>
   </div>
 </section>
 
-<section class="galeria">
+<section class="bloque" style="padding-top:0">
   <div class="env">
-    <div class="sube"><div class="eyebrow">Nosotros</div></div>
-    <div class="carrusel sube">
-      <div class="lamina"><img src="../fotos/g/sa-c1.webp" alt="" loading="lazy"></div>
-      <div class="lamina"><img src="../fotos/g/sa-c2.webp" alt="" loading="lazy"></div>
-      <div class="lamina"><img src="../fotos/g/sa-c3.webp" alt="" loading="lazy"></div>
-      <div class="lamina"><img src="../fotos/g/sa-c4.webp" alt="" loading="lazy"></div>
+    <div data-a="sube">
+      <div class="et">Regalos</div>
+      <h2 style="margin-top:12px">Nuestra luna de miel</h2>
+      <p>Estamos juntando para el viaje. Cualquier aportación la recibimos con mucho cariño.</p>
     </div>
-    <div class="pista" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-    <p class="eyebrow" style="margin-top:12px">Desliza para ver más</p>
-  </div>
-</section>
-
-<section class="bloque">
-  <div class="env sube">
-    <svg class="ico" style="margin-inline:auto"><use href="#i-gift"/></svg>
-    <div class="eyebrow">Regalos</div>
-    <h2>Nuestra luna de miel</h2>
-    <p>Estamos juntando para el viaje. Cualquier aportación la recibimos con mucho cariño.</p>
-    <div class="clabe">5544 3322 1100 9988<small>Santander · Ana Lucía Peña</small></div>
+    <div class="sobres" data-a="sube"><div><b>Lluvia de sobres</b><span>Santander · 5544 3322 1100 9988 · Ana Lucía Peña</span></div><button type="button" data-copiar="5544332211009988">Copiar</button></div>
   </div>
 </section>
 
 <section class="rsvp" id="confirmar">
   <div class="env">
-    <div class="sube">
-      <svg class="ico" style="margin-inline:auto"><use href="#i-sparkle"/></svg>
-      <div class="eyebrow">Confirmación</div>
-      <h2 style="font-family:var(--serif);font-weight:400;font-size:34px;margin-top:12px">¿Nos acompañas?</h2>
-      <p style="color:var(--azulgris);margin-top:10px">Te agradecemos confirmar antes del 10 de abril.</p>
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:12px">¿Nos acompañas?</h2>
     </div>
-    <div class="pase sube" id="pase" hidden>
-      <div class="et">Pase personalizado</div>
-      <div class="qui" id="pase-qui"></div>
-      <div class="lug" id="pase-lug"></div>
-    </div>
-    <form id="form" class="sube">
-      <div><label for="nombre">¿Cómo te llamas?</label><input id="nombre" required autocomplete="name"></div>
-      <div><label for="asiste">¿Asistirás?</label>
-        <select id="asiste"><option value="si">Sí, ahí estaré</option><option value="no">No podré asistir</option></select></div>
-      <div id="wrap"><label for="lugares">¿Cuántos asistirán?</label><select id="lugares"></select></div>
-      <div><label for="transporte">¿Usarás la camioneta del hotel?</label><select id="transporte"><option value="si">Sí, cuenten conmigo</option><option value="no">No, llego por mi cuenta</option></select></div>
-      <div><label for="mensaje">¿Nos dejas un mensaje?</label><textarea id="mensaje" rows="3"></textarea></div>
-      <div><button class="cta" type="submit">Confirmar asistencia</button>
-        <div class="pie-cta">Te tomará menos de un minuto.</div></div>
-    </form>
-    <div class="gracias" id="gracias">
-      <div class="marca">✦</div>
-      <h2 id="g-tit" style="font-family:var(--serif);font-weight:400;font-size:30px;margin-top:12px"></h2>
-      <p style="color:var(--azulgris);margin-top:8px" id="g-txt"></p>
-    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <svg class="ola" data-a="sube" aria-hidden="true" style="margin-bottom:24px"><use href="#ola"/></svg>
+    <div class="novios" data-a="enfoque">Ana <em style="color:var(--dorado-cl)">&amp;</em> Marco</div>
+    <p data-a="sube">Nos vemos en la playa</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png" alt="">Hecho por Savey</a>
   </div>
 </section>
 
 </main>
 
-<footer>Invitación hecha por <a href="https://saveystudio.com">Savey</a></footer>
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
 
 <script>
-(function(){
-"use strict";
-var $=function(i){return document.getElementById(i)};
-var PASES={"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},
-  "C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}};
-var WA="5215500000000", ENDPOINT="";
-
-var c=(new URLSearchParams(location.search).get('c')||'').toUpperCase();
-var pase=PASES[c]||null, max=pase?pase.l:6;
-if(pase){ $('pase').hidden=false; $('pase-qui').textContent=pase.n;
-  $('pase-lug').textContent=pase.l===1?'1 lugar reservado':pase.l+' lugares reservados';
-  $('nombre').value=pase.n }
-
-var sel=$('lugares');
-for(var i=1;i<=max;i++) sel.appendChild(new Option(String(i),String(i)));
-sel.value=String(max);
-$('asiste').addEventListener('change',function(e){ $('wrap').style.display=e.target.value==='si'?'':'none' });
-
-var nav=$('nav'), cielo=$('cielo');
-var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var alScroll=function(){
-  var y=window.scrollY;
-  nav.classList.toggle('fija', y>window.innerHeight*.72);
-  if(cielo&&!reduce&&y<window.innerHeight) cielo.style.transform='translateY('+(y*.22)+'px)';
+window.XV = {
+  slug:'boda-sal', evento:'Ana & Marco', nombre:'los novios',
+  fechaISO:'2027-05-08T17:00:00-05:00', lugar:'Playa Xcalacoco, Playa del Carmen',
+  fechaLimite:'10 de abril', graciasSi:'Tu lugar está confirmado', graciasSiTexto:'Nos vemos el sábado 8 de mayo en la playa.',
+  etiquetaMensaje:'¿Nos dejas un mensaje? (opcional)',
+  extras:[{k:'transporte', rot:'¿Usarás la camioneta del hotel?', tipo:'elige', op:['Sí, cuenten conmigo','No, llego por mi cuenta']}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
 };
-alScroll(); window.addEventListener('scroll',alScroll,{passive:true});
-
-/* marea: desplazamiento lento de 4 px */
-if(!reduce&&document.getElementById('m1')){
-  var t=0;
-  setInterval(function(){
-    t+=.02;
-    $('m1').style.transform='translateX('+(Math.sin(t)*4-30)+'%)';
-    $('m2').style.transform='translateX('+(Math.cos(t)*4-30)+'%)';
-  },60);
-}
-
-if('IntersectionObserver' in window){
-  var ob=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('visto');ob.unobserve(e.target)}})},{threshold:.12});
-  Array.prototype.forEach.call(document.querySelectorAll('.sube'),function(el){ob.observe(el)});
-}else{
-  Array.prototype.forEach.call(document.querySelectorAll('.sube'),function(el){el.classList.add('visto')});
-}
-
-$('form').addEventListener('submit',function(ev){
-  ev.preventDefault();
-  var b=ev.target.querySelector('.cta'); b.disabled=true; b.textContent='Enviando…';
-  var a=$('asiste').value;
-  var d={evento:'Ana & Marco',slug:'boda-sal',codigo:c,pase:pase?pase.n:'',
-    nombre:$('nombre').value,asiste:a,lugares:a==='si'?$('lugares').value:'0',
-    transporte:$('transporte').value,mensaje:$('mensaje').value,fecha:new Date().toISOString()};
-  var fin=function(){
-    $('form').style.display='none'; $('gracias').style.display='block';
-    if(a==='si'){ $('g-tit').textContent='Tu lugar está confirmado';
-      $('g-txt').textContent='Nos vemos el sábado 9 de mayo.' }
-    else { $('g-tit').textContent='Gracias por avisar'; $('g-txt').textContent='Te vamos a extrañar.' }};
-  if(ENDPOINT){ fetch(ENDPOINT,{method:'POST',mode:'no-cors',
-    headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)}).then(fin)['catch'](fin) }
-  else { window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(
-    'Confirmación Ana & Marco: '+d.nombre+' — '+(a==='si'?d.lugares+' lugares':'no asistirá')),'_blank'); fin() }
-});
-})();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
 </body>
 </html>

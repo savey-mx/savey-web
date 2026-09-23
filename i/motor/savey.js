@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   SAVEY · Motor de las invitaciones de XV
+   SAVEY · Motor de las invitaciones a la medida
    Pantalla de carga, apariciones al hacer scroll, parallax,
    cuenta regresiva, pases por familia y confirmación.
    Cada invitación define window.XV antes de cargar este archivo.
@@ -177,10 +177,22 @@ $$('[data-pase]').forEach(function(p){
   if(!pase){ p.remove(); return }
   p.innerHTML = '<span class="pase-et">'+(C.textoPase||'Esta invitación es para')+'</span>'+
     '<span class="pase-qui">'+esc(pase.n)+'</span>'+
-    '<span class="pase-lug">'+(pase.l===1?'1 lugar reservado':pase.l+' lugares reservados')+'</span>';
+    '<span class="pase-lug">'+(pase.l===1?'1 lugar reservado':pase.l+' lugares reservados')+'</span>'+
+    (pase.m?'<span class="pase-mesa">Mesa '+esc(pase.m)+'</span>':'');
 });
 
 /* ══════════ Confirmación ══════════ */
+function extras(){
+  return (C.extras||[]).map(function(e){
+    if(e.tipo==='elige'){
+      return '<div class="campo-l"><span>'+e.rot+'</span><div class="elige" role="radiogroup">'+
+        e.op.map(function(o,i){ return '<label><input type="radio" name="'+e.k+'" value="'+esc(o)+'"'+(i===0?' checked':'')+'><b>'+esc(o)+'</b></label>' }).join('')+
+        '</div></div>';
+    }
+    return '<label class="campo-l"><span>'+e.rot+'</span><input class="linea-in" name="'+e.k+'"'+(e.ph?' placeholder="'+esc(e.ph)+'"':'')+'></label>';
+  }).join('');
+}
+
 var caja = $('[data-rsvp]');
 if(caja){
   var guardado = null;
@@ -198,7 +210,8 @@ if(caja){
         '<output aria-live="polite">'+lugares+'</output>'+
         '<button type="button" data-l="1" aria-label="Más lugares">+</button>'+
         '<small>'+(pase?'de '+maximo+' reservados':'')+'</small></div></div>'+
-      '<label class="campo-l"><span>Un mensaje para '+esc(C.nombre||'la festejada')+' (opcional)</span>'+
+      extras()+
+      '<label class="campo-l"><span>'+(C.etiquetaMensaje||('Un mensaje para '+esc(C.nombre||'la festejada')+' (opcional)'))+'</span>'+
         '<textarea class="linea-in" name="mensaje" rows="2"></textarea></label>'+
       '<button class="bt-p bt-lleno" type="submit">Confirmar asistencia</button>'+
       (C.fechaLimite?'<p class="rsvp-nota">Te agradecemos confirmar antes del '+C.fechaLimite+'.</p>':'')+
@@ -232,6 +245,7 @@ if(caja){
     var b = $('.bt-p',form); b.disabled = true; b.textContent = 'Enviando…';
     var dato = {evento:C.evento, slug:C.slug, codigo:codigo, pase:pase?pase.n:'', nombre:nombre,
       asiste:asiste, lugares: asiste==='si'?lugares:0, mensaje:form.mensaje.value, fecha:new Date().toISOString()};
+    (C.extras||[]).forEach(function(e){ if(form[e.k]) dato[e.k] = form[e.k].value });
     var fin = function(){
       try{ localStorage.setItem('xv-rsvp-'+C.slug+'-'+codigo, JSON.stringify({asiste:asiste})) }catch(e){}
       gracias(asiste);
