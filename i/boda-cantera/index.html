@@ -61,6 +61,12 @@ body.abierto .px img{transform:scale(1)}
 .portada-fecha{font-size:12px;letter-spacing:.34em;display:flex;align-items:center;gap:14px}
 .portada-fecha i{width:36px;height:1px;background:var(--arena)}
 :root{--h-desde:translateY(24px);--h-inicio:520ms;--h-paso:180ms;--h-dur:1.4s}
+.portada .novios .ln{display:block;overflow:hidden;padding-bottom:.05em}
+.portada .novios .ln i{display:block;font-style:normal}
+.portada .novios .ln i[data-h]{--h-desde:translateY(106%);--h-dur:1.3s}
+.portada-fecha i{transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--rev-ease) 1.2s}
+body.abierto .portada-fecha i{transform:scaleX(1)}
+.portada-fecha[data-h]{--h-desde:translateY(8px)}
 @media (min-width:900px){.portada-txt{left:6vw;max-width:700px}}
 
 /* Frase */
@@ -202,7 +208,10 @@ body.abierto .px img{transform:scale(1)}
   <div class="px" data-px="0.18"><img src="../fotos/cantera.webp" alt="Mariana y Rodrigo en la hacienda"></div>
   <div class="portada-txt">
     <div class="et" data-h style="--h:0">Nuestra boda</div>
-    <h1 class="novios" data-h style="--h:1">Mariana<br><span class="y">&amp;</span> Rodrigo</h1>
+    <h1 class="novios">
+      <span class="ln"><i data-h style="--h:1">Mariana</i></span>
+      <span class="ln"><i data-h style="--h:2"><span class="y">&amp;</span> Rodrigo</i></span>
+    </h1>
     <div class="portada-fecha" data-h style="--h:3"><i></i>17 · 10 · 2026</div>
   </div>
 </header>

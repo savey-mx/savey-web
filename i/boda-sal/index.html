@@ -59,7 +59,14 @@ body.abierto .px img{transform:scale(1)}
 .novios{font-family:var(--serif);font-weight:300;font-size:clamp(56px,16vw,92px);line-height:.98;margin:12px 0 10px}
 .novios em{font-size:.44em;color:var(--dorado-cl)}
 .lugar-portada{font-size:12px;letter-spacing:.24em;color:var(--tenue)}
-:root{--h-desde:translateY(22px);--h-inicio:520ms;--h-paso:180ms;--h-dur:1.4s}
+:root{--h-desde:translateY(22px);--h-inicio:520ms;--h-paso:180ms;--h-dur:1.4s;--letra-paso:58ms}
+.portada .novios span{display:inline-block}
+.portada .novios .l{--letra-desde:translateY(.4em) scale(1.06);filter:blur(5px)}
+.portada .novios em[data-h]{--h-desde:scale(.5)}
+.ola.traza{stroke-dasharray:120;stroke-dashoffset:120}
+body.abierto .ola.traza{stroke-dashoffset:0;transition:stroke-dashoffset 1.6s var(--rev-ease) 1.5s}
+.portada-fecha[data-h]{--h-desde:translateY(0);letter-spacing:.7em;opacity:0}
+body.abierto .portada-fecha{letter-spacing:.42em;transition:opacity 1.4s var(--rev-ease) .5s,letter-spacing 2s var(--rev-ease) .5s}
 
 /* Frase */
 .frase{text-align:center}
@@ -187,8 +194,12 @@ body.abierto .px img{transform:scale(1)}
   <div class="px" data-px="0.16"><img src="../fotos/sal.webp" alt="Ana y Marco frente al mar al atardecer"></div>
   <div class="portada-txt">
     <div class="portada-fecha" data-h style="--h:0">08 · MAYO · 2027</div>
-    <h1 class="novios" data-h style="--h:1">Ana <em>&amp;</em> Marco</h1>
-    <svg class="ola" data-h style="--h:2" aria-hidden="true"><use href="#ola"/></svg>
+    <h1 class="novios">
+      <span data-h data-letras style="--h:1">Ana</span>
+      <em data-h style="--h:2">&amp;</em>
+      <span data-h data-letras style="--h:2;--d:220ms">Marco</span>
+    </h1>
+    <svg class="ola traza" data-h style="--h:4" aria-hidden="true"><use href="#ola"/></svg>
     <div class="lugar-portada" data-h style="--h:3;margin-top:14px">PLAYA DEL CARMEN</div>
   </div>
 </header>

@@ -64,7 +64,14 @@ body.abierto .px img{transform:scale(1);filter:brightness(1)}
   background:linear-gradient(var(--champ),transparent);overflow:hidden}
 .desliza::after{content:"";position:absolute;inset:0;background:var(--marfil);animation:gota 2.6s var(--rev-ease) infinite}
 @keyframes gota{from{transform:translateY(-100%)}to{transform:translateY(100%)}}
-:root{--h-desde:translateY(24px);--h-inicio:500ms;--h-paso:190ms;--h-dur:1.4s}
+:root{--h-desde:translateY(24px);--h-inicio:500ms;--h-paso:190ms;--h-dur:1.4s;--letra-paso:52ms}
+.portada .novios .ln{display:block}
+.portada .novios .l{--letra-desde:translateY(.36em);filter:blur(6px)}
+.portada .novios .y[data-h]{--h-desde:scale(.4) rotate(-12deg)}
+.portada .et[data-h]{--h-desde:translateY(0);letter-spacing:.5em;opacity:0}
+body.abierto .portada .et{letter-spacing:.28em;transition:opacity 1.4s var(--rev-ease) .5s,letter-spacing 1.8s var(--rev-ease) .5s}
+.portada-fecha[data-h]{--h-desde:translateY(10px)}
+.desliza[data-h]{--h-desde:scaleY(0);transform-origin:top}
 
 /* Manifiesto */
 .manifiesto{text-align:center;position:relative;overflow:hidden}
@@ -207,7 +214,11 @@ body.abierto .px img{transform:scale(1);filter:brightness(1)}
   <div class="px" data-px="0.18"><img src="../fotos/aurora.webp" alt="Valeria y Sebastián en el jardín al atardecer"></div>
   <div class="portada-txt">
     <div class="et" data-h style="--h:0">Nuestra boda</div>
-    <h1 class="novios" data-h style="--h:1">Valeria<span class="y">&amp;</span>Sebastián</h1>
+    <h1 class="novios">
+      <span class="ln" data-h data-letras style="--h:1">Valeria</span>
+      <span class="y" data-h style="--h:2">&amp;</span>
+      <span class="ln" data-h data-letras style="--h:3;--d:120ms">Sebastián</span>
+    </h1>
     <div class="portada-fecha" data-h style="--h:3">13 · JUNIO · 2027</div>
   </div>
   <span class="desliza" data-h style="--h:5" aria-hidden="true"></span>

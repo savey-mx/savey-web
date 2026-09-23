@@ -67,6 +67,17 @@ body.abierto .px img{transform:scale(1)}
 .novios{font-family:var(--serif);font-weight:400;font-size:clamp(46px,13vw,76px);line-height:1.02;margin:16px 0 10px}
 .salon{font-size:12px;letter-spacing:.28em;color:var(--tenue);text-transform:uppercase}
 :root{--h-desde:translateY(22px);--h-inicio:900ms;--h-paso:200ms;--h-dur:1.5s}
+.portada .novios{background-size:230% 100%}
+.portada .novios[data-h]{--h-desde:none;clip-path:inset(0 0 106% 0)}
+body.abierto .portada .novios{clip-path:inset(-12% 0 -12% 0);animation:recorre 4.5s ease-in-out 1.9s both}
+@keyframes recorre{from{background-position:100% 0}to{background-position:0 0}}
+.portada .orla i{transform:scaleX(0);transform-origin:right;transition:transform 1.3s var(--rev-ease) 1.5s}
+.portada .orla i:last-child{transform-origin:right}
+body.abierto .portada .orla i{transform:scaleX(1)}
+body.abierto .portada .orla i:last-child{transform:scaleX(-1)}
+.portada .orla svg[data-h]{--h-desde:scale(0) rotate(-90deg)}
+.portada-fecha[data-h]{--h-desde:translateY(0);letter-spacing:.8em;opacity:0}
+body.abierto .portada-fecha{letter-spacing:.44em;transition:opacity 1.5s var(--rev-ease) .9s,letter-spacing 2.2s var(--rev-ease) .9s}
 
 /* Frase */
 .frase{text-align:center;background:var(--vino2);position:relative}
@@ -196,8 +207,8 @@ body.abierto .px img{transform:scale(1)}
   <div class="portada-txt">
     <div class="portada-fecha" data-h style="--h:0">28 · NOVIEMBRE · 2026</div>
     <h1 class="novios dorado" data-h style="--h:1">Camila &amp; Diego</h1>
-    <div class="orla" data-h style="--h:2"><i></i><svg><use href="#rombo"/></svg><i></i></div>
-    <div class="salon" data-h style="--h:3">Palacio Metropolitano</div>
+    <div class="orla"><i></i><svg data-h style="--h:3"><use href="#rombo"/></svg><i></i></div>
+    <div class="salon" data-h style="--h:4">Palacio Metropolitano</div>
   </div>
 </header>
 

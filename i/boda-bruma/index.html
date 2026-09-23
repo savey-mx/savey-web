@@ -54,6 +54,15 @@ section{padding:var(--aire) 0}
 .portada-foto{height:52svh;min-height:280px;overflow:hidden;margin-top:40px;position:relative}
 .portada-foto img{width:100%;height:118%;object-fit:cover;object-position:50% 40%}
 :root{--h-desde:translateY(14px);--h-inicio:400ms;--h-paso:150ms;--h-dur:1s}
+.novios .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.novios .ln i{display:block;font-style:normal}
+.novios .ln i[data-h]{--h-desde:translateY(105%);--h-dur:1.2s}
+.fecha-linea[data-h]{--h-desde:translateY(0);--h-dur:1.4s}
+.fecha-linea i{transform-origin:left;transform:scaleX(0);transition:transform 1.4s var(--rev-ease) .7s}
+body.abierto .fecha-linea i{transform:scaleX(1)}
+.portada-foto{clip-path:inset(0 0 100% 0);transition:clip-path 1.6s cubic-bezier(.7,0,.2,1) .5s}
+body.abierto .portada-foto{clip-path:inset(0 0 0 0)}
+.portada-foto[data-h]{--h-desde:none}
 
 /* Bloques de dato */
 .dato{padding:var(--aire) 0;border-top:1px solid var(--linea)}
@@ -145,7 +154,10 @@ section{padding:var(--aire) 0}
 <header class="portada" data-portada>
   <div class="portada-txt">
     <div class="fecha-linea" data-h style="--h:0">20.03.2027<i></i>CDMX</div>
-    <h1 class="novios" data-h style="--h:1">Renata<br><em>&amp;</em> Emilio</h1>
+    <h1 class="novios">
+      <span class="ln"><i data-h style="--h:1">Renata</i></span>
+      <span class="ln"><i data-h style="--h:2"><em>&amp;</em> Emilio</i></span>
+    </h1>
     <div class="sub" data-h style="--h:2">Civil, con quienes queremos</div>
   </div>
   <div class="portada-foto" data-h style="--h:3">

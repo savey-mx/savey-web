@@ -57,7 +57,12 @@ body.abierto .px img{transform:scale(1)}
 .novios{font-family:var(--serif);font-weight:400;font-size:clamp(52px,15vw,84px);line-height:1;margin:14px 0}
 .novios .y{display:block;font-style:italic;font-size:.44em;margin:4px 0;color:#E8D9B8}
 .portada-fecha{font-size:12px;letter-spacing:.34em}
-:root{--h-desde:translateY(22px);--h-inicio:450ms;--h-paso:170ms;--h-dur:1.3s}
+:root{--h-desde:translateY(22px);--h-inicio:450ms;--h-paso:170ms;--h-dur:1.3s;--letra-paso:48ms}
+.portada .novios .ln{display:block}
+.portada .novios .l{--letra-desde:translateY(.3em);filter:blur(4px)}
+.portada .novios .y[data-h]{--h-desde:scale(.5) rotate(10deg)}
+.portada-fecha[data-h]{--h-desde:translateY(0);letter-spacing:.6em;opacity:0}
+body.abierto .portada-fecha{letter-spacing:.34em;transition:opacity 1.3s var(--rev-ease) .6s,letter-spacing 1.8s var(--rev-ease) .6s}
 
 /* Frase */
 .frase{text-align:center}
@@ -195,7 +200,11 @@ body.abierto .px img{transform:scale(1)}
   <div class="px" data-px="0.15"><img src="../fotos/almendro.webp" alt="Sofía y Tomás en el jardín, de día"></div>
   <div class="portada-txt">
     <div class="et" data-h style="--h:0">Nuestra boda</div>
-    <h1 class="novios" data-h style="--h:1">Sofía<span class="y">&amp;</span>Tomás</h1>
+    <h1 class="novios">
+      <span class="ln" data-h data-letras style="--h:1">Sofía</span>
+      <span class="y" data-h style="--h:2">&amp;</span>
+      <span class="ln" data-h data-letras style="--h:3;--d:100ms">Tomás</span>
+    </h1>
     <div class="portada-fecha" data-h style="--h:3">03 · JULIO · 2027</div>
   </div>
 </header>
