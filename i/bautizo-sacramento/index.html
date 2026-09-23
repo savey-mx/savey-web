@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>El bautizo de Santiago · 24 de abril de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F0E6">
+<meta property="og:title" content="El bautizo de Santiago">
+<meta property="og:description" content="Sábado 24 de abril de 2027 · Ciudad de México">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/bau-sacramento.jpg">
+<link rel="preload" as="image" href="../fotos/bau-sacramento-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 03 · SACRAMENTO ═══════════ */
+:root{
+  --marfil:#F6F0E6; --crema:#FBF7EF; --beige:#EBE0CE; --oro:#A98A55; --oro-cl:#CBAE7C; --champ:#D8C09A;
+  --cafe:#4A3C2C; --carbon:#2B2520; --tinta:#3B3226; --suave:#7C6F5E;
+  --serif:'Libre Baskerville',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.19,1,.22,1); --rev-dur:1.4s; --rev-dist:20px;
+  --lado:26px;
+}
+body{background:var(--marfil);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.85}
+::selection{background:var(--oro);color:var(--crema)}
+.env{max-width:520px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--oro);font-weight:500}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,7.4vw,36px);line-height:1.3}
+.centro{text-align:center}
+section{padding:clamp(84px,18vw,116px) 0}
+.orla{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto}
+.orla i{width:52px;height:1px;background:linear-gradient(90deg,transparent,var(--oro))}
+.orla i:last-child{transform:scaleX(-1)}
+.orla svg{width:10px;height:14px;stroke:var(--oro);fill:none;stroke-width:1.2}
+
+/* Carga: un marco que se traza */
+#carga{background:var(--marfil)}
+.marco-c{position:relative;width:128px;height:160px;display:grid;place-items:center}
+.marco-c svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--oro)}
+.marco-c .base{stroke-width:.7;opacity:.25}
+.marco-c .traza{stroke-width:.9;stroke-dasharray:560;stroke-dashoffset:calc(560 - 560*var(--progreso));transition:stroke-dashoffset .5s var(--rev-ease)}
+.marco-c b{font-family:var(--serif);font-size:30px;color:var(--cafe);position:relative}
+.carga-txt{position:absolute;bottom:13%;left:0;right:0;text-align:center}
+body.abierto .marco-c{transform:scale(1.12);opacity:0;transition:transform 1.2s var(--rev-ease),opacity .9s}
+
+/* Portada simétrica */
+.portada{position:relative;height:100svh;min-height:620px;overflow:hidden;background:var(--beige)}
+.px{position:absolute;left:0;right:0;top:-6%;height:112%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 32%;transform:scale(1.08);transition:transform 3.2s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(43,37,32,.38) 0%,transparent 26%,transparent 54%,rgba(43,37,32,.52) 80%,rgba(43,37,32,.82) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(56px + env(safe-area-inset-bottom,0px));text-align:center;color:#FFFCF5;padding:0 var(--lado)}
+.portada-txt .et{color:var(--champ)}
+.nombre{font-family:var(--serif);font-weight:400;font-size:clamp(46px,13.5vw,76px);line-height:1.08;margin:16px 0 10px}
+.portada .nombre[data-h]{--h-desde:none;clip-path:inset(0 0 104% 0)}
+body.abierto .portada .nombre{clip-path:inset(-10% 0 -10% 0)}
+.portada-fecha{font-size:11px;letter-spacing:.42em;padding-left:.42em}
+.portada .orla i{background:linear-gradient(90deg,transparent,var(--champ))}
+.portada .orla svg{stroke:var(--champ)}
+:root{--h-desde:translateY(18px);--h-inicio:700ms;--h-paso:200ms;--h-dur:1.5s}
+
+/* Sección ceremonial */
+.ceremonial{text-align:center}
+.ceremonial h2{font-size:clamp(32px,8.4vw,42px);line-height:1.2}
+.ceremonial p{color:var(--suave);max-width:36ch;margin:20px auto 0}
+
+/* Fecha como papelería impresa */
+.fecha{background:var(--crema);text-align:center;position:relative}
+.fecha::before{content:"";position:absolute;inset:20px;border:1px solid rgba(169,138,85,.25);pointer-events:none}
+.fecha .lineas{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:26px}
+.fecha .mes{font-family:var(--serif);font-size:15px;letter-spacing:.3em;text-transform:uppercase}
+.fecha .dia{font-family:var(--serif);font-size:clamp(70px,22vw,104px);line-height:.9;color:var(--cafe)}
+.fecha .anio{font-family:var(--serif);font-size:15px;letter-spacing:.3em}
+.fecha .hora{font-size:12px;letter-spacing:.28em;color:var(--suave);margin-top:20px}
+[data-cuenta]{margin:36px 0 28px;gap:0}
+.cu{min-width:66px}
+.cu-n{font-family:var(--serif);font-size:34px;color:var(--cafe)}
+.cu-t{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--suave);margin-top:8px}
+.cu-sep{width:1px;height:28px;background:rgba(169,138,85,.35);margin-top:8px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 30px;border-radius:6px;background:var(--oro);color:var(--crema);font-weight:600;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+  transition:background .5s}
+.bt-p:hover{background:#8F7344}
+.bt-s{height:52px;padding:0 24px;border-radius:6px;border:1px solid rgba(169,138,85,.6);color:var(--cafe);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  background:transparent;transition:background .5s,color .5s}
+.bt-s:hover{background:var(--cafe);color:var(--crema);border-color:var(--cafe)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.4}
+.oscuro .bt-s{color:var(--crema);border-color:rgba(216,192,154,.5)}
+.oscuro .bt-s:hover{background:rgba(216,192,154,.16);color:var(--crema)}
+
+/* Ceremonia sobre fotografía */
+.ubicacion{position:relative;overflow:hidden;padding:0}
+.ubicacion .fondo{position:absolute;inset:0}
+.ubicacion .fondo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.ubicacion .fondo::after{content:"";position:absolute;inset:0;background:rgba(43,37,32,.45)}
+.ubicacion .interior{position:relative;z-index:1;padding:clamp(70px,16vw,100px) 0}
+.velo{background:rgba(251,247,239,.92);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  padding:34px 24px;text-align:center;border:1px solid rgba(169,138,85,.35);margin-inline:var(--lado)}
+.velo h3{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.3;margin:12px 0 8px}
+.velo p{color:var(--suave);font-size:14px}
+.velo .bt-p{margin-top:22px}
+.velo+.velo{margin-top:16px}
+
+/* Retrato enmarcado */
+.retrato{background:var(--crema)}
+.cuadro{margin:40px auto 0;width:min(84%,380px);padding:12px;border:1px solid rgba(169,138,85,.5);position:relative}
+.cuadro::before{content:"";position:absolute;inset:5px;border:1px solid rgba(169,138,85,.22);pointer-events:none}
+.cuadro img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.pie{text-align:center;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--suave);margin-top:24px}
+
+/* Familia */
+.familia{text-align:center}
+.familia .par{margin-top:40px}
+.familia p{font-family:var(--serif);font-size:20px;line-height:1.6;margin-top:10px}
+
+/* Confirmación oscura */
+.rsvp{background:var(--carbon);color:var(--crema)}
+.rsvp .et{color:var(--champ)}
+.rsvp h2{color:var(--crema)}
+.rsvp .centro p{color:rgba(251,247,239,.6);margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:34px 0 0;padding:26px 20px;border:1px solid rgba(216,192,154,.4);position:relative}
+[data-pase]::before{content:"";position:absolute;inset:5px;border:1px solid rgba(216,192,154,.16)}
+.pase-et{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(251,247,239,.6)}
+.pase-qui{display:block;font-family:var(--serif);font-size:24px;margin:10px 0 4px}
+.pase-lug{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--champ)}
+[data-rsvp]{margin-top:40px}
+.campo-l>span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--champ)}
+.linea-in{border-bottom:1px solid rgba(216,192,154,.4);padding:8px 0 12px;font-family:var(--serif);font-size:18px;color:var(--crema);transition:border-color .5s}
+.linea-in:focus{border-color:var(--champ)}
+.elige b{border:1px solid rgba(216,192,154,.4);border-radius:6px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;transition:all .5s}
+.elige input:checked+b{background:rgba(216,192,154,.16);border-color:var(--champ);color:var(--champ)}
+.elige input:focus-visible+b{outline:1px solid var(--champ);outline-offset:3px}
+.paso-lug button{border:1px solid rgba(216,192,154,.45);border-radius:6px;color:var(--champ)}
+.paso-lug button:hover{background:rgba(216,192,154,.16)}
+.paso-lug output{font-family:var(--serif);font-size:32px}
+.paso-lug small{font-size:12.5px;color:rgba(251,247,239,.6)}
+.rsvp .bt-p{background:var(--champ);color:var(--carbon)}
+.rsvp .bt-p:hover{background:#E6D2B2}
+.rsvp-nota{font-size:12px;color:rgba(251,247,239,.55);text-align:center}
+.rg-sello{border:1px solid var(--champ);color:var(--champ)}
+.rg-t{font-family:var(--serif);font-weight:400;font-size:30px}
+.rg-p{color:rgba(251,247,239,.6);margin-top:8px}
+
+.cierre{text-align:center;padding-bottom:56px}
+.cierre .nombre{color:var(--cafe);font-size:clamp(38px,11vw,58px)}
+.cierre p{font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--suave);margin-top:14px}
+.cierre .firma-savey{margin-top:80px}
+#flota{height:50px;padding:0 26px;white-space:nowrap}
+@media (min-width:860px){.velos{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:860px;margin-inline:auto}.velo+.velo{margin-top:0}}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="marco" viewBox="0 0 128 160"><path d="M8 8h112v144H8zM64 8c14 10 28 12 42 8M64 152c-14-10-28-12-42-8"/></symbol>
+  <symbol id="cruz" viewBox="0 0 10 14"><path d="M5 1v12M1 5h8"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="marco-c">
+    <svg viewBox="0 0 128 160" class="base"><use href="#marco"/></svg>
+    <svg viewBox="0 0 128 160" class="traza"><use href="#marco"/></svg>
+    <b>S</b>
+  </div>
+  <div class="carga-txt et">El bautizo de Santiago</div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.16"><img src="../fotos/bau-sacramento.webp" srcset="../fotos/bau-sacramento-m.webp 720w, ../fotos/bau-sacramento.webp 1100w" sizes="100vw" alt="Santiago con sus papás en la iglesia"></div>
+  <div class="portada-txt">
+    <div class="et" data-h style="--h:0">El bautizo de</div>
+    <h1 class="nombre" data-h style="--h:1">Santiago</h1>
+    <div class="orla" data-h style="--h:2"><i></i><svg viewBox="0 0 10 14"><use href="#cruz"/></svg><i></i></div>
+    <div class="portada-fecha" data-h style="--h:3">24 · ABRIL · 2027</div>
+  </div>
+</header>
+
+<main>
+
+<section class="ceremonial">
+  <div class="env">
+    <h2 data-a="sube">Un día de fe<br>y familia</h2>
+    <div class="orla" data-a="sube"><i></i><svg viewBox="0 0 10 14"><use href="#cruz"/></svg><i></i></div>
+    <p data-a="sube">Queremos que estés con nosotros el día en que Santiago recibe el bautismo, rodeado de quienes lo quieren.</p>
+  </div>
+</section>
+
+<section class="fecha" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">Sábado</div>
+    <div class="lineas" data-a="sube" style="--d:120ms">
+      <span class="mes">ABRIL</span>
+      <span class="dia">24</span>
+      <span class="anio">2027</span>
+    </div>
+    <div class="hora" data-a="sube" style="--d:240ms">UNA DE LA TARDE</div>
+    <div data-cuenta data-a="sube" style="--d:320ms"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="--d:400ms"><svg><use href="#cal"/></svg>Agendar</a>
+  </div>
+</section>
+
+<section class="ubicacion">
+  <div class="fondo"><img src="../fotos/g/bsa-2.webp" alt="El altar de la iglesia" loading="lazy" data-px="0.14"></div>
+  <div class="interior">
+    <div class="env centro oscuro" style="margin-bottom:34px">
+      <div class="et" data-a="sube" style="color:var(--champ)">Ubicación</div>
+      <h2 data-a="sube" style="color:#FFFCF5;margin-top:12px">¿Dónde será?</h2>
+    </div>
+    <div class="velos" data-grupo="140">
+      <div class="velo" data-a="sube">
+        <div class="et">Ceremonia · 1:00 pm</div>
+        <h3>Parroquia de San Juan Bautista</h3>
+        <p>Jardín Centenario 8, Coyoacán<br>Ciudad de México</p>
+        <a class="bt-p" href="https://maps.google.com/?q=Parroquia%20de%20San%20Juan%20Bautista%20Coyoac%C3%A1n" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+      <div class="velo" data-a="sube">
+        <div class="et">Comida · 3:00 pm</div>
+        <h3>Casa de los Olivos</h3>
+        <p>Francisco Sosa 210, Coyoacán<br>Ciudad de México</p>
+        <a class="bt-p" href="https://maps.google.com/?q=Francisco%20Sosa%20210%20Coyoac%C3%A1n" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="retrato">
+  <div class="env centro">
+    <div class="et" data-a="sube">Nuestro Santiago</div>
+    <figure class="cuadro" data-a="mascara" data-ampliar><img src="../fotos/g/bsa-1.webp" alt="Santiago en brazos de sus papás, frente al altar" loading="lazy"></figure>
+    <p class="pie" data-a="sube">Tres meses, y ya nos cambió la vida</p>
+  </div>
+</section>
+
+<section class="familia">
+  <div class="env">
+    <div class="et" data-a="sube">Con la bendición de</div>
+    <div class="par" data-a="sube">
+      <div class="et" style="color:var(--suave)">Sus papás</div>
+      <p>Juan Pablo Arriaga Montiel<br>Regina Solís de Arriaga</p>
+    </div>
+    <div class="par" data-a="sube">
+      <div class="et" style="color:var(--suave)">Sus padrinos</div>
+      <p>Ernesto Solís Barrera<br>María Teresa Montiel Cruz</p>
+    </div>
+    <div class="orla" data-a="sube" style="margin-top:46px"><i></i><svg viewBox="0 0 10 14"><use href="#cruz"/></svg><i></i></div>
+    <p class="centro" style="color:var(--suave);max-width:32ch;margin:0 auto" data-a="sube">Vestimenta formal. Te pedimos puntualidad: la misa empieza en punto.</p>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:14px">Nos encantará compartir este momento contigo</h2>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="orla" data-a="sube"><i></i><svg viewBox="0 0 10 14"><use href="#cruz"/></svg><i></i></div>
+    <div class="nombre" data-a="sube">Santiago</div>
+    <p data-a="sube" style="--d:150ms">24 · IV · MMXXVII</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'bautizo-sacramento', evento:'Bautizo de Santiago', nombre:'Santiago',
+  fechaISO:'2027-04-24T13:00:00-06:00', lugar:'Parroquia de San Juan Bautista, Coyoacán, CDMX',
+  fechaLimite:'5 de abril', cargaMinima:2000,
+  graciasSi:'Gracias por confirmar', graciasSiTexto:'Les esperamos el sábado 24 de abril.',
+  textoPase:'Invitación para', etiquetaMensaje:'¿Nos dejas un mensaje? (opcional)',
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>
