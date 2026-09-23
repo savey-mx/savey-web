@@ -120,15 +120,24 @@ body.abierto .portada-fecha{letter-spacing:.34em;transition:opacity 1.3s var(--r
 .sede p{color:var(--suave);font-size:14px}
 .sede .bt-s{margin-top:22px}
 
-/* Galería */
-.medallones{display:flex;gap:14px;justify-content:center;margin-top:42px}
-.medallon{width:31%;aspect-ratio:1;border-radius:50%;overflow:hidden;position:relative;margin:0}
-.medallon img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s var(--rev-ease)}
-.medallon:hover img{transform:scale(1.07)}
-.medallon figcaption{position:absolute;inset:auto 0 0;padding:8px 6px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center;color:#fff;
-  background:linear-gradient(transparent,rgba(45,48,40,.8));opacity:0;transition:opacity .4s}
-.medallon:hover figcaption{opacity:1}
+/* Transición y papelería */
+.transicion{position:relative;height:66svh;min-height:380px;overflow:hidden;margin:0}
+.transicion .px{position:absolute;left:0;right:0;top:-7%;height:114%}
+.transicion img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.pie-transicion{text-align:center;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--suave);padding:22px var(--lado) 0}
+.papeleria{padding-top:clamp(60px,14vw,84px)}
+.doble{display:grid;gap:32px;align-items:center}
+.foto-suave{aspect-ratio:4/5;border-radius:24px;overflow:hidden;margin:0;box-shadow:0 26px 50px -40px rgba(58,61,51,.9)}
+.foto-suave img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--rev-ease)}
+.foto-suave:hover img{transform:scale(1.05)}
+.avisos{list-style:none;margin-top:22px;display:grid;gap:0}
+.avisos li{padding:16px 0;border-top:1px solid rgba(122,113,95,.2)}
+.avisos li:last-child{border-bottom:1px solid rgba(122,113,95,.2)}
+.avisos b{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--oliva);font-weight:600}
+.avisos span{font-size:14.5px;color:var(--suave);display:block;margin-top:4px}
+@media (min-width:820px){.doble{grid-template-columns:1fr 1fr;gap:56px}.papeleria .env{max-width:900px}}
 
+/* Galería */
 /* Bloques */
 .bloque{text-align:center}
 .bloque p{color:var(--suave);max-width:34ch;margin:16px auto 0}
@@ -174,7 +183,6 @@ body.abierto .portada-fecha{letter-spacing:.34em;transition:opacity 1.3s var(--r
 
 @media (min-width:900px){
   .acts{grid-template-columns:repeat(3,1fr)}
-  .medallones{max-width:620px;margin-inline:auto}
 }
 </style>
 </head>
@@ -295,14 +303,24 @@ body.abierto .portada-fecha{letter-spacing:.34em;transition:opacity 1.3s var(--r
   </div>
 </section>
 
-<section class="galeria" style="padding-top:0">
-  <div class="env centro">
-    <div class="et" data-a="sube">Nosotros</div>
-    <h2 data-a="sube" style="margin-top:12px">Cómo llegamos aquí</h2>
-    <div class="medallones" data-grupo="140">
-      <figure class="medallon" data-a="acerca" data-ampliar><img src="../fotos/g/al-p1.webp" alt="El día que nos conocimos" loading="lazy"><figcaption>Nos conocimos</figcaption></figure>
-      <figure class="medallon" data-a="acerca" data-ampliar><img src="../fotos/g/al-p2.webp" alt="Nuestro primer viaje" loading="lazy"><figcaption>Primer viaje</figcaption></figure>
-      <figure class="medallon" data-a="acerca" data-ampliar><img src="../fotos/g/al-p3.webp" alt="La propuesta" loading="lazy"><figcaption>La propuesta</figcaption></figure>
+<figure class="transicion" data-ampliar>
+  <div class="px" data-px="0.18"><img src="../fotos/g/al-1.webp" alt="El ramo sobre la banca de piedra, entre olivos" loading="lazy"></div>
+</figure>
+<p class="pie-transicion" data-a="sube">El jardín, temprano</p>
+
+<section class="papeleria">
+  <div class="env">
+    <div class="doble">
+      <figure class="foto-suave" data-a="enfoque" data-ampliar><img src="../fotos/g/al-2.webp" alt="La invitación impresa entre ramas de olivo y rosas blancas" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">Antes de venir</div>
+        <h2 data-a="sube" style="margin-top:12px">Tres cosas<br>que ayudan</h2>
+        <ul class="avisos" data-grupo="100">
+          <li data-a="sube"><b>Sombra</b><span>Hay toldo y abanicos, pero un sombrero no sobra.</span></li>
+          <li data-a="sube"><b>Piso</b><span>El jardín es de pasto y grava suelta.</span></li>
+          <li data-a="sube"><b>Niños</b><span>Bienvenidos. Habrá mesa y juegos para ellos.</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

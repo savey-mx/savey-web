@@ -121,18 +121,27 @@ body.abierto .portada-fecha{letter-spacing:.44em;transition:opacity 1.5s var(--r
 .sede p{color:var(--tenue);font-size:14px}
 .sede .bt-s{margin-top:20px}
 
-/* Galería */
-.carrusel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px var(--lado) 6px;scrollbar-width:none;scroll-padding-inline:var(--lado)}
-.carrusel::-webkit-scrollbar{display:none}
-.carrusel figure{flex:0 0 min(62%,260px);scroll-snap-align:center;margin:0}
-.carrusel .marco{aspect-ratio:3/4;overflow:hidden;padding:8px;border:1px solid rgba(198,164,109,.35)}
-.carrusel .marco span{display:block;height:100%;overflow:hidden}
-.carrusel img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--rev-ease)}
-.carrusel figure:hover img{transform:scale(1.06)}
-.pista{text-align:center;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--tenue);margin-top:16px}
-.banda{height:56svh;min-height:300px;overflow:hidden;position:relative}
-.banda img{width:100%;height:124%;object-fit:cover}
+/* Transición: el ramo */
+.transicion{position:relative;height:76svh;min-height:420px;overflow:hidden;margin:0}
+.transicion .px{position:absolute;left:0;right:0;top:-8%;height:116%}
+.transicion img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.transicion::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,var(--vino),transparent 22%,transparent 62%,rgba(31,7,12,.9))}
+.transicion figcaption{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:28px;text-align:center;
+  font-family:var(--serif);font-style:italic;font-size:24px;color:var(--marfil)}
 
+/* Papelería e información */
+.papeleria{background:var(--vino2)}
+.doble{display:grid;gap:34px;align-items:center}
+.cuadro{margin:0;padding:10px;border:1px solid rgba(198,164,109,.45)}
+.cuadro img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.avisos{list-style:none;margin-top:24px;display:grid;gap:0}
+.avisos li{padding:16px 0;border-top:1px solid transparent;border-image:linear-gradient(90deg,rgba(198,164,109,.5),transparent) 1}
+.avisos b{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.avisos span{font-size:14.5px;color:var(--tenue);display:block;margin-top:4px}
+@media (min-width:820px){.doble{grid-template-columns:1fr 1fr;gap:56px}.papeleria .env{max-width:900px}}
+
+/* Galería */
 /* Bloques */
 .bloque{text-align:center}
 .bloque p{color:var(--tenue);max-width:34ch;margin:16px auto 0}
@@ -181,8 +190,6 @@ body.abierto .portada-fecha{letter-spacing:.44em;transition:opacity 1.5s var(--r
   .sedes .env{max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
   .sedes .env>.centro{grid-column:1/-1}
   .sede{border-bottom:0}
-  .carrusel{justify-content:center}
-  .carrusel figure{flex-basis:240px}
 }
 </style>
 </head>
@@ -291,22 +298,27 @@ body.abierto .portada-fecha{letter-spacing:.44em;transition:opacity 1.5s var(--r
   </div>
 </section>
 
-<section class="galeria" style="padding-bottom:0">
-  <div class="env centro">
-    <div class="et" data-a="sube">Nosotros</div>
-    <h2 data-a="sube" style="margin-top:12px">Antes de esta noche</h2>
-  </div>
-  <div class="carrusel">
-    <figure data-ampliar><div class="marco" data-a="enfoque"><span><img src="../fotos/g/gr-f1.webp" alt="Camila y Diego" loading="lazy"></span></div></figure>
-    <figure data-ampliar><div class="marco"><span><img src="../fotos/g/gr-f2.webp" alt="Camila y Diego" loading="lazy"></span></div></figure>
-    <figure data-ampliar><div class="marco"><span><img src="../fotos/g/gr-f3.webp" alt="Camila y Diego" loading="lazy"></span></div></figure>
-    <figure data-ampliar><div class="marco"><span><img src="../fotos/g/gr-f4.webp" alt="Camila y Diego" loading="lazy"></span></div></figure>
-    <figure data-ampliar><div class="marco"><span><img src="../fotos/g/gr-f5.webp" alt="Camila y Diego" loading="lazy"></span></div></figure>
-  </div>
-  <p class="pista">Desliza para ver más</p>
-</section>
+<figure class="transicion" data-ampliar>
+  <div class="px" data-px="0.22"><img src="../fotos/g/gr-1.webp" alt="El ramo de flores vino y el velo sobre el diván, entre velas" loading="lazy"></div>
+  <figcaption data-a="sube">La noche empieza aquí</figcaption>
+</figure>
 
-<div class="banda"><img src="../fotos/g/gr-banda.webp" alt="" loading="lazy" data-px="0.2"></div>
+<section class="papeleria">
+  <div class="env">
+    <div class="doble">
+      <figure class="cuadro" data-a="mascara" data-ampliar><img src="../fotos/g/gr-2.webp" alt="La invitación impresa, el anillo y el lacre" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">Buena información</div>
+        <h2 data-a="sube" style="margin-top:12px">Lo que<br>conviene saber</h2>
+        <ul class="avisos" data-grupo="100">
+          <li data-a="sube"><b>Puntualidad</b><span>La misa empieza a las 19:00 en punto.</span></li>
+          <li data-a="sube"><b>Valet</b><span>Hay valet en la entrada del hotel, sin costo.</span></li>
+          <li data-a="sube"><b>Solo adultos</b><span>Queremos que todos disfruten la noche.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="bloque">
   <div class="env">

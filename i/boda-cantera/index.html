@@ -118,13 +118,23 @@ body.abierto .portada-fecha i{transform:scaleX(1)}
 .sede p{color:rgba(247,241,232,.66);font-size:14px}
 .sede .bt-s{margin-top:20px}
 
-/* Galería */
-.tiras{display:flex;gap:12px;margin-top:40px}
-.tira{flex:1;aspect-ratio:2/3;overflow:hidden;border-radius:14px 14px 4px 4px;margin:0}
-.tira:nth-child(2){margin-top:26px}
-.tira img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s var(--rev-ease)}
-.tira:hover img{transform:scale(1.06)}
+/* Arcos y papelería */
+.arcos{background:var(--piedra2)}
+.arco-foto{width:min(88%,420px);margin:40px auto 0;aspect-ratio:3/4;border-radius:999px 999px 14px 14px;overflow:hidden}
+.arco-foto img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--rev-ease)}
+.arco-foto:hover img{transform:scale(1.05)}
+.doble{display:grid;gap:32px;align-items:center}
+.foto-suave{aspect-ratio:4/5;border-radius:18px;overflow:hidden;margin:0;box-shadow:0 26px 50px -40px rgba(59,42,35,.9)}
+.foto-suave img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--rev-ease)}
+.foto-suave:hover img{transform:scale(1.05)}
+.avisos{list-style:none;margin-top:22px;display:grid;gap:0}
+.avisos li{padding:16px 0;border-top:1px solid rgba(122,97,85,.22)}
+.avisos li:last-child{border-bottom:1px solid rgba(122,97,85,.22)}
+.avisos b{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--terracota);font-weight:600}
+.avisos span{font-size:14.5px;color:var(--suave);display:block;margin-top:4px}
+@media (min-width:820px){.doble{grid-template-columns:1fr 1fr;gap:56px}.papeleria .env{max-width:900px}}
 
+/* Galería */
 /* Hospedaje */
 .hosp{display:grid;gap:12px;margin-top:34px;text-align:left}
 .casa{display:flex;gap:16px;padding:20px;background:var(--blanco);border-radius:18px;
@@ -295,14 +305,29 @@ body.abierto .portada-fecha i{transform:scaleX(1)}
   </div>
 </section>
 
-<section class="galeria">
-  <div class="env centro">
-    <div class="et" data-a="sube">Nosotros</div>
-    <h2 data-a="sube" style="margin-top:12px">Antes de este día</h2>
-    <div class="tiras" data-grupo="140">
-      <figure class="tira" data-a="mascara" data-ampliar><img src="../fotos/g/ca-a1.webp" alt="Mariana y Rodrigo" loading="lazy"></figure>
-      <figure class="tira" data-a="mascara" data-ampliar><img src="../fotos/g/ca-a2.webp" alt="Mariana y Rodrigo" loading="lazy"></figure>
-      <figure class="tira" data-a="mascara" data-ampliar><img src="../fotos/g/ca-a3.webp" alt="Mariana y Rodrigo" loading="lazy"></figure>
+<section class="arcos">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">El patio</div>
+      <h2 data-a="sube" style="margin-top:12px">Bugambilia y cantera</h2>
+    </div>
+    <figure class="arco-foto" data-a="mascara" data-ampliar><img src="../fotos/g/ca-1.webp" alt="El ramo y los zapatos bajo la bugambilia del patio" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="papeleria">
+  <div class="env">
+    <div class="doble">
+      <figure class="foto-suave" data-a="enfoque" data-ampliar><img src="../fotos/g/ca-2.webp" alt="La invitación impresa sobre la cantera, con olivo y vela" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">Antes de venir</div>
+        <h2 data-a="sube" style="margin-top:12px">Tres cosas<br>que ayudan</h2>
+        <ul class="avisos" data-grupo="100">
+          <li data-a="sube"><b>El empedrado</b><span>Las calles de San Miguel piden zapato firme.</span></li>
+          <li data-a="sube"><b>La noche</b><span>Refresca al bajar el sol: trae algo encima.</span></li>
+          <li data-a="sube"><b>Llegada</b><span>El camino a la hacienda es de terracería los últimos 500 metros.</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
