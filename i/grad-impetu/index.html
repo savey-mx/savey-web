@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Generación 2027 · Fiesta de graduación</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EDE8DF">
+<meta property="og:title" content="Generación 2027">
+<meta property="og:description" content="Sábado 10 de julio de 2027 · Fiesta de graduación">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/gd-impetu.jpg">
+<link rel="preload" as="image" href="../fotos/gd-impetu-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 03 · ÍMPETU ═══════════ */
+:root{
+  --piedra:#EDE8DF; --piedra2:#E0D8CB; --blanco:#FAF8F4; --negro:#17161A;
+  --cobalto:#2646D6; --cobalto-os:#1B34A8; --lavanda:#B9A7E8; --gris:#6F6A63;
+  --display:'Archivo',system-ui,sans-serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.16,.86,.3,1); --rev-dur:.6s; --rev-dist:22px;
+  --lado:24px;
+}
+body{background:var(--piedra);color:var(--negro);font-family:var(--sans);font-weight:400;font-size:15.5px;line-height:1.62}
+::selection{background:var(--cobalto);color:#fff}
+.env{max-width:560px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalto)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,9.6vw,50px);line-height:.98;letter-spacing:-.035em;text-transform:uppercase}
+section{padding:clamp(60px,13vw,86px) 0}
+.centro{text-align:center}
+
+/* Carga */
+#carga{background:var(--cobalto);color:#fff}
+.carga-c{text-align:center;width:min(78vw,300px)}
+.carga-c b{font-family:var(--display);font-weight:800;font-size:44px;line-height:.95;letter-spacing:-.04em;text-transform:uppercase;display:block}
+.carga-c .barra{height:4px;background:rgba(255,255,255,.25);margin-top:18px;border-radius:4px;overflow:hidden;position:relative}
+.carga-c .barra::after{content:"";position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(var(--progreso));transition:transform .4s var(--rev-ease)}
+.carga-c span{display:block;margin-top:12px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+body.abierto .carga-c{transform:translateY(-10px);opacity:0;transition:transform .7s var(--rev-ease),opacity .5s}
+
+/* Portada */
+.portada{position:relative;background:var(--negro)}
+.foto-grupo{margin:0;height:72svh;min-height:420px;overflow:hidden;position:relative}
+.foto-grupo img{width:100%;height:108%;object-fit:cover;object-position:50% 32%}
+.bloque-titulo{background:var(--cobalto);color:#fff;padding:28px var(--lado) 30px}
+.bloque-titulo .et{color:var(--lavanda)}
+.titulo{font-family:var(--display);font-weight:800;font-size:clamp(46px,14vw,86px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase;margin:10px 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-family:var(--display);font-weight:500;font-size:12.5px;letter-spacing:.06em;border:1px solid rgba(255,255,255,.45);border-radius:99px;padding:8px 14px}
+:root{--h-desde:translateY(22px);--h-inicio:380ms;--h-paso:120ms;--h-dur:.75s}
+@media (min-width:900px){
+  .portada{display:grid;grid-template-columns:1.1fr .9fr;align-items:stretch}
+  .foto-grupo{height:86svh}
+  .bloque-titulo{display:flex;flex-direction:column;justify-content:center;padding:60px 46px}
+}
+
+/* Invitación */
+.invita{background:var(--blanco)}
+.invita p{font-family:var(--display);font-weight:700;font-size:clamp(24px,6.6vw,34px);line-height:1.16;letter-spacing:-.03em;max-width:20ch}
+.invita .apoyo{font-family:var(--sans);font-weight:400;font-size:15.5px;letter-spacing:0;color:var(--gris);max-width:32ch;margin-top:16px}
+
+/* Números grandes */
+.cuando{background:var(--negro);color:var(--blanco)}
+.cuando .grande{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.cuando .dia{font-family:var(--display);font-weight:800;font-size:clamp(90px,26vw,150px);line-height:.8;letter-spacing:-.06em;color:var(--lavanda)}
+.cuando .lado{padding-bottom:10px}
+.cuando .lado b{display:block;font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase}
+.cuando .lado span{font-size:13.5px;color:#A9A49C}
+[data-cuenta]{margin:30px 0 0;gap:10px;justify-content:flex-start}
+.cu{min-width:58px;align-items:flex-start}
+.cu-n{font-family:var(--display);font-weight:800;font-size:36px;letter-spacing:-.04em}
+.cu-t{font-family:var(--display);font-weight:500;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--lavanda);margin-top:4px}
+.cu-sep{width:2px;height:26px;background:rgba(255,255,255,.2);margin-top:6px;transform:skewX(-12deg)}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:99px;background:var(--cobalto);color:#fff;font-family:var(--display);font-weight:700;font-size:14px;
+  letter-spacing:.04em;transition:background .3s,transform .25s}
+.bt-p:hover{background:var(--cobalto-os)}
+.bt-s{height:54px;padding:0 22px;border-radius:99px;border:1.5px solid var(--negro);color:var(--negro);font-family:var(--display);font-weight:500;font-size:13.5px;
+  background:transparent;transition:background .3s,color .3s}
+.bt-s:hover{background:var(--negro);color:var(--blanco)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.8}
+.cuando .bt-s{color:var(--blanco);border-color:rgba(255,255,255,.5)}
+.cuando .bt-s:hover{background:#fff;color:var(--negro)}
+
+/* Banda de escalones */
+.banda{position:relative;height:50svh;min-height:280px;overflow:hidden;margin:0}
+.banda .px{position:absolute;left:0;right:0;top:-8%;height:116%}
+.banda img{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+.banda figcaption{position:absolute;z-index:1;left:var(--lado);bottom:18px;font-family:var(--display);font-weight:700;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;background:var(--cobalto);color:#fff;padding:8px 14px;border-radius:99px}
+
+/* Plan de la fiesta */
+.plan ol{list-style:none;margin-top:28px;counter-reset:p}
+.plan li{counter-increment:p;display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:center;padding:18px 0;border-bottom:2px solid var(--piedra2);
+  transition:padding-left .35s var(--rev-ease)}
+.plan li:hover{padding-left:8px}
+.plan li::before{content:counter(p,decimal-leading-zero);font-family:var(--display);font-weight:800;font-size:22px;color:var(--cobalto);letter-spacing:-.03em}
+.plan b{font-family:var(--display);font-weight:700;font-size:20px;display:block;letter-spacing:-.01em}
+.plan span{font-size:13.5px;color:var(--gris)}
+
+/* Lugar */
+.lugar{background:var(--blanco)}
+.lugar .caja{border:2px solid var(--negro);border-radius:20px;padding:26px 22px;margin-top:24px}
+.lugar b{font-family:var(--display);font-weight:800;font-size:26px;display:block;letter-spacing:-.03em;text-transform:uppercase}
+.lugar span{font-size:14px;color:var(--gris);display:block;margin-top:6px}
+.lugar .bt-p{margin-top:20px}
+
+/* Cierre fotográfico */
+.despedida{position:relative;height:64svh;min-height:340px;overflow:hidden;margin:0}
+.despedida .px{position:absolute;left:0;right:0;top:-8%;height:116%}
+.despedida img{width:100%;height:100%;object-fit:cover}
+.despedida::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(23,22,26,.66))}
+.despedida .txt{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:26px;text-align:center;color:#fff}
+.despedida h3{font-family:var(--display);font-weight:800;font-size:clamp(26px,7vw,36px);letter-spacing:-.03em;text-transform:uppercase}
+
+/* Confirmación */
+.rsvp{background:var(--cobalto);color:#fff}
+.rsvp h2{color:#fff}
+.rsvp .et{color:var(--lavanda)}
+.rsvp .centro p{color:rgba(255,255,255,.8);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:26px 0 0;padding:22px 20px;background:rgba(255,255,255,.12);border-radius:16px}
+.pase-et{display:block;font-family:var(--display);font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--lavanda)}
+.pase-qui{display:block;font-family:var(--display);font-weight:800;font-size:24px;margin:8px 0 2px;text-transform:uppercase;letter-spacing:-.02em}
+.pase-lug{font-size:12.5px;color:rgba(255,255,255,.85)}
+[data-rsvp]{margin-top:28px}
+.campo-l>span{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lavanda)}
+.linea-in{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:14px 16px;font-size:16px;color:#fff;transition:border-color .3s}
+.linea-in::placeholder{color:rgba(255,255,255,.5)}
+.linea-in:focus{border-color:#fff}
+.elige b{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:99px;font-family:var(--display);font-weight:500;font-size:13.5px;transition:all .3s}
+.elige input:checked+b{background:#fff;color:var(--cobalto);border-color:#fff}
+.elige input:focus-visible+b{outline:2px solid #fff;outline-offset:2px}
+.paso-lug button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff}
+.paso-lug button:hover{background:#fff;color:var(--cobalto)}
+.paso-lug output{font-family:var(--display);font-weight:800;font-size:34px}
+.paso-lug small{font-size:13px;color:rgba(255,255,255,.75)}
+.rsvp .bt-p{background:#fff;color:var(--cobalto)}
+.rsvp .bt-p:hover{background:var(--lavanda);color:var(--negro)}
+.rsvp-nota{font-size:12.5px;color:rgba(255,255,255,.75);text-align:center}
+.rg-sello{background:#fff;color:var(--cobalto)}
+.rg-t{font-family:var(--display);font-weight:800;font-size:30px;text-transform:uppercase;letter-spacing:-.02em}
+.rg-p{color:rgba(255,255,255,.8);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:46px}
+.cierre .titulo{font-size:clamp(40px,12vw,68px);color:var(--negro)}
+.cierre p{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris);margin-top:10px}
+.cierre .firma-savey{margin-top:58px}
+#flota{height:52px;padding:0 24px;border-radius:99px;background:var(--cobalto);color:#fff;font-family:var(--display);font-weight:700;font-size:13.5px;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c"><b>Lo logramos</b><div class="barra"></div><span>Generación 2027</span></div>
+</div>
+
+<header class="portada" data-portada>
+  <figure class="foto-grupo" data-h style="--h:0">
+    <img src="../fotos/gd-impetu.webp" srcset="../fotos/gd-impetu-m.webp 720w, ../fotos/gd-impetu.webp 1100w" sizes="100vw" alt="El grupo de amigos celebrando en las escalinatas">
+  </figure>
+  <div class="bloque-titulo">
+    <div class="et" data-h style="--h:1">Fiesta de graduación</div>
+    <h1 class="titulo" data-h style="--h:2">Generación<br>2027</h1>
+    <div class="tags" data-h style="--h:3">
+      <span>Sábado 10 de julio</span><span>9:00 pm</span><span>Terraza Jacaranda</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="invita">
+  <div class="env">
+    <div class="et" data-a="izq">Ya está</div>
+    <p data-a="izq" style="margin-top:14px">Cuatro años juntos merecen una noche como se debe.</p>
+    <p class="apoyo" data-a="sube">Es para toda la generación: los que siguen en la ciudad, los que ya se fueron y los que regresan nada más por esto.</p>
+  </div>
+</section>
+
+<section class="cuando" id="detalles">
+  <div class="env">
+    <div class="et" data-a="izq" style="color:var(--lavanda)">Cuándo</div>
+    <div class="grande" style="margin-top:14px">
+      <div class="dia" data-a="izq">10</div>
+      <div class="lado" data-a="izq" style="--d:100ms"><b>Julio 2027</b><span>Sábado · 9:00 pm a 3:00 am</span></div>
+    </div>
+    <div data-cuenta data-a="sube"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="margin-top:28px"><svg><use href="#cal"/></svg>Agendar</a>
+  </div>
+</section>
+
+<figure class="banda" data-ampliar>
+  <div class="px" data-px="0.16"><img src="../fotos/g/im-1.webp" alt="Los birretes bajando las escalinatas" loading="lazy"></div>
+  <figcaption data-a="sube">Último día de clases</figcaption>
+</figure>
+
+<section class="plan">
+  <div class="env">
+    <div class="et" data-a="izq">La noche</div>
+    <h2 data-a="izq" style="margin-top:10px">El plan</h2>
+    <ol data-grupo="80">
+      <li data-a="izq"><div><b>Llegada</b><span>9:00 pm · Foto de generación en la entrada</span></div></li>
+      <li data-a="izq"><div><b>Cena ligera</b><span>10:00 pm · Barra de tacos y bebidas</span></div></li>
+      <li data-a="izq"><div><b>Brindis</b><span>11:30 pm · Y el video que hizo Mariana</span></div></li>
+      <li data-a="izq"><div><b>DJ hasta el final</b><span>12:00 am · Manda tu canción al confirmar</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="lugar">
+  <div class="env">
+    <div class="et" data-a="izq">Dónde</div>
+    <h2 data-a="izq" style="margin-top:10px">Terraza Jacaranda</h2>
+    <div class="caja" data-a="sube">
+      <b>Av. Chapultepec 480</b>
+      <span>Piso 9, Americana, Guadalajara. Entrada por el lobby; sube en el elevador de la derecha.</span>
+      <span style="margin-top:8px">Cooperación de $450 por persona para barra y cena. Se paga en la entrada.</span>
+      <a class="bt-p" href="https://maps.google.com/?q=Av.%20Chapultepec%20480%20Guadalajara" target="_blank" rel="noopener"><svg style="stroke:currentColor;fill:none;stroke-width:1.8"><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+  </div>
+</section>
+
+<figure class="despedida" data-ampliar>
+  <div class="px" data-px="0.2"><img src="../fotos/g/im-2.webp" alt="Los amigos caminando por el campus bajo las jacarandas" loading="lazy"></div>
+  <div class="txt">
+    <h3 data-a="sube">Nos vemos allá</h3>
+  </div>
+</figure>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Vienes?</h2>
+      <p>Confirma antes del 1 de julio: el aforo de la terraza es de 150.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="titulo" data-a="sube">2027</div>
+    <p data-a="sube" style="--d:100ms">Terraza Jacaranda · Guadalajara</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'grad-impetu', evento:'Fiesta de graduación · Generación 2027', nombre:'la generación',
+  fechaISO:'2027-07-10T21:00:00-06:00', lugar:'Terraza Jacaranda, Av. Chapultepec 480, Guadalajara',
+  fechaLimite:'1 de julio', graciasSi:'¡Listo!', graciasSiTexto:'Sábado 10 de julio, 9:00 pm. Nos vemos en la terraza.',
+  etiquetaMensaje:'¿Algo que quieras decir? (opcional)',
+  extras:[{k:'cancion', rot:'¿Qué canción no puede faltar?', ph:'Artista y título'}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

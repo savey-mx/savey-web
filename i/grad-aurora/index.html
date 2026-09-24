@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Valentina se gradúa · 25 de junio de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FAF7F3">
+<meta property="og:title" content="Valentina se gradúa">
+<meta property="og:description" content="Viernes 25 de junio de 2027 · Ceremonia y comida">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/gd-aurora.jpg">
+<link rel="preload" as="image" href="../fotos/gd-aurora-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 01 · AURORA ═══════════ */
+:root{
+  --blanco:#FAF7F3; --blanco2:#FFFFFF; --piedra:#EDE7DF; --piedra2:#DED5C9;
+  --negro:#232120; --magenta:#C6417A; --magenta-os:#A32F61; --tinta:#2B2826; --suave:#7A736C;
+  --serif:'DM Serif Display',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.24,.66,.3,1); --rev-dur:.9s; --rev-dist:18px;
+  --lado:24px;
+}
+body{background:var(--blanco);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.72}
+::selection{background:var(--magenta);color:#fff}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--magenta);font-weight:600}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,8.4vw,42px);line-height:1.1}
+.centro{text-align:center}
+section{padding:clamp(70px,15vw,96px) 0}
+
+/* Carga */
+#carga{background:var(--blanco2);transition:opacity .9s var(--rev-ease),visibility .9s}
+.carga-c{text-align:center;width:min(74vw,260px)}
+.carga-c b{font-family:var(--serif);font-size:30px;letter-spacing:.02em}
+.carga-c .barra{height:2px;background:var(--piedra2);margin-top:16px;border-radius:2px;overflow:hidden;position:relative}
+.carga-c .barra::after{content:"";position:absolute;inset:0;background:var(--magenta);transform-origin:left;transform:scaleX(var(--progreso));transition:transform .45s var(--rev-ease)}
+.carga-c span{display:block;margin-top:12px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+
+/* Portada: retrato editorial */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--piedra)}
+.px{position:absolute;left:0;right:0;top:-4%;height:108%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:44% 28%;transform:scale(1.05);transition:transform 2.6s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(35,33,32,.22) 0%,transparent 24%,transparent 56%,rgba(35,33,32,.5) 84%,rgba(30,28,27,.8) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(46px + env(safe-area-inset-bottom,0px));padding:0 var(--lado);color:#fff}
+.portada-txt .et{color:#F5A9C8}
+.nombre{font-family:var(--serif);font-weight:400;font-size:clamp(52px,15vw,86px);line-height:.98;margin:10px 0 12px}
+.linea-datos{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+.linea-datos i{width:26px;height:1px;background:rgba(255,255,255,.75)}
+:root{--h-desde:translateY(18px);--h-inicio:460ms;--h-paso:150ms;--h-dur:1.05s}
+@media (min-width:900px){.portada-txt{left:6vw;max-width:660px}}
+
+/* Frase */
+.frase{text-align:center;background:var(--blanco2)}
+.frase p{font-family:var(--serif);font-size:clamp(26px,7vw,34px);line-height:1.34;max-width:24ch;margin:0 auto}
+.frase em{color:var(--magenta)}
+
+/* Detalle del diploma junto al mensaje */
+.doble{display:grid;gap:28px;align-items:center}
+.foto-d{aspect-ratio:4/5;border-radius:18px;overflow:hidden;margin:0}
+.foto-d img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s var(--rev-ease)}
+.foto-d:hover img{transform:scale(1.05)}
+.doble p{color:var(--suave);margin-top:12px}
+@media (min-width:840px){.doble{grid-template-columns:1fr 1fr;gap:48px}.doble-sec .env{max-width:900px}}
+
+/* Fecha y momentos */
+.momentos{background:var(--piedra)}
+.momento{padding:24px 0;border-top:1px solid rgba(122,115,108,.24)}
+.momento:last-of-type{border-bottom:1px solid rgba(122,115,108,.24)}
+.momento .k{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--magenta);font-weight:600}
+.momento b{font-family:var(--serif);font-weight:400;font-size:26px;display:block;line-height:1.2;margin:8px 0 4px}
+.momento span{font-size:14px;color:var(--suave)}
+.momento .bt-s{margin-top:16px}
+[data-cuenta]{margin:32px 0 0;gap:6px}
+.cu{min-width:60px}
+.cu-n{font-family:var(--serif);font-size:36px}
+.cu-t{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.cu-sep{width:4px;height:4px;border-radius:50%;background:var(--magenta);margin-top:18px;opacity:.6}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:14px;background:var(--magenta);color:#fff;font-weight:600;font-size:14px;letter-spacing:.04em;
+  box-shadow:0 16px 30px -20px rgba(198,65,122,1);transition:background .4s}
+.bt-p:hover{background:var(--magenta-os)}
+.bt-s{height:52px;padding:0 20px;border-radius:14px;border:1.5px solid var(--negro);color:var(--negro);font-size:13.5px;font-weight:500;background:transparent;
+  transition:background .4s,color .4s}
+.bt-s:hover{background:var(--negro);color:var(--blanco)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.7}
+
+/* Campus a lo ancho */
+.campus{position:relative;height:62svh;min-height:320px;overflow:hidden;margin:0}
+.campus .px{top:-8%;height:116%}
+.campus figcaption{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:24px;text-align:center;color:#fff;
+  font-family:var(--serif);font-size:22px}
+.campus::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(35,33,32,.55))}
+
+/* Notas */
+.notas .nota{display:grid;grid-template-columns:30px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid rgba(122,115,108,.2)}
+.notas .nota:first-of-type{border-top:1px solid rgba(122,115,108,.2);margin-top:24px}
+.notas .punto{width:30px;height:30px;border-radius:50%;background:var(--piedra);display:grid;place-items:center;font-size:13px;font-weight:600;color:var(--magenta)}
+.notas b{font-family:var(--serif);font-weight:400;font-size:20px;display:block;line-height:1.3}
+.notas span{font-size:13.5px;color:var(--suave)}
+
+/* Confirmación */
+.rsvp{background:var(--blanco2)}
+.rsvp .centro p{color:var(--suave);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:24px 20px;background:var(--piedra);border-radius:18px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--serif);font-size:26px;margin:8px 0 2px}
+.pase-lug{font-size:12.5px;color:var(--magenta);font-weight:500}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--suave);font-weight:600}
+.linea-in{background:var(--blanco);border:1px solid transparent;border-radius:12px;padding:14px 16px;font-size:16px;transition:border-color .3s,box-shadow .3s}
+.linea-in:focus{border-color:var(--magenta);box-shadow:0 0 0 4px rgba(198,65,122,.16)}
+.elige b{background:var(--blanco);border:1px solid transparent;border-radius:12px;font-size:13.5px;transition:all .4s}
+.elige input:checked+b{background:var(--negro);color:var(--blanco)}
+.elige input:focus-visible+b{outline:2px solid var(--magenta);outline-offset:2px}
+.paso-lug button{background:var(--blanco);color:var(--negro)}
+.paso-lug button:hover{background:var(--negro);color:var(--blanco)}
+.paso-lug output{font-family:var(--serif);font-size:32px}
+.paso-lug small{font-size:12.5px;color:var(--suave)}
+.rsvp-nota{font-size:12.5px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--magenta);color:#fff}
+.rg-t{font-family:var(--serif);font-size:30px}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:48px}
+.cierre .nombre{color:var(--negro);font-size:clamp(42px,12vw,64px)}
+.cierre p{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave);margin-top:12px}
+.cierre .firma-savey{margin-top:62px}
+#flota{height:52px;padding:0 24px;border-radius:14px;background:var(--magenta);color:#fff;font-size:13.5px;font-weight:600;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c"><b>Valentina</b><div class="barra"></div><span>Generación 2027</span></div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.12"><img src="../fotos/gd-aurora.webp" srcset="../fotos/gd-aurora-m.webp 720w, ../fotos/gd-aurora.webp 1100w" sizes="100vw" alt="Valentina con su toga frente al campus"></div>
+  <div class="portada-txt">
+    <div class="et" data-h style="--h:0">Me gradúo</div>
+    <h1 class="nombre" data-h style="--h:1">Valentina</h1>
+    <div class="linea-datos" data-h style="--h:2"><i></i>VIERNES 25 DE JUNIO · 2027</div>
+  </div>
+</header>
+
+<main>
+
+<section class="frase">
+  <div class="env">
+    <p data-a="sube">Cinco años, muchas desveladas y <em>una carrera terminada.</em></p>
+  </div>
+</section>
+
+<section class="doble-sec">
+  <div class="env">
+    <div class="doble">
+      <figure class="foto-d" data-a="enfoque" data-ampliar><img src="../fotos/g/ga-1.webp" alt="La carpeta del diploma en las manos de Valentina" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">Gracias</div>
+        <h2 data-a="sube" style="margin-top:10px">A quienes<br>estuvieron ahí</h2>
+        <p data-a="sube">A mi familia, que aguantó los exámenes conmigo, y a los amigos que me sacaron de la biblioteca a tiempo. Quiero celebrarlo con ustedes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="momentos" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">El día</div>
+    <h2 data-a="sube" style="margin-top:10px">Dos momentos</h2>
+    <div class="momento" data-a="sube" style="margin-top:26px">
+      <div class="k">Ceremonia · 11:00 am</div>
+      <b>Auditorio Central</b>
+      <span>Universidad del Valle, Av. Universidad 1200, CDMX. El acceso es con dos pases por graduada.</span>
+      <a class="bt-s" href="https://maps.google.com/?q=Av.%20Universidad%201200%20CDMX" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+    <div class="momento" data-a="sube">
+      <div class="k">Comida · 2:30 pm</div>
+      <b>Terraza Bugambilia</b>
+      <span>Amsterdam 240, Condesa, CDMX. Aquí sí estás invitado sin límite de pases.</span>
+      <a class="bt-s" href="https://maps.google.com/?q=Amsterdam%20240%20Condesa" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+    <div class="centro">
+      <div data-cuenta data-a="sube"></div>
+      <a class="bt-s" data-calendario data-a="sube" style="margin-top:24px"><svg><use href="#cal"/></svg>Agendar</a>
+    </div>
+  </div>
+</section>
+
+<figure class="campus" data-ampliar>
+  <div class="px" data-px="0.18"><img src="../fotos/g/ga-2.webp" alt="Graduados y familias en las escalinatas del campus" loading="lazy"></div>
+  <figcaption data-a="sube">La última foto en las escalinatas</figcaption>
+</figure>
+
+<section class="notas">
+  <div class="env">
+    <div class="et" data-a="sube">Buena información</div>
+    <h2 data-a="sube" style="margin-top:10px">Tres cosas útiles</h2>
+    <div class="nota" data-a="sube"><span class="punto">1</span><div><b>Vestimenta</b><span>Formal para la ceremonia; en la comida puedes venir más cómodo.</span></div></div>
+    <div class="nota" data-a="sube"><span class="punto">2</span><div><b>Estacionamiento</b><span>El del campus se llena temprano. En la Condesa hay valet.</span></div></div>
+    <div class="nota" data-a="sube"><span class="punto">3</span><div><b>Regalos</b><span>Nada, en serio. Con que vengas ya es suficiente.</span></div></div>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Me acompañas?</h2>
+      <p>Dime a cuál de los dos momentos vienes, para apartar tu lugar.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="nombre" data-a="sube">Valentina</div>
+    <p data-a="sube" style="--d:120ms">Generación 2027</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'grad-aurora', evento:'Graduación de Valentina', nombre:'Valentina',
+  fechaISO:'2027-06-25T11:00:00-06:00', lugar:'Auditorio Central, Universidad del Valle, CDMX',
+  fechaLimite:'15 de junio', graciasSi:'¡Nos vemos!', graciasSiTexto:'Viernes 25 de junio. Gracias por acompañarme.',
+  etiquetaMensaje:'¿Me dejas un mensaje? (opcional)',
+  extras:[{k:'momento', rot:'¿A cuál vienes?', tipo:'elige', op:['Ceremonia y comida','Solo la comida']}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

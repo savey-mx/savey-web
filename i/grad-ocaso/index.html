@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Diego se gradúa · 16 de julio de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7EDE4">
+<meta property="og:title" content="Diego se gradúa">
+<meta property="og:description" content="Viernes 16 de julio de 2027 · Cena en la terraza">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/gd-ocaso.jpg">
+<link rel="preload" as="image" href="../fotos/gd-ocaso-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 06 · OCASO ═══════════ */
+:root{
+  --arena:#F7EDE4; --arena2:#EFE0D3; --blanco:#FFFBF6; --rosa:#E5B9A8; --rosa-cl:#F4D8CB;
+  --terracota:#BD6B4C; --terracota-os:#9E5339; --tinta:#33291F; --tinta2:#241C16; --suave:#7E6F63;
+  --serif:'Fraunces',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.28,.62,.3,1); --rev-dur:1.35s; --rev-dist:16px;
+  --lado:26px;
+}
+body{background:var(--arena);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.76}
+::selection{background:var(--rosa);color:var(--tinta)}
+.env{max-width:520px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--terracota);font-weight:500}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,8.6vw,44px);line-height:1.12}
+.centro{text-align:center}
+section{padding:clamp(80px,17vw,110px) 0}
+
+/* Carga: el cielo que cambia */
+#carga{background:linear-gradient(180deg,#F4D8CB,#E5B9A8 52%,#BD6B4C)}
+.carga-c{text-align:center}
+.carga-c .horizonte{width:150px;height:1px;background:rgba(51,41,31,.3);margin:0 auto;position:relative}
+.carga-c .horizonte::after{content:"";position:absolute;left:50%;margin-left:-26px;bottom:0;width:52px;height:52px;border-radius:50%;
+  background:radial-gradient(circle at 50% 42%,#FFF0D8,#F0B37A);
+  transform:translateY(calc(30px - 30px * var(--progreso)));opacity:calc(.35 + var(--progreso)*.65);transition:.55s var(--rev-ease)}
+.carga-c b{display:block;margin-top:40px;font-family:var(--serif);font-weight:600;font-size:26px;color:var(--tinta)}
+.carga-c span{display:block;margin-top:6px;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(51,41,31,.6)}
+body.abierto .carga-c{transform:translateY(-10px);opacity:0;transition:transform 1s var(--rev-ease),opacity .8s}
+
+/* Portada: el cielo respira, el texto viene después */
+.portada{background:var(--arena)}
+.retrato{margin:0;height:78svh;min-height:440px;overflow:hidden;position:relative}
+.retrato img{width:100%;height:106%;object-fit:cover;object-position:50% 30%;transform:scale(1.03);transition:transform 4.5s cubic-bezier(.3,.2,.2,1)}
+body.abierto .retrato img{transform:scale(1)}
+.titulo-zona{text-align:center;padding:36px var(--lado) 0}
+.nombre{font-family:var(--serif);font-weight:400;font-size:clamp(48px,14vw,80px);line-height:1;margin:12px 0 10px}
+.motivo-linea{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--suave)}
+.portada-fecha{margin-top:16px;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+:root{--h-desde:translateY(16px);--h-inicio:560ms;--h-paso:180ms;--h-dur:1.5s}
+.retrato[data-h]{--h-desde:none;opacity:1}
+
+/* Frase contemplativa */
+.frase{text-align:center}
+.frase p{font-family:var(--serif);font-size:clamp(26px,7vw,34px);line-height:1.42;max-width:22ch;margin:0 auto}
+.frase em{color:var(--terracota)}
+
+/* La toga sobre la mesa */
+.pausa{position:relative;height:62svh;min-height:330px;overflow:hidden;margin:0}
+.pausa .px{position:absolute;left:0;right:0;top:-6%;height:112%}
+.pausa img{width:100%;height:100%;object-fit:cover;object-position:50% 52%}
+.pausa figcaption{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:24px;text-align:center;
+  font-family:var(--serif);font-style:italic;font-size:21px;color:var(--blanco);text-shadow:0 2px 16px rgba(36,28,22,.5)}
+
+/* Datos: degradado hacia la noche */
+.datos{background:linear-gradient(180deg,var(--arena2),var(--terracota) 130%);color:var(--tinta)}
+.datos .fila{padding:24px 0;border-top:1px solid rgba(126,111,99,.3)}
+.datos .fila:last-of-type{border-bottom:1px solid rgba(126,111,99,.3)}
+.datos .k{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--terracota-os);font-weight:500}
+.datos b{font-family:var(--serif);font-weight:400;font-size:26px;display:block;line-height:1.2;margin:8px 0 4px}
+.datos span{font-size:14px;color:var(--suave)}
+.datos .bt-s{margin-top:16px}
+[data-cuenta]{margin:32px 0 0;gap:4px}
+.cu{min-width:60px}
+.cu-n{font-family:var(--serif);font-weight:600;font-size:34px}
+.cu-t{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.cu-sep{width:1px;height:24px;background:rgba(189,107,76,.4);margin-top:8px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:14px;background:var(--tinta2);color:var(--arena);font-weight:500;font-size:14px;letter-spacing:.04em;
+  transition:background .45s}
+.bt-p:hover{background:#12100D}
+.bt-s{height:52px;padding:0 20px;border-radius:14px;border:1px solid rgba(51,41,31,.32);color:var(--tinta);font-size:13.5px;background:transparent;transition:background .45s}
+.bt-s:hover{background:rgba(51,41,31,.08)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.6}
+
+/* La cena, ya de noche */
+.noche{background:var(--tinta2);color:var(--arena)}
+.noche .et{color:var(--rosa)}
+.noche h2{color:var(--arena)}
+.noche p{color:rgba(247,237,228,.7);max-width:32ch;margin-top:14px}
+.foto-cena{margin:30px 0 0;border-radius:20px;overflow:hidden;aspect-ratio:3/2}
+.foto-cena img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--rev-ease)}
+.foto-cena:hover img{transform:scale(1.04)}
+.noche .lista{list-style:none;margin-top:28px}
+.noche .lista li{display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(247,237,228,.18)}
+.noche .lista li:last-child{border-bottom:1px solid rgba(247,237,228,.18)}
+.noche .hr{font-size:12.5px;letter-spacing:.12em;color:var(--rosa)}
+.noche .ac{font-family:var(--serif);font-size:22px}
+
+/* Confirmación */
+.rsvp{background:var(--blanco)}
+.rsvp .centro p{color:var(--suave);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:24px 20px;background:var(--arena);border-radius:18px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--serif);font-size:25px;margin:8px 0 2px}
+.pase-lug{font-size:12.5px;color:var(--terracota)}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave);font-weight:500}
+.linea-in{background:var(--arena);border:1px solid transparent;border-radius:14px;padding:14px 16px;font-size:16px;transition:border-color .3s,box-shadow .3s}
+.linea-in:focus{border-color:var(--rosa);box-shadow:0 0 0 4px rgba(229,185,168,.4)}
+.elige b{background:var(--arena);border:1px solid transparent;border-radius:14px;font-size:13.5px;transition:all .4s}
+.elige input:checked+b{background:var(--tinta2);color:var(--arena)}
+.elige input:focus-visible+b{outline:2px solid var(--rosa);outline-offset:2px}
+.paso-lug button{background:var(--arena);color:var(--tinta)}
+.paso-lug button:hover{background:var(--tinta2);color:var(--arena)}
+.paso-lug output{font-family:var(--serif);font-size:32px}
+.paso-lug small{font-size:12.5px;color:var(--suave)}
+.rsvp-nota{font-size:12.5px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--tinta2);color:var(--arena)}
+.rg-t{font-family:var(--serif);font-size:30px}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:52px}
+.cierre .nombre{color:var(--terracota-os);font-size:clamp(40px,11vw,62px)}
+.cierre p{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--suave)}
+.cierre .firma-savey{margin-top:66px}
+#flota{height:52px;padding:0 24px;border-radius:14px;background:var(--tinta2);color:var(--arena);font-size:13.5px;font-weight:500;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c"><div class="horizonte"></div><b>Diego</b><span>Se gradúa</span></div>
+</div>
+
+<header class="portada" data-portada>
+  <figure class="retrato" data-h style="--h:0">
+    <img src="../fotos/gd-ocaso.webp" srcset="../fotos/gd-ocaso-m.webp 720w, ../fotos/gd-ocaso.webp 1100w" sizes="100vw" alt="Diego con su toga en la terraza al atardecer">
+  </figure>
+  <div class="titulo-zona">
+    <div class="et" data-h style="--h:1">Se gradúa</div>
+    <h1 class="nombre" data-h style="--h:2">Diego</h1>
+    <div class="motivo-linea" data-h style="--h:3">y quiere celebrarlo en casa</div>
+    <div class="portada-fecha" data-h style="--h:4">Viernes 16 de julio · 2027</div>
+  </div>
+</header>
+
+<main>
+
+<section class="frase">
+  <div class="env">
+    <p data-a="sube">Terminó una etapa. La que sigue <em>todavía no empieza.</em></p>
+  </div>
+</section>
+
+<figure class="pausa" data-ampliar>
+  <div class="px" data-px="0.12"><img src="../fotos/g/oc-1.webp" alt="El birrete y la toga sobre la mesa de madera" loading="lazy"></div>
+  <figcaption data-a="sube">La toga, ya sin prisa</figcaption>
+</figure>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">Los datos</div>
+      <h2 data-a="sube" style="margin-top:10px">Cuándo y dónde</h2>
+    </div>
+    <div class="fila" data-a="sube" style="margin-top:26px">
+      <div class="k">Cuándo</div>
+      <b>Viernes 16 de julio</b>
+      <span>A partir de las 7:00 de la tarde, con el atardecer.</span>
+    </div>
+    <div class="fila" data-a="sube">
+      <div class="k">Dónde</div>
+      <b>La terraza de la casa</b>
+      <span>Callejón del Pueblito 9, Centro, San Miguel de Allende. Toca el timbre del zaguán rojo.</span>
+      <a class="bt-s" href="https://maps.google.com/?q=Callej%C3%B3n%20del%20Pueblito%209%20San%20Miguel%20de%20Allende" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+    <div class="fila" data-a="sube">
+      <div class="k">Cómo venir</div>
+      <b>Como quieras</b>
+      <span>Es en casa. Solo trae algo para el fresco de la noche.</span>
+    </div>
+    <div class="centro">
+      <div data-cuenta data-a="sube"></div>
+      <a class="bt-s" data-calendario data-a="sube" style="margin-top:24px"><svg><use href="#cal"/></svg>Agendar</a>
+    </div>
+  </div>
+</section>
+
+<section class="noche">
+  <div class="env">
+    <div class="et" data-a="sube">Después del atardecer</div>
+    <h2 data-a="sube" style="margin-top:10px">La cena</h2>
+    <p data-a="sube">Mi familia lleva toda la tarde preparando. Van a estar mis tíos, mis primos y los amigos de siempre.</p>
+    <figure class="foto-cena" data-a="mascara" data-ampliar><img src="../fotos/g/oc-2.webp" alt="La familia preparando la cena bajo el cielo rosado" loading="lazy"></figure>
+    <ul class="lista" data-grupo="90">
+      <li data-a="sube"><span class="hr">7:00</span><span class="ac">Llegada y el último sol</span></li>
+      <li data-a="sube"><span class="hr">8:30</span><span class="ac">Cena en la terraza</span></li>
+      <li data-a="sube"><span class="hr">10:00</span><span class="ac">Postre, música y plática</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Vienes?</h2>
+      <p>Avísame antes del 8 de julio para calcular la cena.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="nombre" data-a="sube">Diego</div>
+    <p data-a="sube" style="--d:120ms">Te espero en la terraza</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'grad-ocaso', evento:'Graduación de Diego', nombre:'Diego',
+  fechaISO:'2027-07-16T19:00:00-06:00', lugar:'Callejón del Pueblito 9, San Miguel de Allende',
+  fechaLimite:'8 de julio', graciasSi:'¡Nos vemos!', graciasSiTexto:'Viernes 16 de julio, 7:00 pm, en la terraza.',
+  etiquetaMensaje:'¿Me dejas un mensaje? (opcional)',
+  extras:[{k:'dieta', rot:'¿Alguna restricción de comida?', ph:'Vegetariano, sin gluten…'}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

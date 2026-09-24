@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Camila se gradúa · 3 de julio de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF6EC">
+<meta property="og:title" content="Camila se gradúa">
+<meta property="og:description" content="Sábado 3 de julio de 2027 · Comida en casa">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/gd-raices.jpg">
+<link rel="preload" as="image" href="../fotos/gd-raices-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 02 · RAÍCES ═══════════ */
+:root{
+  --crema:#FBF6EC; --blanco:#FFFCF6; --marfil:#F3EADA; --marino:#1F3355; --marino-cl:#37527C;
+  --durazno:#E8A87C; --durazno-cl:#F6D3B6; --madera:#A98358; --tinta:#33302B; --suave:#7A7267;
+  --serif:'Lora',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.25,.62,.3,1); --rev-dur:1.05s; --rev-dist:16px;
+  --lado:26px;
+}
+body{background:var(--crema);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.78}
+::selection{background:var(--durazno-cl);color:var(--tinta)}
+.env{max-width:520px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--marino-cl);font-weight:500}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,8vw,40px);line-height:1.18;color:var(--marino)}
+.centro{text-align:center}
+section{padding:clamp(70px,15vw,94px) 0}
+.papel-picado{display:flex;justify-content:center;gap:8px}
+.papel-picado i{width:26px;height:18px;border-radius:0 0 12px 12px;opacity:.85}
+
+/* Carga: papel picado que baja */
+#carga{background:var(--crema)}
+.carga-c{text-align:center}
+.carga-c .tira{display:flex;gap:8px;justify-content:center}
+.carga-c .tira i{width:26px;height:20px;border-radius:0 0 12px 12px;transform:translateY(calc(-16px + var(--progreso)*16px));
+  opacity:calc(.25 + var(--progreso)*.75);transition:.45s var(--rev-ease)}
+.carga-c b{display:block;margin-top:22px;font-family:var(--serif);font-size:26px;color:var(--marino)}
+.carga-c span{display:block;margin-top:6px;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+body.abierto .carga-c{transform:translateY(-8px);opacity:0;transition:transform .9s var(--rev-ease),opacity .7s}
+
+/* Portada: primero el abrazo, después el texto */
+.portada{padding:0;background:var(--crema)}
+.foto-abrazo{margin:0;height:72svh;min-height:420px;overflow:hidden;position:relative}
+.foto-abrazo img{width:100%;height:108%;object-fit:cover;object-position:50% 34%}
+.saludo{text-align:center;padding:30px var(--lado) 0}
+.nombre{font-family:var(--serif);font-weight:400;font-size:clamp(46px,13vw,72px);line-height:1.05;color:var(--marino);margin:10px 0 8px}
+.saludo .fecha{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--suave)}
+:root{--h-desde:translateY(16px);--h-inicio:430ms;--h-paso:160ms;--h-dur:1.1s}
+.foto-abrazo[data-h]{--h-desde:scale(1.02)}
+
+/* Dedicatoria */
+.dedicatoria{text-align:center}
+.dedicatoria p{font-family:var(--serif);font-size:clamp(22px,5.8vw,28px);line-height:1.55;max-width:27ch;margin:0 auto}
+.dedicatoria em{color:var(--durazno)}
+.dedicatoria .firma{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--suave);margin-top:20px}
+
+/* El ramo introduce la fecha */
+.ramo{position:relative;height:56svh;min-height:300px;overflow:hidden;margin:0}
+.ramo .px{position:absolute;left:0;right:0;top:-8%;height:116%}
+.ramo img{width:100%;height:100%;object-fit:cover;object-position:50% 52%}
+.ramo figcaption{position:absolute;z-index:1;left:var(--lado);bottom:20px;background:var(--blanco);color:var(--marino);
+  font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:9px 16px;border-radius:99px;font-weight:500}
+
+/* Datos en tarjetas de papel */
+.datos{background:var(--marfil)}
+.hoja{background:var(--blanco);border-radius:4px;padding:26px 22px;box-shadow:0 16px 30px -28px rgba(51,48,43,.9);text-align:center;position:relative}
+.hoja+.hoja{margin-top:14px}
+.hoja .k{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--durazno)}
+.hoja b{font-family:var(--serif);font-weight:400;font-size:25px;display:block;line-height:1.25;margin:8px 0 4px;color:var(--marino)}
+.hoja span{font-size:14.5px;color:var(--suave)}
+.hoja .bt-s{margin-top:18px}
+[data-cuenta]{margin:32px 0 0;gap:4px}
+.cu{min-width:60px}
+.cu-n{font-family:var(--serif);font-size:34px;color:var(--marino)}
+.cu-t{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.cu-sep{width:1px;height:24px;background:rgba(169,131,88,.4);margin-top:8px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 30px;border-radius:18px;background:var(--marino);color:var(--blanco);font-weight:500;font-size:15px;letter-spacing:.03em;
+  box-shadow:0 16px 30px -22px rgba(31,51,85,1);transition:background .4s}
+.bt-p:hover{background:var(--marino-cl)}
+.bt-s{height:52px;padding:0 22px;border-radius:18px;border:1px solid rgba(31,51,85,.35);color:var(--marino);font-size:14px;background:transparent;transition:background .4s}
+.bt-s:hover{background:rgba(31,51,85,.08)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.6}
+
+/* La llegada */
+.llegada{position:relative;height:64svh;min-height:340px;overflow:hidden;margin:0}
+.llegada .px{position:absolute;left:0;right:0;top:-8%;height:116%}
+.llegada img{width:100%;height:100%;object-fit:cover}
+.llegada::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(31,51,85,.62))}
+.llegada .txt{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:26px;text-align:center;color:var(--blanco)}
+.llegada h3{font-family:var(--serif);font-weight:400;font-size:27px}
+.llegada p{font-size:14px;color:rgba(255,252,246,.85);margin-top:4px}
+
+/* Quiénes */
+.quienes{text-align:center}
+.quienes .par{margin-top:32px}
+.quienes p{font-family:var(--serif);font-size:22px;line-height:1.45;margin-top:8px;color:var(--marino)}
+
+/* Confirmación */
+.rsvp{background:var(--marfil)}
+.rsvp .centro p{color:var(--suave);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:24px 20px;background:var(--blanco);border-radius:6px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--serif);font-size:26px;margin:8px 0 2px;color:var(--marino)}
+.pase-lug{font-size:13px;color:var(--durazno)}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);font-weight:500}
+.linea-in{background:var(--blanco);border:1px solid rgba(122,114,103,.2);border-radius:14px;padding:15px 16px;font-size:16.5px;transition:border-color .3s,box-shadow .3s}
+.linea-in:focus{border-color:var(--marino);box-shadow:0 0 0 4px rgba(31,51,85,.12)}
+.elige b{background:var(--blanco);border:1px solid rgba(122,114,103,.2);border-radius:14px;font-size:14.5px;padding-block:14px;transition:all .4s}
+.elige input:checked+b{background:var(--marino);color:var(--blanco);border-color:var(--marino)}
+.elige input:focus-visible+b{outline:2px solid var(--durazno);outline-offset:2px}
+.paso-lug button{background:var(--blanco);border:1px solid rgba(122,114,103,.2);color:var(--marino);width:52px;height:52px}
+.paso-lug button:hover{background:var(--marino);color:var(--blanco)}
+.paso-lug output{font-family:var(--serif);font-size:34px;color:var(--marino)}
+.paso-lug small{font-size:13px;color:var(--suave)}
+.rsvp-nota{font-size:13px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--marino);color:var(--blanco)}
+.rg-t{font-family:var(--serif);font-size:30px;color:var(--marino)}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:50px}
+.cierre .nombre{font-size:clamp(40px,11vw,60px)}
+.cierre p{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--suave)}
+.cierre .firma-savey{margin-top:64px}
+#flota{height:54px;padding:0 26px;border-radius:18px;background:var(--marino);color:var(--blanco);font-size:14.5px;font-weight:500;white-space:nowrap}
+@media (min-width:820px){.hojas{display:grid;grid-template-columns:1fr 1fr;gap:14px}.hoja+.hoja{margin-top:0}}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c">
+    <div class="tira"><i style="background:#E8A87C"></i><i style="background:#1F3355"></i><i style="background:#F6D3B6"></i><i style="background:#A98358"></i><i style="background:#E8A87C"></i></div>
+    <b>Camila</b><span>Generación 2027</span>
+  </div>
+</div>
+
+<header class="portada" data-portada>
+  <figure class="foto-abrazo" data-h style="--h:0">
+    <img src="../fotos/gd-raices.webp" srcset="../fotos/gd-raices-m.webp 720w, ../fotos/gd-raices.webp 1100w" sizes="100vw" alt="Camila abrazada por su mamá y su abuela en el patio">
+  </figure>
+  <div class="saludo">
+    <div class="et" data-h style="--h:1">Se gradúa de preparatoria</div>
+    <h1 class="nombre" data-h style="--h:2">Camila</h1>
+    <div class="fecha" data-h style="--h:3">Sábado 3 de julio de 2027</div>
+    <div class="papel-picado" data-h style="--h:4;margin-top:20px" aria-hidden="true">
+      <i style="background:#E8A87C"></i><i style="background:#1F3355"></i><i style="background:#F6D3B6"></i><i style="background:#A98358"></i>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="dedicatoria">
+  <div class="env">
+    <p data-a="sube">Terminé la prepa, pero este logro <em>también es de ellas.</em> Nos gustaría celebrarlo contigo en casa, como siempre lo hemos hecho.</p>
+    <div class="firma" data-a="sube" style="--d:140ms">— Camila y su familia</div>
+  </div>
+</section>
+
+<figure class="ramo" data-ampliar>
+  <div class="px" data-px="0.12"><img src="../fotos/g/ra-1.webp" alt="El ramo de girasoles y el birrete sobre la mesa" loading="lazy"></div>
+  <figcaption data-a="sube">Sábado 3 de julio</figcaption>
+</figure>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">Los datos</div>
+      <h2 data-a="sube" style="margin-top:10px">Ceremonia y comida</h2>
+    </div>
+    <div class="hojas" style="margin-top:26px" data-grupo="110">
+      <div class="hoja" data-a="sube">
+        <div class="k">Ceremonia · 10:00 am</div>
+        <b>Colegio Miraflores</b>
+        <span>Av. Hidalgo 45, Centro, Querétaro.<br>Entrada con dos pases por familia.</span>
+        <a class="bt-s" href="https://maps.google.com/?q=Av.%20Hidalgo%2045%20Quer%C3%A9taro" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+      </div>
+      <div class="hoja" data-a="sube">
+        <div class="k">Comida · 2:00 pm</div>
+        <b>Casa de la familia</b>
+        <span>Calle Nogal 12, Colonia Cimatario, Querétaro.<br>Aquí están todos invitados.</span>
+        <a class="bt-s" href="https://maps.google.com/?q=Calle%20Nogal%2012%20Cimatario%20Quer%C3%A9taro" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+      </div>
+    </div>
+    <div class="centro">
+      <div data-cuenta data-a="sube"></div>
+      <a class="bt-s" data-calendario data-a="sube" style="margin-top:24px"><svg><use href="#cal"/></svg>Agregar al calendario</a>
+    </div>
+  </div>
+</section>
+
+<figure class="llegada" data-ampliar>
+  <div class="px" data-px="0.14"><img src="../fotos/g/ra-2.webp" alt="La reunión familiar vista desde la entrada de la casa" loading="lazy"></div>
+  <div class="txt">
+    <h3 data-a="sube">El patio de la casa</h3>
+    <p data-a="sube">Entra por el zaguán; la puerta va a estar abierta</p>
+  </div>
+</figure>
+
+<section class="quienes">
+  <div class="env">
+    <div class="et" data-a="sube">Con el cariño de</div>
+    <div class="par" data-a="sube">
+      <p>Sus papás<br>Jorge Ibáñez y Lucía Rangel</p>
+    </div>
+    <div class="par" data-a="sube">
+      <p>Y su abuela<br>Doña Esperanza Rangel</p>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Nos acompañas?</h2>
+      <p>Avísanos cuántos vienen para apartar los lugares en la mesa.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="papel-picado" data-a="sube" style="margin-bottom:22px" aria-hidden="true">
+      <i style="background:#F6D3B6"></i><i style="background:#1F3355"></i><i style="background:#E8A87C"></i>
+    </div>
+    <div class="nombre" data-a="sube">Camila</div>
+    <p data-a="sube" style="--d:120ms">Te esperamos en casa</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'grad-raices', evento:'Graduación de Camila', nombre:'Camila',
+  fechaISO:'2027-07-03T10:00:00-06:00', lugar:'Colegio Miraflores, Querétaro',
+  fechaLimite:'25 de junio', graciasSi:'¡Qué gusto!', graciasSiTexto:'Sábado 3 de julio. Los esperamos en casa.',
+  etiquetaMensaje:'¿Le dejas un mensaje a Camila? (opcional)',
+  extras:[{k:'momento', rot:'¿A cuál vienes?', tipo:'elige', op:['Ceremonia y comida','Solo la comida']}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

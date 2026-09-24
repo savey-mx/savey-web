@@ -4,7 +4,7 @@ Sitio público de Savey. Vive en **saveystudio.com**, alojado en Hostinger
 y publicado desde este repositorio.
 
 ```
-/                      Landing con el catálogo de 36 diseños
+/                      Landing con el catálogo de 42 diseños
 /i/?e=SLUG             Motor de invitaciones (25 eventos de muestra)
 /i/boda-*/             6 bodas hechas a la medida
 /i/xv-*/               6 XV años hechos a la medida (motor en /i/motor/)
