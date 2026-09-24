@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>25 años · Casa Verea · 17 de septiembre de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F1E6">
+<meta property="og:title" content="25 años de Casa Verea">
+<meta property="og:description" content="Viernes 17 de septiembre de 2027 · Comida de aniversario">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/co-cantera.jpg">
+<link rel="preload" as="image" href="../fotos/co-cantera-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 04 · CANTERA ═══════════ */
+:root{
+  --piedra:#F6F1E6; --blanco:#FCFAF4; --arena:#EBE2CF; --oliva:#5D6B4A; --oliva-os:#465236;
+  --verde-os:#3B4633; --cantera:#D8C7A9; --tinta:#38362D; --suave:#77705F;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.25,.6,.3,1); --rev-dur:1.2s; --rev-dist:18px;
+  --lado:26px;
+}
+body{background:var(--piedra);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.78}
+::selection{background:var(--oliva);color:var(--piedra)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--oliva);font-weight:500}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,9vw,44px);line-height:1.08}
+.centro{text-align:center}
+section{padding:clamp(80px,17vw,110px) 0}
+.hoja-i{width:22px;height:22px;margin:0 auto;fill:none;stroke:var(--oliva);stroke-width:1.1;opacity:.7}
+
+/* Carga: el arco de cantera */
+#carga{background:var(--piedra)}
+.arco-c{position:relative;width:130px;height:160px;display:grid;place-items:end center;padding-bottom:14px}
+.arco-c svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--oliva);stroke-width:1}
+.arco-c .base{opacity:.2}
+.arco-c .traza{stroke-dasharray:470;stroke-dashoffset:calc(470 - 470*var(--progreso));transition:stroke-dashoffset .5s var(--rev-ease)}
+.arco-c b{font-family:var(--serif);font-size:38px;color:var(--oliva);position:relative;line-height:1}
+.carga-txt{position:absolute;bottom:14%;left:0;right:0;text-align:center;font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--suave)}
+body.abierto .arco-c{transform:scale(1.12);opacity:0;transition:transform 1.05s var(--rev-ease),opacity .8s}
+
+/* Portada: la arquitectura respira */
+.portada{position:relative;height:88svh;min-height:520px;overflow:hidden;background:var(--arena)}
+.px{position:absolute;left:0;right:0;top:-5%;height:110%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;transform:scale(1.05);transition:transform 3.2s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(56,54,45,.2),transparent 34%,transparent 76%,rgba(56,54,45,.35))}
+.bajo-portada{background:var(--piedra);padding:34px var(--lado) 0;text-align:center;position:relative;z-index:2;margin-top:-34px;border-radius:26px 26px 0 0}
+.numero{font-family:var(--serif);font-size:clamp(66px,20vw,110px);line-height:.9;color:var(--oliva)}
+.titulo{font-family:var(--serif);font-weight:400;font-size:clamp(28px,7.4vw,38px);line-height:1.15;margin:8px 0 10px}
+.portada-fecha{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+:root{--h-desde:translateY(16px);--h-inicio:520ms;--h-paso:170ms;--h-dur:1.3s}
+
+/* Agradecimiento */
+.gracias{text-align:center}
+.gracias p{font-family:var(--serif);font-size:clamp(26px,7vw,34px);line-height:1.42;max-width:26ch;margin:0 auto}
+.gracias em{color:var(--oliva)}
+
+/* Historia en hitos */
+.historia{background:var(--arena)}
+.hito{display:grid;grid-template-columns:76px 1fr;gap:18px;padding:22px 0;border-top:1px solid rgba(119,112,95,.22)}
+.hito:last-of-type{border-bottom:1px solid rgba(119,112,95,.22)}
+.hito .anio{font-family:var(--serif);font-size:26px;color:var(--oliva)}
+.hito b{font-family:var(--serif);font-weight:400;font-size:22px;display:block;line-height:1.25}
+.hito span{font-size:13.5px;color:var(--suave)}
+
+/* Detalles con foto */
+.detalles-sec .doble{display:grid;gap:30px;align-items:center}
+.foto-suave{aspect-ratio:4/5;border-radius:20px;overflow:hidden;margin:0}
+.foto-suave img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--rev-ease)}
+.foto-suave:hover img{transform:scale(1.04)}
+.dato{padding:18px 0;border-bottom:1px solid rgba(119,112,95,.2)}
+.dato:first-of-type{border-top:1px solid rgba(119,112,95,.2);margin-top:20px}
+.dato .k{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+.dato b{font-family:var(--serif);font-weight:400;font-size:23px;display:block;line-height:1.2;margin-top:6px}
+.dato span{font-size:13.5px;color:var(--suave)}
+@media (min-width:860px){.detalles-sec .doble{grid-template-columns:1fr 1fr;gap:52px}.detalles-sec .env{max-width:900px}}
+[data-cuenta]{margin:32px 0 0;gap:6px}
+.cu{min-width:62px}
+.cu-n{font-family:var(--serif);font-size:36px;color:var(--verde-os)}
+.cu-t{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.cu-sep{width:1px;height:26px;background:rgba(93,107,74,.3);margin-top:8px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:10px;background:var(--verde-os);color:var(--piedra);font-weight:500;font-size:14px;letter-spacing:.05em;
+  transition:background .45s}
+.bt-p:hover{background:#2E3728}
+.bt-s{height:52px;padding:0 22px;border-radius:10px;border:1px solid rgba(93,107,74,.45);color:var(--verde-os);font-size:13.5px;background:transparent;
+  transition:background .45s}
+.bt-s:hover{background:rgba(93,107,74,.12)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* El lugar, a lo ancho */
+.lugar{position:relative;height:72svh;min-height:380px;overflow:hidden;margin:0}
+.lugar .px{top:-8%;height:116%}
+.lugar::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(56,54,45,.62))}
+.lugar .txt{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:28px;color:var(--blanco);text-align:center}
+.lugar h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.15}
+.lugar p{font-size:13.5px;color:rgba(252,250,244,.8);margin-top:6px}
+
+/* Itinerario breve */
+.itin ol{list-style:none;margin-top:30px}
+.itin li{display:grid;grid-template-columns:84px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(119,112,95,.2)}
+.itin li:first-child{border-top:1px solid rgba(119,112,95,.2)}
+.itin .hr{font-size:12.5px;letter-spacing:.14em;color:var(--oliva);font-weight:600}
+.itin .ac{font-family:var(--serif);font-size:23px}
+
+/* Confirmación */
+.rsvp{background:var(--blanco)}
+.rsvp .centro p{color:var(--suave);margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:30px 0 0;padding:24px 20px;background:var(--piedra);border-radius:16px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--serif);font-size:26px;margin:8px 0 2px}
+.pase-lug{font-size:12.5px;letter-spacing:.12em;color:var(--oliva)}
+[data-rsvp]{margin-top:32px}
+.campo-l>span{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--suave);font-weight:500}
+.linea-in{background:var(--piedra);border:1px solid transparent;border-radius:12px;padding:14px 16px;font-size:16px;transition:border-color .3s,box-shadow .3s}
+.linea-in:focus{border-color:var(--oliva);box-shadow:0 0 0 4px rgba(93,107,74,.18)}
+.elige b{background:var(--piedra);border:1px solid transparent;border-radius:12px;font-size:13.5px;transition:all .4s}
+.elige input:checked+b{background:var(--verde-os);color:var(--piedra)}
+.elige input:focus-visible+b{outline:2px solid var(--oliva);outline-offset:2px}
+.paso-lug button{background:var(--piedra);color:var(--verde-os)}
+.paso-lug button:hover{background:var(--verde-os);color:var(--piedra)}
+.paso-lug output{font-family:var(--serif);font-size:34px}
+.paso-lug small{font-size:12.5px;color:var(--suave)}
+.rsvp-nota{font-size:12.5px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--verde-os);color:var(--piedra)}
+.rg-t{font-family:var(--serif);font-size:32px}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:52px}
+.cierre .numero{font-size:clamp(56px,16vw,88px)}
+.cierre p{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--suave);margin-top:6px}
+.cierre .firma-savey{margin-top:70px}
+#flota{height:52px;padding:0 24px;border-radius:10px;background:var(--verde-os);color:var(--piedra);font-size:13.5px;font-weight:500;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arco" viewBox="0 0 130 160"><path d="M12 160V66a53 53 0 01106 0v94"/></symbol>
+  <symbol id="hoja" viewBox="0 0 22 22"><path d="M11 20V8M11 13c-3.5 0-6-2.6-7-7 4.3 0 7 2.6 7 7zM11 11c3.5-.8 6-3.4 7-7.8-4.3 0-7 3.4-7 7.8z"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="arco-c">
+    <svg viewBox="0 0 130 160" class="base"><use href="#arco"/></svg>
+    <svg viewBox="0 0 130 160" class="traza"><use href="#arco"/></svg>
+    <b>25</b>
+  </div>
+  <div class="carga-txt">Casa Verea · 2002–2027</div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.12"><img src="../fotos/co-cantera.webp" srcset="../fotos/co-cantera-m.webp 720w, ../fotos/co-cantera.webp 1100w" sizes="100vw" alt="Comida de aniversario bajo los árboles del patio de arcos"></div>
+</header>
+
+<div class="bajo-portada">
+  <div class="et" data-h style="--h:0">Casa Verea</div>
+  <div class="numero" data-h style="--h:1">25</div>
+  <h1 class="titulo" data-h style="--h:2">años construyendo<br>con las mismas manos</h1>
+  <div class="portada-fecha" data-h style="--h:3">Viernes 17 de septiembre de 2027</div>
+</div>
+
+<main>
+
+<section class="gracias">
+  <div class="env">
+    <svg class="hoja-i" data-a="sube" aria-hidden="true" style="margin-bottom:20px"><use href="#hoja"/></svg>
+    <p data-a="sube">Veinticinco años no se cumplen solos. <em>Se cumplen con la gente que se quedó.</em></p>
+  </div>
+</section>
+
+<section class="historia">
+  <div class="env">
+    <div class="et" data-a="sube">El camino</div>
+    <h2 data-a="sube" style="margin-top:10px">Cómo llegamos aquí</h2>
+    <div style="margin-top:28px" data-grupo="100">
+      <div class="hito" data-a="sube"><div class="anio">2002</div><div><b>Un despacho de tres</b><span>Un local prestado en la colonia Juárez</span></div></div>
+      <div class="hito" data-a="sube"><div class="anio">2011</div><div><b>El primer proyecto grande</b><span>Y el primer equipo de verdad</span></div></div>
+      <div class="hito" data-a="sube"><div class="anio">2019</div><div><b>La casa propia</b><span>Nos mudamos al patio donde hoy comemos</span></div></div>
+      <div class="hito" data-a="sube"><div class="anio">2027</div><div><b>Sesenta personas</b><span>Y las mismas ganas del primer día</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="detalles-sec" id="detalles">
+  <div class="env">
+    <div class="doble">
+      <figure class="foto-suave" data-a="enfoque" data-ampliar><img src="../fotos/g/cn-1.webp" alt="El montaje de la mesa del patio" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">La comida</div>
+        <h2 data-a="sube" style="margin-top:10px">Los datos</h2>
+        <div class="dato" data-a="sube"><div class="k">Cuándo</div><b>Viernes 17 de septiembre</b><span>De 2:00 a 7:00 de la tarde</span></div>
+        <div class="dato" data-a="sube"><div class="k">Dónde</div><b>Patio de Casa Verea</b><span>Zacatecas 88, Roma Norte, CDMX</span></div>
+        <div class="dato" data-a="sube"><div class="k">Vestimenta</div><b>Casual de oficina</b><span>El patio es de piedra; hay sombra</span></div>
+        <div data-cuenta data-a="sube"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px">
+          <a class="bt-s" href="https://maps.google.com/?q=Zacatecas%2088%20Roma%20Norte" target="_blank" rel="noopener" data-a="sube"><svg><use href="#pin"/></svg>Cómo llegar</a>
+          <a class="bt-s" data-calendario data-a="sube" style="--d:80ms"><svg><use href="#cal"/></svg>Agendar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<figure class="lugar" data-ampliar>
+  <div class="px" data-px="0.18"><img src="../fotos/g/cn-2.webp" alt="Los invitados conversando bajo la arcada" loading="lazy"></div>
+  <div class="txt">
+    <h3 data-a="sube">El patio de siempre</h3>
+    <p data-a="sube">Bajo los mismos árboles donde empezó todo</p>
+  </div>
+</figure>
+
+<section class="itin">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">La tarde</div>
+      <h2 data-a="sube" style="margin-top:10px">Cómo va</h2>
+    </div>
+    <ol data-grupo="90">
+      <li data-a="sube"><span class="hr">2:00 pm</span><span class="ac">Bienvenida en el patio</span></li>
+      <li data-a="sube"><span class="hr">2:45 pm</span><span class="ac">Comida</span></li>
+      <li data-a="sube"><span class="hr">4:30 pm</span><span class="ac">Brindis y unas palabras</span></li>
+      <li data-a="sube"><span class="hr">5:00 pm</span><span class="ac">Café, postre y sobremesa</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Nos acompañas?</h2>
+      <p>Confírmanos antes del 3 de septiembre para apartar tu lugar en la mesa.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="numero" data-a="sube">25</div>
+    <p data-a="sube" style="--d:120ms">Gracias por acompañarnos</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'corp-cantera', evento:'25 años de Casa Verea', nombre:'el equipo',
+  fechaISO:'2027-09-17T14:00:00-06:00', lugar:'Casa Verea, Zacatecas 88, Roma Norte, CDMX',
+  fechaLimite:'3 de septiembre', graciasSi:'Confirmado', graciasSiTexto:'Te esperamos el viernes 17 de septiembre a las 2:00 pm.',
+  textoPase:'Invitación para', etiquetaMensaje:'¿Nos dejas un mensaje? (opcional)',
+  extras:[{k:'dieta', rot:'¿Alguna restricción de comida?', ph:'Vegetariano, sin gluten…'}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

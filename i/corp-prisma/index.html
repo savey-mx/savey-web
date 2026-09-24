@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Prisma · Encuentro de negocios · 24 de junio de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#191622">
+<meta property="og:title" content="Prisma · Encuentro de negocios">
+<meta property="og:description" content="Jueves 24 de junio de 2027 · Atrio Monterrey, 7:00 pm">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/co-prisma.jpg">
+<link rel="preload" as="image" href="../fotos/co-prisma-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 05 · PRISMA ═══════════ */
+:root{
+  --tinta:#191622; --tinta2:#221E2E; --ciruela:#3E2A3E; --claro:#F1EFF2; --blanco:#FAF9FB;
+  --laton:#C2A171; --laton-cl:#DCC49A; --gris:#8D8798; --gris-cl:#E4E1E8;
+  --serif:'Bodoni Moda',Didot,Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.22,.7,.3,1); --rev-dur:.8s; --rev-dist:16px;
+  --lado:24px;
+}
+body{background:var(--tinta);color:var(--claro);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.68;letter-spacing:-.004em}
+::selection{background:var(--laton);color:var(--tinta)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--laton);font-weight:500}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,8.4vw,42px);line-height:1.1}
+.centro{text-align:center}
+section{padding:clamp(70px,15vw,96px) 0}
+.claro-sec{background:var(--claro);color:var(--tinta)}
+.claro-sec .et{color:#8A6E43}
+.claro-sec h2{color:var(--tinta)}
+
+/* Carga: planos de vidrio */
+#carga{background:var(--tinta)}
+.prisma-c{position:relative;width:130px;height:130px;display:grid;place-items:center}
+.prisma-c i{position:absolute;inset:0;border:1px solid rgba(194,161,113,.5);border-radius:2px;
+  transform:rotate(calc(var(--r) * 1deg)) scale(calc(.5 + var(--progreso)*.5));
+  opacity:calc(var(--progreso) * .9);transition:transform .6s var(--rev-ease),opacity .6s}
+.prisma-c b{font-family:var(--serif);font-size:26px;letter-spacing:.14em;position:relative}
+.carga-txt{position:absolute;bottom:14%;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--gris)}
+body.abierto .prisma-c{transform:scale(1.16);opacity:0;transition:transform .9s var(--rev-ease),opacity .7s}
+
+/* Portada */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--tinta2)}
+.px{position:absolute;left:0;right:0;top:-5%;height:110%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:52% 38%;transform:scale(1.06);transition:transform 2.8s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(25,22,34,.46) 0%,transparent 28%,transparent 48%,rgba(25,22,34,.7) 76%,var(--tinta) 100%)}
+.franja{position:absolute;z-index:2;left:0;right:0;bottom:calc(46px + env(safe-area-inset-bottom,0px));padding:0 var(--lado)}
+.titulo{font-family:var(--serif);font-weight:400;font-size:clamp(48px,14vw,86px);line-height:1;letter-spacing:-.02em;margin:10px 0}
+.sub{font-size:15px;color:rgba(241,239,242,.78);max-width:28ch}
+.portada-fecha{margin-top:16px;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--laton-cl)}
+:root{--h-desde:translateY(18px);--h-inicio:540ms;--h-paso:160ms;--h-dur:1.05s}
+@media (min-width:900px){.franja{left:6vw;max-width:680px}}
+
+/* Propósito */
+.proposito p{font-family:var(--serif);font-size:clamp(24px,6.4vw,32px);line-height:1.34;max-width:24ch}
+.proposito .apoyo{font-family:var(--sans);font-size:15.5px;color:var(--gris);max-width:34ch;margin-top:16px}
+
+/* Qué esperar */
+.esperar{display:grid;gap:1px;margin-top:32px;background:rgba(141,135,152,.24)}
+.esperar div{background:var(--claro);color:var(--tinta);padding:24px 20px}
+.esperar .k{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#8A6E43}
+.esperar b{font-family:var(--serif);font-weight:400;font-size:24px;display:block;line-height:1.2;margin:8px 0 4px}
+.esperar span{font-size:13.5px;color:#6E6878}
+@media (min-width:760px){.esperar{grid-template-columns:repeat(3,1fr)}}
+
+/* Pausa cercana */
+.pausa{position:relative;height:54svh;min-height:290px;overflow:hidden;margin:0}
+.pausa .px{top:-8%;height:116%}
+.pausa figcaption{position:absolute;z-index:1;left:var(--lado);bottom:20px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  background:rgba(25,22,34,.72);padding:7px 14px;border-radius:6px}
+
+/* Datos */
+.datos{background:var(--ciruela)}
+.datos .fila{display:grid;grid-template-columns:106px 1fr;gap:14px;padding:18px 0;border-top:1px solid rgba(220,196,154,.24)}
+.datos .fila:last-of-type{border-bottom:1px solid rgba(220,196,154,.24)}
+.datos .k{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--laton-cl)}
+.datos b{font-family:var(--serif);font-weight:400;font-size:22px;display:block;line-height:1.2}
+.datos span{font-size:13.5px;color:rgba(241,239,242,.7);display:block;margin-top:2px}
+[data-cuenta]{margin:30px 0 0;gap:8px;justify-content:flex-start}
+.cu{min-width:58px;align-items:flex-start}
+.cu-n{font-family:var(--serif);font-size:34px}
+.cu-t{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--laton-cl);margin-top:6px}
+.cu-sep{width:1px;height:24px;background:rgba(220,196,154,.3);margin-top:6px}
+
+/* Botones */
+.bt-p{height:54px;padding:0 28px;border-radius:8px;background:var(--laton);color:var(--tinta);font-weight:600;font-size:13.5px;letter-spacing:.05em;
+  transition:background .35s}
+.bt-p:hover{background:var(--laton-cl)}
+.bt-s{height:52px;padding:0 20px;border-radius:8px;border:1px solid rgba(220,196,154,.45);color:var(--claro);font-size:13px;background:transparent;transition:background .35s}
+.bt-s:hover{background:rgba(194,161,113,.16)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.6}
+.claro-sec .bt-s{color:#6B5533;border-color:rgba(138,110,67,.4)}
+.claro-sec .bt-s:hover{background:rgba(194,161,113,.16)}
+
+/* El espacio */
+.espacio{position:relative;height:66svh;min-height:340px;overflow:hidden;margin:0}
+.espacio .px{top:-8%;height:116%}
+.espacio .txt{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:26px;text-align:center}
+.espacio h3{font-family:var(--serif);font-weight:400;font-size:28px}
+.espacio p{font-size:13px;color:rgba(241,239,242,.82);margin-top:4px}
+.espacio::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(25,22,34,.7))}
+
+/* Confirmación */
+.rsvp{background:var(--tinta2)}
+.rsvp .centro p{color:var(--gris);margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:22px 20px;border:1px solid rgba(220,196,154,.3);border-radius:10px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris)}
+.pase-qui{display:block;font-family:var(--serif);font-size:24px;margin:8px 0 2px}
+.pase-lug{font-size:12.5px;letter-spacing:.12em;color:var(--laton-cl)}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--laton-cl)}
+.linea-in{background:var(--tinta);border:1px solid rgba(141,135,152,.3);border-radius:8px;padding:14px 16px;font-size:16px;color:var(--claro);transition:border-color .3s}
+.linea-in:focus{border-color:var(--laton)}
+.elige b{background:var(--tinta);border:1px solid rgba(141,135,152,.3);border-radius:8px;font-size:13.5px;transition:all .35s}
+.elige input:checked+b{background:var(--laton);color:var(--tinta);border-color:var(--laton)}
+.elige input:focus-visible+b{outline:2px solid var(--laton);outline-offset:2px}
+.paso-lug button{background:var(--tinta);border:1px solid rgba(141,135,152,.3);color:var(--claro)}
+.paso-lug button:hover{background:var(--laton);color:var(--tinta)}
+.paso-lug output{font-family:var(--serif);font-size:32px}
+.paso-lug small{font-size:12.5px;color:var(--gris)}
+.rsvp-nota{font-size:12px;color:var(--gris);text-align:center}
+.rg-sello{background:var(--laton);color:var(--tinta)}
+.rg-t{font-family:var(--serif);font-size:30px}
+.rg-p{color:var(--gris);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:48px}
+.cierre .titulo{font-size:clamp(36px,10vw,60px)}
+.cierre p{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin-top:12px}
+.cierre .firma-savey{margin-top:62px}
+#flota{height:52px;padding:0 24px;border-radius:8px;background:var(--laton);color:var(--tinta);font-size:13.5px;font-weight:600;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="prisma-c">
+    <i style="--r:0"></i><i style="--r:22"></i><i style="--r:44"></i>
+    <b>PRISMA</b>
+  </div>
+  <div class="carga-txt">Encuentro de negocios · 2027</div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.14"><img src="../fotos/co-prisma.webp" srcset="../fotos/co-prisma-m.webp 720w, ../fotos/co-prisma.webp 1100w" sizes="100vw" alt="Tres profesionales conversando en el atrio acristalado al anochecer"></div>
+  <div class="franja">
+    <div class="et" data-h style="--h:0">Encuentro de negocios</div>
+    <h1 class="titulo" data-h style="--h:1">Prisma</h1>
+    <p class="sub" data-h style="--h:2">Una noche para conocer a las personas que están del otro lado de tus proyectos.</p>
+    <div class="portada-fecha" data-h style="--h:3">Jueves 24 de junio · 7:00 pm · Monterrey</div>
+  </div>
+</header>
+
+<main>
+
+<section class="proposito">
+  <div class="env">
+    <div class="et" data-a="sube">Por qué este encuentro</div>
+    <p data-a="sube" style="margin-top:16px">Los buenos negocios empiezan con una conversación sin agenda.</p>
+    <p class="apoyo" data-a="sube">Reunimos a sesenta personas de industrias distintas. Sin presentaciones, sin escenario: solo una lista bien pensada de invitados y tiempo para hablar.</p>
+  </div>
+</section>
+
+<section class="claro-sec">
+  <div class="env">
+    <div class="et" data-a="sube">Qué esperar</div>
+    <h2 data-a="sube" style="margin-top:10px">La noche, en tres partes</h2>
+    <div class="esperar" data-grupo="90">
+      <div data-a="sube"><div class="k">7:00 pm</div><b>Recepción</b><span>Bebida de bienvenida y gafete con tu industria</span></div>
+      <div data-a="sube"><div class="k">8:00 pm</div><b>Mesas rotativas</b><span>Tres rondas de veinte minutos</span></div>
+      <div data-a="sube"><div class="k">9:30 pm</div><b>Libre</b><span>Cena ligera y conversación abierta</span></div>
+    </div>
+  </div>
+</section>
+
+<figure class="pausa" data-ampliar>
+  <div class="px" data-px="0.16"><img src="../fotos/g/pr-1.webp" alt="Detalle de las bebidas del brindis" loading="lazy"></div>
+  <figcaption data-a="sube">Barra abierta toda la noche</figcaption>
+</figure>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">Los datos</div>
+    <h2 data-a="sube" style="margin-top:10px">Lo práctico</h2>
+    <div style="margin-top:26px" data-grupo="80">
+      <div class="fila" data-a="sube"><div class="k">Fecha</div><div><b>Jueves 24 de junio</b><span>De 7:00 a 11:00 pm</span></div></div>
+      <div class="fila" data-a="sube"><div class="k">Sede</div><div><b>Atrio Monterrey, piso 21</b><span>Av. Ricardo Margáin 444, Valle del Campestre</span></div></div>
+      <div class="fila" data-a="sube"><div class="k">Vestimenta</div><div><b>Business casual</b><span>Sin corbata, si no quieres</span></div></div>
+      <div class="fila" data-a="sube"><div class="k">Acceso</div><div><b>Con tu confirmación</b><span>Registro en recepción con identificación</span></div></div>
+    </div>
+    <div data-cuenta data-a="sube"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+      <a class="bt-s" href="https://maps.google.com/?q=Ricardo%20Marg%C3%A1in%20444%20Monterrey" target="_blank" rel="noopener" data-a="sube"><svg><use href="#pin"/></svg>Cómo llegar</a>
+      <a class="bt-s" data-calendario data-a="sube" style="--d:80ms"><svg><use href="#cal"/></svg>Agendar</a>
+    </div>
+  </div>
+</section>
+
+<figure class="espacio" data-ampliar>
+  <div class="px" data-px="0.2"><img src="../fotos/g/pr-2.webp" alt="Vista general del atrio frente a la ciudad y las montañas" loading="lazy"></div>
+  <div class="txt">
+    <h3 data-a="sube">Atrio Monterrey</h3>
+    <p data-a="sube">Piso 21, con la sierra de fondo</p>
+  </div>
+</figure>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">Aparta tu lugar</h2>
+      <p>La lista es cerrada: sesenta lugares y una sola mesa por industria.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="titulo" data-a="sube">Prisma</div>
+    <p data-a="sube" style="--d:100ms">24 · 06 · 2027 · Monterrey</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'corp-prisma', evento:'Prisma · Encuentro de negocios', nombre:'el equipo',
+  fechaISO:'2027-06-24T19:00:00-06:00', lugar:'Atrio Monterrey, Av. Ricardo Margáin 444',
+  fechaLimite:'17 de junio', graciasSi:'Lugar apartado', graciasSiTexto:'Te esperamos el jueves 24 de junio a las 7:00 pm.',
+  textoPase:'Invitación para', etiquetaMensaje:'¿Con quién te interesaría conversar? (opcional)',
+  extras:[{k:'empresa', rot:'Empresa y puesto', ph:'Empresa · Puesto'},
+          {k:'industria', rot:'Industria', ph:'Manufactura, tecnología, retail…'}],
+  wa:'5215500000000', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>
