@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Día del Niño y la Niña · 30 de abril de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FDFBF6">
+<meta property="og:title" content="Día del Niño y la Niña">
+<meta property="og:description" content="Viernes 30 de abril de 2027 · Tarde de construir y jugar">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/tp-juego.jpg">
+<link rel="preload" as="image" href="../fotos/tp-juego-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 06 · IMAGINACIÓN EN JUEGO ═══════════ */
+:root{
+  --papel:#FDFBF6; --blanco:#FFFFFF; --carton:#E8D9C0;
+  --turquesa:#2FA8B8; --turquesa-os:#22838F; --amarillo:#F2B942; --coral:#F0705A; --uva:#8B6BC4;
+  --tinta:#2E2C2A; --suave:#75716C;
+  --display:'Fraunces',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.2,.8,.3,1); --rev-dur:.7s; --rev-dist:20px;
+  --lado:24px;
+}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.66}
+::selection{background:var(--amarillo);color:var(--tinta)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--turquesa-os);font-weight:700}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(32px,8.6vw,42px);line-height:1.06;letter-spacing:-.02em}
+.centro{text-align:center}
+section{padding:clamp(62px,13vw,88px) 0}
+/* banderines dibujados */
+.banderines{display:flex;justify-content:center;gap:0}
+.banderines i{width:30px;height:22px;flex:none;background:currentColor;clip-path:polygon(0 0,100% 0,50% 100%)}
+
+/* Carga: las piezas que se acomodan */
+#carga{background:var(--papel)}
+.carga-c{text-align:center}
+.carga-c .piezas{display:flex;gap:10px;justify-content:center}
+.carga-c .piezas i{width:26px;height:26px;border-radius:7px;transform:translateY(calc(18px - var(--progreso)*18px)) rotate(calc(-12deg + var(--progreso)*12deg));
+  opacity:calc(.2 + var(--progreso)*.8);transition:.5s var(--rev-ease)}
+.carga-c b{display:block;margin-top:26px;font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em}
+.carga-c span{display:block;margin-top:6px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--suave)}
+body.abierto .carga-c{transform:translateY(-8px);opacity:0;transition:transform .8s var(--rev-ease),opacity .6s}
+
+/* Portada: collage */
+.portada{padding:calc(56px + env(safe-area-inset-top,0px)) 0 0;position:relative;overflow:hidden;background:var(--papel)}
+.mancha{position:absolute;border-radius:46% 54% 58% 42%/52% 44% 56% 48%;pointer-events:none;opacity:.42}
+.mancha.a{width:240px;height:240px;background:var(--turquesa);left:-90px;top:30px}
+.mancha.b{width:180px;height:180px;background:var(--amarillo);right:-70px;top:250px}
+.portada .env{position:relative;z-index:1}
+.portada .banderines{margin-bottom:22px}
+.portada .banderines i:nth-child(4n){color:var(--turquesa)}
+.portada .banderines i:nth-child(4n+1){color:var(--amarillo)}
+.portada .banderines i:nth-child(4n+2){color:var(--coral)}
+.portada .banderines i:nth-child(4n+3){color:var(--uva)}
+.titulo{font-family:var(--display);font-weight:700;font-size:clamp(42px,12vw,68px);line-height:.98;text-align:center;letter-spacing:-.035em;margin:0 0 12px}
+.titulo em{font-style:normal;color:var(--coral)}
+.sub{text-align:center;font-size:14px;color:var(--suave)}
+.foto-collage{margin:26px auto 0;width:min(90%,420px);position:relative}
+.foto-collage img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:22px;display:block;
+  box-shadow:0 30px 56px -44px rgba(46,44,42,.9)}
+.foto-collage .etiqueta{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-2.5deg);background:var(--amarillo);color:var(--tinta);
+  padding:8px 20px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+:root{--h-desde:translateY(16px);--h-inicio:400ms;--h-paso:130ms;--h-dur:.85s}
+.foto-collage[data-h]{--h-desde:translateY(22px) rotate(-1.2deg)}
+
+/* Invitación */
+.invita{text-align:center}
+.invita p{font-family:var(--display);font-weight:600;font-size:clamp(23px,6.2vw,30px);line-height:1.3;max-width:22ch;margin:0 auto;letter-spacing:-.015em}
+.invita em{font-style:normal;color:var(--turquesa-os)}
+
+/* El proceso */
+.proceso{background:var(--carton)}
+.tira{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px var(--lado) 6px;scrollbar-width:none;scroll-padding-inline:var(--lado)}
+.tira::-webkit-scrollbar{display:none}
+.tira figure{flex:0 0 min(76%,320px);scroll-snap-align:center;margin:0}
+.tira .marco{border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+.tira img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--rev-ease)}
+.tira figure:hover img{transform:scale(1.04)}
+.tira figcaption{font-size:13px;color:#6E6354;margin-top:10px;font-weight:500}
+.pista{text-align:center;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#6E6354;margin-top:12px}
+
+/* Lo que haremos */
+.taller .cartas{display:grid;gap:12px;margin-top:28px}
+.carta{background:var(--blanco);border-radius:20px;padding:22px;position:relative;overflow:hidden;
+  box-shadow:0 18px 34px -34px rgba(46,44,42,.9);transition:transform .5s var(--rev-ease)}
+.carta:hover{transform:translateY(-4px) rotate(-.5deg)}
+.carta::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--c,var(--turquesa))}
+.carta .hora{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);font-weight:700}
+.carta b{font-family:var(--display);font-weight:700;font-size:22px;display:block;line-height:1.16;margin:6px 0 4px;letter-spacing:-.015em}
+.carta span{font-size:14px;color:var(--suave)}
+@media (min-width:760px){.taller .cartas{grid-template-columns:1fr 1fr}}
+
+/* Datos */
+.datos .rejilla{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.celda{background:var(--blanco);border-radius:20px;padding:22px;box-shadow:0 18px 34px -36px rgba(46,44,42,.9)}
+.celda:first-child{grid-column:1/-1}
+.celda .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);font-weight:700}
+.celda b{font-family:var(--display);font-weight:700;font-size:23px;display:block;line-height:1.16;margin-top:6px;letter-spacing:-.015em}
+.celda span{font-size:14px;color:var(--suave);display:block;margin-top:3px}
+.celda .bt-s{margin-top:16px}
+[data-cuenta]{margin:32px 0 0;gap:6px}
+.cu{min-width:62px}
+.cu-n{font-family:var(--display);font-weight:700;font-size:36px;letter-spacing:-.03em}
+.cu-t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--suave);margin-top:6px;font-weight:600}
+.cu-sep{width:7px;height:7px;border-radius:2px;background:var(--coral);margin-top:20px}
+
+/* Botones */
+.bt-p{height:58px;padding:0 30px;border-radius:18px;background:var(--turquesa);color:#fff;font-weight:700;font-size:15px;letter-spacing:.02em;
+  box-shadow:0 16px 30px -18px rgba(47,168,184,1);transition:background .35s}
+.bt-p:hover{background:var(--turquesa-os)}
+.bt-s{height:54px;padding:0 20px;border-radius:18px;border:2px solid var(--tinta);color:var(--tinta);font-size:14px;font-weight:700;background:transparent;
+  transition:background .35s,color .35s}
+.bt-s:hover{background:var(--tinta);color:var(--papel)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:2}
+
+/* Confirmación */
+.rsvp{background:var(--turquesa);color:#fff}
+.rsvp h2{color:#fff}
+.rsvp .et{color:#C9F0F5}
+.rsvp .centro p{color:rgba(255,255,255,.88);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:22px 20px;background:rgba(255,255,255,.16);border-radius:20px}
+.pase-et{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C9F0F5;font-weight:700}
+.pase-qui{display:block;font-family:var(--display);font-weight:700;font-size:25px;margin:8px 0 2px;letter-spacing:-.02em}
+.pase-lug{font-size:13.5px;color:rgba(255,255,255,.9)}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#C9F0F5;font-weight:700}
+.linea-in{background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.4);border-radius:16px;padding:14px 16px;font-size:16.5px;color:#fff;transition:border-color .3s}
+.linea-in::placeholder{color:rgba(255,255,255,.65)}
+.linea-in:focus{border-color:#fff}
+.elige b{background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.4);border-radius:16px;font-size:14.5px;font-weight:600;padding-block:14px;transition:all .3s}
+.elige input:checked+b{background:#fff;color:var(--turquesa-os);border-color:#fff}
+.elige input:focus-visible+b{outline:2px solid #fff;outline-offset:3px}
+.paso-lug button{background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.4);color:#fff;width:54px;height:54px}
+.paso-lug button:hover{background:#fff;color:var(--turquesa-os)}
+.paso-lug output{font-family:var(--display);font-weight:700;font-size:36px}
+.paso-lug small{font-size:13.5px;color:rgba(255,255,255,.85)}
+.rsvp .bt-p{background:var(--amarillo);color:var(--tinta)}
+.rsvp .bt-p:hover{background:#E0A82F}
+.rsvp-nota{font-size:13px;color:rgba(255,255,255,.85);text-align:center}
+.rg-sello{background:var(--amarillo);color:var(--tinta)}
+.rg-t{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em}
+.rg-p{color:rgba(255,255,255,.88);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:50px;position:relative;overflow:hidden}
+.cierre .mancha.c{width:220px;height:220px;background:var(--uva);left:50%;margin-left:-110px;top:0;opacity:.3}
+.cierre .env{position:relative;z-index:1}
+.cierre .titulo{font-size:clamp(36px,10vw,56px)}
+.cierre p{color:var(--suave);margin-top:6px}
+.cierre .firma-savey{margin-top:62px}
+#flota{height:54px;padding:0 24px;border-radius:18px;background:var(--coral);color:#fff;font-size:14.5px;font-weight:700;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c">
+    <div class="piezas" id="piezas">
+      <i style="background:#2FA8B8"></i><i style="background:#F2B942"></i><i style="background:#F0705A"></i><i style="background:#8B6BC4"></i>
+    </div>
+    <b>Imaginación en juego</b><span>30 de abril</span>
+  </div>
+</div>
+
+<header class="portada" data-portada>
+  <span class="mancha a" aria-hidden="true"></span>
+  <span class="mancha b" aria-hidden="true"></span>
+  <div class="env">
+    <div class="banderines" data-h style="--h:0" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <h1 class="titulo" data-h style="--h:1">Día del Niño<br>y la <em>Niña</em></h1>
+    <p class="sub" data-h style="--h:2">Viernes 30 de abril · de 4:00 a 7:00 pm</p>
+    <figure class="foto-collage" data-h style="--h:3">
+      <span class="etiqueta">Hoy construimos</span>
+      <img src="../fotos/tp-juego.webp" srcset="../fotos/tp-juego-m.webp 720w, ../fotos/tp-juego.webp 1100w" sizes="(max-width:840px) 90vw, 420px" alt="Niñas y niños construyendo un castillo de cartón">
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<section class="invita">
+  <div class="env">
+    <p data-a="sube">Traemos cartón, pintura y cinta. <em>Ustedes traen las ideas.</em></p>
+  </div>
+</section>
+
+<section class="proceso">
+  <div class="env">
+    <div class="et" data-a="sube">El taller</div>
+    <h2 data-a="sube" style="margin-top:8px">Lo que vamos a hacer</h2>
+  </div>
+  <div class="tira">
+    <figure data-ampliar><div class="marco" data-a="acerca"><img src="../fotos/g/ju-1.webp" alt="Manos decorando las piezas de cartón" loading="lazy"></div><figcaption>Primero lo pintamos entre todos</figcaption></figure>
+    <figure data-ampliar><div class="marco"><img src="../fotos/g/ju-2.webp" alt="Los niños jugando dentro del castillo terminado" loading="lazy"></div><figcaption>Y después nos metemos a jugar</figcaption></figure>
+  </div>
+  <p class="pista">Desliza</p>
+</section>
+
+<section class="taller">
+  <div class="env">
+    <div class="et" data-a="sube">La tarde</div>
+    <h2 data-a="sube" style="margin-top:8px">El plan</h2>
+    <div class="cartas" data-grupo="90">
+      <div class="carta" style="--c:var(--turquesa)" data-a="sube"><div class="hora">4:00 pm</div><b>Armamos</b><span>Cada equipo escoge qué construir</span></div>
+      <div class="carta" style="--c:var(--amarillo)" data-a="sube"><div class="hora">5:00 pm</div><b>Pintamos</b><span>Ropa que se pueda manchar, porfa</span></div>
+      <div class="carta" style="--c:var(--coral)" data-a="sube"><div class="hora">5:45 pm</div><b>Merienda</b><span>Sándwiches, fruta y agua de sabor</span></div>
+      <div class="carta" style="--c:var(--uva)" data-a="sube"><div class="hora">6:15 pm</div><b>A jugar</b><span>Lo que construimos se queda de pie</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">Los datos</div>
+    <h2 data-a="sube" style="margin-top:8px">Dónde y cuándo</h2>
+    <div class="rejilla" data-grupo="90">
+      <div class="celda" data-a="sube"><div class="k">Lugar</div><b>Salón del edificio</b><span>Av. Nuevo León 155, Condesa, CDMX. Planta baja, entrando a la derecha.</span>
+        <a class="bt-s" href="https://maps.google.com/?q=Av.%20Nuevo%20Le%C3%B3n%20155%20Condesa" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a></div>
+      <div class="celda" data-a="sube"><div class="k">Fecha</div><b>Viernes 30</b><span>de abril de 2027</span></div>
+      <div class="celda" data-a="sube"><div class="k">Edades</div><b>De 4 a 11</b><span>Los papás pueden quedarse</span></div>
+    </div>
+    <div class="centro">
+      <div data-cuenta data-a="sube"></div>
+      <a class="bt-s" data-calendario data-a="sube" style="margin-top:24px"><svg><use href="#cal"/></svg>Agregar al calendario</a>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:8px">¿Vienen a jugar?</h2>
+      <p>Confirma para apartar sus materiales.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <span class="mancha c" aria-hidden="true"></span>
+  <div class="env">
+    <div class="banderines" data-a="sube" style="margin-bottom:24px" aria-hidden="true">
+      <i style="color:#F0705A"></i><i style="color:#2FA8B8"></i><i style="color:#F2B942"></i><i style="color:#8B6BC4"></i><i style="color:#F0705A"></i>
+    </div>
+    <div class="titulo" data-a="sube">¡Nos vemos!</div>
+    <p data-a="sube" style="--d:100ms">Viernes 30 de abril · 4:00 pm</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'temporada-juego', evento:'Día del Niño y la Niña', nombre:'los niños',
+  fechaISO:'2027-04-30T16:00:00-06:00', lugar:'Av. Nuevo León 155, Condesa, CDMX',
+  fechaLimite:'25 de abril', graciasSi:'¡Nos vemos!', graciasSiTexto:'Viernes 30 de abril, 4:00 pm. Ropa que se pueda manchar.',
+  etiquetaMensaje:'¿Alguna alergia o algo que debamos saber? (opcional)',
+  extras:[{k:'edades', rot:'¿Qué edades tienen?', ph:'6 y 9, por ejemplo'}],
+  wa:'5215618906790', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

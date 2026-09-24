@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Noche de personajes · 30 de octubre de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16121C">
+<meta property="og:title" content="Noche de personajes">
+<meta property="og:description" content="Sábado 30 de octubre de 2027 · Fiesta de disfraces">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/tp-noche.jpg">
+<link rel="preload" as="image" href="../fotos/tp-noche-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,800;1,700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 02 · NOCHE DE PERSONAJES ═══════════ */
+:root{
+  --noche:#16121C; --noche2:#201A2A; --violeta:#5B3E86; --violeta-cl:#9A7BC8;
+  --naranja:#E8762A; --naranja-cl:#F59B54; --hueso:#F3EDE4; --gris:#9C93A8;
+  --display:'Archivo',system-ui,sans-serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.18,.82,.28,1); --rev-dur:.65s; --rev-dist:20px;
+  --lado:24px;
+}
+body{background:var(--noche);color:var(--hueso);font-family:var(--sans);font-weight:400;font-size:15.5px;line-height:1.66}
+::selection{background:var(--naranja);color:var(--noche)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--naranja)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(32px,8.8vw,44px);line-height:1;letter-spacing:-.03em;text-transform:uppercase}
+.centro{text-align:center}
+section{padding:clamp(66px,14vw,92px) 0}
+
+/* Carga: la calabaza que se enciende */
+#carga{background:var(--noche);overflow:hidden}
+#carga::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 46%,rgba(232,118,42,.3),transparent 58%),radial-gradient(ellipse at 22% 78%,rgba(91,62,134,.35),transparent 60%);
+  opacity:calc(.2 + var(--progreso)*.8);transition:opacity .5s}
+.carga-c{text-align:center;position:relative}
+.carga-c svg{width:78px;height:78px;margin:0 auto;fill:none;stroke:var(--naranja);stroke-width:1.4;
+  stroke-dasharray:300;stroke-dashoffset:calc(300 - 300*var(--progreso));transition:stroke-dashoffset .5s var(--rev-ease)}
+.carga-c b{display:block;margin-top:22px;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.02em;text-transform:uppercase}
+.carga-c span{display:block;margin-top:6px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris)}
+body.abierto .carga-c{transform:scale(1.14);opacity:0;transition:transform .8s var(--rev-ease),opacity .6s}
+
+/* Portada */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--noche2)}
+.px{position:absolute;left:0;right:0;top:-5%;height:110%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;transform:scale(1.06);transition:transform 2.4s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 18% 74%,rgba(91,62,134,.4),transparent 58%),
+             linear-gradient(180deg,rgba(22,18,28,.5) 0%,transparent 26%,transparent 48%,rgba(22,18,28,.68) 76%,var(--noche) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(46px + env(safe-area-inset-bottom,0px));padding:0 var(--lado)}
+.titulo{font-family:var(--display);font-weight:800;font-size:clamp(50px,15vw,92px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase;margin:12px 0}
+.titulo em{font-style:italic;color:var(--naranja)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.06em;border:1px solid rgba(243,237,228,.42);border-radius:99px;padding:8px 14px}
+:root{--h-desde:translateY(22px);--h-inicio:420ms;--h-paso:130ms;--h-dur:.8s}
+@media (min-width:900px){.portada-txt{left:6vw;max-width:700px}}
+
+/* Regla */
+.regla{background:var(--naranja);color:var(--noche)}
+.regla p{font-family:var(--display);font-weight:800;font-size:clamp(26px,7.2vw,36px);line-height:1.08;letter-spacing:-.03em;text-transform:uppercase;max-width:18ch}
+.regla .apoyo{font-family:var(--sans);font-weight:400;font-size:15.5px;letter-spacing:0;text-transform:none;margin-top:14px;max-width:34ch}
+
+/* Datos */
+.datos .fila{display:grid;grid-template-columns:104px 1fr;gap:14px;padding:18px 0;border-top:1px solid rgba(156,147,168,.28)}
+.datos .fila:last-of-type{border-bottom:1px solid rgba(156,147,168,.28)}
+.datos .k{font-family:var(--display);font-weight:600;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--violeta-cl)}
+.datos b{font-family:var(--display);font-weight:600;font-size:21px;display:block;line-height:1.2}
+.datos span{font-size:13.5px;color:var(--gris);display:block;margin-top:2px}
+[data-cuenta]{margin:30px 0 0;gap:10px;justify-content:flex-start}
+.cu{min-width:58px;align-items:flex-start}
+.cu-n{font-family:var(--display);font-weight:800;font-size:36px;letter-spacing:-.04em}
+.cu-t{font-family:var(--display);font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--naranja);margin-top:4px}
+.cu-sep{width:2px;height:26px;background:rgba(156,147,168,.28);margin-top:6px;transform:skewX(-12deg)}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:99px;background:var(--naranja);color:var(--noche);font-family:var(--display);font-weight:800;font-size:13.5px;
+  letter-spacing:.04em;transition:background .3s,box-shadow .3s;box-shadow:0 14px 30px -18px rgba(232,118,42,1)}
+.bt-p:hover{background:var(--naranja-cl);box-shadow:0 18px 36px -18px rgba(232,118,42,1)}
+.bt-s{height:54px;padding:0 20px;border-radius:99px;border:1px solid rgba(243,237,228,.4);color:var(--hueso);font-size:13.5px;background:transparent;
+  transition:background .3s,border-color .3s}
+.bt-s:hover{background:rgba(232,118,42,.18);border-color:var(--naranja)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.7}
+.regla .bt-s{color:var(--noche);border-color:rgba(22,18,28,.4)}
+.regla .bt-s:hover{background:rgba(22,18,28,.12)}
+
+/* La sala */
+.sala{position:relative;height:60svh;min-height:320px;overflow:hidden;margin:0}
+.sala .px{top:-8%;height:116%}
+.sala figcaption{position:absolute;z-index:1;left:var(--lado);bottom:20px;font-family:var(--display);font-weight:600;font-size:10.5px;
+  letter-spacing:.2em;text-transform:uppercase;background:var(--violeta);color:#fff;padding:8px 14px;border-radius:99px}
+
+/* Concurso */
+.concurso{background:var(--noche2)}
+.premios{display:grid;gap:12px;margin-top:28px}
+.premio{border:1px solid rgba(156,147,168,.26);border-radius:16px;padding:20px;transition:border-color .35s,transform .45s var(--rev-ease)}
+.premio:hover{border-color:var(--naranja);transform:translateY(-3px)}
+.premio .n{font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja)}
+.premio b{font-family:var(--display);font-weight:600;font-size:21px;display:block;line-height:1.2;margin:8px 0 4px}
+.premio span{font-size:13.5px;color:var(--gris)}
+@media (min-width:760px){.premios{grid-template-columns:repeat(3,1fr)}}
+
+/* Plan */
+.plan ol{list-style:none;margin-top:26px}
+.plan li{display:grid;grid-template-columns:74px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(156,147,168,.22)}
+.plan li:first-child{border-top:1px solid rgba(156,147,168,.22)}
+.plan .hr{font-family:var(--display);font-weight:600;font-size:13px;color:var(--violeta-cl)}
+.plan .ac{font-family:var(--display);font-weight:600;font-size:20px}
+
+/* Confirmación */
+.rsvp{background:linear-gradient(180deg,var(--noche2),#2A1F38)}
+.rsvp .centro p{color:var(--gris);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:22px 20px;background:rgba(22,18,28,.55);border-radius:16px}
+.pase-et{display:block;font-family:var(--display);font-weight:600;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gris)}
+.pase-qui{display:block;font-family:var(--display);font-weight:800;font-size:24px;margin:8px 0 2px;text-transform:uppercase;letter-spacing:-.02em}
+.pase-lug{font-size:12.5px;color:var(--naranja)}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-family:var(--display);font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--violeta-cl)}
+.linea-in{background:var(--noche);border:1px solid rgba(156,147,168,.3);border-radius:14px;padding:14px 16px;font-size:16px;color:var(--hueso);transition:border-color .3s}
+.linea-in::placeholder{color:rgba(156,147,168,.7)}
+.linea-in:focus{border-color:var(--naranja)}
+.elige b{background:var(--noche);border:1px solid rgba(156,147,168,.3);border-radius:99px;font-size:13.5px;transition:all .3s}
+.elige input:checked+b{background:var(--naranja);color:var(--noche);border-color:var(--naranja)}
+.elige input:focus-visible+b{outline:2px solid var(--naranja);outline-offset:2px}
+.paso-lug button{background:var(--noche);border:1px solid rgba(156,147,168,.3);color:var(--hueso)}
+.paso-lug button:hover{background:var(--naranja);color:var(--noche)}
+.paso-lug output{font-family:var(--display);font-weight:800;font-size:34px}
+.paso-lug small{font-size:12.5px;color:var(--gris)}
+.rsvp-nota{font-size:12.5px;color:var(--gris);text-align:center}
+.rg-sello{background:var(--naranja);color:var(--noche)}
+.rg-t{font-family:var(--display);font-weight:800;font-size:30px;text-transform:uppercase;letter-spacing:-.02em}
+.rg-p{color:var(--gris);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:48px}
+.cierre .titulo{font-size:clamp(40px,12vw,68px)}
+.cierre p{font-family:var(--display);font-weight:600;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gris);margin-top:10px}
+.cierre .firma-savey{margin-top:60px}
+#flota{height:52px;padding:0 24px;border-radius:99px;background:var(--naranja);color:var(--noche);font-family:var(--display);font-weight:800;font-size:13px;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="calabaza" viewBox="0 0 78 78"><path d="M39 22c-4-7-12-9-18-5-8 5-9 19-4 29 4 8 12 14 22 14s18-6 22-14c5-10 4-24-4-29-6-4-14-2-18 5zM39 22V8c0-3 3-5 6-5"/><path d="M30 42l5-6 5 6M43 42l5-6 5 6M31 54c5 4 11 4 16 0"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c"><svg viewBox="0 0 78 78"><use href="#calabaza"/></svg><b>Noche de personajes</b><span>30 · 10 · 2027</span></div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.13"><img src="../fotos/tp-noche.webp" srcset="../fotos/tp-noche-m.webp 720w, ../fotos/tp-noche.webp 1100w" sizes="100vw" alt="Amigos disfrazados llegando a la fiesta"></div>
+  <div class="portada-txt">
+    <div class="et" data-h style="--h:0">Fiesta de disfraces</div>
+    <h1 class="titulo" data-h style="--h:1">Noche de<br><em>personajes</em></h1>
+    <div class="chips" data-h style="--h:2">
+      <span>Sábado 30 de octubre</span><span>9:00 pm</span><span>Disfraz obligatorio</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="regla">
+  <div class="env">
+    <div class="et" data-a="izq" style="color:var(--noche)">La única regla</div>
+    <p data-a="izq" style="margin-top:12px">Si llegas sin disfraz, te ponemos uno nosotros.</p>
+    <p class="apoyo" data-a="sube">Y créenos que no te va a gustar. Puede ser lo que quieras: película, serie, libro, década o algo que te inventes en el camino.</p>
+  </div>
+</section>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="et" data-a="izq">Los datos</div>
+    <h2 data-a="izq" style="margin-top:10px">Dónde y cuándo</h2>
+    <div style="margin-top:26px" data-grupo="80">
+      <div class="fila" data-a="sube"><div class="k">Cuándo</div><div><b>Sábado 30 de octubre</b><span>De 9:00 pm hasta que aguantemos</span></div></div>
+      <div class="fila" data-a="sube"><div class="k">Dónde</div><div><b>Casa de Nico y Fer</b><span>Tlacotalpan 62, interior 3, Roma Sur, CDMX</span></div></div>
+      <div class="fila" data-a="sube"><div class="k">Traer</div><div><b>Tu disfraz puesto</b><span>No hay dónde cambiarse. Lo que tomes, también.</span></div></div>
+    </div>
+    <div data-cuenta data-a="sube"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+      <a class="bt-s" href="https://maps.google.com/?q=Tlacotalpan%2062%20Roma%20Sur" target="_blank" rel="noopener" data-a="sube"><svg><use href="#pin"/></svg>Cómo llegar</a>
+      <a class="bt-s" data-calendario data-a="sube" style="--d:80ms"><svg><use href="#cal"/></svg>Agendar</a>
+    </div>
+  </div>
+</section>
+
+<figure class="sala" data-ampliar>
+  <div class="px" data-px="0.16"><img src="../fotos/g/no-1.webp" alt="La sala decorada con calabazas y luces moradas" loading="lazy"></div>
+  <figcaption data-a="sube">La casa, ya lista</figcaption>
+</figure>
+
+<section class="concurso">
+  <div class="env">
+    <div class="et" data-a="izq">Concurso</div>
+    <h2 data-a="izq" style="margin-top:10px">Tres premios</h2>
+    <div class="premios" data-grupo="90">
+      <div class="premio" data-a="sube"><div class="n">01</div><b>Mejor disfraz</b><span>Lo vota la casa entera a la medianoche</span></div>
+      <div class="premio" data-a="sube"><div class="n">02</div><b>Más creativo</b><span>Puntos extra si lo hiciste tú</span></div>
+      <div class="premio" data-a="sube"><div class="n">03</div><b>Mejor pareja o grupo</b><span>Pónganse de acuerdo desde ya</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="plan">
+  <div class="env">
+    <div class="et" data-a="izq">La noche</div>
+    <h2 data-a="izq" style="margin-top:10px">El plan</h2>
+    <ol data-grupo="80">
+      <li data-a="izq"><span class="hr">21:00</span><span class="ac">Llegada y foto en la entrada</span></li>
+      <li data-a="izq"><span class="hr">22:00</span><span class="ac">Cena y bebidas</span></li>
+      <li data-a="izq"><span class="hr">00:00</span><span class="ac">Votación y premios</span></li>
+      <li data-a="izq"><span class="hr">00:30</span><span class="ac">Música hasta el final</span></li>
+    </ol>
+  </div>
+</section>
+
+<figure class="sala" data-ampliar>
+  <div class="px" data-px="0.18"><img src="../fotos/g/no-2.webp" alt="Los invitados disfrazados conviviendo en la fiesta" loading="lazy"></div>
+  <figcaption data-a="sube">El año pasado</figcaption>
+</figure>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Te apuntas?</h2>
+      <p>Confirma antes del 25 de octubre. Y dinos de qué vas, para que no se repitan.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="titulo" data-a="sube">Nos vemos</div>
+    <p data-a="sube" style="--d:100ms">30 · 10 · 2027 · Roma Sur</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'temporada-noche', evento:'Noche de personajes', nombre:'los anfitriones',
+  fechaISO:'2027-10-30T21:00:00-06:00', lugar:'Tlacotalpan 62, Roma Sur, CDMX',
+  fechaLimite:'25 de octubre', graciasSi:'¡Listo!', graciasSiTexto:'Sábado 30 de octubre, 9:00 pm. Con disfraz puesto.',
+  etiquetaMensaje:'¿Algo más? (opcional)',
+  extras:[{k:'disfraz', rot:'¿De qué te vas a disfrazar?', ph:'Para que no se repitan'}],
+  wa:'5215618906790', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

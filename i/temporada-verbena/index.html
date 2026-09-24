@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Cena del 15 de septiembre · 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1B2A33">
+<meta property="og:title" content="Cena del 15 de septiembre">
+<meta property="og:description" content="Miércoles 15 de septiembre de 2027 · Terraza, 8:00 pm">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/tp-verbena.jpg">
+<link rel="preload" as="image" href="../fotos/tp-verbena-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 04 · VERBENA ═══════════ */
+:root{
+  --noche:#1B2A33; --noche2:#24363F; --barro:#A4552F; --barro-cl:#C9743F; --madera:#7B5436;
+  --verde:#3F6B4A; --rojo:#9C2F32; --crema:#F7EFE1; --arena:#EADBC4; --tinta:#33291F; --suave:#7E7060;
+  --display:'Fraunces',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.22,.7,.3,1); --rev-dur:.9s; --rev-dist:18px;
+  --lado:24px;
+}
+body{background:var(--crema);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.74}
+::selection{background:var(--barro);color:var(--crema)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--barro);font-weight:600}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(32px,8.6vw,42px);line-height:1.08;letter-spacing:-.015em}
+.centro{text-align:center}
+section{padding:clamp(70px,15vw,96px) 0}
+/* papel picado, dibujado no ilustrado */
+.picado{display:flex;justify-content:center;gap:0;overflow:hidden}
+.picado i{width:38px;height:26px;position:relative;flex:none}
+.picado i::before{content:"";position:absolute;inset:0;background:currentColor;
+  clip-path:polygon(0 0,100% 0,100% 62%,50% 100%,0 62%);opacity:.9}
+.picado i::after{content:"";position:absolute;left:50%;top:26%;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--crema)}
+
+/* Carga: las luces que se encienden */
+#carga{background:var(--noche);color:var(--crema)}
+.carga-c{text-align:center}
+.carga-c .serie{display:flex;gap:14px;justify-content:center}
+.carga-c .serie i{width:9px;height:9px;border-radius:50%;background:#33454E;transition:background .3s,box-shadow .3s}
+.carga-c b{display:block;margin-top:26px;font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em}
+.carga-c span{display:block;margin-top:6px;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(247,239,225,.6)}
+body.abierto .carga-c{transform:scale(1.08);opacity:0;transition:transform .85s var(--rev-ease),opacity .65s}
+
+/* Portada */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--noche2)}
+.px{position:absolute;left:0;right:0;top:-5%;height:110%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.06);transition:transform 2.8s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(27,42,51,.44) 0%,transparent 26%,transparent 50%,rgba(27,42,51,.64) 78%,rgba(27,42,51,.92) 100%)}
+.portada .picado{position:absolute;z-index:2;left:0;right:0;top:calc(10px + env(safe-area-inset-top,0px));color:var(--crema)}
+.portada .picado i:nth-child(3n){color:#D9B15C}
+.portada .picado i:nth-child(3n+1){color:#C9743F}
+.portada .picado i:nth-child(3n+2){color:#7FA98A}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(48px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--crema);padding:0 var(--lado)}
+.dia{font-family:var(--display);font-weight:700;font-size:clamp(86px,26vw,140px);line-height:.84;letter-spacing:-.05em}
+.titulo{font-family:var(--display);font-weight:500;font-size:clamp(22px,6vw,30px);line-height:1.2;margin:10px 0 8px}
+.portada-fecha{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(247,239,225,.8)}
+:root{--h-desde:translateY(20px);--h-inicio:480ms;--h-paso:160ms;--h-dur:1.05s}
+
+/* Invitación */
+.invita{text-align:center;background:var(--arena)}
+.invita p{font-family:var(--display);font-weight:500;font-size:clamp(25px,6.8vw,33px);line-height:1.3;max-width:24ch;margin:0 auto}
+.invita em{color:var(--barro)}
+
+/* La mesa */
+.mesa{position:relative;height:62svh;min-height:330px;overflow:hidden;margin:0}
+.mesa .px{top:-8%;height:116%}
+.mesa figcaption{position:absolute;z-index:1;left:var(--lado);bottom:20px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  background:var(--crema);color:var(--tinta);padding:9px 16px;border-radius:99px;font-weight:600}
+
+/* Menú */
+.menu-sec .platillo{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px dashed rgba(126,112,96,.4)}
+.menu-sec .platillo:first-of-type{border-top:1px dashed rgba(126,112,96,.4);margin-top:28px}
+.menu-sec b{font-family:var(--display);font-weight:500;font-size:22px;display:block;line-height:1.25}
+.menu-sec span{font-size:13.5px;color:var(--suave);display:block;margin-top:2px}
+.menu-sec .hr{font-size:12.5px;letter-spacing:.1em;color:var(--barro);font-weight:600;white-space:nowrap}
+
+/* Datos */
+.datos{background:var(--noche);color:var(--crema)}
+.datos .et{color:#E6B77A}
+.datos h2{color:var(--crema)}
+.datos .fila{padding:22px 0;border-top:1px solid rgba(247,239,225,.2)}
+.datos .fila:last-of-type{border-bottom:1px solid rgba(247,239,225,.2)}
+.datos .k{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(247,239,225,.6)}
+.datos b{font-family:var(--display);font-weight:500;font-size:24px;display:block;line-height:1.22;margin:8px 0 4px}
+.datos span{font-size:13.5px;color:rgba(247,239,225,.68)}
+.datos .bt-s{margin-top:16px;color:var(--crema);border-color:rgba(247,239,225,.35)}
+.datos .bt-s:hover{background:rgba(247,239,225,.14)}
+[data-cuenta]{margin:32px 0 0;gap:6px}
+.cu{min-width:60px}
+.cu-n{font-family:var(--display);font-weight:700;font-size:36px}
+.cu-t{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#E6B77A;margin-top:6px}
+.cu-sep{width:1px;height:24px;background:rgba(247,239,225,.25);margin-top:8px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:12px;background:var(--barro);color:var(--crema);font-weight:600;font-size:14px;letter-spacing:.04em;
+  box-shadow:0 16px 30px -22px rgba(164,85,47,1);transition:background .4s}
+.bt-p:hover{background:#8C4526}
+.bt-s{height:52px;padding:0 20px;border-radius:12px;border:1px solid rgba(164,85,47,.42);color:var(--barro);font-size:13.5px;background:transparent;transition:background .4s}
+.bt-s:hover{background:rgba(164,85,47,.12)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.6}
+
+/* La terraza */
+.terraza{position:relative;height:68svh;min-height:360px;overflow:hidden;margin:0}
+.terraza .px{top:-8%;height:116%}
+.terraza::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(27,42,51,.7))}
+.terraza .txt{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:26px;text-align:center;color:var(--crema)}
+.terraza h3{font-family:var(--display);font-weight:500;font-size:27px}
+.terraza p{font-size:13.5px;color:rgba(247,239,225,.82);margin-top:4px}
+
+/* Confirmación */
+.rsvp{background:var(--arena)}
+.rsvp .centro p{color:var(--suave);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:24px 20px;background:var(--crema);border-radius:16px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--display);font-weight:700;font-size:25px;margin:8px 0 2px;letter-spacing:-.01em}
+.pase-lug{font-size:12.5px;color:var(--barro);font-weight:600}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave);font-weight:600}
+.linea-in{background:var(--crema);border:1px solid transparent;border-radius:12px;padding:14px 16px;font-size:16px;transition:border-color .3s,box-shadow .3s}
+.linea-in:focus{border-color:var(--barro);box-shadow:0 0 0 4px rgba(164,85,47,.16)}
+.elige b{background:var(--crema);border:1px solid transparent;border-radius:12px;font-size:13.5px;transition:all .4s}
+.elige input:checked+b{background:var(--verde);color:var(--crema)}
+.elige input:focus-visible+b{outline:2px solid var(--barro);outline-offset:2px}
+.paso-lug button{background:var(--crema);color:var(--barro)}
+.paso-lug button:hover{background:var(--barro);color:var(--crema)}
+.paso-lug output{font-family:var(--display);font-weight:700;font-size:34px}
+.paso-lug small{font-size:12.5px;color:var(--suave)}
+.rsvp-nota{font-size:12.5px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--verde);color:var(--crema)}
+.rg-t{font-family:var(--display);font-weight:700;font-size:30px}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:50px}
+.cierre .dia{color:var(--barro);font-size:clamp(56px,16vw,88px)}
+.cierre p{font-family:var(--display);font-weight:500;font-size:19px;color:var(--suave);margin-top:6px}
+.cierre .firma-savey{margin-top:66px}
+#flota{height:52px;padding:0 24px;border-radius:12px;background:var(--barro);color:var(--crema);font-size:13.5px;font-weight:600;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c">
+    <div class="serie" id="serie"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <b>15 de septiembre</b><span>Cena en la terraza</span>
+  </div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.13"><img src="../fotos/tp-verbena.webp" srcset="../fotos/tp-verbena-m.webp 720w, ../fotos/tp-verbena.webp 1100w" sizes="100vw" alt="Familia y amigos cenando en la terraza decorada"></div>
+  <div class="picado" data-h style="--h:0" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="portada-txt">
+    <div class="dia" data-h style="--h:1">15</div>
+    <h1 class="titulo" data-h style="--h:2">Cena de<br>Independencia</h1>
+    <div class="portada-fecha" data-h style="--h:3">Miércoles · 8:00 pm · Terraza</div>
+  </div>
+</header>
+
+<main>
+
+<section class="invita">
+  <div class="env">
+    <p data-a="sube">Pozole, mezcal y el grito a las once. <em>La terraza es de todos esa noche.</em></p>
+  </div>
+</section>
+
+<figure class="mesa" data-ampliar>
+  <div class="px" data-px="0.14"><img src="../fotos/g/ve-1.webp" alt="Los platillos servidos sobre la mesa" loading="lazy"></div>
+  <figcaption data-a="sube">Lo que vamos a cenar</figcaption>
+</figure>
+
+<section class="menu-sec">
+  <div class="env">
+    <div class="et" data-a="sube">La cena</div>
+    <h2 data-a="sube" style="margin-top:10px">El menú</h2>
+    <div class="platillo" data-a="sube"><div><b>Botana</b><span>Guacamole, chicharrón y esquites</span></div><span class="hr">8:00</span></div>
+    <div class="platillo" data-a="sube"><div><b>Pozole rojo y blanco</b><span>Con todo lo que le pongas encima</span></div><span class="hr">9:00</span></div>
+    <div class="platillo" data-a="sube"><div><b>El grito</b><span>Con campana prestada y todo</span></div><span class="hr">11:00</span></div>
+    <div class="platillo" data-a="sube"><div><b>Postre y café de olla</b><span>Buñuelos y arroz con leche</span></div><span class="hr">11:30</span></div>
+  </div>
+</section>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">Los datos</div>
+    <h2 data-a="sube" style="margin-top:10px">Cuándo y dónde</h2>
+    <div class="fila" data-a="sube" style="margin-top:26px">
+      <div class="k">Cuándo</div>
+      <b>Miércoles 15 de septiembre</b>
+      <span>Llega a las 8:00. El grito es a las 11:00 en punto.</span>
+    </div>
+    <div class="fila" data-a="sube">
+      <div class="k">Dónde</div>
+      <b>Terraza de los Cervantes</b>
+      <span>Av. Coyoacán 340, piso 6, Del Valle, CDMX. Sube por el elevador del lobby.</span>
+      <a class="bt-s" href="https://maps.google.com/?q=Av.%20Coyoac%C3%A1n%20340%20Del%20Valle" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+    <div class="fila" data-a="sube">
+      <div class="k">Vestimenta</div>
+      <b>Como te sientas bien</b>
+      <span>Si traes algo bordado o verde, blanco y rojo, mejor. En la terraza refresca de noche.</span>
+    </div>
+    <div data-cuenta data-a="sube"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="margin-top:26px;color:var(--crema);border-color:rgba(247,239,225,.35)"><svg><use href="#cal"/></svg>Agendar</a>
+  </div>
+</section>
+
+<figure class="terraza" data-ampliar>
+  <div class="px" data-px="0.18"><img src="../fotos/g/ve-2.webp" alt="La celebración en la terraza con la ciudad al fondo" loading="lazy"></div>
+  <div class="txt">
+    <h3 data-a="sube">Con la ciudad de fondo</h3>
+    <p data-a="sube">Y los fuegos artificiales desde arriba</p>
+  </div>
+</figure>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:10px">¿Vienes al grito?</h2>
+      <p>Confirma antes del 8 de septiembre para calcular el pozole.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="picado" data-a="sube" style="margin-bottom:26px" aria-hidden="true"><i style="color:#C9743F"></i><i style="color:#7FA98A"></i><i style="color:#D9B15C"></i><i style="color:#9C2F32"></i><i style="color:#C9743F"></i></div>
+    <div class="dia" data-a="sube">15</div>
+    <p data-a="sube" style="--d:120ms">Nos vemos en la terraza</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+(function(){
+  var s=document.getElementById('serie'); if(!s) return;
+  var t=setInterval(function(){
+    var c=document.getElementById('carga');
+    if(!c){ clearInterval(t); return }
+    var p=parseFloat(getComputedStyle(c).getPropertyValue('--progreso'))||0;
+    var col=['#C9743F','#F7EFE1','#7FA98A','#D9B15C','#C9743F','#F7EFE1','#7FA98A'];
+    for(var i=0;i<s.children.length;i++){
+      var on = p > (i+1)/s.children.length - .14;
+      s.children[i].style.background = on ? col[i] : '#33454E';
+      s.children[i].style.boxShadow = on ? '0 0 14px '+col[i] : 'none';
+    }
+  },120);
+})();
+window.XV = {
+  slug:'temporada-verbena', evento:'Cena del 15 de septiembre', nombre:'los anfitriones',
+  fechaISO:'2027-09-15T20:00:00-06:00', lugar:'Av. Coyoacán 340, piso 6, Del Valle, CDMX',
+  fechaLimite:'8 de septiembre', graciasSi:'¡Viva!', graciasSiTexto:'Miércoles 15 de septiembre, 8:00 pm. El grito a las 11:00.',
+  etiquetaMensaje:'¿Nos dejas un mensaje? (opcional)',
+  extras:[{k:'pozole', rot:'¿Pozole rojo o blanco?', tipo:'elige', op:['Rojo','Blanco','Los dos']}],
+  wa:'5215618906790', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>
