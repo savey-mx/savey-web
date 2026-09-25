@@ -93,7 +93,7 @@ def pie():
       <a href="/">Inicio</a>
       <a href="/catalogo/">Catálogo por categoría</a>
       <a href="https://wa.me/{WA}" target="_blank" rel="noopener">WhatsApp {TEL}</a>
-      <a href="mailto:hola@saveystudio.com">hola@saveystudio.com</a>
+      <a href="mailto:savey.mx@gmail.com">savey.mx@gmail.com</a>
       <a href="/aviso-de-privacidad.html">Aviso de privacidad</a>
       <a href="/terminos.html">Términos del servicio</a>
     </nav>
