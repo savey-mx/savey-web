@@ -498,6 +498,8 @@ var ICO = {
   'Bautizo o primera comunión':'<path d="M12 3c3.5 4.2 6 7.5 6 10.5a6 6 0 01-12 0C6 10.5 8.5 7.2 12 3z"/>',
   'Cumpleaños infantil':'<ellipse cx="12" cy="9" rx="5" ry="6"/><path d="M12 15l-1 2h2l-1-2M12 17c0 2-2 2.5-2 4.5"/>',
   'Cumpleaños de 15 en adelante':'<path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>',
+  'Graduación':'<path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6.5 11.3V16c0 1.6 2.6 2.9 5.5 2.9s5.5-1.3 5.5-2.9v-4.7"/><path d="M20.5 9.8v5.4"/>',
+  'Fiesta de temporada':'<path d="M3 6.4c6-2.5 12-2.5 18 0"/><path d="M5.6 7.2l1.9 4.9 2.3-4.3M11.1 7.2l2 5 2.3-4.4M16.5 8.1l1.8 4.5 2.2-3.8"/>',
   'Evento de empresa':'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 13h18"/>',
   'Otro':'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/>'
 };
@@ -545,8 +547,8 @@ var PASOS = [
 },
 {
   n:"Lo esencial",
-  t:"Lo esencial del evento",
-  b:"Escríbelo tal cual quieres que aparezca, con acentos y como se deba leer.",
+  t:"Los datos del evento",
+  b:"Escríbelo tal como quieres que aparezca, con acentos y todo.",
   campos:[
     {k:"nombres", tipo:"texto", req:true, rot:function(){
       if(esBoda()) return "Nombres de la pareja";
@@ -615,7 +617,7 @@ var PASOS = [
 },
 {
   n:"Detalles",
-  t:"Los detalles finos",
+  t:"Los detalles",
   b:"Todo es opcional. Llena lo que ya tengas y lo demás lo vemos por WhatsApp.",
   campos:[
     {k:"padres", tipo:"larga", rot:"Nombres de los padres", si:tiene('Padres')},
@@ -638,7 +640,7 @@ var PASOS = [
 {
   n:"Estilo",
   t:"¿Cómo quieres que se vea?",
-  b:"Si ya viste un diseño que te gustó, elígelo y partimos de ahí.",
+  b:"Si ya viste un diseño que te gustó, elígelo y empezamos por ahí.",
   campos:[
     {k:"plantilla", tipo:"disenos", rot:"Diseño de referencia"},
     {k:"plantilla_ref", tipo:"texto", rot:"¿Otro diseño o una liga que te gustó? (opcional)", ph:"Pega aquí la liga"},
@@ -655,7 +657,7 @@ var PASOS = [
 {
   n:"Invitados",
   t:"Tu lista de invitados",
-  b:"Con esto armamos el pase personalizado de cada familia. Si todavía no la tienes, no pasa nada.",
+  b:"Con esto armamos el pase de cada familia. Si todavía no la tienes, no hay problema.",
   si:conPases,
   campos:[
     {k:"lista_despues", tipo:"pastillas", rot:"¿Ya tienes tu lista?", op:["Sí, aquí va","Se las mando después por WhatsApp"]},

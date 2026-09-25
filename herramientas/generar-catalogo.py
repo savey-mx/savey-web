@@ -18,45 +18,44 @@ CATALOGO = json.loads(crudo)
 # ── copy por categoría ───────────────────────────────────────
 COPY = {
  "bodas":      ("Invitaciones digitales de boda",
-                "Del jardín al atardecer a la hacienda de cantera: distintas maneras de contar la misma historia.",
+                "Desde una boda en el jardín hasta una en hacienda. Busca la que más se parezca a la de ustedes.",
                 "boda"),
  "xv":         ("Invitaciones digitales de XV años",
-                "De la noche de faroles al gran salón de gala, con la estética que ella ya trae en la cabeza.",
+                "Para su noche: desde algo sencillo y bonito hasta una fiesta de gala. Todo se ajusta a lo que ella quiera.",
                 "XV años"),
  "bautizos":   ("Invitaciones digitales de bautizo",
-                "Luz suave y poco ruido, para la ceremonia y la comida que viene después.",
+                "Diseños tranquilos y con mucha luz, para la ceremonia y la comida con la familia.",
                 "bautizo"),
  "ninos":      ("Invitaciones de cumpleaños infantil",
-                "Dinosaurios, cohetes, ballet, carreras: fiestas que los niños quieren abrir dos veces.",
+                "Dinosaurios, cohetes, ballet o carreras. Dinos qué le encanta y nosotros armamos su fiesta.",
                 "cumpleaños infantil"),
  "teens":      ("Invitaciones digitales de cumpleaños",
-                "De los veinte a los setenta: terraza, cena en casa, sobremesa que se alarga.",
+                "Para cualquier edad: una comida en casa, una cena en la terraza o una fiesta con los amigos.",
                 "cumpleaños"),
  "graduacion": ("Invitaciones digitales de graduación",
-                "Para la ceremonia, la cena con la familia y la fiesta de generación.",
+                "Para la ceremonia, la cena con la familia o la fiesta de toda la generación.",
                 "graduación"),
  "empresa":    ("Invitaciones para eventos de empresa",
-                "Conferencias, lanzamientos, aniversarios y cenas de reconocimiento, con la formalidad justa.",
+                "Conferencias, lanzamientos, aniversarios y cenas de premiación, con el tono que necesitas.",
                 "evento de empresa"),
  "temporada":  ("Invitaciones para fiestas de temporada",
-                "Posada, Día de Muertos, 15 de septiembre, Día de la Madre: las fechas que ya son tradición en tu casa.",
+                "Posada, Día de Muertos, 15 de septiembre, Día de la Madre. Las fechas que celebras cada año.",
                 "fiesta de temporada"),
  "otros":      ("Invitaciones para todo lo demás",
-                "Kermés escolar, concierto, ponencia, obra de teatro, exposición y torneo: los eventos que no caben en ninguna otra lista.",
+                "Kermés, concierto, obra de teatro, exposición, torneo o una ponencia. Si tu evento no entra en las otras listas, aquí hay algo.",
                 "evento"),
 }
 
-NOTA = ("Aquí te dejamos algunas ideas para que te inspires. No es un menú cerrado: "
-        "trabajamos con tus colores, tus fotos y las secciones que tu evento necesite, "
-        "y si quieres la portada de una con la estructura de otra, también se puede.")
+NOTA = ("Estas son algunas ideas para inspirarte. Todo se adapta: tus colores, tus fotos "
+        "y las secciones que quieras. Y si te gusta la portada de una con la estructura "
+        "de otra, las combinamos.")
 
 # Aviso de propiedad intelectual, solo en las dos de cumpleaños
-IP = ("En Savey respetamos la propiedad intelectual, así que no reproducimos personajes, "
-      "logotipos ni ilustraciones con derechos de autor dentro de las invitaciones. "
-      "Lo que sí hacemos es partir de la temática: dinos en qué personaje, película o "
-      "serie quieres que nos inspiremos y construimos la paleta, las texturas y el "
-      "ambiente alrededor de esa idea, con arte original hecho para ti.")
-
+IP = ("En Savey cuidamos los derechos de autor, así que no usamos personajes, logotipos "
+      "ni ilustraciones con licencia dentro de las invitaciones. Lo que sí hacemos es "
+      "trabajar el tema: dinos en qué personaje, película o serie quieres que nos "
+      "inspiremos y armamos los colores, las texturas y el ambiente alrededor de esa "
+      "idea, con dibujos originales hechos para tu fiesta.")
 
 SIM = {  # símbolos svg compartidos
  "ch": '<symbol id="ch" viewBox="0 0 24 24"><path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/></symbol>',
@@ -251,7 +250,7 @@ for n, cat in enumerate(CATALOGO):
 {aviso}<section class="otras">
   <div class="amplia">
     <h2 class="revelar">Otras categorías</h2>
-    <p class="pie revelar">Cada liga abre solo los diseños de ese tipo de evento.</p>
+    <p class="pie revelar">Cada una abre solo los diseños de ese tipo de evento.</p>
     <div class="fichas">
       {fichas}
     </div>
@@ -262,7 +261,7 @@ for n, cat in enumerate(CATALOGO):
   <div class="amplia">
     <div class="panel revelar" style="--acento:{acento}">
       <h2>¿Te gustó alguno?</h2>
-      <p>Cuéntanos de tu evento en cinco minutos y te mandamos la propuesta con precio cerrado.</p>
+      <p>Cuéntanos de tu evento en unos minutos y te mandamos tu cotización por WhatsApp.</p>
       <div class="acciones">
         <a class="btn btn-champ" href="/brief/" style="background:var(--marfil);color:var(--espresso)">Cotiza tu evento<svg class="flechita" width="16" height="16"><use href="#fl"/></svg></a>
         <a class="btn btn-wa" href="https://wa.me/{WA}?text={E(wa_txt).replace(" ", "%20").replace(",", "%2C")}" target="_blank" rel="noopener"><svg width="17" height="17"><use href="#wa"/></svg>Escríbenos por WhatsApp</a>
@@ -300,7 +299,7 @@ for c in CATALOGO:
         <span class="mas">Ver la categoría<svg width="15" height="15"><use href="#fl"/></svg></span>
       </a>''')
 
-desc_i = ("Ideas de invitaciones digitales de Savey ordenadas por tipo de evento: bodas, XV años, "
+desc_i = ("Los diseños de Savey ordenados por tipo de evento: bodas, XV años, "
           "bautizos, cumpleaños, graduación, corporativo, de temporada y más.")
 doc = cabeza("Catálogo de invitaciones digitales por categoría · Savey",
              desc_i, url, "https://saveystudio.com/catalogo/og/catalogo.jpg")
@@ -312,7 +311,7 @@ doc += f'''
   <div class="amplia">
     <nav class="miga" aria-label="Ruta"><a href="/">Savey</a><i>/</i><b>Catálogo</b></nav>
     <h1 class="titulo">Catálogo</h1>
-    <p class="entrada">Ideas ordenadas por tipo de evento. Cada categoría tiene su propia liga, lista para compartir.</p>
+    <p class="entrada">Nuestros diseños, ordenados por tipo de evento. Cada categoría tiene su propia liga.</p>
     <div class="acciones">
       <a class="btn btn-champ" href="/brief/">Cotiza tu evento<svg class="flechita" width="16" height="16"><use href="#fl"/></svg></a>
       <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener"><svg width="17" height="17"><use href="#wa"/></svg>Escríbenos</a>
@@ -333,7 +332,7 @@ doc += f'''
   <div class="amplia">
     <div class="panel revelar">
       <h2>¿Ya sabes cuál quieres?</h2>
-      <p>Cuéntanos de tu evento en cinco minutos y te mandamos la propuesta con precio cerrado.</p>
+      <p>Cuéntanos de tu evento en unos minutos y te mandamos tu cotización por WhatsApp.</p>
       <div class="acciones">
         <a class="btn btn-champ" href="/brief/" style="background:var(--marfil);color:var(--espresso)">Cotiza tu evento<svg class="flechita" width="16" height="16"><use href="#fl"/></svg></a>
         <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener"><svg width="17" height="17"><use href="#wa"/></svg>Escríbenos por WhatsApp</a>
