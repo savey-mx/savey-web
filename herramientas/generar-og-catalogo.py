@@ -157,10 +157,10 @@ def tarjeta(cid, nombre, piezas, destino):
 
     # sello inferior
     yb = H * S - 84 * S
-    d.rounded_rectangle([x, yb, x + 268 * S, yb + 52 * S], radius=26 * S,
+    d.rounded_rectangle([x, yb, x + 226 * S, yb + 52 * S], radius=26 * S,
                         fill=(255, 253, 252, 235), outline=(51, 43, 39, 28), width=int(S))
     chispa(d, x + 28 * S, yb + 26 * S, 7 * S, hx(piezas[0]["c"][2]))
-    d.text((x + 46 * S, yb + 27 * S), f"{len(piezas)} diseños · saveystudio.com",
+    d.text((x + 46 * S, yb + 27 * S), "saveystudio.com",
            font=f_pie, fill=ESPRESSO, anchor="lm")
 
     im = im.resize((W, H), Image.LANCZOS)

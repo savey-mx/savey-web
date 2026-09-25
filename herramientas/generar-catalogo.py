@@ -17,41 +17,46 @@ CATALOGO = json.loads(crudo)
 
 # ── copy por categoría ───────────────────────────────────────
 COPY = {
- "bodas":      ("Invitaciones de boda",
-                "Seis maneras de contar la misma historia: del jardín al atardecer a la hacienda de cantera. Cada una con confirmación de asistencia, pases por familia y mesa asignada.",
+ "bodas":      ("Invitaciones digitales de boda",
+                "Del jardín al atardecer a la hacienda de cantera: distintas maneras de contar la misma historia.",
                 "boda"),
- "xv":         ("Invitaciones de XV años",
-                "De la noche de faroles al gran salón de gala. Seis diseños pensados para que sus amigas la abran en el celular y confirmen ahí mismo.",
+ "xv":         ("Invitaciones digitales de XV años",
+                "De la noche de faroles al gran salón de gala, con la estética que ella ya trae en la cabeza.",
                 "XV años"),
- "bautizos":   ("Invitaciones de bautizo",
-                "Luz suave y poco ruido. Seis diseños para la ceremonia y la comida después, con padrinos, horario y mapa en el mismo lugar.",
+ "bautizos":   ("Invitaciones digitales de bautizo",
+                "Luz suave y poco ruido, para la ceremonia y la comida que viene después.",
                 "bautizo"),
  "ninos":      ("Invitaciones de cumpleaños infantil",
-                "Dinosaurios, cohetes, ballet y carreras. Seis fiestas que los niños van a querer abrir y que a los papás les resuelven la lista de invitados.",
+                "Dinosaurios, cohetes, ballet, carreras: fiestas que los niños quieren abrir dos veces.",
                 "cumpleaños infantil"),
- "teens":      ("Invitaciones de cumpleaños",
-                "De los veinte a los setenta: terraza, cena en casa, sobremesa larga. Seis diseños para celebrar como se te dé la gana.",
+ "teens":      ("Invitaciones digitales de cumpleaños",
+                "De los veinte a los setenta: terraza, cena en casa, sobremesa que se alarga.",
                 "cumpleaños"),
- "graduacion": ("Invitaciones de graduación",
-                "El final de una carrera merece algo mejor que un mensaje de grupo. Seis diseños para la ceremonia, la cena y la fiesta de generación.",
+ "graduacion": ("Invitaciones digitales de graduación",
+                "Para la ceremonia, la cena con la familia y la fiesta de generación.",
                 "graduación"),
  "empresa":    ("Invitaciones para eventos de empresa",
-                "Conferencias, lanzamientos, aniversarios y cenas de reconocimiento. Seis diseños con la formalidad justa y registro de asistentes incluido.",
+                "Conferencias, lanzamientos, aniversarios y cenas de reconocimiento, con la formalidad justa.",
                 "evento de empresa"),
- "temporada":  ("Invitaciones de temporada",
-                "Posada, Día de Muertos, 15 de septiembre, Día de la Madre. Seis diseños para las fechas que ya son tradición en tu casa.",
+ "temporada":  ("Invitaciones para fiestas de temporada",
+                "Posada, Día de Muertos, 15 de septiembre, Día de la Madre: las fechas que ya son tradición en tu casa.",
                 "fiesta de temporada"),
  "otros":      ("Invitaciones para todo lo demás",
-                "Kermés escolar, concierto, ponencia, obra de teatro, exposición y torneo. Seis diseños para los eventos que no caben en ninguna otra lista.",
+                "Kermés escolar, concierto, ponencia, obra de teatro, exposición y torneo: los eventos que no caben en ninguna otra lista.",
                 "evento"),
 }
 
-INCLUYE = [
- ("Confirmación de asistencia", "Tus invitados confirman en un toque y tú ves la lista en vivo, sin hojas de cálculo."),
- ("Pases por familia",          "Cada quien abre su liga con su nombre, sus lugares y su mesa ya asignada."),
- ("Se abre desde WhatsApp",     "Una sola liga. No se descarga nada, no se instala nada, funciona en cualquier celular."),
- ("Lista en 48 horas",          "Nos mandas tus datos y tus fotos; te entregamos la invitación lista para enviar."),
-]
+NOTA = ("Aquí te dejamos algunas ideas para que te inspires. No es un menú cerrado: "
+        "trabajamos con tus colores, tus fotos y las secciones que tu evento necesite, "
+        "y si quieres la portada de una con la estructura de otra, también se puede.")
+
+# Aviso de propiedad intelectual, solo en las dos de cumpleaños
+IP = ("En Savey respetamos la propiedad intelectual, así que no reproducimos personajes, "
+      "logotipos ni ilustraciones con derechos de autor dentro de las invitaciones. "
+      "Lo que sí hacemos es partir de la temática: dinos en qué personaje, película o "
+      "serie quieres que nos inspiremos y construimos la paleta, las texturas y el "
+      "ambiente alrededor de esa idea, con arte original hecho para ti.")
+
 
 SIM = {  # símbolos svg compartidos
  "ch": '<symbol id="ch" viewBox="0 0 24 24"><path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/></symbol>',
@@ -190,13 +195,27 @@ for n, cat in enumerate(CATALOGO):
         f'<a class="ficha revelar" href="/catalogo/{c["id"]}/" '
         f'style="--fa:{c["piezas"][0]["c"][2]};--fb:{c["piezas"][0]["c"][0]}">'
         f'<span class="fl"><svg><use href="#fl"/></svg></span>'
-        f'<strong>{E(c["nombre"])}</strong><span>{len(c["piezas"])} diseños</span></a>'
+        f'<strong>{E(c["nombre"])}</strong><span>Ver ideas</span></a>'
         for c in otras)
 
-    incluye = "\n        ".join(
-        f'<li class="revelar"><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in INCLUYE)
-
     wa_txt = f"Hola Savey, vi el catálogo de {singular} y me interesa."
+
+    aviso = ""
+    if cid in ("ninos", "teens"):
+        aviso = f'''<section class="aviso-pi">
+  <div class="amplia">
+    <div class="pi revelar">
+      <svg class="pi-ico" aria-hidden="true"><use href="#ch"/></svg>
+      <div>
+        <b>Sobre los personajes con derechos de autor</b>
+        <p>{E(IP)}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+'''
+
 
     doc = cabeza(
         f"{titulo_largo} · Savey",
@@ -215,11 +234,7 @@ for n, cat in enumerate(CATALOGO):
     </nav>
     <h1 class="titulo">{E(cat["nombre"])}</h1>
     <p class="entrada">{E(entrada)}</p>
-    <ul class="marcas">
-      <li><svg><use href="#ch"/></svg>{len(cat["piezas"])} diseños</li>
-      <li><svg><use href="#ch"/></svg>Confirmación incluida</li>
-      <li><svg><use href="#ch"/></svg>Listas en 48 horas</li>
-    </ul>
+    <p class="nota"><svg class="nota-ico"><use href="#ch"/></svg>{E(NOTA)}</p>
     <div class="acciones">
       <a class="btn btn-champ" href="/brief/">Cotiza tu evento<svg class="flechita"><use href="#fl"/></svg></a>
       <a class="btn btn-wa" href="https://wa.me/{WA}?text={E(wa_txt).replace(" ", "%20").replace(",", "%2C")}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Escríbenos</a>
@@ -236,16 +251,7 @@ for n, cat in enumerate(CATALOGO):
   </div>
 </section>
 
-<section class="incluye">
-  <div class="amplia">
-    <h2 class="revelar">Todas incluyen lo mismo</h2>
-    <ul class="lista">
-        {incluye}
-    </ul>
-  </div>
-</section>
-
-<section class="otras">
+{aviso}<section class="otras">
   <div class="amplia">
     <h2 class="revelar">Otras categorías</h2>
     <p class="pie revelar">Cada liga abre solo los diseños de ese tipo de evento.</p>
@@ -291,14 +297,14 @@ for c in CATALOGO:
         for p in c["piezas"][:3])
     cartas.append(
       f'''<a class="carta revelar" href="/catalogo/{c["id"]}/" style="--fa:{c["piezas"][0]["c"][2]};--fb:{c["piezas"][0]["c"][0]}">
-        <div class="cab"><h2>{E(c["nombre"])}</h2><span class="n">{len(c["piezas"])} diseños</span></div>
-        <p>{E(COPY[c["id"]][1].split(".")[0])}.</p>
+        <div class="cab"><h2>{E(c["nombre"])}</h2></div>
+        <p>{E(COPY[c["id"]][1])}</p>
         <div class="tira">{tira}</div>
         <span class="mas">Ver la categoría<svg><use href="#fl"/></svg></span>
       </a>''')
 
-desc_i = (f"Los {total} diseños de Savey ordenados por tipo de evento: bodas, XV años, bautizos, "
-          "cumpleaños, graduación, corporativo, de temporada y más.")
+desc_i = ("Ideas de invitaciones digitales de Savey ordenadas por tipo de evento: bodas, XV años, "
+          "bautizos, cumpleaños, graduación, corporativo, de temporada y más.")
 doc = cabeza("Catálogo de invitaciones digitales por categoría · Savey",
              desc_i, url, "https://saveystudio.com/catalogo/og/catalogo.jpg")
 doc += barra()
@@ -309,7 +315,7 @@ doc += f'''
   <div class="amplia">
     <nav class="miga" aria-label="Ruta"><a href="/">Savey</a><i>/</i><b>Catálogo</b></nav>
     <h1 class="titulo">Catálogo</h1>
-    <p class="entrada">{total} diseños ordenados por tipo de evento. Cada categoría tiene su propia liga, lista para compartir.</p>
+    <p class="entrada">Ideas ordenadas por tipo de evento. Cada categoría tiene su propia liga, lista para compartir.</p>
     <div class="acciones">
       <a class="btn btn-champ" href="/brief/">Cotiza tu evento<svg class="flechita"><use href="#fl"/></svg></a>
       <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Escríbenos</a>
@@ -325,14 +331,6 @@ doc += f'''
   </div>
 </section>
 
-<section class="incluye">
-  <div class="amplia">
-    <h2 class="revelar">Todas incluyen lo mismo</h2>
-    <ul class="lista">
-        {chr(10).join(f'<li class="revelar"><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in INCLUYE)}
-    </ul>
-  </div>
-</section>
 
 <section class="cierre" style="padding-top:var(--aire)">
   <div class="amplia">

@@ -88,10 +88,10 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-
 .miga b{font-weight:500;color:var(--espresso)}
 .titulo{font-size:var(--p-3);margin:1rem 0 0}
 .entrada{font-size:var(--p-1);color:var(--espresso-suave);max-width:36ch;margin-top:.9rem;line-height:1.45}
-.marcas{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.5rem;list-style:none}
-.marcas li{display:inline-flex;align-items:center;gap:.4rem;font-size:var(--p--1);
-  background:var(--blanco);border:1px solid var(--borde-fino);border-radius:100px;padding:.42rem .85rem}
-.marcas svg{width:11px;height:11px;fill:var(--acento)}
+.nota{display:flex;gap:.6rem;align-items:flex-start;max-width:44ch;margin-top:1.5rem;
+  font-size:var(--p--1);line-height:1.55;color:var(--espresso-suave);
+  background:var(--blanco);border:1px solid var(--borde-fino);border-radius:16px;padding:.9rem 1.05rem}
+.nota-ico{width:12px;height:12px;flex:none;margin-top:.34rem;fill:var(--acento)}
 .acciones{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.7rem}
 
 /* Abanico del encabezado (solo pantallas anchas) */
@@ -151,17 +151,16 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-
 .muestra b{display:block;font-weight:500;margin-top:.8rem;line-height:1.25}
 .muestra em{font-style:normal;font-size:var(--p--1);color:var(--espresso-suave)}
 
-/* ── Franja de lo incluido ── */
-.incluye{background:var(--blanco);border-block:1px solid var(--borde-fino);padding:var(--aire) 0}
-.incluye h2{font-size:var(--p-2)}
-.incluye .lista{display:grid;gap:.8rem;margin-top:1.8rem;grid-template-columns:1fr;list-style:none}
-@media (min-width:38rem){.incluye .lista{grid-template-columns:1fr 1fr}}
-@media (min-width:60rem){.incluye .lista{grid-template-columns:repeat(4,1fr)}}
-.incluye .lista li{border:1px solid var(--borde-fino);border-radius:16px;padding:1.2rem;background:var(--marfil);
-  transition:border-color .35s,transform .5s var(--suave)}
-.incluye .lista li:hover{border-color:var(--borde);transform:translateY(-3px)}
-.incluye .lista b{display:block;font-weight:500;margin-bottom:.25rem}
-.incluye .lista span{font-size:var(--p--1);color:var(--espresso-suave);line-height:1.5}
+/* ── Aviso de propiedad intelectual (cumpleaños) ── */
+.aviso-pi{padding:0 0 clamp(2rem,5vw,3.2rem)}
+.pi{display:flex;gap:.9rem;align-items:flex-start;max-width:56rem;margin-inline:auto;
+  background:var(--blanco);border:1px solid var(--borde-fino);border-radius:18px;
+  padding:clamp(1.1rem,2.6vw,1.5rem);
+  transition:border-color .35s}
+.pi:hover{border-color:var(--borde)}
+.pi-ico{width:14px;height:14px;flex:none;margin-top:.42rem;fill:var(--acento)}
+.pi b{display:block;font-weight:500;margin-bottom:.3rem}
+.pi p{font-size:var(--p--1);color:var(--espresso-suave);line-height:1.6;max-width:68ch}
 
 /* ── Otras categorías ── */
 .otras{padding:var(--aire) 0}
