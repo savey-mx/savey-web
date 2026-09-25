@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<!-- Savey · folio VTMUS · María Camila cumple 3 · paquete Plata -->
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>¡María Camila cumple 3! · 15 de noviembre de 2026</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#FDF7EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crema:#FDF7EC; --papel:#F8EEDC; --blanco:#FFFDF9;
+  --beige:#F0E0C6; --beige-os:#E3CDA8;
+  --camel:#D9A65C; --camel-os:#B8843C; --camel-hondo:#8A6128;
+  --cereza:#D62828; --cereza-os:#AE1C1C; --cereza-cl:#F3B4B4;
+  --tinta:#4A3B30; --tinta-sv:rgba(74,59,48,.66);
+  --vaquera:'Rye',Georgia,serif;
+  --titulo:'Fraunces',Georgia,serif;
+  --sans:'Nunito',system-ui,-apple-system,sans-serif;
+  --curva:cubic-bezier(.22,.61,.36,1);
+  --resorte:cubic-bezier(.34,1.32,.5,1);
+  --lado:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--crema);color:var(--tinta);font-family:var(--sans);
+  font-weight:400;font-size:16.5px;line-height:1.7;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+body.cerrado{overflow:hidden;height:100svh}
+img{display:block;max-width:100%}
+svg{display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--cereza);outline-offset:4px;border-radius:10px}
+.env{padding-inline:var(--lado);max-width:480px;margin:0 auto}
+@media (min-width:480px){:root{--lado:28px}}
+
+/* grano de papel, muy sutil */
+body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(138,97,40,.055) .6px, transparent .6px);
+  background-size:4px 4px}
+
+.et{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--camel-hondo);font-weight:800}
+h2{font-family:var(--titulo);font-weight:600;font-size:clamp(30px,8.4vw,36px);line-height:1.18}
+section{position:relative;z-index:2}
+
+/* ══════ Adornos ilustrados ══════ */
+.adorno{position:absolute;pointer-events:none;z-index:1;opacity:.95}
+.guirnalda{display:block;width:min(105%,440px);margin:0 auto;height:auto}
+.cuerda-sep{display:block;width:min(92%,380px);margin:34px auto 30px;height:auto}
+
+/* brillo discreto de las estrellitas */
+.chispita{position:absolute;pointer-events:none;color:var(--camel);
+  animation:brillar 3.4s ease-in-out infinite}
+.chispita svg{width:100%;height:100%;fill:currentColor}
+@keyframes brillar{0%,100%{opacity:.25;transform:scale(.82)}50%{opacity:.9;transform:scale(1)}}
+
+/* ══════════════════════════════════════════════
+   PANTALLA DE APERTURA
+   ══════════════════════════════════════════════ */
+#sobre{position:fixed;inset:0;z-index:100;background:var(--crema);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;padding:26px;
+  transition:opacity .8s var(--curva),transform .8s var(--curva)}
+#sobre.fuera{opacity:0;transform:scale(1.06);pointer-events:none}
+#sobre .env{position:relative;z-index:2;text-align:center}
+.pre-quien{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--camel-hondo);font-weight:800}
+.pre-nombre{font-family:var(--titulo);font-weight:600;font-size:27px;line-height:1.25;
+  margin-top:8px;color:var(--cereza)}
+
+/* ╔══════════════════════════════════════════════════════════╗
+   ║  BOTÓN DE APERTURA — aquí va tu imagen                    ║
+   ║  Sube tu archivo a  fotos/  y escribe su nombre en el     ║
+   ║  src del <img id="img-boton">. Por ejemplo:               ║
+   ║      src="fotos/boton.png"                                ║
+   ║  PNG con fondo transparente, cuadrado, mínimo 600×600.    ║
+   ║  Si no pones ninguna, sale la estrella de sheriff.        ║
+   ╚══════════════════════════════════════════════════════════╝ */
+.boton-abrir{display:block;margin:26px auto 0;padding:0;border:0;background:none;cursor:pointer;
+  width:var(--medallon,226px);animation:latir 3s var(--curva) infinite}
+.medallon{width:100%;aspect-ratio:1;border-radius:50%;background:var(--blanco);
+  box-shadow:0 0 0 3px var(--cereza), 0 0 0 12px var(--beige),
+             0 24px 46px -18px rgba(174,28,28,.45);
+  display:grid;place-items:center;padding:13%;overflow:hidden;position:relative}
+.medallon img{width:100%;height:100%;object-fit:contain}
+.boton-abrir .rotulo{display:inline-block;margin-top:22px;padding:14px 32px;border-radius:999px;
+  background:var(--cereza);color:#fff;font-family:var(--vaquera);font-size:20px;line-height:1;
+  box-shadow:0 12px 26px -12px rgba(174,28,28,.6)}
+@keyframes latir{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+#sobre.fuera .boton-abrir{animation:none}
+.toque{margin-top:16px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--cereza-os);font-weight:700;opacity:.8}
+
+/* ══════ Navegación ══════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;height:56px;display:flex;align-items:center;
+  transition:background .5s var(--curva)}
+.nav.fija{background:rgba(253,247,236,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(74,59,48,.09)}
+.nav-env{display:flex;align-items:center;width:100%;max-width:480px;margin:0 auto;padding-inline:var(--lado)}
+.marca{font-family:var(--titulo);font-weight:600;font-size:19px;text-decoration:none;color:var(--cereza)}
+.nav-links{display:flex;gap:16px;margin-left:auto;font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:800}
+.nav-links a{text-decoration:none;color:var(--tinta);opacity:.62;transition:opacity .4s,color .4s}
+.nav-links a:hover{opacity:1;color:var(--cereza)}
+@media (max-width:430px){.nav-links a:not(.clave){display:none}.nav-links .clave{opacity:1;color:var(--cereza)}}
+
+/* ══════════════════════════════════════════════
+   1 · PORTADA
+   ══════════════════════════════════════════════ */
+.portada{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:70px 0 40px;position:relative;overflow:hidden}
+.portada .env{position:relative;z-index:2}
+.invita{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--camel-hondo);
+  font-weight:800;margin-top:26px}
+.nombre{font-family:var(--titulo);font-weight:600;font-size:clamp(34px,9.4vw,42px);
+  line-height:1.12;color:var(--tinta);margin-top:10px;letter-spacing:-.012em}
+
+/* el 3, protagonista */
+.tres-caja{position:relative;width:min(78%,272px);margin:4px auto 0;aspect-ratio:1/.92}
+.tres{position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--vaquera);font-size:min(46vw,164px);line-height:1;color:var(--cereza);
+  text-shadow:4px 4px 0 var(--beige), 7px 7px 0 rgba(217,166,92,.4)}
+.tres-caja .mono-tres{position:absolute;top:-9%;left:50%;width:42%;transform:translateX(-48%) rotate(-6deg);
+  z-index:2;opacity:0;transition:opacity .7s var(--curva),transform .9s var(--resorte)}
+body.abierto .tres-caja .mono-tres{opacity:1;transform:translateX(-48%) rotate(0deg)}
+.tres-caja .orbita{position:absolute;inset:0;z-index:1}
+.tres-caja .orbita img{position:absolute;width:30%;filter:drop-shadow(0 6px 12px rgba(138,97,40,.28))}
+.tres-caja .orbita .o-herradura{left:-8%;bottom:6%;transform:rotate(-14deg)}
+.tres-caja .orbita .o-estrella{right:-6%;top:10%;width:25%;transform:rotate(12deg)}
+
+/* adornos sueltos, sin competir con el texto */
+.deco{position:absolute;z-index:1;pointer-events:none;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.deco.camel{stroke:var(--camel);stroke-width:1.9;opacity:.55}
+.deco.rosa{fill:var(--cereza-cl);stroke:none;opacity:.8}
+
+.cinta{display:inline-block;margin-top:6px;padding:11px 30px 13px;border-radius:999px;
+  background:var(--cereza);color:#fff;font-family:var(--titulo);font-weight:600;
+  font-size:22px;line-height:1.1;box-shadow:0 12px 28px -14px rgba(174,28,28,.6)}
+.bienvenida{margin-top:18px;font-size:16.5px;color:var(--tinta-sv);max-width:28ch;margin-inline:auto}
+.baja{margin-top:24px;width:20px;stroke:var(--camel-os);fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;margin-inline:auto;animation:flotar 2.4s var(--curva) infinite}
+@keyframes flotar{0%,100%{transform:translateY(0);opacity:.9}50%{transform:translateY(6px);opacity:.45}}
+
+/* ══════════════════════════════════════════════
+   Tarjeta base, con costura
+   ══════════════════════════════════════════════ */
+.tarjeta{background:var(--blanco);border-radius:24px;padding:30px 24px;position:relative;
+  box-shadow:0 18px 40px -26px rgba(74,59,48,.42)}
+.tarjeta::after{content:"";position:absolute;inset:9px;border-radius:16px;pointer-events:none;
+  border:2px dashed var(--beige-os)}
+.tarjeta>*{position:relative;z-index:1}
+
+/* ══════════════════════════════════════════════
+   2 · FECHA Y LUGAR
+   ══════════════════════════════════════════════ */
+.cuando{padding:12px 0 46px;text-align:center}
+.cuando .tarjeta{margin-top:20px}
+.fecha-gr{font-family:var(--titulo);font-weight:600;font-size:clamp(28px,7.6vw,34px);
+  line-height:1.15;color:var(--cereza)}
+.fecha-dia{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--camel-hondo);
+  font-weight:800;margin-top:6px}
+.hora{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding:9px 20px;
+  border-radius:999px;background:var(--papel);font-weight:800;font-size:19px;color:var(--tinta)}
+.hora svg{width:19px;height:19px;stroke:var(--camel-os);fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+.costura-h{height:2px;margin:22px 0;border-top:2px dashed var(--beige-os)}
+.lugar-nom{font-family:var(--titulo);font-weight:600;font-size:23px;line-height:1.25}
+.lugar-dir{font-size:15.5px;color:var(--tinta-sv);margin-top:6px}
+.botones{display:flex;flex-direction:column;gap:11px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;
+  padding:0 22px;border-radius:27px;font-size:16px;font-weight:800;text-decoration:none;
+  cursor:pointer;border:0;transition:transform .35s var(--resorte),background .3s,color .3s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.btn-rojo{background:var(--cereza);color:#fff;box-shadow:0 12px 26px -14px rgba(174,28,28,.7)}
+.btn-rojo:hover{background:var(--cereza-os);transform:translateY(-2px)}
+.btn-linea{background:transparent;color:var(--camel-hondo);border:2px solid var(--camel)}
+.btn-linea:hover{background:var(--camel);color:#fff;transform:translateY(-2px)}
+
+/* ══════════════════════════════════════════════
+   3 · CUENTA REGRESIVA — letrero de madera
+   ══════════════════════════════════════════════ */
+.cuenta{padding:10px 0 46px;text-align:center}
+.letrero{position:relative;margin:22px auto 0;max-width:400px;padding:26px 18px 24px;
+  border-radius:16px;
+  background:
+    repeating-linear-gradient(180deg,rgba(138,97,40,.07) 0 2px,transparent 2px 13px),
+    linear-gradient(170deg,#E8C489,#D9A65C 46%,#C8944C);
+  box-shadow:inset 0 0 0 4px rgba(138,97,40,.32),
+             inset 0 3px 0 rgba(255,255,255,.34),
+             0 16px 34px -20px rgba(138,97,40,.8)}
+.letrero::before,.letrero::after{content:"";position:absolute;top:-18px;width:3px;height:20px;
+  background:linear-gradient(180deg,var(--camel-hondo),transparent)}
+.letrero::before{left:19%}.letrero::after{right:19%}
+.clavo{position:absolute;width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%, #F0D9AE, #8A6128 72%)}
+.clavo.a{top:11px;left:12px}.clavo.b{top:11px;right:12px}
+.clavo.c{bottom:11px;left:12px}.clavo.d{bottom:11px;right:12px}
+.letrero .et{color:#6B4A1D}
+.reloj{display:flex;align-items:flex-start;justify-content:center;gap:4px;margin-top:14px}
+.casilla{min-width:60px}
+.casilla b{display:block;font-family:var(--vaquera);font-weight:400;font-size:33px;line-height:1.1;
+  color:#5C3F17;font-variant-numeric:tabular-nums;text-shadow:1px 1px 0 rgba(255,255,255,.45)}
+.casilla span{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:#6B4A1D;margin-top:3px;font-weight:800}
+.reloj i{font-family:var(--vaquera);font-size:24px;color:#6B4A1D;font-style:normal;
+  line-height:1.4;opacity:.6}
+
+/* ══════════════════════════════════════════════
+   4 · FAMILIA
+   ══════════════════════════════════════════════ */
+.familia{padding:10px 0 46px;text-align:center}
+.bloque-f{background:var(--papel);border-radius:22px;padding:24px 20px;margin-top:14px;
+  position:relative;border:2px dashed var(--beige-os);
+  transition:border-color .4s var(--curva),transform .5s var(--curva)}
+.bloque-f:hover{border-color:var(--camel);transform:translateY(-3px)}
+.bloque-f .et{color:var(--cereza-os)}
+.bloque-f p{font-family:var(--titulo);font-weight:400;font-size:21px;line-height:1.4;margin-top:8px}
+.bloque-f p + p{margin-top:2px}
+.corazon{width:17px;height:17px;fill:var(--cereza-cl);margin:0 auto 10px}
+
+/* ══════════════════════════════════════════════
+   5 · GALERÍA
+   ══════════════════════════════════════════════ */
+.galeria{padding:10px 0 46px;text-align:center}
+.rejilla{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.portafoto{position:relative;padding:0;border:0;background:none;cursor:pointer;
+  transition:transform .45s var(--resorte)}
+.portafoto:nth-child(odd){transform:rotate(-1.6deg)}
+.portafoto:nth-child(even){transform:rotate(1.4deg)}
+.portafoto:hover{transform:rotate(0deg) translateY(-5px)}
+.portafoto .papel{display:block;background:var(--blanco);border-radius:10px;padding:9px 9px 26px;
+  box-shadow:0 10px 24px -14px rgba(74,59,48,.5);position:relative}
+.portafoto .papel::before{content:"";position:absolute;inset:4px;border-radius:7px;
+  border:1.5px dashed var(--beige-os);pointer-events:none}
+.hueco-foto{aspect-ratio:1;border-radius:6px;overflow:hidden;background:var(--beige);
+  display:grid;place-items:center}
+.hueco-foto img{width:100%;height:100%;object-fit:cover}
+.marca{display:grid;place-items:center;gap:7px;text-align:center}
+.marca svg{width:24px;height:24px;stroke:var(--camel-hondo);fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.marca span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--camel-hondo);font-weight:800}
+/* listón que sujeta la foto */
+.liston{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:34px;height:20px;z-index:2}
+.liston svg{width:100%;height:100%}
+.galeria .nota{font-size:14.5px;color:var(--tinta-sv);margin-top:18px}
+.galeria .marco-grande{width:min(74%,250px);margin:24px auto 0;position:relative}
+.galeria .marco-grande .art{width:100%;height:auto}
+.galeria .marco-grande .dentro{position:absolute;left:12%;top:13.7%;width:76.6%;height:75.6%;
+  border-radius:12px;overflow:hidden;background:var(--beige);display:grid;place-items:center}
+.galeria .marco-grande .dentro img{width:100%;height:100%;object-fit:cover}
+
+/* ══════════════════════════════════════════════
+   6 · ACTIVIDADES (se llena después)
+   ══════════════════════════════════════════════ */
+.actividades{padding:10px 0 46px;text-align:center}
+.pizarra{margin-top:22px;padding:30px 22px;border-radius:22px;
+  background:var(--papel);border:2px dashed var(--camel);
+  display:grid;gap:12px;justify-items:center}
+.pizarra svg.icono{width:34px;height:34px;stroke:var(--camel-os);fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.pizarra p{color:var(--tinta-sv);font-size:16px;max-width:30ch}
+.pizarra .pronto{font-family:var(--titulo);font-weight:600;font-size:22px;color:var(--tinta)}
+/* ── Cuando ya tengas el programa, borra .pizarra y descomenta la lista de
+     abajo en el HTML. Ya viene con estilos. ── */
+.programa{list-style:none;margin-top:24px;text-align:left;
+  border-left:3px dashed var(--beige-os);padding-left:26px}
+.programa li{position:relative;padding-bottom:24px}
+.programa li:last-child{padding-bottom:0}
+.programa li::before{content:"";position:absolute;left:-34px;top:8px;width:15px;height:15px;
+  border-radius:50%;background:var(--cereza);box-shadow:0 0 0 4px var(--crema)}
+.programa li:nth-child(even)::before{background:var(--camel)}
+.programa .hr{font-size:13px;letter-spacing:.08em;color:var(--cereza-os);font-weight:800}
+.programa .ac{font-family:var(--titulo);font-weight:600;font-size:21px;line-height:1.3;margin-top:2px}
+
+/* ══════════════════════════════════════════════
+   7 · HASHTAG
+   ══════════════════════════════════════════════ */
+.hashtag{padding:10px 0 46px;text-align:center}
+.sello{position:relative;margin:22px auto 0;max-width:400px;padding:32px 22px 28px;
+  border-radius:22px;background:var(--cereza);overflow:hidden;
+  box-shadow:0 20px 42px -24px rgba(174,28,28,.8)}
+.sello::before{content:"";position:absolute;inset:0;opacity:.2;pointer-events:none;
+  background-image:radial-gradient(circle at 11px 11px, #fff 5.5px, transparent 6px);
+  background-size:40px 40px}
+.sello::after{content:"";position:absolute;inset:11px;border-radius:14px;pointer-events:none;
+  border:2px dashed rgba(255,253,249,.5)}
+.sello>*{position:relative;z-index:1}
+.sello .et{color:rgba(255,253,249,.82)}
+.tag{font-family:var(--vaquera);font-size:clamp(27px,7.6vw,34px);line-height:1.25;color:#fff;
+  margin-top:12px;word-break:break-word}
+.sello p{color:rgba(255,253,249,.86);font-size:15px;margin-top:10px;max-width:30ch;margin-inline:auto}
+.btn-copiar{display:inline-flex;align-items:center;gap:9px;min-height:50px;padding:0 24px;margin-top:20px;
+  border:0;border-radius:25px;background:var(--crema);color:var(--cereza-os);
+  font-family:var(--sans);font-size:15.5px;font-weight:800;cursor:pointer;
+  transition:transform .35s var(--resorte),background .3s,color .3s}
+.btn-copiar:hover{transform:translateY(-2px)}
+.btn-copiar svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.btn-copiar.listo{background:#2E7D4F;color:#fff}
+
+/* ══════════════════════════════════════════════
+   CONFIRMACIÓN
+   ══════════════════════════════════════════════ */
+.rsvp{padding:10px 0 96px;text-align:center}
+.rsvp .tarjeta{margin-top:20px;padding-bottom:26px}
+.rsvp h2{color:var(--tinta)}
+.rsvp .intro{color:var(--tinta-sv);margin-top:10px;font-size:15.5px}
+form{display:grid;gap:16px;margin-top:24px;text-align:left}
+label{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cereza-os);margin-bottom:7px;font-weight:800}
+input,select,textarea{width:100%;padding:14px 15px;background:var(--papel);
+  border:2px solid var(--beige-os);color:var(--tinta);font-family:var(--sans);
+  font-size:16px;font-weight:500;border-radius:15px;-webkit-appearance:none;appearance:none}
+textarea{min-height:82px;resize:vertical;line-height:1.55}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--camel-os) 50%),
+  linear-gradient(135deg,var(--camel-os) 50%,transparent 50%);
+  background-position:calc(100% - 21px) 24px, calc(100% - 15px) 24px;
+  background-size:6px 6px, 6px 6px;background-repeat:no-repeat;padding-right:42px}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--cereza);background-color:#fff}
+.dos-campos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;min-height:58px;margin-top:4px;border:0;border-radius:29px;
+  background:var(--cereza);color:#fff;font-family:var(--sans);font-weight:800;font-size:17px;
+  cursor:pointer;box-shadow:0 12px 28px -12px rgba(174,28,28,.65);
+  transition:background .35s var(--curva),transform .3s var(--curva)}
+.cta:hover{background:var(--cereza-os);transform:translateY(-2px)}
+.cta:disabled{opacity:.7;cursor:default;transform:none}
+.pie-cta{font-size:14px;color:var(--tinta-sv);margin-top:12px;text-align:center}
+
+/* ══════ Botón flotante ══════ */
+#flota{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;
+  transform:translate(-50%,130%);min-height:52px;padding:0 28px;border:0;border-radius:26px;
+  background:var(--cereza);color:#fff;font-family:var(--sans);font-weight:800;font-size:15.5px;
+  text-decoration:none;display:inline-flex;align-items:center;gap:9px;white-space:nowrap;
+  box-shadow:0 16px 32px -12px rgba(174,28,28,.8);
+  transition:transform .5s var(--resorte),opacity .4s;opacity:0;pointer-events:none}
+#flota.visible{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+
+/* ══════ Visor de fotos ══════ */
+#visor{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(74,59,48,.9);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  opacity:0;transition:opacity .35s var(--curva)}
+#visor.visible{display:flex}
+#visor.entra{opacity:1}
+#visor img{max-width:100%;max-height:86svh;border-radius:16px;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.6);transform:scale(.94);
+  transition:transform .4s var(--resorte)}
+#visor.entra img{transform:none}
+#cerrar-visor{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;
+  width:46px;height:46px;border:0;border-radius:50%;background:rgba(253,247,236,.95);
+  display:grid;place-items:center;cursor:pointer}
+#cerrar-visor svg{width:20px;height:20px;stroke:var(--tinta);fill:none;stroke-width:2.2;stroke-linecap:round}
+
+/* ══════ Recuadro final ══════ */
+#final{position:fixed;inset:0;z-index:130;display:none;align-items:center;justify-content:center;padding:26px;
+  background:rgba(174,28,28,.34);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+  opacity:0;transition:opacity .4s var(--curva)}
+#final.visible{display:flex}
+#final.entra{opacity:1}
+.recuadro{background:var(--blanco);border-radius:26px;padding:34px 26px 30px;
+  width:100%;max-width:346px;text-align:center;
+  box-shadow:0 0 0 10px rgba(255,255,255,.3), 0 26px 60px -22px rgba(174,28,28,.5);
+  transform:translateY(16px) scale(.96);transition:transform .5s var(--resorte)}
+#final.entra .recuadro{transform:none}
+.recuadro .sello-img{width:84px;margin:0 auto 14px}
+.recuadro h2{font-size:29px;line-height:1.2}
+.recuadro .recado{color:var(--tinta-sv);margin-top:10px;font-size:15.5px;line-height:1.55}
+.recuadro .resumen{display:inline-block;margin-top:16px;padding:11px 20px;
+  background:var(--papel);border-radius:999px;font-size:15px}
+.recuadro .resumen b{font-weight:800;color:var(--cereza-os)}
+.recuadro .volver{display:block;width:100%;margin:20px auto 0;padding:13px 22px;border-radius:999px;
+  border:2px solid var(--beige-os);background:transparent;color:var(--camel-hondo);
+  font-family:var(--sans);font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;
+  transition:border-color .3s var(--curva)}
+.recuadro .volver:hover{border-color:var(--camel)}
+
+footer{padding:28px 0 42px;text-align:center;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(74,59,48,.42);position:relative;z-index:2}
+footer a{text-decoration:none;color:var(--camel-hondo)}
+
+.sube{opacity:0;transform:translateY(16px);transition:opacity .7s var(--curva),transform .7s var(--curva)}
+.sube.visto{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .sube{opacity:1;transform:none;transition:none}
+  .baja,.boton-abrir,.chispita{animation:none}
+  .tres-caja .mono-tres{opacity:1;transform:translateX(-48%)}
+  #sobre,#flota,#visor,#final{transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body class="cerrado">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ic-pin" viewBox="0 0 24 24">
+    <path d="M12 21s7-6.4 7-11.6A7 7 0 005 9.4C5 14.6 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/>
+  </symbol>
+  <symbol id="ic-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.4V12l3.2 2"/></symbol>
+  <symbol id="ic-camara" viewBox="0 0 24 24">
+    <path d="M3 6.5h4L8.4 4h7.2L17 6.5h4v13H3v-13z"/><circle cx="12" cy="13" r="4.2"/>
+  </symbol>
+  <symbol id="ic-calendario" viewBox="0 0 24 24">
+    <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>
+  </symbol>
+  <symbol id="ic-copiar" viewBox="0 0 24 24">
+    <rect x="8.5" y="8.5" width="12" height="12" rx="2.5"/><path d="M15.5 5.5h-9a2.5 2.5 0 00-2.5 2.5v9"/>
+  </symbol>
+  <symbol id="ic-abajo" viewBox="0 0 20 24"><path d="M10 2v19M4 15l6 6 6-6"/></symbol>
+  <symbol id="ic-cerrar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-lista" viewBox="0 0 24 24">
+    <rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8.5 9h7M8.5 13h7M8.5 17h4"/>
+  </symbol>
+  <symbol id="ic-corazon" viewBox="0 0 24 22">
+    <path d="M12 21S2 14.4 2 8.2A5.7 5.7 0 0112 5.4 5.7 5.7 0 0122 8.2C22 14.4 12 21 12 21z"/>
+  </symbol>
+  <symbol id="ic-bota" viewBox="0 0 42 44">
+    <path d="M10.5 3h15.8l-1.4 18.4c-.13 1.8.78 3.5 2.36 4.45l6.9 4.15c2.1 1.26 3.4 3.54 3.4 6v2.5c0 1.38-1.12 2.5-2.5 2.5H10c-1.38 0-2.5-1.12-2.5-2.5v-4.2c0-1.02.2-2.02.6-2.96l2.94-6.9c.4-.94.6-1.94.55-2.96L10.5 3z"/>
+    <path d="M7.7 32.8h29.9"/><path d="M10.9 8.9h15"/>
+    <path d="M14.4 15.2l2.3 2.4 2.3-2.4M19 15.2l2.3 2.4"/>
+  </symbol>
+  <symbol id="ic-panuelo" viewBox="0 0 40 34">
+    <path d="M4 7.5h32l-16 23z"/><path d="M4 7.5c4.4-3 11-4.5 16-4.5s11.6 1.5 16 4.5"/>
+    <path d="M12 13.5h2M18 16.5h2M25 13.5h2M15 19.5h2M22 21.5h2"/>
+  </symbol>
+  <symbol id="ic-chispa" viewBox="0 0 24 24">
+    <path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/>
+  </symbol>
+  <symbol id="ic-mono-lazo" viewBox="0 0 64 46">
+    <path d="M30.5 22C26 13 17 7.5 11 9.5 5.5 11.3 4.5 18.5 9 22.5c4.5 4 13 6 21.5 4.5z"/>
+    <path d="M33.5 22C38 13 47 7.5 53 9.5c5.5 1.8 6.5 9 2 13-4.5 4-13 6-21.5 4.5z"/>
+    <path d="M29 28.8c-1.5 6-4 11-7.5 15.2 5-1.5 8-5 9-10.2zM35 28.8c1.5 6 4 11 7.5 15.2-5-1.5-8-5-9-10.2z"/>
+    <ellipse cx="32" cy="24.4" rx="4.6" ry="4.2"/>
+  </symbol>
+</svg>
+
+<!-- ══════════════════ PANTALLA DE APERTURA ══════════════════ -->
+<div id="sobre">
+  <div class="env">
+    <div class="pre-quien">Tienes una invitación</div>
+    <div class="pre-nombre">María Camila cumple 3</div>
+    <button class="boton-abrir" id="abrir" style="--medallon:226px" aria-label="Abrir la invitación">
+      <span class="medallon">
+        <img id="img-boton" src="fotos/boton.png" alt=""
+             onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <img src="arte/estrella.webp" alt="" hidden>
+      </span>
+      <span class="rotulo">¡Te invitamos!</span>
+    </button>
+    <div class="toque">Toca para abrir</div>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="nav-env">
+    <a class="marca" href="#inicio">Savey</a>
+    <div class="nav-links">
+      <a href="#cuando">Cuándo</a>
+      <a href="#fotos">Fotos</a>
+      <a class="clave" href="#confirmar">Confirmar</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════ 1 · PORTADA ══════════════════ -->
+<header class="portada" id="inicio">
+  <span class="chispita" style="top:16%;left:8%;width:15px;animation-delay:-.4s"><svg viewBox="0 0 24 24"><use href="#ic-chispa"/></svg></span>
+  <span class="chispita" style="top:24%;right:11%;width:11px;animation-delay:-1.7s"><svg viewBox="0 0 24 24"><use href="#ic-chispa"/></svg></span>
+  <span class="chispita" style="bottom:19%;left:14%;width:10px;animation-delay:-2.6s"><svg viewBox="0 0 24 24"><use href="#ic-chispa"/></svg></span>
+  <span class="chispita" style="bottom:27%;right:8%;width:14px;animation-delay:-1.1s"><svg viewBox="0 0 24 24"><use href="#ic-chispa"/></svg></span>
+
+  <svg class="deco camel" viewBox="0 0 42 44" style="left:6%;bottom:29%;width:28px;transform:rotate(-10deg)" aria-hidden="true"><use href="#ic-bota"/></svg>
+  <svg class="deco camel" viewBox="0 0 40 34" style="right:6%;bottom:36%;width:30px;transform:rotate(8deg)" aria-hidden="true"><use href="#ic-panuelo"/></svg>
+  <svg class="deco rosa" viewBox="0 0 24 22" style="left:13%;top:33%;width:15px;transform:rotate(-12deg)" aria-hidden="true"><use href="#ic-corazon"/></svg>
+  <svg class="deco rosa" viewBox="0 0 24 22" style="right:12%;top:46%;width:11px;transform:rotate(14deg)" aria-hidden="true"><use href="#ic-corazon"/></svg>
+  <svg class="deco rosa" viewBox="0 0 24 22" style="left:9%;bottom:38%;width:9px" aria-hidden="true"><use href="#ic-corazon"/></svg>
+
+  <div class="env">
+    <img class="guirnalda" src="arte/guirnalda.webp" alt="" loading="eager">
+
+    <div class="invita">Te invitamos a celebrar</div>
+    <h1 class="nombre">María Camila</h1>
+
+    <div class="tres-caja">
+      <div class="orbita" aria-hidden="true">
+        <img class="o-herradura" src="arte/herradura.webp" alt="">
+        <img class="o-estrella" src="arte/estrella.webp" alt="">
+      </div>
+      <span class="tres" aria-hidden="true">3</span>
+      <svg class="mono-tres" viewBox="0 0 64 46" aria-hidden="true"
+           style="fill:#D62828;stroke:#AE1C1C;stroke-width:1.6;stroke-linejoin:round">
+        <use href="#ic-mono-lazo"/>
+      </svg>
+    </div>
+
+    <div class="cinta">cumple 3 años</div>
+    <p class="bienvenida">Ensilla tu caballito y vente a la fiesta: hay pastel, juegos y mucho que celebrar.</p>
+    <svg class="baja" viewBox="0 0 20 24" aria-hidden="true"><use href="#ic-abajo"/></svg>
+  </div>
+</header>
+
+<main>
+
+<img class="cuerda-sep" src="arte/cuerda.webp" alt="" aria-hidden="true" loading="lazy">
+
+<!-- ══════════════════ 2 · FECHA Y LUGAR ══════════════════ -->
+<section class="cuando" id="cuando">
+  <div class="env">
+    <div class="sube"><div class="et">Cuándo y dónde</div></div>
+    <div class="tarjeta sube">
+      <div class="fecha-gr">15 de noviembre</div>
+      <div class="fecha-dia">Domingo · 2026</div>
+      <div class="hora"><svg><use href="#ic-reloj"/></svg>2:30 p.&nbsp;m.</div>
+
+      <div class="costura-h" aria-hidden="true"></div>
+
+      <div class="lugar-nom">El salón</div>
+      <div class="lugar-dir">Ignacio Martínez, Tierra Blanca<br>San Luis Potosí, C.&nbsp;P. 78364</div>
+
+      <div class="botones">
+        <!-- Cambia este enlace por el pin exacto de Google Maps -->
+        <a class="btn btn-rojo" href="https://maps.google.com/?q=Ignacio%20Mart%C3%ADnez%2C%20Tierra%20Blanca%2C%20San%20Luis%20Potos%C3%AD%2078364" target="_blank" rel="noopener">
+          <svg><use href="#ic-pin"/></svg>Ver la ubicación</a>
+        <button class="btn btn-linea" type="button" id="btn-cal">
+          <svg><use href="#ic-calendario"/></svg>Agendar en mi calendario</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 3 · CUENTA REGRESIVA ══════════════════ -->
+<section class="cuenta">
+  <div class="env">
+    <div class="sube"><div class="et">Ya merito</div></div>
+    <div class="letrero sube">
+      <span class="clavo a"></span><span class="clavo b"></span>
+      <span class="clavo c"></span><span class="clavo d"></span>
+      <div class="et">Faltan</div>
+      <div class="reloj">
+        <span class="casilla"><b id="cd-d">00</b><span>Días</span></span><i>·</i>
+        <span class="casilla"><b id="cd-h">00</b><span>Horas</span></span><i>·</i>
+        <span class="casilla"><b id="cd-m">00</b><span>Min</span></span><i>·</i>
+        <span class="casilla"><b id="cd-s">00</b><span>Seg</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<img class="cuerda-sep" src="arte/cuerda.webp" alt="" aria-hidden="true" loading="lazy">
+
+<!-- ══════════════════ 4 · FAMILIA ══════════════════ -->
+<section class="familia">
+  <div class="env">
+    <svg class="corazon sube" viewBox="0 0 24 22"><use href="#ic-corazon"/></svg>
+    <div class="sube"><div class="et">Con mucho cariño</div>
+      <h2 style="margin-top:8px">Quienes la acompañan</h2></div>
+
+    <div class="bloque-f sube">
+      <div class="et">Su mamá</div>
+      <p>Yatziri Guadalupe Alemán Romero</p>
+    </div>
+
+    <div class="bloque-f sube">
+      <div class="et">Sus padrinos</div>
+      <p>José Guadalupe Reyes Hernández</p>
+      <p>Estefanía Alemán Romero</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 5 · GALERÍA ══════════════════ -->
+<section class="galeria" id="fotos">
+  <div class="env">
+    <div class="sube"><div class="et">Recuerdos</div>
+      <h2 style="margin-top:8px">Nuestra vaquerita</h2></div>
+
+    <!-- Foto principal, dentro del marco ilustrado: fotos/cami.webp -->
+    <div class="marco-grande sube">
+      <span class="dentro">
+        <img src="fotos/cami.webp" alt="María Camila"
+             onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="marca" hidden>
+          <svg viewBox="0 0 24 24"><use href="#ic-camara"/></svg><span>Foto</span>
+        </span>
+      </span>
+      <img class="art" src="arte/marco.webp" alt="" aria-hidden="true">
+    </div>
+
+    <!-- Las demás: fotos/g1.webp … fotos/g4.webp -->
+    <div class="rejilla">
+      <button class="portafoto sube" type="button" data-ver>
+        <span class="liston" aria-hidden="true"><svg viewBox="0 0 64 46" style="fill:#D62828;stroke:#AE1C1C;stroke-width:2;stroke-linejoin:round"><use href="#ic-mono-lazo"/></svg></span>
+        <span class="papel"><span class="hueco-foto">
+          <img src="fotos/g1.webp" alt="María Camila" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <span class="marca" hidden><svg viewBox="0 0 24 24"><use href="#ic-camara"/></svg><span>Foto 1</span></span>
+        </span></span>
+      </button>
+      <button class="portafoto sube" type="button" data-ver>
+        <span class="liston" aria-hidden="true"><svg viewBox="0 0 64 46" style="fill:#D9A65C;stroke:#B8843C;stroke-width:2;stroke-linejoin:round"><use href="#ic-mono-lazo"/></svg></span>
+        <span class="papel"><span class="hueco-foto">
+          <img src="fotos/g2.webp" alt="María Camila" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <span class="marca" hidden><svg viewBox="0 0 24 24"><use href="#ic-camara"/></svg><span>Foto 2</span></span>
+        </span></span>
+      </button>
+      <button class="portafoto sube" type="button" data-ver>
+        <span class="liston" aria-hidden="true"><svg viewBox="0 0 64 46" style="fill:#D9A65C;stroke:#B8843C;stroke-width:2;stroke-linejoin:round"><use href="#ic-mono-lazo"/></svg></span>
+        <span class="papel"><span class="hueco-foto">
+          <img src="fotos/g3.webp" alt="María Camila" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <span class="marca" hidden><svg viewBox="0 0 24 24"><use href="#ic-camara"/></svg><span>Foto 3</span></span>
+        </span></span>
+      </button>
+      <button class="portafoto sube" type="button" data-ver>
+        <span class="liston" aria-hidden="true"><svg viewBox="0 0 64 46" style="fill:#D62828;stroke:#AE1C1C;stroke-width:2;stroke-linejoin:round"><use href="#ic-mono-lazo"/></svg></span>
+        <span class="papel"><span class="hueco-foto">
+          <img src="fotos/g4.webp" alt="María Camila" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <span class="marca" hidden><svg viewBox="0 0 24 24"><use href="#ic-camara"/></svg><span>Foto 4</span></span>
+        </span></span>
+      </button>
+    </div>
+    <p class="nota sube">Toca cualquier foto para verla en grande.</p>
+  </div>
+</section>
+
+<img class="cuerda-sep" src="arte/cuerda.webp" alt="" aria-hidden="true" loading="lazy">
+
+<!-- ══════════════════ 6 · ACTIVIDADES ══════════════════ -->
+<section class="actividades">
+  <div class="env">
+    <div class="sube"><div class="et">El plan del día</div>
+      <h2 style="margin-top:8px">Actividades</h2></div>
+
+    <!-- ╔════════════════════════════════════════════════════════╗
+         ║  Mientras no haya programa, se queda esta pizarra.      ║
+         ║  Cuando lo confirmen: borra el <div class="pizarra">    ║
+         ║  y quita los comentarios de la lista de abajo.          ║
+         ╚════════════════════════════════════════════════════════╝ -->
+    <div class="pizarra sube">
+      <svg class="icono" viewBox="0 0 24 24"><use href="#ic-lista"/></svg>
+      <div class="pronto">Muy pronto</div>
+      <p>Estamos afinando los juegos y la hora del pastel. En cuanto quede, lo vas a ver aquí mismo.</p>
+    </div>
+
+    <!--
+    <ol class="programa">
+      <li class="sube"><div class="hr">2:30 p. m.</div><div class="ac">Llegada</div></li>
+      <li class="sube"><div class="hr">3:00 p. m.</div><div class="ac">Juegos</div></li>
+      <li class="sube"><div class="hr">5:00 p. m.</div><div class="ac">Piñata</div></li>
+    </ol>
+    -->
+  </div>
+</section>
+
+<!-- ══════════════════ 7 · HASHTAG ══════════════════ -->
+<section class="hashtag">
+  <div class="env">
+    <div class="sello sube">
+      <div class="et">Para las fotos del día</div>
+      <div class="tag" id="tag">#cami3fest</div>
+      <p>Súbelas con este hashtag para que no se nos pierda ninguna.</p>
+      <button class="btn-copiar" type="button" id="btn-copiar">
+        <svg><use href="#ic-copiar"/></svg><span id="txt-copiar">Copiar el hashtag</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONFIRMACIÓN ══════════════════ -->
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="sube"><div class="et">Confirma tu lugar</div>
+      <h2 style="margin-top:8px">¿Nos acompañas?</h2>
+      <p class="intro">Te agradecemos confirmar antes del <b>1 de noviembre</b>.</p></div>
+
+    <div class="tarjeta sube">
+      <form id="form">
+        <div><label for="familia">¿Quién viene?</label>
+          <input id="familia" required autocomplete="name" placeholder="Familia Alemán Romero"></div>
+        <div><label for="asiste">¿Van a venir?</label>
+          <select id="asiste">
+            <option value="si">Sí, ahí estaremos</option>
+            <option value="no">No vamos a poder</option>
+          </select></div>
+        <div class="dos-campos" id="wrap">
+          <div><label for="adultos">Adultos</label><select id="adultos"></select></div>
+          <div><label for="ninos">Niños</label><select id="ninos"></select></div>
+        </div>
+        <div><label for="mensaje">Un mensajito para Cami <span style="text-transform:none;letter-spacing:0;font-weight:600;opacity:.6">(opcional)</span></label>
+          <textarea id="mensaje" placeholder="Escríbele algo bonito"></textarea></div>
+        <div><button class="cta" type="submit" id="boton-enviar">Confirmar asistencia <span aria-hidden="true">→</span></button>
+          <div class="pie-cta" id="pie-cta">Te tomará menos de un minuto.</div></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" href="#confirmar">Confirmar asistencia</a>
+
+<div id="visor" role="dialog" aria-label="Foto en grande">
+  <button id="cerrar-visor" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24"><use href="#ic-cerrar"/></svg></button>
+  <img id="visor-img" src="" alt="">
+</div>
+
+<div id="final">
+  <div class="recuadro">
+    <img class="sello-img" src="arte/estrella.webp" alt="" aria-hidden="true">
+    <h2 id="f-titulo"></h2>
+    <p class="recado" id="f-recado"></p>
+    <div class="resumen" id="f-resumen" hidden></div>
+    <button class="volver" id="f-volver" type="button">Volver a la invitación</button>
+  </div>
+</div>
+
+<footer>Invitación hecha por <a href="https://saveystudio.com" target="_blank" rel="noopener">Savey</a></footer>
+
+<script>
+(function(){
+"use strict";
+var $=function(i){return document.getElementById(i)};
+
+/* ╔══════════════════════════════════════════════════════════════╗
+   ║  DATOS DE ESTE EVENTO                                         ║
+   ║                                                               ║
+   ║  ► EL .exec DE LA HOJA VA EN  ENDPOINT, AQUÍ ABAJO.           ║
+   ║    Pega la URL completa que te da Google al publicar el       ║
+   ║    Apps Script («Implementar» → «Aplicación web»).            ║
+   ║    Se ve así:                                                 ║
+   ║    https://script.google.com/macros/s/AKfycb.../exec          ║
+   ╚══════════════════════════════════════════════════════════════╝ */
+var FOLIO    = 'VTMUS';
+var EVENTO   = 'cami-3';
+var TITULO   = 'María Camila cumple 3 años';
+var FECHA    = '2026-11-15T14:30:00-06:00';
+var LUGAR    = 'Ignacio Martínez, Tierra Blanca, San Luis Potosí 78364';
+var HASHTAG  = '#cami3fest';
+var WA       = '5214443843993';   /* WhatsApp de Estefanía, para el respaldo */
+var ENDPOINT = '';                /* ←←← PEGA AQUÍ EL .exec ←←← */
+/* ════════════════════════════════════════════════════════════════ */
+
+var maxA=8, maxN=8;
+
+/* ── Abrir ── */
+$('abrir').addEventListener('click', function(){
+  var s=$('sobre');
+  s.classList.add('fuera');
+  document.body.classList.remove('cerrado');
+  document.body.classList.add('abierto');
+  setTimeout(function(){ if(s.parentNode) s.parentNode.removeChild(s) }, 850);
+});
+
+/* ── Selectores ── */
+var sa=$('adultos'), sn=$('ninos');
+for(var i=0;i<=maxA;i++) sa.appendChild(new Option(String(i),String(i)));
+for(var j=0;j<=maxN;j++) sn.appendChild(new Option(String(j),String(j)));
+sa.value='2'; sn.value='1';
+function acomodaForm(){
+  var viene = $('asiste').value === 'si';
+  $('wrap').style.display = viene ? '' : 'none';
+  $('boton-enviar').innerHTML = viene
+    ? 'Confirmar asistencia <span aria-hidden="true">→</span>'
+    : 'Enviar respuesta <span aria-hidden="true">→</span>';
+  $('pie-cta').textContent = viene
+    ? 'Te tomará menos de un minuto.'
+    : 'Gracias por tomarte el momento de avisarnos.';
+}
+$('asiste').addEventListener('change', acomodaForm);
+acomodaForm();
+
+/* ── Barra ── */
+var nav=$('nav');
+var al=function(){ nav.classList.toggle('fija', window.scrollY>40) };
+al(); window.addEventListener('scroll',al,{passive:true});
+
+/* ── Botón flotante ── */
+var flota=$('flota'), conf=$('confirmar');
+function verFlota(){
+  var paso = window.scrollY > window.innerHeight*0.75;
+  var enConf = conf.getBoundingClientRect().top < window.innerHeight*0.9;
+  flota.classList.toggle('visible', paso && !enConf);
+}
+verFlota(); window.addEventListener('scroll',verFlota,{passive:true});
+window.addEventListener('resize',verFlota);
+
+/* ── Cuenta regresiva ── */
+var meta=new Date(FECHA).getTime();
+var pad=function(n){n=String(Math.max(0,n));return n.length<2?'0'+n:n};
+var tic=function(){
+  var d=meta-Date.now(); if(d<0) d=0;
+  $('cd-d').textContent=pad(Math.floor(d/864e5));
+  $('cd-h').textContent=pad(Math.floor(d/36e5)%24);
+  $('cd-m').textContent=pad(Math.floor(d/6e4)%60);
+  $('cd-s').textContent=pad(Math.floor(d/1e3)%60);
+};
+tic(); setInterval(tic,1000);
+
+/* ── Revelado ── */
+if('IntersectionObserver' in window){
+  var ob=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('visto');ob.unobserve(e.target)}})},{threshold:.1});
+  Array.prototype.forEach.call(document.querySelectorAll('.sube'),function(el){ob.observe(el)});
+}else{
+  Array.prototype.forEach.call(document.querySelectorAll('.sube'),function(el){el.classList.add('visto')});
+}
+
+/* ── Copiar hashtag ── */
+$('btn-copiar').addEventListener('click', function(){
+  var b=this, t=$('txt-copiar');
+  var listo=function(){
+    b.classList.add('listo'); t.textContent='¡Copiado!';
+    setTimeout(function(){ b.classList.remove('listo'); t.textContent='Copiar el hashtag' },2200);
+  };
+  function respaldo(){
+    var c=document.createElement('textarea');
+    c.value=HASHTAG; c.setAttribute('readonly','');
+    c.style.cssText='position:absolute;left:-9999px';
+    document.body.appendChild(c); c.select();
+    try{ document.execCommand('copy'); listo() }catch(e){}
+    document.body.removeChild(c);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(HASHTAG).then(listo)['catch'](respaldo);
+  } else { respaldo() }
+});
+
+/* ── Agendar ── */
+$('btn-cal').addEventListener('click', function(){
+  var ini=new Date(FECHA), fin=new Date(ini.getTime()+4.5*36e5);
+  var z=function(d){ return d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z' };
+  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Savey//ES','CALSCALE:GREGORIAN','BEGIN:VEVENT',
+    'UID:'+EVENTO+'@saveystudio.com','DTSTAMP:'+z(new Date()),
+    'DTSTART:'+z(ini),'DTEND:'+z(fin),
+    'SUMMARY:'+TITULO,'LOCATION:'+LUGAR,
+    'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  var a=document.createElement('a');
+  a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
+  a.download=EVENTO+'.ics';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+});
+
+/* ── Visor ── */
+var visor=$('visor'), visorImg=$('visor-img');
+function abrirVisor(src,alt){
+  visorImg.src=src; visorImg.alt=alt||'';
+  visor.classList.add('visible');
+  document.body.classList.add('cerrado');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ visor.classList.add('entra') }) });
+}
+function cerrarVisor(){
+  visor.classList.remove('entra');
+  document.body.classList.remove('cerrado');
+  setTimeout(function(){ visor.classList.remove('visible'); visorImg.src='' },360);
+}
+Array.prototype.forEach.call(document.querySelectorAll('[data-ver]'),function(b){
+  b.addEventListener('click',function(){
+    var im=b.querySelector('img');
+    if(im && !im.hidden) abrirVisor(im.currentSrc||im.src, im.alt);
+  });
+});
+$('cerrar-visor').addEventListener('click',cerrarVisor);
+visor.addEventListener('click',function(e){ if(e.target===visor) cerrarVisor() });
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape' && visor.classList.contains('visible')) cerrarVisor();
+});
+
+/* ── Confirmación ── */
+$('form').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var b=$('boton-enviar'); b.disabled=true; b.textContent='Enviando…';
+  var a=$('asiste').value;
+  var ad = a==='si' ? parseInt($('adultos').value,10)||0 : 0;
+  var ni = a==='si' ? parseInt($('ninos').value,10)||0 : 0;
+
+  /* Estas llaves son las columnas de la hoja de confirmaciones */
+  var d={
+    evento:   EVENTO,
+    titulo:   TITULO,
+    codigo:   '',        /* paquete Plata: sin pases por familia */
+    pase:     '',
+    nombre:   $('familia').value,
+    asiste:   a,
+    personas: String(ad+ni),
+    adultos:  String(ad),
+    ninos:    String(ni),
+    lugares:  '',        /* paquete Plata: sin lugares apartados */
+    mensaje:  $('mensaje').value,
+    folio:    FOLIO,
+    fecha:    new Date().toISOString()
+  };
+
+  var fin=function(){
+    var f=$('final');
+    if(a==='si'){
+      $('f-titulo').textContent='¡Ahí los esperamos!';
+      $('f-recado').textContent='¡Gracias por confirmar! No se les olvide el sombrero.';
+      if(ad+ni>0){
+        $('f-resumen').hidden=false;
+        $('f-resumen').innerHTML='Apartamos <b>'+ad+' adulto'+(ad===1?'':'s')+
+          ' y '+ni+' niño'+(ni===1?'':'s')+'</b>';
+      }
+    } else {
+      $('f-titulo').textContent='Gracias por avisarnos';
+      $('f-recado').textContent='Qué lástima que no puedan acompañarnos. Los vamos a extrañar ese día.';
+    }
+    f.classList.add('visible');
+    document.body.classList.add('cerrado');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ f.classList.add('entra') }) });
+    $('f-volver').addEventListener('click', function(){
+      f.classList.remove('entra');
+      document.body.classList.remove('cerrado');
+      setTimeout(function(){ f.classList.remove('visible') }, 650);
+      $('form').style.display='none';
+      flota.classList.remove('visible');
+    });
+  };
+
+  if(ENDPOINT){
+    fetch(ENDPOINT,{method:'POST',mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(d)}).then(fin)['catch'](fin);
+  } else {
+    fin();
+    var txt='Confirmación '+TITULO+' ('+FOLIO+'): '+d.nombre+' — '+
+            (a==='si' ? ad+' adultos y '+ni+' niños' : 'no podrán asistir')+
+            (d.mensaje ? '. Mensaje: '+d.mensaje : '');
+    var bw=document.createElement('a');
+    bw.className='volver';
+    bw.style.cssText='border-color:var(--cereza);background:var(--cereza);color:#fff';
+    bw.href='https://wa.me/'+WA+'?text='+encodeURIComponent(txt);
+    bw.target='_blank'; bw.rel='noopener';
+    bw.textContent='Avisar por WhatsApp';
+    $('f-volver').parentNode.insertBefore(bw, $('f-volver'));
+  }
+});
+})();
+</script>
+</body>
+</html>

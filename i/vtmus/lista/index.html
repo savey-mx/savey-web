@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!-- Savey · folio VTMUS · panel de confirmaciones -->
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Confirmaciones · María Camila cumple 3</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#FDF7EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crema:#FDF7EC; --papel:#F8EEDC; --blanco:#FFFDF9;
+  --beige:#F0E0C6; --beige-os:#E3CDA8;
+  --camel:#D9A65C; --camel-os:#B8843C; --camel-hondo:#8A6128;
+  --cereza:#D62828; --cereza-os:#AE1C1C;
+  --verde:#2E7D4F; --verde-cl:#E3F0E8;
+  --gris:#8B7D71;
+  --tinta:#4A3B30; --tinta-sv:rgba(74,59,48,.66);
+  --titulo:'Fraunces',Georgia,serif;
+  --sans:'Nunito',system-ui,-apple-system,sans-serif;
+  --curva:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--crema);color:var(--tinta);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--cereza);outline-offset:3px;border-radius:8px}
+svg{display:block}
+.env{max-width:960px;margin:0 auto;padding:0 20px}
+
+header{padding:28px 0 22px;border-bottom:2px dashed var(--beige-os)}
+.cab{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.folio{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--camel-hondo);font-weight:800}
+h1{font-family:var(--titulo);font-weight:600;font-size:clamp(26px,5vw,34px);line-height:1.2;margin-top:4px}
+.sub{font-size:14.5px;color:var(--tinta-sv);margin-top:2px}
+.acciones-cab{display:flex;gap:9px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 17px;
+  border-radius:22px;font-size:14.5px;font-weight:800;text-decoration:none;cursor:pointer;border:0;
+  transition:transform .3s var(--curva),background .3s,color .3s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.btn-rojo{background:var(--cereza);color:#fff}
+.btn-rojo:hover{background:var(--cereza-os)}
+.btn-linea{background:transparent;color:var(--camel-hondo);border:2px solid var(--camel)}
+.btn-linea:hover{background:var(--camel);color:#fff}
+
+/* ══ Tarjetas de totales ══ */
+.totales{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+@media (min-width:660px){.totales{grid-template-columns:repeat(4,1fr)}}
+.tot{background:var(--blanco);border-radius:18px;padding:18px 16px;position:relative;
+  box-shadow:0 10px 26px -20px rgba(74,59,48,.5)}
+.tot::after{content:"";position:absolute;inset:7px;border-radius:12px;border:2px dashed var(--beige-os);
+  pointer-events:none}
+.tot>*{position:relative;z-index:1}
+.tot .n{font-family:var(--titulo);font-weight:600;font-size:38px;line-height:1.05;color:var(--cereza);
+  font-variant-numeric:tabular-nums}
+.tot.verde .n{color:var(--verde)}
+.tot.camel .n{color:var(--camel-hondo)}
+.tot.gris .n{color:var(--gris)}
+.tot .l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--camel-hondo);
+  font-weight:800;margin-top:6px}
+.tot .d{font-size:13px;color:var(--tinta-sv);margin-top:2px}
+
+/* ══ Barra de herramientas ══ */
+.herramientas{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:26px}
+.buscador{position:relative;flex:1;min-width:190px}
+.buscador svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;
+  stroke:var(--camel-os);fill:none;stroke-width:1.9}
+.buscador input{width:100%;min-height:46px;padding:0 15px 0 40px;background:var(--blanco);
+  border:2px solid var(--beige-os);border-radius:23px;font:inherit;font-size:15px;color:var(--tinta)}
+.buscador input:focus{outline:0;border-color:var(--cereza)}
+.filtros{display:flex;gap:6px}
+.filtro{min-height:46px;padding:0 16px;border-radius:23px;border:2px solid var(--beige-os);
+  background:var(--blanco);font-size:14px;font-weight:700;color:var(--tinta-sv);cursor:pointer;
+  transition:all .3s var(--curva)}
+.filtro:hover{border-color:var(--camel)}
+.filtro.on{background:var(--tinta);border-color:var(--tinta);color:var(--crema)}
+
+/* ══ Tabla ══ */
+.caja-tabla{margin-top:18px;background:var(--blanco);border-radius:20px;overflow:hidden;
+  box-shadow:0 12px 30px -24px rgba(74,59,48,.5);border:2px solid var(--beige-os)}
+table{width:100%;border-collapse:collapse}
+thead th{text-align:left;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--camel-hondo);font-weight:800;padding:14px 14px;background:var(--papel);white-space:nowrap}
+thead th.num{text-align:right}
+tbody td{padding:14px 14px;border-top:1px solid var(--beige);vertical-align:top;font-size:15px}
+tbody td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+tbody tr:hover{background:var(--papel)}
+.quien{font-weight:800}
+.recado{font-size:13.5px;color:var(--tinta-sv);margin-top:3px;max-width:42ch;font-style:italic}
+.cuando{font-size:12.5px;color:var(--gris);white-space:nowrap}
+.pica{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:999px;
+  font-size:12px;font-weight:800;white-space:nowrap}
+.pica.si{background:var(--verde-cl);color:var(--verde)}
+.pica.no{background:#F6E4E4;color:var(--cereza-os)}
+.pica svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:660px){
+  thead{display:none}
+  tbody td{display:block;border-top:0;padding:3px 16px}
+  tbody tr{display:block;border-top:1px solid var(--beige);padding:13px 0}
+  tbody tr:first-child{border-top:0}
+  tbody td.num{text-align:left}
+  tbody td.num::before{content:attr(data-r) ": ";font-weight:800;color:var(--camel-hondo);
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+}
+
+/* ══ Estados ══ */
+.aviso{margin-top:18px;padding:22px 20px;border-radius:18px;background:var(--papel);
+  border:2px dashed var(--camel);text-align:center}
+.aviso b{display:block;font-family:var(--titulo);font-weight:600;font-size:21px;margin-bottom:6px}
+.aviso p{color:var(--tinta-sv);font-size:15px;max-width:52ch;margin:0 auto}
+.aviso code{background:var(--blanco);padding:2px 7px;border-radius:6px;font-size:13.5px;
+  border:1px solid var(--beige-os);word-break:break-all}
+.cargando{text-align:center;padding:40px 0;color:var(--tinta-sv)}
+.giro{width:26px;height:26px;margin:0 auto 12px;border:3px solid var(--beige-os);
+  border-top-color:var(--cereza);border-radius:50%;animation:girar .9s linear infinite}
+@keyframes girar{to{transform:rotate(360deg)}}
+
+footer{padding:26px 0 40px;text-align:center;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(74,59,48,.42)}
+footer a{text-decoration:none;color:var(--camel-hondo)}
+.actualizado{font-size:13px;color:var(--gris);margin-top:14px;text-align:center}
+@media (prefers-reduced-motion:reduce){.giro{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ic-lupa" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.8"/><path d="M15.4 15.4L21 21"/></symbol>
+  <symbol id="ic-baja" viewBox="0 0 24 24"><path d="M12 3v13M6.5 11L12 16.5 17.5 11M4 20.5h16"/></symbol>
+  <symbol id="ic-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 10-2.5 5.8M20 6.5V12h-5.5"/></symbol>
+  <symbol id="ic-palomita" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></symbol>
+  <symbol id="ic-equis" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-ojo" viewBox="0 0 24 24"><path d="M1.8 12S5.8 5 12 5s10.2 7 10.2 7-4 7-10.2 7S1.8 12 1.8 12z"/><circle cx="12" cy="12" r="3.2"/></symbol>
+</svg>
+
+<header>
+  <div class="env cab">
+    <div>
+      <div class="folio">Folio VTMUS · Paquete Plata</div>
+      <h1>Confirmaciones</h1>
+      <div class="sub">María Camila cumple 3 · domingo 15 de noviembre de 2026</div>
+    </div>
+    <div class="acciones-cab">
+      <a class="btn btn-linea" href="../" target="_blank" rel="noopener"><svg><use href="#ic-ojo"/></svg>Ver la invitación</a>
+      <button class="btn btn-linea" type="button" id="btn-refrescar"><svg><use href="#ic-refresh"/></svg>Actualizar</button>
+      <button class="btn btn-rojo" type="button" id="btn-csv"><svg><use href="#ic-baja"/></svg>Descargar</button>
+    </div>
+  </div>
+</header>
+
+<main class="env">
+
+  <div class="totales">
+    <div class="tot verde"><div class="n" id="t-personas">—</div><div class="l">Personas</div><div class="d" id="t-personas-d">confirmadas</div></div>
+    <div class="tot"><div class="n" id="t-adultos">—</div><div class="l">Adultos</div></div>
+    <div class="tot camel"><div class="n" id="t-ninos">—</div><div class="l">Niños</div></div>
+    <div class="tot gris"><div class="n" id="t-no">—</div><div class="l">No asisten</div><div class="d" id="t-no-d">familias</div></div>
+  </div>
+
+  <div class="herramientas">
+    <div class="buscador">
+      <svg><use href="#ic-lupa"/></svg>
+      <input id="buscar" type="search" placeholder="Buscar por nombre…" autocomplete="off">
+    </div>
+    <div class="filtros">
+      <button class="filtro on" type="button" data-f="todos">Todos</button>
+      <button class="filtro" type="button" data-f="si">Sí van</button>
+      <button class="filtro" type="button" data-f="no">No van</button>
+    </div>
+  </div>
+
+  <div id="zona">
+    <div class="cargando" id="cargando"><div class="giro"></div>Cargando la lista…</div>
+  </div>
+
+  <div class="actualizado" id="actualizado" hidden></div>
+</main>
+
+<footer>Panel hecho por <a href="https://saveystudio.com" target="_blank" rel="noopener">Savey</a></footer>
+
+<script>
+(function(){
+"use strict";
+var $=function(i){return document.getElementById(i)};
+
+/* ╔══════════════════════════════════════════════════════════════╗
+   ║  ► AQUÍ VA EL MISMO .exec QUE PUSISTE EN LA INVITACIÓN        ║
+   ║    El Apps Script responde el POST (guardar) y el GET         ║
+   ║    (leer la lista). Es la misma URL para los dos.             ║
+   ╚══════════════════════════════════════════════════════════════╝ */
+var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwuA6DURMrOr88FTyivGhaFiNyTLpX7uh5Ad1fgFK8H0cNb0WDXbmQDEsqNAgLG7bxO/exec';   /* ←←← PEGA AQUÍ EL .exec ←←← */
+var EVENTO   = 'cami-3';
+var TITULO   = 'María Camila cumple 3';
+/* ════════════════════════════════════════════════════════════════ */
+
+var filas=[], filtro='todos', texto='';
+
+/* buscar sin que estorben los acentos */
+function plano(t){
+  t=String(t==null?'':t).toLowerCase();
+  return t.normalize ? t.normalize('NFD').replace(/[\u0300-\u036f]/g,'') : t;
+}
+function esc(t){ return String(t==null?'':t).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c] }) }
+function num(v){ var n=parseInt(v,10); return isNaN(n)?0:n }
+function esSi(v){ return String(v||'').toLowerCase().indexOf('s')===0 }
+
+function fechaCorta(v){
+  if(!v) return '';
+  var d=new Date(v);
+  if(isNaN(d.getTime())) return String(v);
+  var m=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  return d.getDate()+' '+m[d.getMonth()]+' · '+
+    String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+}
+
+function totales(){
+  var si=filas.filter(function(f){return esSi(f.asiste)});
+  var ad=si.reduce(function(a,f){return a+num(f.adultos)},0);
+  var ni=si.reduce(function(a,f){return a+num(f.ninos)},0);
+  var no=filas.length-si.length;
+  $('t-personas').textContent=ad+ni;
+  $('t-personas-d').textContent=si.length+(si.length===1?' familia':' familias');
+  $('t-adultos').textContent=ad;
+  $('t-ninos').textContent=ni;
+  $('t-no').textContent=no;
+  $('t-no-d').textContent=no===1?'familia':'familias';
+}
+
+function pinta(){
+  var z=$('zona');
+  var v=filas.filter(function(f){
+    if(filtro==='si' && !esSi(f.asiste)) return false;
+    if(filtro==='no' && esSi(f.asiste)) return false;
+    if(texto && plano(f.nombre).indexOf(texto)<0) return false;
+    return true;
+  });
+  if(!filas.length){
+    z.innerHTML='<div class="aviso"><b>Todavía no hay confirmaciones</b>'+
+      '<p>En cuanto alguien confirme desde la invitación, va a aparecer aquí.</p></div>';
+    return;
+  }
+  if(!v.length){
+    z.innerHTML='<div class="aviso"><b>Nada con ese filtro</b>'+
+      '<p>Prueba con otro nombre o quita el filtro.</p></div>';
+    return;
+  }
+  var html='<div class="caja-tabla"><table><thead><tr>'+
+    '<th>Quién</th><th>Viene</th><th class="num">Adultos</th><th class="num">Niños</th>'+
+    '<th class="num">Total</th><th>Confirmó</th></tr></thead><tbody>';
+  v.forEach(function(f){
+    var si=esSi(f.asiste), ad=si?num(f.adultos):0, ni=si?num(f.ninos):0;
+    html+='<tr>'+
+      '<td><div class="quien">'+esc(f.nombre||'—')+'</div>'+
+        (f.mensaje?'<div class="recado">“'+esc(f.mensaje)+'”</div>':'')+'</td>'+
+      '<td><span class="pica '+(si?'si':'no')+'"><svg><use href="#'+(si?'ic-palomita':'ic-equis')+'"/></svg>'+
+        (si?'Sí':'No')+'</span></td>'+
+      '<td class="num" data-r="Adultos">'+(si?ad:'—')+'</td>'+
+      '<td class="num" data-r="Niños">'+(si?ni:'—')+'</td>'+
+      '<td class="num" data-r="Total">'+(si?(ad+ni):'—')+'</td>'+
+      '<td><span class="cuando">'+esc(fechaCorta(f.recibido||f.fecha))+'</span></td>'+
+    '</tr>';
+  });
+  z.innerHTML=html+'</tbody></table></div>';
+}
+
+function sinEndpoint(){
+  $('zona').innerHTML='<div class="aviso"><b>Falta conectar la hoja</b>'+
+    '<p>Abre este archivo y pega la URL del Apps Script en la variable '+
+    '<code>ENDPOINT</code>, hasta arriba del &lt;script&gt;. Es la misma que va en la invitación.</p></div>';
+  ['t-personas','t-adultos','t-ninos','t-no'].forEach(function(i){$(i).textContent='—'});
+}
+
+function cargar(){
+  if(!ENDPOINT){ sinEndpoint(); return }
+  $('zona').innerHTML='<div class="cargando"><div class="giro"></div>Cargando la lista…</div>';
+  var url=ENDPOINT+(ENDPOINT.indexOf('?')<0?'?':'&')+'evento='+encodeURIComponent(EVENTO)+'&t='+Date.now();
+  fetch(url)
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json() })
+    .then(function(d){
+      filas = Array.isArray(d) ? d : (d && d.filas) || [];
+      filas.sort(function(a,b){
+        return new Date(b.recibido||b.fecha||0) - new Date(a.recibido||a.fecha||0);
+      });
+      totales(); pinta();
+      var a=$('actualizado'); a.hidden=false;
+      a.textContent='Actualizado a las '+new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});
+    })
+    ['catch'](function(e){
+      $('zona').innerHTML='<div class="aviso"><b>No se pudo leer la hoja</b>'+
+        '<p>Revisa que el Apps Script esté publicado con acceso para <b>cualquier persona</b> '+
+        'y que responda a peticiones GET. Detalle: <code>'+esc(e.message)+'</code></p></div>';
+    });
+}
+
+/* ── Controles ── */
+$('buscar').addEventListener('input',function(){ texto=plano(this.value.trim()); pinta() });
+Array.prototype.forEach.call(document.querySelectorAll('.filtro'),function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.filtro').forEach(function(o){o.classList.remove('on')});
+    b.classList.add('on'); filtro=b.dataset.f; pinta();
+  });
+});
+$('btn-refrescar').addEventListener('click',cargar);
+
+$('btn-csv').addEventListener('click',function(){
+  if(!filas.length){ return }
+  var cols=['recibido','nombre','asiste','adultos','ninos','personas','mensaje'];
+  var esc2=function(v){ v=String(v==null?'':v); return '"'+v.replace(/"/g,'""')+'"' };
+  var lineas=[cols.join(',')];
+  filas.forEach(function(f){ lineas.push(cols.map(function(c){return esc2(f[c])}).join(',')) });
+  var blob=new Blob(['﻿'+lineas.join('\r\n')],{type:'text/csv;charset=utf-8'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='confirmaciones-VTMUS.csv';
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); document.body.removeChild(a) },600);
+});
+
+cargar();
+setInterval(function(){ if(ENDPOINT && !document.hidden) cargar() }, 120000);
+})();
+</script>
+</body>
+</html>
