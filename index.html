@@ -8,12 +8,12 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
 <link rel="manifest" href="/site.webmanifest">
 <title>Savey — Invitaciones digitales para bodas, XV años, bautizos y más</title>
-<meta name="description" content="Estudio mexicano de invitaciones digitales con confirmación de asistencia. 48 diseños para bodas, XV años, bautizos, cumpleaños y eventos de empresa. Paquetes Plata, Oro y Diamante, todo incluido.">
+<meta name="description" content="Estudio mexicano de invitaciones digitales con confirmación de asistencia. 54 diseños para bodas, XV años, bautizos, cumpleaños y eventos de empresa. Paquetes Plata, Oro y Diamante, todo incluido.">
 <meta name="theme-color" content="#F7F2EA">
 <link rel="canonical" href="https://saveystudio.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Savey — Invitaciones digitales">
-<meta property="og:description" content="48 diseños listos. Paquetes Plata, Oro y Diamante, con todo incluido.">
+<meta property="og:description" content="54 diseños listos. Paquetes Plata, Oro y Diamante, con todo incluido.">
 <meta property="og:url" content="https://saveystudio.com/">
 <meta property="og:locale" content="es_MX">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -273,7 +273,21 @@ section{padding:var(--aire) 0}
 .muestra:hover .ver,.muestra:focus-visible .ver{opacity:1;transform:none}
 .muestra b{display:block;font-weight:500;margin-top:.8rem;line-height:1.25}
 .muestra em{font-style:normal;font-size:var(--p--1);color:var(--espresso-suave)}
-.galeria-pie{font-size:var(--p--1);color:var(--espresso-suave)}
+/* Ligas a las subpáginas por categoría */
+.galeria-acciones{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:.4rem}
+.liga-cat{display:inline-flex;align-items:center;gap:.55rem;height:44px;padding:0 1.1rem;border-radius:100px;
+  background:var(--blanco);border:1px solid var(--borde-fino);font-size:var(--p--1);font-weight:500;
+  text-decoration:none;white-space:nowrap;
+  transition:border-color .3s,transform .4s var(--suave),box-shadow .4s}
+.liga-cat:hover{border-color:var(--champagne);transform:translateY(-2px);
+  box-shadow:0 14px 28px -18px rgba(51,43,39,.55)}
+.liga-cat b{font-weight:500;border-bottom:1px solid var(--champagne)}
+.liga-cat svg{width:16px;height:16px;stroke:var(--espresso);fill:none;stroke-width:1.7;
+  transition:transform .4s var(--suave)}
+.liga-cat:hover svg{transform:translateX(3px)}
+.liga-cat-todas{background:transparent;color:var(--espresso-suave)}
+.liga-cat-todas:hover{color:var(--espresso)}
+.galeria-pie{font-size:var(--p--1);color:var(--espresso-suave);margin-top:1rem}
 .galeria-pie a{color:var(--espresso);text-underline-offset:3px;text-decoration-color:var(--champagne)}
 
 /* ══════════ Todo incluido ══════════ */
@@ -464,6 +478,7 @@ footer a:hover{border-color:var(--champagne)}
 
 <div class="cajon" id="cajon">
   <a href="#ejemplos">Diseños</a>
+  <a href="/catalogo/">Catálogo por categoría</a>
   <a href="#incluido">¿Qué incluye?</a>
   <a href="#paquetes">Paquetes</a>
   <a href="#proceso">¿Cómo funciona?</a>
@@ -559,6 +574,14 @@ footer a:hover{border-color:var(--champagne)}
 
     <div class="pestanas revelar" role="tablist" id="pestanas" aria-label="Tipo de evento"><span class="indicador" id="indicador" aria-hidden="true"></span></div>
     <div class="riel" id="riel" role="tabpanel"></div>
+
+    <div class="galeria-acciones revelar">
+      <a class="liga-cat" id="liga-cat" href="/catalogo/bodas/">
+        <span>Ver toda la colección de <b id="liga-cat-nombre">Bodas</b></span>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+      </a>
+      <a class="liga-cat liga-cat-todas" href="/catalogo/">Catálogo por categoría</a>
+    </div>
 
     <p class="galeria-pie revelar">¿No ves lo que buscas? <a href="/brief/">Cuéntanoslo en el cuestionario y lo diseñamos.</a></p>
   </div>
@@ -726,7 +749,7 @@ footer a:hover{border-color:var(--champagne)}
         <p>De verdad. Fotos, itinerario, cambios de color, invitados que confirman: nada de eso tiene tope ni costo adicional. El precio de tu paquete es el precio final.</p></details>
       <details class="pregunta"><summary>¿Cuál es la diferencia entre Plata, Oro y Diamante?</summary>
         <p>Plata es tu invitación completa con confirmación de asistencia. Oro le suma un pase con nombre para cada familia, control de entrada, save the date y álbum compartido. Diamante suma que nosotros mandemos las invitaciones por WhatsApp y demos seguimiento por ti.</p></details>
-      <details class="pregunta"><summary>¿Puedo usar cualquiera de los 48 diseños?</summary>
+      <details class="pregunta"><summary>¿Puedo usar cualquiera de los 54 diseños?</summary>
         <p>Sí, y los adaptamos a tus colores sin costo. También podemos mezclar: la portada de uno con la estructura de otro.</p></details>
       <details class="pregunta"><summary>¿Y si la plantilla trae secciones que no quiero?</summary>
         <p>Las secciones se quitan y se ponen a voluntad: si quieres los nombres de tus padrinos y el diseño no los trae, los agregamos; si no quieres mesa de regalos, la quitamos. Los diseños son para tomar ideas, no para amoldarte a ellos.</p></details>
@@ -765,6 +788,7 @@ footer a:hover{border-color:var(--champagne)}
     <svg class="chispa" aria-hidden="true"><use href="#ch"/></svg>
     <p>Savey. Estudio de invitaciones digitales. Estado de México, México.</p>
     <nav>
+      <a href="/catalogo/">Catálogo por categoría</a>
       <a href="https://wa.me/5215618906790" target="_blank" rel="noopener">WhatsApp +52 1 56 1890 6790</a>
       <a href="mailto:hola@saveystudio.com">hola@saveystudio.com</a>
       <a href="/aviso-de-privacidad.html">Aviso de privacidad</a>
@@ -835,6 +859,14 @@ var CATALOGO=[
   {ru:"/i/grad-legado/",s:"grad-legado",t:"Legado",d:"Logro adulto",n:"Mónica",f:"19 · 06 · 27",im:"/i/fotos/gd-legado-t.webp",c:["#1E3252","#FBF9F5","#8FA184"]},
   {ru:"/i/grad-ocaso/",s:"grad-ocaso",t:"Ocaso",d:"Cena al atardecer",n:"Diego",f:"16 · 07 · 27",im:"/i/fotos/gd-ocaso-t.webp",c:["#BD6B4C","#F7EDE4","#E5B9A8"]}
  ]},
+ {id:"empresa",nombre:"Corporativo",rotulo:"Te esperamos",piezas:[
+  {ru:"/i/corp-ambar/",s:"corp-ambar",t:"Ámbar",d:"Cena de reconocimiento",n:"Noche de Reconocimientos",f:"18 · 11 · 27",im:"/i/fotos/co-ambar-t.webp",c:["#221D18","#F5EEE2","#D79A4E"]},
+  {ru:"/i/corp-horizonte/",s:"corp-horizonte",t:"Horizonte",d:"Conferencia y talleres",n:"Horizonte 2027",f:"11 · 03 · 27",im:"/i/fotos/co-horizonte-t.webp",c:["#1F3D63","#FBF8F2","#E4EBF3"]},
+  {ru:"/i/corp-umbral/",s:"corp-umbral",t:"Umbral",d:"Lanzamiento",n:"Meridiano",f:"20 · 05 · 27",im:"/i/fotos/co-umbral-t.webp",c:["#16202B","#EFEAE2","#C97B4A"]},
+  {ru:"/i/corp-cantera/",s:"corp-cantera",t:"Cantera",d:"Aniversario",n:"Casa Verea · 25",f:"17 · 09 · 27",im:"/i/fotos/co-cantera-t.webp",c:["#3B4633","#F6F1E6","#D8C7A9"]},
+  {ru:"/i/corp-prisma/",s:"corp-prisma",t:"Prisma",d:"Networking",n:"Prisma",f:"24 · 06 · 27",im:"/i/fotos/co-prisma-t.webp",c:["#191622","#F1EFF2","#C2A171"]},
+  {ru:"/i/corp-albor/",s:"corp-albor",t:"Albor",d:"Desayuno de cierre",n:"Cierre de año",f:"10 · 12 · 27",im:"/i/fotos/co-albor-t.webp",c:["#B96A4B","#FBF6EE","#F1E7D8"]}
+ ]},
  {id:"temporada",nombre:"De Temporada",rotulo:"Te esperamos",piezas:[
   {ru:"/i/temporada-posada/",s:"temporada-posada",t:"Posada",d:"Navidad en casa",n:"Posada en casa",f:"18 · 12 · 27",im:"/i/fotos/tp-posada-t.webp",c:["#1D3026","#F8F2E6","#C9A462"]},
   {ru:"/i/temporada-noche/",s:"temporada-noche",t:"Noche de Personajes",d:"Fiesta de disfraces",n:"Halloween",f:"30 · 10 · 27",im:"/i/fotos/tp-noche-t.webp",c:["#16121C","#F3EDE4","#E8762A"]},
@@ -843,13 +875,13 @@ var CATALOGO=[
   {ru:"/i/temporada-ofrenda/",s:"temporada-ofrenda",t:"Ofrenda",d:"Día de Muertos",n:"Reunión para recordar",f:"02 · 11 · 27",im:"/i/fotos/tp-ofrenda-t.webp",c:["#151E33","#F5EDDF","#E08A2B"]},
   {ru:"/i/temporada-juego/",s:"temporada-juego",t:"Imaginación en Juego",d:"Día del Niño y la Niña",n:"Taller de cartón",f:"30 · 04 · 27",im:"/i/fotos/tp-juego-t.webp",c:["#2FA8B8","#FDFBF6","#F2B942"]}
  ]},
- {id:"empresa",nombre:"Corporativo",rotulo:"Te esperamos",piezas:[
-  {ru:"/i/corp-ambar/",s:"corp-ambar",t:"Ámbar",d:"Cena de reconocimiento",n:"Noche de Reconocimientos",f:"18 · 11 · 27",im:"/i/fotos/co-ambar-t.webp",c:["#221D18","#F5EEE2","#D79A4E"]},
-  {ru:"/i/corp-horizonte/",s:"corp-horizonte",t:"Horizonte",d:"Conferencia y talleres",n:"Horizonte 2027",f:"11 · 03 · 27",im:"/i/fotos/co-horizonte-t.webp",c:["#1F3D63","#FBF8F2","#E4EBF3"]},
-  {ru:"/i/corp-umbral/",s:"corp-umbral",t:"Umbral",d:"Lanzamiento",n:"Meridiano",f:"20 · 05 · 27",im:"/i/fotos/co-umbral-t.webp",c:["#16202B","#EFEAE2","#C97B4A"]},
-  {ru:"/i/corp-cantera/",s:"corp-cantera",t:"Cantera",d:"Aniversario",n:"Casa Verea · 25",f:"17 · 09 · 27",im:"/i/fotos/co-cantera-t.webp",c:["#3B4633","#F6F1E6","#D8C7A9"]},
-  {ru:"/i/corp-prisma/",s:"corp-prisma",t:"Prisma",d:"Networking",n:"Prisma",f:"24 · 06 · 27",im:"/i/fotos/co-prisma-t.webp",c:["#191622","#F1EFF2","#C2A171"]},
-  {ru:"/i/corp-albor/",s:"corp-albor",t:"Albor",d:"Desayuno de cierre",n:"Cierre de año",f:"10 · 12 · 27",im:"/i/fotos/co-albor-t.webp",c:["#B96A4B","#FBF6EE","#F1E7D8"]}
+ {id:"otros",nombre:"Otros",rotulo:"Te esperamos",piezas:[
+  {ru:"/i/otros-kermes/",s:"otros-kermes",t:"Kermés",d:"Kermés escolar",n:"Colegio Alameda",f:"06 · 03 · 27",im:"/i/fotos/ot-kermes-t.webp",c:["#E0574B","#FDFAF3","#3F9B6D"]},
+  {ru:"/i/otros-concierto/",s:"otros-concierto",t:"En Vivo",d:"Concierto en foro chico",n:"Marea Baja",f:"17 · 04 · 27",im:"/i/fotos/ot-concierto-t.webp",c:["#121316","#F2EFE9","#E39A3C"]},
+  {ru:"/i/otros-ponencia/",s:"otros-ponencia",t:"Ponencia",d:"Charla y conferencia",n:"Diseñar con menos",f:"13 · 05 · 27",im:"/i/fotos/ot-ponencia-t.webp",c:["#3E5C4B","#FBFAF7","#EFEBE2"]},
+  {ru:"/i/otros-teatro/",s:"otros-teatro",t:"Telón",d:"Obra de teatro",n:"Ceniza",f:"11 · 06 · 27",im:"/i/fotos/ot-teatro-t.webp",c:["#1E1214","#EFE6D9","#C9A25E"]},
+  {ru:"/i/otros-galeria/",s:"otros-galeria",t:"Sala",d:"Exposición de arte",n:"Materia lenta",f:"19 · 08 · 27",im:"/i/fotos/ot-galeria-t.webp",c:["#FAF9F6","#1A1A18","#C4472E"]},
+  {ru:"/i/otros-torneo/",s:"otros-torneo",t:"Cancha",d:"Torneo deportivo",n:"Copa del Barrio",f:"09 · 10 · 27",im:"/i/fotos/ot-torneo-t.webp",c:["#2E7D4F","#F6F6F4","#E85D26"]}
  ]}
 ];
 
@@ -891,6 +923,8 @@ function pintar(id,conAnimacion){
   riel.innerHTML="";
   var nodos=cat.piezas.map(function(p){var n=tarjeta(p,cat.rotulo);riel.appendChild(n);return n});
   riel.scrollLeft=0;
+  var lc=$("#liga-cat"), ln=$("#liga-cat-nombre");
+  if(lc&&ln){ lc.href="/catalogo/"+cat.id+"/"; ln.textContent=cat.nombre; }
   flechas();
   if(conAnimacion) anima(nodos,{opacity:[0,1],x:[40,0]},{duration:.6,delay:M&&M.stagger(.06),ease:SUAVE});
 }

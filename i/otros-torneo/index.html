@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Copa del Barrio · 9 de octubre de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F6F4">
+<meta property="og:title" content="Copa del Barrio · Séptima edición">
+<meta property="og:description" content="Sábado 9 de octubre de 2027 · Deportivo Las Águilas, desde las 9:00 h">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/ot-torneo.jpg">
+<link rel="preload" as="image" href="../fotos/ot-torneo-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 06 · TORNEO DEPORTIVO ═══════════ */
+:root{
+  --claro:#F6F6F4; --claro2:#EBEBE6; --carbon:#17181A; --gris:#63656A;
+  --pasto:#2E7D4F; --naranja:#E85D26; --cielo:#2C6BB0; --cal:#FFFFFF;
+  --display:'Barlow Condensed',system-ui,sans-serif; --sans:'Inter',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.2,.86,.3,1); --rev-dur:.6s; --rev-dist:20px;
+  --lado:24px;
+}
+body{background:var(--claro);color:var(--carbon);font-family:var(--sans);font-weight:400;font-size:15.5px;line-height:1.66;-webkit-font-smoothing:antialiased}
+::selection{background:var(--naranja);color:#fff}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--naranja)}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(34px,9.6vw,50px);line-height:.96;letter-spacing:-.01em;text-transform:uppercase}
+.centro{text-align:center}
+section{padding:clamp(60px,13vw,90px) 0}
+/* línea de cancha */
+.cancha-l{height:8px;background:var(--pasto);position:relative}
+.cancha-l::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;transform:translateY(-50%);
+  background:repeating-linear-gradient(90deg,var(--cal) 0 16px,transparent 16px 30px);opacity:.75}
+
+/* ── Carga: el marcador ── */
+#carga{background:var(--carbon)}
+.carga-c{text-align:center;color:var(--claro)}
+.tablero{display:inline-flex;align-items:stretch;gap:6px;background:#0C0D0E;border:2px solid #2A2C30;border-radius:6px;padding:12px 14px}
+.tablero .d{width:34px;height:48px;background:#141518;border-radius:3px;position:relative;overflow:hidden}
+.tablero .d i{position:absolute;left:0;right:0;bottom:0;height:calc(var(--progreso,0) * var(--f,1) * 100%);
+  background:var(--naranja);transition:height .3s var(--rev-ease)}
+.tablero .sep{display:flex;flex-direction:column;justify-content:center;gap:9px;padding:0 2px}
+.tablero .sep b{width:5px;height:5px;border-radius:50%;background:var(--naranja);opacity:calc(.3 + var(--progreso,0)*.7)}
+.carga-c strong{display:block;margin-top:24px;font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.01em;text-transform:uppercase}
+.carga-c span{display:block;margin-top:5px;font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8A8C91}
+body.abierto .carga-c{transform:translateY(-10px);opacity:0;transition:transform .7s var(--rev-ease),opacity .45s}
+
+/* ── Portada ── */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--carbon)}
+.px{position:absolute;left:0;right:0;top:-6%;height:112%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 44%;transform:scale(1.08);transition:transform 2.1s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(23,24,26,.5) 0%,transparent 26%,transparent 44%,rgba(23,24,26,.8) 78%,var(--carbon) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(42px + env(safe-area-inset-bottom,0px));padding:0 var(--lado);color:var(--claro)}
+.edicion{display:inline-block;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  background:var(--naranja);color:#fff;padding:6px 12px;border-radius:3px}
+.torneo{font-family:var(--display);font-weight:700;font-size:clamp(58px,17.5vw,112px);line-height:.85;letter-spacing:-.022em;text-transform:uppercase;margin:12px 0 14px}
+.marcas{display:flex;flex-wrap:wrap;gap:8px}
+.marcas span{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(246,246,244,.14);border:1px solid rgba(246,246,244,.28);border-radius:3px;padding:7px 12px;backdrop-filter:blur(3px)}
+.marcas span.v{background:var(--pasto);border-color:var(--pasto)}
+:root{--h-desde:translateY(24px);--h-inicio:420ms;--h-paso:110ms;--h-dur:.66s}
+@media (min-width:900px){.portada-txt{left:6vw;max-width:760px}}
+
+/* ── Cifras ── */
+.cifras{background:var(--carbon);color:var(--claro);padding:clamp(40px,9vw,58px) 0}
+.cifras .rej{display:grid;grid-template-columns:repeat(3,1fr);gap:0;text-align:center}
+.cifras .c{padding:8px 6px;border-left:1px solid rgba(246,246,244,.16)}
+.cifras .c:first-child{border-left:0}
+.cifras .n{font-family:var(--display);font-weight:700;font-size:clamp(38px,11vw,54px);line-height:1;letter-spacing:-.02em;color:var(--naranja)}
+.cifras .l{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9A9CA1;margin-top:8px}
+
+/* ── Programa del día ── */
+.jornada .b{display:grid;grid-template-columns:62px 1fr;gap:16px;padding:17px 0;border-bottom:1px solid #DEDDD7;
+  transition:background .35s var(--rev-ease),padding-left .35s var(--rev-ease)}
+.jornada .b:first-of-type{border-top:1px solid #DEDDD7}
+.jornada .b:hover{background:var(--claro2);padding-left:8px}
+.jornada .h{font-family:var(--display);font-weight:700;font-size:19px;color:var(--cielo)}
+.jornada .q{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.16;text-transform:uppercase}
+.jornada .q small{display:block;font-family:var(--sans);font-weight:400;font-size:13px;text-transform:none;color:var(--gris);margin-top:3px;letter-spacing:0}
+
+/* ── Dos caras del torneo ── */
+.caras{padding:0}
+.caras figure{position:relative;height:58svh;min-height:300px;overflow:hidden;margin:0}
+.caras .px{top:-8%;height:116%}
+.caras figcaption{position:absolute;z-index:1;left:var(--lado);bottom:20px;max-width:24ch}
+.caras figcaption b{display:block;font-family:var(--display);font-weight:700;font-size:26px;text-transform:uppercase;color:#fff;line-height:1}
+.caras figcaption span{display:block;margin-top:6px;font-size:13px;color:rgba(255,255,255,.88)}
+.caras figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(23,24,26,.82) 0%,rgba(23,24,26,.1) 52%,transparent 100%)}
+@media (min-width:860px){.caras{display:grid;grid-template-columns:1fr 1fr}.caras figure{height:64svh}}
+
+/* ── Sede y formato ── */
+.sede .fila{display:grid;grid-template-columns:1fr;gap:3px;padding:18px 0;border-bottom:1px solid #DEDDD7}
+.sede .fila:first-of-type{border-top:1px solid #DEDDD7}
+.sede .k{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pasto)}
+.sede b{font-family:var(--display);font-weight:600;font-size:22px;text-transform:uppercase;line-height:1.12}
+.sede p{font-size:13.5px;color:var(--gris)}
+[data-cuenta]{margin:32px 0 0;gap:8px;justify-content:flex-start}
+.cu{min-width:58px;align-items:flex-start;background:var(--carbon);border-radius:5px;padding:10px 8px}
+.cu-n{font-family:var(--display);font-weight:700;font-size:34px;line-height:1;color:var(--claro)}
+.cu-t{font-family:var(--display);font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja);margin-top:3px}
+.cu-sep{display:none}
+
+/* ── Botones ── */
+.bt-p{height:56px;padding:0 28px;border-radius:5px;background:var(--naranja);color:#fff;
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;
+  transition:transform .28s var(--rev-ease),background .28s}
+.bt-p:hover{background:#D24F1B;transform:translateY(-2px)}
+.bt-p:active{transform:translateY(0)}
+.bt-s{height:52px;padding:0 18px;border-radius:5px;border:2px solid var(--carbon);color:var(--carbon);
+  font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;background:transparent;
+  transition:background .28s,color .28s}
+.bt-s:hover{background:var(--carbon);color:var(--claro)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.9}
+
+/* ── Confirmación ── */
+.rsvp{background:var(--claro2)}
+.rsvp .centro p{color:var(--gris);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:22px 20px;background:#fff;border-radius:8px;
+  border-top:5px solid var(--pasto);box-shadow:0 2px 10px rgba(23,24,26,.06)}
+.pase-et{display:block;font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+.pase-qui{display:block;font-family:var(--display);font-weight:700;font-size:27px;margin:7px 0 2px;text-transform:uppercase;line-height:1.05}
+.pase-lug{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--pasto)}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris)}
+.linea-in{background:#fff;border:1.5px solid #DAD9D3;border-radius:6px;padding:14px 15px;font-size:16px;color:var(--carbon);transition:border-color .28s}
+.linea-in::placeholder{color:#A7A6A0}
+.linea-in:focus{border-color:var(--cielo)}
+.elige b{background:#fff;border:1.5px solid #DAD9D3;border-radius:6px;font-family:var(--display);font-weight:600;font-size:14px;
+  letter-spacing:.06em;text-transform:uppercase;transition:all .28s var(--rev-ease)}
+.elige input:checked+b{background:var(--pasto);color:#fff;border-color:var(--pasto)}
+.elige input:focus-visible+b{outline:2px solid var(--cielo);outline-offset:2px}
+.paso-lug button{background:#fff;border:1.5px solid #DAD9D3;border-radius:6px;color:var(--carbon)}
+.paso-lug button:hover{background:var(--naranja);color:#fff;border-color:var(--naranja)}
+.paso-lug output{font-family:var(--display);font-weight:700;font-size:36px}
+.paso-lug small{font-size:12.5px;color:var(--gris)}
+.rsvp-nota{font-size:12.5px;color:var(--gris);text-align:center}
+.rg-sello{background:var(--pasto);color:#fff}
+.rg-t{font-family:var(--display);font-weight:700;font-size:32px;text-transform:uppercase}
+.rg-p{color:var(--gris);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:50px}
+.cierre .torneo{font-size:clamp(44px,13vw,80px);color:var(--carbon)}
+.cierre .nota{margin-top:10px;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+.cierre .firma-savey{margin-top:56px}
+#flota{height:52px;padding:0 24px;border-radius:5px;background:var(--naranja);color:#fff;
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c">
+    <div class="tablero">
+      <span class="d"><i style="--f:.8"></i></span>
+      <span class="d"><i style="--f:1"></i></span>
+      <span class="sep"><b></b><b></b></span>
+      <span class="d"><i style="--f:.65"></i></span>
+      <span class="d"><i style="--f:.9"></i></span>
+    </div>
+    <strong>Copa del Barrio</strong><span>Séptima edición</span>
+  </div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.14"><img src="../fotos/ot-torneo.webp" srcset="../fotos/ot-torneo-m.webp 720w, ../fotos/ot-torneo.webp 1100w" sizes="100vw" alt="Disputa por el balón en la cancha"></div>
+  <div class="portada-txt">
+    <span class="edicion" data-h style="--h:0">Séptima edición</span>
+    <h1 class="torneo" data-h style="--h:1">Copa<br>del Barrio</h1>
+    <div class="marcas" data-h style="--h:2">
+      <span class="v">Sábado 9 de octubre</span><span>9:00 h</span><span>Las Águilas</span><span>12 equipos</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="cancha-l" aria-hidden="true"></div>
+
+<section class="cifras">
+  <div class="env">
+    <div class="rej" data-grupo="70">
+      <div class="c" data-a="sube"><div class="n">12</div><div class="l">Equipos</div></div>
+      <div class="c" data-a="sube"><div class="n">18</div><div class="l">Partidos</div></div>
+      <div class="c" data-a="sube"><div class="n">1</div><div class="l">Día</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="jornada">
+  <div class="env">
+    <div class="et" data-a="izq">La jornada</div>
+    <h2 data-a="izq" style="margin-top:10px">Cómo va<br>el sábado</h2>
+    <div style="margin-top:26px" data-grupo="70">
+      <div class="b" data-a="izq"><span class="h">8:30</span><span class="q">Registro<small>Pasa por tu playera y tu grupo</small></span></div>
+      <div class="b" data-a="izq"><span class="h">9:00</span><span class="q">Fase de grupos<small>Cuatro grupos de tres, partidos de 20 minutos</small></span></div>
+      <div class="b" data-a="izq"><span class="h">12:30</span><span class="q">Comida<small>Hay puesto de tacos y agua fresca junto a la cancha 2</small></span></div>
+      <div class="b" data-a="izq"><span class="h">14:00</span><span class="q">Semifinales<small>Cancha principal</small></span></div>
+      <div class="b" data-a="izq"><span class="h">16:00</span><span class="q">Final y premiación<small>Con las familias en la tribuna</small></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="caras">
+  <figure data-ampliar>
+    <div class="px" data-px="0.12"><img src="../fotos/g/to-1.webp" alt="El ánimo de quienes están junto a la cancha" loading="lazy"></div>
+    <figcaption data-a="sube"><b>Desde la orilla</b><span>La mitad del torneo pasa fuera de la cancha: trae silla y algo de tomar.</span></figcaption>
+  </figure>
+  <figure data-ampliar>
+    <div class="px" data-px="0.12"><img src="../fotos/g/to-2.webp" alt="Una jugada desde una perspectiva amplia" loading="lazy"></div>
+    <figcaption data-a="sube"><b>En la cancha</b><span>Cinco contra cinco, cambios libres y árbitro en todos los partidos.</span></figcaption>
+  </figure>
+</div>
+
+<section class="sede" id="detalles">
+  <div class="env">
+    <div class="et" data-a="izq">Lo práctico</div>
+    <h2 data-a="izq" style="margin-top:10px">Sede y formato</h2>
+    <div style="margin-top:26px" data-grupo="70">
+      <div class="fila" data-a="sube"><div class="k">Dónde</div><b>Deportivo Las Águilas</b><p>Av. de las Torres 410, Álvaro Obregón, CDMX · Canchas 1 y 2</p></div>
+      <div class="fila" data-a="sube"><div class="k">Formato</div><b>5 contra 5, eliminación directa</b><p>Cuatro grupos de tres equipos; pasan los dos primeros de cada grupo</p></div>
+      <div class="fila" data-a="sube"><div class="k">Qué traer</div><b>Tenis de pasto sintético</b><p>No se permiten tacos de metal. Lleva playera clara y oscura</p></div>
+      <div class="fila" data-a="sube"><div class="k">Cuota</div><b>$150 por jugador</b><p>Incluye playera, arbitraje y comida. Acompañantes entran gratis</p></div>
+    </div>
+    <div data-cuenta data-a="sube"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px">
+      <a class="bt-s" href="https://maps.google.com/?q=Deportivo%20Las%20%C3%81guilas%20CDMX" target="_blank" rel="noopener" data-a="sube"><svg><use href="#pin"/></svg>Mapa</a>
+      <a class="bt-s" data-calendario data-a="sube" style="--d:80ms"><svg><use href="#cal"/></svg>Agendar</a>
+    </div>
+  </div>
+</section>
+
+<div class="cancha-l" aria-hidden="true"></div>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Inscripciones</div>
+      <h2 style="margin-top:10px">Apúntate</h2>
+      <p>Cerramos cupo el 3 de octubre o cuando se llenen los 12 equipos.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="torneo" data-a="sube">Nos vemos<br>en la cancha</div>
+    <div class="nota" data-a="sube" style="--d:100ms">09 · 10 · 2027 · Las Águilas</div>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Apúntate</a>
+
+<script>
+window.XV = {
+  slug:'otros-torneo', evento:'Copa del Barrio', nombre:'la organización',
+  fechaISO:'2027-10-09T09:00:00-06:00', lugar:'Deportivo Las Águilas, Av. de las Torres 410, Álvaro Obregón, CDMX',
+  fechaLimite:'3 de octubre', graciasSi:'Quedaste inscrito', graciasSiTexto:'Sábado 9 de octubre, registro 8:30 h.',
+  textoPase:'Equipo registrado', etiquetaMensaje:'¿Algo que debamos saber? (opcional)',
+  extras:[
+    {k:'equipo',rot:'¿Con qué equipo vienes?',ph:'Nombre del equipo'},
+    {k:'rol',tipo:'elige',rot:'¿Cómo participas?',op:['Juego','Voy a apoyar']}
+  ],
+  wa:'5215618906790', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Kermés del Colegio Alameda · 6 de marzo de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FDFAF3">
+<meta property="og:title" content="Kermés del Colegio Alameda">
+<meta property="og:description" content="Sábado 6 de marzo de 2027 · Una tarde para compartir">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/ot-kermes.jpg">
+<link rel="preload" as="image" href="../fotos/ot-kermes-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 01 · KERMÉS ═══════════ */
+:root{
+  --papel:#FDFAF3; --blanco:#FFFFFF; --crema:#F5EEDF;
+  --rojo:#E0574B; --verde:#3F9B6D; --amarillo:#F0B429; --azul:#3D7EA6; --rosa:#E58BA6;
+  --tinta:#2F2C28; --suave:#77726B;
+  --display:'Fraunces',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.2,.8,.3,1); --rev-dur:.7s; --rev-dist:20px;
+  --lado:24px;
+}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.66}
+::selection{background:var(--amarillo);color:var(--tinta)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--rojo);font-weight:700}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,8.2vw,40px);line-height:1.08;letter-spacing:-.02em}
+.centro{text-align:center}
+section{padding:clamp(62px,13vw,88px) 0}
+.banderines{display:flex;justify-content:center;gap:0;overflow:hidden}
+.banderines i{width:28px;height:21px;flex:none;background:currentColor;clip-path:polygon(0 0,100% 0,50% 100%)}
+
+/* Carga: los banderines que se cuelgan */
+#carga{background:var(--papel)}
+.carga-c{text-align:center}
+.carga-c .tira{display:flex;gap:4px;justify-content:center}
+.carga-c .tira i{width:24px;height:18px;clip-path:polygon(0 0,100% 0,50% 100%);
+  transform:translateY(calc(-14px + var(--progreso)*14px));opacity:calc(.2 + var(--progreso)*.8);transition:.45s var(--rev-ease)}
+.carga-c b{display:block;margin-top:24px;font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em}
+.carga-c span{display:block;margin-top:6px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--suave)}
+body.abierto .carga-c{transform:translateY(-8px);opacity:0;transition:transform .8s var(--rev-ease),opacity .6s}
+
+/* Portada */
+.portada{position:relative;height:96svh;min-height:560px;overflow:hidden;background:var(--crema)}
+.px{position:absolute;left:0;right:0;top:-5%;height:110%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:46% 44%;transform:scale(1.06);transition:transform 2.4s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(47,44,40,.22) 0%,transparent 26%,transparent 54%,rgba(47,44,40,.5) 84%,rgba(47,44,40,.78) 100%)}
+.portada .banderines{position:absolute;z-index:2;left:0;right:0;top:calc(8px + env(safe-area-inset-top,0px))}
+.portada .banderines i:nth-child(5n){color:var(--rojo)}
+.portada .banderines i:nth-child(5n+1){color:var(--amarillo)}
+.portada .banderines i:nth-child(5n+2){color:var(--verde)}
+.portada .banderines i:nth-child(5n+3){color:var(--azul)}
+.portada .banderines i:nth-child(5n+4){color:var(--rosa)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(46px + env(safe-area-inset-bottom,0px));text-align:center;color:#fff;padding:0 var(--lado)}
+.titulo{font-family:var(--display);font-weight:700;font-size:clamp(44px,13vw,72px);line-height:.98;letter-spacing:-.035em;margin:10px 0}
+.portada-fecha{display:inline-flex;align-items:center;gap:10px;background:var(--amarillo);color:var(--tinta);
+  padding:9px 18px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.04em}
+:root{--h-desde:translateY(18px);--h-inicio:400ms;--h-paso:140ms;--h-dur:.85s}
+
+/* Invitación */
+.invita{text-align:center}
+.invita p{font-family:var(--display);font-weight:600;font-size:clamp(23px,6.2vw,30px);line-height:1.3;max-width:23ch;margin:0 auto;letter-spacing:-.015em}
+.invita em{font-style:normal;color:var(--verde)}
+
+/* Puestos */
+.puestos{background:var(--crema)}
+.rejilla{display:grid;gap:12px;margin-top:28px}
+.puesto{background:var(--blanco);border-radius:20px;padding:22px;position:relative;overflow:hidden;
+  box-shadow:0 18px 34px -34px rgba(47,44,40,.9);transition:transform .5s var(--rev-ease)}
+.puesto:hover{transform:translateY(-4px) rotate(-.5deg)}
+.puesto::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--c,var(--rojo))}
+.puesto .k{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--suave);font-weight:700}
+.puesto b{font-family:var(--display);font-weight:700;font-size:22px;display:block;line-height:1.16;margin:6px 0 4px;letter-spacing:-.015em}
+.puesto span{font-size:14px;color:var(--suave)}
+@media (min-width:760px){.rejilla{grid-template-columns:1fr 1fr}}
+
+/* Fotos del patio */
+.tira-fotos{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px var(--lado) 6px;scrollbar-width:none;scroll-padding-inline:var(--lado)}
+.tira-fotos::-webkit-scrollbar{display:none}
+.tira-fotos figure{flex:0 0 min(76%,320px);scroll-snap-align:center;margin:0}
+.tira-fotos .marco{border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+.tira-fotos img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--rev-ease)}
+.tira-fotos figure:hover img{transform:scale(1.04)}
+.tira-fotos figcaption{font-size:13.5px;color:var(--suave);margin-top:10px;font-weight:500}
+.pista{text-align:center;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:12px}
+
+/* Datos */
+.datos .celdas{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.celda{background:var(--blanco);border-radius:20px;padding:22px;box-shadow:0 18px 34px -36px rgba(47,44,40,.9)}
+.celda:first-child{grid-column:1/-1}
+.celda .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);font-weight:700}
+.celda b{font-family:var(--display);font-weight:700;font-size:23px;display:block;line-height:1.16;margin-top:6px;letter-spacing:-.015em}
+.celda span{font-size:14px;color:var(--suave);display:block;margin-top:3px}
+.celda .bt-s{margin-top:16px}
+[data-cuenta]{margin:32px 0 0;gap:6px}
+.cu{min-width:62px}
+.cu-n{font-family:var(--display);font-weight:700;font-size:36px;letter-spacing:-.03em}
+.cu-t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--suave);margin-top:6px;font-weight:600}
+.cu-sep{width:7px;height:7px;border-radius:2px;background:var(--rojo);margin-top:20px}
+
+/* Botones */
+.bt-p{height:58px;padding:0 30px;border-radius:18px;background:var(--rojo);color:#fff;font-weight:700;font-size:15px;letter-spacing:.02em;
+  box-shadow:0 16px 30px -18px rgba(224,87,75,1);transition:background .35s}
+.bt-p:hover{background:#C9463B}
+.bt-s{height:54px;padding:0 20px;border-radius:18px;border:2px solid var(--tinta);color:var(--tinta);font-size:14px;font-weight:700;background:transparent;
+  transition:background .35s,color .35s}
+.bt-s:hover{background:var(--tinta);color:var(--papel)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:2}
+
+/* Causa */
+.causa{background:var(--verde);color:#fff;text-align:center}
+.causa h2{color:#fff}
+.causa p{color:rgba(255,255,255,.9);max-width:32ch;margin:14px auto 0}
+
+/* Confirmación */
+.rsvp{background:var(--crema)}
+.rsvp .centro p{color:var(--suave);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:28px 0 0;padding:22px 20px;background:var(--blanco);border-radius:20px}
+.pase-et{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);font-weight:700}
+.pase-qui{display:block;font-family:var(--display);font-weight:700;font-size:25px;margin:8px 0 2px;letter-spacing:-.02em}
+.pase-lug{font-size:13.5px;color:var(--rojo);font-weight:600}
+[data-rsvp]{margin-top:30px}
+.campo-l>span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--suave);font-weight:700}
+.linea-in{background:var(--blanco);border:2px solid transparent;border-radius:16px;padding:14px 16px;font-size:16.5px;transition:border-color .3s}
+.linea-in:focus{border-color:var(--amarillo)}
+.elige b{background:var(--blanco);border:2px solid transparent;border-radius:16px;font-size:14.5px;font-weight:600;padding-block:14px;transition:all .3s}
+.elige input:checked+b{background:var(--verde);color:#fff}
+.elige input:focus-visible+b{outline:2px solid var(--amarillo);outline-offset:2px}
+.paso-lug button{background:var(--blanco);color:var(--tinta);width:54px;height:54px}
+.paso-lug button:hover{background:var(--amarillo)}
+.paso-lug output{font-family:var(--display);font-weight:700;font-size:36px}
+.paso-lug small{font-size:13.5px;color:var(--suave)}
+.rsvp-nota{font-size:13px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--verde);color:#fff}
+.rg-t{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:50px}
+.cierre .titulo{font-size:clamp(34px,9.6vw,52px)}
+.cierre p{color:var(--suave);margin-top:6px}
+.cierre .firma-savey{margin-top:62px}
+#flota{height:54px;padding:0 24px;border-radius:18px;background:var(--rojo);color:#fff;font-size:14.5px;font-weight:700;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c">
+    <div class="tira"><i style="background:#E0574B"></i><i style="background:#F0B429"></i><i style="background:#3F9B6D"></i><i style="background:#3D7EA6"></i><i style="background:#E58BA6"></i><i style="background:#E0574B"></i></div>
+    <b>Kermés</b><span>Colegio Alameda</span>
+  </div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.12"><img src="../fotos/ot-kermes.webp" srcset="../fotos/ot-kermes-m.webp 720w, ../fotos/ot-kermes.webp 1100w" sizes="100vw" alt="Una niña jugando a lanzar aros en el patio de la escuela"></div>
+  <div class="banderines" data-h style="--h:0" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="portada-txt">
+    <div class="et" data-h style="--h:1" style="color:#FFD98A">Colegio Alameda</div>
+    <h1 class="titulo" data-h style="--h:2">Kermés<br>de primavera</h1>
+    <div class="portada-fecha" data-h style="--h:3">Sábado 6 de marzo · 11:00 a 6:00</div>
+  </div>
+</header>
+
+<main>
+
+<section class="invita">
+  <div class="env">
+    <p data-a="sube">Juegos, comida y todo el patio abierto. <em>Toda la comunidad está invitada.</em></p>
+  </div>
+</section>
+
+<section class="puestos">
+  <div class="env">
+    <div class="et" data-a="sube">El patio</div>
+    <h2 data-a="sube" style="margin-top:8px">Qué vas a encontrar</h2>
+    <div class="rejilla" data-grupo="90">
+      <div class="puesto" style="--c:var(--rojo)" data-a="sube"><div class="k">Zona A</div><b>Juegos</b><span>Aros, canicas, pesca y lotería. Boletos en la entrada.</span></div>
+      <div class="puesto" style="--c:var(--amarillo)" data-a="sube"><div class="k">Zona B</div><b>Comida</b><span>Pozole, tostadas, tamales y aguas frescas, hechos por las familias.</span></div>
+      <div class="puesto" style="--c:var(--verde)" data-a="sube"><div class="k">Zona C</div><b>Mesa de postres</b><span>Pasteles, gelatinas y dulces típicos.</span></div>
+      <div class="puesto" style="--c:var(--azul)" data-a="sube"><div class="k">Escenario</div><b>Bailables</b><span>A las 2:00 pm presentan todos los grupos.</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="env">
+    <div class="et" data-a="sube">Así se vive</div>
+    <h2 data-a="sube" style="margin-top:8px">La tarde completa</h2>
+  </div>
+  <div class="tira-fotos">
+    <figure data-ampliar><div class="marco" data-a="acerca"><img src="../fotos/g/ke-1.webp" alt="El puesto de comida atendido por las familias" loading="lazy"></div><figcaption>Los puestos los atienden los papás</figcaption></figure>
+    <figure data-ampliar><div class="marco"><img src="../fotos/g/ke-2.webp" alt="Vista amplia de la kermés en el patio" loading="lazy"></div><figcaption>El patio completo, de once a seis</figcaption></figure>
+  </div>
+  <p class="pista">Desliza</p>
+</section>
+
+<section class="datos" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">Los datos</div>
+    <h2 data-a="sube" style="margin-top:8px">Dónde y cuándo</h2>
+    <div class="celdas" data-grupo="90">
+      <div class="celda" data-a="sube"><div class="k">Lugar</div><b>Patio del Colegio Alameda</b><span>Calzada de los Fresnos 210, Coyoacán, CDMX. Entrada por la puerta 2.</span>
+        <a class="bt-s" href="https://maps.google.com/?q=Calzada%20de%20los%20Fresnos%20210%20Coyoac%C3%A1n" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a></div>
+      <div class="celda" data-a="sube"><div class="k">Fecha</div><b>Sábado 6</b><span>de marzo de 2027</span></div>
+      <div class="celda" data-a="sube"><div class="k">Entrada</div><b>Libre</b><span>Los boletos de juegos se compran adentro</span></div>
+    </div>
+    <div class="centro">
+      <div data-cuenta data-a="sube"></div>
+      <a class="bt-s" data-calendario data-a="sube" style="margin-top:24px"><svg><use href="#cal"/></svg>Agregar al calendario</a>
+    </div>
+  </div>
+</section>
+
+<section class="causa">
+  <div class="env" data-a="sube">
+    <div class="et" style="color:#C9F0DC">La causa</div>
+    <h2 style="margin-top:8px">Todo lo recaudado</h2>
+    <p>Este año va completo a la biblioteca y al nuevo domo del patio de primaria. Gracias por venir.</p>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:8px">¿Cuántos vienen?</h2>
+      <p>Nos ayuda a calcular la comida de los puestos.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="banderines" data-a="sube" style="margin-bottom:24px" aria-hidden="true">
+      <i style="color:#E0574B"></i><i style="color:#F0B429"></i><i style="color:#3F9B6D"></i><i style="color:#3D7EA6"></i><i style="color:#E58BA6"></i>
+    </div>
+    <div class="titulo" data-a="sube">¡Los esperamos!</div>
+    <p data-a="sube" style="--d:100ms">Sábado 6 de marzo · 11:00 am</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'otros-kermes', evento:'Kermés del Colegio Alameda', nombre:'la comunidad',
+  fechaISO:'2027-03-06T11:00:00-06:00', lugar:'Colegio Alameda, Calzada de los Fresnos 210, Coyoacán',
+  fechaLimite:'1 de marzo', graciasSi:'¡Los esperamos!', graciasSiTexto:'Sábado 6 de marzo, de 11:00 a 6:00.',
+  etiquetaMensaje:'¿Quieres apoyar en algún puesto? (opcional)',
+  extras:[{k:'grupo', rot:'¿De qué grupo vienen?', ph:'3°B, por ejemplo'}],
+  wa:'5215618906790', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>

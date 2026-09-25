@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Ceniza · 11 de junio de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1E1214">
+<meta property="og:title" content="Ceniza · una obra en dos actos">
+<meta property="og:description" content="Viernes 11 de junio de 2027 · Teatro La Cortina, 20:00 h">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/ot-teatro.jpg">
+<link rel="preload" as="image" href="../fotos/ot-teatro-m.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400;1,6..96,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ 04 · OBRA DE TEATRO ═══════════ */
+:root{
+  --telon:#1E1214; --telon2:#2A1A1D; --vino:#3C2125; --hueso:#EFE6D9; --tenue:#A0908C;
+  --oro:#C9A25E; --foco:#E8C98A;
+  --display:'Bodoni Moda',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.22,.78,.24,1); --rev-dur:.95s; --rev-dist:26px;
+  --lado:26px;
+}
+body{background:var(--telon);color:var(--hueso);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.72}
+::selection{background:var(--oro);color:var(--telon)}
+.env{max-width:520px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-family:var(--sans);font-weight:500;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--oro)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,8vw,42px);line-height:1.08;letter-spacing:-.012em}
+h2 em{font-style:italic}
+.centro{text-align:center}
+section{padding:clamp(66px,14vw,102px) 0}
+/* filete de programa de mano */
+.filete{display:block;margin:0 auto;width:min(420px,calc(100% - var(--lado)*2));height:0;
+  border-top:1px solid rgba(201,162,94,.5);border-bottom:1px solid rgba(201,162,94,.5);padding-top:3px}
+.rombo{display:block;margin:0 auto;width:7px;height:7px;background:var(--oro);transform:rotate(45deg);opacity:.85}
+
+/* ── Carga: el telón se abre ── */
+#carga{background:var(--telon);overflow:hidden}
+.telon{position:absolute;inset:0}
+.telon i{position:absolute;top:0;bottom:0;width:50.4%;
+  background:linear-gradient(90deg,var(--vino),var(--telon2) 42%,var(--vino));
+  transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.telon i::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,rgba(0,0,0,.32) 0 2px,transparent 2px 16px,rgba(239,230,217,.05) 16px 18px,transparent 18px 30px)}
+.telon i:nth-child(1){left:0;transform:translateX(calc(var(--progreso,0) * -78%))}
+.telon i:nth-child(2){right:0;transform:translateX(calc(var(--progreso,0) * 78%))}
+.carga-c{position:relative;z-index:2;text-align:center}
+.carga-c b{display:block;font-family:var(--display);font-style:italic;font-weight:400;font-size:34px;letter-spacing:.01em}
+.carga-c span{display:block;margin-top:10px;font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--oro)}
+body.abierto .carga-c{opacity:0;transition:opacity .45s}
+body.abierto .telon i:nth-child(1){transform:translateX(-101%);transition:transform 1s cubic-bezier(.5,0,.16,1)}
+body.abierto .telon i:nth-child(2){transform:translateX(101%);transition:transform 1s cubic-bezier(.5,0,.16,1)}
+
+/* ── Portada ── */
+.portada{position:relative;height:100svh;min-height:620px;overflow:hidden;background:var(--telon2)}
+.px{position:absolute;left:0;right:0;top:-6%;height:112%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.09);
+  transition:transform 3s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 34%,transparent 0%,rgba(30,18,20,.42) 58%,rgba(30,18,20,.88) 100%),
+             linear-gradient(180deg,rgba(30,18,20,.6) 0%,transparent 26%,rgba(30,18,20,.72) 72%,var(--telon) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(46px + env(safe-area-inset-bottom,0px));padding:0 var(--lado);text-align:center}
+.obra{font-family:var(--display);font-weight:400;font-size:clamp(62px,19vw,116px);line-height:.9;letter-spacing:.005em;margin:16px 0 4px}
+.autoria{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(16px,4.6vw,20px);color:var(--foco)}
+.mano{display:flex;flex-wrap:wrap;justify-content:center;gap:0 14px;margin-top:20px;
+  font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--tenue)}
+.mano span{position:relative}
+.mano span+span::before{content:"·";position:absolute;left:-9px;color:var(--oro)}
+:root{--h-desde:translateY(26px);--h-inicio:620ms;--h-paso:170ms;--h-dur:1.05s}
+@media (min-width:900px){.portada-txt{bottom:8vh}}
+
+/* ── Sinopsis ── */
+.escena{position:relative;height:74svh;min-height:400px;overflow:hidden;margin:0}
+.escena .px{top:-7%;height:114%}
+.escena::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--telon) 0%,transparent 22%,transparent 64%,rgba(30,18,20,.9) 100%)}
+.escena figcaption{position:absolute;z-index:1;left:0;right:0;bottom:22px;text-align:center;
+  font-family:var(--display);font-style:italic;font-size:15px;color:var(--foco)}
+.sinopsis{padding-top:clamp(40px,9vw,62px)}
+.sinopsis .cuerpo{margin-top:22px;color:#DCD0C6}
+.sinopsis .cuerpo p+p{margin-top:16px}
+.sinopsis .cuerpo>p:first-child::first-letter{float:left;font-family:var(--display);font-weight:400;font-size:62px;line-height:.82;
+  margin:5px 11px 0 0;color:var(--oro)}
+.cita{margin:34px 0 0;padding-left:20px;border-left:1px solid rgba(201,162,94,.45);
+  font-family:var(--display);font-style:italic;font-size:19px;line-height:1.5;color:var(--foco)}
+.cita footer{margin-top:10px;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--tenue)}
+
+/* ── Reparto ── */
+.reparto{background:var(--telon2)}
+.reparto ul{list-style:none;margin-top:26px}
+.reparto li{display:flex;align-items:baseline;gap:8px;padding:13px 0;transition:color .4s var(--rev-ease)}
+.reparto li:hover{color:var(--foco)}
+.reparto .p{font-family:var(--display);font-size:20px;white-space:nowrap}
+.reparto .g{flex:1;border-bottom:1px dotted rgba(160,144,140,.5);transform:translateY(-4px)}
+.reparto .r{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);white-space:nowrap}
+.reparto .equipo{margin-top:34px;padding-top:24px;border-top:1px solid rgba(201,162,94,.28);
+  display:grid;gap:16px 24px}
+.reparto .equipo div span{display:block;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--oro)}
+.reparto .equipo div b{font-family:var(--display);font-weight:400;font-size:17px}
+@media (min-width:560px){.reparto .equipo{grid-template-columns:1fr 1fr}}
+
+/* ── Funciones ── */
+.funciones .f{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  padding:20px 0;border-top:1px solid rgba(160,144,140,.24);transition:padding-left .45s var(--rev-ease)}
+.funciones .f:last-of-type{border-bottom:1px solid rgba(160,144,140,.24)}
+.funciones .f:hover{padding-left:7px}
+.funciones .d{font-family:var(--display);font-size:22px;line-height:1.1}
+.funciones .d small{display:block;font-family:var(--sans);font-weight:300;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tenue);margin-top:3px}
+.funciones .g{border-bottom:1px dotted rgba(160,144,140,.4)}
+.funciones .est{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);border:1px solid rgba(201,162,94,.5);border-radius:2px;padding:6px 10px}
+.funciones .est.ago{color:var(--tenue);border-color:rgba(160,144,140,.35)}
+[data-cuenta]{margin:32px 0 0;gap:8px;justify-content:center}
+.cu{min-width:56px}
+.cu-n{font-family:var(--display);font-weight:400;font-size:38px;line-height:1}
+.cu-t{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);margin-top:6px}
+.cu-sep{width:1px;height:24px;background:rgba(201,162,94,.4);margin-top:8px}
+
+/* ── Sala ── */
+.sala{background:var(--vino)}
+.sala .fila{display:grid;grid-template-columns:1fr;gap:3px;padding:17px 0;border-bottom:1px solid rgba(239,230,217,.14)}
+.sala .fila:first-of-type{border-top:1px solid rgba(239,230,217,.14)}
+.sala .k{font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--foco)}
+.sala b{font-family:var(--display);font-weight:400;font-size:19px}
+.sala p{font-size:13.5px;color:#D6C8C4}
+
+/* ── Botones ── */
+.bt-p{height:56px;padding:0 30px;border-radius:2px;background:var(--oro);color:var(--telon);
+  font-family:var(--sans);font-weight:600;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  transition:background .45s var(--rev-ease),letter-spacing .45s var(--rev-ease)}
+.bt-p:hover{background:var(--foco);letter-spacing:.24em}
+.bt-s{height:52px;padding:0 20px;border-radius:2px;border:1px solid rgba(239,230,217,.34);color:var(--hueso);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:transparent;
+  transition:border-color .45s,background .45s}
+.bt-s:hover{border-color:var(--oro);background:rgba(201,162,94,.14)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.6}
+
+/* ── Confirmación ── */
+.rsvp .centro p{color:#D3C6BE;margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:30px 0 0;padding:24px 20px;
+  border:1px solid rgba(201,162,94,.42);position:relative}
+[data-pase]::before,[data-pase]::after{content:"";position:absolute;left:12px;right:12px;height:1px;background:rgba(201,162,94,.3)}
+[data-pase]::before{top:7px}[data-pase]::after{bottom:7px}
+.pase-et{display:block;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--tenue)}
+.pase-qui{display:block;font-family:var(--display);font-size:25px;margin:9px 0 3px}
+.pase-lug{font-family:var(--display);font-style:italic;font-size:15px;color:var(--oro)}
+[data-rsvp]{margin-top:32px}
+.campo-l>span{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--foco)}
+.linea-in{background:transparent;border:0;border-bottom:1px solid rgba(239,230,217,.34);border-radius:0;
+  padding:12px 2px;font-size:16px;color:var(--hueso);transition:border-color .45s}
+.linea-in::placeholder{color:rgba(160,144,140,.85)}
+.linea-in:focus{border-color:var(--oro)}
+.elige b{background:transparent;border:1px solid rgba(239,230,217,.3);border-radius:2px;
+  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;transition:all .45s var(--rev-ease)}
+.elige input:checked+b{background:var(--oro);color:var(--telon);border-color:var(--oro)}
+.elige input:focus-visible+b{outline:2px solid var(--oro);outline-offset:2px}
+.paso-lug button{background:transparent;border:1px solid rgba(239,230,217,.3);border-radius:2px;color:var(--hueso);transition:all .4s}
+.paso-lug button:hover{background:var(--oro);color:var(--telon);border-color:var(--oro)}
+.paso-lug output{font-family:var(--display);font-weight:400;font-size:36px}
+.paso-lug small{font-size:12.5px;color:var(--tenue)}
+.rsvp-nota{font-size:12.5px;color:var(--tenue);text-align:center}
+.rg-sello{background:var(--oro);color:var(--telon)}
+.rg-t{font-family:var(--display);font-weight:400;font-size:30px}
+.rg-p{color:#D3C6BE;margin-top:8px}
+
+.cierre{text-align:center;padding-bottom:52px}
+.cierre .obra{font-size:clamp(46px,14vw,78px)}
+.cierre .tel{margin-top:14px;font-family:var(--display);font-style:italic;font-size:17px;color:var(--foco)}
+.cierre .firma-savey{margin-top:62px}
+#flota{height:52px;padding:0 24px;border-radius:2px;background:var(--oro);color:var(--telon);
+  font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="telon"><i></i><i></i></div>
+  <div class="carga-c">
+    <b>Ceniza</b><span>Dos actos</span>
+  </div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.12"><img src="../fotos/ot-teatro.webp" srcset="../fotos/ot-teatro-m.webp 720w, ../fotos/ot-teatro.webp 1100w" sizes="100vw" alt="Dos actores en escena junto a una mesa"></div>
+  <div class="portada-txt">
+    <div class="et" data-h style="--h:0">Teatro La Cortina presenta</div>
+    <h1 class="obra" data-h style="--h:1">Ceniza</h1>
+    <div class="autoria" data-h style="--h:2">una obra en dos actos de Mariana Estrada</div>
+    <div class="mano" data-h style="--h:3">
+      <span>Viernes 11 de junio</span><span>20:00 h</span><span>Sala Chica</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<span class="rombo" aria-hidden="true"></span>
+
+<section class="sinopsis">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Acto primero</div>
+      <h2 style="margin-top:12px">Dos hermanos,<br><em>una casa que se vende</em></h2>
+    </div>
+    <div class="cuerpo" data-a="sube" style="--d:120ms">
+      <p>Elena vuelve después de once años para firmar la venta de la casa donde crecieron. Su hermano la espera con la mesa puesta y una versión distinta de todo lo que pasó aquella noche de 1998.</p>
+      <p>Lo que empieza como una cena de trámite se convierte, hora tras hora, en el interrogatorio que ninguno de los dos se atrevió a hacer. No hay más escenografía que una mesa, dos sillas y lo que queda cuando se apaga la luz del comedor.</p>
+    </div>
+    <blockquote class="cita" data-a="sube" style="--d:200ms">
+      No vine a recordar. Vine a que me digas qué fue lo que vimos.
+      <footer>Elena · escena cuarta</footer>
+    </blockquote>
+  </div>
+</section>
+
+<figure class="escena" data-ampliar>
+  <div class="px" data-px="0.14"><img src="../fotos/g/te2-1.webp" alt="Un momento cercano de la actuación" loading="lazy"></div>
+  <figcaption data-a="sube">«La casa entera cabe en una mesa»</figcaption>
+</figure>
+
+<section class="reparto">
+  <div class="env">
+    <div class="et" data-a="izq">En escena</div>
+    <h2 data-a="izq" style="margin-top:12px">Reparto</h2>
+    <ul data-grupo="90">
+      <li data-a="izq"><span class="p">Renata Villalobos</span><span class="g"></span><span class="r">Elena</span></li>
+      <li data-a="izq"><span class="p">Julián Mestre</span><span class="g"></span><span class="r">Tomás</span></li>
+      <li data-a="izq"><span class="p">Ofelia Cárdenas</span><span class="g"></span><span class="r">La vecina</span></li>
+    </ul>
+    <div class="equipo" data-grupo="70">
+      <div data-a="sube"><span>Dirección</span><b>Mariana Estrada</b></div>
+      <div data-a="sube"><span>Escenografía</span><b>Taller Nube</b></div>
+      <div data-a="sube"><span>Iluminación</span><b>Pablo Iriarte</b></div>
+      <div data-a="sube"><span>Duración</span><b>95 min, sin intermedio</b></div>
+    </div>
+  </div>
+</section>
+
+<span class="filete" aria-hidden="true"></span>
+
+<section class="funciones" id="detalles">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Temporada</div>
+      <h2 style="margin-top:12px">Funciones</h2>
+    </div>
+    <div style="margin-top:28px" data-grupo="90">
+      <div class="f" data-a="sube"><span class="d">Vie 11<small>Junio</small></span><span class="g"></span><span class="est">20:00 · Estreno</span></div>
+      <div class="f" data-a="sube"><span class="d">Sáb 12<small>Junio</small></span><span class="g"></span><span class="est">19:00</span></div>
+      <div class="f" data-a="sube"><span class="d">Dom 13<small>Junio</small></span><span class="g"></span><span class="est ago">18:00 · Agotada</span></div>
+    </div>
+    <div data-cuenta data-a="sube"></div>
+  </div>
+</section>
+
+<figure class="escena" data-ampliar>
+  <div class="px" data-px="0.16"><img src="../fotos/g/te2-2.webp" alt="La función vista desde el público" loading="lazy"></div>
+  <figcaption data-a="sube">Sala Chica · 90 lugares</figcaption>
+</figure>
+
+<section class="sala">
+  <div class="env">
+    <div class="et" data-a="izq">Para asistir</div>
+    <h2 data-a="izq" style="margin-top:12px">La sala</h2>
+    <div style="margin-top:26px" data-grupo="80">
+      <div class="fila" data-a="sube"><div class="k">Dónde</div><b>Teatro La Cortina</b><p>Zacatecas 88, Roma Norte, CDMX</p></div>
+      <div class="fila" data-a="sube"><div class="k">Acceso</div><b>Sala abierta 19:30</b><p>Una vez que empieza la obra no hay reingreso</p></div>
+      <div class="fila" data-a="sube"><div class="k">Lugares</div><b>Libres, no numerados</b><p>Conviene llegar veinte minutos antes</p></div>
+      <div class="fila" data-a="sube"><div class="k">Invitación</div><b>Cortesía doble</b><p>Tu confirmación cubre dos lugares en la función que elijas</p></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px">
+      <a class="bt-s" href="https://maps.google.com/?q=Zacatecas%2088%20Roma%20Norte" target="_blank" rel="noopener" data-a="sube"><svg><use href="#pin"/></svg>Mapa</a>
+      <a class="bt-s" data-calendario data-a="sube" style="--d:90ms"><svg><use href="#cal"/></svg>Agendar</a>
+    </div>
+  </div>
+</section>
+
+<span class="filete" aria-hidden="true"></span>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Tercera llamada</div>
+      <h2 style="margin-top:12px"><em>Confirma</em><br>tu lugar</h2>
+      <p>Son noventa lugares por función. Cerramos la lista el 6 de junio.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="obra" data-a="sube">Ceniza</div>
+    <div class="tel" data-a="sube" style="--d:110ms">Se levanta el telón a las ocho</div>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar</a>
+
+<script>
+window.XV = {
+  slug:'otros-teatro', evento:'Ceniza', nombre:'la compañía',
+  fechaISO:'2027-06-11T20:00:00-06:00', lugar:'Teatro La Cortina, Zacatecas 88, Roma Norte, CDMX',
+  fechaLimite:'6 de junio', graciasSi:'Tu lugar está apartado', graciasSiTexto:'Te esperamos en la Sala Chica, 19:30.',
+  textoPase:'Cortesía a nombre de', etiquetaMensaje:'¿Algo que quieras decirle a la compañía? (opcional)',
+  extras:[{k:'funcion',tipo:'elige',rot:'¿A qué función vienes?',op:['Viernes 11','Sábado 12']}],
+  wa:'5215618906790', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js" defer></script>
+</body>
+</html>
