@@ -7,7 +7,6 @@ noviembre de 2026, 2:30 p. m.
 vtmus/
   index.html        ← la invitación
   lista/index.html  ← el panel de confirmaciones
-  apps-script.gs    ← el código para la hoja de cálculo
   arte/             ← los adornos ilustrados (ya vienen)
   fotos/            ← aquí van las fotos (vacía)
 ```
@@ -25,12 +24,17 @@ del sitio: solo llega quien tenga la liga.
 
 ## Dónde va el `.exec` de la hoja
 
-**En dos archivos, la misma URL.** Búscala como `ENDPOINT`:
+**No necesitas hoja ni script nuevos.** Tu Apps Script de confirmaciones
+ya es multi-evento: separa por `slug`, y `cami-3` va a aparecer solo en
+cuanto llegue la primera respuesta. El de cuestionarios es otro archivo
+aparte y no se toca.
+
+Lo único que hay que hacer es pegar la URL `/exec` de **la hoja de
+confirmaciones** en dos lugares:
 
 **1. `index.html`** — hasta abajo, en el bloque `DATOS DE ESTE EVENTO`:
 
 ```js
-var WA       = '5214443843993';
 var ENDPOINT = '';                /* ←←← PEGA AQUÍ EL .exec ←←← */
 ```
 
@@ -40,21 +44,31 @@ var ENDPOINT = '';                /* ←←← PEGA AQUÍ EL .exec ←←← */
 var ENDPOINT = '';   /* ←←← PEGA AQUÍ EL .exec ←←← */
 ```
 
-El archivo `apps-script.gs` trae el código de la hoja y las instrucciones
-de instalación. Ya está escrito para estas columnas exactas:
+### Lo que manda esta invitación
 
+Va con los nombres que espera tu script, no con otros:
+
+| Se manda | Cae en la columna |
+|---|---|
+| `slug: 'cami-3'` | `evento` |
+| `evento: 'María Camila cumple 3 años'` | `titulo` |
+| `nombre`, `asiste`, `adultos`, `ninos`, `mensaje` | iguales |
+| `codigo`, `pase`, `lugares` | vacías (son de Oro en adelante) |
+
+`personas` lo calcula tu script solo. También manda `folio: 'VTMUS'`,
+que se abre como columna nueva la primera vez.
+
+### Si quieres proteger el panel con clave
+
+Tu script ya lo soporta. En Apps Script → Configuración → Propiedades
+del script, agrega `CLAVES` con el valor `cami-3:loquesea`. Luego en
+`lista/index.html` pon esa misma clave:
+
+```js
+var CLAVE = 'loquesea';
 ```
-recibido  evento  titulo  codigo  pase  nombre
-asiste  personas  adultos  ninos  lugares  mensaje
-```
 
-`codigo`, `pase` y `lugares` van vacías a propósito: son de pases por
-familia, que es Oro en adelante. Las dejé en la hoja para que todos tus
-eventos usen el mismo formato.
-
-Si dejas `ENDPOINT` vacío, la invitación sigue funcionando: el recuadro
-final le ofrece al invitado avisar por WhatsApp. Pero entonces el panel
-no tiene de dónde leer.
+Los eventos que no estén listados en `CLAVES` siguen abriendo directo.
 
 ## Las fotos
 
@@ -75,7 +89,7 @@ estrella de sheriff.
 1. **Las fotos** (arriba).
 2. **El pin de Google Maps.** En `index.html`, busca `maps.google.com` y
    cambia el enlace por el pin exacto del salón.
-3. **El `.exec`** en los dos archivos.
+3. **El `.exec`** de la hoja de confirmaciones en los dos archivos.
 4. **Las actividades.** La sección está puesta pero con una pizarra que
    dice «muy pronto», tal como pediste. Cuando Estefanía confirme el
    programa: borra el `<div class="pizarra">` y quita los comentarios de

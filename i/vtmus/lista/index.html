@@ -194,9 +194,12 @@ var $=function(i){return document.getElementById(i)};
    ║    El Apps Script responde el POST (guardar) y el GET         ║
    ║    (leer la lista). Es la misma URL para los dos.             ║
    ╚══════════════════════════════════════════════════════════════╝ */
-var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwuA6DURMrOr88FTyivGhaFiNyTLpX7uh5Ad1fgFK8H0cNb0WDXbmQDEsqNAgLG7bxO/exec';   /* ←←← PEGA AQUÍ EL .exec ←←← */
+var ENDPOINT = '';   /* ←←← PEGA AQUÍ EL .exec ←←← */
 var EVENTO   = 'cami-3';
 var TITULO   = 'María Camila cumple 3';
+/* Opcional. Solo si en el Apps Script pusiste la propiedad CLAVES
+   con una entrada  cami-3:loquesea  para proteger este panel. */
+var CLAVE    = '';
 /* ════════════════════════════════════════════════════════════════ */
 
 var filas=[], filtro='todos', texto='';
@@ -209,7 +212,11 @@ function plano(t){
 function esc(t){ return String(t==null?'':t).replace(/[&<>"]/g,function(c){
   return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c] }) }
 function num(v){ var n=parseInt(v,10); return isNaN(n)?0:n }
-function esSi(v){ return String(v||'').toLowerCase().indexOf('s')===0 }
+function esSi(v){
+  if(v===true) return true;
+  if(v===false) return false;
+  return String(v||'').toLowerCase().indexOf('s')===0;
+}
 
 function fechaCorta(v){
   if(!v) return '';
@@ -280,11 +287,15 @@ function sinEndpoint(){
 function cargar(){
   if(!ENDPOINT){ sinEndpoint(); return }
   $('zona').innerHTML='<div class="cargando"><div class="giro"></div>Cargando la lista…</div>';
-  var url=ENDPOINT+(ENDPOINT.indexOf('?')<0?'?':'&')+'evento='+encodeURIComponent(EVENTO)+'&t='+Date.now();
+  var url=ENDPOINT+(ENDPOINT.indexOf('?')<0?'?':'&')+'evento='+encodeURIComponent(EVENTO)+
+          (CLAVE?'&clave='+encodeURIComponent(CLAVE):'')+'&t='+Date.now();
   fetch(url)
     .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json() })
     .then(function(d){
-      filas = Array.isArray(d) ? d : (d && d.filas) || [];
+      /* El Apps Script responde  {evento, respuestas:[...]}.
+         Se aceptan también un arreglo suelto o {filas:[...]}. */
+      if(d && d.error) throw new Error(d.error);
+      filas = Array.isArray(d) ? d : (d && (d.respuestas || d.filas)) || [];
       filas.sort(function(a,b){
         return new Date(b.recibido||b.fecha||0) - new Date(a.recibido||a.fecha||0);
       });

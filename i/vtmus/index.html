@@ -741,7 +741,7 @@ var FECHA    = '2026-11-15T14:30:00-06:00';
 var LUGAR    = 'Ignacio Martínez, Tierra Blanca, San Luis Potosí 78364';
 var HASHTAG  = '#cami3fest';
 var WA       = '5214443843993';   /* WhatsApp de Estefanía, para el respaldo */
-var ENDPOINT = '';                /* ←←← PEGA AQUÍ EL .exec ←←← */
+var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwuA6DURMrOr88FTyivGhaFiNyTLpX7uh5Ad1fgFK8H0cNb0WDXbmQDEsqNAgLG7bxO/exec';                /* ←←← PEGA AQUÍ EL .exec ←←← */
 /* ════════════════════════════════════════════════════════════════ */
 
 var maxA=8, maxN=8;
@@ -878,9 +878,11 @@ $('form').addEventListener('submit',function(ev){
   var ni = a==='si' ? parseInt($('ninos').value,10)||0 : 0;
 
   /* Estas llaves son las columnas de la hoja de confirmaciones */
+  /* Los nombres van como los espera el Apps Script de confirmaciones:
+     slug = identificador corto, evento = nombre legible. */
   var d={
-    evento:   EVENTO,
-    titulo:   TITULO,
+    slug:     EVENTO,    /* cae en la columna 'evento' */
+    evento:   TITULO,    /* cae en la columna 'titulo' */
     codigo:   '',        /* paquete Plata: sin pases por familia */
     pase:     '',
     nombre:   $('familia').value,
