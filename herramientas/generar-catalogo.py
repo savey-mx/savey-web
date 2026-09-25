@@ -73,12 +73,12 @@ def barra(activo_liga=True):
     return f'''<div class="hilo" id="hilo"><i></i></div>
 <header class="barra" id="barra">
   <div class="barra-caja">
-    <a class="logo" href="/"><svg><use href="#ch"/></svg>savey</a>
+    <a class="logo" href="/"><svg width="12" height="12"><use href="#ch"/></svg>savey</a>
     <nav>
       <a class="liga" href="/catalogo/">Todas las categorías</a>
       <a class="liga" href="/#paquetes">Paquetes</a>
       <a class="btn btn-champ" href="/brief/">Cotiza tu evento</a>
-      <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg><use href="#wa"/></svg></a>
+      <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg width="17" height="17"><use href="#wa"/></svg></a>
     </nav>
   </div>
 </header>'''
@@ -87,7 +87,7 @@ def barra(activo_liga=True):
 def pie():
     return f'''<footer>
   <div class="amplia">
-    <svg class="chispa" aria-hidden="true"><use href="#ch"/></svg>
+    <svg class="chispa" width="14" height="14" aria-hidden="true"><use href="#ch"/></svg>
     <p>Savey. Estudio de invitaciones digitales. Estado de México, México.</p>
     <nav>
       <a href="/">Inicio</a>
@@ -126,7 +126,7 @@ def cabeza(titulo, desc, url, og, extra=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/catalogo/catalogo.css">
+<link rel="stylesheet" href="/catalogo/catalogo.css?v=2">
 <script>document.documentElement.className+=' js';</script>
 {extra}</head>
 <body>
@@ -145,7 +145,7 @@ def mini(p, rotulo, clase="muestra"):
       f'<div class="marco">{foto}</div>'
       f'<div class="capa"><span class="m-rotulo">{E(rotulo)}</span>'
       f'<span class="m-nombre">{E(p["n"])}</span>'
-      f'<svg class="m-orn"><use href="#ch"/></svg>'
+      f'<svg class="m-orn" width="10" height="10"><use href="#ch"/></svg>'
       f'<span class="m-fecha">{E(p["f"])}</span></div>'
       f'<span class="ver">Abrir</span></div>'
       f'<b>{E(p["t"])}</b><em>{E(p["d"])}</em></a>'
@@ -163,7 +163,7 @@ def abanico(piezas, rotulo):
           f'<div class="marco">{foto}</div>'
           f'<div class="capa"><span class="m-rotulo">{E(rotulo)}</span>'
           f'<span class="m-nombre">{E(p["n"])}</span>'
-          f'<svg class="m-orn"><use href="#ch"/></svg>'
+          f'<svg class="m-orn" width="10" height="10"><use href="#ch"/></svg>'
           f'<span class="m-fecha">{E(p["f"])}</span></div></div></div>')
     return '<div class="abanico" aria-hidden="true">' + "".join(hojas) + '</div>'
 
@@ -194,7 +194,7 @@ for n, cat in enumerate(CATALOGO):
     fichas = "\n      ".join(
         f'<a class="ficha revelar" href="/catalogo/{c["id"]}/" '
         f'style="--fa:{c["piezas"][0]["c"][2]};--fb:{c["piezas"][0]["c"][0]}">'
-        f'<span class="fl"><svg><use href="#fl"/></svg></span>'
+        f'<span class="fl"><svg width="15" height="15"><use href="#fl"/></svg></span>'
         f'<strong>{E(c["nombre"])}</strong><span>Ver ideas</span></a>'
         for c in otras)
 
@@ -205,11 +205,8 @@ for n, cat in enumerate(CATALOGO):
         aviso = f'''<section class="aviso-pi">
   <div class="amplia">
     <div class="pi revelar">
-      <svg class="pi-ico" aria-hidden="true"><use href="#ch"/></svg>
-      <div>
-        <b>Sobre los personajes con derechos de autor</b>
-        <p>{E(IP)}</p>
-      </div>
+      <b>Sobre los personajes con derechos de autor</b>
+      <p>{E(IP)}</p>
     </div>
   </div>
 </section>
@@ -234,10 +231,10 @@ for n, cat in enumerate(CATALOGO):
     </nav>
     <h1 class="titulo">{E(cat["nombre"])}</h1>
     <p class="entrada">{E(entrada)}</p>
-    <p class="nota"><svg class="nota-ico"><use href="#ch"/></svg>{E(NOTA)}</p>
+    <p class="nota">{E(NOTA)}</p>
     <div class="acciones">
-      <a class="btn btn-champ" href="/brief/">Cotiza tu evento<svg class="flechita"><use href="#fl"/></svg></a>
-      <a class="btn btn-wa" href="https://wa.me/{WA}?text={E(wa_txt).replace(" ", "%20").replace(",", "%2C")}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Escríbenos</a>
+      <a class="btn btn-champ" href="/brief/">Cotiza tu evento<svg class="flechita" width="16" height="16"><use href="#fl"/></svg></a>
+      <a class="btn btn-wa" href="https://wa.me/{WA}?text={E(wa_txt).replace(" ", "%20").replace(",", "%2C")}" target="_blank" rel="noopener"><svg width="17" height="17"><use href="#wa"/></svg>Escríbenos</a>
     </div>
     {abanico(cat["piezas"], cat["rotulo"])}
   </div>
@@ -267,8 +264,8 @@ for n, cat in enumerate(CATALOGO):
       <h2>¿Te gustó alguno?</h2>
       <p>Cuéntanos de tu evento en cinco minutos y te mandamos la propuesta con precio cerrado.</p>
       <div class="acciones">
-        <a class="btn btn-champ" href="/brief/" style="background:var(--marfil);color:var(--espresso)">Cotiza tu evento<svg class="flechita"><use href="#fl"/></svg></a>
-        <a class="btn btn-wa" href="https://wa.me/{WA}?text={E(wa_txt).replace(" ", "%20").replace(",", "%2C")}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Escríbenos por WhatsApp</a>
+        <a class="btn btn-champ" href="/brief/" style="background:var(--marfil);color:var(--espresso)">Cotiza tu evento<svg class="flechita" width="16" height="16"><use href="#fl"/></svg></a>
+        <a class="btn btn-wa" href="https://wa.me/{WA}?text={E(wa_txt).replace(" ", "%20").replace(",", "%2C")}" target="_blank" rel="noopener"><svg width="17" height="17"><use href="#wa"/></svg>Escríbenos por WhatsApp</a>
       </div>
       <p class="tel">O márcanos directo al <a href="https://wa.me/{WA}" target="_blank" rel="noopener">{TEL}</a>.</p>
     </div>
@@ -279,7 +276,7 @@ for n, cat in enumerate(CATALOGO):
 
 {pie()}
 <script src="https://cdn.jsdelivr.net/npm/motion@11.15.0/dist/motion.min.js"></script>
-<script src="/catalogo/catalogo.js"></script>
+<script src="/catalogo/catalogo.js?v=2"></script>
 </body>
 </html>
 '''
@@ -300,7 +297,7 @@ for c in CATALOGO:
         <div class="cab"><h2>{E(c["nombre"])}</h2></div>
         <p>{E(COPY[c["id"]][1])}</p>
         <div class="tira">{tira}</div>
-        <span class="mas">Ver la categoría<svg><use href="#fl"/></svg></span>
+        <span class="mas">Ver la categoría<svg width="15" height="15"><use href="#fl"/></svg></span>
       </a>''')
 
 desc_i = ("Ideas de invitaciones digitales de Savey ordenadas por tipo de evento: bodas, XV años, "
@@ -317,8 +314,8 @@ doc += f'''
     <h1 class="titulo">Catálogo</h1>
     <p class="entrada">Ideas ordenadas por tipo de evento. Cada categoría tiene su propia liga, lista para compartir.</p>
     <div class="acciones">
-      <a class="btn btn-champ" href="/brief/">Cotiza tu evento<svg class="flechita"><use href="#fl"/></svg></a>
-      <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Escríbenos</a>
+      <a class="btn btn-champ" href="/brief/">Cotiza tu evento<svg class="flechita" width="16" height="16"><use href="#fl"/></svg></a>
+      <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener"><svg width="17" height="17"><use href="#wa"/></svg>Escríbenos</a>
     </div>
   </div>
 </section>
@@ -338,8 +335,8 @@ doc += f'''
       <h2>¿Ya sabes cuál quieres?</h2>
       <p>Cuéntanos de tu evento en cinco minutos y te mandamos la propuesta con precio cerrado.</p>
       <div class="acciones">
-        <a class="btn btn-champ" href="/brief/" style="background:var(--marfil);color:var(--espresso)">Cotiza tu evento<svg class="flechita"><use href="#fl"/></svg></a>
-        <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Escríbenos por WhatsApp</a>
+        <a class="btn btn-champ" href="/brief/" style="background:var(--marfil);color:var(--espresso)">Cotiza tu evento<svg class="flechita" width="16" height="16"><use href="#fl"/></svg></a>
+        <a class="btn btn-wa" href="https://wa.me/{WA}" target="_blank" rel="noopener"><svg width="17" height="17"><use href="#wa"/></svg>Escríbenos por WhatsApp</a>
       </div>
       <p class="tel">O márcanos directo al <a href="https://wa.me/{WA}" target="_blank" rel="noopener">{TEL}</a>.</p>
     </div>
@@ -350,7 +347,7 @@ doc += f'''
 
 {pie()}
 <script src="https://cdn.jsdelivr.net/npm/motion@11.15.0/dist/motion.min.js"></script>
-<script src="/catalogo/catalogo.js"></script>
+<script src="/catalogo/catalogo.js?v=2"></script>
 </body>
 </html>
 '''

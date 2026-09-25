@@ -88,16 +88,21 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-
 .miga b{font-weight:500;color:var(--espresso)}
 .titulo{font-size:var(--p-3);margin:1rem 0 0}
 .entrada{font-size:var(--p-1);color:var(--espresso-suave);max-width:36ch;margin-top:.9rem;line-height:1.45}
-.nota{display:flex;gap:.6rem;align-items:flex-start;max-width:44ch;margin-top:1.5rem;
-  font-size:var(--p--1);line-height:1.55;color:var(--espresso-suave);
-  background:var(--blanco);border:1px solid var(--borde-fino);border-radius:16px;padding:.9rem 1.05rem}
-.nota-ico{width:12px;height:12px;flex:none;margin-top:.34rem;fill:var(--acento)}
+.nota{position:relative;max-width:42ch;margin-top:1.5rem;
+  font-size:var(--p--1);line-height:1.6;color:var(--espresso-suave);
+  background:var(--blanco);border:1px solid var(--borde-fino);border-radius:16px;
+  padding:.95rem 1.1rem .95rem 1.35rem}
+.nota::before{content:"";position:absolute;left:0;top:1.05rem;bottom:1.05rem;width:2px;
+  border-radius:2px;background:var(--acento);opacity:.75}
 .acciones{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.7rem}
 
 /* Abanico del encabezado (solo pantallas anchas) */
 .encabezado .amplia{position:relative}
 .abanico{display:none}
 @media (min-width:64rem){
+  /* la columna de texto nunca invade el espacio del abanico */
+  .encabezado .miga,.encabezado .titulo,.encabezado .entrada,
+  .encabezado .nota,.encabezado .acciones{max-width:min(40rem,calc(100% - 28rem))}
   .abanico{display:block;position:absolute;right:1.4rem;top:50%;width:26rem;height:20rem;
     transform:translateY(-50%);pointer-events:none}
   .abanico .hoja{position:absolute;top:50%;left:50%;width:9.4rem;border-radius:14px;overflow:hidden;
@@ -153,12 +158,12 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-
 
 /* ── Aviso de propiedad intelectual (cumpleaños) ── */
 .aviso-pi{padding:0 0 clamp(2rem,5vw,3.2rem)}
-.pi{display:flex;gap:.9rem;align-items:flex-start;max-width:56rem;margin-inline:auto;
+.pi{position:relative;max-width:56rem;margin-inline:auto;
   background:var(--blanco);border:1px solid var(--borde-fino);border-radius:18px;
-  padding:clamp(1.1rem,2.6vw,1.5rem);
-  transition:border-color .35s}
+  padding:clamp(1.15rem,2.6vw,1.6rem) clamp(1.15rem,2.6vw,1.6rem) clamp(1.15rem,2.6vw,1.6rem) clamp(1.5rem,3vw,2rem);
+  overflow:hidden;transition:border-color .35s}
+.pi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--acento);opacity:.8}
 .pi:hover{border-color:var(--borde)}
-.pi-ico{width:14px;height:14px;flex:none;margin-top:.42rem;fill:var(--acento)}
 .pi b{display:block;font-weight:500;margin-bottom:.3rem}
 .pi p{font-size:var(--p--1);color:var(--espresso-suave);line-height:1.6;max-width:68ch}
 
