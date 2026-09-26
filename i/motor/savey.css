@@ -53,9 +53,16 @@ body.abierto [data-h]{opacity:1;transform:none;filter:none}
   transition-delay:calc(var(--i) * var(--letra-paso,45ms) + var(--d,0ms))}
 .js [data-letras].visto .l,body.abierto [data-h][data-letras] .l{opacity:1;transform:none;filter:none}
 
+/* Red de seguridad: un nombre o título largo se parte en vez de
+   desbordarse. Sirve para cualquier dato que ponga el cliente. */
+h1,h2,h3,.pase-qui,[data-letras]{overflow-wrap:break-word}
+
 /* ── Cuenta regresiva ── */
-[data-cuenta]{display:flex;align-items:flex-start;justify-content:center}
-.cu{display:flex;flex-direction:column;align-items:center;min-width:3.6em}
+/* Envuelve en pantallas angostas en vez de cortarse: sin wrap, el
+   min-width de cada casilla impedía encoger y el último bloque se salía. */
+[data-cuenta]{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;
+  max-width:100%;row-gap:.5em}
+.cu{display:flex;flex-direction:column;align-items:center;min-width:3.6em;flex:0 0 auto}
 .cu-n{font-variant-numeric:tabular-nums;line-height:1}
 .cu-t{display:block}
 

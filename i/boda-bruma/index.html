@@ -75,6 +75,7 @@ body.abierto .portada-foto{clip-path:inset(0 0 0 0)}
 .cu{align-items:flex-start;min-width:0;flex:0 0 25%}
 .cu-n{font-family:var(--serif);font-size:38px;font-weight:300}
 .cu-t{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris);margin-top:6px}
+@media (max-width:360px){.cu-t{letter-spacing:.14em}}
 .cu-sep{display:none}
 
 /* Botones */
@@ -104,7 +105,8 @@ body.abierto .portada-foto{clip-path:inset(0 0 0 0)}
 .faq details[open]::details-content{block-size:auto}
 .faq p{padding:0 0 24px;color:var(--gris2);font-size:14.5px;max-width:50ch}
 .notas{display:grid;gap:20px;margin-top:34px}
-.nota{display:grid;grid-template-columns:110px 1fr;gap:16px;padding-top:18px;border-top:1px solid var(--linea)}
+.nota{display:grid;grid-template-columns:1fr;gap:4px;padding-top:18px;border-top:1px solid var(--linea)}
+@media (min-width:420px){.nota{grid-template-columns:132px 1fr;gap:16px}}
 .nota b{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris2);font-weight:400;padding-top:3px}
 .nota span{font-size:14.5px}
 
