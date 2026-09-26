@@ -61,9 +61,14 @@ SIM = {  # símbolos svg compartidos
  "ch": '<symbol id="ch" viewBox="0 0 24 24"><path d="M12 0c0 6.2 5.8 12 12 12-6.2 0-12 5.8-12 12 0-6.2-5.8-12-12-12C6.2 12 12 6.2 12 0z"/></symbol>',
  "wa": '<symbol id="wa" viewBox="0 0 24 24"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 004.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.04-5.16-2.92-7.04A9.88 9.88 0 0012.04 2zm0 1.87c2.16 0 4.19.84 5.72 2.37a8.04 8.04 0 012.37 5.72c0 4.46-3.63 8.09-8.09 8.09a8.06 8.06 0 01-4.11-1.13l-.3-.17-3.06.8.82-3-.19-.31a8.03 8.03 0 01-1.23-4.29c0-4.45 3.62-8.08 8.07-8.08zm-2.4 4.1c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.68 2.57 4.08 3.6.57.25 1.01.39 1.36.5.57.18 1.09.16 1.5.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.41-.7-1.63-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.44z"/></symbol>',
  "fl": '<symbol id="fl" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></symbol>',
+ "ig": '<symbol id="ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></symbol>',
+ "fb": '<symbol id="fb" viewBox="0 0 24 24"><path d="M14.6 21.5v-8h2.7l.5-3.2h-3.2V8.2c0-.9.3-1.6 1.6-1.6h1.7V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H8.3v3.2h2.9v8z"/></symbol>',
 }
 SVG_DEFS = ('<svg width="0" height="0" style="position:absolute" aria-hidden="true">'
-            + SIM["ch"] + SIM["wa"] + SIM["fl"] + "</svg>")
+            + SIM["ch"] + SIM["wa"] + SIM["fl"] + SIM["ig"] + SIM["fb"] + "</svg>")
+
+REDES = ("https://www.instagram.com/savey.mx/",
+         "https://www.facebook.com/profile.php?id=61594253131441")
 
 E = lambda s: html.escape(s, quote=True)
 
@@ -88,6 +93,10 @@ def pie():
   <div class="amplia">
     <svg class="chispa" width="14" height="14" aria-hidden="true"><use href="#ch"/></svg>
     <p>Savey. Estudio de invitaciones digitales. Estado de México, México.</p>
+    <div class="redes">
+      <a href="{REDES[0]}" target="_blank" rel="noopener" data-r="ig" aria-label="Savey en Instagram"><svg width="18" height="18"><use href="#ig"/></svg></a>
+      <a href="{REDES[1]}" target="_blank" rel="noopener" data-r="fb" aria-label="Savey en Facebook"><svg width="18" height="18"><use href="#fb"/></svg></a>
+    </div>
     <nav>
       <a href="/">Inicio</a>
       <a href="/catalogo/">Catálogo por categoría</a>
@@ -125,7 +134,7 @@ def cabeza(titulo, desc, url, og, extra=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/catalogo/catalogo.css?v=2">
+<link rel="stylesheet" href="/catalogo/catalogo.css?v=3">
 <script>document.documentElement.className+=' js';</script>
 {extra}</head>
 <body>
@@ -275,7 +284,7 @@ for n, cat in enumerate(CATALOGO):
 
 {pie()}
 <script src="https://cdn.jsdelivr.net/npm/motion@11.15.0/dist/motion.min.js"></script>
-<script src="/catalogo/catalogo.js?v=2"></script>
+<script src="/catalogo/catalogo.js?v=3"></script>
 </body>
 </html>
 '''
@@ -346,7 +355,7 @@ doc += f'''
 
 {pie()}
 <script src="https://cdn.jsdelivr.net/npm/motion@11.15.0/dist/motion.min.js"></script>
-<script src="/catalogo/catalogo.js?v=2"></script>
+<script src="/catalogo/catalogo.js?v=3"></script>
 </body>
 </html>
 '''
