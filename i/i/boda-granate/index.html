@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Camila &amp; Diego · 28 de noviembre de 2026</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#300D15">
+<meta property="og:title" content="Camila &amp; Diego">
+<meta property="og:description" content="Sábado 28 de noviembre de 2026 · Puebla">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/granate.jpg?v=2">
+<link rel="preload" as="image" href="../fotos/granate.webp?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css?v=4">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ GRANATE · gala nocturna ═══════════ */
+:root{
+  --vino:#300D15; --vino2:#42131E; --vino3:#1F070C; --marfil:#F4E9DC;
+  --oro:#C6A46D; --oro-cl:#E0C596; --tenue:rgba(244,233,220,.6);
+  --oro-grad:linear-gradient(100deg,#9E7B45,#E0C596 32%,#C6A46D 52%,#F0DCB4 70%,#9E7B45);
+  --serif:'Bodoni Moda',Didot,Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.19,1,.22,1); --rev-dur:1.3s; --rev-dist:22px;
+  --lado:24px;
+}
+body{background:var(--vino);color:var(--marfil);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.75}
+::selection{background:var(--oro);color:var(--vino)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--oro);font-weight:500}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,9vw,44px);line-height:1.1}
+.centro{text-align:center}
+section{padding:clamp(84px,18vw,112px) 0}
+.orla{display:flex;align-items:center;justify-content:center;gap:12px;margin:20px auto}
+.orla i{width:54px;height:1px;background:linear-gradient(90deg,transparent,var(--oro))}
+.orla i:last-child{transform:scaleX(-1)}
+.orla svg{width:11px;height:11px;fill:var(--oro)}
+.dorado{background:var(--oro-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Carga: candil que enciende */
+#carga{background:radial-gradient(ellipse at 50% 40%,#4A1622,var(--vino) 60%,#1A060B)}
+.candil{position:relative;width:150px;height:150px;display:grid;place-items:center}
+.candil::before{content:"";position:absolute;inset:-40px;border-radius:50%;
+  background:radial-gradient(circle,rgba(224,197,150,.35),transparent 62%);
+  opacity:calc(.2 + var(--progreso)*.8);transform:scale(calc(.6 + var(--progreso)*.5));transition:.6s}
+.candil svg{position:absolute;inset:0;width:100%;height:100%}
+.candil .marco{fill:none;stroke:var(--oro);stroke-width:.8;stroke-dasharray:420;stroke-dashoffset:calc(420 - 420*var(--progreso));transition:stroke-dashoffset .5s}
+.candil b{font-family:var(--serif);font-size:30px;position:relative;letter-spacing:.04em}
+.carga-txt{position:absolute;bottom:13%;left:0;right:0;text-align:center}
+body.abierto .candil{transform:scale(1.3);opacity:0;transition:transform 1.2s var(--rev-ease),opacity .9s}
+
+/* Portada */
+.portada{position:relative;height:100svh;min-height:620px;overflow:hidden;background:var(--vino3)}
+.px{position:absolute;left:0;right:0;top:-8%;height:116%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;transform:scale(1.12);transition:transform 3.2s cubic-bezier(.16,1,.3,1) .2s}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 35%,transparent 35%,rgba(31,7,12,.45) 85%),
+             linear-gradient(180deg,rgba(31,7,12,.55) 0%,transparent 22%,transparent 52%,rgba(31,7,12,.7) 78%,var(--vino) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(52px + env(safe-area-inset-bottom,0px));text-align:center;padding:0 var(--lado)}
+.portada-fecha{font-size:11.5px;letter-spacing:.44em;padding-left:.44em}
+.novios{font-family:var(--serif);font-weight:400;font-size:clamp(46px,13vw,76px);line-height:1.02;margin:16px 0 10px}
+.salon{font-size:12px;letter-spacing:.28em;color:var(--tenue);text-transform:uppercase}
+:root{--h-desde:translateY(22px);--h-inicio:900ms;--h-paso:200ms;--h-dur:1.5s}
+.portada .novios{background-size:230% 100%}
+.portada .novios[data-h]{--h-desde:none;clip-path:inset(0 0 106% 0)}
+body.abierto .portada .novios{clip-path:inset(-12% 0 -12% 0);animation:recorre 4.5s ease-in-out 1.9s both}
+@keyframes recorre{from{background-position:100% 0}to{background-position:0 0}}
+.portada .orla i{transform:scaleX(0);transform-origin:right;transition:transform 1.3s var(--rev-ease) 1.5s}
+.portada .orla i:last-child{transform-origin:right}
+body.abierto .portada .orla i{transform:scaleX(1)}
+body.abierto .portada .orla i:last-child{transform:scaleX(-1)}
+.portada .orla svg[data-h]{--h-desde:scale(0) rotate(-90deg)}
+.portada-fecha[data-h]{--h-desde:translateY(0);letter-spacing:.8em;opacity:0}
+body.abierto .portada-fecha{letter-spacing:.44em;transition:opacity 1.5s var(--rev-ease) .9s,letter-spacing 2.2s var(--rev-ease) .9s}
+
+/* Frase */
+.frase{text-align:center;background:var(--vino2);position:relative}
+.frase::before{content:"";position:absolute;inset:16px;border:1px solid rgba(198,164,109,.22);pointer-events:none}
+.frase p{font-family:var(--serif);font-size:clamp(32px,9vw,44px);line-height:1.2}
+[data-cuenta]{margin:34px 0 0;gap:6px}
+.cu{min-width:62px}
+.cu-n{font-family:var(--serif);font-size:42px}
+.cu-t{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);margin-top:8px}
+.cu-sep{width:1px;height:34px;background:rgba(198,164,109,.3);margin-top:6px}
+
+/* Botones */
+.bt-p{height:56px;padding:0 30px;border-radius:4px;background:var(--oro-grad);background-size:200% 100%;color:var(--vino);font-weight:600;font-size:12.5px;
+  letter-spacing:.18em;text-transform:uppercase;transition:background-position .9s var(--rev-ease),box-shadow .4s;box-shadow:0 14px 30px -16px rgba(198,164,109,.9)}
+.bt-p:hover{background-position:100% 0}
+.bt-s{height:52px;padding:0 24px;border-radius:4px;border:1px solid rgba(198,164,109,.55);color:var(--marfil);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  background:transparent;transition:background .4s,border-color .4s}
+.bt-s:hover{background:rgba(198,164,109,.14);border-color:var(--oro)}
+.bt-s svg{stroke:var(--oro);fill:none;stroke-width:1.4}
+
+/* Itinerario */
+.itin li{text-align:center;padding:24px 0}
+.itin ol{list-style:none;margin-top:40px}
+.itin li+li{border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,rgba(198,164,109,.5),transparent) 1}
+.itin .hr{font-family:var(--serif);font-size:30px;color:var(--oro-cl);display:block;line-height:1}
+.itin .ac{font-size:11px;letter-spacing:.3em;text-transform:uppercase;margin-top:10px;display:block}
+
+/* Familia */
+.familia{background:var(--vino2);text-align:center}
+.grupo{margin-top:40px}
+.grupo .et{font-size:10px;color:var(--tenue)}
+.grupo p{font-family:var(--serif);font-size:22px;line-height:1.45;margin-top:10px}
+.corte{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;margin-top:26px}
+.corte b{display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.corte span{font-family:var(--serif);font-size:18px;line-height:1.3}
+
+/* Sedes */
+.sede{padding:34px 0;border-bottom:1px solid rgba(198,164,109,.2)}
+.sede:last-child{border-bottom:0}
+.sede h3{font-family:var(--serif);font-weight:400;font-size:29px;margin:12px 0 8px;line-height:1.14}
+.sede p{color:var(--tenue);font-size:14px}
+.sede .bt-s{margin-top:20px}
+
+/* Transición: el ramo */
+.transicion{position:relative;height:76svh;min-height:420px;overflow:hidden;margin:0}
+.transicion .px{position:absolute;left:0;right:0;top:-8%;height:116%}
+.transicion img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.transicion::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,var(--vino),transparent 22%,transparent 62%,rgba(31,7,12,.9))}
+.transicion figcaption{position:absolute;z-index:1;left:var(--lado);right:var(--lado);bottom:28px;text-align:center;
+  font-family:var(--serif);font-style:italic;font-size:24px;color:var(--marfil)}
+
+/* Papelería e información */
+.papeleria{background:var(--vino2)}
+.doble{display:grid;gap:34px;align-items:center}
+.cuadro{margin:0;padding:10px;border:1px solid rgba(198,164,109,.45)}
+.cuadro img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.avisos{list-style:none;margin-top:24px;display:grid;gap:0}
+.avisos li{padding:16px 0;border-top:1px solid transparent;border-image:linear-gradient(90deg,rgba(198,164,109,.5),transparent) 1}
+.avisos b{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.avisos span{font-size:14.5px;color:var(--tenue);display:block;margin-top:4px}
+@media (min-width:820px){.doble{grid-template-columns:1fr 1fr;gap:56px}.papeleria .env{max-width:900px}}
+
+/* Galería */
+/* Bloques */
+.bloque{text-align:center}
+.bloque p{color:var(--tenue);max-width:34ch;margin:16px auto 0}
+.mesa{margin-top:30px;display:inline-flex;flex-direction:column;align-items:center;gap:6px;padding:26px 40px;border:1px solid rgba(198,164,109,.45);position:relative}
+.mesa::before{content:"";position:absolute;inset:5px;border:1px solid rgba(198,164,109,.18)}
+.mesa b{font-family:var(--serif);font-size:54px;line-height:1}
+.mesa span{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--oro)}
+.sobres{margin-top:30px;display:flex;align-items:center;gap:14px;justify-content:space-between;padding:20px;border:1px solid rgba(198,164,109,.3);border-radius:4px;text-align:left}
+.sobres b{font-family:var(--serif);font-weight:400;font-size:20px;display:block}
+.sobres span{font-size:12.5px;color:var(--tenue)}
+.sobres button{border:1px solid rgba(198,164,109,.5);background:none;border-radius:4px;padding:8px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--oro);flex:none}
+.sobres button.copiado{background:var(--oro);color:var(--vino)}
+
+/* Confirmación */
+.rsvp{background:radial-gradient(ellipse at 50% 0%,#521A28,var(--vino) 65%)}
+.rsvp .centro p{color:var(--tenue);margin-top:10px}
+[data-pase]{display:block;text-align:center;margin:34px 0 0;padding:26px 18px;border:1px solid rgba(198,164,109,.45);position:relative}
+[data-pase]::before{content:"";position:absolute;inset:5px;border:1px solid rgba(198,164,109,.16)}
+.pase-et{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--tenue)}
+.pase-qui{display:block;font-family:var(--serif);font-size:28px;margin:10px 0 4px}
+.pase-lug{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro)}
+.pase-mesa{display:inline-block;margin-top:12px;padding:6px 16px;border:1px solid rgba(198,164,109,.5);border-radius:99px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro-cl)}
+[data-rsvp]{margin-top:40px}
+.campo-l>span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--oro)}
+.linea-in{border-bottom:1px solid rgba(244,233,220,.28);padding:8px 0 12px;font-family:var(--serif);font-size:22px;transition:border-color .4s}
+.linea-in:focus{border-color:var(--oro)}
+.elige b{border:1px solid rgba(198,164,109,.4);border-radius:4px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:all .45s}
+.elige input:checked+b{background:rgba(198,164,109,.18);border-color:var(--oro);color:var(--oro-cl)}
+.elige input:focus-visible+b{outline:1px solid var(--oro);outline-offset:3px}
+.paso-lug button{border:1px solid rgba(198,164,109,.5);border-radius:4px;color:var(--oro)}
+.paso-lug button:hover{background:rgba(198,164,109,.15)}
+.paso-lug output{font-family:var(--serif);font-size:38px}
+.paso-lug small{font-size:12.5px;color:var(--tenue)}
+.rsvp-nota{font-size:12.5px;color:var(--tenue);text-align:center}
+.rg-sello{background:var(--oro-grad);color:var(--vino)}
+.rg-t{font-family:var(--serif);font-weight:400;font-size:34px}
+.rg-p{color:var(--tenue);margin-top:8px}
+
+.cierre{text-align:center;padding-bottom:56px}
+.cierre .novios{font-size:clamp(42px,12vw,66px)}
+.cierre p{font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--tenue);margin-top:12px}
+.cierre .firma-savey{margin-top:80px}
+#flota{height:50px;padding:0 26px;white-space:nowrap}
+
+@media (min-width:900px){
+  .sedes .env{max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+  .sedes .env>.centro{grid-column:1/-1}
+  .sede{border-bottom:0}
+}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="rombo" viewBox="0 0 12 12"><path d="M6 0l6 6-6 6-6-6z"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="candil">
+    <svg viewBox="0 0 150 150"><rect class="marco" x="20" y="20" width="110" height="110" rx="55"/></svg>
+    <b class="dorado">C &amp; D</b>
+  </div>
+  <div class="carga-txt et">Nuestra boda</div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.2"><img src="../fotos/granate.webp?v=2" alt="Camila y Diego en el salón, de noche"></div>
+  <div class="portada-txt">
+    <div class="portada-fecha" data-h style="--h:0">28 · NOVIEMBRE · 2026</div>
+    <h1 class="novios dorado" data-h style="--h:1">Camila &amp; Diego</h1>
+    <div class="orla"><i></i><svg data-h style="--h:3"><use href="#rombo"/></svg><i></i></div>
+    <div class="salon" data-h style="--h:4">Palacio Metropolitano</div>
+  </div>
+</header>
+
+<main>
+
+<section class="frase">
+  <div class="env">
+    <p data-a="mascara">Una noche<br>para recordar.</p>
+    <div data-cuenta data-a="sube" style="--d:250ms"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="--d:350ms;margin-top:30px"><svg><use href="#cal"/></svg>Agendar</a>
+  </div>
+</section>
+
+<section class="itin" id="detalles">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">Sábado 28 de noviembre</div>
+      <h2 data-a="sube" style="margin-top:12px">Programa de la noche</h2>
+    </div>
+    <ol data-grupo="120">
+      <li data-a="sube"><span class="hr">19:00</span><span class="ac">Ceremonia</span></li>
+      <li data-a="sube"><span class="hr">21:00</span><span class="ac">Cóctel</span></li>
+      <li data-a="sube"><span class="hr">22:00</span><span class="ac">Cena</span></li>
+      <li data-a="sube"><span class="hr">23:30</span><span class="ac">Vals y baile</span></li>
+      <li data-a="sube"><span class="hr">02:00</span><span class="ac">Tornaboda</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="familia">
+  <div class="env">
+    <div class="et" data-a="sube">Con la bendición de</div>
+    <div class="grupo" data-a="sube">
+      <div class="et">Padres de la novia</div>
+      <p>Sr. Joaquín Ortega Lira<br>Sra. Elena Vidal de Ortega</p>
+    </div>
+    <div class="grupo" data-a="sube">
+      <div class="et">Padres del novio</div>
+      <p>Sr. Alberto Fuentes Mora<br>Sra. Rosa María Serrano</p>
+    </div>
+    <div class="orla" data-a="sube" style="margin-top:44px"><i></i><svg><use href="#rombo"/></svg><i></i></div>
+    <div class="et" data-a="sube">Corte de honor</div>
+    <div class="corte" data-grupo="110" style="margin-top:24px">
+      <div data-a="sube"><b>Velación</b><span>Sr. y Sra. Ortega Vidal</span></div>
+      <div data-a="sube"><b>Anillos</b><span>Ximena y Rodrigo</span></div>
+      <div data-a="sube"><b>Lazo</b><span>Familia Serrano</span></div>
+      <div data-a="sube"><b>Arras</b><span>Paulina y Óscar</span></div>
+      <div data-a="sube"><b>Cojines</b><span>Los pequeños Fuentes</span></div>
+      <div data-a="sube"><b>Brindis</b><span>Tío Ernesto</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sedes" id="ubicacion">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">¿Dónde?</div>
+      <h2 data-a="sube" style="margin-top:12px">Puebla</h2>
+    </div>
+    <div class="sede" data-a="sube">
+      <div class="et">Misa · 19:00</div>
+      <h3>Templo de San Agustín</h3>
+      <p>Av. Juárez 210, Centro<br>Puebla, Puebla</p>
+      <a class="bt-s" href="https://maps.google.com/?q=Templo%20de%20San%20Agust%C3%ADn%20Puebla" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+    <div class="sede" data-a="sube" style="--d:140ms">
+      <div class="et">Recepción · 21:00</div>
+      <h3>Salón Imperial</h3>
+      <p>Hotel Cartesiano, 2 Norte 10<br>Centro, Puebla</p>
+      <a class="bt-s" href="https://maps.google.com/?q=Hotel%20Cartesiano%20Puebla" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="env" data-a="sube">
+    <div class="et">Código de vestimenta</div>
+    <h2 style="margin-top:12px">Etiqueta rigurosa</h2>
+    <p>Smoking y vestido largo. Te pedimos reservar el guinda para la novia.</p>
+  </div>
+</section>
+
+<figure class="transicion" data-ampliar>
+  <div class="px" data-px="0.22"><img src="../fotos/g/gr-1.webp?v=2" alt="El ramo de flores vino y el velo sobre el diván, entre velas" loading="lazy"></div>
+  <figcaption data-a="sube">La noche empieza aquí</figcaption>
+</figure>
+
+<section class="papeleria">
+  <div class="env">
+    <div class="doble">
+      <figure class="cuadro" data-a="mascara" data-ampliar><img src="../fotos/g/gr-2.webp?v=2" alt="La invitación impresa, el anillo y el lacre" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">Buena información</div>
+        <h2 data-a="sube" style="margin-top:12px">Lo que<br>conviene saber</h2>
+        <ul class="avisos" data-grupo="100">
+          <li data-a="sube"><b>Puntualidad</b><span>La misa empieza a las 19:00 en punto.</span></li>
+          <li data-a="sube"><b>Valet</b><span>Hay valet en la entrada del hotel, sin costo.</span></li>
+          <li data-a="sube"><b>Solo adultos</b><span>Queremos que todos disfruten la noche.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="env">
+    <div data-a="sube">
+      <div class="et">Regalos</div>
+      <h2 style="margin-top:12px">Lluvia de sobres</h2>
+      <p>Tu presencia es el regalo. Si además deseas tener un detalle, lo agradecemos de corazón.</p>
+    </div>
+    <div class="sobres" data-a="sube"><div><b>Banorte</b><span>1122 3344 5566 7788 · Camila Ortega Vidal</span></div><button type="button" data-copiar="1122334455667788">Copiar</button></div>
+  </div>
+</section>
+
+<section class="bloque" style="padding-top:0">
+  <div class="env" data-a="sube">
+    <div class="et">Tu mesa</div>
+    <h2 style="margin-top:12px">Ya te apartamos lugar</h2>
+    <p>Al llegar, muestra tu pase en la entrada y te acompañamos a tu mesa.</p>
+  </div>
+</section>
+
+<section class="bloque" style="padding-top:0">
+  <div class="env" data-a="sube">
+    <div class="et">Después de la fiesta</div>
+    <h2 style="margin-top:12px">Tornaboda</h2>
+    <p>A las dos de la mañana abrimos el salón chico con chilaquiles y café para los que aguanten.</p>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">R.S.V.P.</div>
+      <h2 style="margin-top:12px">¿Nos acompañas?</h2>
+      <p>Será un honor contar contigo.</p>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div class="orla" data-a="sube"><i></i><svg><use href="#rombo"/></svg><i></i></div>
+    <div class="novios dorado" data-a="mascara">Camila &amp; Diego</div>
+    <p data-a="sube">28 · XI · MMXXVI</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'boda-granate', evento:'Camila & Diego', nombre:'los novios',
+  fechaISO:'2026-11-28T19:00:00-06:00', lugar:'Salón Imperial, Hotel Cartesiano, Puebla',
+  fechaLimite:'5 de noviembre', graciasSi:'Su lugar está confirmado', graciasSiTexto:'Les esperamos el sábado 28 de noviembre.',
+  textoPase:'Invitación personal para', etiquetaMensaje:'¿Nos dejas un mensaje? (opcional)',
+  wa:'5215618906790', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4,m:14},"B2M5":{n:"Daniel y Andrea",l:2,m:7},"C8T1":{n:"Familia Ramírez",l:5,m:3},"D4X6":{n:"Familia Herrera",l:3,m:11}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js?v=4" defer></script>
+</body>
+</html>

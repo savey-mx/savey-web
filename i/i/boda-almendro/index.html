@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<title>Sofía &amp; Tomás · 3 de julio de 2027</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F8F3E9">
+<meta property="og:title" content="Sofía &amp; Tomás">
+<meta property="og:description" content="Sábado 3 de julio de 2027 · Tepoztlán, Morelos">
+<meta property="og:image" content="https://saveystudio.com/i/fotos/almendro.jpg?v=2">
+<link rel="preload" as="image" href="../fotos/almendro.webp?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../motor/savey.css?v=4">
+<script>document.documentElement.className+=' js';</script>
+<style>
+/* ═══════════ ALMENDRO · mediterráneo de día ═══════════ */
+:root{
+  --crema:#F8F3E9; --crema2:#EFE8DA; --oliva:#59654B; --oliva-os:#465139; --tinta:#3A3D33;
+  --dorado:#B39463; --salvia:#9AA58C; --suave:#71715F; --blanco:#FFFCF6;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --rev-ease:cubic-bezier(.25,.62,.3,1); --rev-dur:.95s; --rev-dist:18px;
+  --lado:24px;
+}
+body{background:var(--crema);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.75}
+::selection{background:var(--oliva);color:var(--crema)}
+.env{max-width:540px;margin:0 auto;padding-inline:var(--lado)}
+.et{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--oliva);font-weight:500}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,9.6vw,46px);line-height:1.08}
+.centro{text-align:center}
+section{padding:clamp(84px,18vw,110px) 0}
+.hojita{width:24px;height:24px;margin:0 auto;fill:none;stroke:var(--salvia);stroke-width:1}
+
+/* Carga: una hoja que se dibuja */
+#carga{background:var(--crema)}
+.carga-c{text-align:center;position:relative}
+.carga-c svg{width:70px;height:70px;margin:0 auto;fill:none;stroke:var(--oliva);stroke-width:1;
+  stroke-dasharray:260;stroke-dashoffset:calc(260 - 260*var(--progreso));transition:stroke-dashoffset .5s var(--rev-ease)}
+.carga-c b{display:block;margin-top:18px;font-family:var(--serif);font-size:24px;letter-spacing:.14em;color:var(--oliva)}
+body.abierto .carga-c{transform:scale(1.15);opacity:0;transition:transform 1s var(--rev-ease),opacity .8s}
+
+/* Portada */
+.portada{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--crema2)}
+.px{position:absolute;left:0;right:0;top:-6%;height:112%}
+.px img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;transform:scale(1.07);transition:transform 2.8s cubic-bezier(.16,1,.3,1)}
+body.abierto .px img{transform:scale(1)}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(58,61,51,.28) 0%,transparent 26%,transparent 56%,rgba(58,61,51,.55) 82%,rgba(45,48,40,.8) 100%)}
+.portada-txt{position:absolute;z-index:2;left:0;right:0;bottom:calc(56px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--blanco);padding:0 var(--lado)}
+.portada-txt .et{color:rgba(255,252,246,.85)}
+.novios{font-family:var(--serif);font-weight:400;font-size:clamp(52px,15vw,84px);line-height:1;margin:14px 0}
+.novios .y{display:block;font-style:italic;font-size:.44em;margin:4px 0;color:#E8D9B8}
+.portada-fecha{font-size:12px;letter-spacing:.34em}
+:root{--h-desde:translateY(22px);--h-inicio:450ms;--h-paso:170ms;--h-dur:1.3s;--letra-paso:48ms}
+.portada .novios .ln{display:block}
+.portada .novios .l{--letra-desde:translateY(.3em);filter:blur(4px)}
+.portada .novios .y[data-h]{--h-desde:scale(.5) rotate(10deg)}
+.portada-fecha[data-h]{--h-desde:translateY(0);letter-spacing:.6em;opacity:0}
+body.abierto .portada-fecha{letter-spacing:.34em;transition:opacity 1.3s var(--rev-ease) .6s,letter-spacing 1.8s var(--rev-ease) .6s}
+
+/* Frase */
+.frase{text-align:center}
+.frase p{font-family:var(--serif);font-size:clamp(32px,8.8vw,42px);line-height:1.25}
+.frase em{color:var(--oliva)}
+
+/* Familia y fecha */
+.fecha{background:var(--crema2);text-align:center}
+.fecha .dia{font-family:var(--serif);font-size:clamp(90px,26vw,120px);line-height:.9;color:var(--oliva)}
+.fecha .mes{font-size:12px;letter-spacing:.34em;margin-top:14px}
+[data-cuenta]{margin:32px 0 30px;gap:6px}
+.cu{min-width:62px}
+.cu-n{font-family:var(--serif);font-size:42px;color:var(--oliva-os)}
+.cu-t{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--suave);margin-top:8px}
+.cu-sep{width:4px;height:4px;border-radius:50%;background:var(--dorado);margin-top:22px;opacity:.6}
+
+/* Botones */
+.bt-p{height:56px;padding:0 28px;border-radius:99px;background:var(--oliva);color:var(--crema);font-weight:500;font-size:14px;letter-spacing:.06em;
+  box-shadow:0 14px 28px -18px rgba(70,81,57,.9);transition:background .4s}
+.bt-p:hover{background:var(--oliva-os)}
+.bt-s{height:52px;padding:0 22px;border-radius:99px;border:1px solid rgba(89,101,75,.5);color:var(--oliva-os);font-size:13.5px;background:rgba(255,252,246,.6);
+  transition:background .4s,border-color .4s}
+.bt-s:hover{background:var(--blanco);border-color:var(--oliva)}
+.bt-s svg{stroke:currentColor;fill:none;stroke-width:1.5}
+
+.familia{text-align:center}
+.familia .grupo{margin-top:40px}
+.familia p{font-family:var(--serif);font-size:23px;line-height:1.4;margin-top:10px}
+
+/* Itinerario */
+.itin ol{list-style:none;margin:40px auto 0;max-width:360px;position:relative}
+.itin ol::before{content:"";position:absolute;left:9px;top:12px;bottom:12px;width:1px;background:rgba(89,101,75,.3)}
+.itin li{position:relative;padding:0 0 28px 42px}
+.itin li:last-child{padding-bottom:0}
+.itin li::before{content:"";position:absolute;left:4px;top:10px;width:11px;height:11px;border-radius:50%;background:var(--crema);border:1.5px solid var(--oliva)}
+.itin li.visto::before{background:var(--oliva);transition:background .6s .4s}
+.itin .hr{font-size:12px;letter-spacing:.18em;color:var(--dorado);font-weight:600}
+.itin .ac{font-family:var(--serif);font-size:26px;line-height:1.15;display:block}
+
+/* Actividades */
+.tarde{background:var(--crema2)}
+.acts{display:grid;gap:12px;margin-top:34px}
+.act{background:var(--blanco);border-radius:20px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;
+  box-shadow:0 16px 34px -30px rgba(58,61,51,.7);transition:transform .5s var(--rev-ease),box-shadow .5s}
+.act:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(58,61,51,.8)}
+.act .ico{width:38px;height:38px;border-radius:50%;background:rgba(89,101,75,.1);display:grid;place-items:center;flex:none}
+.act .ico svg{width:18px;height:18px;stroke:var(--oliva);fill:none;stroke-width:1.3}
+.act b{font-family:var(--serif);font-weight:500;font-size:22px;display:block;line-height:1.2}
+.act span{font-size:13px;color:var(--suave)}
+
+/* Sede */
+.sede{text-align:center;background:var(--blanco);border-radius:24px;padding:34px 24px;margin-top:26px;
+  box-shadow:0 20px 40px -34px rgba(58,61,51,.8)}
+.sede h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:12px 0 8px}
+.sede p{color:var(--suave);font-size:14px}
+.sede .bt-s{margin-top:22px}
+
+/* Transición y papelería */
+.transicion{position:relative;height:66svh;min-height:380px;overflow:hidden;margin:0}
+.transicion .px{position:absolute;left:0;right:0;top:-7%;height:114%}
+.transicion img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.pie-transicion{text-align:center;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--suave);padding:22px var(--lado) 0}
+.papeleria{padding-top:clamp(60px,14vw,84px)}
+.doble{display:grid;gap:32px;align-items:center}
+.foto-suave{aspect-ratio:4/5;border-radius:24px;overflow:hidden;margin:0;box-shadow:0 26px 50px -40px rgba(58,61,51,.9)}
+.foto-suave img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--rev-ease)}
+.foto-suave:hover img{transform:scale(1.05)}
+.avisos{list-style:none;margin-top:22px;display:grid;gap:0}
+.avisos li{padding:16px 0;border-top:1px solid rgba(122,113,95,.2)}
+.avisos li:last-child{border-bottom:1px solid rgba(122,113,95,.2)}
+.avisos b{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--oliva);font-weight:600}
+.avisos span{font-size:14.5px;color:var(--suave);display:block;margin-top:4px}
+@media (min-width:820px){.doble{grid-template-columns:1fr 1fr;gap:56px}.papeleria .env{max-width:900px}}
+
+/* Galería */
+/* Bloques */
+.bloque{text-align:center}
+.bloque p{color:var(--suave);max-width:34ch;margin:16px auto 0}
+.hashtag{display:inline-block;margin-top:26px;font-family:var(--serif);font-size:30px;color:var(--oliva);border-bottom:1px solid rgba(89,101,75,.35);padding-bottom:6px}
+.opciones{display:grid;gap:12px;margin-top:32px;text-align:left}
+.opcion{display:flex;align-items:center;gap:14px;padding:18px 20px;background:var(--blanco);border-radius:18px;text-decoration:none;
+  box-shadow:0 16px 34px -32px rgba(58,61,51,.8);transition:transform .5s var(--rev-ease)}
+.opcion:hover{transform:translateY(-3px)}
+.opcion b{font-family:var(--serif);font-weight:500;font-size:21px;display:block;line-height:1.2}
+.opcion span{font-size:12.5px;color:var(--suave)}
+.opcion .fl{margin-left:auto;color:var(--oliva)}
+.opcion button{margin-left:auto;border:1px solid rgba(89,101,75,.4);background:none;border-radius:99px;padding:8px 14px;font-size:12px;color:var(--oliva-os)}
+.opcion button.copiado{background:var(--oliva);color:var(--crema)}
+
+/* Confirmación */
+.rsvp{background:var(--crema2)}
+.rsvp .centro p{color:var(--suave);margin-top:12px}
+[data-pase]{display:block;text-align:center;margin:34px 0 0;padding:26px 20px;background:var(--blanco);border-radius:24px}
+.pase-et{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+.pase-qui{display:block;font-family:var(--serif);font-size:29px;margin:8px 0 2px}
+.pase-lug{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--oliva)}
+[data-rsvp]{margin-top:36px}
+.campo-l>span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);font-weight:500}
+.linea-in{background:var(--blanco);border-radius:14px;padding:14px 16px;font-size:16px;border:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.linea-in:focus{border-color:var(--salvia);box-shadow:0 0 0 4px rgba(154,165,140,.25)}
+.elige b{background:var(--blanco);border-radius:14px;font-size:13.5px;border:1px solid transparent;transition:all .4s}
+.elige input:checked+b{background:var(--oliva);color:var(--crema)}
+.elige input:focus-visible+b{outline:2px solid var(--salvia);outline-offset:2px}
+.paso-lug button{background:var(--blanco);color:var(--oliva)}
+.paso-lug button:hover{background:var(--oliva);color:var(--crema)}
+.paso-lug output{font-family:var(--serif);font-size:36px}
+.paso-lug small{font-size:12.5px;color:var(--suave)}
+.rsvp-nota{font-size:12.5px;color:var(--suave);text-align:center}
+.rg-sello{background:var(--oliva);color:var(--crema)}
+.rg-t{font-family:var(--serif);font-weight:400;font-size:34px}
+.rg-p{color:var(--suave);margin-top:6px}
+
+.cierre{text-align:center;padding-bottom:56px}
+.cierre .novios{color:var(--oliva);font-size:clamp(44px,12.5vw,70px)}
+.cierre p{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--suave)}
+.cierre .firma-savey{margin-top:80px}
+#flota{height:50px;padding:0 24px;border-radius:99px;background:var(--oliva);color:var(--crema);font-size:13px;font-weight:500;white-space:nowrap}
+
+@media (min-width:900px){
+  .acts{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body class="cargando">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="hoja" viewBox="0 0 70 70"><path d="M35 66V26M35 26c0-12 9-22 26-22 0 15-10 25-26 22zM35 38c0-10-8-18-22-18 0 13 9 21 22 18z"/></symbol>
+  <symbol id="copa" viewBox="0 0 24 24"><path d="M7 3h10l-1 6a4 4 0 01-8 0zM12 13v6M9 21h6"/></symbol>
+  <symbol id="flor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2"/><path d="M12 10c0-4 1-6 0-8-1 2 0 4 0 8zM14 12c4 0 6 1 8 0-2-1-4 0-8 0zM12 14c0 4-1 6 0 8 1-2 0-4 0-8zM10 12c-4 0-6 1-8 0 2-1 4 0 8 0z"/></symbol>
+  <symbol id="nota" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div id="carga" aria-hidden="true">
+  <div class="carga-c">
+    <svg viewBox="0 0 70 70"><use href="#hoja"/></svg>
+    <b>S &amp; T</b>
+  </div>
+</div>
+
+<header class="portada" data-portada>
+  <div class="px" data-px="0.15"><img src="../fotos/almendro.webp?v=2" alt="Sofía y Tomás en el jardín, de día"></div>
+  <div class="portada-txt">
+    <div class="et" data-h style="--h:0">Nuestra boda</div>
+    <h1 class="novios">
+      <span class="ln" data-h data-letras style="--h:1">Sofía</span>
+      <span class="y" data-h style="--h:2">&amp;</span>
+      <span class="ln" data-h data-letras style="--h:3;--d:100ms">Tomás</span>
+    </h1>
+    <div class="portada-fecha" data-h style="--h:3">03 · JULIO · 2027</div>
+  </div>
+</header>
+
+<main>
+
+<section class="frase">
+  <div class="env">
+    <svg class="hojita" data-a="sube" aria-hidden="true" style="margin-bottom:24px"><use href="#hoja"/></svg>
+    <p data-a="sube">Nos casamos.<br><em>Y queremos celebrarlo contigo.</em></p>
+  </div>
+</section>
+
+<section class="fecha" id="detalles">
+  <div class="env">
+    <div class="et" data-a="sube">Sábado</div>
+    <div class="dia" data-a="sube" style="--d:100ms">03</div>
+    <div class="mes" data-a="sube" style="--d:200ms">JULIO · 2027</div>
+    <div data-cuenta data-a="sube" style="--d:300ms"></div>
+    <a class="bt-s" data-calendario data-a="sube" style="--d:400ms"><svg><use href="#cal"/></svg>Agregar al calendario</a>
+  </div>
+</section>
+
+<section class="familia">
+  <div class="env">
+    <div class="et" data-a="sube">Con la bendición de nuestros papás</div>
+    <div class="grupo" data-a="sube">
+      <div class="et" style="color:var(--suave)">Padres de la novia</div>
+      <p>Sr. Ignacio Aguilar Pardo<br>Sra. Teresa León de Aguilar</p>
+    </div>
+    <div class="grupo" data-a="sube">
+      <div class="et" style="color:var(--suave)">Padres del novio</div>
+      <p>Sr. Gerardo Campos Ruiz<br>Sra. Alicia Navarro de Campos</p>
+    </div>
+  </div>
+</section>
+
+<section class="itin">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">El día</div>
+      <h2 data-a="sube" style="margin-top:12px">Sábado 3 de julio</h2>
+    </div>
+    <ol data-grupo="120">
+      <li data-a="sube"><span class="hr">12:00 PM</span><span class="ac">Ceremonia</span></li>
+      <li data-a="sube"><span class="hr">1:00 PM</span><span class="ac">Aperitivo</span></li>
+      <li data-a="sube"><span class="hr">2:00 PM</span><span class="ac">Comida</span></li>
+      <li data-a="sube"><span class="hr">4:00 PM</span><span class="ac">Brindis y postre</span></li>
+      <li data-a="sube"><span class="hr">6:00 PM</span><span class="ac">Música en vivo</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="tarde">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">Durante la tarde</div>
+      <h2 data-a="sube" style="margin-top:12px">¿Qué va a haber?</h2>
+    </div>
+    <div class="acts" data-grupo="120">
+      <div class="act" data-a="sube"><span class="ico"><svg><use href="#copa"/></svg></span><div><b>Cata de vinos del valle</b><span>3:00 pm · En la terraza de piedra</span></div></div>
+      <div class="act" data-a="sube"><span class="ico"><svg><use href="#flor"/></svg></span><div><b>Taller de coronas</b><span>4:00 pm · Con flores del jardín</span></div></div>
+      <div class="act" data-a="sube"><span class="ico"><svg><use href="#nota"/></svg></span><div><b>Trío en vivo</b><span>6:00 pm · Hasta que se acabe la luz</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion">
+  <div class="env">
+    <div class="centro">
+      <div class="et" data-a="sube">¿Dónde?</div>
+      <h2 data-a="sube" style="margin-top:12px">Jardín Los Almendros</h2>
+    </div>
+    <div class="sede" data-a="sube">
+      <div class="et">Ceremonia y comida · 12:00 pm</div>
+      <h3>Jardín Los Almendros</h3>
+      <p>Camino a Tepoztlán km 3<br>Tepoztlán, Morelos</p>
+      <a class="bt-s" href="https://maps.google.com/?q=Camino%20a%20Tepoztl%C3%A1n%20km%203" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="env" data-a="sube">
+    <div class="et">Código de vestimenta</div>
+    <h2 style="margin-top:12px">Casual elegante</h2>
+    <p>Ropa fresca y zapato plano o de piso. Hay sombra, pero a mediodía hace calor.</p>
+  </div>
+</section>
+
+<figure class="transicion" data-ampliar>
+  <div class="px" data-px="0.18"><img src="../fotos/g/al-1.webp?v=2" alt="El ramo sobre la banca de piedra, entre olivos" loading="lazy"></div>
+</figure>
+<p class="pie-transicion" data-a="sube">El jardín, temprano</p>
+
+<section class="papeleria">
+  <div class="env">
+    <div class="doble">
+      <figure class="foto-suave" data-a="enfoque" data-ampliar><img src="../fotos/g/al-2.webp?v=2" alt="La invitación impresa entre ramas de olivo y rosas blancas" loading="lazy"></figure>
+      <div>
+        <div class="et" data-a="sube">Antes de venir</div>
+        <h2 data-a="sube" style="margin-top:12px">Tres cosas<br>que ayudan</h2>
+        <ul class="avisos" data-grupo="100">
+          <li data-a="sube"><b>Sombra</b><span>Hay toldo y abanicos, pero un sombrero no sobra.</span></li>
+          <li data-a="sube"><b>Piso</b><span>El jardín es de pasto y grava suelta.</span></li>
+          <li data-a="sube"><b>Niños</b><span>Bienvenidos. Habrá mesa y juegos para ellos.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque" style="padding-top:0">
+  <div class="env">
+    <div data-a="sube">
+      <div class="et">Regalos</div>
+      <h2 style="margin-top:12px">Estamos armando casa</h2>
+      <p>Cualquier aportación nos ayuda muchísimo, y te lo agradecemos de corazón.</p>
+    </div>
+    <div class="opciones" data-grupo="110">
+      <a class="opcion" href="#" target="_blank" rel="noopener" data-a="sube"><div><b>Mesa en Liverpool</b><span>Evento 51239876</span></div><span class="fl">→</span></a>
+      <div class="opcion" data-a="sube"><div><b>Lluvia de sobres</b><span>BBVA · 9988 7766 5544 3322 · Sofía Aguilar León</span></div><button type="button" data-copiar="9988776655443322">Copiar</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque" style="padding-top:0">
+  <div class="env" data-a="sube">
+    <div class="et">Comparte tus fotos</div>
+    <h2 style="margin-top:12px">Súbelas con nuestro hashtag</h2>
+    <p>Todo lo que publiques ese día lo vamos a guardar en nuestro álbum.</p>
+    <div class="hashtag">#SofíaYTomás2027</div>
+  </div>
+</section>
+
+<section class="rsvp" id="confirmar">
+  <div class="env">
+    <div class="centro" data-a="sube">
+      <div class="et">Confirmación</div>
+      <h2 style="margin-top:12px">¿Nos acompañas?</h2>
+    </div>
+    <div data-pase data-a="sube"></div>
+    <div data-rsvp data-a="sube"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <svg class="hojita" data-a="sube" aria-hidden="true" style="margin-bottom:22px"><use href="#hoja"/></svg>
+    <div class="novios" data-a="sube">Sofía &amp; Tomás</div>
+    <p data-a="sube" style="--d:150ms">Te esperamos en el jardín</p>
+    <a class="firma-savey" href="https://saveystudio.com" target="_blank" rel="noopener"><img src="/favicon-32.png?v=3" alt="">Hecho por Savey</a>
+  </div>
+</section>
+
+</main>
+
+<a id="flota" class="bt-p" href="#confirmar">Confirmar asistencia</a>
+
+<script>
+window.XV = {
+  slug:'boda-almendro', evento:'Sofía & Tomás', nombre:'los novios',
+  fechaISO:'2027-07-03T12:00:00-06:00', lugar:'Jardín Los Almendros, Tepoztlán, Morelos',
+  fechaLimite:'10 de junio', graciasSi:'Tu lugar está confirmado', graciasSiTexto:'Nos vemos el sábado 3 de julio.',
+  etiquetaMensaje:'¿Nos dejas un mensaje? (opcional)',
+  extras:[{k:'cancion', rot:'¿Qué canción quieres oír?', ph:'Artista y título'}],
+  wa:'5215618906790', endpoint:'',
+  pases:{"A7K9":{n:"Familia González",l:4},"B2M5":{n:"Daniel y Andrea",l:2},"C8T1":{n:"Familia Ramírez",l:5},"D4X6":{n:"Familia Herrera",l:3}}
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../motor/savey.js?v=4" defer></script>
+</body>
+</html>
