@@ -189,10 +189,17 @@ body.abierto .tachado:nth-of-type(3)::after{transition-delay:.6s}
   padding:14px 15px;font-size:16px;color:var(--tinta);transition:border-color .3s}
 .linea-in:focus{border-color:var(--naranja)}
 .linea-in::placeholder{color:#A6AEA9}
-.elige b{background:var(--papel);border:1.5px solid var(--linea);border-radius:0;
+/* Elegir si vienes o no es una respuesta, no una acción. Por eso las dos
+   opciones van en contorno y, al elegirse, se tiñen en claro con una
+   palomita: el único bloque sólido de la sección es el de Confirmar. */
+.elige b{background:var(--papel);border:1.5px solid var(--linea);border-radius:0;min-height:46px;
   font-family:var(--display);font-weight:500;font-size:13.5px;transition:all .3s var(--rev-ease)}
-.elige input:checked+b{background:var(--verde);color:var(--hueso);border-color:var(--verde)}
+.elige input:checked+b{background:#E4EFE9;color:var(--verde);border-color:var(--verde);font-weight:700}
+.elige input:checked+b::before{content:"";flex:0 0 auto;width:8px;height:14px;margin-right:9px;
+  border:solid var(--verde);border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translateY(-2px)}
 .elige input:focus-visible+b{outline:2px solid var(--naranja);outline-offset:2px}
+.rsvp-form button[type=submit]{margin-top:14px}
+.rg-otra{color:var(--teal)}
 .paso-lug button{background:var(--papel);border:1.5px solid var(--linea);border-radius:0;color:var(--tinta)}
 .paso-lug button:hover{background:var(--naranja);color:var(--hueso);border-color:var(--naranja)}
 .paso-lug output{font-family:var(--display);font-weight:700;font-size:34px;letter-spacing:-.04em}
@@ -388,8 +395,13 @@ window.XV = {
   /* ←←← Pega aquí el .exec del Apps Script de confirmaciones ←←← */
   endpoint:'https://script.google.com/macros/s/AKfycbwuA6DURMrOr88FTyivGhaFiNyTLpX7uh5Ad1fgFK8H0cNb0WDXbmQDEsqNAgLG7bxO/exec',
   /* Sin pases: una sola liga para todos. Cada quien escribe su nombre
-     y cuántos lugares aparta, hasta este máximo. */
-  maxSinPase:6
+     y cuántas personas apunta, hasta este máximo. */
+  maxSinPase:6,
+  /* "¿Cuántos vienen?" en vez de "Lugares", para que diga lo mismo que el panel. */
+  etiquetaLugares:'¿Cuántos vienen?',
+  /* Como la liga es una sola, el mismo teléfono puede confirmar a varias
+     personas: al terminar sale el botón "Confirmar a alguien más". */
+  variasVeces:true
 };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>

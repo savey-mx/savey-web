@@ -87,6 +87,12 @@ h1,h2,h3,.pase-qui,[data-letras]{overflow-wrap:break-word}
 @keyframes sacude{25%{transform:translateX(-6px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
 .rsvp-gracias{text-align:center;opacity:0;transform:translateY(12px);transition:opacity .9s,transform .9s}
 .rsvp-gracias.visto{opacity:1;transform:none}
+/* Solo sale con variasVeces: deja confirmar a otra persona desde el mismo
+   telefono. Va discreto para no competir con el mensaje de agradecimiento. */
+.rg-otra{display:inline-block;margin-top:22px;padding:11px 20px;border:1.5px solid currentColor;
+  background:none;color:inherit;font:inherit;font-size:14px;cursor:pointer;opacity:.72;
+  transition:opacity .25s}
+.rg-otra:hover{opacity:1}
 .rg-sello{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;position:relative}
 .rg-sello::after{content:"";position:absolute;left:24px;top:17px;width:14px;height:24px;border:solid currentColor;
   border-width:0 2px 2px 0;transform:rotate(45deg)}

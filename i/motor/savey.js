@@ -197,7 +197,11 @@ var caja = $('[data-rsvp]');
 if(caja){
   var guardado = null;
   try{ guardado = JSON.parse(localStorage.getItem('xv-rsvp-'+C.slug+'-'+codigo)||'null') }catch(e){}
-  var lugares = maximo;
+  /* Con pase, arranca en los lugares que se le reservaron a esa familia.
+     Sin pase, arranca en 1: el maximo es un tope, no una sugerencia, y si
+     arrancara ahi cualquiera que confirme sin tocar el contador quedaria
+     registrado con seis personas. */
+  var lugares = pase ? maximo : 1;
   caja.innerHTML =
     '<form class="rsvp-form" novalidate>'+
       '<label class="campo-l"><span>Nombre'+(pase?'':' completo')+'</span>'+
@@ -205,7 +209,7 @@ if(caja){
       '<div class="campo-l"><span>¿Asistirás?</span><div class="elige" role="radiogroup">'+
         '<label><input type="radio" name="asiste" value="si" checked><b>Sí, ahí estaré</b></label>'+
         '<label><input type="radio" name="asiste" value="no"><b>No podré ir</b></label></div></div>'+
-      '<div class="campo-l" data-lugares><span>Lugares</span><div class="paso-lug">'+
+      '<div class="campo-l" data-lugares><span>'+(C.etiquetaLugares||'Lugares')+'</span><div class="paso-lug">'+
         '<button type="button" data-l="-1" aria-label="Menos lugares">−</button>'+
         '<output aria-live="polite">'+lugares+'</output>'+
         '<button type="button" data-l="1" aria-label="Más lugares">+</button>'+
@@ -217,7 +221,8 @@ if(caja){
       (C.fechaLimite?'<p class="rsvp-nota">Te agradecemos confirmar antes del '+C.fechaLimite+'.</p>':'')+
     '</form>'+
     '<div class="rsvp-gracias" hidden><div class="rg-sello" aria-hidden="true"></div>'+
-      '<h3 class="rg-t"></h3><p class="rg-p"></p></div>';
+      '<h3 class="rg-t"></h3><p class="rg-p"></p>'+
+      '<button type="button" class="rg-otra" hidden>Confirmar a alguien más</button></div>';
   var form = $('form',caja), out = $('output',caja), bloque = $('[data-lugares]',caja);
   $$('[data-l]',caja).forEach(function(b){
     b.addEventListener('click',function(){
@@ -234,9 +239,23 @@ if(caja){
     var g = $('.rsvp-gracias',caja); g.hidden = false;
     $('.rg-t',g).textContent = asiste==='si' ? (C.graciasSi||'¡Gracias por confirmar!') : 'Gracias por avisarnos';
     $('.rg-p',g).textContent = asiste==='si' ? (C.graciasSiTexto||'Nos vemos pronto.') : (C.graciasNo||'Te vamos a extrañar.');
+    var otra = $('.rg-otra',g); if(otra) otra.hidden = !C.variasVeces;
     requestAnimationFrame(function(){ g.classList.add('visto') });
   };
-  if(guardado) gracias(guardado.asiste);
+  /* Con variasVeces no se recuerda la respuesta anterior: la liga es una sola
+     para todos, asi que un mismo telefono puede confirmar a varias personas. */
+  if(guardado && !C.variasVeces) gracias(guardado.asiste);
+  var otraBt = $('.rg-otra',caja);
+  if(otraBt) otraBt.addEventListener('click', function(){
+    var g = $('.rsvp-gracias',caja);
+    g.hidden = true; g.classList.remove('visto');
+    form.reset(); form.hidden = false;
+    lugares = pase ? maximo : 1; out.textContent = lugares;
+    bloque.classList.remove('apagado');
+    $$('.campo-l',form).forEach(function(c){ c.classList.remove('falta') });
+    var b = $('.bt-p',form); b.disabled = false; b.textContent = 'Confirmar asistencia';
+    form.nombre.focus();
+  });
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var nombre = form.nombre.value.trim();
@@ -244,7 +263,8 @@ if(caja){
     var asiste = form.asiste.value;
     var b = $('.bt-p',form); b.disabled = true; b.textContent = 'Enviando…';
     var dato = {evento:C.evento, slug:C.slug, codigo:codigo, pase:pase?pase.n:'', nombre:nombre,
-      asiste:asiste, lugares: asiste==='si'?lugares:0, mensaje:form.mensaje.value, fecha:new Date().toISOString()};
+      asiste:asiste, lugares: asiste==='si'?lugares:0, personas: asiste==='si'?lugares:0,
+      mensaje:form.mensaje.value, fecha:new Date().toISOString()};
     (C.extras||[]).forEach(function(e){ if(form[e.k]) dato[e.k] = form[e.k].value });
     var fin = function(){
       try{ localStorage.setItem('xv-rsvp-'+C.slug+'-'+codigo, JSON.stringify({asiste:asiste})) }catch(e){}

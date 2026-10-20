@@ -52,6 +52,11 @@ h1{font-family:var(--titulo);font-weight:600;font-size:clamp(26px,5vw,34px);line
 /* ══ Tarjetas de totales ══ */
 .totales{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
 @media (min-width:660px){.totales{grid-template-columns:repeat(4,1fr)}}
+/* Esta fiesta no pregunta adultos ni niños, así que son tres tarjetas.
+   En teléfono la de Personas ocupa el renglón completo. */
+.totales.tres .tot:first-child{grid-column:1/-1}
+@media (min-width:660px){.totales.tres{grid-template-columns:repeat(3,1fr)}
+  .totales.tres .tot:first-child{grid-column:auto}}
 .tot{background:var(--blanco);border-radius:18px;padding:18px 16px;position:relative;
   box-shadow:0 10px 26px -20px rgba(74,59,48,.5)}
 .tot::after{content:"";position:absolute;inset:7px;border-radius:12px;border:2px dashed var(--beige-os);
@@ -156,11 +161,10 @@ footer a{text-decoration:none;color:var(--camel-hondo)}
 
 <main class="env">
 
-  <div class="totales">
+  <div class="totales tres">
     <div class="tot verde"><div class="n" id="t-personas">—</div><div class="l">Personas</div><div class="d" id="t-personas-d">confirmadas</div></div>
-    <div class="tot"><div class="n" id="t-adultos">—</div><div class="l">Adultos</div></div>
-    <div class="tot camel"><div class="n" id="t-ninos">—</div><div class="l">Niños</div></div>
-    <div class="tot gris"><div class="n" id="t-no">—</div><div class="l">No asisten</div><div class="d" id="t-no-d">familias</div></div>
+    <div class="tot"><div class="n" id="t-si">—</div><div class="l">Confirmaciones</div><div class="d" id="t-si-d">respuestas</div></div>
+    <div class="tot gris"><div class="n" id="t-no">—</div><div class="l">No asisten</div><div class="d" id="t-no-d">respuestas</div></div>
   </div>
 
   <div class="herramientas">
@@ -199,7 +203,7 @@ var EVENTO   = '226zf';
 var TITULO   = 'Mario cumple 22';
 /* Opcional. Solo si en el Apps Script pusiste la propiedad CLAVES
    con una entrada  226zf:loquesea  para proteger este panel. */
-var CLAVE    = 'loquesea';
+var CLAVE    = '226zf:loquesea';
 /* ════════════════════════════════════════════════════════════════ */
 
 var filas=[], filtro='todos', texto='';
@@ -227,17 +231,23 @@ function fechaCorta(v){
     String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
 }
 
+/* El formulario de esta fiesta pregunta personas y ya: no hay desglose de
+   adultos y niños. Se lee la columna "personas"; si la respuesta llegó antes
+   de ese cambio, se cae a "lugares", que es lo que mandaba el motor. */
+function personasDe(f){
+  return num(f.personas) || num(f.lugares) || (num(f.adultos)+num(f.ninos));
+}
+
 function totales(){
   var si=filas.filter(function(f){return esSi(f.asiste)});
-  var ad=si.reduce(function(a,f){return a+num(f.adultos)},0);
-  var ni=si.reduce(function(a,f){return a+num(f.ninos)},0);
+  var pe=si.reduce(function(a,f){return a+personasDe(f)},0);
   var no=filas.length-si.length;
-  $('t-personas').textContent=ad+ni;
-  $('t-personas-d').textContent=si.length+(si.length===1?' familia':' familias');
-  $('t-adultos').textContent=ad;
-  $('t-ninos').textContent=ni;
+  $('t-personas').textContent=pe;
+  $('t-personas-d').textContent=pe===1?'confirmada':'confirmadas';
+  $('t-si').textContent=si.length;
+  $('t-si-d').textContent=si.length===1?'respuesta':'respuestas';
   $('t-no').textContent=no;
-  $('t-no-d').textContent=no===1?'familia':'familias';
+  $('t-no-d').textContent=no===1?'respuesta':'respuestas';
 }
 
 function pinta(){
@@ -259,18 +269,16 @@ function pinta(){
     return;
   }
   var html='<div class="caja-tabla"><table><thead><tr>'+
-    '<th>Quién</th><th>Viene</th><th class="num">Adultos</th><th class="num">Niños</th>'+
-    '<th class="num">Total</th><th>Confirmó</th></tr></thead><tbody>';
+    '<th>Quién</th><th>Viene</th><th class="num">Personas</th>'+
+    '<th>Confirmó</th></tr></thead><tbody>';
   v.forEach(function(f){
-    var si=esSi(f.asiste), ad=si?num(f.adultos):0, ni=si?num(f.ninos):0;
+    var si=esSi(f.asiste), pe=si?personasDe(f):0;
     html+='<tr>'+
       '<td><div class="quien">'+esc(f.nombre||'—')+'</div>'+
         (f.mensaje?'<div class="recado">“'+esc(f.mensaje)+'”</div>':'')+'</td>'+
       '<td><span class="pica '+(si?'si':'no')+'"><svg><use href="#'+(si?'ic-palomita':'ic-equis')+'"/></svg>'+
         (si?'Sí':'No')+'</span></td>'+
-      '<td class="num" data-r="Adultos">'+(si?ad:'—')+'</td>'+
-      '<td class="num" data-r="Niños">'+(si?ni:'—')+'</td>'+
-      '<td class="num" data-r="Total">'+(si?(ad+ni):'—')+'</td>'+
+      '<td class="num" data-r="Personas">'+(si?pe:'—')+'</td>'+
       '<td><span class="cuando">'+esc(fechaCorta(f.recibido||f.fecha))+'</span></td>'+
     '</tr>';
   });
@@ -281,7 +289,7 @@ function sinEndpoint(){
   $('zona').innerHTML='<div class="aviso"><b>Falta conectar la hoja</b>'+
     '<p>Abre este archivo y pega la URL del Apps Script en la variable '+
     '<code>ENDPOINT</code>, hasta arriba del &lt;script&gt;. Es la misma que va en la invitación.</p></div>';
-  ['t-personas','t-adultos','t-ninos','t-no'].forEach(function(i){$(i).textContent='—'});
+  ['t-personas','t-si','t-no'].forEach(function(i){$(i).textContent='—'});
 }
 
 function cargar(){
@@ -322,10 +330,11 @@ $('btn-refrescar').addEventListener('click',cargar);
 
 $('btn-csv').addEventListener('click',function(){
   if(!filas.length){ return }
-  var cols=['recibido','nombre','asiste','adultos','ninos','personas','mensaje'];
+  var cols=['recibido','nombre','asiste','personas','mensaje'];
   var esc2=function(v){ v=String(v==null?'':v); return '"'+v.replace(/"/g,'""')+'"' };
   var lineas=[cols.join(',')];
-  filas.forEach(function(f){ lineas.push(cols.map(function(c){return esc2(f[c])}).join(',')) });
+  filas.forEach(function(f){ lineas.push(cols.map(function(c){
+    return esc2(c==='personas' ? (esSi(f.asiste)?personasDe(f):0) : f[c]) }).join(',')) });
   var blob=new Blob(['﻿'+lineas.join('\r\n')],{type:'text/csv;charset=utf-8'});
   var a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
