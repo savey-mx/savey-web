@@ -145,6 +145,7 @@ input[type=date],input[type=time]{min-height:52px}
 .tarjeta .fila{display:flex;align-items:center;gap:11px;padding-right:30px}
 .tarjeta b{font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.15}
 .tarjeta .precio{margin-left:auto;font-family:var(--serif);font-size:21px;white-space:nowrap}
+.tarjeta .precio s{font-size:14px;color:var(--suave);margin-right:7px;text-decoration-thickness:1px}
 .tarjeta p{font-size:13.5px;color:var(--suave);margin-top:8px;line-height:1.5}
 /* palomita que aparece al elegir */
 .sel{position:absolute;top:17px;right:16px;width:24px;height:24px;border-radius:50%;
@@ -521,12 +522,12 @@ var PASOS = [
 {
   n:"Paquete",
   t:"¿Qué paquete te interesa?",
-  b:"Si todavía no te decides, elige el que más se acerque. Lo podemos cambiar cuando platiquemos.",
+  b:"Precios de temporada, válidos hasta el 30 de noviembre de 2026. Si todavía no te decides, elige el que más se acerque. Lo podemos cambiar cuando platiquemos.",
   campos:[
     {k:"paquete", rv:"Paquete", tipo:"tarjetas", req:true, op:[
-      {v:"Plata", metal:"plata", precio:"$790", d:"Diseño completo, mapa, itinerario y confirmación de asistencia sin límite de invitados. Lista en 72 horas."},
-      {v:"Oro", metal:"oro", precio:"$1,690", etiqueta:"La más elegida", d:"Todo lo de Plata más pase personalizado por familia, control de entrada con código, save the date, álbum compartido y dirección web propia. Lista en 48 horas."},
-      {v:"Diamante", metal:"diamante", precio:"$3,290", d:"Todo lo de Oro y además nosotros mandamos las invitaciones por WhatsApp a tu lista y damos seguimiento a quien no contesta."}
+      {v:"Plata", metal:"plata", antes:"$790", precio:"$500", d:"Diseño completo, mapa, itinerario y confirmación de asistencia sin límite de invitados. Lista en 72 horas."},
+      {v:"Oro", metal:"oro", antes:"$1,690", precio:"$1,000", etiqueta:"La más elegida", d:"Todo lo de Plata más pase personalizado por familia, control de entrada con código, save the date, álbum compartido y dirección web propia. Lista en 48 horas."},
+      {v:"Diamante", metal:"diamante", antes:"$3,290", precio:"$2,790", d:"Todo lo de Oro y además nosotros mandamos las invitaciones por WhatsApp a tu lista y damos seguimiento a quien no contesta."}
     ]}
   ]
 },
@@ -722,7 +723,7 @@ function campoInterno(c){
           (c.iconos?'<span class="ico"><svg viewBox="0 0 24 24">'+(ICO[v]||'')+'</svg></span>':'')+
           '<b>'+esc(v)+'</b>'+
           (o.etiqueta?'<span class="etiqueta">'+o.etiqueta+'</span>':'')+
-          (o.precio?'<span class="precio">'+o.precio+'</span>':'')+
+          (o.precio?'<span class="precio">'+(o.antes?'<s>'+o.antes+'</s>':'')+o.precio+'</span>':'')+
         '</div>'+(o.d?'<p>'+o.d+'</p>':'')+
         '<span class="sel"><svg viewBox="0 0 16 16"><use href="#ok"/></svg></span></label>';
     });

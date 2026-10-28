@@ -23,7 +23,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Savey",
 "description":"Estudio de invitaciones digitales con confirmación de asistencia para bodas, XV años, bautizos, cumpleaños y eventos corporativos.",
-"url":"https://saveystudio.com/","areaServed":"MX","priceRange":"$790-$3290 MXN",
+"url":"https://saveystudio.com/","areaServed":"MX","priceRange":"$500-$2790 MXN",
 "sameAs":["https://www.instagram.com/savey.mx/","https://www.facebook.com/profile.php?id=61594253131441"]}
 </script>
 <style>
@@ -350,9 +350,20 @@ section{padding:var(--aire) 0}
 .medalla svg{width:16px;height:16px;fill:rgba(51,43,39,.72)}
 .lamina-fila{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
 .nivel h3{font-size:clamp(2.2rem,4vw,2.8rem);line-height:1;margin-top:1.4rem;letter-spacing:-.03em}
-.precio{display:flex;align-items:baseline;gap:.35rem;margin-top:.35rem}
+.precio{display:flex;align-items:baseline;gap:.35rem;margin-top:.35rem;flex-wrap:wrap}
 .precio b{font-family:var(--display);font-weight:400;font-size:var(--p-1)}
 .precio span{font-size:var(--p--1);color:rgba(51,43,39,.66)}
+/* Precio anterior tachado. Discreto a propósito: el descuento se nota por
+   el contraste, no por gritar. */
+.precio s{font-family:var(--display);font-size:var(--p--1);color:rgba(51,43,39,.58);
+  text-decoration-thickness:1px;text-underline-offset:2px}
+/* Sobre las tres láminas metálicas, un tono opaco del espresso contrasta
+   mejor que un color fijo, que se lavaba encima del dorado. */
+.promo-nota{margin-top:.5rem;font-size:.72rem;letter-spacing:.04em;color:rgba(51,43,39,.74)}
+.promo-aviso{margin-top:1.1rem;display:inline-flex;align-items:center;gap:.5rem;
+  padding:.45rem .9rem;border:1px solid var(--champagne);border-radius:100px;
+  font-size:var(--p--1);color:var(--espresso)}
+.promo-aviso i{width:6px;height:6px;border-radius:50%;background:var(--champagne);flex:none}
 .distintivo{font-size:.72rem;font-weight:600;background:var(--espresso);color:var(--marfil);
   padding:.3rem .7rem;border-radius:100px;white-space:nowrap}
 .nivel-cuerpo{padding:1.4rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
@@ -665,6 +676,7 @@ footer a:hover{border-color:var(--champagne)}
     <div class="cabeza revelar" style="text-align:center">
       <h2>Elige tu paquete</h2>
       <p class="entrada" style="margin-inline:auto">Los tres traen diseño, música, animaciones y confirmación sin límite de invitados.</p>
+      <p class="promo-aviso"><i></i>Precios de temporada, válidos hasta el 30 de noviembre de 2026</p>
     </div>
 
     <div class="niveles">
@@ -673,7 +685,8 @@ footer a:hover{border-color:var(--champagne)}
           <div class="lamina">
             <div class="lamina-fila"><span class="medalla"><svg><use href="#ch"/></svg></span></div>
             <h3>Plata</h3>
-            <div class="precio"><b>$790</b><span>MXN</span></div>
+            <div class="precio"><s>$790</s><b>$500</b><span>MXN</span></div>
+            <p class="promo-nota">Hasta el 30 de noviembre</p>
           </div>
           <div class="nivel-cuerpo">
             <p>Tu invitación completa y una hoja donde ves quién confirmó, en tiempo real.</p>
@@ -693,7 +706,8 @@ footer a:hover{border-color:var(--champagne)}
           <div class="lamina">
             <div class="lamina-fila"><span class="medalla"><svg><use href="#ch"/></svg></span><span class="distintivo">La más elegida</span></div>
             <h3>Oro</h3>
-            <div class="precio"><b>$1,690</b><span>MXN</span></div>
+            <div class="precio"><s>$1,690</s><b>$1,000</b><span>MXN</span></div>
+            <p class="promo-nota">Hasta el 30 de noviembre</p>
           </div>
           <div class="nivel-cuerpo">
             <p>Cada familia recibe su propia liga, con su nombre y sus lugares apartados.</p>
@@ -715,7 +729,8 @@ footer a:hover{border-color:var(--champagne)}
           <div class="lamina">
             <div class="lamina-fila"><span class="medalla"><svg><use href="#ch"/></svg></span></div>
             <h3>Diamante</h3>
-            <div class="precio"><b>$3,290</b><span>MXN</span></div>
+            <div class="precio"><s>$3,290</s><b>$2,790</b><span>MXN</span></div>
+            <p class="promo-nota">Hasta el 30 de noviembre</p>
           </div>
           <div class="nivel-cuerpo">
             <p>Nosotros repartimos y damos seguimiento. Tú no tienes que mandar ni un mensaje.</p>
