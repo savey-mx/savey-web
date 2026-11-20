@@ -6,21 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Confirmaciones · Blessingway de Gaby</title>
 <meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="theme-color" content="#FDF7EC">
+<meta name="theme-color" content="#FDFBF8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* Misma paleta que la invitación: blancos, beige y rosa. Los nombres de las
+   variables vienen del panel del que se clonó; lo que cambia es el valor. */
 :root{
-  --crema:#FDF7EC; --papel:#F8EEDC; --blanco:#FFFDF9;
-  --beige:#F0E0C6; --beige-os:#E3CDA8;
-  --camel:#6BC4A6; --camel-os:#20686C; --camel-hondo:#005236;
-  --cereza:#DF7117; --cereza-os:#BB4E08;
-  --verde:#2E7D4F; --verde-cl:#E3F0E8;
-  --gris:#8B7D71;
-  --tinta:#4A3B30; --tinta-sv:rgba(74,59,48,.66);
-  --titulo:'Fraunces',Georgia,serif;
-  --sans:'Nunito',system-ui,-apple-system,sans-serif;
+  --crema:#FDFBF8; --papel:#F5EFE7; --blanco:#FFFFFF;
+  --beige:#EFE6DA; --beige-os:#E9DDCF;
+  --camel:#E7BFBF; --camel-os:#BE8386; --camel-hondo:#A86E71;
+  --cereza:#BE8386; --cereza-os:#A86E71;
+  /* Rosa más profundo, solo para botón sólido con texto blanco encima. */
+  --rosa-fuerte:#9A5C60;
+  --verde:#7D9B7F; --verde-cl:#EDF1EC;
+  --gris:#8C8178;
+  --tinta:#4A413B; --tinta-sv:rgba(74,65,59,.66);
+  --titulo:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
   --curva:cubic-bezier(.22,.61,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -36,7 +40,7 @@ svg{display:block}
 header{padding:28px 0 22px;border-bottom:2px dashed var(--beige-os)}
 .cab{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .folio{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--camel-hondo);font-weight:800}
-h1{font-family:var(--titulo);font-weight:600;font-size:clamp(26px,5vw,34px);line-height:1.2;margin-top:4px}
+h1{font-family:var(--titulo);font-weight:400;font-size:clamp(26px,5vw,34px);line-height:1.2;margin-top:4px}
 .sub{font-size:14.5px;color:var(--tinta-sv);margin-top:2px}
 .acciones-cab{display:flex;gap:9px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 17px;
@@ -44,10 +48,10 @@ h1{font-family:var(--titulo);font-weight:600;font-size:clamp(26px,5vw,34px);line
   transition:transform .3s var(--curva),background .3s,color .3s}
 .btn:active{transform:scale(.98)}
 .btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.btn-rojo{background:var(--cereza);color:#fff}
+.btn-rojo{background:var(--rosa-fuerte);color:#fff}
 .btn-rojo:hover{background:var(--cereza-os)}
 .btn-linea{background:transparent;color:var(--camel-hondo);border:2px solid var(--camel)}
-.btn-linea:hover{background:var(--camel);color:#fff}
+.btn-linea:hover{background:var(--camel-os);color:#fff}
 
 /* ══ Tarjetas de totales ══ */
 .totales{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
@@ -62,7 +66,7 @@ h1{font-family:var(--titulo);font-weight:600;font-size:clamp(26px,5vw,34px);line
 .tot::after{content:"";position:absolute;inset:7px;border-radius:12px;border:2px dashed var(--beige-os);
   pointer-events:none}
 .tot>*{position:relative;z-index:1}
-.tot .n{font-family:var(--titulo);font-weight:600;font-size:38px;line-height:1.05;color:var(--cereza);
+.tot .n{font-family:var(--titulo);font-weight:400;font-size:38px;line-height:1.05;color:var(--cereza);
   font-variant-numeric:tabular-nums}
 .tot.verde .n{color:var(--verde)}
 .tot.camel .n{color:var(--camel-hondo)}
@@ -102,7 +106,7 @@ tbody tr:hover{background:var(--papel)}
 .pica{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:999px;
   font-size:12px;font-weight:800;white-space:nowrap}
 .pica.si{background:var(--verde-cl);color:var(--verde)}
-.pica.no{background:#F6E4E4;color:var(--cereza-os)}
+.pica.no{background:#F1EBE4;color:var(--gris)}
 .pica svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 @media (max-width:660px){
   thead{display:none}
@@ -117,7 +121,7 @@ tbody tr:hover{background:var(--papel)}
 /* ══ Estados ══ */
 .aviso{margin-top:18px;padding:22px 20px;border-radius:18px;background:var(--papel);
   border:2px dashed var(--camel);text-align:center}
-.aviso b{display:block;font-family:var(--titulo);font-weight:600;font-size:21px;margin-bottom:6px}
+.aviso b{display:block;font-family:var(--titulo);font-weight:400;font-size:21px;margin-bottom:6px}
 .aviso p{color:var(--tinta-sv);font-size:15px;max-width:52ch;margin:0 auto}
 .aviso code{background:var(--blanco);padding:2px 7px;border-radius:6px;font-size:13.5px;
   border:1px solid var(--beige-os);word-break:break-all}

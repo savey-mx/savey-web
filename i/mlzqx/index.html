@@ -143,10 +143,12 @@ body.abierto .carga-c{transform:scale(1.06);opacity:0;
 .muestras i{width:42px;height:42px;border-radius:50%;border:1px solid var(--arena);display:block}
 
 /* Galería */
-.galeria .par{display:grid;gap:14px;margin-top:30px}
-@media (min-width:560px){.galeria .par{grid-template-columns:1fr 1fr;gap:18px}}
+/* Las fotos van en su forma natural, no recortadas a cuadro: una es vertical
+   de teléfono y la otra casi cuadrada, y así se ven completas. */
+.galeria .par{display:grid;gap:22px;margin-top:30px}
+@media (min-width:560px){.galeria .par{grid-template-columns:1fr 1fr;gap:20px;align-items:start}}
 .galeria figure{margin:0;cursor:pointer}
-.galeria img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:4px;
+.galeria img{width:100%;height:auto;display:block;border-radius:4px;
   transition:transform .8s var(--rev-ease)}
 .galeria figure:hover img{transform:scale(1.03)}
 .galeria figcaption{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
@@ -275,11 +277,11 @@ body.abierto .carga-c{transform:scale(1.06);opacity:0;
     <div class="et centro" data-a="sube" style="display:block">El camino hasta aquí</div>
     <div class="par" data-grupo="90">
       <figure data-a="sube" data-ampliar>
-        <img src="fotos/g1.webp" alt="El vientre de Gaby decorado con flores y piedras rosas" loading="lazy">
+        <img src="fotos/g1.webp" width="900" height="1600" alt="Gaby frente al espejo, con el vientre decorado con flores y piedras rosas" loading="lazy">
         <figcaption>01 · Esperando a Alana</figcaption>
       </figure>
       <figure data-a="sube" data-ampliar>
-        <img src="fotos/g2.webp" alt="Gaby y su pareja abrazados en la celebración" loading="lazy">
+        <img src="fotos/g2.webp" width="850" height="850" alt="Gaby y su pareja abrazados en la celebración" loading="lazy">
         <figcaption>02 · Los que ya la esperan</figcaption>
       </figure>
     </div>

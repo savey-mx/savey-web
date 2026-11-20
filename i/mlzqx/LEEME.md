@@ -50,10 +50,11 @@ margen. Se cambia en `fechaLimite` de `index.html`.
 
 ## Decisiones que tomé y puedes revertir
 
-**La primera foto la recorté al vientre.** La original es una selfie de espejo
-en brasier. Recortada queda el vientre decorado con las piedras y las flores,
-que es exactamente la estética de un blessingway, y se ve mucho mejor junto a
-las otras dos. Si Ana la quería completa, dime y la repongo.
+**La galería va en forma natural, no recortada a cuadro.** La selfie de espejo
+es vertical de teléfono y la de la pareja es casi cuadrada; cada una se muestra
+completa con su propia proporción. (Primero había recortado la vertical al
+vientre; Mario pidió dejarla entera, y para que de verdad se vea entera hubo que
+quitar el recorte cuadrado de la rejilla.)
 
 **Oculté el contador de lugares.** En un círculo de siete, cada invitada
 confirma por sí misma y un «¿cuántas vienen?» sobra. El motor registra 1 por
