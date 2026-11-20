@@ -143,16 +143,20 @@ body.abierto .carga-c{transform:scale(1.06);opacity:0;
 .muestras i{width:42px;height:42px;border-radius:50%;border:1px solid var(--arena);display:block}
 
 /* Galería */
-/* Las fotos van en su forma natural, no recortadas a cuadro: una es vertical
-   de teléfono y la otra casi cuadrada, y así se ven completas. */
-.galeria .par{display:grid;gap:22px;margin-top:30px}
-@media (min-width:560px){.galeria .par{grid-template-columns:1fr 1fr;gap:20px;align-items:start}}
-.galeria figure{margin:0;cursor:pointer}
-.galeria img{width:100%;height:auto;display:block;border-radius:4px;
-  transition:transform .8s var(--rev-ease)}
+/* Mosaico: la foto vertical completa a la izquierda y dos chicas apiladas a
+   la derecha. La columna de 1.4fr hace que el conjunto cierre en cuadro: la
+   alta manda la altura y las dos chicas se reparten lo que queda. */
+.galeria .par{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;
+  gap:12px;margin-top:30px}
+@media (min-width:560px){.galeria .par{gap:16px}}
+.galeria figure{margin:0;cursor:pointer;min-height:0;overflow:hidden;border-radius:4px}
+.galeria .alta{grid-row:1 / span 2}
+.galeria img{width:100%;display:block;transition:transform .8s var(--rev-ease)}
+/* height:auto es necesario: sin él manda el atributo height del <img> y la
+   foto se estira a sus 1600px reales. */
+.galeria .alta img{height:auto;aspect-ratio:9/16;object-fit:cover}
+.galeria .chica img{height:100%;object-fit:cover}
 .galeria figure:hover img{transform:scale(1.03)}
-.galeria figcaption{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--suave);margin-top:12px}
 .galeria .pie{font-size:13px;color:var(--suave);margin-top:24px;text-align:center}
 
 /* Confirmación. Cada invitada confirma por sí misma, así que el contador de
@@ -276,13 +280,14 @@ body.abierto .carga-c{transform:scale(1.06);opacity:0;
   <div class="env">
     <div class="et centro" data-a="sube" style="display:block">El camino hasta aquí</div>
     <div class="par" data-grupo="90">
-      <figure data-a="sube" data-ampliar>
+      <figure class="alta" data-a="sube" data-ampliar>
         <img src="fotos/g1.webp" width="900" height="1600" alt="Gaby frente al espejo, con el vientre decorado con flores y piedras rosas" loading="lazy">
-        <figcaption>01 · Esperando a Alana</figcaption>
       </figure>
-      <figure data-a="sube" data-ampliar>
+      <figure class="chica" data-a="sube" data-ampliar>
         <img src="fotos/g2.webp" width="850" height="850" alt="Gaby y su pareja abrazados en la celebración" loading="lazy">
-        <figcaption>02 · Los que ya la esperan</figcaption>
+      </figure>
+      <figure class="chica" data-a="sube" data-ampliar>
+        <img src="fotos/g3.webp" width="720" height="720" alt="Las manos de Gaby formando un corazón sobre su vientre" loading="lazy">
       </figure>
     </div>
     <p class="pie" data-a="sube">Toca cualquiera para verla en grande.</p>

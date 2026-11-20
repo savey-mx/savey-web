@@ -50,11 +50,16 @@ margen. Se cambia en `fechaLimite` de `index.html`.
 
 ## Decisiones que tomé y puedes revertir
 
-**La galería va en forma natural, no recortada a cuadro.** La selfie de espejo
-es vertical de teléfono y la de la pareja es casi cuadrada; cada una se muestra
-completa con su propia proporción. (Primero había recortado la vertical al
-vientre; Mario pidió dejarla entera, y para que de verdad se vea entera hubo que
-quitar el recorte cuadrado de la rejilla.)
+**La galería es un mosaico cuadrado.** La selfie de espejo va completa a la
+izquierda y a la derecha dos chicas apiladas: la pareja arriba, las manos
+abajo. La columna de la izquierda es de `1.4fr` justamente para que el conjunto
+cierre en cuadro: la foto alta manda la altura y las dos chicas se reparten lo
+que queda. Sin rótulos.
+
+**La foto de las manos aparece dos veces**, en la portada y en el mosaico, pero
+con encuadres distintos: la portada va abierta y en arco, y la del mosaico es un
+recorte cerrado a las manos. Si prefieres que no se repita, dime y la cambio por
+otra que tengan.
 
 **Oculté el contador de lugares.** En un círculo de siete, cada invitada
 confirma por sí misma y un «¿cuántas vienen?» sobra. El motor registra 1 por
@@ -64,9 +69,8 @@ confirmación. Si quieres que puedan traer acompañante, en `index.html` cambia
 **A la frase de Ana solo le acomodé la puntuación.** Venía toda de corrido con
 comas; la partí en dos oraciones para que respire. Las palabras son suyas.
 
-**Los rótulos de la galería son míos:** «Esperando a Alana» y «Los que ya la
-esperan». Cámbialos por lo que Ana prefiera; están marcados con un comentario
-en la sección `<!-- Galería -->`.
+**El único texto de la galería** es el encabezado «El camino hasta aquí». Se
+cambia en la sección `<!-- Galería -->` de `index.html`.
 
 ## El diseño
 
