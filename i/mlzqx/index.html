@@ -189,6 +189,33 @@ body.abierto .carga-c{transform:scale(1.06);opacity:0;
 #flota{height:48px;padding:0 24px;border-radius:40px;background:var(--rosa-os);color:#fff;
   font-size:13px;white-space:nowrap}
 
+/* Pantalla de apertura. Va encima del #carga del motor (z-index 100), así
+   que la invitación termina de cargar detrás mientras se ve esta: cuando
+   tocan, ya está todo listo y no hay doble espera. El toque también es el
+   gesto que el navegador exige para dejar sonar la música. */
+#sobre{position:fixed;inset:0;z-index:300;background:var(--nieve);
+  display:grid;place-items:center;padding:30px;
+  transition:opacity .9s var(--rev-ease),transform .9s var(--rev-ease)}
+html:not(.js) #sobre{display:none}   /* sin JS nadie podría quitarla */
+#sobre.fuera{opacity:0;transform:scale(1.04);pointer-events:none}
+body.con-sobre{overflow:hidden}
+.sobre-c{text-align:center}
+.pre-et{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--rosa-os)}
+.abrir{display:block;margin:0 auto;padding:0;border:0;background:none;cursor:pointer;
+  color:inherit;font:inherit}
+.rueda-grande{width:clamp(104px,30vw,132px);height:clamp(104px,30vw,132px);
+  display:block;margin:30px auto 0;animation:girar 30s linear infinite}
+@keyframes girar{to{transform:rotate(360deg)}}
+.pre-nombre{display:block;font-family:var(--serif);font-weight:300;
+  font-size:clamp(32px,9.4vw,44px);line-height:1.1;margin-top:26px}
+.pre-fecha{display:block;font-size:11px;letter-spacing:.3em;color:var(--suave);margin-top:14px}
+.rotulo{display:inline-block;margin-top:32px;padding:15px 34px;border-radius:40px;
+  background:var(--rosa-os);color:#fff;font-size:13px;letter-spacing:.06em;
+  box-shadow:0 16px 30px -20px rgba(190,131,134,.95);animation:late 2.9s var(--rev-ease) infinite}
+.abrir:focus-visible .rotulo{outline:2px solid var(--rosa);outline-offset:3px}
+#sobre.fuera .rueda-grande,#sobre.fuera .rotulo{animation:none}
+@media (prefers-reduced-motion:reduce){.rueda-grande,.rotulo{animation:none}}
+
 /* Música. Va abajo a la izquierda para no pelearse con el botón de
    confirmar. No arranca sola: los navegadores lo bloquean sin que alguien
    toque antes, y de todos modos nadie agradece que una página suene de
@@ -225,6 +252,18 @@ body.cargando #musica{opacity:0;pointer-events:none}
   <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
   <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
 </svg>
+
+<div id="sobre">
+  <div class="sobre-c">
+    <div class="pre-et">Tienes una invitación</div>
+    <button class="abrir" id="abrir" type="button">
+      <svg class="rueda-grande" viewBox="0 0 34 34" aria-hidden="true"><use href="#circulo"/></svg>
+      <span class="pre-nombre">Blessingway<br>de Gaby</span>
+      <span class="pre-fecha">05 · 12 · 2026</span>
+      <span class="rotulo">Abrir la invitación</span>
+    </button>
+  </div>
+</div>
 
 <div id="carga" aria-hidden="true">
   <div class="carga-c">
@@ -373,22 +412,38 @@ window.XV = {
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
 <script src="../motor/savey.js?v=4" defer></script>
 <script>
-/* Reproductor. El estado vive en aria-pressed, que es lo que lee el CSS y
-   también lo que anuncia un lector de pantalla. */
+/* Apertura y música. El toque en "Abrir la invitación" sirve para dos cosas:
+   quita la pantalla y, por ser un gesto real, es lo único que convence al
+   navegador de dejar sonar el audio. El estado del botón de música vive en
+   aria-pressed, que es lo que lee el CSS y lo que anuncia un lector de
+   pantalla. */
 (function(){
-  var bt=document.getElementById('musica'), a=document.getElementById('pista');
-  if(!bt||!a) return;
-  a.volume=.55;
-  var pinta=function(suena){
-    bt.setAttribute('aria-pressed', suena?'true':'false');
-    bt.setAttribute('aria-label', suena?'Quitar la música':'Poner la música');
-  };
-  bt.addEventListener('click',function(){
-    if(a.paused) a.play().catch(function(){});   /* si el navegador lo niega, se queda en pausa */
-    else a.pause();
+  var sobre=document.getElementById('sobre'), abrir=document.getElementById('abrir'),
+      bt=document.getElementById('musica'), a=document.getElementById('pista');
+
+  if(a){
+    a.volume=.55;
+    var pinta=function(){
+      if(!bt) return;
+      var suena=!a.paused;
+      bt.setAttribute('aria-pressed', suena?'true':'false');
+      bt.setAttribute('aria-label', suena?'Silenciar la música':'Poner la música');
+    };
+    a.addEventListener('play',pinta);
+    a.addEventListener('pause',pinta);
+    if(bt) bt.addEventListener('click',function(){
+      if(a.paused) a.play().catch(function(){}); else a.pause();
+    });
+  }
+
+  if(!sobre||!abrir) return;
+  document.body.classList.add('con-sobre');
+  abrir.addEventListener('click',function(){
+    sobre.classList.add('fuera');
+    document.body.classList.remove('con-sobre');
+    if(a) a.play().catch(function(){});
+    setTimeout(function(){ if(sobre.parentNode) sobre.parentNode.removeChild(sobre) }, 950);
   });
-  a.addEventListener('play', function(){ pinta(true) });
-  a.addEventListener('pause',function(){ pinta(false) });
 })();
 </script>
 </body>

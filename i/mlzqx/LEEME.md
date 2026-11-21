@@ -85,16 +85,27 @@ pidió Ana, con tipografía Cormorant Garamond.
 La invitación cierra con el nombre de **Alana**, no con el de Gaby. Ese es el
 camino que se está honrando.
 
+## La pantalla de apertura
+
+Antes de la invitación sale una portada con el círculo de siete girando
+despacio, el nombre y el botón **Abrir la invitación**. Va encima de la
+pantalla de carga del motor, así que la invitación termina de cargar detrás
+mientras la invitada la ve: cuando toca, ya está todo listo y no hay dos
+esperas.
+
+Sin JavaScript esa pantalla no aparece, para que nadie se quede atorado detrás
+de un botón que no responde.
+
 ## La música
 
 «Te Esperaba», de Carlos Rivera, la que pidió Ana. El botón va abajo a la
 izquierda, para no pelearse con el de confirmar.
 
-**No arranca sola, a propósito.** Los navegadores bloquean el audio automático
-si nadie ha tocado la pantalla, y aunque se pudiera, una página que suena de
-golpe se cierra más de lo que se escucha. En pausa el botón late despacio para
-que se note que se puede tocar. Si de todos modos la quieres automática, dime y
-son dos líneas.
+**Arranca sola al abrir la invitación.** La pantalla de apertura resuelve el
+problema de fondo: ningún navegador deja sonar una página antes de que la
+persona toque algo, y el toque en «Abrir la invitación» es justo ese gesto. Así
+que la música entra con la invitación, no después. El botón de abajo queda solo
+para silenciar y volver a poner.
 
 Recodifiqué la pista de 4.8 MB a 2.4 MB. Para música de fondo no se nota la
 diferencia y en datos móviles sí. Además va con `preload="none"`: solo se baja
