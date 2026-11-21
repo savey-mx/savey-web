@@ -188,6 +188,28 @@ body.abierto .carga-c{transform:scale(1.06);opacity:0;
 .cierre .firma-savey{margin-top:76px}
 #flota{height:48px;padding:0 24px;border-radius:40px;background:var(--rosa-os);color:#fff;
   font-size:13px;white-space:nowrap}
+
+/* Música. Va abajo a la izquierda para no pelearse con el botón de
+   confirmar. No arranca sola: los navegadores lo bloquean sin que alguien
+   toque antes, y de todos modos nadie agradece que una página suene de
+   golpe. En pausa late despacio para que se note que se puede tocar. */
+#musica{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;
+  width:46px;height:46px;border-radius:50%;border:1px solid var(--arena);background:var(--blanco);
+  display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 14px 28px -18px rgba(74,65,59,.6);transition:border-color .4s,opacity .6s}
+#musica:hover{border-color:var(--rosa)}
+#musica:focus-visible{outline:2px solid var(--rosa);outline-offset:3px}
+body.cargando #musica{opacity:0;pointer-events:none}
+.ondas{display:flex;align-items:flex-end;gap:3px;height:16px}
+.ondas i{width:2.5px;height:5px;border-radius:2px;background:var(--rosa-os);transition:height .3s}
+#musica[aria-pressed="true"] .ondas i{animation:onda .9s ease-in-out infinite}
+#musica[aria-pressed="true"] .ondas i:nth-child(2){animation-delay:.18s}
+#musica[aria-pressed="true"] .ondas i:nth-child(3){animation-delay:.36s}
+@keyframes onda{0%,100%{height:5px}50%{height:16px}}
+#musica[aria-pressed="false"]{animation:late 2.9s var(--rev-ease) infinite}
+@keyframes late{0%,100%{box-shadow:0 14px 28px -18px rgba(74,65,59,.6),0 0 0 0 rgba(231,191,191,.55)}
+  60%{box-shadow:0 14px 28px -18px rgba(74,65,59,.6),0 0 0 10px rgba(231,191,191,0)}}
+@media (prefers-reduced-motion:reduce){#musica,.ondas i{animation:none!important}}
 </style>
 </head>
 <body class="cargando">
@@ -251,16 +273,18 @@ body.abierto .carga-c{transform:scale(1.06);opacity:0;
 <section class="lugar">
   <div class="env">
     <div class="et" data-a="sube">Dónde nos reunimos</div>
-    <h2 data-a="sube" style="margin-top:12px">Centro Rena-Ser</h2>
+    <h2 data-a="sube" style="margin-top:12px">Miraval I</h2>
     <div class="datos" data-grupo="90">
       <div class="dato" data-a="sube"><div class="k">Hora</div>
-        <div><b>1:00 de la tarde</b><span>Te esperamos desde las 12:50 para empezar juntas</span></div></div>
+        <div><b>11:00 de la mañana</b><span>Te esperamos desde las 10:50 para empezar juntas</span></div></div>
       <div class="dato" data-a="sube"><div class="k">Lugar</div>
-        <div><b>El jardín</b><span>Avenida Lomas Verdes 48, Estado de México</span></div></div>
+        <div><b>Lomas Verdes</b><span>Acceso a Praderas de San Mateo 90, Mz 010<br>Lomas Verdes 1ra Secc, Naucalpan de Juárez</span></div></div>
       <div class="dato" data-a="sube"><div class="k">Somos</div>
-        <div><b>Siete mujeres</b><span>Un círculo pequeño, elegido con cuidado</span></div></div>
+        <div><b>Un círculo pequeño</b><span>Elegido con cuidado</span></div></div>
     </div>
-    <a class="bt-s" href="https://maps.google.com/?q=Centro%20Rena-Ser%2C%20Avenida%20Lomas%20Verdes%2048" target="_blank" rel="noopener" data-a="sube"><svg><use href="#pin"/></svg>Cómo llegar</a>
+    <!-- La liga va por coordenadas: el pin cae exacto y no depende de que
+         Google siga resolviendo el nombre ni la liga corta de Ana. -->
+    <a class="bt-s" href="https://www.google.com/maps/search/?api=1&amp;query=19.50833%2C-99.2745206" target="_blank" rel="noopener" data-a="sube"><svg><use href="#pin"/></svg>Cómo llegar</a>
   </div>
 </section>
 
@@ -320,13 +344,18 @@ body.abierto .carga-c{transform:scale(1.06);opacity:0;
 
 <a id="flota" class="bt-p" href="#confirmar">Confirmar</a>
 
+<button id="musica" type="button" aria-pressed="false" aria-label="Poner la música">
+  <span class="ondas" aria-hidden="true"><i></i><i></i><i></i></span>
+</button>
+<audio id="pista" src="musica/te-esperaba.mp3" loop preload="none"></audio>
+
 <script>
 window.XV = {
   slug:'mlzqx', evento:'Blessingway de Gaby', nombre:'Gaby',
-  fechaISO:'2026-12-05T13:00:00-06:00',
-  lugar:'Centro Rena-Ser, Avenida Lomas Verdes 48, Estado de México',
+  fechaISO:'2026-12-05T11:00:00-06:00',
+  lugar:'Miraval I, Acceso a Praderas de San Mateo 90 Mz 010, Lomas Verdes 1ra Secc, 53120 Naucalpan de Juárez, Méx.',
   fechaLimite:'30 de noviembre',
-  graciasSi:'Ahí estaremos juntas', graciasSiTexto:'Sábado 5 de diciembre, 12:50. Te esperamos de blanco.',
+  graciasSi:'Ahí estaremos juntas', graciasSiTexto:'Sábado 5 de diciembre, 10:50. Te esperamos de blanco.',
   graciasNo:'Gracias por avisarnos. Vas a estar presente de otra forma.',
   etiquetaMensaje:'¿Le dejas unas palabras a Gaby? (opcional)',
   /* Número de Savey, de respaldo si la hoja no contesta.
@@ -343,5 +372,24 @@ window.XV = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
 <script src="../motor/savey.js?v=4" defer></script>
+<script>
+/* Reproductor. El estado vive en aria-pressed, que es lo que lee el CSS y
+   también lo que anuncia un lector de pantalla. */
+(function(){
+  var bt=document.getElementById('musica'), a=document.getElementById('pista');
+  if(!bt||!a) return;
+  a.volume=.55;
+  var pinta=function(suena){
+    bt.setAttribute('aria-pressed', suena?'true':'false');
+    bt.setAttribute('aria-label', suena?'Quitar la música':'Poner la música');
+  };
+  bt.addEventListener('click',function(){
+    if(a.paused) a.play().catch(function(){});   /* si el navegador lo niega, se queda en pausa */
+    else a.pause();
+  });
+  a.addEventListener('play', function(){ pinta(true) });
+  a.addEventListener('pause',function(){ pinta(false) });
+})();
+</script>
 </body>
 </html>

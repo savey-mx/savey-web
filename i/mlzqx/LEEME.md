@@ -1,12 +1,13 @@
 # MLZQX · Blessingway de Gaby
 
-Paquete **Plata** · sábado 5 de diciembre de 2026, 1:00 pm · Centro Rena-Ser
+Paquete **Plata** · sábado 5 de diciembre de 2026, 11:00 am · Miraval I, Lomas Verdes
 
 ```
 i/mlzqx/
   index.html        la invitación
   lista/index.html  el panel de confirmaciones
   fotos/            las tres fotos, ya procesadas
+  musica/           la pista de fondo
 ```
 
 ## Las dos ligas
@@ -36,12 +37,13 @@ si la hoja no contesta. Mientras tanto dejé el de Savey. Está en `index.html`:
 wa:'5215618906790',   /* cámbialo por el de Ana */
 ```
 
-### 2. Confirmar la dirección
+### 2. Confirmar qué es el lugar
 
-Ana escribió «Avenida Lomas Verdes 48 / posible cambio». Puse la dirección tal
-cual, sin el «posible cambio», porque eso no se le dice a la invitada. Si
-cambia, se ajusta en dos lugares de `index.html`: el renglón de **Lugar** y la
-liga del botón **Cómo llegar**.
+Ana cambió la sede a **Miraval I**, que en Google Maps aparece como complejo de
+departamentos. El cuestionario original decía «Jardín», así que ya no sé si se
+reúnen en un jardín, una terraza o adentro. No lo inventé: el renglón de Lugar
+dice la zona y la dirección, y nada más. Si Ana quiere que diga dónde
+exactamente, me pasas el dato y lo agrego.
 
 ### 3. La fecha límite para confirmar
 
@@ -83,13 +85,32 @@ pidió Ana, con tipografía Cormorant Garamond.
 La invitación cierra con el nombre de **Alana**, no con el de Gaby. Ese es el
 camino que se está honrando.
 
-## Dos cosas que vale la pena que sepas
+## La música
 
-**Música.** La landing promete música en los tres paquetes y el cuestionario
-decía «Acepto propuestas», pero ninguna plantilla del catálogo tiene música
-todavía. Si quieres cumplirlo aquí, dime y le pongo un reproductor discreto;
-nada más necesito que elijas la pista, porque no puedo conseguirte una con
-licencia desde acá.
+«Te Esperaba», de Carlos Rivera, la que pidió Ana. El botón va abajo a la
+izquierda, para no pelearse con el de confirmar.
+
+**No arranca sola, a propósito.** Los navegadores bloquean el audio automático
+si nadie ha tocado la pantalla, y aunque se pudiera, una página que suena de
+golpe se cierra más de lo que se escucha. En pausa el botón late despacio para
+que se note que se puede tocar. Si de todos modos la quieres automática, dime y
+son dos líneas.
+
+Recodifiqué la pista de 4.8 MB a 2.4 MB. Para música de fondo no se nota la
+diferencia y en datos móviles sí. Además va con `preload="none"`: solo se baja
+si la invitada toca el botón.
+
+**Un apunte de negocio, y lo digo una sola vez.** El archivo viene de un video
+de letra y la grabación es de Carlos Rivera y su disquera. Alojarla completa en
+tu dominio es distribuirla, que es el mismo terreno del aviso que ya tienes
+publicado sobre personajes con derechos de autor. Para una página privada de
+siete invitadas el riesgo práctico es mínimo y es lo que hace todo el mercado,
+pero si Savey crece vale la pena resolverlo. Dos salidas limpias: licenciar
+instrumentales en algún banco de música, o poner un botón que abra la canción
+en Spotify en vez de alojarla tú. Tú decides; yo lo dejo armado como lo pidió
+Ana.
+
+## Dos cosas más
 
 **Lo que Plata no incluye,** por si Ana pregunta: pases personalizados, álbum
 compartido y save the date son de Oro. Las secciones que pidió —cuenta
